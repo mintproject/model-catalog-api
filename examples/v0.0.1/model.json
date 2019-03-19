@@ -1,0 +1,18 @@
+{
+    "uri": "https://w3id.org/mint/instance/DSSAT",
+    "label": "DSSAT",
+    "description": "The Decision Support System for Agrotechnology Transfer (DSSAT) comprises dynamic crop growth simulation model for over 40 crops. The model simulates growth; development; and yield as a function of the soil-plant-atmosphere dynamics.",
+    "type": [
+        "https://w3id.org/mint/modelCatalog#Model",
+        "https://w3id.org/mint/modelCatalog#TheoryBasedModel"
+    ],
+    "versions": [
+        "https://w3id.org/mint/instance/DSSAT_4.7"
+    ],
+    "categories": [
+        "Agriculture"
+    ],
+    "documentation": [
+        "https://dssat.net"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "uri": "https://w3id.org/mint/instance/DSSAT_4.7",
+    "label": "DSSAT v4.7",
+    "type": [
+        "https://w3id.org/mint/modelCatalog#ModelVersion",
+        "http://ontosoft.org/software#SoftwareVersion"
+    ],
+    "version": "4.7",
+    "configuration": "https://w3id.org/mint/instance/DSSAT_cfg_simple"
+}

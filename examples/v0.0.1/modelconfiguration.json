@@ -1,0 +1,50 @@
+{
+    "type": [
+        "https://w3id.org/mint/modelCatalog#ModelConfiguration"
+    ],
+    "label": "Economic aggregate crop supply",
+    "inputs": [
+        {
+            "uri": "https://w3id.org/mint/instance/econ_yield"
+        }
+    ],
+    "outputs": [
+        {
+            "uri": "https://w3id.org/mint/instance/econ_land_use"
+        }
+    ],
+    "description": "Aggregate crop supply response model for the country of South Sudan configuration",
+    "cag": [
+        {
+            "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables"
+        },
+        {
+            "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process"
+        }        
+    ],
+    "process": [
+        {
+            "uri": "https://w3id.org/mint/instance/crop_yield"
+        },
+        {
+            "uri": "https://w3id.org/mint/instance/crop_supply"
+        }        
+    ],
+    "intervalTime": [
+        {
+            "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI"
+        }
+    ],
+    "implementationScriptLocation": "https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run",
+    "container": "https://w3id.org/mint/instance/mintproject/economic:latest",
+    "constrainT": "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass) (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2 dcdom:region) uriConcat(?c '_region' ?location) -> (?in1 dcdom:region ?location) (?in2 dcdom:region ?location) print('Setting domain of ?in1 and ?in2 to ?location because both inputs to PIHM should be from the same region')]",
+    "parameters": [
+        {
+            "uri": "http://ontosoft.isi.edu:7070/page/mint/instance/pihm_start-date"
+        },
+        {
+            "uri": "http://ontosoft.isi.edu:7070/page/mint/instance/pihm_end-date"
+        }        
+    ],
+    "componentLocation": "https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip"
+}

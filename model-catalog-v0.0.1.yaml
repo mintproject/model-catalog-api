@@ -1,0 +1,1300 @@
+---
+openapi: 3.0.1
+info:
+  title: Model Catalog
+  description: This is MINT Model Catalog You can find out more about     Model Catalog
+    at [http://swagger.io](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: mosorio@isi.edu
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.0.1
+servers:
+- url: http://api.mint.isi.edu/v0.0.1
+paths:
+  /user:
+    post:
+      tags:
+      - user
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+            examples:
+              Simple User:
+                value: |-
+                  {
+                      "id": 53,
+                      "username": "some text",
+                      "firstName": "some text",
+                      "lastName": "some text",
+                      "email": "some text",
+                      "password": "some text",
+                      "phone": "some text",
+                      "userStatus": 75
+                  }
+        required: true
+      responses:
+        default:
+          description: successful operation
+  /user/login:
+    get:
+      tags:
+      - user
+      summary: Logs user into the system
+      operationId: loginUser
+      parameters:
+      - name: username
+        in: query
+        description: The user name for login
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: The password for login in clear text
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                format: int32
+                type: integer
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                format: date-time
+                type: string
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+        400:
+          description: Invalid username/password supplied
+  /user/logout:
+    get:
+      tags:
+      - user
+      summary: Logs out current logged in user session
+      operationId: logoutUser
+      responses:
+        default:
+          description: successful operation
+  /user/{username}:
+    get:
+      tags:
+      - user
+      summary: Get user by user name
+      operationId: getUserByName
+      parameters:
+      - name: username
+        in: path
+        description: 'The name that needs to be fetched. Use user1 for testing. '
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+    put:
+      tags:
+      - user
+      summary: Updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      parameters:
+      - name: username
+        in: path
+        description: name that need to be updated
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Updated user object
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        400:
+          description: Invalid user supplied
+        404:
+          description: User not found
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - user
+      summary: Delete user
+      description: This can only be done by the logged in user.
+      operationId: deleteUser
+      parameters:
+      - name: username
+        in: path
+        description: The name that needs to be deleted
+        required: true
+        schema:
+          type: string
+      responses:
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+      security:
+      - bearerAuth: []
+  /modelconfigurations:
+    summary: Path used to manage the list of modelconfigurations.
+    description: The REST endpoint/path used to list and create zero or more `modelConfiguration`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: List modelconfiguration
+      operationId: listModelConfigurations
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ModelConfiguration'
+        400:
+          description: Invalid uri supplied
+    post:
+      tags:
+      - modelconfiguration
+      summary: Create a model configuration
+      operationId: addModelConfiguration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        201:
+          description: Created
+          content:
+            application/json: {}
+        400:
+          description: Invalid
+      security:
+      - bearerAuth: []
+  /modelconfiguration/{name}:
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `ModelConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations
+      used to perform the get, update, and delete tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: Get modelconfiguration by uri
+      description: Gets the details of a single instance of a `ModelConfiguration`.
+      operationId: getModelConfiguratonByUri
+      parameters:
+      - name: name
+        in: path
+        description: |
+          The name of the resource
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+    put:
+      tags:
+      - modelconfiguration
+      summary: Update model configuration
+      operationId: updateModelConfiguration
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        200:
+          description: Updated
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - modelconfiguration
+      operationId: deleteModelConfiguration
+      parameters:
+      - name: name
+        in: path
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+        403:
+          description: You don't the permissions
+      security:
+      - bearerAuth: []
+    parameters:
+    - name: name
+      in: path
+      description: A unique identifier for a `ModelConfiguration`.
+      required: true
+  /modelconfiguration/{name}/inputs:
+    summary: Inputs related to a model configuration
+    description: The REST endpoint/path used to list and create zero or more `Dataset`
+      entities related with a `ModelConfiguration` as an Input.  This path contains
+      a `GET` and `POST` operation to perform the list and create tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: Get the inputs of a model configuration
+      operationId: getInputsByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        description: |
+          The name of the resource
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+    post:
+      summary: Creates a new instance of a `Dataset` related as Input.
+      description: Creates a new instance of a `Dataset` related as Input.
+      operationId: addInputsByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataSet'
+            examples:
+              inputs:
+                value: |-
+                  [
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 94,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 64
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 38
+                              }
+                          ],
+                          "type": "some text"
+                      },
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 50,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 90
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 8
+                              }
+                          ],
+                          "type": "some text"
+                      }
+                  ]
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          description: You are not authorized to do that
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+      security:
+      - bearerAuth: []
+    parameters:
+    - name: name
+      in: path
+      description: A unique identifier for a `ModelConfiguration`.
+      required: true
+      schema:
+        type: string
+  /modelconfiguration/{name}/outputs:
+    summary: Outputs related to a model configuration
+    description: The REST endpoint/path used to list and create zero or more `Dataset`
+      entities related with a `ModelConfiguration` as an Output.  This path contains
+      a `GET` and `POST` operation to perform the list and create tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: Get the outputs of a model configuration
+      operationId: getOutputsByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        description: |
+          The name of the resource
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+    post:
+      summary: Create the inputs of a model configuration
+      description: Creates a new instance of a `Dataset` related as Output.
+      operationId: addOutputsByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DataSet'
+            examples:
+              inputs:
+                value: |-
+                  [
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 94,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 64
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 38
+                              }
+                          ],
+                          "type": "some text"
+                      },
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 50,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 90
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 8
+                              }
+                          ],
+                          "type": "some text"
+                      }
+                  ]
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          description: You are not authorized to do that
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+      security:
+      - bearerAuth: []
+    parameters:
+    - name: name
+      in: path
+      description: A unique identifier for a `ModelConfiguration`.
+      required: true
+      schema:
+        type: string
+  /modelconfiguration/{name}/parameters:
+    summary: Parameters related to a model configuration
+    description: The REST endpoint/path used to list and create zero or more `Parameter`
+      entities related with a `ModelConfiguration` as an Output.  This path contains
+      a `GET` and `POST` operation to perform the list and create tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: Get the parameters of a model configuration
+      operationId: getParametersByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        description: |
+          The name of the resource
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+    post:
+      summary: Create the inputs of a model configuration
+      description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
+      operationId: addParametersByModelconfiguration
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Parameter'
+            examples:
+              inputs:
+                value: |-
+                  [
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 94,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 64
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 38
+                              }
+                          ],
+                          "type": "some text"
+                      },
+                      {
+                          "uri": "some text",
+                          "label": "some text",
+                          "format": "some text",
+                          "description": "some text",
+                          "dimensionality": 50,
+                          "presentations": [
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 90
+                              },
+                              {
+                                  "uri": "some text",
+                                  "type": "some text",
+                                  "label": "some text",
+                                  "description": "some text",
+                                  "long_name": "some text",
+                                  "short_name": "some text",
+                                  "standard_name": "some text",
+                                  "relevance_level": 8
+                              }
+                          ],
+                          "type": "some text"
+                      }
+                  ]
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          description: You are not authorized to do that
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+      security:
+      - bearerAuth: []
+    parameters:
+    - name: name
+      in: path
+      description: A unique identifier for a `ModelConfiguration`.
+      required: true
+      schema:
+        type: string
+  /modelversions:
+    summary: Path used to manage the list of ModelVersions.
+    description: The REST endpoint/path used to list and create zero or more `ModelVersion`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      summary: List All ModelVersions
+      description: Gets a list of all `ModelVersion` entities.
+      operationId: getModelVersions
+      responses:
+        200:
+          description: Successful response - returns an array of `ModelVersion` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ModelVersion'
+    post:
+      summary: Create a ModelVersion
+      description: Creates a new instance of a `ModelVersion`.
+      operationId: createModelVersion
+      requestBody:
+        description: A new `ModelVersion` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        required: true
+      responses:
+        201:
+          description: Successful response.
+  /datasets:
+    summary: Path used to manage the list of datasets.
+    description: The REST endpoint/path used to list and create zero or more `dataset`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      summary: List All datasets
+      description: Gets a list of all `dataset` entities.
+      operationId: getdatasets
+      responses:
+        200:
+          description: Successful response - returns an array of `dataset` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataSet'
+    post:
+      summary: Create a dataset
+      description: Creates a new instance of a `dataset`.
+      operationId: createdataset
+      requestBody:
+        description: A new `dataset` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSet'
+        required: true
+      responses:
+        201:
+          description: Successful response.
+  /models:
+    summary: Path used to manage the list of models.
+    description: The REST endpoint/path used to list and create zero or more `model`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      summary: List All models
+      description: Gets a list of all `model` entities.
+      operationId: getmodels
+      responses:
+        200:
+          description: Successful response - returns an array of `model` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Model'
+    post:
+      summary: Create a model
+      description: Creates a new instance of a `model`.
+      operationId: createmodel
+      requestBody:
+        description: A new `model` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        required: true
+      responses:
+        201:
+          description: Successful response.
+  /parameters:
+    summary: Path used to manage the list of Parameters.
+    description: The REST endpoint/path used to list and create zero or more `Parameter`
+      entities.  This path contains a `GET` and `POST` operation to perform the list
+      and create tasks, respectively.
+    get:
+      summary: List All Parameters
+      description: Gets a list of all `Parameter` entities.
+      operationId: getParameters
+      responses:
+        200:
+          description: Successful response - returns an array of `Parameter` entities.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Parameter'
+    post:
+      summary: Create a Parameter
+      description: Creates a new instance of a `Parameter`.
+      operationId: createParameter
+      requestBody:
+        description: A new `Parameter` to be created.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parameter'
+        required: true
+      responses:
+        201:
+          description: Successful response.
+  /model/{modelId}:
+    summary: Path used to manage a single Model.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `Model`.  This path contains `GET`, `PUT`, and `DELETE` operations used
+      to perform the get, update, and delete tasks, respectively.
+    get:
+      summary: Get a Model
+      description: Gets the details of a single instance of a `Model`.
+      operationId: getModel
+      responses:
+        200:
+          description: Successful response - returns a single `Model`.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+    put:
+      summary: Update a Model
+      description: Updates an existing `Model`.
+      operationId: updateModel
+      requestBody:
+        description: Updated `Model` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        required: true
+      responses:
+        202:
+          description: Successful response.
+    delete:
+      summary: Delete a Model
+      description: Deletes an existing `Model`.
+      operationId: deleteModel
+      responses:
+        204:
+          description: Successful response.
+    parameters:
+    - name: modelId
+      in: path
+      description: A unique identifier for a `Model`.
+      required: true
+      schema:
+        type: string
+  /modelversion/{modelVersionId}:
+    summary: Path used to manage a single ModelVersion.
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `ModelVersion`.  This path contains `GET`, `PUT`, and `DELETE` operations
+      used to perform the get, update, and delete tasks, respectively.
+    get:
+      summary: Get a ModelVersion
+      description: Gets the details of a single instance of a `ModelVersion`.
+      operationId: getModelVersion
+      responses:
+        200:
+          description: Successful response - returns a single `ModelVersion`.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelVersion'
+    put:
+      summary: Update a ModelVersion
+      description: Updates an existing `ModelVersion`.
+      operationId: updateModelVersion
+      requestBody:
+        description: Updated `ModelVersion` information.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        required: true
+      responses:
+        202:
+          description: Successful response.
+    delete:
+      summary: Delete a ModelVersion
+      description: Deletes an existing `ModelVersion`.
+      operationId: deleteModelVersion
+      responses:
+        204:
+          description: Successful response.
+    parameters:
+    - name: modelVersionId
+      in: path
+      description: A unique identifier for a `ModelVersion`.
+      required: true
+      schema:
+        type: string
+components:
+  schemas:
+    DataSet:
+      required:
+      - uri
+      type: object
+      properties:
+        label:
+          type: string
+        format:
+          type: string
+        description:
+          type: string
+        dimensionality:
+          format: int64
+          type: integer
+        presentations:
+          type: array
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+        type:
+          description: '    '
+          type: array
+          items:
+            type: string
+        uri:
+          type: string
+      example: "{\n    \"label\": \"crop-yield\",\n    \"format\": \"csv\",\n    \"\
+        description\": \"Contains the yield elasticities to fertilizer use that are\
+        \ derived from Cycles output\",\n    \"dimensionality\": 0,\n    \"type\"\
+        : [\n        \"https://w3id.org/mint/modelCatalog#DatasetSpecification\",\n\
+        \        \"https://w3id.org/wings/export/MINT#CropYield\"\n    ],\n    \"\
+        uri\": \"https://w3id.org/mint/instance/econ_yield\",\n    \"presentations\"\
+        : [\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\"\
+        ,\n            \"type\": [\n                \"https://w3id.org/mint/modelCatalog#VariablePresentation\"\
+        \n            ],\n            \"label\": \"ybarN\",\n            \"description\"\
+        : \"Contains the yield elasticities to fertilizer use that are derived from\
+        \ Cycles output\",\n            \"long_name\": \"yield elasticity\",\n   \
+        \         \"short_name\": \"ybarN\",\n            \"standard_name\": \"crop_fertilizer~nitrogen__yield_elasticity\"\
+        ,\n            \"relevance_level\": 1,\n            \"unit\": {\n        \
+        \        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\",\n      \
+        \          \"type\": [ \n                    \"http://qudt.org/1.1/schema/qudt#Unit\"\
+        \n                ],\n                \"label\": \"USD kg-1\",\n         \
+        \       \"part\": [\n                    \"https://w3id.org/mint/instance/u_USD\"\
+        ,\n                    \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
+        \n                ],\n                \"dimension\": [\n                 \
+        \   \"M-1\"\n                ],\n                \"abbreviation\": [\n   \
+        \                 \"USD kg-1\"\n                ]\n            }\n       \
+        \ }\n    ]\n}"
+    ModelConfiguration:
+      required: []
+      type: object
+      properties:
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataSet'
+        outputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataSet'
+        description:
+          type: string
+        cag:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAG'
+        process:
+          type: array
+          items:
+            $ref: '#/components/schemas/Process'
+        intervalTime:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeInterval'
+        implementationScriptLocation:
+          type: string
+        container:
+          type: string
+        constrainT:
+          type: string
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Parameter'
+        componentLocation:
+          type: string
+    Parameter:
+      required:
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        description:
+          type: string
+        defaultvalue:
+          type: string
+        datatype:
+          type: string
+      example: |-
+        {
+            "uri": "https://w3id.org/mint/instance/pihm_start-date",
+            "type": [
+                "https://w3id.org/mint/modelCatalog#Parameter",
+                "https://w3id.org/wings/export/MINT#StartDate"
+            ],
+            "label": "pihm_start-date",
+            "description": "start date",
+            "defaultvalue": "2017-01-01",
+            "datatype": "string"
+        }
+    Process:
+      required:
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        relations:
+          description: Property that describe the causal relationship between two
+            processes, two variables, a process and a variable or a variable and a
+            process
+          type: array
+          items:
+            $ref: '#/components/schemas/Process'
+    TimeInterval:
+      required:
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        description:
+          type: string
+        unit:
+          $ref: '#/components/schemas/Unit'
+        value:
+          format: int64
+          type: integer
+      example: |-
+        {
+            "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI",
+            "type": [
+                "https://w3id.org/mint/modelCatalog#TimeInterval"
+            ],
+            "label": "Simple economic time interval",
+            "description": "Time interval used in the aggregate crop supply response model for the country of South Sudan configuration",
+            "unit": {
+                "uri": "https://w3id.org/mint/instance/yearT"
+            },
+            "value": 1
+        }
+    Unit:
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        part:
+          type: array
+          items:
+            type: string
+        dimension:
+          type: array
+          items:
+            type: string
+        abbreviation:
+          type: array
+          items:
+            type: string
+      example: "{\n        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\"\
+        ,\n        \"type\": [ \n            \"http://qudt.org/1.1/schema/qudt#Unit\"\
+        \n        ],\n        \"label\": \"USD kg-1\",\n        \"part\": [\n    \
+        \        \"https://w3id.org/mint/instance/u_USD\",\n            \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
+        \n        ],\n        \"dimension\": [\n            \"M-1\"\n        ],\n\
+        \        \"abbreviation\": [\n            \"USD kg-1\"\n        ]\n    }"
+    VariablePresentation:
+      required:
+      - type
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        label:
+          type: string
+        description:
+          type: string
+        long_name:
+          type: string
+        short_name:
+          type: string
+        standard_name:
+          type: string
+        relevance_level:
+          format: int64
+          type: integer
+        unit:
+          $ref: '#/components/schemas/Unit'
+      example: "{\n    \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\",\n \
+        \   \"type\": [\n        \"https://w3id.org/mint/modelCatalog#VariablePresentation\"\
+        \n    ],\n    \"label\": \"ybarN\",\n    \"description\": \"Contains the yield\
+        \ elasticities to fertilizer use that are derived from Cycles output\",\n\
+        \    \"long_name\": \"yield elasticity\",\n    \"short_name\": \"ybarN\",\n\
+        \    \"standard_name\": \"crop_fertilizer~nitrogen__yield_elasticity\",\n\
+        \    \"relevance_level\": 1,\n    \"unit\": {\n        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\"\
+        ,\n        \"type\": [ \n            \"http://qudt.org/1.1/schema/qudt#Unit\"\
+        \n        ],\n        \"label\": \"USD kg-1\",\n        \"part\": [\n    \
+        \        \"https://w3id.org/mint/instance/u_USD\",\n            \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
+        \n        ],\n        \"dimension\": [\n            \"M-1\"\n        ],\n\
+        \        \"abbreviation\": [\n            \"USD kg-1\"\n        ]\n    }\n\
+        }"
+    User:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        userStatus:
+          format: int32
+          description: User Status
+          type: integer
+      xml:
+        name: User
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          format: int32
+          type: integer
+        type:
+          type: string
+        message:
+          type: string
+    CAG:
+      type: object
+      properties:
+        uri:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        parts:
+          description: Array of Parameter or Variables
+          type: array
+          items:
+            $ref: '#/components/schemas/Parameter'
+          anyOf:
+          - $ref: '#/components/schemas/VariablePresentation'
+          - $ref: '#/components/schemas/Process'
+        label:
+          description: '        '
+          type: string
+      example: "{\n    \"uri\": \"https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables\"\
+        ,\n    \"label\": \"CAG for Economic model for aggregate crop supply response\
+        \ model variables for the country of South Sudan configuration\",\n    \"\
+        type\": [\n        \"https://w3id.org/mint/modelCatalog#CAG\"\n    ],\n  \
+        \  \"parts\": [\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\"\
+        \n        },\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_production\"\
+        \n        }        \n    ]\n}"
+    Model:
+      description: '    '
+      required:
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        label:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        versions:
+          type: array
+          items:
+            type: string
+        categories:
+          type: array
+          items:
+            type: string
+        documentation:
+          description: '    '
+          type: array
+          items:
+            type: string
+    ModelVersion:
+      description: '    '
+      required:
+      - uri
+      type: object
+      properties:
+        uri:
+          type: string
+        label:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        documentation:
+          description: '    '
+          type: array
+          items:
+            type: string
+        version:
+          type: string
+        configuration:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: Bearer auth
+      scheme: bearer
+security:
+- bearerAuth: []
+tags:
+- name: modelconfiguration
+  description: Access to Petstore orders
+- name: user
+  description: Operations about user
+  externalDocs:
+    description: Find out more about our store
+    url: http://swagger.io
+externalDocs:
+  description: Find out more about MINT
+  url: http://mint.isi.edu

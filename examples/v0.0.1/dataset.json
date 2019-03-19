@@ -1,0 +1,16 @@
+{
+    "label": "crop-yield",
+    "format": "csv",
+    "description": "Contains the yield elasticities to fertilizer use that are derived from Cycles output",
+    "dimensionality": 0,
+    "type": [
+        "https://w3id.org/mint/modelCatalog#DatasetSpecification",
+        "https://w3id.org/wings/export/MINT#CropYield"
+    ],
+    "uri": "https://w3id.org/mint/instance/econ_yield",
+    "presentations": [
+        {
+            "uri": "https://w3id.org/mint/instance/econ_ybarN"
+        }
+    ]
+}

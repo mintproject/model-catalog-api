@@ -1,0 +1,15 @@
+{
+    "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables",
+    "label": "CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration",
+    "type": [
+        "https://w3id.org/mint/modelCatalog#CAG"
+    ],
+    "parts": [
+        {
+            "uri": "https://w3id.org/mint/instance/econ_ybarN"
+        },
+        {
+            "uri": "https://w3id.org/mint/instance/econ_production"
+        }        
+    ]
+}
