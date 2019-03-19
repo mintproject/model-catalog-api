@@ -210,77 +210,6 @@ paths:
           description: Invalid
       security:
       - bearerAuth: []
-  /modelconfiguration/{name}:
-    description: The REST endpoint/path used to get, update, and delete single instances
-      of an `ModelConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations
-      used to perform the get, update, and delete tasks, respectively.
-    get:
-      tags:
-      - modelconfiguration
-      summary: Get modelconfiguration by uri
-      description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: getModelConfiguratonByUri
-      parameters:
-      - name: name
-        in: path
-        description: |
-          The name of the resource
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelConfiguration'
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-    put:
-      tags:
-      - modelconfiguration
-      summary: Update model configuration
-      operationId: updateModelConfiguration
-      parameters:
-      - name: name
-        in: path
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelConfiguration'
-        required: true
-      responses:
-        200:
-          description: Updated
-      security:
-      - bearerAuth: []
-    delete:
-      tags:
-      - modelconfiguration
-      operationId: deleteModelConfiguration
-      parameters:
-      - name: name
-        in: path
-        required: true
-      responses:
-        400:
-          description: Invalid ID supplied
-        403:
-          description: You don't the permissions
-      security:
-      - bearerAuth: []
-    parameters:
-    - name: name
-      in: path
-      description: A unique identifier for a `ModelConfiguration`.
-      required: true
   /modelconfiguration/{name}/inputs:
     summary: Inputs related to a model configuration
     description: The REST endpoint/path used to list and create zero or more `Dataset`
@@ -917,9 +846,81 @@ paths:
         204:
           description: Successful response.
     parameters:
-    - name: modelVersionId
+    - 
+      name: modelVersionId
       in: path
       description: A unique identifier for a `ModelVersion`.
+      required: true
+      schema:
+        type: string
+  /modelconfiguration/{name}:
+    description: The REST endpoint/path used to get, update, and delete single instances
+      of an `ModelConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations
+      used to perform the get, update, and delete tasks, respectively.
+    get:
+      tags:
+      - modelconfiguration
+      summary: Get modelconfiguration by uri
+      description: Gets the details of a single instance of a `ModelConfiguration`.
+      operationId: getModelConfiguratonByUri
+      parameters:
+      - name: name
+        in: path
+        description: A unique identifier for a `ModelConfiguration`.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+    put:
+      tags:
+      - modelconfiguration
+      summary: Update model configuration
+      operationId: updateModelConfiguration
+      parameters:
+      - name: name
+        in: path
+        description: A unique identifier for a `ModelConfiguration`.
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        200:
+          description: Updated
+      security:
+      - bearerAuth: []
+    delete:
+      summary: Delete a ModelConfiguration
+      description: Deletes an existing `ModelConfiguration`.
+      operationId: deleteModelConfiguration
+      responses:
+        204:
+          description: Successful response.
+        400:
+          description: Invalid ID supplied
+        403:
+          description: You don't the permissions
+      security:
+      - bearerAuth: []
+    parameters:
+    - name: name
+      in: path
+      description: A unique identifier for a `ModelConfiguration`.
       required: true
       schema:
         type: string
@@ -973,7 +974,6 @@ components:
         \                 \"USD kg-1\"\n                ]\n            }\n       \
         \ }\n    ]\n}"
     ModelConfiguration:
-      required: []
       type: object
       properties:
         type:
@@ -1231,7 +1231,7 @@ components:
         \n        },\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_production\"\
         \n        }        \n    ]\n}"
     Model:
-      description: '    '
+      description: ""
       required:
       - uri
       type: object
@@ -1258,7 +1258,7 @@ components:
           items:
             type: string
     ModelVersion:
-      description: '    '
+      description: ""
       required:
       - uri
       type: object
