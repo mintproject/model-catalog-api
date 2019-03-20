@@ -10,6 +10,6 @@
     "standard_name": "crop_fertilizer~nitrogen__yield_elasticity",
     "relevance_level": 1,
     "unit": {
-        "uri": "https://w3id.org/mint/instance/USD_kg_1M_1",
+        "uri": "https://w3id.org/mint/instance/USD_kg_1M_1"
     }
 }

@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: Model Catalog
   description: This is MINT Model Catalog You can find out more about     Model Catalog
-    at [http://swagger.io](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
+    at [https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
   termsOfService: http://swagger.io/terms/
   contact:
     email: mosorio@isi.edu
@@ -27,20 +27,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
-            examples:
-              Simple User:
-                value: |-
-                  {
-                      "id": 53,
-                      "username": "some text",
-                      "firstName": "some text",
-                      "lastName": "some text",
-                      "email": "some text",
-                      "password": "some text",
-                      "phone": "some text",
-                      "userStatus": 75
-                  }
-        required: true
       responses:
         default:
           description: successful operation
@@ -242,6 +228,8 @@ paths:
         404:
           description: Model Configuration not found
     post:
+      tags:
+      - modelconfiguration    
       summary: Creates a new instance of a `Dataset` related as Input.
       description: Creates a new instance of a `Dataset` related as Input.
       operationId: addInputsByModelconfiguration
@@ -258,71 +246,6 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/DataSet'
-            examples:
-              inputs:
-                value: |-
-                  [
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 94,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 64
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 38
-                              }
-                          ],
-                          "type": "some text"
-                      },
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 50,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 90
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 8
-                              }
-                          ],
-                          "type": "some text"
-                      }
-                  ]
         required: true
       responses:
         201:
@@ -384,7 +307,9 @@ paths:
         404:
           description: Model Configuration not found
     post:
-      summary: Create the inputs of a model configuration
+      tags:
+      - modelconfiguration    
+      summary: Create the output of a model configuration
       description: Creates a new instance of a `Dataset` related as Output.
       operationId: addOutputsByModelconfiguration
       parameters:
@@ -400,71 +325,6 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/DataSet'
-            examples:
-              inputs:
-                value: |-
-                  [
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 94,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 64
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 38
-                              }
-                          ],
-                          "type": "some text"
-                      },
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 50,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 90
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 8
-                              }
-                          ],
-                          "type": "some text"
-                      }
-                  ]
         required: true
       responses:
         201:
@@ -526,6 +386,8 @@ paths:
         404:
           description: Model Configuration not found
     post:
+      tags:
+      - modelconfiguration    
       summary: Create the inputs of a model configuration
       description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
       operationId: addParametersByModelconfiguration
@@ -542,71 +404,6 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/Parameter'
-            examples:
-              inputs:
-                value: |-
-                  [
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 94,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 64
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 38
-                              }
-                          ],
-                          "type": "some text"
-                      },
-                      {
-                          "uri": "some text",
-                          "label": "some text",
-                          "format": "some text",
-                          "description": "some text",
-                          "dimensionality": 50,
-                          "presentations": [
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 90
-                              },
-                              {
-                                  "uri": "some text",
-                                  "type": "some text",
-                                  "label": "some text",
-                                  "description": "some text",
-                                  "long_name": "some text",
-                                  "short_name": "some text",
-                                  "standard_name": "some text",
-                                  "relevance_level": 8
-                              }
-                          ],
-                          "type": "some text"
-                      }
-                  ]
         required: true
       responses:
         201:
@@ -642,6 +439,8 @@ paths:
       entities.  This path contains a `GET` and `POST` operation to perform the list
       and create tasks, respectively.
     get:
+      tags:
+        - modelversion
       summary: List All ModelVersions
       description: Gets a list of all `ModelVersion` entities.
       operationId: getModelVersions
@@ -655,6 +454,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/ModelVersion'
     post:
+      tags:
+        - modelversion    
       summary: Create a ModelVersion
       description: Creates a new instance of a `ModelVersion`.
       operationId: createModelVersion
@@ -674,6 +475,8 @@ paths:
       entities.  This path contains a `GET` and `POST` operation to perform the list
       and create tasks, respectively.
     get:
+      tags:
+        - dataset    
       summary: List All datasets
       description: Gets a list of all `dataset` entities.
       operationId: getdatasets
@@ -687,6 +490,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/DataSet'
     post:
+      tags:
+        - dataset        
       summary: Create a dataset
       description: Creates a new instance of a `dataset`.
       operationId: createdataset
@@ -706,6 +511,8 @@ paths:
       entities.  This path contains a `GET` and `POST` operation to perform the list
       and create tasks, respectively.
     get:
+      tags:
+        - model    
       summary: List All models
       description: Gets a list of all `model` entities.
       operationId: getmodels
@@ -719,6 +526,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Model'
     post:
+      tags:
+        - model    
       summary: Create a model
       description: Creates a new instance of a `model`.
       operationId: createmodel
@@ -738,6 +547,8 @@ paths:
       entities.  This path contains a `GET` and `POST` operation to perform the list
       and create tasks, respectively.
     get:
+      tags:
+        - parameter  
       summary: List All Parameters
       description: Gets a list of all `Parameter` entities.
       operationId: getParameters
@@ -751,6 +562,8 @@ paths:
                 items:
                   $ref: '#/components/schemas/Parameter'
     post:
+      tags:
+        - parameter    
       summary: Create a Parameter
       description: Creates a new instance of a `Parameter`.
       operationId: createParameter
@@ -770,6 +583,8 @@ paths:
       of an `Model`.  This path contains `GET`, `PUT`, and `DELETE` operations used
       to perform the get, update, and delete tasks, respectively.
     get:
+      tags:
+        - model    
       summary: Get a Model
       description: Gets the details of a single instance of a `Model`.
       operationId: getModel
@@ -781,6 +596,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/Model'
     put:
+      tags:
+        - model    
       summary: Update a Model
       description: Updates an existing `Model`.
       operationId: updateModel
@@ -795,6 +612,8 @@ paths:
         202:
           description: Successful response.
     delete:
+      tags:
+        - model    
       summary: Delete a Model
       description: Deletes an existing `Model`.
       operationId: deleteModel
@@ -814,6 +633,8 @@ paths:
       of an `ModelVersion`.  This path contains `GET`, `PUT`, and `DELETE` operations
       used to perform the get, update, and delete tasks, respectively.
     get:
+      tags:
+        - modelversion    
       summary: Get a ModelVersion
       description: Gets the details of a single instance of a `ModelVersion`.
       operationId: getModelVersion
@@ -825,6 +646,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ModelVersion'
     put:
+      tags:
+        - modelversion       
       summary: Update a ModelVersion
       description: Updates an existing `ModelVersion`.
       operationId: updateModelVersion
@@ -839,6 +662,8 @@ paths:
         202:
           description: Successful response.
     delete:
+      tags:
+        - modelversion       
       summary: Delete a ModelVersion
       description: Deletes an existing `ModelVersion`.
       operationId: deleteModelVersion
@@ -905,6 +730,8 @@ paths:
       security:
       - bearerAuth: []
     delete:
+      tags:
+      - modelconfiguration
       summary: Delete a ModelConfiguration
       description: Deletes an existing `ModelConfiguration`.
       operationId: deleteModelConfiguration
@@ -945,34 +772,24 @@ components:
           items:
             $ref: '#/components/schemas/VariablePresentation'
         type:
-          description: '    '
+          description: ''
           type: array
           items:
             type: string
         uri:
           type: string
-      example: "{\n    \"label\": \"crop-yield\",\n    \"format\": \"csv\",\n    \"\
-        description\": \"Contains the yield elasticities to fertilizer use that are\
-        \ derived from Cycles output\",\n    \"dimensionality\": 0,\n    \"type\"\
-        : [\n        \"https://w3id.org/mint/modelCatalog#DatasetSpecification\",\n\
-        \        \"https://w3id.org/wings/export/MINT#CropYield\"\n    ],\n    \"\
-        uri\": \"https://w3id.org/mint/instance/econ_yield\",\n    \"presentations\"\
-        : [\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\"\
-        ,\n            \"type\": [\n                \"https://w3id.org/mint/modelCatalog#VariablePresentation\"\
-        \n            ],\n            \"label\": \"ybarN\",\n            \"description\"\
-        : \"Contains the yield elasticities to fertilizer use that are derived from\
-        \ Cycles output\",\n            \"long_name\": \"yield elasticity\",\n   \
-        \         \"short_name\": \"ybarN\",\n            \"standard_name\": \"crop_fertilizer~nitrogen__yield_elasticity\"\
-        ,\n            \"relevance_level\": 1,\n            \"unit\": {\n        \
-        \        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\",\n      \
-        \          \"type\": [ \n                    \"http://qudt.org/1.1/schema/qudt#Unit\"\
-        \n                ],\n                \"label\": \"USD kg-1\",\n         \
-        \       \"part\": [\n                    \"https://w3id.org/mint/instance/u_USD\"\
-        ,\n                    \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
-        \n                ],\n                \"dimension\": [\n                 \
-        \   \"M-1\"\n                ],\n                \"abbreviation\": [\n   \
-        \                 \"USD kg-1\"\n                ]\n            }\n       \
-        \ }\n    ]\n}"
+      example:
+        label: crop-yield
+        format: csv
+        description: Contains the yield elasticities to fertilizer use that are derived from
+          Cycles output
+        dimensionality: 0
+        type:
+        - https://w3id.org/mint/modelCatalog#DatasetSpecification
+        - https://w3id.org/wings/export/MINT#CropYield
+        uri: https://w3id.org/mint/instance/econ_yield
+        presentations:
+        - uri: https://w3id.org/mint/instance/econ_ybarN
     ModelConfiguration:
       type: object
       properties:
@@ -1016,6 +833,34 @@ components:
             $ref: '#/components/schemas/Parameter'
         componentLocation:
           type: string
+      example:
+        type:
+        - https://w3id.org/mint/modelCatalog#ModelConfiguration
+        label: Economic aggregate crop supply
+        inputs:
+        - uri: https://w3id.org/mint/instance/econ_yield
+        outputs:
+        - uri: https://w3id.org/mint/instance/econ_land_use
+        description: Aggregate crop supply response model for the country of South Sudan configuration
+        cag:
+        - uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        - uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process
+        process:
+        - uri: https://w3id.org/mint/instance/crop_yield
+        - uri: https://w3id.org/mint/instance/crop_supply
+        intervalTime:
+        - uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        container: https://w3id.org/mint/instance/mintproject/economic:latest
+        constrainT: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+          (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
+          dcdom:region) uriConcat(?c '_region' ?location) -> (?in1 dcdom:region ?location)
+          (?in2 dcdom:region ?location) print('Setting domain of ?in1 and ?in2 to ?location
+          because both inputs to PIHM should be from the same region')]"
+        parameters:
+        - uri: http://ontosoft.isi.edu:7070/page/mint/instance/pihm_start-date
+        - uri: http://ontosoft.isi.edu:7070/page/mint/instance/pihm_end-date
+        componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
     Parameter:
       required:
       - uri
@@ -1023,30 +868,24 @@ components:
       properties:
         uri:
           type: string
+          example: https://w3id.org/mint/instance/pihm_start-date
         type:
           type: array
+          example: ["https://w3id.org/mint/modelCatalog#Parameter", "https://w3id.org/wings/export/MINT#StartDate" ]
           items:
             type: string
         label:
           type: string
+          example: pihm_start-date
         description:
           type: string
+          example: start date
         defaultvalue:
           type: string
+          example: 2017-01-01
         datatype:
           type: string
-      example: |-
-        {
-            "uri": "https://w3id.org/mint/instance/pihm_start-date",
-            "type": [
-                "https://w3id.org/mint/modelCatalog#Parameter",
-                "https://w3id.org/wings/export/MINT#StartDate"
-            ],
-            "label": "pihm_start-date",
-            "description": "start date",
-            "defaultvalue": "2017-01-01",
-            "datatype": "string"
-        }
+          example: string
     Process:
       required:
       - uri
@@ -1067,6 +906,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Process'
+      example:
+        uri: https://w3id.org/mint/instance/crop_yield
+        type:
+        - https://w3id.org/mint/modelCatalog#Process
+        label: crop yield
+        relations:
+        - uri: https://w3id.org/mint/instance/crop_supply
     TimeInterval:
       required:
       - uri
@@ -1087,19 +933,16 @@ components:
         value:
           format: int64
           type: integer
-      example: |-
-        {
-            "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI",
-            "type": [
-                "https://w3id.org/mint/modelCatalog#TimeInterval"
-            ],
-            "label": "Simple economic time interval",
-            "description": "Time interval used in the aggregate crop supply response model for the country of South Sudan configuration",
-            "unit": {
-                "uri": "https://w3id.org/mint/instance/yearT"
-            },
-            "value": 1
-        }
+      example:
+        uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        type:
+        - https://w3id.org/mint/modelCatalog#TimeInterval
+        label: Simple economic time interval
+        description: Time interval used in the aggregate crop supply response model for the
+          country of South Sudan configuration
+        unit:
+          uri: https://w3id.org/mint/instance/yearT
+        value: 1
     Unit:
       type: object
       properties:
@@ -1109,6 +952,8 @@ components:
           type: array
           items:
             type: string
+        description:
+          type: string
         label:
           type: string
         part:
@@ -1123,12 +968,18 @@ components:
           type: array
           items:
             type: string
-      example: "{\n        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\"\
-        ,\n        \"type\": [ \n            \"http://qudt.org/1.1/schema/qudt#Unit\"\
-        \n        ],\n        \"label\": \"USD kg-1\",\n        \"part\": [\n    \
-        \        \"https://w3id.org/mint/instance/u_USD\",\n            \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
-        \n        ],\n        \"dimension\": [\n            \"M-1\"\n        ],\n\
-        \        \"abbreviation\": [\n            \"USD kg-1\"\n        ]\n    }"
+      example:
+        uri: https://w3id.org/mint/instance/USD_kg_1M_1
+        type:
+        - http://qudt.org/1.1/schema/qudt#Unit
+        label: USD kg-1
+        part:
+        - https://w3id.org/mint/instance/u_USD
+        - https://w3id.org/mint/instance/u__1_M_kilo_gram_kg
+        dimension:
+        - M-1
+        abbreviation:
+        - USD kg-1
     VariablePresentation:
       required:
       - type
@@ -1156,19 +1007,19 @@ components:
           type: integer
         unit:
           $ref: '#/components/schemas/Unit'
-      example: "{\n    \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\",\n \
-        \   \"type\": [\n        \"https://w3id.org/mint/modelCatalog#VariablePresentation\"\
-        \n    ],\n    \"label\": \"ybarN\",\n    \"description\": \"Contains the yield\
-        \ elasticities to fertilizer use that are derived from Cycles output\",\n\
-        \    \"long_name\": \"yield elasticity\",\n    \"short_name\": \"ybarN\",\n\
-        \    \"standard_name\": \"crop_fertilizer~nitrogen__yield_elasticity\",\n\
-        \    \"relevance_level\": 1,\n    \"unit\": {\n        \"uri\": \"https://w3id.org/mint/instance/USD_kg_1M_1\"\
-        ,\n        \"type\": [ \n            \"http://qudt.org/1.1/schema/qudt#Unit\"\
-        \n        ],\n        \"label\": \"USD kg-1\",\n        \"part\": [\n    \
-        \        \"https://w3id.org/mint/instance/u_USD\",\n            \"https://w3id.org/mint/instance/u__1_M_kilo_gram_kg\"\
-        \n        ],\n        \"dimension\": [\n            \"M-1\"\n        ],\n\
-        \        \"abbreviation\": [\n            \"USD kg-1\"\n        ]\n    }\n\
-        }"
+      example:
+        uri: https://w3id.org/mint/instance/econ_ybarN
+        type:
+        - https://w3id.org/mint/modelCatalog#VariablePresentation
+        label: ybarN
+        description: Contains the yield elasticities to fertilizer use that are derived from
+          Cycles output
+        long_name: yield elasticity
+        short_name: ybarN
+        standard_name: crop_fertilizer~nitrogen__yield_elasticity
+        relevance_level: 1
+        unit:
+          uri: https://w3id.org/mint/instance/USD_kg_1M_1
     User:
       type: object
       properties:
@@ -1221,15 +1072,17 @@ components:
           - $ref: '#/components/schemas/VariablePresentation'
           - $ref: '#/components/schemas/Process'
         label:
-          description: '        '
+          description: ''
           type: string
-      example: "{\n    \"uri\": \"https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables\"\
-        ,\n    \"label\": \"CAG for Economic model for aggregate crop supply response\
-        \ model variables for the country of South Sudan configuration\",\n    \"\
-        type\": [\n        \"https://w3id.org/mint/modelCatalog#CAG\"\n    ],\n  \
-        \  \"parts\": [\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_ybarN\"\
-        \n        },\n        {\n            \"uri\": \"https://w3id.org/mint/instance/econ_production\"\
-        \n        }        \n    ]\n}"
+      example:
+        uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        label: CAG for Economic model for aggregate crop supply response model variables for
+          the country of South Sudan configuration
+        type:
+        - https://w3id.org/mint/modelCatalog#CAG
+        parts:
+        - uri: https://w3id.org/mint/instance/econ_ybarN
+        - uri: https://w3id.org/mint/instance/econ_production
     Model:
       description: ""
       required:
@@ -1257,6 +1110,21 @@ components:
           type: array
           items:
             type: string
+      example:
+        uri: https://w3id.org/mint/instance/DSSAT
+        label: DSSAT
+        description: The Decision Support System for Agrotechnology Transfer (DSSAT) comprises
+          dynamic crop growth simulation model for over 40 crops. The model simulates growth;
+          development; and yield as a function of the soil-plant-atmosphere dynamics.
+        type:
+        - https://w3id.org/mint/modelCatalog#Model
+        - https://w3id.org/mint/modelCatalog#TheoryBasedModel
+        versions:
+        - https://w3id.org/mint/instance/DSSAT_4.7
+        categories:
+        - Agriculture
+        documentation:
+        - https://dssat.net
     ModelVersion:
       description: ""
       required:
@@ -1280,6 +1148,14 @@ components:
           type: string
         configuration:
           type: string
+      example:
+        uri: https://w3id.org/mint/instance/DSSAT_4.7
+        label: DSSAT v4.7
+        type:
+        - https://w3id.org/mint/modelCatalog#ModelVersion
+        - http://ontosoft.org/software#SoftwareVersion
+        version: '4.7'
+        configuration: https://w3id.org/mint/instance/DSSAT_cfg_simple
   securitySchemes:
     bearerAuth:
       type: http
@@ -1287,14 +1163,6 @@ components:
       scheme: bearer
 security:
 - bearerAuth: []
-tags:
-- name: modelconfiguration
-  description: Access to Petstore orders
-- name: user
-  description: Operations about user
-  externalDocs:
-    description: Find out more about our store
-    url: http://swagger.io
 externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu
