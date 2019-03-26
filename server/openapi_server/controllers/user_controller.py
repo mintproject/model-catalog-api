@@ -5,7 +5,7 @@ from openapi_server.models.user import User  # noqa: E501
 from openapi_server import util
 
 
-def create_user(user=None):  # noqa: E501
+def create_user(user):  # noqa: E501
     """Create user
 
     This can only be done by the logged in user. # noqa: E501
@@ -38,7 +38,7 @@ def get_user_by_name(username):  # noqa: E501
 
      # noqa: E501
 
-    :param username: The name that needs to be fetched. Use user1 for testing. 
+    :param username: The name that needs to be fetched. Use user1 for testing.
     :type username: str
 
     :rtype: User

@@ -13,6 +13,8 @@ info:
   version: 0.0.1
 servers:
 - url: http://api.mint.isi.edu/v0.0.1
+- url: http://localhost:8080/v0.0.1
+
 paths:
   /user:
     post:

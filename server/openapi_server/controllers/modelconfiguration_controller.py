@@ -11,7 +11,7 @@ from openapi_server import util
 def add_inputs_by_modelconfiguration(name, data_set):  # noqa: E501
     """Creates a new instance of a &#x60;Dataset&#x60; related as Input.
 
-    Creates a new instance of a &#x60;Dataset&#x60; related as Input. # noqa: E501
+     # noqa: E501
 
     :param name: 
     :type name: str
@@ -37,23 +37,6 @@ def add_model_configuration(model_configuration):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
-
-
-def add_outputs_by_modelconfiguration(name, data_set):  # noqa: E501
-    """Create the output of a model configuration
-
-    Creates a new instance of a &#x60;Dataset&#x60; related as Output. # noqa: E501
-
-    :param name: 
-    :type name: str
-    :param data_set: 
-    :type data_set: list | bytes
-
-    :rtype: None
-    """
-    if connexion.request.is_json:
-        data_set = [DataSet.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
     return 'do some magic!'
 
 
@@ -147,6 +130,23 @@ def list_model_configurations():  # noqa: E501
 
     :rtype: List[ModelConfiguration]
     """
+    return 'do some magic!'
+
+
+def modelconfiguration_name_outputs_post(name, data_set):  # noqa: E501
+    """Create the output of a model configuration
+
+     # noqa: E501
+
+    :param name: 
+    :type name: str
+    :param data_set: 
+    :type data_set: list | bytes
+
+    :rtype: None
+    """
+    if connexion.request.is_json:
+        data_set = [DataSet.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
     return 'do some magic!'
 
 

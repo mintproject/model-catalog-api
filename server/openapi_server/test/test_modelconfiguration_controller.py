@@ -43,20 +43,6 @@ class TestModelconfigurationController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_add_outputs_by_modelconfiguration(self):
-        """Test case for add_outputs_by_modelconfiguration
-
-        Create the output of a model configuration
-        """
-        data_set = None
-        response = self.client.open(
-            '/v0.0.1/modelconfiguration/{name}/outputs'.format(name='name_example'),
-            method='POST',
-            data=json.dumps(data_set),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
     def test_add_parameters_by_modelconfiguration(self):
         """Test case for add_parameters_by_modelconfiguration
 
@@ -134,6 +120,20 @@ class TestModelconfigurationController(BaseTestCase):
         response = self.client.open(
             '/v0.0.1/modelconfigurations',
             method='GET')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_modelconfiguration_name_outputs_post(self):
+        """Test case for modelconfiguration_name_outputs_post
+
+        Create the output of a model configuration
+        """
+        data_set = None
+        response = self.client.open(
+            '/v0.0.1/modelconfiguration/{name}/outputs'.format(name='name_example'),
+            method='POST',
+            data=json.dumps(data_set),
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

@@ -14,8 +14,7 @@ externalDocs:
   url: http://mint.isi.edu
 servers:
 - url: http://api.mint.isi.edu/v0.0.1
-security:
-- bearerAuth: []
+- url: http://localhost:8080/v0.0.1
 paths:
   /user:
     post:
@@ -27,6 +26,7 @@ paths:
             schema:
               $ref: '#/components/schemas/User'
         description: Created user object
+        required: true
       responses:
         default:
           description: successful operation
@@ -57,10 +57,10 @@ paths:
       responses:
         200:
           content:
-            application/xml:
+            application/json:
               schema:
                 type: string
-            application/json:
+            application/xml:
               schema:
                 type: string
           description: successful operation
@@ -113,8 +113,6 @@ paths:
           description: Invalid username supplied
         404:
           description: User not found
-      security:
-      - bearerAuth: []
       summary: Delete user
       tags:
       - user
@@ -122,7 +120,7 @@ paths:
     get:
       operationId: get_user_by_name
       parameters:
-      - description: 'The name that needs to be fetched. Use user1 for testing. '
+      - description: The name that needs to be fetched. Use user1 for testing.
         explode: false
         in: path
         name: username
@@ -133,10 +131,10 @@ paths:
       responses:
         200:
           content:
-            application/xml:
+            application/json:
               schema:
                 $ref: '#/components/schemas/User'
-            application/json:
+            application/xml:
               schema:
                 $ref: '#/components/schemas/User'
           description: successful operation
@@ -162,7 +160,7 @@ paths:
         style: simple
       requestBody:
         content:
-          '*/*':
+          application/json:
             schema:
               $ref: '#/components/schemas/User'
         description: Updated user object
@@ -173,13 +171,12 @@ paths:
         404:
           description: User not found
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Updated user
       tags:
       - user
       x-openapi-router-controller: openapi_server.controllers.user_controller
   /modelconfigurations:
-    description: The REST endpoint/path used to list and create zero or more `modelConfiguration` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       operationId: list_model_configurations
       responses:
@@ -193,6 +190,7 @@ paths:
           description: successful operation
         400:
           description: Invalid uri supplied
+      security: []
       summary: List modelconfiguration
       tags:
       - modelconfiguration
@@ -213,14 +211,12 @@ paths:
         400:
           description: Invalid
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Create a model configuration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    summary: Path used to manage the list of modelconfigurations.
   /modelconfiguration/{name}/inputs:
-    description: The REST endpoint/path used to list and create zero or more `Dataset` entities related with a `ModelConfiguration` as an Input.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       operationId: get_inputs_by_modelconfiguration
       parameters:
@@ -246,12 +242,12 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []
       summary: Get the inputs of a model configuration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
-      description: Creates a new instance of a `Dataset` related as Input.
       operationId: add_inputs_by_modelconfiguration
       parameters:
       - explode: false
@@ -289,14 +285,12 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
           description: You are not authorized to do that
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Creates a new instance of a `Dataset` related as Input.
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    summary: Inputs related to a model configuration
   /modelconfiguration/{name}/outputs:
-    description: The REST endpoint/path used to list and create zero or more `Dataset` entities related with a `ModelConfiguration` as an Output.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       operationId: get_outputs_by_modelconfiguration
       parameters:
@@ -322,13 +316,13 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []
       summary: Get the outputs of a model configuration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
-      description: Creates a new instance of a `Dataset` related as Output.
-      operationId: add_outputs_by_modelconfiguration
+      operationId: modelconfiguration_name_outputs_post
       parameters:
       - explode: false
         in: path
@@ -365,14 +359,12 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
           description: You are not authorized to do that
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Create the output of a model configuration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    summary: Outputs related to a model configuration
   /modelconfiguration/{name}/parameters:
-    description: The REST endpoint/path used to list and create zero or more `Parameter` entities related with a `ModelConfiguration` as an Output.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       operationId: get_parameters_by_modelconfiguration
       parameters:
@@ -398,6 +390,7 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []
       summary: Get the parameters of a model configuration
       tags:
       - modelconfiguration
@@ -441,14 +434,12 @@ paths:
                 $ref: '#/components/schemas/ApiResponse'
           description: You are not authorized to do that
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Create the inputs of a model configuration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    summary: Parameters related to a model configuration
   /modelversions:
-    description: The REST endpoint/path used to list and create zero or more `ModelVersion` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       description: Gets a list of all `ModelVersion` entities.
       operationId: get_model_versions
@@ -461,6 +452,7 @@ paths:
                   $ref: '#/components/schemas/ModelVersion'
                 type: array
           description: Successful response - returns an array of `ModelVersion` entities.
+      security: []
       summary: List All ModelVersions
       tags:
       - modelversion
@@ -478,13 +470,13 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Create a ModelVersion
       tags:
       - modelversion
       x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    summary: Path used to manage the list of ModelVersions.
   /datasets:
-    description: The REST endpoint/path used to list and create zero or more `dataset` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       description: Gets a list of all `dataset` entities.
       operationId: getdatasets
@@ -497,6 +489,7 @@ paths:
                   $ref: '#/components/schemas/DataSet'
                 type: array
           description: Successful response - returns an array of `dataset` entities.
+      security: []
       summary: List All datasets
       tags:
       - dataset
@@ -514,13 +507,13 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Create a dataset
       tags:
       - dataset
       x-openapi-router-controller: openapi_server.controllers.dataset_controller
-    summary: Path used to manage the list of datasets.
   /models:
-    description: The REST endpoint/path used to list and create zero or more `model` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       description: Gets a list of all `model` entities.
       operationId: getmodels
@@ -533,6 +526,7 @@ paths:
                   $ref: '#/components/schemas/Model'
                 type: array
           description: Successful response - returns an array of `model` entities.
+      security: []
       summary: List All models
       tags:
       - model
@@ -550,13 +544,12 @@ paths:
       responses:
         201:
           description: Successful response.
+      security: []
       summary: Create a model
       tags:
       - model
       x-openapi-router-controller: openapi_server.controllers.model_controller
-    summary: Path used to manage the list of models.
   /parameters:
-    description: The REST endpoint/path used to list and create zero or more `Parameter` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       description: Gets a list of all `Parameter` entities.
       operationId: get_parameters
@@ -569,6 +562,7 @@ paths:
                   $ref: '#/components/schemas/Parameter'
                 type: array
           description: Successful response - returns an array of `Parameter` entities.
+      security: []
       summary: List All Parameters
       tags:
       - parameter
@@ -586,11 +580,12 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Create a Parameter
       tags:
       - parameter
       x-openapi-router-controller: openapi_server.controllers.parameter_controller
-    summary: Path used to manage the list of Parameters.
   /model/{modelId}:
     delete:
       description: Deletes an existing `Model`.
@@ -607,11 +602,12 @@ paths:
       responses:
         204:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Delete a Model
       tags:
       - model
       x-openapi-router-controller: openapi_server.controllers.model_controller
-    description: The REST endpoint/path used to get, update, and delete single instances of an `Model`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.
     get:
       description: Gets the details of a single instance of a `Model`.
       operationId: get_model
@@ -631,6 +627,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Model'
           description: Successful response - returns a single `Model`.
+      security: []
       summary: Get a Model
       tags:
       - model
@@ -657,11 +654,12 @@ paths:
       responses:
         202:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Update a Model
       tags:
       - model
       x-openapi-router-controller: openapi_server.controllers.model_controller
-    summary: Path used to manage a single Model.
   /modelversion/{modelVersionId}:
     delete:
       description: Deletes an existing `ModelVersion`.
@@ -678,11 +676,11 @@ paths:
       responses:
         204:
           description: Successful response.
+      security: []
       summary: Delete a ModelVersion
       tags:
       - modelversion
       x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    description: The REST endpoint/path used to get, update, and delete single instances of an `ModelVersion`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.
     get:
       description: Gets the details of a single instance of a `ModelVersion`.
       operationId: get_model_version
@@ -702,6 +700,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ModelVersion'
           description: Successful response - returns a single `ModelVersion`.
+      security: []
       summary: Get a ModelVersion
       tags:
       - modelversion
@@ -728,11 +727,12 @@ paths:
       responses:
         202:
           description: Successful response.
+      security:
+      - BearerAuth: []
       summary: Update a ModelVersion
       tags:
       - modelversion
       x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    summary: Path used to manage a single ModelVersion.
   /modelconfiguration/{name}:
     delete:
       description: Deletes an existing `ModelConfiguration`.
@@ -754,12 +754,11 @@ paths:
         403:
           description: You don't the permissions
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Delete a ModelConfiguration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    description: The REST endpoint/path used to get, update, and delete single instances of an `ModelConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.
     get:
       description: Gets the details of a single instance of a `ModelConfiguration`.
       operationId: get_model_configuraton_by_uri
@@ -783,6 +782,7 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []
       summary: Get modelconfiguration by uri
       tags:
       - modelconfiguration
@@ -808,7 +808,7 @@ paths:
         200:
           description: Updated
       security:
-      - bearerAuth: []
+      - BearerAuth: []
       summary: Update model configuration
       tags:
       - modelconfiguration
@@ -1227,7 +1227,6 @@ components:
       - uri
       type: object
   securitySchemes:
-    bearerAuth:
-      description: Bearer auth
+    BearerAuth:
       scheme: bearer
       type: http
