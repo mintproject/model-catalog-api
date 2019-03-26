@@ -1,0 +1,1318 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: mosorio@isi.edu
+  description: This is MINT Model Catalog You can find out more about     Model Catalog at [https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Model Catalog
+  version: 0.0.2
+externalDocs:
+  description: Find out more about MINT
+  url: http://mint.isi.edu
+servers:
+- url: http://api.mint.isi.edu/v0.0.1
+- url: http://localhost:8080/v0.0.1
+paths:
+  /user:
+    post:
+      description: This can only be done by the logged in user.
+      operationId: create_user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Created user object
+        required: true
+      responses:
+        default:
+          description: successful operation
+      summary: Create user
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+  /user/login:
+    get:
+      operationId: login_user
+      parameters:
+      - description: The user name for login
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The password for login in clear text
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: string
+            application/xml:
+              schema:
+                type: string
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              explode: false
+              schema:
+                format: int32
+                type: integer
+              style: simple
+            X-Expires-After:
+              description: date in UTC when token expires
+              explode: false
+              schema:
+                format: date-time
+                type: string
+              style: simple
+        400:
+          description: Invalid username/password supplied
+      summary: Logs user into the system
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+  /user/logout:
+    get:
+      operationId: logout_user
+      responses:
+        default:
+          description: successful operation
+      summary: Logs out current logged in user session
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+  /user/{username}:
+    delete:
+      description: This can only be done by the logged in user.
+      operationId: delete_user
+      parameters:
+      - description: The name that needs to be deleted
+        explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+      summary: Delete user
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+    get:
+      operationId: get_user_by_name
+      parameters:
+      - description: The name that needs to be fetched. Use user1 for testing.
+        explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: successful operation
+        400:
+          description: Invalid username supplied
+        404:
+          description: User not found
+      summary: Get user by user name
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+    put:
+      description: This can only be done by the logged in user.
+      operationId: update_user
+      parameters:
+      - description: name that need to be updated
+        explode: false
+        in: path
+        name: username
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: Updated user object
+        required: true
+      responses:
+        400:
+          description: Invalid user supplied
+        404:
+          description: User not found
+      security:
+      - BearerAuth: []
+      summary: Updated user
+      tags:
+      - user
+      x-openapi-router-controller: openapi_server.controllers.user_controller
+  /modelconfigurations:
+    get:
+      operationId: list_model_configurations
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelConfiguration'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+      security: []
+      summary: List modelconfiguration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: add_model_configuration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        201:
+          content:
+            application/json: {}
+          description: Created
+        400:
+          description: Invalid
+      security:
+      - BearerAuth: []
+      summary: Create a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/inputs:
+    get:
+      operationId: get_inputs_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the inputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: add_inputs_by_modelconfiguration
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/DataSet'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Creates a new instance of a `Dataset` related as Input.
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/outputs:
+    get:
+      operationId: get_outputs_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the outputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: modelconfiguration_id_outputs_post
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/DataSet'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Create the output of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/parameters:
+    get:
+      operationId: get_parameters_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ApiResponse'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the parameters of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
+      operationId: add_parameters_by_modelconfiguration
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Parameter'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Create the inputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelversions:
+    get:
+      description: Gets a list of all `ModelVersion` entities.
+      operationId: get_model_versions
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelVersion'
+                type: array
+          description: Successful response - returns an array of `ModelVersion` entities.
+      security: []
+      summary: List All ModelVersions
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    post:
+      description: Creates a new instance of a `ModelVersion`.
+      operationId: create_model_version
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        description: A new `ModelVersion` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+  /datasets:
+    get:
+      description: Gets a list of all `dataset` entities.
+      operationId: getdatasets
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataSet'
+                type: array
+          description: Successful response - returns an array of `dataset` entities.
+      security: []
+      summary: List All datasets
+      tags:
+      - dataset
+      x-openapi-router-controller: openapi_server.controllers.dataset_controller
+    post:
+      description: Creates a new instance of a `dataset`.
+      operationId: createdataset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSet'
+        description: A new `dataset` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a dataset
+      tags:
+      - dataset
+      x-openapi-router-controller: openapi_server.controllers.dataset_controller
+  /models:
+    get:
+      description: Gets a list of all `model` entities.
+      operationId: getmodels
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Model'
+                type: array
+          description: Successful response - returns an array of `model` entities.
+      security: []
+      summary: List All models
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    post:
+      description: Creates a new instance of a `model`.
+      operationId: createmodel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        description: A new `model` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+  /parameters:
+    get:
+      description: Gets a list of all `Parameter` entities.
+      operationId: get_parameters
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Parameter'
+                type: array
+          description: Successful response - returns an array of `Parameter` entities.
+      security: []
+      summary: List All Parameters
+      tags:
+      - parameter
+      x-openapi-router-controller: openapi_server.controllers.parameter_controller
+    post:
+      description: Creates a new instance of a `Parameter`.
+      operationId: create_parameter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parameter'
+        description: A new `Parameter` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a Parameter
+      tags:
+      - parameter
+      x-openapi-router-controller: openapi_server.controllers.parameter_controller
+  /model/{modelId}:
+    delete:
+      description: Deletes an existing `Model`.
+      operationId: delete_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: modelId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Delete a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    get:
+      description: Gets the details of a single instance of a `Model`.
+      operationId: get_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: modelId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Successful response - returns a single `Model`.
+      security: []
+      summary: Get a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    put:
+      description: Updates an existing `Model`.
+      operationId: update_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: modelId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        description: Updated `Model` information.
+        required: true
+      responses:
+        202:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Update a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+  /modelversion/{modelVersionId}:
+    delete:
+      description: Deletes an existing `ModelVersion`.
+      operationId: delete_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: modelVersionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+      security: []
+      summary: Delete a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    get:
+      description: Gets the details of a single instance of a `ModelVersion`.
+      operationId: get_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: modelVersionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelVersion'
+          description: Successful response - returns a single `ModelVersion`.
+      security: []
+      summary: Get a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    put:
+      description: Updates an existing `ModelVersion`.
+      operationId: update_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: modelVersionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        description: Updated `ModelVersion` information.
+        required: true
+      responses:
+        202:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Update a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+  /modelconfiguration/{id}:
+    delete:
+      description: Deletes an existing `ModelConfiguration`.
+      operationId: delete_model_configuration
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+        400:
+          description: Invalid ID supplied
+        403:
+          description: You don't the permissions
+      security:
+      - BearerAuth: []
+      summary: Delete a ModelConfiguration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    get:
+      description: Gets the details of a single instance of a `ModelConfiguration`.
+      operationId: get_model_configuraton_by_uri
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get modelconfiguration by uri
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    put:
+      operationId: update_model_configuration
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        200:
+          description: Updated
+      security:
+      - BearerAuth: []
+      summary: Update model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+components:
+  schemas:
+    DataSet:
+      example:
+      - summary: Force the mint URI, add an external rdf:type
+        id: https://w3id.org/mint/instance/crop-yield
+        label: crop-yield
+        format: csv
+        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        dimensionality: 0
+        type:
+        - https://w3id.org/wings/export/MINT#CropYield
+        presentations:
+        - id: https://w3id.org/mint/instance/econ_ybarN
+      - summary: custom ID, add an external rdf:type
+        id: crop-yield
+        label: crop-yield
+        format: csv
+        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        dimensionality: 0
+        type:
+        - https://w3id.org/wings/export/MINT#CropYield
+        presentations:
+        - id: https://w3id.org/mint/instance/econ_ybarN
+      properties:
+        label:
+          type: string
+        format:
+          type: string
+        description:
+          type: string
+        dimensionality:
+          format: int64
+          type: integer
+        presentations:
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          type: array
+        type:
+          items:
+            type: string
+          type: array
+        id:
+          type: string
+      required:
+      - id
+      type: object
+    ModelConfiguration:
+      example:
+      - id: https://w3id.org/mint/instance/economic
+        label: Economic aggregate crop supply
+        inputs:
+        - id: https://w3id.org/mint/instance/econ_yield
+        outputs:
+        - id: https://w3id.org/mint/instance/econ_land_use
+        description: Aggregate crop supply response model for the country of South Sudan configuration
+        cag:
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process
+        process:
+        - id: https://w3id.org/mint/instance/crop_yield
+        - id: https://w3id.org/mint/instance/crop_supply
+        intervalTime:
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        container: https://w3id.org/mint/instance/mintproject/economic:latest
+        constrainT: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+          (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
+          dcdom:region) uriConcat(?c ''_region'' ?location) -> (?in1 dcdom:region
+          ?location) (?in2 dcdom:region ?location) print(''Setting domain of ?in1
+          and ?in2 to ?location because both inputs to PIHM should be from the same
+          region'')]'
+        parameters:
+        - id: http://w3id.org/instance/pihm_start-date
+        - id: http://on.isi.edu:7070/page/mint/instance/pihm_end-date
+        componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
+      - id: economic
+        label: Economic aggregate crop supply
+        inputs:
+        - id: https://w3id.org/mint/instance/econ_yield
+        outputs:
+        - id: https://w3id.org/mint/instance/econ_land_use
+        description: Aggregate crop supply response model for the country of South Sudan configuration
+        cag:
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process
+        process:
+        - id: https://w3id.org/mint/instance/crop_yield
+        - id: https://w3id.org/mint/instance/crop_supply
+        intervalTime:
+        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        container: https://w3id.org/mint/instance/mintproject/economic:latest
+        constrainT: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+          (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
+          dcdom:region) uriConcat(?c ''_region'' ?location) -> (?in1 dcdom:region
+          ?location) (?in2 dcdom:region ?location) print(''Setting domain of ?in1
+          and ?in2 to ?location because both inputs to PIHM should be from the same
+          region'')]'
+        parameters:
+        - id: http://w3id.org/instance/pihm_start-date
+        - id: http://on.isi.edu:7070/page/mint/instance/pihm_end-date
+        componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        label:
+          type: string
+        inputs:
+          items:
+            $ref: '#/components/schemas/DataSet'
+          type: array
+        outputs:
+          items:
+            $ref: '#/components/schemas/DataSet'
+          type: array
+        description:
+          type: string
+        cag:
+          items:
+            $ref: '#/components/schemas/CAG'
+          type: array
+        process:
+          items:
+            $ref: '#/components/schemas/Process'
+          type: array
+        intervalTime:
+          items:
+            $ref: '#/components/schemas/TimeInterval'
+          type: array
+        implementationScriptLocation:
+          type: string
+        container:
+          type: string
+        constrainT:
+          type: string
+        parameters:
+          items:
+            $ref: '#/components/schemas/Parameter'
+          type: array
+        componentLocation:
+          type: string
+      required:
+      - id
+      type: object
+    Parameter:
+      example:
+      - summary: Force the MINT URI, add an external rdf:type
+        id: https://w3id.org/mint/instance/pihm_start-date
+        type:
+        - https://w3id.org/wings/export/MINT#StartDate
+        label: pihm_start-date
+        description: start date
+        defaultvalue: 2017-01-01
+        datatype: string
+      - summary: URI will be generated using the id and add an external rdf:type
+        id: new_parameter
+        type:
+        - https://w3id.org/wings/export/MINT#StartDate
+        label: pihm_start-date
+        description: start date
+        defaultvalue: 2017-01-01
+        datatype: string
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        label:
+          type: string
+        description:
+          type: string
+        defaultvalue:
+          type: string
+        datatype:
+          type: string
+      required:
+      - id
+      type: object
+    Process:
+      example:
+      - id: https://w3id.org/mint/instance/crop_yield
+        type:
+        - https://w3id.org/mint/modelCatalog#Process
+        label: crop yield
+        relations:
+        - id: https://w3id.org/mint/instance/crop_supply
+      - id: new_process
+        type:
+        - https://w3id.org/mint/modelCatalog#Process
+        label: crop yield
+        relations:
+        - id: https://w3id.org/mint/instance/crop_supply
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        label:
+          type: string
+        relations:
+          description: Property that describe the causal relationship between two processes, two variables, a process and a variable or a variable and a process
+          items:
+            $ref: '#/components/schemas/Process'
+          type: array
+      required:
+      - id
+      type: object
+    TimeInterval:
+      example:
+      - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        label: Simple economic time interval
+        description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
+        unit:
+          id: https://w3id.org/mint/instance/yearT
+        value: 1
+      - id: new_time_interval
+        type:
+        - https://example.org/externalCatalog#TimeInterval
+        label: Simple economic time interval
+        description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
+        unit:
+          id: https://w3id.org/mint/instance/yearT
+        value: 1
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        label:
+          type: string
+        description:
+          type: string
+        unit:
+          $ref: '#/components/schemas/Unit'
+        value:
+          format: int64
+          type: integer
+      required:
+      - id
+      type: object
+    Unit:
+      example:
+      - id: https://w3id.org/mint/instance/USD_kg_1M_1
+        type:
+        - http://qudt.org/1.1/schema/qudt#Unit
+        label: USD kg-1
+        part:
+        - https://w3id.org/mint/instance/u_USD
+        - https://w3id.org/mint/instance/u__1_M_kilo_gram_kg
+        dimension:
+        - M-1
+        abbreviation:
+        - USD kg-1
+      - id: new_unit
+        type:
+        - http://qudt.org/1.1/schema/qudt#Unit
+        label: USD kg-1
+        part:
+        - https://w3id.org/mint/instance/u_USD
+        - https://w3id.org/mint/instance/u__1_M_kilo_gram_kg
+        dimension:
+        - M-1
+        abbreviation:
+        - USD kg-1
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        description:
+          type: string
+        label:
+          type: string
+        part:
+          items:
+            type: string
+          type: array
+        dimension:
+          items:
+            type: string
+          type: array
+        abbreviation:
+          items:
+            type: string
+          type: array
+      required:
+      - id
+      type: object
+    VariablePresentation:
+      example:
+      - id: https://w3id.org/mint/instance/econ_ybarN
+        type:
+        - https://example.org/externalCatalog#VariablePresentation
+        label: ybarN
+        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        long_name: yield elasticity
+        short_name: ybarN
+        standard_name: crop_fertilizer~nitrogen__yield_elasticity
+        relevance_level: 1
+        unit:
+          id: https://w3id.org/mint/instance/USD_kg_1M_1
+      - id: new_var
+        label: ybarN
+        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        long_name: yield elasticity
+        short_name: ybarN
+        standard_name: crop_fertilizer~nitrogen__yield_elasticity
+        relevance_level: 1
+        unit:
+          id: https://w3id.org/mint/instance/USD_kg_1M_1
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        label:
+          type: string
+        description:
+          type: string
+        long_name:
+          type: string
+        short_name:
+          type: string
+        standard_name:
+          type: string
+        relevance_level:
+          format: int64
+          type: integer
+        unit:
+          $ref: '#/components/schemas/Unit'
+      required:
+      - id
+      type: object
+    User:
+      example:
+        firstName: firstName
+        lastName: lastName
+        password: password
+        userStatus: 6
+        phone: phone
+        id: 0
+        email: email
+        username: username
+      properties:
+        id:
+          format: int64
+          type: integer
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        phone:
+          type: string
+        userStatus:
+          description: User Status
+          format: int32
+          type: integer
+      type: object
+      xml:
+        name: User
+    ApiResponse:
+      example:
+        code: 0
+        type: type
+        message: message
+      properties:
+        code:
+          format: int32
+          type: integer
+        type:
+          type: string
+        message:
+          type: string
+      type: object
+    CAG:
+      example:
+        id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        label: CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration
+        type:
+        - https://w3id.org/mint/modelCatalog#CAG
+        parts:
+        - id: https://w3id.org/mint/instance/econ_ybarN
+        - id: https://w3id.org/mint/instance/econ_production
+      properties:
+        id:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        parts:
+          description: Array of Parameter or Variables
+          items:
+            $ref: '#/components/schemas/Parameter'
+          type: array
+        label:
+          type: string
+      required:
+      - id
+      type: object
+    Model:
+      example:
+        id: https://w3id.org/mint/instance/DSSAT
+        label: DSSAT
+        description: The Decision Support System for Agrotechnology Transfer (DSSAT) comprises dynamic crop growth simulation model for over 40 crops. The model simulates growth; development; and yield as a function of the soil-plant-atmosphere dynamics.
+        type:
+        - https://w3id.org/mint/modelCatalog#Model
+        - https://w3id.org/mint/modelCatalog#TheoryBasedModel
+        versions:
+        - https://w3id.org/mint/instance/DSSAT_4.7
+        categories:
+        - Agriculture
+        documentation:
+        - https://dssat.net
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        versions:
+          items:
+            type: string
+          type: array
+        categories:
+          items:
+            type: string
+          type: array
+        documentation:
+          items:
+            type: string
+          type: array
+      required:
+      - id
+      type: object
+    ModelVersion:
+      example:
+        id: https://w3id.org/mint/instance/DSSAT_4.7
+        label: DSSAT v4.7
+        type:
+        - https://w3id.org/mint/modelCatalog#ModelVersion
+        - http://ontosoft.org/software#SoftwareVersion
+        version: "4.7"
+        configuration: https://w3id.org/mint/instance/DSSAT_cfg_simple
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        type:
+          items:
+            type: string
+          type: array
+        documentation:
+          items:
+            type: string
+          type: array
+        version:
+          type: string
+        configuration:
+          type: string
+      required:
+      - id
+      type: object
+  securitySchemes:
+    BearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
+      x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token

@@ -1,12 +1,12 @@
 {
-    "uri": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI",
+    "id": "economic_aggregate_crop_supply_TI",
     "type": [
         "https://w3id.org/mint/modelCatalog#TimeInterval"
     ],
     "label": "Simple economic time interval",
     "description": "Time interval used in the aggregate crop supply response model for the country of South Sudan configuration",
     "unit": {
-        "uri": "https://w3id.org/mint/instance/yearT"
+        "id": "yearT"
     },
     "value": 1
 }

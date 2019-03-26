@@ -1,5 +1,5 @@
 {
-    "uri": "https://w3id.org/mint/instance/pihm_start-date",
+    "id": "pihm_start-date",
     "type": [
         "https://w3id.org/mint/modelCatalog#Parameter",
         "https://w3id.org/wings/export/MINT#StartDate"

@@ -7,10 +7,10 @@
         "https://w3id.org/mint/modelCatalog#DatasetSpecification",
         "https://w3id.org/wings/export/MINT#CropYield"
     ],
-    "uri": "https://w3id.org/mint/instance/econ_yield",
+    "id": "econ_yield",
     "presentations": [
         {
-            "uri": "https://w3id.org/mint/instance/econ_ybarN"
+            "id": "econ_ybarN"
         }
     ]
 }

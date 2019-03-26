@@ -1,0 +1,28 @@
+{
+    "@context": {     
+      "qudt":   "http://qudt.org/schema/qudt",
+      "owl":    "http://www.w3.org/2002/07/owl",
+      "xsd":	"http://www.w3.org/2001/XMLSchema",
+      "rdf":	"http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "mc":     "https://w3id.org/mint/modelCatalog#",
+      "parts":  "mc:hasPart",
+      "label":  "rdf:label"
+    },
+    "@id": "economic_aggregate_crop_supply_CAG_variables",
+    "@type": "mc:CAG",
+    "label": "CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration",
+    "parts": [
+          {
+            "@id": "econ_ybarN",
+            "@type": "mc:VariablePresentation",
+            "uri": "econ_ybarN"
+          },
+          {
+            "@id": "econ_production",
+            "@type": "mc:VariablePresentation",          
+            "uri": "econ_production"
+          }        
+    ]
+  }
+  
+  

@@ -1,5 +1,5 @@
 {
-    "uri": "https://w3id.org/mint/instance/econ_ybarN",
+    "id": "econ_ybarN",
     "type": [
         "https://w3id.org/mint/modelCatalog#VariablePresentation"
     ],
@@ -10,6 +10,6 @@
     "standard_name": "crop_fertilizer~nitrogen__yield_elasticity",
     "relevance_level": 1,
     "unit": {
-        "uri": "https://w3id.org/mint/instance/USD_kg_1M_1"
+        "id": "USD_kg_1M_1"
     }
 }

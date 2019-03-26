@@ -13,153 +13,151 @@ info:
   version: 0.0.1
 servers:
 - url: http://api.mint.isi.edu/v0.0.1
+- url: http://localhost:8080/v0.0.1
+
 paths:
   /user:
     post:
       tags:
-      - user
+        - user
       summary: Create user
       description: This can only be done by the logged in user.
       operationId: createUser
+      responses:
+        default:
+          description: successful operation
       requestBody:
-        description: Created user object
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/User'
-      responses:
-        default:
-          description: successful operation
+        description: Created user object
+        required: true
   /user/login:
     get:
       tags:
-      - user
+        - user
       summary: Logs user into the system
       operationId: loginUser
       parameters:
-      - name: username
-        in: query
-        description: The user name for login
-        required: true
-        schema:
-          type: string
-      - name: password
-        in: query
-        description: The password for login in clear text
-        required: true
-        schema:
-          type: string
+        - name: username
+          in: query
+          description: The user name for login
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          description: The password for login in clear text
+          required: true
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: successful operation
           headers:
             X-Rate-Limit:
               description: calls per hour allowed by the user
               schema:
-                format: int32
                 type: integer
+                format: int32
             X-Expires-After:
               description: date in UTC when token expires
               schema:
+                type: string
                 format: date-time
-                type: string
           content:
-            application/xml:
-              schema:
-                type: string
             application/json:
               schema:
                 type: string
-        400:
+            application/xml:
+              schema:
+                type: string
+        '400':
           description: Invalid username/password supplied
   /user/logout:
     get:
       tags:
-      - user
+        - user
       summary: Logs out current logged in user session
       operationId: logoutUser
       responses:
         default:
           description: successful operation
-  /user/{username}:
+  '/user/{username}':
     get:
       tags:
-      - user
+        - user
       summary: Get user by user name
       operationId: getUserByName
       parameters:
-      - name: username
-        in: path
-        description: 'The name that needs to be fetched. Use user1 for testing. '
-        required: true
-        schema:
-          type: string
+        - name: username
+          in: path
+          description: The name that needs to be fetched. Use user1 for testing.
+          required: true
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
-        400:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
           description: Invalid username supplied
-        404:
+        '404':
           description: User not found
     put:
       tags:
-      - user
+        - user
       summary: Updated user
       description: This can only be done by the logged in user.
       operationId: updateUser
       parameters:
-      - name: username
-        in: path
-        description: name that need to be updated
-        required: true
-        schema:
-          type: string
+        - name: username
+          in: path
+          description: name that need to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User not found
       requestBody:
-        description: Updated user object
         content:
-          '*/*':
+          application/json:
             schema:
               $ref: '#/components/schemas/User'
+        description: Updated user object
         required: true
-      responses:
-        400:
-          description: Invalid user supplied
-        404:
-          description: User not found
-      security:
-      - bearerAuth: []
+      security: 
+        - BearerAuth: []        
+
     delete:
       tags:
-      - user
+        - user
       summary: Delete user
       description: This can only be done by the logged in user.
       operationId: deleteUser
       parameters:
-      - name: username
-        in: path
-        description: The name that needs to be deleted
-        required: true
-        schema:
-          type: string
+        - name: username
+          in: path
+          description: The name that needs to be deleted
+          required: true
+          schema:
+            type: string
       responses:
-        400:
+        '400':
           description: Invalid username supplied
-        404:
+        '404':
           description: User not found
-      security:
-      - bearerAuth: []
   /modelconfigurations:
-    summary: Path used to manage the list of modelconfigurations.
-    description: The REST endpoint/path used to list and create zero or more `modelConfiguration`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
     get:
       tags:
       - modelconfiguration
@@ -176,6 +174,7 @@ paths:
                   $ref: '#/components/schemas/ModelConfiguration'
         400:
           description: Invalid uri supplied
+      security: []        
     post:
       tags:
       - modelconfiguration
@@ -195,12 +194,8 @@ paths:
         400:
           description: Invalid
       security:
-      - bearerAuth: []
+        - BearerAuth: []
   /modelconfiguration/{name}/inputs:
-    summary: Inputs related to a model configuration
-    description: The REST endpoint/path used to list and create zero or more `Dataset`
-      entities related with a `ModelConfiguration` as an Input.  This path contains
-      a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       tags:
       - modelconfiguration
@@ -214,6 +209,7 @@ paths:
         required: true
         schema:
           type: string
+      security: []        
       responses:
         200:
           description: successful operation
@@ -227,11 +223,11 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []        
     post:
       tags:
       - modelconfiguration    
       summary: Creates a new instance of a `Dataset` related as Input.
-      description: Creates a new instance of a `Dataset` related as Input.
       operationId: addInputsByModelconfiguration
       parameters:
       - name: name
@@ -247,6 +243,7 @@ paths:
               items:
                 $ref: '#/components/schemas/DataSet'
         required: true
+      security: []
       responses:
         201:
           description: Created
@@ -267,7 +264,7 @@ paths:
                         "message": "some text"
                     }
       security:
-      - bearerAuth: []
+      - BearerAuth: []
     parameters:
     - name: name
       in: path
@@ -276,10 +273,6 @@ paths:
       schema:
         type: string
   /modelconfiguration/{name}/outputs:
-    summary: Outputs related to a model configuration
-    description: The REST endpoint/path used to list and create zero or more `Dataset`
-      entities related with a `ModelConfiguration` as an Output.  This path contains
-      a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       tags:
       - modelconfiguration
@@ -293,6 +286,7 @@ paths:
         required: true
         schema:
           type: string
+      security: []        
       responses:
         200:
           description: successful operation
@@ -306,12 +300,11 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []        
     post:
       tags:
       - modelconfiguration    
       summary: Create the output of a model configuration
-      description: Creates a new instance of a `Dataset` related as Output.
-      operationId: addOutputsByModelconfiguration
       parameters:
       - name: name
         in: path
@@ -346,7 +339,7 @@ paths:
                         "message": "some text"
                     }
       security:
-      - bearerAuth: []
+      - BearerAuth: []
     parameters:
     - name: name
       in: path
@@ -355,10 +348,6 @@ paths:
       schema:
         type: string
   /modelconfiguration/{name}/parameters:
-    summary: Parameters related to a model configuration
-    description: The REST endpoint/path used to list and create zero or more `Parameter`
-      entities related with a `ModelConfiguration` as an Output.  This path contains
-      a `GET` and `POST` operation to perform the list and create tasks, respectively.
     get:
       tags:
       - modelconfiguration
@@ -385,6 +374,7 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []        
     post:
       tags:
       - modelconfiguration    
@@ -425,7 +415,7 @@ paths:
                         "message": "some text"
                     }
       security:
-      - bearerAuth: []
+      - BearerAuth: []
     parameters:
     - name: name
       in: path
@@ -434,10 +424,6 @@ paths:
       schema:
         type: string
   /modelversions:
-    summary: Path used to manage the list of ModelVersions.
-    description: The REST endpoint/path used to list and create zero or more `ModelVersion`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
     get:
       tags:
         - modelversion
@@ -453,6 +439,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ModelVersion'
+      security: []        
     post:
       tags:
         - modelversion    
@@ -469,11 +456,9 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+        - BearerAuth: []
   /datasets:
-    summary: Path used to manage the list of datasets.
-    description: The REST endpoint/path used to list and create zero or more `dataset`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
     get:
       tags:
         - dataset    
@@ -489,6 +474,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/DataSet'
+      security: []        
     post:
       tags:
         - dataset        
@@ -505,11 +491,9 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+        - BearerAuth: []   
   /models:
-    summary: Path used to manage the list of models.
-    description: The REST endpoint/path used to list and create zero or more `model`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
     get:
       tags:
         - model    
@@ -525,6 +509,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Model'
+      security: []        
     post:
       tags:
         - model    
@@ -541,11 +526,8 @@ paths:
       responses:
         201:
           description: Successful response.
+      security: []        
   /parameters:
-    summary: Path used to manage the list of Parameters.
-    description: The REST endpoint/path used to list and create zero or more `Parameter`
-      entities.  This path contains a `GET` and `POST` operation to perform the list
-      and create tasks, respectively.
     get:
       tags:
         - parameter  
@@ -561,6 +543,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Parameter'
+      security: []        
     post:
       tags:
         - parameter    
@@ -577,11 +560,9 @@ paths:
       responses:
         201:
           description: Successful response.
+      security:
+      - BearerAuth: []
   /model/{modelId}:
-    summary: Path used to manage a single Model.
-    description: The REST endpoint/path used to get, update, and delete single instances
-      of an `Model`.  This path contains `GET`, `PUT`, and `DELETE` operations used
-      to perform the get, update, and delete tasks, respectively.
     get:
       tags:
         - model    
@@ -595,6 +576,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Model'
+      security: []        
     put:
       tags:
         - model    
@@ -611,6 +593,8 @@ paths:
       responses:
         202:
           description: Successful response.
+      security:
+      - BearerAuth: []
     delete:
       tags:
         - model    
@@ -620,6 +604,8 @@ paths:
       responses:
         204:
           description: Successful response.
+      security:
+      - BearerAuth: []          
     parameters:
     - name: modelId
       in: path
@@ -628,10 +614,6 @@ paths:
       schema:
         type: string
   /modelversion/{modelVersionId}:
-    summary: Path used to manage a single ModelVersion.
-    description: The REST endpoint/path used to get, update, and delete single instances
-      of an `ModelVersion`.  This path contains `GET`, `PUT`, and `DELETE` operations
-      used to perform the get, update, and delete tasks, respectively.
     get:
       tags:
         - modelversion    
@@ -645,6 +627,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ModelVersion'
+      security: []        
     put:
       tags:
         - modelversion       
@@ -661,6 +644,8 @@ paths:
       responses:
         202:
           description: Successful response.
+      security:
+      - BearerAuth: []      
     delete:
       tags:
         - modelversion       
@@ -670,6 +655,7 @@ paths:
       responses:
         204:
           description: Successful response.
+      security: []    
     parameters:
     - 
       name: modelVersionId
@@ -679,9 +665,6 @@ paths:
       schema:
         type: string
   /modelconfiguration/{name}:
-    description: The REST endpoint/path used to get, update, and delete single instances
-      of an `ModelConfiguration`.  This path contains `GET`, `PUT`, and `DELETE` operations
-      used to perform the get, update, and delete tasks, respectively.
     get:
       tags:
       - modelconfiguration
@@ -706,6 +689,7 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
+      security: []       
     put:
       tags:
       - modelconfiguration
@@ -728,7 +712,7 @@ paths:
         200:
           description: Updated
       security:
-      - bearerAuth: []
+      - BearerAuth: []
     delete:
       tags:
       - modelconfiguration
@@ -743,7 +727,7 @@ paths:
         403:
           description: You don't the permissions
       security:
-      - bearerAuth: []
+      - BearerAuth: []
     parameters:
     - name: name
       in: path
@@ -1157,12 +1141,9 @@ components:
         version: '4.7'
         configuration: https://w3id.org/mint/instance/DSSAT_cfg_simple
   securitySchemes:
-    bearerAuth:
+    BearerAuth:
       type: http
-      description: Bearer auth
       scheme: bearer
-security:
-- bearerAuth: []
 externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu
