@@ -9,6 +9,8 @@ verify_ssl = true
 connexion = "==2.0.0"
 swagger-ui-bundle = "==0.0.2"
 python-dateutil = "==2.6.0"
+pyyaml = ">=3.11"
+rdflib = {git = "https://github.com/RDFLib/rdflib.git",ref = "4.2.2"}
 
 [requires]
 python_version = "3.7"

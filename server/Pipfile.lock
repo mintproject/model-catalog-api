@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e3594b22ba5f9d855c8e0d29ba04c72096e27da18788209e88e1670c6360c126"
+            "sha256": "f35d99dc3a7f87fe3c1432b5cc4bd83fb2fb10eadc57a66e023c7efdb34df79e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -163,7 +163,12 @@
                 "sha256:c68ea4d3ba1705da1e0d85da6684ac657912679a649e8868bd850d2c299cce13",
                 "sha256:e23d0cc5299223dcc37885dae624f382297717e459ea24053709675a976a3e19"
             ],
+            "index": "pypi",
             "version": "==5.1"
+        },
+        "rdflib": {
+            "git": "https://github.com/RDFLib/rdflib.git",
+            "ref": "2fb94c8736687c7d85c2ccd25cd3d3f9391b1c65"
         },
         "requests": {
             "hashes": [
