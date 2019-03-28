@@ -210,8 +210,7 @@ paths:
           description: Created
         400:
           description: Invalid
-      security:
-      - BearerAuth: []
+      security: []
       summary: Create a model configuration
       tags:
       - modelconfiguration
@@ -580,8 +579,7 @@ paths:
       responses:
         201:
           description: Successful response.
-      security:
-      - BearerAuth: []
+      security: []
       summary: Create a Parameter
       tags:
       - parameter

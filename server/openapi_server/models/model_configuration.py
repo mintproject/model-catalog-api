@@ -5,8 +5,13 @@ from datetime import date, datetime  # noqa: F401
 
 from typing import List, Dict  # noqa: F401
 
-from openapi_server.models.base_model_ import Model
 from openapi_server import util
+from openapi_server.models.cag import CAG
+from openapi_server.models.data_set import DataSet
+from openapi_server.models.model import Model
+from openapi_server.models.parameter import Parameter
+from openapi_server.models.process import Process
+from openapi_server.models.time_interval import TimeInterval
 
 
 class ModelConfiguration(Model):

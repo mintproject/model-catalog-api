@@ -1,11 +1,12 @@
 import connexion
-import six
 
-from openapi_server.models.api_response import ApiResponse  # noqa: E501
 from openapi_server.models.data_set import DataSet  # noqa: E501
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
 from openapi_server.models.parameter import Parameter  # noqa: E501
-from openapi_server import util
+from endpoint.utils import insert_query
+from openapi_server.static import DEFAULT_ENDPOINT
+from flask import json
+
 
 
 def add_inputs_by_modelconfiguration(name, data_set):  # noqa: E501
@@ -13,9 +14,9 @@ def add_inputs_by_modelconfiguration(name, data_set):  # noqa: E501
 
      # noqa: E501
 
-    :param name: 
+    :param name:
     :type name: str
-    :param data_set: 
+    :param data_set:
     :type data_set: list | bytes
 
     :rtype: None
@@ -25,18 +26,24 @@ def add_inputs_by_modelconfiguration(name, data_set):  # noqa: E501
     return 'do some magic!'
 
 
-def add_model_configuration(model_configuration):  # noqa: E501
+def add_model_configuration():  # noqa: E501
     """Create a model configuration
 
      # noqa: E501
 
-    :param model_configuration: 
+    :param model_configuration:
     :type model_configuration: dict | bytes
 
     :rtype: None
     """
+    endpoint = "http://ontosoft.isi.edu:3030/test/update"
+    graph = "http://example/mosorio"
+
     if connexion.request.is_json:
-        model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
+        jsonld_str = json.dumps(connexion.request.get_json())
+        #TODO: validate triples
+        insert_query(DEFAULT_ENDPOINT, jsonld_str, graph)
+
     return 'do some magic!'
 
 
@@ -45,9 +52,9 @@ def add_parameters_by_modelconfiguration(name, parameter):  # noqa: E501
 
     Creates a new instance of a &#x60;Dataset&#x60; and it related with the &#x60;ModelConfiguration&#x60;. # noqa: E501
 
-    :param name: 
+    :param name:
     :type name: str
-    :param parameter: 
+    :param parameter:
     :type parameter: list | bytes
 
     :rtype: None
@@ -75,7 +82,7 @@ def get_inputs_by_modelconfiguration(name):  # noqa: E501
 
      # noqa: E501
 
-    :param name: The name of the resource 
+    :param name: The name of the resource
     :type name: str
 
     :rtype: List[ApiResponse]
@@ -101,7 +108,7 @@ def get_outputs_by_modelconfiguration(name):  # noqa: E501
 
      # noqa: E501
 
-    :param name: The name of the resource 
+    :param name: The name of the resource
     :type name: str
 
     :rtype: List[ApiResponse]
@@ -114,7 +121,7 @@ def get_parameters_by_modelconfiguration(name):  # noqa: E501
 
      # noqa: E501
 
-    :param name: The name of the resource 
+    :param name: The name of the resource
     :type name: str
 
     :rtype: List[ApiResponse]
@@ -138,9 +145,9 @@ def modelconfiguration_name_outputs_post(name, data_set):  # noqa: E501
 
      # noqa: E501
 
-    :param name: 
+    :param name:
     :type name: str
-    :param data_set: 
+    :param data_set:
     :type data_set: list | bytes
 
     :rtype: None
@@ -157,7 +164,7 @@ def update_model_configuration(name, model_configuration):  # noqa: E501
 
     :param name: A unique identifier for a &#x60;ModelConfiguration&#x60;.
     :type name: str
-    :param model_configuration: 
+    :param model_configuration:
     :type model_configuration: dict | bytes
 
     :rtype: None
