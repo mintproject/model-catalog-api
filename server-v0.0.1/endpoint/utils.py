@@ -17,7 +17,7 @@ def select_query(endpoint, query):
     return sparql.query().convert()
 
 
-def insert_query(endpoint, body, graph):
+def zinsert_query(endpoint, body, graph):
     if endpoint == '':
         return 'No SPARQL endpoint indicated', 407, {}
 
