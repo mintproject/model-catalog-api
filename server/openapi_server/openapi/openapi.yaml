@@ -211,7 +211,7 @@ paths:
         400:
           description: Invalid
       security:
-      - BearerAuth: []
+      - BearerAuth: ['secret']
       summary: Create a model configuration
       tags:
       - modelconfiguration
@@ -1317,3 +1317,6 @@ components:
       bearerFormat: JWT
       scheme: bearer
       type: http
+      x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token
+
+

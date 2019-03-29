@@ -6,15 +6,15 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-connexion = "==2.0.0"
+connexion = "==2.1.0"
 swagger-ui-bundle = "==0.0.2"
 python-dateutil = "==2.6.0"
-pyyaml = ">=3.11"
 rdflib = ">=4.2.2"
-sparqlwrapper = "*"
 python-jose = {extras = ["cryptography"],version = "*"}
 rdflib-jsonld = "*"
 configparser = "*"
+PyYAML = ">=3.11"
+SPARQLWrapper = "*"
 
 [requires]
 python_version = "3.7"
