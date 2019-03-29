@@ -6,7 +6,7 @@ def obtain_uri(id):
     #todo: magic
     return static_vars.DEFAULT_MINT_INSTANCE + 'id'
 
-def createdataset(data_set):  # noqa: E501
+def createdataset():  # noqa: E501
     """Create a dataset
 
     Creates a new instance of a &#x60;dataset&#x60;. # noqa: E501
@@ -17,7 +17,8 @@ def createdataset(data_set):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        data_set = DataSet.from_dict(connexion.request.get_json())  # noqa: E501
+        print(connexion.request.get_json())
+        #data_set = DataSet.from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
 
 

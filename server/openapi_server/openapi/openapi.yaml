@@ -211,7 +211,7 @@ paths:
         400:
           description: Invalid
       security:
-      - BearerAuth: ['secret']
+      - BearerAuth: []
       summary: Create a model configuration
       tags:
       - modelconfiguration
@@ -835,7 +835,7 @@ components:
         type:
         - https://w3id.org/wings/export/MINT#CropYield
         presentations:
-        - uri: https://w3id.org/mint/instance/econ_ybarN
+        - id: https://w3id.org/mint/instance/econ_ybarN
       - summary: custom ID, add an external rdf:type
         id: crop-yield
         label: crop-yield
@@ -845,7 +845,7 @@ components:
         type:
         - https://w3id.org/wings/export/MINT#CropYield
         presentations:
-        - uri: https://w3id.org/mint/instance/econ_ybarN
+        - id: https://w3id.org/mint/instance/econ_ybarN
       properties:
         label:
           type: string
@@ -1016,13 +1016,13 @@ components:
         - https://w3id.org/mint/modelCatalog#Process
         label: crop yield
         relations:
-        - uri: https://w3id.org/mint/instance/crop_supply
+        - id: https://w3id.org/mint/instance/crop_supply
       - id: new_process
         type:
         - https://w3id.org/mint/modelCatalog#Process
         label: crop yield
         relations:
-        - uri: https://w3id.org/mint/instance/crop_supply
+        - id: https://w3id.org/mint/instance/crop_supply
       properties:
         id:
           type: string
@@ -1046,7 +1046,7 @@ components:
         label: Simple economic time interval
         description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
         unit:
-          uri: https://w3id.org/mint/instance/yearT
+          id: https://w3id.org/mint/instance/yearT
         value: 1
       - id: new_time_interval
         type:
@@ -1054,7 +1054,7 @@ components:
         label: Simple economic time interval
         description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
         unit:
-          uri: https://w3id.org/mint/instance/yearT
+          id: https://w3id.org/mint/instance/yearT
         value: 1
       properties:
         id:
@@ -1137,7 +1137,7 @@ components:
         standard_name: crop_fertilizer~nitrogen__yield_elasticity
         relevance_level: 1
         unit:
-          uri: https://w3id.org/mint/instance/USD_kg_1M_1
+          id: https://w3id.org/mint/instance/USD_kg_1M_1
       - id: new_var
         label: ybarN
         description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
@@ -1146,7 +1146,7 @@ components:
         standard_name: crop_fertilizer~nitrogen__yield_elasticity
         relevance_level: 1
         unit:
-          uri: https://w3id.org/mint/instance/USD_kg_1M_1
+          id: https://w3id.org/mint/instance/USD_kg_1M_1
       properties:
         id:
           type: string
@@ -1221,13 +1221,13 @@ components:
       type: object
     CAG:
       example:
-        uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
         label: CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
         parts:
-        - uri: https://w3id.org/mint/instance/econ_ybarN
-        - uri: https://w3id.org/mint/instance/econ_production
+        - id: https://w3id.org/mint/instance/econ_ybarN
+        - id: https://w3id.org/mint/instance/econ_production
       properties:
         id:
           type: string
@@ -1285,7 +1285,7 @@ components:
       type: object
     ModelVersion:
       example:
-        uri: https://w3id.org/mint/instance/DSSAT_4.7
+        id: https://w3id.org/mint/instance/DSSAT_4.7
         label: DSSAT v4.7
         type:
         - https://w3id.org/mint/modelCatalog#ModelVersion
@@ -1293,7 +1293,7 @@ components:
         version: "4.7"
         configuration: https://w3id.org/mint/instance/DSSAT_cfg_simple
       properties:
-        uri:
+        id:
           type: string
         label:
           type: string
@@ -1310,7 +1310,7 @@ components:
         configuration:
           type: string
       required:
-      - uri
+      - id
       type: object
   securitySchemes:
     BearerAuth:
@@ -1318,5 +1318,3 @@ components:
       scheme: bearer
       type: http
       x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token
-
-

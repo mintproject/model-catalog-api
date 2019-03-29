@@ -15,11 +15,11 @@ class ModelVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, uri=None, label=None, type=None, documentation=None, version=None, configuration=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=None, documentation=None, version=None, configuration=None):  # noqa: E501
         """ModelVersion - a model defined in OpenAPI
 
-        :param uri: The uri of this ModelVersion.  # noqa: E501
-        :type uri: str
+        :param id: The id of this ModelVersion.  # noqa: E501
+        :type id: str
         :param label: The label of this ModelVersion.  # noqa: E501
         :type label: str
         :param type: The type of this ModelVersion.  # noqa: E501
@@ -32,7 +32,7 @@ class ModelVersion(Model):
         :type configuration: str
         """
         self.openapi_types = {
-            'uri': str,
+            'id': str,
             'label': str,
             'type': List[str],
             'documentation': List[str],
@@ -41,7 +41,7 @@ class ModelVersion(Model):
         }
 
         self.attribute_map = {
-            'uri': 'uri',
+            'id': 'id',
             'label': 'label',
             'type': 'type',
             'documentation': 'documentation',
@@ -49,7 +49,7 @@ class ModelVersion(Model):
             'configuration': 'configuration'
         }
 
-        self._uri = uri
+        self._id = id
         self._label = label
         self._type = type
         self._documentation = documentation
@@ -68,27 +68,27 @@ class ModelVersion(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def uri(self):
-        """Gets the uri of this ModelVersion.
+    def id(self):
+        """Gets the id of this ModelVersion.
 
 
-        :return: The uri of this ModelVersion.
+        :return: The id of this ModelVersion.
         :rtype: str
         """
-        return self._uri
+        return self._id
 
-    @uri.setter
-    def uri(self, uri):
-        """Sets the uri of this ModelVersion.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ModelVersion.
 
 
-        :param uri: The uri of this ModelVersion.
-        :type uri: str
+        :param id: The id of this ModelVersion.
+        :type id: str
         """
-        if uri is None:
-            raise ValueError("Invalid value for `uri`, must not be `None`")  # noqa: E501
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
-        self._uri = uri
+        self._id = id
 
     @property
     def label(self):

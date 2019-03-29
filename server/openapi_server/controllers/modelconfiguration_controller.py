@@ -31,7 +31,7 @@ def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
     return 'do some magic!'
 
 
-def add_model_configuration(model_configuration):  # noqa: E501
+def add_model_configuration():  # noqa: E501
     """Create a model configuration
 
      # noqa: E501
