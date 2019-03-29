@@ -1,7 +1,4 @@
-try:
-    from ConfigParser import SafeConfigParser
-except:
-    from configparser import SafeConfigParser
+from configparser import ConfigParser
 
 
 DEFAULT_HOST = None
@@ -40,7 +37,7 @@ config_fallbacks = {
     'server_name': '',
     'local_sparql_dir': ''
 }
-config = SafeConfigParser(config_fallbacks)
+config = ConfigParser(config_fallbacks)
 config.add_section('auth')
 config.add_section('defaults')
 config.add_section('local')

@@ -771,7 +771,7 @@ components:
           type:
           - https://w3id.org/wings/export/MINT#CropYield
           presentations:
-          - uri: https://w3id.org/mint/instance/econ_ybarN
+          - id: https://w3id.org/mint/instance/econ_ybarN
         - summary: custom ID, add an external rdf:type
           id: crop-yield
           label: crop-yield
@@ -782,7 +782,7 @@ components:
           type:
           - https://w3id.org/wings/export/MINT#CropYield
           presentations:
-          - uri: https://w3id.org/mint/instance/econ_ybarN          
+          - id: https://w3id.org/mint/instance/econ_ybarN          
     ModelConfiguration:
       type: object
       required:
@@ -948,13 +948,13 @@ components:
           - https://w3id.org/mint/modelCatalog#Process
           label: crop yield
           relations:
-          - uri: https://w3id.org/mint/instance/crop_supply
+          - id: https://w3id.org/mint/instance/crop_supply
         - id: new_process
           type:
           - https://w3id.org/mint/modelCatalog#Process
           label: crop yield
           relations:
-          - uri: https://w3id.org/mint/instance/crop_supply          
+          - id: https://w3id.org/mint/instance/crop_supply          
     TimeInterval:
       required:
       - id
@@ -981,7 +981,7 @@ components:
           description: Time interval used in the aggregate crop supply response model for the
             country of South Sudan configuration
           unit:
-            uri: https://w3id.org/mint/instance/yearT
+            id: https://w3id.org/mint/instance/yearT
           value: 1
         - id: new_time_interval
           type:
@@ -990,7 +990,7 @@ components:
           description: Time interval used in the aggregate crop supply response model for the
             country of South Sudan configuration
           unit:
-            uri: https://w3id.org/mint/instance/yearT
+            id: https://w3id.org/mint/instance/yearT
           value: 1          
     Unit:
       required:
@@ -1080,7 +1080,7 @@ components:
           standard_name: crop_fertilizer~nitrogen__yield_elasticity
           relevance_level: 1
           unit:
-            uri: https://w3id.org/mint/instance/USD_kg_1M_1
+            id: https://w3id.org/mint/instance/USD_kg_1M_1
         - id: new_var
           label: ybarN
           description: Contains the yield elasticities to fertilizer use that are derived from
@@ -1090,7 +1090,7 @@ components:
           standard_name: crop_fertilizer~nitrogen__yield_elasticity
           relevance_level: 1
           unit:
-            uri: https://w3id.org/mint/instance/USD_kg_1M_1            
+            id: https://w3id.org/mint/instance/USD_kg_1M_1            
     User:
       type: object
       properties:
@@ -1148,14 +1148,14 @@ components:
           description: ''
           type: string
       example:
-        uri: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
         label: CAG for Economic model for aggregate crop supply response model variables for
           the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
         parts:
-        - uri: https://w3id.org/mint/instance/econ_ybarN
-        - uri: https://w3id.org/mint/instance/econ_production
+        - id: https://w3id.org/mint/instance/econ_ybarN
+        - id: https://w3id.org/mint/instance/econ_production
     Model:
       description: ""
       required:
@@ -1201,10 +1201,10 @@ components:
     ModelVersion:
       description: ""
       required:
-      - uri
+      - id
       type: object
       properties:
-        uri:
+        id:
           type: string
         label:
           type: string
@@ -1222,7 +1222,7 @@ components:
         configuration:
           type: string
       example:
-        uri: https://w3id.org/mint/instance/DSSAT_4.7
+        id: https://w3id.org/mint/instance/DSSAT_4.7
         label: DSSAT v4.7
         type:
         - https://w3id.org/mint/modelCatalog#ModelVersion
@@ -1234,6 +1234,8 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token
+      
 externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu

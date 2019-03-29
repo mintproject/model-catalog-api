@@ -1,9 +1,10 @@
 import connexion
-import six
-
+import openapi_server.static_vars as static_vars
 from openapi_server.models.data_set import DataSet  # noqa: E501
-from openapi_server import util
 
+def obtain_uri(id):
+    #todo: magic
+    return static_vars.DEFAULT_MINT_INSTANCE + 'id'
 
 def createdataset(data_set):  # noqa: E501
     """Create a dataset

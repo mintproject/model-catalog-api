@@ -1,11 +1,17 @@
 import connexion
-import six
 
-from openapi_server.models.api_response import ApiResponse  # noqa: E501
 from openapi_server.models.data_set import DataSet  # noqa: E501
-from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
+
 from openapi_server.models.parameter import Parameter  # noqa: E501
-from openapi_server import util
+
+
+from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
+import openapi_server.controllers.dataset_controller as DataSetController
+import openapi_server.controllers.cag_controller as CagController
+import openapi_server.controllers.process_controller as ProcessController
+import openapi_server.controllers.time_interval_controller as TimeIntervalController
+import openapi_server.controllers.parameter_controller as ParameterController
+import openapi_server.static_vars as StaticVars
 
 
 def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
@@ -13,9 +19,9 @@ def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
 
      # noqa: E501
 
-    :param id: 
+    :param id:
     :type id: str
-    :param data_set: 
+    :param data_set:
     :type data_set: list | bytes
 
     :rtype: None
@@ -30,13 +36,14 @@ def add_model_configuration(model_configuration):  # noqa: E501
 
      # noqa: E501
 
-    :param model_configuration: 
+    :param model_configuration:
     :type model_configuration: dict | bytes
 
     :rtype: None
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
+        prepare_jsonld(model_configuration)
     return 'do some magic!'
 
 
@@ -45,9 +52,9 @@ def add_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
 
     Creates a new instance of a &#x60;Dataset&#x60; and it related with the &#x60;ModelConfiguration&#x60;. # noqa: E501
 
-    :param id: 
+    :param id:
     :type id: str
-    :param parameter: 
+    :param parameter:
     :type parameter: list | bytes
 
     :rtype: None
@@ -75,7 +82,7 @@ def get_inputs_by_modelconfiguration(id):  # noqa: E501
 
      # noqa: E501
 
-    :param id: The name of the resource 
+    :param id: The name of the resource
     :type id: str
 
     :rtype: List[ApiResponse]
@@ -101,7 +108,7 @@ def get_outputs_by_modelconfiguration(id):  # noqa: E501
 
      # noqa: E501
 
-    :param id: The name of the resource 
+    :param id: The name of the resource
     :type id: str
 
     :rtype: List[ApiResponse]
@@ -114,7 +121,7 @@ def get_parameters_by_modelconfiguration(id):  # noqa: E501
 
      # noqa: E501
 
-    :param id: The name of the resource 
+    :param id: The name of the resource
     :type id: str
 
     :rtype: List[ApiResponse]
@@ -138,9 +145,9 @@ def modelconfiguration_id_outputs_post(id, data_set):  # noqa: E501
 
      # noqa: E501
 
-    :param id: 
+    :param id:
     :type id: str
-    :param data_set: 
+    :param data_set:
     :type data_set: list | bytes
 
     :rtype: None
@@ -159,7 +166,7 @@ def update_model_configuration(id, name, model_configuration):  # noqa: E501
     :type id: str
     :param name: A unique identifier for a &#x60;ModelConfiguration&#x60;.
     :type name: str
-    :param model_configuration: 
+    :param model_configuration:
     :type model_configuration: dict | bytes
 
     :rtype: None
@@ -167,3 +174,36 @@ def update_model_configuration(id, name, model_configuration):  # noqa: E501
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
     return 'do some magic!'
+
+
+def obtain_uri(id):
+    #todo: magic
+    return StaticVars.DEFAULT_MINT_INSTANCE + 'id'
+
+def prepare_jsonld(modelconfig):
+    context = {
+
+    }
+
+    modelconfig['@context'] = context
+    modelconfig['@uri'] = obtain_uri(modelconfig['id'])
+    modelconfig['@type'] = StaticVars.MODELCONFIGURATION_TYPE
+
+    for item in ModelConfiguration.inputs:
+        DataSetController.obtain_uri(item['id'])
+
+    for item in ModelConfiguration.outputs:
+        DataSetController.obtain_uri(item['id'])
+
+    for process in ModelConfiguration.process:
+        ProcessController.obtain_uri(process['id'])
+
+    for cag in ModelConfiguration.cag:
+        CagController.obtain_uri(cag['id'])
+
+    for interval_time in ModelConfiguration.interval_time:
+        TimeIntervalController.obtain_uri(interval_time['id'])
+
+    for parameter in ModelConfiguration.parameters:
+        ParameterController.obtain_uri(parameter['id'])
+
