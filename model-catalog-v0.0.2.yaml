@@ -889,8 +889,6 @@ components:
       type: object
       properties:
         id:
-          type: array
-          items:
             type: string          
         type:
           type: array

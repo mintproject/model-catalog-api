@@ -991,9 +991,7 @@ components:
         datatype: string
       properties:
         id:
-          items:
-            type: string
-          type: array
+          type: string
         type:
           items:
             type: string

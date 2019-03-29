@@ -19,7 +19,7 @@ class Parameter(Model):
         """Parameter - a model defined in OpenAPI
 
         :param id: The id of this Parameter.  # noqa: E501
-        :type id: List[str]
+        :type id: str
         :param type: The type of this Parameter.  # noqa: E501
         :type type: List[str]
         :param label: The label of this Parameter.  # noqa: E501
@@ -32,7 +32,7 @@ class Parameter(Model):
         :type datatype: str
         """
         self.openapi_types = {
-            'id': List[str],
+            'id': str,
             'type': List[str],
             'label': str,
             'description': str,
@@ -73,7 +73,7 @@ class Parameter(Model):
 
 
         :return: The id of this Parameter.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._id
 
@@ -83,7 +83,7 @@ class Parameter(Model):
 
 
         :param id: The id of this Parameter.
-        :type id: List[str]
+        :type id: str
         """
         if id is None:
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
