@@ -3,9 +3,6 @@
       {
         "id": "economic_aggregate_crop_supply_CAG_variables",
         "label": "CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration",
-        "type": [
-            "https://w3id.org/mint/modelCatalog#CAG"
-        ],
         "parts": [
             {
                 "id": "econ_ybarN"
@@ -29,7 +26,6 @@
         "description": "Contains the yield elasticities to fertilizer use that are derived from Cycles output",
         "dimensionality": 0,
         "type": [
-            "https://w3id.org/mint/modelCatalog#DatasetSpecification",
             "https://w3id.org/wings/export/MINT#CropYield"
         ],
         "id": "econ_yield",
@@ -43,9 +39,6 @@
     "intervalTime": [
       {
         "id": "economic_aggregate_crop_supply_TI",
-        "type": [
-            "https://w3id.org/mint/modelCatalog#TimeInterval"
-        ],
         "label": "Simple economic time interval",
         "description": "Time interval used in the aggregate crop supply response model for the country of South Sudan configuration",
         "unit": {
@@ -61,10 +54,6 @@
         "format": "text",
         "description": "Economic land use results",
         "dimensionality": 0,
-        "type": [
-            "https://w3id.org/mint/modelCatalog#DatasetSpecification",
-            "https://w3id.org/wings/export/MINT#CropYield"
-        ],
         "id": "econ_yield",
         "presentations": [
             {
@@ -77,7 +66,6 @@
       {
         "id": "pihm_start-date",
         "type": [
-            "https://w3id.org/mint/modelCatalog#Parameter",
             "https://w3id.org/wings/export/MINT#StartDate"
         ],
         "label": "pihm_start-date",
@@ -88,10 +76,13 @@
     ],
     "process": [
       {
-        "id": "crop_yield"
-      },
-      {
-        "id": "crop_supply"
-      }
+        "id": "crop_yield",
+        "label": "crop yield",
+        "relations": [
+            {
+                "id": "crop_supply"
+            }
+        ]
+    }
     ]
   }

@@ -4,7 +4,6 @@ INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 
 DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
 
-
 MINT_CONTEXT = {
         "qudt": "http://qudt.org/schema/qudt",
         "owl": "http://www.w3.org/2002/07/owl",
@@ -27,7 +26,8 @@ MINT_CONTEXT = {
         "componentLocation": "mc:hasComponentLocation"
 }
 
-MODELCONFIGURTION_TYPE = "mc:CAG"
+
+MODELCONFIGURTION_TYPE = "mc:ModelConfiguration"
 CAG_TYPE = "mc:CAG"
 CONCEPT_TYPE = "mc:CONCEPT"
 DATASTRUCTUREDEFINITION_TYPE = "mc:DataStructureDefinition"
@@ -50,4 +50,15 @@ TIMEINTERVAL_TYPE = "mc:TimeInterval"
 UNIT_TYPE = "mc:Unit"
 VARIABLE_TYPE = "mc:Variable"
 
+
+MAPPING_TYPE = {
+    "inputs": DATASET_TYPE,
+    "outputs": DATASET_TYPE,
+    "process": PROCESS_TYPE,
+    "cag": CAG_TYPE,
+    "interval_time": TIMEINTERVAL_TYPE,
+    "parameters": PARAMETER_TYPE
+}
+
+SUPPORTED_CLASSES = ["inputs", "outputs", "process", "cag", "interval_time", "parameters", "relations", "presentations"]
 
