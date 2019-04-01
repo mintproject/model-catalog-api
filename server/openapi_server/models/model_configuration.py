@@ -5,12 +5,12 @@ from __future__ import absolute_import
 from typing import List  # noqa: F401
 
 from openapi_server import util
+from openapi_server.models.time_interval import TimeInterval
+from openapi_server.models.cag import CAG
+from openapi_server.models.parameter import Parameter
+from openapi_server.models.data_set import DataSet
+from openapi_server.models.process import Process
 from openapi_server.models.base_model_ import Model
-from openapi_server.models.cag import CAG  # noqa: E501
-from openapi_server.models.data_set import DataSet  # noqa: E501
-from openapi_server.models.parameter import Parameter  # noqa: E501
-from openapi_server.models.process import Process  # noqa: E501
-from openapi_server.models.time_interval import TimeInterval  # noqa: E501
 
 
 class ModelConfiguration(Model):

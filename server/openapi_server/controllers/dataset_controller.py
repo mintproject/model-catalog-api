@@ -1,6 +1,5 @@
 import connexion
 
-import openapi_server.static_vars as static_vars
 
 def createdataset():  # noqa: E501
     """Create a dataset

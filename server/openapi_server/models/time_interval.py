@@ -5,8 +5,8 @@ from __future__ import absolute_import
 from typing import List  # noqa: F401
 
 from openapi_server import util
-from openapi_server.models.base_model_ import Model
 from openapi_server.models.unit import Unit
+from openapi_server.models.base_model_ import Model
 
 
 class TimeInterval(Model):
