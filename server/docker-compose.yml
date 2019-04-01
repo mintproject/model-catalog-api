@@ -1,0 +1,8 @@
+#Environment dev
+version: '3'
+services:
+  api-modelcatalog:
+    image: "mint-project/api-modelcatalog:prod"
+    build:
+      context: .
+      dockerfile: Dockerfile    
