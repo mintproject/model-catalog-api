@@ -1,6 +1,7 @@
 import connexion
+
 import openapi_server.static_vars as static_vars
-from openapi_server.models.data_set import DataSet  # noqa: E501
+
 
 def obtain_uri(id):
     #todo: magic

@@ -43,7 +43,7 @@ def add_model_configuration():  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-        prepare_jsonld(model_configuration)
+        prepare_jsonld(connexion.request.get_json())
     return 'do some magic!'
 
 
@@ -180,30 +180,34 @@ def obtain_uri(id):
     #todo: magic
     return StaticVars.DEFAULT_MINT_INSTANCE + 'id'
 
+
 def prepare_jsonld(modelconfig):
-    context = {
 
-    }
-
-    modelconfig['@context'] = context
+    modelconfig['@context'] = StaticVars.MINT_CONTEXT
     modelconfig['@uri'] = obtain_uri(modelconfig['id'])
     modelconfig['@type'] = StaticVars.MODELCONFIGURATION_TYPE
 
-    for item in ModelConfiguration.inputs:
-        DataSetController.obtain_uri(item['id'])
+    if 'inputs' in modelconfig:
+        for item in modelconfig['inputs']:
+            DataSetController.obtain_uri(item['id'])
 
-    for item in ModelConfiguration.outputs:
-        DataSetController.obtain_uri(item['id'])
+    if 'outputs' in modelconfig:
+        for item in modelconfig['outputs']:
+            DataSetController.obtain_uri(item['id'])
 
-    for process in ModelConfiguration.process:
-        ProcessController.obtain_uri(process['id'])
+    if 'process' in modelconfig:
+        for process in modelconfig['process']:
+            ProcessController.obtain_uri(process['id'])
 
-    for cag in ModelConfiguration.cag:
-        CagController.obtain_uri(cag['id'])
+    if 'cag' in modelconfig:
+        for cag in modelconfig['cag']:
+            CagController.obtain_uri(cag['id'])
 
-    for interval_time in ModelConfiguration.interval_time:
-        TimeIntervalController.obtain_uri(interval_time['id'])
+    if 'interval_time' in modelconfig:
+        for interval_time in modelconfig['interval_time']:
+            TimeIntervalController.obtain_uri(interval_time['id'])
 
-    for parameter in ModelConfiguration.parameters:
-        ParameterController.obtain_uri(parameter['id'])
+    if 'parameters' in modelconfig:
+        for parameter in modelconfig['parameters']:
+            ParameterController.obtain_uri(parameter['id'])
 

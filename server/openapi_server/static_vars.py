@@ -4,7 +4,7 @@ INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 
 DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
 
-MINT_PREFIX = {
+MINT_CONTEXT = {
         "qudt": "http://qudt.org/schema/qudt",
         "owl": "http://www.w3.org/2002/07/owl",
         "xsd": "http://www.w3.org/2001/XMLSchema",

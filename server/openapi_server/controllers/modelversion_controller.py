@@ -1,8 +1,6 @@
 import connexion
-import six
 
 from openapi_server.models.model_version import ModelVersion  # noqa: E501
-from openapi_server import util
 
 
 def create_model_version(model_version):  # noqa: E501

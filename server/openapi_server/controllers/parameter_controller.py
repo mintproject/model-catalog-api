@@ -1,8 +1,12 @@
 import connexion
-import six
 
 from openapi_server.models.parameter import Parameter  # noqa: E501
-from openapi_server import util
+import openapi_server.static_vars as staticvars
+
+
+def obtain_uri(id):
+    #todo: magic
+    return staticvars.DEFAULT_MINT_INSTANCE + id
 
 
 def create_parameter(parameter):  # noqa: E501
