@@ -10,7 +10,7 @@ def build_graph_uri(username):
 
 
 def build_user_resource_uri(username, resource):
-    return f'{DEFAULT_MINT_INSTANCE}{username}_{resource}'
+    return f'{DEFAULT_MINT_INSTANCE}{resource}'
 
 
 def execute_query(endpoint):
