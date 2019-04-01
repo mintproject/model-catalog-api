@@ -1,15 +1,19 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from rdflib import Graph
 from openapi_server.static import UPDATE_ENDPOINT, DEFAULT_MINT_INSTANCE
+
+
 # todo: detect type of query
 
 def build_graph_uri(username):
     return f'{DEFAULT_MINT_INSTANCE}{username}_graph'
 
+
 def build_user_resource_uri(username, resource):
     return f'{DEFAULT_MINT_INSTANCE}{username}_{resource}'
 
-def execute_query(endpoint, query):
+
+def execute_query(endpoint):
     if endpoint == '':
         return 'No SPARQL endpoint indicated', 407, {}
 
@@ -34,6 +38,9 @@ def insert_query(body, username):
     prefixes = '\n'.join(prefixes)
     triples = '\n'.join(triples)
 
+    if graph or graph == '' or graph == 'default':
+        return 'Default graph is read only', 403, {}
+
     query_string = f'{prefixes} INSERT DATA {{ GRAPH <{graph}> {{ {triples} }} }}'
     sparql = SPARQLWrapper(endpoint)
     sparql.method = 'POST'
@@ -43,6 +50,7 @@ def insert_query(body, username):
         sparql.query()
     except Exception as e:
         return e, 407, {}
+
 
 '''
 TODO: hack rdflib has some problems
@@ -73,5 +81,3 @@ def prepare_jsonjd(jsonld):
         prefixes.append(f'PREFIX {n[0]}: <{n[1]}>')
 
     return prefixes, separate_prefixes_triples(s.decode())
-
-
