@@ -13,8 +13,8 @@ externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu
 servers:
-- url: http://api.mint.isi.edu/v0.0.1
-- url: http://localhost:8080/v0.0.1
+- url: http://api.mint.isi.edu/v0.0.2
+- url: http://localhost:8080/v0.0.2
 paths:
   /user:
     post:
@@ -826,24 +826,11 @@ components:
   schemas:
     DataSet:
       example:
-      - summary: Force the mint URI, add an external rdf:type
-        id: https://w3id.org/mint/instance/crop-yield
-        label: crop-yield
-        format: csv
-        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
-        dimensionality: 0
-        type:
-        - https://w3id.org/wings/export/MINT#CropYield
-        presentations:
-        - id: https://w3id.org/mint/instance/econ_ybarN
-      - summary: custom ID, add an external rdf:type
         id: crop-yield
         label: crop-yield
         format: csv
         description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
         dimensionality: 0
-        type:
-        - https://w3id.org/wings/export/MINT#CropYield
         presentations:
         - id: https://w3id.org/mint/instance/econ_ybarN
       properties:
@@ -871,21 +858,21 @@ components:
       type: object
     ModelConfiguration:
       example:
-      - id: https://w3id.org/mint/instance/economic
+        id: economic
         label: Economic aggregate crop supply
         inputs:
-        - id: https://w3id.org/mint/instance/econ_yield
+        - id: econ_yield
         outputs:
-        - id: https://w3id.org/mint/instance/econ_land_use
+        - id: econ_land_use
         description: Aggregate crop supply response model for the country of South Sudan configuration
         cag:
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process
+        - id: economic_aggregate_crop_supply_CAG_variables
+        - id: economic_aggregate_crop_supply_CAG_process
         process:
-        - id: https://w3id.org/mint/instance/crop_yield
-        - id: https://w3id.org/mint/instance/crop_supply
+        - id: crop_yield
+        - id: crop_supply
         intervalTime:
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
+        - id: economic_aggregate_crop_supply_TI
         implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
         container: https://w3id.org/mint/instance/mintproject/economic:latest
         constrainT: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
@@ -895,35 +882,8 @@ components:
           and ?in2 to ?location because both inputs to PIHM should be from the same
           region'')]'
         parameters:
-        - id: http://w3id.org/instance/pihm_start-date
-        - id: http://on.isi.edu:7070/page/mint/instance/pihm_end-date
-        componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
-      - id: economic
-        label: Economic aggregate crop supply
-        inputs:
-        - id: https://w3id.org/mint/instance/econ_yield
-        outputs:
-        - id: https://w3id.org/mint/instance/econ_land_use
-        description: Aggregate crop supply response model for the country of South Sudan configuration
-        cag:
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_process
-        process:
-        - id: https://w3id.org/mint/instance/crop_yield
-        - id: https://w3id.org/mint/instance/crop_supply
-        intervalTime:
-        - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
-        implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        container: https://w3id.org/mint/instance/mintproject/economic:latest
-        constrainT: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
-          (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
-          dcdom:region) uriConcat(?c ''_region'' ?location) -> (?in1 dcdom:region
-          ?location) (?in2 dcdom:region ?location) print(''Setting domain of ?in1
-          and ?in2 to ?location because both inputs to PIHM should be from the same
-          region'')]'
-        parameters:
-        - id: http://w3id.org/instance/pihm_start-date
-        - id: http://on.isi.edu:7070/page/mint/instance/pihm_end-date
+        - id: pihm_start-date
+        - id: pihm_end-date
         componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
       properties:
         id:
@@ -973,16 +933,7 @@ components:
       type: object
     Parameter:
       example:
-      - summary: Force the MINT URI, add an external rdf:type
-        id: https://w3id.org/mint/instance/pihm_start-date
-        type:
-        - https://w3id.org/wings/export/MINT#StartDate
-        label: pihm_start-date
-        description: start date
-        defaultvalue: 2017-01-01
-        datatype: string
-      - summary: URI will be generated using the id and add an external rdf:type
-        id: new_parameter
+        id: pihm_start-date
         type:
         - https://w3id.org/wings/export/MINT#StartDate
         label: pihm_start-date
@@ -1009,15 +960,7 @@ components:
       type: object
     Process:
       example:
-      - id: https://w3id.org/mint/instance/crop_yield
-        type:
-        - https://w3id.org/mint/modelCatalog#Process
-        label: crop yield
-        relations:
-        - id: https://w3id.org/mint/instance/crop_supply
-      - id: new_process
-        type:
-        - https://w3id.org/mint/modelCatalog#Process
+        id: crop_yield
         label: crop yield
         relations:
         - id: https://w3id.org/mint/instance/crop_supply
@@ -1040,13 +983,7 @@ components:
       type: object
     TimeInterval:
       example:
-      - id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_TI
-        label: Simple economic time interval
-        description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
-        unit:
-          id: https://w3id.org/mint/instance/yearT
-        value: 1
-      - id: new_time_interval
+        id: economic_aggregate_crop_supply_TI
         type:
         - https://example.org/externalCatalog#TimeInterval
         label: Simple economic time interval
@@ -1075,24 +1012,13 @@ components:
       type: object
     Unit:
       example:
-      - id: https://w3id.org/mint/instance/USD_kg_1M_1
+        id: USD_kg_1M_1
         type:
         - http://qudt.org/1.1/schema/qudt#Unit
         label: USD kg-1
         part:
-        - https://w3id.org/mint/instance/u_USD
-        - https://w3id.org/mint/instance/u__1_M_kilo_gram_kg
-        dimension:
-        - M-1
-        abbreviation:
-        - USD kg-1
-      - id: new_unit
-        type:
-        - http://qudt.org/1.1/schema/qudt#Unit
-        label: USD kg-1
-        part:
-        - https://w3id.org/mint/instance/u_USD
-        - https://w3id.org/mint/instance/u__1_M_kilo_gram_kg
+        - u_USD
+        - u__1_M_kilo_gram_kg
         dimension:
         - M-1
         abbreviation:
@@ -1125,9 +1051,7 @@ components:
       type: object
     VariablePresentation:
       example:
-      - id: https://w3id.org/mint/instance/econ_ybarN
-        type:
-        - https://example.org/externalCatalog#VariablePresentation
+        id: econ_ybarN
         label: ybarN
         description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
         long_name: yield elasticity
@@ -1135,16 +1059,7 @@ components:
         standard_name: crop_fertilizer~nitrogen__yield_elasticity
         relevance_level: 1
         unit:
-          id: https://w3id.org/mint/instance/USD_kg_1M_1
-      - id: new_var
-        label: ybarN
-        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
-        long_name: yield elasticity
-        short_name: ybarN
-        standard_name: crop_fertilizer~nitrogen__yield_elasticity
-        relevance_level: 1
-        unit:
-          id: https://w3id.org/mint/instance/USD_kg_1M_1
+          id: USD_kg_1M_1
       properties:
         id:
           type: string
@@ -1219,7 +1134,7 @@ components:
       type: object
     CAG:
       example:
-        id: https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables
+        id: economic_aggregate_crop_supply_CAG_variables
         label: CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
@@ -1245,14 +1160,14 @@ components:
       type: object
     Model:
       example:
-        id: https://w3id.org/mint/instance/DSSAT
+        id: DSSAT
         label: DSSAT
         description: The Decision Support System for Agrotechnology Transfer (DSSAT) comprises dynamic crop growth simulation model for over 40 crops. The model simulates growth; development; and yield as a function of the soil-plant-atmosphere dynamics.
         type:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
         versions:
-        - https://w3id.org/mint/instance/DSSAT_4.7
+        - DSSAT_4.7
         categories:
         - Agriculture
         documentation:
@@ -1283,13 +1198,12 @@ components:
       type: object
     ModelVersion:
       example:
-        id: https://w3id.org/mint/instance/DSSAT_4.7
+        id: DSSAT_4.7
         label: DSSAT v4.7
         type:
-        - https://w3id.org/mint/modelCatalog#ModelVersion
         - http://ontosoft.org/software#SoftwareVersion
         version: "4.7"
-        configuration: https://w3id.org/mint/instance/DSSAT_cfg_simple
+        configuration: DSSAT_cfg_simple
       properties:
         id:
           type: string
