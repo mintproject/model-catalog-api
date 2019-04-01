@@ -4,4 +4,4 @@ services:
   api-modelcatalog:
     image: "mint-project/api-modelcatalog:dev"
     ports:
-      - 8082:8082
+      - 8082:8080
