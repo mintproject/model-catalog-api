@@ -1,10 +1,13 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from rdflib import Graph
-from openapi_server.static import UPDATE_ENDPOINT, GRAPHS
+from openapi_server.static import UPDATE_ENDPOINT, DEFAULT_MINT_INSTANCE
 # todo: detect type of query
 
 def build_graph_uri(username):
-    return f'{GRAPHS}/{username}'
+    return f'{DEFAULT_MINT_INSTANCE}{username}_graph'
+
+def build_user_resource_uri(username, resource):
+    return f'{DEFAULT_MINT_INSTANCE}{username}_{resource}'
 
 def execute_query(endpoint, query):
     if endpoint == '':

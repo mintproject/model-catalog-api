@@ -50,7 +50,7 @@ DEFAULT_ENDPOINT = config.get('defaults', 'sparql_endpoint')
 DEFAULT_ENDPOINT_USER = config.get('defaults', 'user')
 DEFAULT_ENDPOINT_PASSWORD = config.get('defaults', 'password')
 
-GRAPHS = "https://w3id.org/instance/graphs"
+DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
 ENDPOINT =  "http://ontosoft.isi.edu:3030"
 UPDATE_ENDPOINT = f'{ENDPOINT}/test/update'
 QUERY_ENDPOINT = f'{ENDPOINT}/test/query'

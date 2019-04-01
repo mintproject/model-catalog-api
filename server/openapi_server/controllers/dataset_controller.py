@@ -2,11 +2,6 @@ import connexion
 
 import openapi_server.static_vars as static_vars
 
-
-def obtain_uri(id):
-    #todo: magic
-    return static_vars.DEFAULT_MINT_INSTANCE + 'id'
-
 def createdataset():  # noqa: E501
     """Create a dataset
 

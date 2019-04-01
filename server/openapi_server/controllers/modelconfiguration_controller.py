@@ -7,14 +7,9 @@ from openapi_server.models.parameter import Parameter  # noqa: E501
 
 
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
-import openapi_server.controllers.dataset_controller as DataSetController
-import openapi_server.controllers.cag_controller as CagController
-import openapi_server.controllers.process_controller as ProcessController
-import openapi_server.controllers.time_interval_controller as TimeIntervalController
-import openapi_server.controllers.parameter_controller as ParameterController
 import openapi_server.static_vars as static_vars
 
-from endpoint.utils import insert_query
+from endpoint.utils import insert_query, build_user_resource_uri
 
 
 def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
@@ -178,41 +173,19 @@ def update_model_configuration(id, name, model_configuration):  # noqa: E501
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
     return "Created", 201, {}
 
-def obtain_uri(id):
-    #todo: magic
-    return static_vars.DEFAULT_MINT_INSTANCE + 'id'
-
 
 def prepare_jsonld(modelconfig, username):
     modelconfig['@context'] = static_vars.MINT_CONTEXT
-    modelconfig['@uri'] = obtain_uri(modelconfig['id'])
+    modelconfig['@id'] = build_user_resource_uri(username, modelconfig['id'])
     modelconfig['@type'] = static_vars.MODELCONFIGURATION_TYPE
-
-    if 'inputs' in modelconfig:
-        for item in modelconfig['inputs']:
-            DataSetController.obtain_uri(item['id'])
-
-    if 'outputs' in modelconfig:
-        for item in modelconfig['outputs']:
-            DataSetController.obtain_uri(item['id'])
-
-    if 'process' in modelconfig:
-        for process in modelconfig['process']:
-            ProcessController.obtain_uri(process['id'])
-
-    if 'cag' in modelconfig:
-        for cag in modelconfig['cag']:
-            CagController.obtain_uri(cag['id'])
-
-    if 'interval_time' in modelconfig:
-        for interval_time in modelconfig['interval_time']:
-            TimeIntervalController.obtain_uri(interval_time['id'])
-
-    if 'parameters' in modelconfig:
-        for parameter in modelconfig['parameters']:
-            ParameterController.obtain_uri(parameter['id'])
-
+    keys = ["inputs", "outputs", "process", "cag", "interval_time", "parameters"]
+    for key in keys:
+        prepare_id_jsonld(modelconfig, username, key)
     modelconfig_str = json.dumps(modelconfig)
-
     insert_query(modelconfig_str, username)
 
+
+def prepare_id_jsonld(modelconfig, username, key):
+    if key in modelconfig:
+        for item in modelconfig[key]:
+            item['@id'] = build_user_resource_uri(username, item['id'])
