@@ -14,8 +14,8 @@
         "dimensionality": "mc:hasDimensionality"
     },
     
-    "@id": "https://w3id.org/mint/instance/econ_yield",
-    "uri": "https://w3id.org/mint/instance/econ_yield",
+    "@id": "econ_yield",
+    "uri": "econ_yield",
     "@type": ["mc:DatasetSpecification", "wingsexport:MINT#CropYield"],
     "label": "crop-yield",
     "format": "csv",
@@ -23,9 +23,9 @@
     "dimensionality": 0,
     "presentations": [
         {
-            "@id": "https://w3id.org/mint/instance/econ_ybarN",
+            "@id": "econ_ybarN",
             "@type": "mc:VariablePresentation",            
-            "uri": "https://w3id.org/mint/instance/econ_ybarN"
+            "uri": "econ_ybarN"
         }
     ]
 }

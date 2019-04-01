@@ -8,19 +8,19 @@
       "parts":  "mc:hasPart",
       "label":  "rdf:label"
     },
-    "@id": "https://w3id.org/mint/instance/economic_aggregate_crop_supply_CAG_variables",
+    "@id": "economic_aggregate_crop_supply_CAG_variables",
     "@type": "mc:CAG",
     "label": "CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration",
     "parts": [
           {
-            "@id": "https://w3id.org/mint/instance/econ_ybarN",
+            "@id": "econ_ybarN",
             "@type": "mc:VariablePresentation",
-            "uri": "https://w3id.org/mint/instance/econ_ybarN"
+            "uri": "econ_ybarN"
           },
           {
-            "@id": "https://w3id.org/mint/instance/econ_production",
+            "@id": "econ_production",
             "@type": "mc:VariablePresentation",          
-            "uri": "https://w3id.org/mint/instance/econ_production"
+            "uri": "econ_production"
           }        
     ]
   }

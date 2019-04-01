@@ -1,5 +1,5 @@
 {
-    "uri": "https://w3id.org/mint/instance/USD_kg_1M_1",
+    "id": "USD_kg_1M_1",
     "type": [ 
         "http://qudt.org/1.1/schema/qudt#Unit"
     ],

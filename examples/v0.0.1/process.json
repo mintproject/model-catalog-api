@@ -1,12 +1,12 @@
 {
-    "uri": "https://w3id.org/mint/instance/crop_yield",
+    "id": "crop_yield",
     "type": [
         "https://w3id.org/mint/modelCatalog#Process"
     ],
     "label": "crop yield",
     "relations": [
         {
-            "uri": "https://w3id.org/mint/instance/crop_supply"
+            "id": "crop_supply"
         }
     ]
 }
