@@ -41,8 +41,9 @@ def add_model_configuration(user):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-        prepare_jsonld(connexion.request.get_json(), user)
-    return "Created", 201, {}
+        model_configuration_json = prepare_jsonld(connexion.request.get_json(), user)
+        return insert_query(model_configuration_json, user)
+    return "Bad request", 403, {}
 
 
 def add_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
@@ -181,8 +182,7 @@ def prepare_jsonld(modelconfig, username):
     for key in SUPPORTED_CLASSES:
         prepare_id_jsonld(modelconfig, username, key)
 
-    modelconfig_str = json.dumps(modelconfig)
-    insert_query(modelconfig_str, username)
+    return json.dumps(modelconfig)
 
 
 def prepare_id_jsonld(modelconfig, username, key):

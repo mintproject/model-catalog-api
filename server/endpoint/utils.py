@@ -38,7 +38,7 @@ def insert_query(body, username):
     prefixes = '\n'.join(prefixes)
     triples = '\n'.join(triples)
 
-    if graph or graph == '' or graph == 'default':
+    if not graph or graph == '' or graph == 'default':
         return 'Default graph is read only', 403, {}
 
     query_string = f'{prefixes} INSERT DATA {{ GRAPH <{graph}> {{ {triples} }} }}'
@@ -50,7 +50,7 @@ def insert_query(body, username):
         sparql.query()
     except Exception as e:
         return e, 407, {}
-
+    return "Created", 201, {}
 
 '''
 TODO: hack rdflib has some problems

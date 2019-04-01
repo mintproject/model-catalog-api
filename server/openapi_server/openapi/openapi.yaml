@@ -13,8 +13,8 @@ externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu
 servers:
-- url: https://api.mint.isi.edu/v0.0.2
-- url: https://dev.api.mint.isi.edu/v0.0.2
+- url: https://api.models.mint.isi.edu/v0.0.2
+- url: https://dev.api.models.mint.isi.edu/v0.0.2
 - url: http://localhost:8080/v0.0.2
 paths:
   /user:
