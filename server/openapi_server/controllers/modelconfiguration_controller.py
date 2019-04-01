@@ -1,4 +1,5 @@
 import connexion
+from flask import json
 
 from openapi_server.models.data_set import DataSet  # noqa: E501
 
@@ -11,7 +12,9 @@ import openapi_server.controllers.cag_controller as CagController
 import openapi_server.controllers.process_controller as ProcessController
 import openapi_server.controllers.time_interval_controller as TimeIntervalController
 import openapi_server.controllers.parameter_controller as ParameterController
-import openapi_server.static_vars as StaticVars
+import openapi_server.static_vars as static_vars
+
+from endpoint.utils import insert_query
 
 
 def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
@@ -31,7 +34,7 @@ def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
     return 'do some magic!'
 
 
-def add_model_configuration():  # noqa: E501
+def add_model_configuration(user):  # noqa: E501
     """Create a model configuration
 
      # noqa: E501
@@ -43,8 +46,8 @@ def add_model_configuration():  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-        prepare_jsonld(connexion.request.get_json())
-    return 'do some magic!'
+        prepare_jsonld(connexion.request.get_json(), user)
+    return "Created", 201, {}
 
 
 def add_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
@@ -173,19 +176,17 @@ def update_model_configuration(id, name, model_configuration):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
-
+    return "Created", 201, {}
 
 def obtain_uri(id):
     #todo: magic
-    return StaticVars.DEFAULT_MINT_INSTANCE + 'id'
+    return static_vars.DEFAULT_MINT_INSTANCE + 'id'
 
 
-def prepare_jsonld(modelconfig):
-
-    modelconfig['@context'] = StaticVars.MINT_CONTEXT
+def prepare_jsonld(modelconfig, username):
+    modelconfig['@context'] = static_vars.MINT_CONTEXT
     modelconfig['@uri'] = obtain_uri(modelconfig['id'])
-    modelconfig['@type'] = StaticVars.MODELCONFIGURATION_TYPE
+    modelconfig['@type'] = static_vars.MODELCONFIGURATION_TYPE
 
     if 'inputs' in modelconfig:
         for item in modelconfig['inputs']:
@@ -210,4 +211,8 @@ def prepare_jsonld(modelconfig):
     if 'parameters' in modelconfig:
         for parameter in modelconfig['parameters']:
             ParameterController.obtain_uri(parameter['id'])
+
+    modelconfig_str = json.dumps(modelconfig)
+
+    insert_query(modelconfig_str, username)
 

@@ -9,7 +9,7 @@ from jose import JWTError, jwt
 
 JWT_ISSUER = 'com.zalando.connexion'
 JWT_SECRET = 'change_this'
-JWT_LIFETIME_SECONDS = 600
+JWT_LIFETIME_SECONDS = 60000000
 JWT_ALGORITHM = 'HS256'
 
 
@@ -82,7 +82,7 @@ def login_user(username, password):  # noqa: E501
         "iss": JWT_ISSUER,
         "iat": int(timestamp),
         "exp": int(timestamp + JWT_LIFETIME_SECONDS),
-        "sub": str(2),
+        "sub": str(username),
     }
 
     return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)

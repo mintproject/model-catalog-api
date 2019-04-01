@@ -28,7 +28,7 @@ GITHUB_API_BASE_URL = 'https://api.github.com/repos/'
 # With the new hash retrieveal and redirect caching becomes obsolete
 CACHE_CONTROL_POLICY = 'no-cache'
 
-# Setting headers to use access_token for the GitHub API
+# Setting headersto use access_token for the GitHub API
 config_fallbacks = {
     'github_access_token': '',
     'sparql_endpoint': '',
@@ -49,6 +49,11 @@ ACCESS_TOKEN = config.get('auth', 'github_access_token')
 DEFAULT_ENDPOINT = config.get('defaults', 'sparql_endpoint')
 DEFAULT_ENDPOINT_USER = config.get('defaults', 'user')
 DEFAULT_ENDPOINT_PASSWORD = config.get('defaults', 'password')
+
+GRAPHS = "https://w3id.org/instance/graphs"
+ENDPOINT =  "http://ontosoft.isi.edu:3030"
+UPDATE_ENDPOINT = f'{ENDPOINT}/test/update'
+QUERY_ENDPOINT = f'{ENDPOINT}/test/query'
 
 # Local folder where queries are loaded from
 LOCAL_SPARQL_DIR = config.get('local', 'local_sparql_dir')
