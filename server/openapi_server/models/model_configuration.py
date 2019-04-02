@@ -19,7 +19,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, inputs=None, outputs=None, description=None, cag=None, process=None, interval_time=None, implementation_script_location=None, container=None, constrain_t=None, parameters=None, component_location=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, has_input=None, has_output=None, description=None, has_cag=None, has_process=None, has_time_interval=None, has_implementation_script_location=None, has_container=None, has_constraint=None, has_parameter=None, has_component_location=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param id: The id of this ModelConfiguration.  # noqa: E501
@@ -28,77 +28,77 @@ class ModelConfiguration(Model):
         :type type: List[str]
         :param label: The label of this ModelConfiguration.  # noqa: E501
         :type label: str
-        :param inputs: The inputs of this ModelConfiguration.  # noqa: E501
-        :type inputs: List[DataSet]
-        :param outputs: The outputs of this ModelConfiguration.  # noqa: E501
-        :type outputs: List[DataSet]
+        :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
+        :type has_input: List[DataSet]
+        :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
+        :type has_output: List[DataSet]
         :param description: The description of this ModelConfiguration.  # noqa: E501
         :type description: str
-        :param cag: The cag of this ModelConfiguration.  # noqa: E501
-        :type cag: List[CAG]
-        :param process: The process of this ModelConfiguration.  # noqa: E501
-        :type process: List[Process]
-        :param interval_time: The interval_time of this ModelConfiguration.  # noqa: E501
-        :type interval_time: List[TimeInterval]
-        :param implementation_script_location: The implementation_script_location of this ModelConfiguration.  # noqa: E501
-        :type implementation_script_location: str
-        :param container: The container of this ModelConfiguration.  # noqa: E501
-        :type container: str
-        :param constrain_t: The constrain_t of this ModelConfiguration.  # noqa: E501
-        :type constrain_t: str
-        :param parameters: The parameters of this ModelConfiguration.  # noqa: E501
-        :type parameters: List[Parameter]
-        :param component_location: The component_location of this ModelConfiguration.  # noqa: E501
-        :type component_location: str
+        :param has_cag: The has_cag of this ModelConfiguration.  # noqa: E501
+        :type has_cag: List[CAG]
+        :param has_process: The has_process of this ModelConfiguration.  # noqa: E501
+        :type has_process: List[Process]
+        :param has_time_interval: The has_time_interval of this ModelConfiguration.  # noqa: E501
+        :type has_time_interval: List[TimeInterval]
+        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
+        :type has_implementation_script_location: str
+        :param has_container: The has_container of this ModelConfiguration.  # noqa: E501
+        :type has_container: str
+        :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
+        :type has_constraint: str
+        :param has_parameter: The has_parameter of this ModelConfiguration.  # noqa: E501
+        :type has_parameter: List[Parameter]
+        :param has_component_location: The has_component_location of this ModelConfiguration.  # noqa: E501
+        :type has_component_location: str
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
-            'inputs': List[DataSet],
-            'outputs': List[DataSet],
+            'has_input': List[DataSet],
+            'has_output': List[DataSet],
             'description': str,
-            'cag': List[CAG],
-            'process': List[Process],
-            'interval_time': List[TimeInterval],
-            'implementation_script_location': str,
-            'container': str,
-            'constrain_t': str,
-            'parameters': List[Parameter],
-            'component_location': str
+            'has_cag': List[CAG],
+            'has_process': List[Process],
+            'has_time_interval': List[TimeInterval],
+            'has_implementation_script_location': str,
+            'has_container': str,
+            'has_constraint': str,
+            'has_parameter': List[Parameter],
+            'has_component_location': str
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'label': 'label',
-            'inputs': 'inputs',
-            'outputs': 'outputs',
+            'has_input': 'has_input',
+            'has_output': 'has_output',
             'description': 'description',
-            'cag': 'cag',
-            'process': 'process',
-            'interval_time': 'intervalTime',
-            'implementation_script_location': 'implementationScriptLocation',
-            'container': 'container',
-            'constrain_t': 'constrainT',
-            'parameters': 'parameters',
-            'component_location': 'componentLocation'
+            'has_cag': 'has_cag',
+            'has_process': 'has_process',
+            'has_time_interval': 'has_time_interval',
+            'has_implementation_script_location': 'has_implementation_script_location',
+            'has_container': 'has_container',
+            'has_constraint': 'has_constraint',
+            'has_parameter': 'has_parameter',
+            'has_component_location': 'has_component_location'
         }
 
         self._id = id
         self._type = type
         self._label = label
-        self._inputs = inputs
-        self._outputs = outputs
+        self._has_input = has_input
+        self._has_output = has_output
         self._description = description
-        self._cag = cag
-        self._process = process
-        self._interval_time = interval_time
-        self._implementation_script_location = implementation_script_location
-        self._container = container
-        self._constrain_t = constrain_t
-        self._parameters = parameters
-        self._component_location = component_location
+        self._has_cag = has_cag
+        self._has_process = has_process
+        self._has_time_interval = has_time_interval
+        self._has_implementation_script_location = has_implementation_script_location
+        self._has_container = has_container
+        self._has_constraint = has_constraint
+        self._has_parameter = has_parameter
+        self._has_component_location = has_component_location
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelConfiguration':
@@ -177,46 +177,46 @@ class ModelConfiguration(Model):
         self._label = label
 
     @property
-    def inputs(self):
-        """Gets the inputs of this ModelConfiguration.
+    def has_input(self):
+        """Gets the has_input of this ModelConfiguration.
 
 
-        :return: The inputs of this ModelConfiguration.
+        :return: The has_input of this ModelConfiguration.
         :rtype: List[DataSet]
         """
-        return self._inputs
+        return self._has_input
 
-    @inputs.setter
-    def inputs(self, inputs):
-        """Sets the inputs of this ModelConfiguration.
+    @has_input.setter
+    def has_input(self, has_input):
+        """Sets the has_input of this ModelConfiguration.
 
 
-        :param inputs: The inputs of this ModelConfiguration.
-        :type inputs: List[DataSet]
+        :param has_input: The has_input of this ModelConfiguration.
+        :type has_input: List[DataSet]
         """
 
-        self._inputs = inputs
+        self._has_input = has_input
 
     @property
-    def outputs(self):
-        """Gets the outputs of this ModelConfiguration.
+    def has_output(self):
+        """Gets the has_output of this ModelConfiguration.
 
 
-        :return: The outputs of this ModelConfiguration.
+        :return: The has_output of this ModelConfiguration.
         :rtype: List[DataSet]
         """
-        return self._outputs
+        return self._has_output
 
-    @outputs.setter
-    def outputs(self, outputs):
-        """Sets the outputs of this ModelConfiguration.
+    @has_output.setter
+    def has_output(self, has_output):
+        """Sets the has_output of this ModelConfiguration.
 
 
-        :param outputs: The outputs of this ModelConfiguration.
-        :type outputs: List[DataSet]
+        :param has_output: The has_output of this ModelConfiguration.
+        :type has_output: List[DataSet]
         """
 
-        self._outputs = outputs
+        self._has_output = has_output
 
     @property
     def description(self):
@@ -240,169 +240,169 @@ class ModelConfiguration(Model):
         self._description = description
 
     @property
-    def cag(self):
-        """Gets the cag of this ModelConfiguration.
+    def has_cag(self):
+        """Gets the has_cag of this ModelConfiguration.
 
 
-        :return: The cag of this ModelConfiguration.
+        :return: The has_cag of this ModelConfiguration.
         :rtype: List[CAG]
         """
-        return self._cag
+        return self._has_cag
 
-    @cag.setter
-    def cag(self, cag):
-        """Sets the cag of this ModelConfiguration.
+    @has_cag.setter
+    def has_cag(self, has_cag):
+        """Sets the has_cag of this ModelConfiguration.
 
 
-        :param cag: The cag of this ModelConfiguration.
-        :type cag: List[CAG]
+        :param has_cag: The has_cag of this ModelConfiguration.
+        :type has_cag: List[CAG]
         """
 
-        self._cag = cag
+        self._has_cag = has_cag
 
     @property
-    def process(self):
-        """Gets the process of this ModelConfiguration.
+    def has_process(self):
+        """Gets the has_process of this ModelConfiguration.
 
 
-        :return: The process of this ModelConfiguration.
+        :return: The has_process of this ModelConfiguration.
         :rtype: List[Process]
         """
-        return self._process
+        return self._has_process
 
-    @process.setter
-    def process(self, process):
-        """Sets the process of this ModelConfiguration.
+    @has_process.setter
+    def has_process(self, has_process):
+        """Sets the has_process of this ModelConfiguration.
 
 
-        :param process: The process of this ModelConfiguration.
-        :type process: List[Process]
+        :param has_process: The has_process of this ModelConfiguration.
+        :type has_process: List[Process]
         """
 
-        self._process = process
+        self._has_process = has_process
 
     @property
-    def interval_time(self):
-        """Gets the interval_time of this ModelConfiguration.
+    def has_time_interval(self):
+        """Gets the has_time_interval of this ModelConfiguration.
 
 
-        :return: The interval_time of this ModelConfiguration.
+        :return: The has_time_interval of this ModelConfiguration.
         :rtype: List[TimeInterval]
         """
-        return self._interval_time
+        return self._has_time_interval
 
-    @interval_time.setter
-    def interval_time(self, interval_time):
-        """Sets the interval_time of this ModelConfiguration.
+    @has_time_interval.setter
+    def has_time_interval(self, has_time_interval):
+        """Sets the has_time_interval of this ModelConfiguration.
 
 
-        :param interval_time: The interval_time of this ModelConfiguration.
-        :type interval_time: List[TimeInterval]
+        :param has_time_interval: The has_time_interval of this ModelConfiguration.
+        :type has_time_interval: List[TimeInterval]
         """
 
-        self._interval_time = interval_time
+        self._has_time_interval = has_time_interval
 
     @property
-    def implementation_script_location(self):
-        """Gets the implementation_script_location of this ModelConfiguration.
+    def has_implementation_script_location(self):
+        """Gets the has_implementation_script_location of this ModelConfiguration.
 
 
-        :return: The implementation_script_location of this ModelConfiguration.
+        :return: The has_implementation_script_location of this ModelConfiguration.
         :rtype: str
         """
-        return self._implementation_script_location
+        return self._has_implementation_script_location
 
-    @implementation_script_location.setter
-    def implementation_script_location(self, implementation_script_location):
-        """Sets the implementation_script_location of this ModelConfiguration.
+    @has_implementation_script_location.setter
+    def has_implementation_script_location(self, has_implementation_script_location):
+        """Sets the has_implementation_script_location of this ModelConfiguration.
 
 
-        :param implementation_script_location: The implementation_script_location of this ModelConfiguration.
-        :type implementation_script_location: str
+        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.
+        :type has_implementation_script_location: str
         """
 
-        self._implementation_script_location = implementation_script_location
+        self._has_implementation_script_location = has_implementation_script_location
 
     @property
-    def container(self):
-        """Gets the container of this ModelConfiguration.
+    def has_container(self):
+        """Gets the has_container of this ModelConfiguration.
 
 
-        :return: The container of this ModelConfiguration.
+        :return: The has_container of this ModelConfiguration.
         :rtype: str
         """
-        return self._container
+        return self._has_container
 
-    @container.setter
-    def container(self, container):
-        """Sets the container of this ModelConfiguration.
+    @has_container.setter
+    def has_container(self, has_container):
+        """Sets the has_container of this ModelConfiguration.
 
 
-        :param container: The container of this ModelConfiguration.
-        :type container: str
+        :param has_container: The has_container of this ModelConfiguration.
+        :type has_container: str
         """
 
-        self._container = container
+        self._has_container = has_container
 
     @property
-    def constrain_t(self):
-        """Gets the constrain_t of this ModelConfiguration.
+    def has_constraint(self):
+        """Gets the has_constraint of this ModelConfiguration.
 
 
-        :return: The constrain_t of this ModelConfiguration.
+        :return: The has_constraint of this ModelConfiguration.
         :rtype: str
         """
-        return self._constrain_t
+        return self._has_constraint
 
-    @constrain_t.setter
-    def constrain_t(self, constrain_t):
-        """Sets the constrain_t of this ModelConfiguration.
+    @has_constraint.setter
+    def has_constraint(self, has_constraint):
+        """Sets the has_constraint of this ModelConfiguration.
 
 
-        :param constrain_t: The constrain_t of this ModelConfiguration.
-        :type constrain_t: str
+        :param has_constraint: The has_constraint of this ModelConfiguration.
+        :type has_constraint: str
         """
 
-        self._constrain_t = constrain_t
+        self._has_constraint = has_constraint
 
     @property
-    def parameters(self):
-        """Gets the parameters of this ModelConfiguration.
+    def has_parameter(self):
+        """Gets the has_parameter of this ModelConfiguration.
 
 
-        :return: The parameters of this ModelConfiguration.
+        :return: The has_parameter of this ModelConfiguration.
         :rtype: List[Parameter]
         """
-        return self._parameters
+        return self._has_parameter
 
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this ModelConfiguration.
+    @has_parameter.setter
+    def has_parameter(self, has_parameter):
+        """Sets the has_parameter of this ModelConfiguration.
 
 
-        :param parameters: The parameters of this ModelConfiguration.
-        :type parameters: List[Parameter]
+        :param has_parameter: The has_parameter of this ModelConfiguration.
+        :type has_parameter: List[Parameter]
         """
 
-        self._parameters = parameters
+        self._has_parameter = has_parameter
 
     @property
-    def component_location(self):
-        """Gets the component_location of this ModelConfiguration.
+    def has_component_location(self):
+        """Gets the has_component_location of this ModelConfiguration.
 
 
-        :return: The component_location of this ModelConfiguration.
+        :return: The has_component_location of this ModelConfiguration.
         :rtype: str
         """
-        return self._component_location
+        return self._has_component_location
 
-    @component_location.setter
-    def component_location(self, component_location):
-        """Sets the component_location of this ModelConfiguration.
+    @has_component_location.setter
+    def has_component_location(self, has_component_location):
+        """Sets the has_component_location of this ModelConfiguration.
 
 
-        :param component_location: The component_location of this ModelConfiguration.
-        :type component_location: str
+        :param has_component_location: The has_component_location of this ModelConfiguration.
+        :type has_component_location: str
         """
 
-        self._component_location = component_location
+        self._has_component_location = has_component_location

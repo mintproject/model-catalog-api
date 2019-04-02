@@ -15,7 +15,7 @@ class VariablePresentation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, long_name=None, short_name=None, standard_name=None, relevance_level=None, unit=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, description=None, has_long_name=None, has_short_name=None, has_standard_variable=None, has_relevance_level=None, uses_unit=None):  # noqa: E501
         """VariablePresentation - a model defined in OpenAPI
 
         :param id: The id of this VariablePresentation.  # noqa: E501
@@ -26,27 +26,27 @@ class VariablePresentation(Model):
         :type label: str
         :param description: The description of this VariablePresentation.  # noqa: E501
         :type description: str
-        :param long_name: The long_name of this VariablePresentation.  # noqa: E501
-        :type long_name: str
-        :param short_name: The short_name of this VariablePresentation.  # noqa: E501
-        :type short_name: str
-        :param standard_name: The standard_name of this VariablePresentation.  # noqa: E501
-        :type standard_name: str
-        :param relevance_level: The relevance_level of this VariablePresentation.  # noqa: E501
-        :type relevance_level: int
-        :param unit: The unit of this VariablePresentation.  # noqa: E501
-        :type unit: Unit
+        :param has_long_name: The has_long_name of this VariablePresentation.  # noqa: E501
+        :type has_long_name: str
+        :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
+        :type has_short_name: str
+        :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
+        :type has_standard_variable: str
+        :param has_relevance_level: The has_relevance_level of this VariablePresentation.  # noqa: E501
+        :type has_relevance_level: int
+        :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
+        :type uses_unit: Unit
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
             'description': str,
-            'long_name': str,
-            'short_name': str,
-            'standard_name': str,
-            'relevance_level': int,
-            'unit': Unit
+            'has_long_name': str,
+            'has_short_name': str,
+            'has_standard_variable': str,
+            'has_relevance_level': int,
+            'uses_unit': Unit
         }
 
         self.attribute_map = {
@@ -54,22 +54,22 @@ class VariablePresentation(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'long_name': 'long_name',
-            'short_name': 'short_name',
-            'standard_name': 'standard_name',
-            'relevance_level': 'relevance_level',
-            'unit': 'unit'
+            'has_long_name': 'has_long_name',
+            'has_short_name': 'has_short_name',
+            'has_standard_variable': 'has_standard_variable',
+            'has_relevance_level': 'has_relevance_level',
+            'uses_unit': 'uses_unit'
         }
 
         self._id = id
         self._type = type
         self._label = label
         self._description = description
-        self._long_name = long_name
-        self._short_name = short_name
-        self._standard_name = standard_name
-        self._relevance_level = relevance_level
-        self._unit = unit
+        self._has_long_name = has_long_name
+        self._has_short_name = has_short_name
+        self._has_standard_variable = has_standard_variable
+        self._has_relevance_level = has_relevance_level
+        self._uses_unit = uses_unit
 
     @classmethod
     def from_dict(cls, dikt) -> 'VariablePresentation':
@@ -169,106 +169,106 @@ class VariablePresentation(Model):
         self._description = description
 
     @property
-    def long_name(self):
-        """Gets the long_name of this VariablePresentation.
+    def has_long_name(self):
+        """Gets the has_long_name of this VariablePresentation.
 
 
-        :return: The long_name of this VariablePresentation.
+        :return: The has_long_name of this VariablePresentation.
         :rtype: str
         """
-        return self._long_name
+        return self._has_long_name
 
-    @long_name.setter
-    def long_name(self, long_name):
-        """Sets the long_name of this VariablePresentation.
+    @has_long_name.setter
+    def has_long_name(self, has_long_name):
+        """Sets the has_long_name of this VariablePresentation.
 
 
-        :param long_name: The long_name of this VariablePresentation.
-        :type long_name: str
+        :param has_long_name: The has_long_name of this VariablePresentation.
+        :type has_long_name: str
         """
 
-        self._long_name = long_name
+        self._has_long_name = has_long_name
 
     @property
-    def short_name(self):
-        """Gets the short_name of this VariablePresentation.
+    def has_short_name(self):
+        """Gets the has_short_name of this VariablePresentation.
 
 
-        :return: The short_name of this VariablePresentation.
+        :return: The has_short_name of this VariablePresentation.
         :rtype: str
         """
-        return self._short_name
+        return self._has_short_name
 
-    @short_name.setter
-    def short_name(self, short_name):
-        """Sets the short_name of this VariablePresentation.
+    @has_short_name.setter
+    def has_short_name(self, has_short_name):
+        """Sets the has_short_name of this VariablePresentation.
 
 
-        :param short_name: The short_name of this VariablePresentation.
-        :type short_name: str
+        :param has_short_name: The has_short_name of this VariablePresentation.
+        :type has_short_name: str
         """
 
-        self._short_name = short_name
+        self._has_short_name = has_short_name
 
     @property
-    def standard_name(self):
-        """Gets the standard_name of this VariablePresentation.
+    def has_standard_variable(self):
+        """Gets the has_standard_variable of this VariablePresentation.
 
 
-        :return: The standard_name of this VariablePresentation.
+        :return: The has_standard_variable of this VariablePresentation.
         :rtype: str
         """
-        return self._standard_name
+        return self._has_standard_variable
 
-    @standard_name.setter
-    def standard_name(self, standard_name):
-        """Sets the standard_name of this VariablePresentation.
+    @has_standard_variable.setter
+    def has_standard_variable(self, has_standard_variable):
+        """Sets the has_standard_variable of this VariablePresentation.
 
 
-        :param standard_name: The standard_name of this VariablePresentation.
-        :type standard_name: str
+        :param has_standard_variable: The has_standard_variable of this VariablePresentation.
+        :type has_standard_variable: str
         """
 
-        self._standard_name = standard_name
+        self._has_standard_variable = has_standard_variable
 
     @property
-    def relevance_level(self):
-        """Gets the relevance_level of this VariablePresentation.
+    def has_relevance_level(self):
+        """Gets the has_relevance_level of this VariablePresentation.
 
 
-        :return: The relevance_level of this VariablePresentation.
+        :return: The has_relevance_level of this VariablePresentation.
         :rtype: int
         """
-        return self._relevance_level
+        return self._has_relevance_level
 
-    @relevance_level.setter
-    def relevance_level(self, relevance_level):
-        """Sets the relevance_level of this VariablePresentation.
+    @has_relevance_level.setter
+    def has_relevance_level(self, has_relevance_level):
+        """Sets the has_relevance_level of this VariablePresentation.
 
 
-        :param relevance_level: The relevance_level of this VariablePresentation.
-        :type relevance_level: int
+        :param has_relevance_level: The has_relevance_level of this VariablePresentation.
+        :type has_relevance_level: int
         """
 
-        self._relevance_level = relevance_level
+        self._has_relevance_level = has_relevance_level
 
     @property
-    def unit(self):
-        """Gets the unit of this VariablePresentation.
+    def uses_unit(self):
+        """Gets the uses_unit of this VariablePresentation.
 
 
-        :return: The unit of this VariablePresentation.
+        :return: The uses_unit of this VariablePresentation.
         :rtype: Unit
         """
-        return self._unit
+        return self._uses_unit
 
-    @unit.setter
-    def unit(self, unit):
-        """Sets the unit of this VariablePresentation.
+    @uses_unit.setter
+    def uses_unit(self, uses_unit):
+        """Sets the uses_unit of this VariablePresentation.
 
 
-        :param unit: The unit of this VariablePresentation.
-        :type unit: Unit
+        :param uses_unit: The uses_unit of this VariablePresentation.
+        :type uses_unit: Unit
         """
 
-        self._unit = unit
+        self._uses_unit = uses_unit

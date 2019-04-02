@@ -14,7 +14,7 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, defaultvalue=None, datatype=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, description=None, has_default_value=None, has_data_type=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param id: The id of this Parameter.  # noqa: E501
@@ -25,18 +25,18 @@ class Parameter(Model):
         :type label: str
         :param description: The description of this Parameter.  # noqa: E501
         :type description: str
-        :param defaultvalue: The defaultvalue of this Parameter.  # noqa: E501
-        :type defaultvalue: str
-        :param datatype: The datatype of this Parameter.  # noqa: E501
-        :type datatype: str
+        :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
+        :type has_default_value: str
+        :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
+        :type has_data_type: str
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
             'description': str,
-            'defaultvalue': str,
-            'datatype': str
+            'has_default_value': str,
+            'has_data_type': str
         }
 
         self.attribute_map = {
@@ -44,16 +44,16 @@ class Parameter(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'defaultvalue': 'defaultvalue',
-            'datatype': 'datatype'
+            'has_default_value': 'has_default_value',
+            'has_data_type': 'has_data_type'
         }
 
         self._id = id
         self._type = type
         self._label = label
         self._description = description
-        self._defaultvalue = defaultvalue
-        self._datatype = datatype
+        self._has_default_value = has_default_value
+        self._has_data_type = has_data_type
 
     @classmethod
     def from_dict(cls, dikt) -> 'Parameter':
@@ -153,43 +153,43 @@ class Parameter(Model):
         self._description = description
 
     @property
-    def defaultvalue(self):
-        """Gets the defaultvalue of this Parameter.
+    def has_default_value(self):
+        """Gets the has_default_value of this Parameter.
 
 
-        :return: The defaultvalue of this Parameter.
+        :return: The has_default_value of this Parameter.
         :rtype: str
         """
-        return self._defaultvalue
+        return self._has_default_value
 
-    @defaultvalue.setter
-    def defaultvalue(self, defaultvalue):
-        """Sets the defaultvalue of this Parameter.
+    @has_default_value.setter
+    def has_default_value(self, has_default_value):
+        """Sets the has_default_value of this Parameter.
 
 
-        :param defaultvalue: The defaultvalue of this Parameter.
-        :type defaultvalue: str
+        :param has_default_value: The has_default_value of this Parameter.
+        :type has_default_value: str
         """
 
-        self._defaultvalue = defaultvalue
+        self._has_default_value = has_default_value
 
     @property
-    def datatype(self):
-        """Gets the datatype of this Parameter.
+    def has_data_type(self):
+        """Gets the has_data_type of this Parameter.
 
 
-        :return: The datatype of this Parameter.
+        :return: The has_data_type of this Parameter.
         :rtype: str
         """
-        return self._datatype
+        return self._has_data_type
 
-    @datatype.setter
-    def datatype(self, datatype):
-        """Sets the datatype of this Parameter.
+    @has_data_type.setter
+    def has_data_type(self, has_data_type):
+        """Sets the has_data_type of this Parameter.
 
 
-        :param datatype: The datatype of this Parameter.
-        :type datatype: str
+        :param has_data_type: The has_data_type of this Parameter.
+        :type has_data_type: str
         """
 
-        self._datatype = datatype
+        self._has_data_type = has_data_type

@@ -7,9 +7,8 @@ from openapi_server.models.parameter import Parameter  # noqa: E501
 
 
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
-from openapi_server.static_vars import *
 
-from endpoint.utils import insert_query, build_user_resource_uri
+from endpoint.utils import insert_query, prepare_jsonld
 
 
 def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
@@ -174,24 +173,3 @@ def update_model_configuration(id, name, model_configuration):  # noqa: E501
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
     return "Created", 201, {}
 
-
-def prepare_jsonld(modelconfig, username):
-    modelconfig['@context'] = MINT_CONTEXT
-    modelconfig['@id'] = build_user_resource_uri(username, modelconfig['id'])
-    modelconfig['@type'] = MODELCONFIGURATION_TYPE
-    for key in SUPPORTED_CLASSES:
-        prepare_id_jsonld(modelconfig, username, key)
-
-    return json.dumps(modelconfig)
-
-
-def prepare_id_jsonld(modelconfig, username, key):
-    if key in modelconfig:
-        for item in modelconfig[key]:
-            item['@id'] = build_user_resource_uri(username, item['id'])
-            item['@type'] = [MAPPING_TYPE[key]]
-
-            #include custom rdf:type
-            if 'type' in item:
-                for item_type in item['type']:
-                    item['@type'].append(item_type)

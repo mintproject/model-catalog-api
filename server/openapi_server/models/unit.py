@@ -14,7 +14,7 @@ class Unit(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, description=None, label=None, part=None, dimension=None, abbreviation=None):  # noqa: E501
+    def __init__(self, id=None, type=None, description=None, label=None, ccut_has_part=None, ccut_has_dimensionality=None, abbreviation=None):  # noqa: E501
         """Unit - a model defined in OpenAPI
 
         :param id: The id of this Unit.  # noqa: E501
@@ -25,10 +25,10 @@ class Unit(Model):
         :type description: str
         :param label: The label of this Unit.  # noqa: E501
         :type label: str
-        :param part: The part of this Unit.  # noqa: E501
-        :type part: List[str]
-        :param dimension: The dimension of this Unit.  # noqa: E501
-        :type dimension: List[str]
+        :param ccut_has_part: The ccut_has_part of this Unit.  # noqa: E501
+        :type ccut_has_part: List[str]
+        :param ccut_has_dimensionality: The ccut_has_dimensionality of this Unit.  # noqa: E501
+        :type ccut_has_dimensionality: List[str]
         :param abbreviation: The abbreviation of this Unit.  # noqa: E501
         :type abbreviation: List[str]
         """
@@ -37,8 +37,8 @@ class Unit(Model):
             'type': List[str],
             'description': str,
             'label': str,
-            'part': List[str],
-            'dimension': List[str],
+            'ccut_has_part': List[str],
+            'ccut_has_dimensionality': List[str],
             'abbreviation': List[str]
         }
 
@@ -47,8 +47,8 @@ class Unit(Model):
             'type': 'type',
             'description': 'description',
             'label': 'label',
-            'part': 'part',
-            'dimension': 'dimension',
+            'ccut_has_part': 'ccut_has_part',
+            'ccut_has_dimensionality': 'ccut_has_dimensionality',
             'abbreviation': 'abbreviation'
         }
 
@@ -56,8 +56,8 @@ class Unit(Model):
         self._type = type
         self._description = description
         self._label = label
-        self._part = part
-        self._dimension = dimension
+        self._ccut_has_part = ccut_has_part
+        self._ccut_has_dimensionality = ccut_has_dimensionality
         self._abbreviation = abbreviation
 
     @classmethod
@@ -158,46 +158,46 @@ class Unit(Model):
         self._label = label
 
     @property
-    def part(self):
-        """Gets the part of this Unit.
+    def ccut_has_part(self):
+        """Gets the ccut_has_part of this Unit.
 
 
-        :return: The part of this Unit.
+        :return: The ccut_has_part of this Unit.
         :rtype: List[str]
         """
-        return self._part
+        return self._ccut_has_part
 
-    @part.setter
-    def part(self, part):
-        """Sets the part of this Unit.
+    @ccut_has_part.setter
+    def ccut_has_part(self, ccut_has_part):
+        """Sets the ccut_has_part of this Unit.
 
 
-        :param part: The part of this Unit.
-        :type part: List[str]
+        :param ccut_has_part: The ccut_has_part of this Unit.
+        :type ccut_has_part: List[str]
         """
 
-        self._part = part
+        self._ccut_has_part = ccut_has_part
 
     @property
-    def dimension(self):
-        """Gets the dimension of this Unit.
+    def ccut_has_dimensionality(self):
+        """Gets the ccut_has_dimensionality of this Unit.
 
 
-        :return: The dimension of this Unit.
+        :return: The ccut_has_dimensionality of this Unit.
         :rtype: List[str]
         """
-        return self._dimension
+        return self._ccut_has_dimensionality
 
-    @dimension.setter
-    def dimension(self, dimension):
-        """Sets the dimension of this Unit.
+    @ccut_has_dimensionality.setter
+    def ccut_has_dimensionality(self, ccut_has_dimensionality):
+        """Sets the ccut_has_dimensionality of this Unit.
 
 
-        :param dimension: The dimension of this Unit.
-        :type dimension: List[str]
+        :param ccut_has_dimensionality: The ccut_has_dimensionality of this Unit.
+        :type ccut_has_dimensionality: List[str]
         """
 
-        self._dimension = dimension
+        self._ccut_has_dimensionality = ccut_has_dimensionality
 
     @property
     def abbreviation(self):

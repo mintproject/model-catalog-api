@@ -1,9 +1,9 @@
 import connexion
 
 from openapi_server.models.model_version import ModelVersion  # noqa: E501
+from endpoint.utils import insert_query, prepare_jsonld
 
-
-def create_model_version(model_version):  # noqa: E501
+def create_model_version(user):  # noqa: E501
     """Create a ModelVersion
 
     Creates a new instance of a &#x60;ModelVersion&#x60;. # noqa: E501
@@ -14,9 +14,11 @@ def create_model_version(model_version):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        model_version = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+        _ = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
+        model_version_json = prepare_jsonld(connexion.request.get_json(), user)
+        return insert_query(model_version_json, user)
 
+    return "Bad request", 403, {}
 
 def delete_model_version(model_version_id):  # noqa: E501
     """Delete a ModelVersion

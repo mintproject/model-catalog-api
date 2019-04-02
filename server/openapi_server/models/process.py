@@ -1,11 +1,12 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+from datetime import date, datetime  # noqa: F401
 
-from typing import List  # noqa: F401
+from typing import List, Dict  # noqa: F401
 
-from openapi_server import util
 from openapi_server.models.base_model_ import Model
+from openapi_server import util
 
 
 class Process(Model):
@@ -14,7 +15,7 @@ class Process(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, relations=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, influences=None):  # noqa: E501
         """Process - a model defined in OpenAPI
 
         :param id: The id of this Process.  # noqa: E501
@@ -23,27 +24,27 @@ class Process(Model):
         :type type: List[str]
         :param label: The label of this Process.  # noqa: E501
         :type label: str
-        :param relations: The relations of this Process.  # noqa: E501
-        :type relations: List[Process]
+        :param influences: The influences of this Process.  # noqa: E501
+        :type influences: List[Process]
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
-            'relations': List[Process]
+            'influences': List[Process]
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'label': 'label',
-            'relations': 'relations'
+            'influences': 'influences'
         }
 
         self._id = id
         self._type = type
         self._label = label
-        self._relations = relations
+        self._influences = influences
 
     @classmethod
     def from_dict(cls, dikt) -> 'Process':
@@ -122,24 +123,24 @@ class Process(Model):
         self._label = label
 
     @property
-    def relations(self):
-        """Gets the relations of this Process.
+    def influences(self):
+        """Gets the influences of this Process.
 
         Property that describe the causal relationship between two processes, two variables, a process and a variable or a variable and a process  # noqa: E501
 
-        :return: The relations of this Process.
+        :return: The influences of this Process.
         :rtype: List[Process]
         """
-        return self._relations
+        return self._influences
 
-    @relations.setter
-    def relations(self, relations):
-        """Sets the relations of this Process.
+    @influences.setter
+    def influences(self, influences):
+        """Sets the influences of this Process.
 
         Property that describe the causal relationship between two processes, two variables, a process and a variable or a variable and a process  # noqa: E501
 
-        :param relations: The relations of this Process.
-        :type relations: List[Process]
+        :param influences: The influences of this Process.
+        :type influences: List[Process]
         """
 
-        self._relations = relations
+        self._influences = influences

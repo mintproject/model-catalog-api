@@ -1,9 +1,9 @@
 import connexion
 
 from openapi_server.models.model import Model  # noqa: E501
+from endpoint.utils import insert_query, prepare_jsonld
 
-
-def createmodel(model):  # noqa: E501
+def createmodel(user):  # noqa: E501
     """Create a model
 
     Creates a new instance of a &#x60;model&#x60;. # noqa: E501
@@ -14,10 +14,11 @@ def createmodel(model):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        print(connexion.request.get_json())
-        model = Model.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+        _ = Model.from_dict(connexion.request.get_json())  # noqa: E501
+        model_json = prepare_jsonld(connexion.request.get_json(), user)
+        return insert_query(model_json, user)
 
+    return "Bad request", 403, {}
 
 def delete_model(model_id):  # noqa: E501
     """Delete a Model

@@ -12,9 +12,9 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: "0.0.2"
 servers:
-- url: http://api.mint.isi.edu/v0.0.2
+- url: https://api.models.mint.isi.edu/v0.0.2
+- url: https://dev.api.models.mint.isi.edu/v0.0.2
 - url: http://localhost:8080/v0.0.2
-
 paths:
   /user:
     post:
@@ -742,19 +742,18 @@ components:
       properties:
         label:
           type: string
-        format:
+        has_format:
           type: string
         description:
           type: string
-        dimensionality:
+        has_dimensionality:
           format: int64
           type: integer
-        presentations:
+        has_presentation:
           type: array
           items:
             $ref: '#/components/schemas/VariablePresentation'
         type:
-          description: ''
           type: array
           items:
             type: string
@@ -763,11 +762,11 @@ components:
       example:
         id: crop-yield
         label: crop-yield
-        format: csv
+        has_format: csv
         description: Contains the yield elasticities to fertilizer use that are derived from
           Cycles output
-        dimensionality: 0
-        presentations:
+        has_dimensionality: 0
+        has_presentation:
         - id: https://w3id.org/mint/instance/econ_ybarN          
     ModelConfiguration:
       type: object
@@ -782,67 +781,67 @@ components:
             type: string
         label:
           type: string
-        inputs:
+        has_input:
           type: array
           items:
             $ref: '#/components/schemas/DataSet'
-        outputs:
+        has_output:
           type: array
           items:
             $ref: '#/components/schemas/DataSet'
         description:
           type: string
-        cag:
+        has_cag:
           type: array
           items:
             $ref: '#/components/schemas/CAG'
-        process:
+        has_process:
           type: array
           items:
             $ref: '#/components/schemas/Process'
-        intervalTime:
+        has_time_interval:
           type: array
           items:
             $ref: '#/components/schemas/TimeInterval'
-        implementationScriptLocation:
+        has_implementation_script_location:
           type: string
-        container:
+        has_container:
           type: string
-        constrainT:
+        has_constraint:
           type: string
-        parameters:
+        has_parameter:
           type: array
           items:
             $ref: '#/components/schemas/Parameter'
-        componentLocation:
+        has_component_location:
           type: string
       example:
         id: economic
         label: Economic aggregate crop supply
-        inputs:
+        has_input:
         - id: econ_yield
-        outputs:
+        has_output:
         - id: econ_land_use
         description: Aggregate crop supply response model for the country of South Sudan configuration
-        cag:
+        has_cag:
         - id: economic_aggregate_crop_supply_CAG_variables
         - id: economic_aggregate_crop_supply_CAG_process
-        process:
+        has_process:
         - id: crop_yield
         - id: crop_supply
-        intervalTime:
+        has_time_interval:
         - id: economic_aggregate_crop_supply_TI
-        implementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        container: https://w3id.org/mint/instance/mintproject/economic:latest
-        constrainT: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+        has_implementation_script_location: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        has_container: https://w3id.org/mint/instance/mintproject/economic:latest
+        has_constraint: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
           (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
           dcdom:region) uriConcat(?c '_region' ?location) -> (?in1 dcdom:region ?location)
           (?in2 dcdom:region ?location) print('Setting domain of ?in1 and ?in2 to ?location
           because both inputs to PIHM should be from the same region')]"
-        parameters:
+        has_parameter:
         - id: pihm_start-date
         - id: pihm_end-date
-        componentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
+        has_component_location: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
     Parameter:
       required:
       - id
@@ -858,9 +857,9 @@ components:
           type: string
         description:
           type: string
-        defaultvalue:
+        has_default_value:
           type: string
-        datatype:
+        has_data_type:
           type: string
       example:
         id: pihm_start-date
@@ -868,8 +867,8 @@ components:
         - https://w3id.org/wings/export/MINT#StartDate
         label: pihm_start-date
         description: start date
-        defaultvalue: '2017-01-01'
-        datatype: string
+        has_default_value: '2017-01-01'
+        has_data_type: string
     Process:
       required:
       - id
@@ -883,7 +882,7 @@ components:
             type: string
         label:
           type: string
-        relations:
+        influences:
           description: Property that describe the causal relationship between two
             processes, two variables, a process and a variable or a variable and a
             process
@@ -893,7 +892,7 @@ components:
       example:
         id: crop_yield
         label: crop yield
-        relations:
+        influences:
         - id: https://w3id.org/mint/instance/crop_supply          
     TimeInterval:
       required:
@@ -910,9 +909,9 @@ components:
           type: string
         description:
           type: string
-        unit:
+        has_unit:
           $ref: '#/components/schemas/Unit'
-        value:
+        has_value:
           format: int64
           type: integer
       example:
@@ -922,9 +921,9 @@ components:
         label: Simple economic time interval
         description: Time interval used in the aggregate crop supply response model for the
           country of South Sudan configuration
-        unit:
+        has_unit:
           id: https://w3id.org/mint/instance/yearT
-        value: 1          
+        has_value: 1          
     Unit:
       required:
       - id    
@@ -940,11 +939,11 @@ components:
           type: string
         label:
           type: string
-        part:
+        ccut_has_part:
           type: array
           items:
             type: string
-        dimension:
+        ccut_has_dimensionality:
           type: array
           items:
             type: string
@@ -957,10 +956,10 @@ components:
         type:
         - http://qudt.org/1.1/schema/qudt#Unit
         label: USD kg-1
-        part:
+        ccut_has_part:
         - u_USD
         - u__1_M_kilo_gram_kg
-        dimension:
+        ccut_has_dimensionality:
         - M-1
         abbreviation:
         - USD kg-1          
@@ -979,27 +978,27 @@ components:
           type: string
         description:
           type: string
-        long_name:
+        has_long_name:
           type: string
-        short_name:
+        has_short_name:
           type: string
-        standard_name:
+        has_standard_variable:
           type: string
-        relevance_level:
+        has_relevance_level:
           format: int64
           type: integer
-        unit:
+        uses_unit:
           $ref: '#/components/schemas/Unit'
       example:
         id: econ_ybarN
         label: ybarN
         description: Contains the yield elasticities to fertilizer use that are derived from
           Cycles output
-        long_name: yield elasticity
-        short_name: ybarN
-        standard_name: crop_fertilizer~nitrogen__yield_elasticity
-        relevance_level: 1
-        unit:
+        has_long_name: yield elasticity
+        has_short_name: ybarN
+        has_standard_variable: crop_fertilizer~nitrogen__yield_elasticity
+        has_relevance_level: 1
+        uses_unit:
           id: USD_kg_1M_1            
     User:
       type: object
@@ -1046,7 +1045,7 @@ components:
           type: array
           items:
             type: string
-        parts:
+        has_part:
           description: Array of Parameter or Variables
           type: array
           items:
@@ -1063,7 +1062,7 @@ components:
           the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
-        parts:
+        has_part:
         - id: https://w3id.org/mint/instance/econ_ybarN
         - id: https://w3id.org/mint/instance/econ_production
     Model:
@@ -1080,16 +1079,15 @@ components:
           type: array
           items:
             type: string
-        versions:
+        has_software_version:
           type: array
           items:
             type: string
-        categories:
+        has_model_category:
           type: array
           items:
             type: string
-        documentation:
-          description: ''
+        has_documentation:
           type: array
           items:
             type: string
@@ -1102,11 +1100,11 @@ components:
         type:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
-        versions:
+        has_software_version:
         - DSSAT_4.7
-        categories:
+        has_model_category:
         - Agriculture
-        documentation:
+        has_documentation:
         - https://dssat.net
     ModelVersion:
       description: ""
@@ -1122,22 +1120,22 @@ components:
           type: array
           items:
             type: string
-        documentation:
-          description: '    '
+        has_documentation:
           type: array
           items:
             type: string
-        version:
+        has_version_id:
           type: string
-        configuration:
-          type: string
+        has_configuration:
+          $ref: '#/components/schemas/ModelConfiguration'
       example:
         id: DSSAT_4.7
         label: DSSAT v4.7
         type:
         - http://ontosoft.org/software#SoftwareVersion
-        version: '4.7'
-        configuration: DSSAT_cfg_simple
+        has_version_id: '4.7'
+        has_configuration:
+          id: economic
   securitySchemes:
     BearerAuth:
       type: http

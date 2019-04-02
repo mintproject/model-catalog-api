@@ -15,19 +15,19 @@ class DataSet(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, label=None, format=None, description=None, dimensionality=None, presentations=None, type=None, id=None):  # noqa: E501
+    def __init__(self, label=None, has_format=None, description=None, has_dimensionality=None, has_presentation=None, type=None, id=None):  # noqa: E501
         """DataSet - a model defined in OpenAPI
 
         :param label: The label of this DataSet.  # noqa: E501
         :type label: str
-        :param format: The format of this DataSet.  # noqa: E501
-        :type format: str
+        :param has_format: The has_format of this DataSet.  # noqa: E501
+        :type has_format: str
         :param description: The description of this DataSet.  # noqa: E501
         :type description: str
-        :param dimensionality: The dimensionality of this DataSet.  # noqa: E501
-        :type dimensionality: int
-        :param presentations: The presentations of this DataSet.  # noqa: E501
-        :type presentations: List[VariablePresentation]
+        :param has_dimensionality: The has_dimensionality of this DataSet.  # noqa: E501
+        :type has_dimensionality: int
+        :param has_presentation: The has_presentation of this DataSet.  # noqa: E501
+        :type has_presentation: List[VariablePresentation]
         :param type: The type of this DataSet.  # noqa: E501
         :type type: List[str]
         :param id: The id of this DataSet.  # noqa: E501
@@ -35,29 +35,29 @@ class DataSet(Model):
         """
         self.openapi_types = {
             'label': str,
-            'format': str,
+            'has_format': str,
             'description': str,
-            'dimensionality': int,
-            'presentations': List[VariablePresentation],
+            'has_dimensionality': int,
+            'has_presentation': List[VariablePresentation],
             'type': List[str],
             'id': str
         }
 
         self.attribute_map = {
             'label': 'label',
-            'format': 'format',
+            'has_format': 'has_format',
             'description': 'description',
-            'dimensionality': 'dimensionality',
-            'presentations': 'presentations',
+            'has_dimensionality': 'has_dimensionality',
+            'has_presentation': 'has_presentation',
             'type': 'type',
             'id': 'id'
         }
 
         self._label = label
-        self._format = format
+        self._has_format = has_format
         self._description = description
-        self._dimensionality = dimensionality
-        self._presentations = presentations
+        self._has_dimensionality = has_dimensionality
+        self._has_presentation = has_presentation
         self._type = type
         self._id = id
 
@@ -94,25 +94,25 @@ class DataSet(Model):
         self._label = label
 
     @property
-    def format(self):
-        """Gets the format of this DataSet.
+    def has_format(self):
+        """Gets the has_format of this DataSet.
 
 
-        :return: The format of this DataSet.
+        :return: The has_format of this DataSet.
         :rtype: str
         """
-        return self._format
+        return self._has_format
 
-    @format.setter
-    def format(self, format):
-        """Sets the format of this DataSet.
+    @has_format.setter
+    def has_format(self, has_format):
+        """Sets the has_format of this DataSet.
 
 
-        :param format: The format of this DataSet.
-        :type format: str
+        :param has_format: The has_format of this DataSet.
+        :type has_format: str
         """
 
-        self._format = format
+        self._has_format = has_format
 
     @property
     def description(self):
@@ -136,46 +136,46 @@ class DataSet(Model):
         self._description = description
 
     @property
-    def dimensionality(self):
-        """Gets the dimensionality of this DataSet.
+    def has_dimensionality(self):
+        """Gets the has_dimensionality of this DataSet.
 
 
-        :return: The dimensionality of this DataSet.
+        :return: The has_dimensionality of this DataSet.
         :rtype: int
         """
-        return self._dimensionality
+        return self._has_dimensionality
 
-    @dimensionality.setter
-    def dimensionality(self, dimensionality):
-        """Sets the dimensionality of this DataSet.
+    @has_dimensionality.setter
+    def has_dimensionality(self, has_dimensionality):
+        """Sets the has_dimensionality of this DataSet.
 
 
-        :param dimensionality: The dimensionality of this DataSet.
-        :type dimensionality: int
+        :param has_dimensionality: The has_dimensionality of this DataSet.
+        :type has_dimensionality: int
         """
 
-        self._dimensionality = dimensionality
+        self._has_dimensionality = has_dimensionality
 
     @property
-    def presentations(self):
-        """Gets the presentations of this DataSet.
+    def has_presentation(self):
+        """Gets the has_presentation of this DataSet.
 
 
-        :return: The presentations of this DataSet.
+        :return: The has_presentation of this DataSet.
         :rtype: List[VariablePresentation]
         """
-        return self._presentations
+        return self._has_presentation
 
-    @presentations.setter
-    def presentations(self, presentations):
-        """Sets the presentations of this DataSet.
+    @has_presentation.setter
+    def has_presentation(self, has_presentation):
+        """Sets the has_presentation of this DataSet.
 
 
-        :param presentations: The presentations of this DataSet.
-        :type presentations: List[VariablePresentation]
+        :param has_presentation: The has_presentation of this DataSet.
+        :type has_presentation: List[VariablePresentation]
         """
 
-        self._presentations = presentations
+        self._has_presentation = has_presentation
 
     @property
     def type(self):

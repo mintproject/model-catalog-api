@@ -14,7 +14,7 @@ class ModelVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, documentation=None, version=None, configuration=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=None, has_documentation=None, has_version_id=None, has_configuration=None):  # noqa: E501
         """ModelVersion - a model defined in OpenAPI
 
         :param id: The id of this ModelVersion.  # noqa: E501
@@ -23,37 +23,37 @@ class ModelVersion(Model):
         :type label: str
         :param type: The type of this ModelVersion.  # noqa: E501
         :type type: List[str]
-        :param documentation: The documentation of this ModelVersion.  # noqa: E501
-        :type documentation: List[str]
-        :param version: The version of this ModelVersion.  # noqa: E501
-        :type version: str
-        :param configuration: The configuration of this ModelVersion.  # noqa: E501
-        :type configuration: str
+        :param has_documentation: The has_documentation of this ModelVersion.  # noqa: E501
+        :type has_documentation: List[str]
+        :param has_version_id: The has_version_id of this ModelVersion.  # noqa: E501
+        :type has_version_id: str
+        :param has_configuration: The has_configuration of this ModelVersion.  # noqa: E501
+        :type has_configuration: str
         """
         self.openapi_types = {
             'id': str,
             'label': str,
             'type': List[str],
-            'documentation': List[str],
-            'version': str,
-            'configuration': str
+            'has_documentation': List[str],
+            'has_version_id': str,
+            'has_configuration': str
         }
 
         self.attribute_map = {
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'documentation': 'documentation',
-            'version': 'version',
-            'configuration': 'configuration'
+            'has_documentation': 'has_documentation',
+            'has_version_id': 'has_version_id',
+            'has_configuration': 'has_configuration'
         }
 
         self._id = id
         self._label = label
         self._type = type
-        self._documentation = documentation
-        self._version = version
-        self._configuration = configuration
+        self._has_documentation = has_documentation
+        self._has_version_id = has_version_id
+        self._has_configuration = has_configuration
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelVersion':
@@ -132,64 +132,64 @@ class ModelVersion(Model):
         self._type = type
 
     @property
-    def documentation(self):
-        """Gets the documentation of this ModelVersion.
+    def has_documentation(self):
+        """Gets the has_documentation of this ModelVersion.
 
 
-        :return: The documentation of this ModelVersion.
+        :return: The has_documentation of this ModelVersion.
         :rtype: List[str]
         """
-        return self._documentation
+        return self._has_documentation
 
-    @documentation.setter
-    def documentation(self, documentation):
-        """Sets the documentation of this ModelVersion.
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this ModelVersion.
 
 
-        :param documentation: The documentation of this ModelVersion.
-        :type documentation: List[str]
+        :param has_documentation: The has_documentation of this ModelVersion.
+        :type has_documentation: List[str]
         """
 
-        self._documentation = documentation
+        self._has_documentation = has_documentation
 
     @property
-    def version(self):
-        """Gets the version of this ModelVersion.
+    def has_version_id(self):
+        """Gets the has_version_id of this ModelVersion.
 
 
-        :return: The version of this ModelVersion.
+        :return: The has_version_id of this ModelVersion.
         :rtype: str
         """
-        return self._version
+        return self._has_version_id
 
-    @version.setter
-    def version(self, version):
-        """Sets the version of this ModelVersion.
+    @has_version_id.setter
+    def has_version_id(self, has_version_id):
+        """Sets the has_version_id of this ModelVersion.
 
 
-        :param version: The version of this ModelVersion.
-        :type version: str
+        :param has_version_id: The has_version_id of this ModelVersion.
+        :type has_version_id: str
         """
 
-        self._version = version
+        self._has_version_id = has_version_id
 
     @property
-    def configuration(self):
-        """Gets the configuration of this ModelVersion.
+    def has_configuration(self):
+        """Gets the has_configuration of this ModelVersion.
 
 
-        :return: The configuration of this ModelVersion.
+        :return: The has_configuration of this ModelVersion.
         :rtype: str
         """
-        return self._configuration
+        return self._has_configuration
 
-    @configuration.setter
-    def configuration(self, configuration):
-        """Sets the configuration of this ModelVersion.
+    @has_configuration.setter
+    def has_configuration(self, has_configuration):
+        """Sets the has_configuration of this ModelVersion.
 
 
-        :param configuration: The configuration of this ModelVersion.
-        :type configuration: str
+        :param has_configuration: The has_configuration of this ModelVersion.
+        :type has_configuration: str
         """
 
-        self._configuration = configuration
+        self._has_configuration = has_configuration

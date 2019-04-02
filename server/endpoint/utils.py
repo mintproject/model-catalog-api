@@ -1,9 +1,29 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from rdflib import Graph
 from openapi_server.static import UPDATE_ENDPOINT, DEFAULT_MINT_INSTANCE
+from openapi_server.static_vars import *
+from flask import json
 
 
-# todo: detect type of query
+def prepare_jsonld(resource, username):
+    resource['@context'] = MINT_CONTEXT
+    resource['@id'] = build_user_resource_uri(username, resource['id'])
+    resource['@type'] = MODELCONFIGURATION_TYPE
+    for key in SUPPORTED_CLASSES:
+        prepare_id_jsonld(resource, username, key)
+    return json.dumps(resource)
+
+
+def prepare_id_jsonld(json, username, key):
+    if key in json:
+        for item in json[key]:
+            item['@id'] = build_user_resource_uri(username, item['id'])
+            item['@type'] = [MAPPING_TYPE[key]]
+
+            #include custom rdf:type
+            if 'type' in item:
+                for item_type in item['type']:
+                    item['@type'].append(item_type)
 
 def build_graph_uri(username):
     return f'{DEFAULT_MINT_INSTANCE}{username}_graph'

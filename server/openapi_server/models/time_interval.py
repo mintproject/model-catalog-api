@@ -1,12 +1,12 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+from datetime import date, datetime  # noqa: F401
 
-from typing import List  # noqa: F401
+from typing import List, Dict  # noqa: F401
 
-from openapi_server import util
-from openapi_server.models.unit import Unit
 from openapi_server.models.base_model_ import Model
+from openapi_server import util
 
 
 class TimeInterval(Model):
@@ -15,7 +15,7 @@ class TimeInterval(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, unit=None, value=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, description=None, has_unit=None, has_value=None):  # noqa: E501
         """TimeInterval - a model defined in OpenAPI
 
         :param id: The id of this TimeInterval.  # noqa: E501
@@ -26,18 +26,18 @@ class TimeInterval(Model):
         :type label: str
         :param description: The description of this TimeInterval.  # noqa: E501
         :type description: str
-        :param unit: The unit of this TimeInterval.  # noqa: E501
-        :type unit: Unit
-        :param value: The value of this TimeInterval.  # noqa: E501
-        :type value: int
+        :param has_unit: The has_unit of this TimeInterval.  # noqa: E501
+        :type has_unit: Unit
+        :param has_value: The has_value of this TimeInterval.  # noqa: E501
+        :type has_value: int
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
             'description': str,
-            'unit': Unit,
-            'value': int
+            'has_unit': Unit,
+            'has_value': int
         }
 
         self.attribute_map = {
@@ -45,16 +45,16 @@ class TimeInterval(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'unit': 'unit',
-            'value': 'value'
+            'has_unit': 'has_unit',
+            'has_value': 'has_value'
         }
 
         self._id = id
         self._type = type
         self._label = label
         self._description = description
-        self._unit = unit
-        self._value = value
+        self._has_unit = has_unit
+        self._has_value = has_value
 
     @classmethod
     def from_dict(cls, dikt) -> 'TimeInterval':
@@ -154,43 +154,43 @@ class TimeInterval(Model):
         self._description = description
 
     @property
-    def unit(self):
-        """Gets the unit of this TimeInterval.
+    def has_unit(self):
+        """Gets the has_unit of this TimeInterval.
 
 
-        :return: The unit of this TimeInterval.
+        :return: The has_unit of this TimeInterval.
         :rtype: Unit
         """
-        return self._unit
+        return self._has_unit
 
-    @unit.setter
-    def unit(self, unit):
-        """Sets the unit of this TimeInterval.
+    @has_unit.setter
+    def has_unit(self, has_unit):
+        """Sets the has_unit of this TimeInterval.
 
 
-        :param unit: The unit of this TimeInterval.
-        :type unit: Unit
+        :param has_unit: The has_unit of this TimeInterval.
+        :type has_unit: Unit
         """
 
-        self._unit = unit
+        self._has_unit = has_unit
 
     @property
-    def value(self):
-        """Gets the value of this TimeInterval.
+    def has_value(self):
+        """Gets the has_value of this TimeInterval.
 
 
-        :return: The value of this TimeInterval.
+        :return: The has_value of this TimeInterval.
         :rtype: int
         """
-        return self._value
+        return self._has_value
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this TimeInterval.
+    @has_value.setter
+    def has_value(self, has_value):
+        """Sets the has_value of this TimeInterval.
 
 
-        :param value: The value of this TimeInterval.
-        :type value: int
+        :param has_value: The has_value of this TimeInterval.
+        :type has_value: int
         """
 
-        self._value = value
+        self._has_value = has_value

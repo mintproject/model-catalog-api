@@ -14,7 +14,7 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, versions=None, categories=None, documentation=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=None, has_software_version=None, has_model_category=None, has_documentation=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
         :param id: The id of this Model.  # noqa: E501
@@ -23,37 +23,37 @@ class Model(Model):
         :type label: str
         :param type: The type of this Model.  # noqa: E501
         :type type: List[str]
-        :param versions: The versions of this Model.  # noqa: E501
-        :type versions: List[str]
-        :param categories: The categories of this Model.  # noqa: E501
-        :type categories: List[str]
-        :param documentation: The documentation of this Model.  # noqa: E501
-        :type documentation: List[str]
+        :param has_software_version: The has_software_version of this Model.  # noqa: E501
+        :type has_software_version: List[str]
+        :param has_model_category: The has_model_category of this Model.  # noqa: E501
+        :type has_model_category: List[str]
+        :param has_documentation: The has_documentation of this Model.  # noqa: E501
+        :type has_documentation: List[str]
         """
         self.openapi_types = {
             'id': str,
             'label': str,
             'type': List[str],
-            'versions': List[str],
-            'categories': List[str],
-            'documentation': List[str]
+            'has_software_version': List[str],
+            'has_model_category': List[str],
+            'has_documentation': List[str]
         }
 
         self.attribute_map = {
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'versions': 'versions',
-            'categories': 'categories',
-            'documentation': 'documentation'
+            'has_software_version': 'has_software_version',
+            'has_model_category': 'has_model_category',
+            'has_documentation': 'has_documentation'
         }
 
         self._id = id
         self._label = label
         self._type = type
-        self._versions = versions
-        self._categories = categories
-        self._documentation = documentation
+        self._has_software_version = has_software_version
+        self._has_model_category = has_model_category
+        self._has_documentation = has_documentation
 
     @classmethod
     def from_dict(cls, dikt) -> 'Model':
@@ -132,64 +132,64 @@ class Model(Model):
         self._type = type
 
     @property
-    def versions(self):
-        """Gets the versions of this Model.
+    def has_software_version(self):
+        """Gets the has_software_version of this Model.
 
 
-        :return: The versions of this Model.
+        :return: The has_software_version of this Model.
         :rtype: List[str]
         """
-        return self._versions
+        return self._has_software_version
 
-    @versions.setter
-    def versions(self, versions):
-        """Sets the versions of this Model.
+    @has_software_version.setter
+    def has_software_version(self, has_software_version):
+        """Sets the has_software_version of this Model.
 
 
-        :param versions: The versions of this Model.
-        :type versions: List[str]
+        :param has_software_version: The has_software_version of this Model.
+        :type has_software_version: List[str]
         """
 
-        self._versions = versions
+        self._has_software_version = has_software_version
 
     @property
-    def categories(self):
-        """Gets the categories of this Model.
+    def has_model_category(self):
+        """Gets the has_model_category of this Model.
 
 
-        :return: The categories of this Model.
+        :return: The has_model_category of this Model.
         :rtype: List[str]
         """
-        return self._categories
+        return self._has_model_category
 
-    @categories.setter
-    def categories(self, categories):
-        """Sets the categories of this Model.
+    @has_model_category.setter
+    def has_model_category(self, has_model_category):
+        """Sets the has_model_category of this Model.
 
 
-        :param categories: The categories of this Model.
-        :type categories: List[str]
+        :param has_model_category: The has_model_category of this Model.
+        :type has_model_category: List[str]
         """
 
-        self._categories = categories
+        self._has_model_category = has_model_category
 
     @property
-    def documentation(self):
-        """Gets the documentation of this Model.
+    def has_documentation(self):
+        """Gets the has_documentation of this Model.
 
 
-        :return: The documentation of this Model.
+        :return: The has_documentation of this Model.
         :rtype: List[str]
         """
-        return self._documentation
+        return self._has_documentation
 
-    @documentation.setter
-    def documentation(self, documentation):
-        """Sets the documentation of this Model.
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this Model.
 
 
-        :param documentation: The documentation of this Model.
-        :type documentation: List[str]
+        :param has_documentation: The has_documentation of this Model.
+        :type has_documentation: List[str]
         """
 
-        self._documentation = documentation
+        self._has_documentation = has_documentation

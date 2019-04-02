@@ -2,11 +2,10 @@
 
 from __future__ import absolute_import
 
-from typing import List  # noqa: F401
+from typing import List, Dict  # noqa: F401
 
-from openapi_server import util
 from openapi_server.models.base_model_ import Model
-from openapi_server.models.parameter import Parameter
+from openapi_server import util
 
 
 class CAG(Model):
@@ -15,35 +14,35 @@ class CAG(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, parts=None, label=None):  # noqa: E501
+    def __init__(self, id=None, type=None, has_part=None, label=None):  # noqa: E501
         """CAG - a model defined in OpenAPI
 
         :param id: The id of this CAG.  # noqa: E501
         :type id: str
         :param type: The type of this CAG.  # noqa: E501
         :type type: List[str]
-        :param parts: The parts of this CAG.  # noqa: E501
-        :type parts: List[Parameter]
+        :param has_part: The has_part of this CAG.  # noqa: E501
+        :type has_part: List[Parameter]
         :param label: The label of this CAG.  # noqa: E501
         :type label: str
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
-            'parts': List[Parameter],
+            'has_part': List[Parameter],
             'label': str
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
-            'parts': 'parts',
+            'has_part': 'has_part',
             'label': 'label'
         }
 
         self._id = id
         self._type = type
-        self._parts = parts
+        self._has_part = has_part
         self._label = label
 
     @classmethod
@@ -102,27 +101,27 @@ class CAG(Model):
         self._type = type
 
     @property
-    def parts(self):
-        """Gets the parts of this CAG.
+    def has_part(self):
+        """Gets the has_part of this CAG.
 
         Array of Parameter or Variables  # noqa: E501
 
-        :return: The parts of this CAG.
+        :return: The has_part of this CAG.
         :rtype: List[Parameter]
         """
-        return self._parts
+        return self._has_part
 
-    @parts.setter
-    def parts(self, parts):
-        """Sets the parts of this CAG.
+    @has_part.setter
+    def has_part(self, has_part):
+        """Sets the has_part of this CAG.
 
         Array of Parameter or Variables  # noqa: E501
 
-        :param parts: The parts of this CAG.
-        :type parts: List[Parameter]
+        :param has_part: The has_part of this CAG.
+        :type has_part: List[Parameter]
         """
 
-        self._parts = parts
+        self._has_part = has_part
 
     @property
     def label(self):
