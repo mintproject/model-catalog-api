@@ -3,6 +3,7 @@ import connexion
 from openapi_server.models.parameter import Parameter  # noqa: E501
 import openapi_server.static_vars as staticvars
 from endpoint.utils import insert_query, prepare_jsonld
+from openapi_server.static_vars import *
 
 
 def obtain_uri(id):
@@ -22,7 +23,7 @@ def create_parameter(user):  # noqa: E501
     """
     if connexion.request.is_json:
         _ = Parameter.from_dict(connexion.request.get_json())  # noqa: E501
-        parameter_json = prepare_jsonld(connexion.request.get_json(), user)
+        parameter_json = prepare_jsonld(connexion.request.get_json(), user, PARAMETER_TYPE)
         return insert_query(parameter_json, user)
 
     return "Bad request", 403, {}

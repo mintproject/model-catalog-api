@@ -806,7 +806,9 @@ components:
         has_implementation_script_location:
           type: string
         has_container:
-          type: string
+          type: array
+          items:
+            type: object
         has_constraint:
           type: string
         has_parameter:
@@ -832,7 +834,8 @@ components:
         has_time_interval:
         - id: economic_aggregate_crop_supply_TI
         has_implementation_script_location: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        has_container: https://w3id.org/mint/instance/mintproject/economic:latest
+        has_container:
+        - id: https://w3id.org/mint/instance/mintproject/economic:latest
         has_constraint: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
           (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
           dcdom:region) uriConcat(?c '_region' ?location) -> (?in1 dcdom:region ?location)
@@ -983,7 +986,9 @@ components:
         has_short_name:
           type: string
         has_standard_variable:
-          type: string
+          type: array
+          items:
+            $ref: '#/components/schemas/DataSet'
         has_relevance_level:
           format: int64
           type: integer
@@ -996,7 +1001,8 @@ components:
           Cycles output
         has_long_name: yield elasticity
         has_short_name: ybarN
-        has_standard_variable: crop_fertilizer~nitrogen__yield_elasticity
+        has_standard_variable: 
+        - id: crop_fertilizer~nitrogen__yield_elasticity
         has_relevance_level: 1
         uses_unit:
           id: USD_kg_1M_1            
@@ -1082,7 +1088,7 @@ components:
         has_software_version:
           type: array
           items:
-            type: string
+            type: object
         has_model_category:
           type: array
           items:
@@ -1101,7 +1107,7 @@ components:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
         has_software_version:
-        - DSSAT_4.7
+        - id: DSSAT_4.7
         has_model_category:
         - Agriculture
         has_documentation:
@@ -1127,7 +1133,9 @@ components:
         has_version_id:
           type: string
         has_configuration:
-          $ref: '#/components/schemas/ModelConfiguration'
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelConfiguration'
       example:
         id: DSSAT_4.7
         label: DSSAT v4.7
@@ -1135,7 +1143,7 @@ components:
         - http://ontosoft.org/software#SoftwareVersion
         has_version_id: '4.7'
         has_configuration:
-          id: economic
+        - id: economic
   securitySchemes:
     BearerAuth:
       type: http

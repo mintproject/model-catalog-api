@@ -43,7 +43,7 @@ class ModelConfiguration(Model):
         :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
         :type has_implementation_script_location: str
         :param has_container: The has_container of this ModelConfiguration.  # noqa: E501
-        :type has_container: str
+        :type has_container: List[object]
         :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
         :type has_constraint: str
         :param has_parameter: The has_parameter of this ModelConfiguration.  # noqa: E501
@@ -62,7 +62,7 @@ class ModelConfiguration(Model):
             'has_process': List[Process],
             'has_time_interval': List[TimeInterval],
             'has_implementation_script_location': str,
-            'has_container': str,
+            'has_container': List[object],
             'has_constraint': str,
             'has_parameter': List[Parameter],
             'has_component_location': str
@@ -329,7 +329,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_container of this ModelConfiguration.
-        :rtype: str
+        :rtype: List[object]
         """
         return self._has_container
 
@@ -339,7 +339,7 @@ class ModelConfiguration(Model):
 
 
         :param has_container: The has_container of this ModelConfiguration.
-        :type has_container: str
+        :type has_container: List[object]
         """
 
         self._has_container = has_container

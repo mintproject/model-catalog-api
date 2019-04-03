@@ -2,6 +2,7 @@ import connexion
 
 from openapi_server.models.model import Model  # noqa: E501
 from endpoint.utils import insert_query, prepare_jsonld
+from openapi_server.static_vars import *
 
 def createmodel(user):  # noqa: E501
     """Create a model
@@ -15,7 +16,7 @@ def createmodel(user):  # noqa: E501
     """
     if connexion.request.is_json:
         _ = Model.from_dict(connexion.request.get_json())  # noqa: E501
-        model_json = prepare_jsonld(connexion.request.get_json(), user)
+        model_json = prepare_jsonld(connexion.request.get_json(), user, MODEL_TYPE)
         return insert_query(model_json, user)
 
     return "Bad request", 403, {}

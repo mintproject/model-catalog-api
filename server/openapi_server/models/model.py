@@ -1,11 +1,12 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+from datetime import date, datetime  # noqa: F401
 
-from typing import List  # noqa: F401
+from typing import List, Dict  # noqa: F401
 
-from openapi_server import util
 from openapi_server.models.base_model_ import Model
+from openapi_server import util
 
 
 class Model(Model):
@@ -24,7 +25,7 @@ class Model(Model):
         :param type: The type of this Model.  # noqa: E501
         :type type: List[str]
         :param has_software_version: The has_software_version of this Model.  # noqa: E501
-        :type has_software_version: List[str]
+        :type has_software_version: List[object]
         :param has_model_category: The has_model_category of this Model.  # noqa: E501
         :type has_model_category: List[str]
         :param has_documentation: The has_documentation of this Model.  # noqa: E501
@@ -34,7 +35,7 @@ class Model(Model):
             'id': str,
             'label': str,
             'type': List[str],
-            'has_software_version': List[str],
+            'has_software_version': List[object],
             'has_model_category': List[str],
             'has_documentation': List[str]
         }
@@ -137,7 +138,7 @@ class Model(Model):
 
 
         :return: The has_software_version of this Model.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_software_version
 
@@ -147,7 +148,7 @@ class Model(Model):
 
 
         :param has_software_version: The has_software_version of this Model.
-        :type has_software_version: List[str]
+        :type has_software_version: List[object]
         """
 
         self._has_software_version = has_software_version

@@ -4,7 +4,7 @@ INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 DEFAULT_MINT_INSTANCE = "https://w3id.org/mint/instance/"
 
 MINT_CONTEXT = {
-    "qudt": "http://qudt.org/schema/qudt",
+    "qudt": "http://qudt.org/schema/qudt/",
     "owl": "http://www.w3.org/2002/07/owl",
     "xsd": "http://www.w3.org/2001/XMLSchema",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns",
@@ -82,8 +82,16 @@ VARIABLE_TYPE = "mc:Variable"
 
 # todo: a relation can be PROCESS_TYPE or PARAMETER_TYPE
 MAPPING_TYPE = {
-    "has_input": DATASET_TYPE,
-    "has_output": DATASET_TYPE,
+    'has_file_structure': 'mc:DataStructureDefinition',
+    'has_configuration': 'mc:ModelConfiguration',
+    'had_grid': 'mc:Grid',
+    'has_container': 'onsf:Container',
+    'has_module': 'mc:Module',
+    'has_standard_variable': 'mc:StandardVariable',
+    'has_input': 'mc:DatasetSpecification',
+    'has_output': 'mc:DatasetSpecification',
+    'uses_unit': 'qudt:Unit',
+    'has_software_version': 'onsf:SoftwareVersion',
     "has_process": PROCESS_TYPE,
     "has_cag": CAG_TYPE,
     "has_time_interval": TIMEINTERVAL_TYPE,

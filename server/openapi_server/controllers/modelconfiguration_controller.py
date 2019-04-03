@@ -9,6 +9,7 @@ from openapi_server.models.parameter import Parameter  # noqa: E501
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
 
 from endpoint.utils import insert_query, prepare_jsonld
+from openapi_server.static_vars import *
 
 
 def add_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
@@ -40,7 +41,7 @@ def add_model_configuration(user):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-        model_configuration_json = prepare_jsonld(connexion.request.get_json(), user)
+        model_configuration_json = prepare_jsonld(connexion.request.get_json(), user, MODELCONFIGURATION_TYPE)
         return insert_query(model_configuration_json, user)
     return "Bad request", 403, {}
 

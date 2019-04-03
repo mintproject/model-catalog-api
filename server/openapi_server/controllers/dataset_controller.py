@@ -1,6 +1,7 @@
 import connexion
 from endpoint.utils import insert_query, prepare_jsonld
 from openapi_server.models.data_set import DataSet  # noqa: E501
+from openapi_server.static_vars import *
 
 def createdataset(user):  # noqa: E501
     """Create a dataset
@@ -14,7 +15,7 @@ def createdataset(user):  # noqa: E501
     """
     if connexion.request.is_json:
         _ = DataSet.from_dict(connexion.request.get_json())  # noqa: E501
-        dataset_json = prepare_jsonld(connexion.request.get_json(), user)
+        dataset_json = prepare_jsonld(connexion.request.get_json(), user, DATASET_TYPE)
         return insert_query(dataset_json, user)
 
     return "Bad request", 403, {}

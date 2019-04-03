@@ -5,6 +5,7 @@ from __future__ import absolute_import
 from typing import List  # noqa: F401
 
 from openapi_server import util
+
 from openapi_server.models.variable_presentation import VariablePresentation
 from openapi_server.models.base_model_ import Model
 

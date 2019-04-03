@@ -2,6 +2,7 @@ import connexion
 
 from openapi_server.models.model_version import ModelVersion  # noqa: E501
 from endpoint.utils import insert_query, prepare_jsonld
+from openapi_server.static_vars import *
 
 def create_model_version(user):  # noqa: E501
     """Create a ModelVersion
@@ -15,7 +16,7 @@ def create_model_version(user):  # noqa: E501
     """
     if connexion.request.is_json:
         _ = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
-        model_version_json = prepare_jsonld(connexion.request.get_json(), user)
+        model_version_json = prepare_jsonld(connexion.request.get_json(), user, MODELVERSION_TYPE)
         return insert_query(model_version_json, user)
 
     return "Bad request", 403, {}

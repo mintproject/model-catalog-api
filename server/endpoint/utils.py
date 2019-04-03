@@ -5,10 +5,10 @@ from openapi_server.static_vars import *
 from flask import json
 
 
-def prepare_jsonld(resource, username):
+def prepare_jsonld(resource, username, default_type):
     resource['@context'] = MINT_CONTEXT
     resource['@id'] = build_user_resource_uri(username, resource['id'])
-    resource['@type'] = MODELCONFIGURATION_TYPE
+    resource['@type'] = default_type
     for key in SUPPORTED_CLASSES:
         prepare_id_jsonld(resource, username, key)
     return json.dumps(resource)
