@@ -2,7 +2,7 @@ import connexion
 
 from openapi_server.models.parameter import Parameter  # noqa: E501
 import openapi_server.static_vars as staticvars
-from endpoint.utils import insert_query, prepare_jsonld
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource
 from openapi_server.static_vars import *
 
 
@@ -37,4 +37,8 @@ def get_parameters():  # noqa: E501
 
     :rtype: List[Parameter]
     """
-    return 'do some magic!'
+    response = get_all_resource(PARAMETER_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}

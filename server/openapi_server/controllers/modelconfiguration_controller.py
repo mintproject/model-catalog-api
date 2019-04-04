@@ -8,7 +8,7 @@ from openapi_server.models.parameter import Parameter  # noqa: E501
 
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
 
-from endpoint.utils import insert_query, prepare_jsonld
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource, get_all_resources_related
 from openapi_server.static_vars import *
 
 
@@ -86,7 +86,11 @@ def get_inputs_by_modelconfiguration(id):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    return 'do some magic!'
+    response = get_all_resources_related(id, "mc:hasInput")
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 
 def get_model_configuraton_by_uri(id):  # noqa: E501
@@ -99,7 +103,12 @@ def get_model_configuraton_by_uri(id):  # noqa: E501
 
     :rtype: ModelConfiguration
     """
-    return 'do some magic!'
+    response = get_resource(id, MODELCONFIGURATION_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
+
 
 
 def get_outputs_by_modelconfiguration(id):  # noqa: E501
@@ -112,8 +121,11 @@ def get_outputs_by_modelconfiguration(id):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    return 'do some magic!'
-
+    response = get_all_resources_related(id, "mc:hasOutput")
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 def get_parameters_by_modelconfiguration(id):  # noqa: E501
     """Get the parameters of a model configuration
@@ -125,8 +137,11 @@ def get_parameters_by_modelconfiguration(id):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    return 'do some magic!'
-
+    response = get_all_resources_related(id, "mc:hasParameter")
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 def list_model_configurations():  # noqa: E501
     """List modelconfiguration
@@ -136,8 +151,11 @@ def list_model_configurations():  # noqa: E501
 
     :rtype: List[ModelConfiguration]
     """
-    return 'do some magic!'
-
+    response = get_all_resource(DATASETSPECIFICATION_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 def modelconfiguration_id_outputs_post(id, data_set):  # noqa: E501
     """Create the output of a model configuration

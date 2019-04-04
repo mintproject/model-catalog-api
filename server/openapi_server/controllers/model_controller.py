@@ -1,7 +1,7 @@
 import connexion
 
 from openapi_server.models.model import Model  # noqa: E501
-from endpoint.utils import insert_query, prepare_jsonld
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource
 from openapi_server.static_vars import *
 
 def createmodel(user):  # noqa: E501
@@ -34,18 +34,22 @@ def delete_model(model_id):  # noqa: E501
     return 'do some magic!'
 
 
-def get_model(model_id):  # noqa: E501
+def get_model(modelId):  # noqa: E501
     """Get a Model
 
     Gets the details of a single instance of a &#x60;Model&#x60;. # noqa: E501
 
-    :param model_id: A unique identifier for a &#x60;Model&#x60;.
-    :type model_id: str
+    :param modelId: A unique identifier for a &#x60;Model&#x60;.
+    :type modelId: str
 
     :rtype: Model
     """
-    return 'do some magic!'
 
+    response = get_resource(modelId, MODEL_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 def getmodels():  # noqa: E501
     """List All models
@@ -55,8 +59,11 @@ def getmodels():  # noqa: E501
 
     :rtype: List[Model]
     """
-    return 'do some magic!'
-
+    response = get_all_resource(MODEL_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
 
 def update_model(model_id, model):  # noqa: E501
     """Update a Model

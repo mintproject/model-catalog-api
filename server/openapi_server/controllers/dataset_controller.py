@@ -1,7 +1,8 @@
 import connexion
-from endpoint.utils import insert_query, prepare_jsonld
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource
 from openapi_server.models.data_set import DataSet  # noqa: E501
 from openapi_server.static_vars import *
+
 
 def createdataset(user):  # noqa: E501
     """Create a dataset
@@ -20,6 +21,7 @@ def createdataset(user):  # noqa: E501
 
     return "Bad request", 403, {}
 
+
 def getdatasets():  # noqa: E501
     """List All datasets
 
@@ -28,4 +30,10 @@ def getdatasets():  # noqa: E501
 
     :rtype: List[DataSet]
     """
-    return 'do some magic!'
+
+    response = get_all_resource(DATASETSPECIFICATION_TYPE)
+    try:
+        return response.json()
+    except:
+        return "Bad request", 403, {}
+
