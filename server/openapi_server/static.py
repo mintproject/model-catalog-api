@@ -51,7 +51,7 @@ DEFAULT_ENDPOINT_USER = config.get('defaults', 'user')
 DEFAULT_ENDPOINT_PASSWORD = config.get('defaults', 'password')
 
 DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
-ENDPOINT =  "http://ontosoft.isi.edu:3030"
+ENDPOINT = "https://endpoint.mint.isi.edu"
 UPDATE_ENDPOINT = f'{ENDPOINT}/test/update'
 QUERY_ENDPOINT = f'{ENDPOINT}/test/query'
 
@@ -65,3 +65,4 @@ SERVER_NAME = config.get('defaults', 'server_name')
 INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 
 QUERY_ENDPOINT_GRLC = "https://query.mint.isi.edu/api/mintproject/MINT-ModelCatalogQueries"
+

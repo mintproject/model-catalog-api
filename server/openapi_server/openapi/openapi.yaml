@@ -179,7 +179,16 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.user_controller
   /modelconfigurations:
     get:
-      operationId: list_model_configurations
+      operationId: get_model_configurations
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -197,7 +206,7 @@ paths:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
-      operationId: add_model_configuration
+      operationId: create_model_configuration
       requestBody:
         content:
           application/json:
@@ -230,6 +239,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -249,7 +266,7 @@ paths:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
-      operationId: add_inputs_by_modelconfiguration
+      operationId: create_inputs_by_modelconfiguration
       parameters:
       - explode: false
         in: path
@@ -304,6 +321,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -378,6 +403,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -398,7 +431,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
       description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
-      operationId: add_parameters_by_modelconfiguration
+      operationId: create_parameters_by_modelconfiguration
       parameters:
       - explode: false
         in: path
@@ -444,6 +477,15 @@ paths:
     get:
       description: Gets a list of all `ModelVersion` entities.
       operationId: get_model_versions
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -480,7 +522,16 @@ paths:
   /datasets:
     get:
       description: Gets a list of all `dataset` entities.
-      operationId: getdatasets
+      operationId: get_data_sets
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -497,7 +548,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.dataset_controller
     post:
       description: Creates a new instance of a `dataset`.
-      operationId: createdataset
+      operationId: create_data_set
       requestBody:
         content:
           application/json:
@@ -517,7 +568,16 @@ paths:
   /models:
     get:
       description: Gets a list of all `model` entities.
-      operationId: getmodels
+      operationId: get_models
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -534,7 +594,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.model_controller
     post:
       description: Creates a new instance of a `model`.
-      operationId: createmodel
+      operationId: create_model
       requestBody:
         content:
           application/json:
@@ -588,7 +648,7 @@ paths:
       tags:
       - parameter
       x-openapi-router-controller: openapi_server.controllers.parameter_controller
-  /model/{modelId}:
+  /model/{id}:
     delete:
       description: Deletes an existing `Model`.
       operationId: delete_model
@@ -596,7 +656,7 @@ paths:
       - description: A unique identifier for a `Model`.
         explode: false
         in: path
-        name: modelId
+        name: id
         required: true
         schema:
           type: string
@@ -617,11 +677,19 @@ paths:
       - description: A unique identifier for a `Model`.
         explode: false
         in: path
-        name: modelId
+        name: id
         required: true
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -641,7 +709,7 @@ paths:
       - description: A unique identifier for a `Model`.
         explode: false
         in: path
-        name: modelId
+        name: id
         required: true
         schema:
           type: string
@@ -662,7 +730,7 @@ paths:
       tags:
       - model
       x-openapi-router-controller: openapi_server.controllers.model_controller
-  /modelversion/{modelVersionId}:
+  /modelversion/{id}:
     delete:
       description: Deletes an existing `ModelVersion`.
       operationId: delete_model_version
@@ -670,7 +738,7 @@ paths:
       - description: A unique identifier for a `ModelVersion`.
         explode: false
         in: path
-        name: modelVersionId
+        name: id
         required: true
         schema:
           type: string
@@ -690,11 +758,19 @@ paths:
       - description: A unique identifier for a `ModelVersion`.
         explode: false
         in: path
-        name: modelVersionId
+        name: id
         required: true
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -714,7 +790,7 @@ paths:
       - description: A unique identifier for a `ModelVersion`.
         explode: false
         in: path
-        name: modelVersionId
+        name: id
         required: true
         schema:
           type: string
@@ -763,7 +839,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     get:
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuraton_by_uri
+      operationId: get_model_configuraton
       parameters:
       - description: A unique identifier for a `ModelConfiguration`.
         explode: false
@@ -773,6 +849,14 @@ paths:
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -785,7 +869,7 @@ paths:
         404:
           description: Model Configuration not found
       security: []
-      summary: Get modelconfiguration by uri
+      summary: Get modelconfiguration
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
@@ -796,14 +880,6 @@ paths:
         explode: false
         in: path
         name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: name
         required: true
         schema:
           type: string

@@ -5,13 +5,7 @@ import openapi_server.static_vars as staticvars
 from endpoint.utils import insert_query, prepare_jsonld, get_all_resource
 from openapi_server.static_vars import *
 
-
-def obtain_uri(id):
-    #todo: magic
-    return staticvars.DEFAULT_MINT_INSTANCE + id
-
-
-def create_parameter(user):  # noqa: E501
+def create_parameter(parameter, user):  # noqa: E501
     """Create a Parameter
 
     Creates a new instance of a &#x60;Parameter&#x60;. # noqa: E501
@@ -26,7 +20,7 @@ def create_parameter(user):  # noqa: E501
         parameter_json = prepare_jsonld(connexion.request.get_json(), user, PARAMETER_TYPE)
         return insert_query(parameter_json, user)
 
-    return "Bad request", 403, {}
+    return "Bad request", 400, {}
 
 
 def get_parameters():  # noqa: E501
@@ -41,4 +35,4 @@ def get_parameters():  # noqa: E501
     try:
         return response.json()
     except:
-        return "Bad request", 403, {}
+        return "Bad request", 400, {}

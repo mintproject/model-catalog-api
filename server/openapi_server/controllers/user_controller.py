@@ -36,7 +36,7 @@ def create_user(user):  # noqa: E501
     """
     if connexion.request.is_json:
         user = User.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+    "Not Implemented", 501, {}
 
 
 def delete_user(username):  # noqa: E501
@@ -49,7 +49,7 @@ def delete_user(username):  # noqa: E501
 
     :rtype: None
     """
-    return 'do some magic!'
+    "Not Implemented", 501, {}
 
 
 def get_user_by_name(username):  # noqa: E501
@@ -62,7 +62,7 @@ def get_user_by_name(username):  # noqa: E501
 
     :rtype: User
     """
-    return 'do some magic!'
+    "Not Implemented", 501, {}
 
 
 def login_user(username, password):  # noqa: E501
@@ -96,7 +96,7 @@ def logout_user():  # noqa: E501
 
     :rtype: None
     """
-    return 'do some magic!'
+    "Not Implemented", 501, {}
 
 
 def update_user(username, user):  # noqa: E501
@@ -113,4 +113,4 @@ def update_user(username, user):  # noqa: E501
     """
     if connexion.request.is_json:
         user = User.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+    "Not Implemented", 501, {}

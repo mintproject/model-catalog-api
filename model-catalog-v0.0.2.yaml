@@ -587,6 +587,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Parameter'
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username                  
       security: []        
     post:
       tags:
