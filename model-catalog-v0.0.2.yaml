@@ -162,7 +162,7 @@ paths:
       tags:
       - modelconfiguration
       summary: List modelconfiguration
-      operationId: listModelConfigurations
+      operationId: getModelConfigurations
       responses:
         200:
           description: successful operation
@@ -174,12 +174,19 @@ paths:
                   $ref: '#/components/schemas/ModelConfiguration'
         400:
           description: Invalid uri supplied
-      security: []        
+      security: []
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
       - modelconfiguration
       summary: Create a model configuration
-      operationId: addModelConfiguration
+      operationId: createModelConfiguration
       requestBody:
         content:
           application/json:
@@ -209,6 +216,12 @@ paths:
         required: true
         schema:
           type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
       responses:
         200:
           description: successful operation
@@ -227,7 +240,7 @@ paths:
       tags:
       - modelconfiguration    
       summary: Creates a new instance of a `Dataset` related as Input.
-      operationId: addInputsByModelconfiguration
+      operationId: createInputsByModelconfiguration
       parameters:
       - name: id
         in: path
@@ -284,6 +297,12 @@ paths:
         required: true
         schema:
           type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
       responses:
         200:
           description: successful operation
@@ -358,6 +377,12 @@ paths:
         required: true
         schema:
           type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
       responses:
         200:
           description: successful operation
@@ -377,7 +402,7 @@ paths:
       - modelconfiguration    
       summary: Create the inputs of a model configuration
       description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
-      operationId: addParametersByModelconfiguration
+      operationId: createParametersByModelconfiguration
       parameters:
       - name: id
         in: path
@@ -437,6 +462,13 @@ paths:
                 items:
                   $ref: '#/components/schemas/ModelVersion'
       security: []        
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
         - modelversion    
@@ -461,7 +493,7 @@ paths:
         - dataset    
       summary: List All datasets
       description: Gets a list of all `dataset` entities.
-      operationId: getdatasets
+      operationId: getDataSets
       responses:
         200:
           description: Successful response - returns an array of `dataset` entities.
@@ -472,12 +504,19 @@ paths:
                 items:
                   $ref: '#/components/schemas/DataSet'
       security: []        
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
         - dataset        
       summary: Create a dataset
       description: Creates a new instance of a `dataset`.
-      operationId: createdataset
+      operationId: createDataSet
       requestBody:
         description: A new `dataset` to be created.
         content:
@@ -496,7 +535,7 @@ paths:
         - model    
       summary: List All models
       description: Gets a list of all `model` entities.
-      operationId: getmodels
+      operationId: getModels
       responses:
         200:
           description: Successful response - returns an array of `model` entities.
@@ -506,13 +545,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Model'
-      security: []        
+      security: []
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
         - model    
       summary: Create a model
       description: Creates a new instance of a `model`.
-      operationId: createmodel
+      operationId: createModel
       requestBody:
         description: A new `model` to be created.
         content:
@@ -560,7 +606,7 @@ paths:
           description: Successful response.
       security:
       - BearerAuth: []
-  /model/{modelId}:
+  /model/{id}:
     get:
       tags:
         - model    
@@ -574,7 +620,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Model'
-      security: []        
+      security: []   
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     put:
       tags:
         - model    
@@ -605,13 +658,13 @@ paths:
       security:
       - BearerAuth: []          
     parameters:
-    - name: modelId
+    - name: id
       in: path
       description: A unique identifier for a `Model`.
       required: true
       schema:
         type: string
-  /modelversion/{modelVersionId}:
+  /modelversion/{id}:
     get:
       tags:
         - modelversion    
@@ -625,7 +678,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ModelVersion'
-      security: []        
+      security: []
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     put:
       tags:
         - modelversion       
@@ -656,7 +716,7 @@ paths:
       security: []    
     parameters:
     - 
-      name: modelVersionId
+      name: id
       in: path
       description: A unique identifier for a `ModelVersion`.
       required: true
@@ -666,9 +726,9 @@ paths:
     get:
       tags:
       - modelconfiguration
-      summary: Get modelconfiguration by uri
+      summary: Get modelconfiguration
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: getModelConfiguratonByUri
+      operationId: getModelConfiguraton
       parameters:
       - name: id
         in: path
@@ -676,6 +736,12 @@ paths:
         required: true
         schema:
           type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
       responses:
         200:
           description: successful operation
@@ -694,7 +760,7 @@ paths:
       summary: Update model configuration
       operationId: updateModelConfiguration
       parameters:
-      - name: name
+      - name: id
         in: path
         description: A unique identifier for a `ModelConfiguration`.
         required: true
