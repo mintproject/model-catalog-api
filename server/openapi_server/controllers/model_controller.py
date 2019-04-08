@@ -34,7 +34,7 @@ def delete_model(id):  # noqa: E501
 
     :rtype: None
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def get_model(id, username=None):  # noqa: E501
@@ -84,4 +84,4 @@ def update_model(id, model):  # noqa: E501
     """
     if connexion.request.is_json:
         model = Model.from_dict(connexion.request.get_json())  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}

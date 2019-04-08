@@ -33,7 +33,7 @@ def delete_model_version(id):  # noqa: E501
 
     :rtype: None
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def get_model_version(id, username=None):  # noqa: E501
@@ -86,4 +86,4 @@ def update_model_version(id, model_version):  # noqa: E501
     """
     if connexion.request.is_json:
         model_version = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}

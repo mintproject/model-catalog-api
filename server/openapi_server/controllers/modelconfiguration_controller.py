@@ -26,7 +26,7 @@ def create_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
     """
     if connexion.request.is_json:
         data_set = [DataSet.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def create_model_configuration(model_configuration, user):  # noqa: E501
@@ -61,7 +61,7 @@ def create_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
     """
     if connexion.request.is_json:
         parameter = [Parameter.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 #todo: implement
 def delete_model_configuration(id):  # noqa: E501
@@ -74,7 +74,7 @@ def delete_model_configuration(id):  # noqa: E501
 
     :rtype: None
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 #todo: implement
 def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
@@ -178,7 +178,7 @@ def modelconfiguration_id_outputs_post(id, data_set):  # noqa: E501
     """
     if connexion.request.is_json:
         data_set = [DataSet.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 #todo: implement
 def update_model_configuration(id, model_configuration):  # noqa: E501
@@ -195,4 +195,4 @@ def update_model_configuration(id, model_configuration):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
