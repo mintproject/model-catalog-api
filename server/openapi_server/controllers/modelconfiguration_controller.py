@@ -89,9 +89,8 @@ def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    response = get_all_resources_related(id, "mc:hasInput", username)
     try:
-        return response.json()
+        return get_all_resources_related(id, "mc:hasInput", username)
     except:
         return "Bad request", 400, {}
 
@@ -106,9 +105,8 @@ def get_model_configurations(username=None):  # noqa: E501
 
     :rtype: List[ModelConfiguration]
     """
-    response = get_all_resource(DATASETSPECIFICATION_TYPE, username)
     try:
-        return response.json()
+        return get_all_resource(DATASETSPECIFICATION_TYPE, username)
     except:
         return "Bad request", 400, {}
 
@@ -125,9 +123,8 @@ def get_model_configuraton(id, username=None):
 
     :rtype: ModelConfiguration
     """
-    response = get_resource(id, MODELCONFIGURATION_TYPE, username)
     try:
-        return response.json()
+        return get_resource(id, MODELCONFIGURATION_TYPE, username)
     except:
         return "Bad request", 400, {}
 
@@ -144,9 +141,8 @@ def get_outputs_by_modelconfiguration(id, username=None):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    response = get_all_resources_related(id, "mc:hasOutput", username)
     try:
-        return response.json()
+        return get_all_resources_related(id, "mc:hasOutput", username)
     except:
         return "Bad request", 400, {}
 
@@ -162,9 +158,8 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    response = get_all_resources_related(id, "mc:hasParameter", username)
     try:
-        return response.json()
+        return get_all_resources_related(id, "mc:hasParameter", username)
     except:
         return "Bad request", 400, {}
 

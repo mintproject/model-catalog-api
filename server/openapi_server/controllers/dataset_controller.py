@@ -33,8 +33,7 @@ def get_data_sets(username=None):  # noqa: E501
 
     :rtype: List[DataSet]
     """
-    response = get_all_resource(DATASETSPECIFICATION_TYPE, username)
     try:
-        return response.json()
+        return get_all_resource(DATASETSPECIFICATION_TYPE, username)
     except:
         return "Bad request", 400, {}

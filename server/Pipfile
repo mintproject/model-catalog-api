@@ -16,6 +16,7 @@ configparser = "*"
 PyYAML = ">=3.11"
 SPARQLWrapper = "*"
 requests = "*"
+pyld = "*"
 
 [requires]
 python_version = "3.7"

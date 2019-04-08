@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: Model Catalog
   description: This is MINT Model Catalog You can find out more about     Model Catalog
-    at [https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
+    at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   termsOfService: http://swagger.io/terms/
   contact:
     email: mosorio@isi.edu

@@ -4,28 +4,62 @@ from openapi_server.static import UPDATE_ENDPOINT, DEFAULT_MINT_INSTANCE, QUERY_
 from openapi_server.static_vars import *
 from flask import json
 import requests
+from pyld import jsonld
 
+
+def update_panel_json(input_json, target_key):
+    if isinstance(input_json, dict):
+        for k, v in input_json.items():
+            if k in target_key:
+                input_json[target_key[k]] = input_json.pop(k)
+            update_panel_json(v, target_key)
+
+    elif isinstance(input_json, list):
+        for item in input_json:
+            update_panel_json(item, target_key)
+
+def convert_to_json(resources_json_ld):
+    update_key = {
+        "@id": "id",
+        "@type": "type"
+    }
+
+    expand = jsonld.expand(resources_json_ld)
+    compact = jsonld.compact(expand, PREDICATE_CONTEXT)
+    update_panel_json(compact, update_key)
+    if '@graph' in compact:
+        return compact['@graph']
+    else:
+        compact.pop('@context')
+        return compact
 
 def get_all_resource(resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_all_resource(resource_type, username)
     data = {'query': query}
-    return requests.post(QUERY_ENDPOINT, headers=headers, data=data)
-
+    resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
+    resources_json = convert_to_json(resources_json_ld)
+    return resources_json
 
 def get_resource(resource_id, resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource(resource_id, username)
     data = {'query': query}
-    return requests.post(QUERY_ENDPOINT, headers=headers, data=data)
-
+    try:
+        response = requests.post(QUERY_ENDPOINT, headers=headers, data=data)
+        resources_json_ld = response.json()
+        resources_json = convert_to_json(resources_json_ld)
+    except Exception as e:
+        print(e)
+    return resources_json
 
 def get_all_resources_related(resource_id, relation, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource_related(resource_id, relation, username)
     data = {'query': query}
-    return requests.post(QUERY_ENDPOINT, headers=headers, data=data)
-
+    resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
+    resources_json = convert_to_json(resources_json_ld)
+    return resources_json
 
 def prepare_jsonld(resource, username, default_type):
     resource['@context'] = MINT_CONTEXT
@@ -180,8 +214,8 @@ def query_resource_related(resource_uri, relation, username):
 
 
 def query_resource(resource_id, username):
+    resource_uri = build_user_resource_uri(resource_id)
     if username:
-        resource_uri = build_user_resource_uri(resource_id)
         graph_uri = build_graph_uri(username)
 
         query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
@@ -197,10 +231,10 @@ def query_resource(resource_id, username):
     else:
         query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
         CONSTRUCT {{
-            <{resource_id}> ?o ?p
+            <{resource_uri}> ?o ?p
         }}
         WHERE {{
-            <{resource_id}> ?o ?p
+            <{resource_uri}> ?o ?p
         }}
         '''
     return query

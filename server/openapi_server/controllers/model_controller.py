@@ -49,9 +49,8 @@ def get_model(id, username=None):  # noqa: E501
 
     :rtype: Model
     """
-    response = get_resource(id, MODEL_TYPE, username)
     try:
-        return response.json()
+        return get_resource(id, MODEL_TYPE, username)
     except:
         return "Bad request", 400, {}
 
@@ -65,9 +64,8 @@ def get_models(username=None):  # noqa: E501
 
     :rtype: List[Model]
     """
-    response = get_all_resource(MODEL_TYPE, username)
     try:
-        return response.json()
+        return get_all_resource(MODEL_TYPE, username)
     except:
         return "Bad request", 400, {}
 

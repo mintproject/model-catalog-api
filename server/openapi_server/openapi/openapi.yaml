@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   contact:
     email: mosorio@isi.edu
-  description: This is MINT Model Catalog You can find out more about     Model Catalog at [https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/](https://mintproject.github.io/Mint-ModelCatalog-Ontology/modelCatalog/release/0.4.0/)
+  description: This is MINT Model Catalog You can find out more about Model Catalog at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html

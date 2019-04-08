@@ -31,8 +31,7 @@ def get_parameters():  # noqa: E501
 
     :rtype: List[Parameter]
     """
-    response = get_all_resource(PARAMETER_TYPE)
     try:
-        return response.json()
+        return get_all_resource(PARAMETER_TYPE)
     except:
         return "Bad request", 400, {}

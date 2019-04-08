@@ -50,7 +50,7 @@ def get_model_version(id, username=None):  # noqa: E501
     """
     response = get_resource(id, MODELVERSION_TYPE, username)
     try:
-        return response.json()
+        return response
     except:
         return "Bad request", 400, {}
 
@@ -67,7 +67,7 @@ def get_model_versions(username=None):  # noqa: E501
     """
     response = get_all_resource(MODELVERSION_TYPE, username)
     try:
-        return response.json()
+        return response
     except:
         return "Bad request", 400, {}
 
