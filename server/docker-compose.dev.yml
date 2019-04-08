@@ -1,7 +1,7 @@
 #Environment dev
 version: '3'
 services:
-  api-modelcatalog-dev:
+  api-modelcatalog:
     image: "mint-project/api-modelcatalog:dev"
     ports:
       - 9092:8080

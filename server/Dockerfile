@@ -11,6 +11,8 @@ RUN pipenv install --deploy --system
 
 EXPOSE 8080
 
+RUN python build_database.py
+
 ENTRYPOINT ["python3"]
 
 CMD ["-m", "openapi_server"]
