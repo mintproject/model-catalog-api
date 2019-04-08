@@ -1170,13 +1170,7 @@ components:
       type: object
     User:
       example:
-        firstName: firstName
-        lastName: lastName
         password: password
-        userStatus: 6
-        phone: phone
-        id: 0
-        email: email
         username: username
       properties:
         id:

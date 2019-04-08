@@ -4,6 +4,7 @@ import six
 from openapi_server.models.user import User  # noqa: E501
 from werkzeug.exceptions import Unauthorized
 import time
+from openapi_server.config import db
 
 from jose import JWTError, jwt
 
@@ -24,7 +25,7 @@ def _current_timestamp() -> int:
     return int(time.time())
 
 
-def create_user(user):  # noqa: E501
+def create_user():  # noqa: E501
     """Create user
 
     This can only be done by the logged in user. # noqa: E501
@@ -35,8 +36,26 @@ def create_user(user):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        user = User.from_dict(connexion.request.get_json())  # noqa: E501
-    "Not Implemented", 501, {}
+        user_json = connexion.request.get_json()
+        username = user_json['username']
+        password = user_json['password']
+        try:
+            validate_username(username)
+        except ValueError as e:
+            return "Please use a different username", 403, {}
+
+        p = User(username=user_json['username'])
+        p.set_password(password)
+        db.session.add(p)
+        db.session.commit()
+
+    return "Created", 200, {}
+
+
+def validate_username(username):
+    user = User.query.filter_by(username=username).first()
+    if user is not None:
+        raise ValueError('Please use a different username.')
 
 
 def delete_user(username):  # noqa: E501
@@ -49,7 +68,7 @@ def delete_user(username):  # noqa: E501
 
     :rtype: None
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def get_user_by_name(username):  # noqa: E501
@@ -62,7 +81,7 @@ def get_user_by_name(username):  # noqa: E501
 
     :rtype: User
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def login_user(username, password):  # noqa: E501
@@ -77,6 +96,10 @@ def login_user(username, password):  # noqa: E501
 
     :rtype: str
     """
+    user = User.query.filter_by(username=username).first()
+    if user is None or not user.check_password(password):
+        return "Invalid User or Password", 401, {}
+
     timestamp = _current_timestamp()
     payload = {
         "iss": JWT_ISSUER,
@@ -96,7 +119,7 @@ def logout_user():  # noqa: E501
 
     :rtype: None
     """
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
 
 
 def update_user(username, user):  # noqa: E501
@@ -113,4 +136,4 @@ def update_user(username, user):  # noqa: E501
     """
     if connexion.request.is_json:
         user = User.from_dict(connexion.request.get_json())  # noqa: E501
-    "Not Implemented", 501, {}
+    return "Not Implemented", 501, {}
