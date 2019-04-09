@@ -5,7 +5,7 @@ from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_r
 from openapi_server.static_vars import *
 
 
-def create_model_version(model_version, user):  # noqa: E501
+def create_model_version(user):  # noqa: E501
     """Create a ModelVersion
 
     Creates a new instance of a &#x60;ModelVersion&#x60;. # noqa: E501

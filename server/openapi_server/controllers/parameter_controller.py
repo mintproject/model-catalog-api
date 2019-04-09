@@ -5,7 +5,7 @@ import openapi_server.static_vars as staticvars
 from endpoint.utils import insert_query, prepare_jsonld, get_all_resource
 from openapi_server.static_vars import *
 
-def create_parameter(parameter, user):  # noqa: E501
+def create_parameter(user):  # noqa: E501
     """Create a Parameter
 
     Creates a new instance of a &#x60;Parameter&#x60;. # noqa: E501

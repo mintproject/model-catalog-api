@@ -5,7 +5,7 @@ from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_r
 from openapi_server.static_vars import *
 
 
-def create_model(model, user):  # noqa: E501
+def create_model(user):  # noqa: E501
     """Create a model
 
     Creates a new instance of a &#x60;model&#x60;. # noqa: E501

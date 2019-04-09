@@ -91,7 +91,7 @@ def insert_query(body, username):
         sparql.setQuery(query_string)
         sparql.query()
     except Exception as e:
-        return e, 407, {}
+        return "Error inserting query", 407, {}
     return "Created", 201, {}
 
 '''

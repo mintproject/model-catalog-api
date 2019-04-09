@@ -29,7 +29,7 @@ def create_inputs_by_modelconfiguration(id, data_set):  # noqa: E501
     "Not Implemented", 501, {}
 
 
-def create_model_configuration(model_configuration, user):  # noqa: E501
+def create_model_configuration(user):  # noqa: E501
     """Create a model configuration
 
      # noqa: E501
