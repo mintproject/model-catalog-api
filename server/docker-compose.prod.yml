@@ -1,7 +1,7 @@
 #Environment prod
 version: '3'
 services:
-  api-modelcatalog-prod:
-    image: "mint-project/api-modelcatalog:prod"
+  api-modelcatalog:
+    image: "mint-project/api-modelcatalog:latest"
     ports:
       - 8082:8080
