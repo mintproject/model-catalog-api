@@ -5,7 +5,7 @@ from openapi_server.static_vars import *
 
 
 
-def create_data_set(data_set, user):  # noqa: E501
+def create_data_set(user):  # noqa: E501
     """Create a dataset
 
     Creates a new instance of a &#x60;dataset&#x60;. # noqa: E501
