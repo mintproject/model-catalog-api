@@ -14,8 +14,4 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-RUN sh build_database.sh
-
-ENTRYPOINT ["python3"]
-
-CMD ["-m", "openapi_server"]
+CMD ["sh", "init.sh"]
