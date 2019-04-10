@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILE=openapi/database/server.db
+FILE=openapi_server/database/server.db
 if [[ ! -f "$FILE" ]]; then
     python build_database.py
 fi
