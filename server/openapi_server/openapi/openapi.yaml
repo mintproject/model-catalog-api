@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   contact:
     email: mosorio@isi.edu
-  description: This is MINT Model Catalog You can find out more about Model Catalog at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
+  description: This is MINT Model Catalog You can find out more about     Model Catalog at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -280,7 +280,7 @@ paths:
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/DataSet'
+                $ref: '#/components/schemas/DatasetSpecification'
               type: array
         required: true
       responses:
@@ -304,7 +304,7 @@ paths:
           description: You are not authorized to do that
       security:
       - BearerAuth: []
-      summary: Creates a new instance of a `Dataset` related as Input.
+      summary: Creates a new instance of a `DatasetSpecification` related as Input.
       tags:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
@@ -362,7 +362,7 @@ paths:
           application/json:
             schema:
               items:
-                $ref: '#/components/schemas/DataSet'
+                $ref: '#/components/schemas/DatasetSpecification'
               type: array
         required: true
       responses:
@@ -430,7 +430,7 @@ paths:
       - modelconfiguration
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     post:
-      description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
+      description: Creates a new instance of a `DatasetSpecification` and it related with the `ModelConfiguration`.
       operationId: create_parameters_by_modelconfiguration
       parameters:
       - explode: false
@@ -519,9 +519,9 @@ paths:
       tags:
       - modelversion
       x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-  /datasets:
+  /datasetspecifications:
     get:
-      description: Gets a list of all `dataset` entities.
+      description: Gets a list of all `datasetspecification` entities.
       operationId: get_data_sets
       parameters:
       - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
@@ -538,33 +538,33 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/DataSet'
+                  $ref: '#/components/schemas/DatasetSpecification'
                 type: array
-          description: Successful response - returns an array of `dataset` entities.
+          description: Successful response - returns an array of `datasetspecification` entities.
       security: []
-      summary: List All datasets
+      summary: List All datasetspecifications
       tags:
-      - dataset
-      x-openapi-router-controller: openapi_server.controllers.dataset_controller
+      - datasetspecification
+      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
     post:
-      description: Creates a new instance of a `dataset`.
+      description: Creates a new instance of a `datasetspecification`.
       operationId: create_data_set
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataSet'
-        description: A new `dataset` to be created.
+              $ref: '#/components/schemas/DatasetSpecification'
+        description: A new `datasetspecification` to be created.
         required: true
       responses:
         201:
           description: Successful response.
       security:
       - BearerAuth: []
-      summary: Create a dataset
+      summary: Create a datasetspecification
       tags:
-      - dataset
-      x-openapi-router-controller: openapi_server.controllers.dataset_controller
+      - datasetspecification
+      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
   /models:
     get:
       description: Gets a list of all `model` entities.
@@ -615,6 +615,15 @@ paths:
     get:
       description: Gets a list of all `Parameter` entities.
       operationId: get_parameters
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         200:
           content:
@@ -839,7 +848,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     get:
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuration
+      operationId: get_model_configuraton
       parameters:
       - description: A unique identifier for a `ModelConfiguration`.
         explode: false
@@ -901,26 +910,26 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
 components:
   schemas:
-    DataSet:
+    DatasetSpecification:
       example:
         id: crop-yield
         label: crop-yield
-        has_format: csv
+        hasFormat: csv
         description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
-        has_dimensionality: 0
-        has_presentation:
+        hasDimensionality: 0
+        hasPresentation:
         - id: https://w3id.org/mint/instance/econ_ybarN
       properties:
         label:
           type: string
-        has_format:
+        hasFormat:
           type: string
         description:
           type: string
-        has_dimensionality:
+        hasDimensionality:
           format: int64
           type: integer
-        has_presentation:
+        hasPresentation:
           items:
             $ref: '#/components/schemas/VariablePresentation'
           type: array
@@ -937,32 +946,32 @@ components:
       example:
         id: economic
         label: Economic aggregate crop supply
-        has_input:
+        hasInput:
         - id: econ_yield
-        has_output:
+        hasOutput:
         - id: econ_land_use
         description: Aggregate crop supply response model for the country of South Sudan configuration
-        has_cag:
+        hasCAG:
         - id: economic_aggregate_crop_supply_CAG_variables
         - id: economic_aggregate_crop_supply_CAG_process
-        has_process:
+        hasProcess:
         - id: crop_yield
         - id: crop_supply
-        has_time_interval:
+        hasTimeInterval:
         - id: economic_aggregate_crop_supply_TI
-        has_implementation_script_location: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        has_container:
+        hasImplementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        hasContainer:
         - id: https://w3id.org/mint/instance/mintproject/economic:latest
-        has_constraint: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+        hasConstraint: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
           (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
           dcdom:region) uriConcat(?c ''_region'' ?location) -> (?in1 dcdom:region
           ?location) (?in2 dcdom:region ?location) print(''Setting domain of ?in1
           and ?in2 to ?location because both inputs to PIHM should be from the same
           region'')]'
-        has_parameter:
+        hasParameter:
         - id: pihm_start-date
         - id: pihm_end-date
-        has_component_location: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
+        hasComponentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
       properties:
         id:
           type: string
@@ -972,41 +981,41 @@ components:
           type: array
         label:
           type: string
-        has_input:
+        hasInput:
           items:
-            $ref: '#/components/schemas/DataSet'
+            $ref: '#/components/schemas/DatasetSpecification'
           type: array
-        has_output:
+        hasOutput:
           items:
-            $ref: '#/components/schemas/DataSet'
+            $ref: '#/components/schemas/DatasetSpecification'
           type: array
         description:
           type: string
-        has_cag:
+        hasCAG:
           items:
             $ref: '#/components/schemas/CAG'
           type: array
-        has_process:
+        hasProcess:
           items:
             $ref: '#/components/schemas/Process'
           type: array
-        has_time_interval:
+        hasTimeInterval:
           items:
             $ref: '#/components/schemas/TimeInterval'
           type: array
-        has_implementation_script_location:
+        hasImplementationScriptLocation:
           type: string
-        has_container:
+        hasContainer:
           items:
             type: object
           type: array
-        has_constraint:
+        hasConstraint:
           type: string
-        has_parameter:
+        hasParameter:
           items:
             $ref: '#/components/schemas/Parameter'
           type: array
-        has_component_location:
+        hasComponentLocation:
           type: string
       required:
       - id
@@ -1018,8 +1027,8 @@ components:
         - https://w3id.org/wings/export/MINT#StartDate
         label: pihm_start-date
         description: start date
-        has_default_value: 2017-01-01
-        has_data_type: string
+        hasDefaultValue: 2017-01-01
+        hasDataType: string
       properties:
         id:
           type: string
@@ -1031,9 +1040,9 @@ components:
           type: string
         description:
           type: string
-        has_default_value:
+        hasDefaultValue:
           type: string
-        has_data_type:
+        hasDataType:
           type: string
       required:
       - id
@@ -1068,9 +1077,9 @@ components:
         - https://example.org/externalCatalog#TimeInterval
         label: Simple economic time interval
         description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
-        has_unit:
+        usesUnit:
           id: https://w3id.org/mint/instance/yearT
-        has_value: 1
+        hasValue: 1
       properties:
         id:
           type: string
@@ -1082,9 +1091,9 @@ components:
           type: string
         description:
           type: string
-        has_unit:
+        usesUnit:
           $ref: '#/components/schemas/Unit'
-        has_value:
+        hasValue:
           format: int64
           type: integer
       required:
@@ -1096,10 +1105,10 @@ components:
         type:
         - http://qudt.org/1.1/schema/qudt#Unit
         label: USD kg-1
-        ccut_has_part:
+        ccut_hasPart:
         - u_USD
         - u__1_M_kilo_gram_kg
-        ccut_has_dimensionality:
+        ccut_hasDimensionality:
         - M-1
         abbreviation:
         - USD kg-1
@@ -1114,11 +1123,11 @@ components:
           type: string
         label:
           type: string
-        ccut_has_part:
+        ccut_hasPart:
           items:
             type: string
           type: array
-        ccut_has_dimensionality:
+        ccut_hasDimensionality:
           items:
             type: string
           type: array
@@ -1134,12 +1143,12 @@ components:
         id: econ_ybarN
         label: ybarN
         description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
-        has_long_name: yield elasticity
-        has_short_name: ybarN
-        has_standard_variable:
+        hasLongName: yield elasticity
+        hasShortName: ybarN
+        hasStandardVariable:
         - id: crop_fertilizer~nitrogen__yield_elasticity
-        has_relevance_level: 1
-        uses_unit:
+        hasRelevanceLevel: 1
+        usesUnit:
           id: USD_kg_1M_1
       properties:
         id:
@@ -1152,18 +1161,18 @@ components:
           type: string
         description:
           type: string
-        has_long_name:
+        hasLongName:
           type: string
-        has_short_name:
+        hasShortName:
           type: string
-        has_standard_variable:
+        hasStandardVariable:
           items:
-            $ref: '#/components/schemas/DataSet'
+            $ref: '#/components/schemas/DatasetSpecification'
           type: array
-        has_relevance_level:
+        hasRelevanceLevel:
           format: int64
           type: integer
-        uses_unit:
+        usesUnit:
           $ref: '#/components/schemas/Unit'
       required:
       - id
@@ -1173,25 +1182,10 @@ components:
         password: password
         username: username
       properties:
-        id:
-          format: int64
-          type: integer
         username:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
           type: string
         password:
           type: string
-        phone:
-          type: string
-        userStatus:
-          description: User Status
-          format: int32
-          type: integer
       type: object
       xml:
         name: User
@@ -1215,7 +1209,7 @@ components:
         label: CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
-        has_part:
+        hasPart:
         - id: https://w3id.org/mint/instance/econ_ybarN
         - id: https://w3id.org/mint/instance/econ_production
       properties:
@@ -1225,7 +1219,7 @@ components:
           items:
             type: string
           type: array
-        has_part:
+        hasPart:
           description: Array of Parameter or Variables
           items:
             $ref: '#/components/schemas/Parameter'
@@ -1243,11 +1237,11 @@ components:
         type:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
-        has_software_version:
+        hasSoftwareVersion:
         - id: DSSAT_4.7
-        has_model_category:
+        hasModelCategory:
         - Agriculture
-        has_documentation:
+        hasDocumentation:
         - https://dssat.net
       properties:
         id:
@@ -1258,15 +1252,15 @@ components:
           items:
             type: string
           type: array
-        has_software_version:
+        hasSoftwareVersion:
           items:
             type: object
           type: array
-        has_model_category:
+        hasModelCategory:
           items:
             type: string
           type: array
-        has_documentation:
+        hasDocumentation:
           items:
             type: string
           type: array
@@ -1279,8 +1273,8 @@ components:
         label: DSSAT v4.7
         type:
         - http://ontosoft.org/software#SoftwareVersion
-        has_version_id: "4.7"
-        has_configuration:
+        hasVersionId: "4.7"
+        hasConfiguration:
         - id: economic
       properties:
         id:
@@ -1291,13 +1285,13 @@ components:
           items:
             type: string
           type: array
-        has_documentation:
+        hasDocumentation:
           items:
             type: string
           type: array
-        has_version_id:
+        hasVersionId:
           type: string
-        has_configuration:
+        hasConfiguration:
           items:
             $ref: '#/components/schemas/ModelConfiguration'
           type: array

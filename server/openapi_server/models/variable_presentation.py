@@ -30,14 +30,12 @@ class VariablePresentation(Model):
         :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
         :type has_short_name: str
         :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
-        :type has_standard_variable: List[DataSet]
+        :type has_standard_variable: List[DatasetSpecification]
         :param has_relevance_level: The has_relevance_level of this VariablePresentation.  # noqa: E501
         :type has_relevance_level: int
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
         :type uses_unit: Unit
         """
-        from openapi_server.models.data_set import DataSet
-
         self.openapi_types = {
             'id': str,
             'type': List[str],
@@ -45,7 +43,7 @@ class VariablePresentation(Model):
             'description': str,
             'has_long_name': str,
             'has_short_name': str,
-            'has_standard_variable': List[DataSet],
+            'has_standard_variable': List[DatasetSpecification],
             'has_relevance_level': int,
             'uses_unit': Unit
         }
@@ -55,11 +53,11 @@ class VariablePresentation(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'has_long_name': 'has_long_name',
-            'has_short_name': 'has_short_name',
-            'has_standard_variable': 'has_standard_variable',
-            'has_relevance_level': 'has_relevance_level',
-            'uses_unit': 'uses_unit'
+            'has_long_name': 'hasLongName',
+            'has_short_name': 'hasShortName',
+            'has_standard_variable': 'hasStandardVariable',
+            'has_relevance_level': 'hasRelevanceLevel',
+            'uses_unit': 'usesUnit'
         }
 
         self._id = id
@@ -217,7 +215,7 @@ class VariablePresentation(Model):
 
 
         :return: The has_standard_variable of this VariablePresentation.
-        :rtype: List[DataSet]
+        :rtype: List[DatasetSpecification]
         """
         return self._has_standard_variable
 
@@ -227,7 +225,7 @@ class VariablePresentation(Model):
 
 
         :param has_standard_variable: The has_standard_variable of this VariablePresentation.
-        :type has_standard_variable: List[DataSet]
+        :type has_standard_variable: List[DatasetSpecification]
         """
 
         self._has_standard_variable = has_standard_variable

@@ -44,8 +44,8 @@ class Parameter(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'has_default_value': 'has_default_value',
-            'has_data_type': 'has_data_type'
+            'has_default_value': 'hasDefaultValue',
+            'has_data_type': 'hasDataType'
         }
 
         self._id = id

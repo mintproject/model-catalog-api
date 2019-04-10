@@ -5,7 +5,7 @@ from __future__ import absolute_import
 # import models into model package
 from openapi_server.models.api_response import ApiResponse
 from openapi_server.models.cag import CAG
-from openapi_server.models.data_set import DataSet
+from openapi_server.models.dataset_specification import DatasetSpecification
 from openapi_server.models.model import Model
 from openapi_server.models.model_configuration import ModelConfiguration
 from openapi_server.models.model_version import ModelVersion

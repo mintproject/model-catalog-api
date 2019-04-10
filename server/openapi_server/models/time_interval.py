@@ -16,7 +16,7 @@ class TimeInterval(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, has_unit=None, has_value=None):  # noqa: E501
+    def __init__(self, id=None, type=None, label=None, description=None, uses_unit=None, has_value=None):  # noqa: E501
         """TimeInterval - a model defined in OpenAPI
 
         :param id: The id of this TimeInterval.  # noqa: E501
@@ -27,8 +27,8 @@ class TimeInterval(Model):
         :type label: str
         :param description: The description of this TimeInterval.  # noqa: E501
         :type description: str
-        :param has_unit: The has_unit of this TimeInterval.  # noqa: E501
-        :type has_unit: Unit
+        :param uses_unit: The uses_unit of this TimeInterval.  # noqa: E501
+        :type uses_unit: Unit
         :param has_value: The has_value of this TimeInterval.  # noqa: E501
         :type has_value: int
         """
@@ -37,7 +37,7 @@ class TimeInterval(Model):
             'type': List[str],
             'label': str,
             'description': str,
-            'has_unit': Unit,
+            'uses_unit': Unit,
             'has_value': int
         }
 
@@ -46,15 +46,15 @@ class TimeInterval(Model):
             'type': 'type',
             'label': 'label',
             'description': 'description',
-            'has_unit': 'has_unit',
-            'has_value': 'has_value'
+            'uses_unit': 'usesUnit',
+            'has_value': 'hasValue'
         }
 
         self._id = id
         self._type = type
         self._label = label
         self._description = description
-        self._has_unit = has_unit
+        self._uses_unit = uses_unit
         self._has_value = has_value
 
     @classmethod
@@ -155,25 +155,25 @@ class TimeInterval(Model):
         self._description = description
 
     @property
-    def has_unit(self):
-        """Gets the has_unit of this TimeInterval.
+    def uses_unit(self):
+        """Gets the uses_unit of this TimeInterval.
 
 
-        :return: The has_unit of this TimeInterval.
+        :return: The uses_unit of this TimeInterval.
         :rtype: Unit
         """
-        return self._has_unit
+        return self._uses_unit
 
-    @has_unit.setter
-    def has_unit(self, has_unit):
-        """Sets the has_unit of this TimeInterval.
+    @uses_unit.setter
+    def uses_unit(self, uses_unit):
+        """Sets the uses_unit of this TimeInterval.
 
 
-        :param has_unit: The has_unit of this TimeInterval.
-        :type has_unit: Unit
+        :param uses_unit: The uses_unit of this TimeInterval.
+        :type uses_unit: Unit
         """
 
-        self._has_unit = has_unit
+        self._uses_unit = uses_unit
 
     @property
     def has_value(self):

@@ -37,7 +37,7 @@ class CAG(Model):
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
-            'has_part': 'has_part',
+            'has_part': 'hasPart',
             'label': 'label'
         }
 

@@ -8,7 +8,7 @@ from openapi_server import util
 from openapi_server.models.time_interval import TimeInterval
 from openapi_server.models.cag import CAG
 from openapi_server.models.parameter import Parameter
-from openapi_server.models.data_set import DataSet
+from openapi_server.models.dataset_specification import DatasetSpecification
 from openapi_server.models.process import Process
 from openapi_server.models.base_model_ import Model
 
@@ -29,9 +29,9 @@ class ModelConfiguration(Model):
         :param label: The label of this ModelConfiguration.  # noqa: E501
         :type label: str
         :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
-        :type has_input: List[DataSet]
+        :type has_input: List[DatasetSpecification]
         :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
-        :type has_output: List[DataSet]
+        :type has_output: List[DatasetSpecification]
         :param description: The description of this ModelConfiguration.  # noqa: E501
         :type description: str
         :param has_cag: The has_cag of this ModelConfiguration.  # noqa: E501
@@ -55,8 +55,8 @@ class ModelConfiguration(Model):
             'id': str,
             'type': List[str],
             'label': str,
-            'has_input': List[DataSet],
-            'has_output': List[DataSet],
+            'has_input': List[DatasetSpecification],
+            'has_output': List[DatasetSpecification],
             'description': str,
             'has_cag': List[CAG],
             'has_process': List[Process],
@@ -72,17 +72,17 @@ class ModelConfiguration(Model):
             'id': 'id',
             'type': 'type',
             'label': 'label',
-            'has_input': 'has_input',
-            'has_output': 'has_output',
+            'has_input': 'hasInput',
+            'has_output': 'hasOutput',
             'description': 'description',
-            'has_cag': 'has_cag',
-            'has_process': 'has_process',
-            'has_time_interval': 'has_time_interval',
-            'has_implementation_script_location': 'has_implementation_script_location',
-            'has_container': 'has_container',
-            'has_constraint': 'has_constraint',
-            'has_parameter': 'has_parameter',
-            'has_component_location': 'has_component_location'
+            'has_cag': 'hasCAG',
+            'has_process': 'hasProcess',
+            'has_time_interval': 'hasTimeInterval',
+            'has_implementation_script_location': 'hasImplementationScriptLocation',
+            'has_container': 'hasContainer',
+            'has_constraint': 'hasConstraint',
+            'has_parameter': 'hasParameter',
+            'has_component_location': 'hasComponentLocation'
         }
 
         self._id = id
@@ -182,7 +182,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_input of this ModelConfiguration.
-        :rtype: List[DataSet]
+        :rtype: List[DatasetSpecification]
         """
         return self._has_input
 
@@ -192,7 +192,7 @@ class ModelConfiguration(Model):
 
 
         :param has_input: The has_input of this ModelConfiguration.
-        :type has_input: List[DataSet]
+        :type has_input: List[DatasetSpecification]
         """
 
         self._has_input = has_input
@@ -203,7 +203,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_output of this ModelConfiguration.
-        :rtype: List[DataSet]
+        :rtype: List[DatasetSpecification]
         """
         return self._has_output
 
@@ -213,7 +213,7 @@ class ModelConfiguration(Model):
 
 
         :param has_output: The has_output of this ModelConfiguration.
-        :type has_output: List[DataSet]
+        :type has_output: List[DatasetSpecification]
         """
 
         self._has_output = has_output

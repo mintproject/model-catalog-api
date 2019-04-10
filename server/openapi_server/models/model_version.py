@@ -44,9 +44,9 @@ class ModelVersion(Model):
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'has_documentation': 'has_documentation',
-            'has_version_id': 'has_version_id',
-            'has_configuration': 'has_configuration'
+            'has_documentation': 'hasDocumentation',
+            'has_version_id': 'hasVersionId',
+            'has_configuration': 'hasConfiguration'
         }
 
         self._id = id

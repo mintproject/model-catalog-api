@@ -321,6 +321,7 @@ paths:
       tags:
       - modelconfiguration
       summary: Create the output of a model configuration
+      operationId: createOutputsByModelconfiguration
       parameters:
       - name: id
         in: path

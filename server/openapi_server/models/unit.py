@@ -47,8 +47,8 @@ class Unit(Model):
             'type': 'type',
             'description': 'description',
             'label': 'label',
-            'ccut_has_part': 'ccut_has_part',
-            'ccut_has_dimensionality': 'ccut_has_dimensionality',
+            'ccut_has_part': 'ccut_hasPart',
+            'ccut_has_dimensionality': 'ccut_hasDimensionality',
             'abbreviation': 'abbreviation'
         }
 

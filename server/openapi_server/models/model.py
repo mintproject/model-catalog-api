@@ -44,9 +44,9 @@ class Model(Model):
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'has_software_version': 'has_software_version',
-            'has_model_category': 'has_model_category',
-            'has_documentation': 'has_documentation'
+            'has_software_version': 'hasSoftwareVersion',
+            'has_model_category': 'hasModelCategory',
+            'has_documentation': 'hasDocumentation'
         }
 
         self._id = id
