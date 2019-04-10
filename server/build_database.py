@@ -8,8 +8,8 @@ USERS = [
 ]
 
 # Delete database file if it exists currently
-if os.path.exists('server.db'):
-    os.remove('server.db')
+if os.path.exists('database/server.db'):
+    os.remove('database/server.db')
 
 # Create the database
 db.create_all()
