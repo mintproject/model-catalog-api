@@ -14,7 +14,7 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-RUN python build_database.sh
+RUN sh build_database.sh
 
 ENTRYPOINT ["python3"]
 
