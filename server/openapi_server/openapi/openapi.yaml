@@ -839,7 +839,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     get:
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuraton
+      operationId: get_model_configuration
       parameters:
       - description: A unique identifier for a `ModelConfiguration`.
         explode: false

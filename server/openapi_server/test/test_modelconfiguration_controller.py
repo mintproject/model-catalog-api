@@ -75,8 +75,8 @@ class TestModelconfigurationController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_get_model_configuraton_by_uri(self):
-        """Test case for get_model_configuraton_by_uri
+    def test_get_model_configuration_by_uri(self):
+        """Test case for get_model_configuration_by_uri
 
         Get modelconfiguration by uri
         """

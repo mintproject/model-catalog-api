@@ -110,7 +110,7 @@ def get_model_configurations(username=None):  # noqa: E501
     except:
         return "Bad request", 400, {}
 
-def get_model_configuraton(id, username=None):
+def get_model_configuration(id, username=None):
     # noqa: E501
     """Get modelconfiguration
 

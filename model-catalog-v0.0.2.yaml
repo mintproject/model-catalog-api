@@ -136,8 +136,8 @@ paths:
               $ref: '#/components/schemas/User'
         description: Updated user object
         required: true
-      security: 
-        - BearerAuth: []        
+      security:
+        - BearerAuth: []
 
     delete:
       tags:
@@ -235,11 +235,11 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
-      security: []        
+      security: []
     post:
       tags:
-      - modelconfiguration    
-      summary: Creates a new instance of a `Dataset` related as Input.
+      - modelconfiguration
+      summary: Creates a new instance of a `DatasetSpecification` related as Input.
       operationId: createInputsByModelconfiguration
       parameters:
       - name: id
@@ -253,7 +253,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DataSet'
+                $ref: '#/components/schemas/DatasetSpecification'
         required: true
       responses:
         201:
@@ -316,10 +316,10 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
-      security: []        
+      security: []
     post:
       tags:
-      - modelconfiguration    
+      - modelconfiguration
       summary: Create the output of a model configuration
       parameters:
       - name: id
@@ -333,7 +333,7 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/DataSet'
+                $ref: '#/components/schemas/DatasetSpecification'
         required: true
       responses:
         201:
@@ -396,12 +396,12 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
-      security: []        
+      security: []
     post:
       tags:
-      - modelconfiguration    
+      - modelconfiguration
       summary: Create the inputs of a model configuration
-      description: Creates a new instance of a `Dataset` and it related with the `ModelConfiguration`.
+      description: Creates a new instance of a `DatasetSpecification` and it related with the `ModelConfiguration`.
       operationId: createParametersByModelconfiguration
       parameters:
       - name: id
@@ -461,7 +461,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ModelVersion'
-      security: []        
+      security: []
       parameters:
       - name: username
         in: query
@@ -471,7 +471,7 @@ paths:
         description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
-        - modelversion    
+        - modelversion
       summary: Create a ModelVersion
       description: Creates a new instance of a `ModelVersion`.
       operationId: createModelVersion
@@ -487,23 +487,23 @@ paths:
           description: Successful response.
       security:
         - BearerAuth: []
-  /datasets:
+  /datasetspecifications:
     get:
       tags:
-        - dataset    
-      summary: List All datasets
-      description: Gets a list of all `dataset` entities.
+        - datasetspecification
+      summary: List All datasetspecifications
+      description: Gets a list of all `datasetspecification` entities.
       operationId: getDataSets
       responses:
         200:
-          description: Successful response - returns an array of `dataset` entities.
+          description: Successful response - returns an array of `datasetspecification` entities.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/DataSet'
-      security: []        
+                  $ref: '#/components/schemas/DatasetSpecification'
+      security: []
       parameters:
       - name: username
         in: query
@@ -513,26 +513,26 @@ paths:
         description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
-        - dataset        
-      summary: Create a dataset
-      description: Creates a new instance of a `dataset`.
+        - datasetspecification
+      summary: Create a datasetspecification
+      description: Creates a new instance of a `datasetspecification`.
       operationId: createDataSet
       requestBody:
-        description: A new `dataset` to be created.
+        description: A new `datasetspecification` to be created.
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataSet'
+              $ref: '#/components/schemas/DatasetSpecification'
         required: true
       responses:
         201:
           description: Successful response.
       security:
-        - BearerAuth: []   
+        - BearerAuth: []
   /models:
     get:
       tags:
-        - model    
+        - model
       summary: List All models
       description: Gets a list of all `model` entities.
       operationId: getModels
@@ -555,7 +555,7 @@ paths:
         description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     post:
       tags:
-        - model    
+        - model
       summary: Create a model
       description: Creates a new instance of a `model`.
       operationId: createModel
@@ -574,7 +574,7 @@ paths:
   /parameters:
     get:
       tags:
-        - parameter  
+        - parameter
       summary: List All Parameters
       description: Gets a list of all `Parameter` entities.
       operationId: getParameters
@@ -593,11 +593,11 @@ paths:
         required: false
         schema:
           type: string
-        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username                  
-      security: []        
+        description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
+      security: []
     post:
       tags:
-        - parameter    
+        - parameter
       summary: Create a Parameter
       description: Creates a new instance of a `Parameter`.
       operationId: createParameter
@@ -616,7 +616,7 @@ paths:
   /model/{id}:
     get:
       tags:
-        - model    
+        - model
       summary: Get a Model
       description: Gets the details of a single instance of a `Model`.
       operationId: getModel
@@ -627,7 +627,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Model'
-      security: []   
+      security: []
       parameters:
       - name: username
         in: query
@@ -637,7 +637,7 @@ paths:
         description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     put:
       tags:
-        - model    
+        - model
       summary: Update a Model
       description: Updates an existing `Model`.
       operationId: updateModel
@@ -655,7 +655,7 @@ paths:
       - BearerAuth: []
     delete:
       tags:
-        - model    
+        - model
       summary: Delete a Model
       description: Deletes an existing `Model`.
       operationId: deleteModel
@@ -663,7 +663,7 @@ paths:
         204:
           description: Successful response.
       security:
-      - BearerAuth: []          
+      - BearerAuth: []
     parameters:
     - name: id
       in: path
@@ -674,7 +674,7 @@ paths:
   /modelversion/{id}:
     get:
       tags:
-        - modelversion    
+        - modelversion
       summary: Get a ModelVersion
       description: Gets the details of a single instance of a `ModelVersion`.
       operationId: getModelVersion
@@ -695,7 +695,7 @@ paths:
         description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     put:
       tags:
-        - modelversion       
+        - modelversion
       summary: Update a ModelVersion
       description: Updates an existing `ModelVersion`.
       operationId: updateModelVersion
@@ -710,19 +710,19 @@ paths:
         202:
           description: Successful response.
       security:
-      - BearerAuth: []      
+      - BearerAuth: []
     delete:
       tags:
-        - modelversion       
+        - modelversion
       summary: Delete a ModelVersion
       description: Deletes an existing `ModelVersion`.
       operationId: deleteModelVersion
       responses:
         204:
           description: Successful response.
-      security: []    
+      security: []
     parameters:
-    - 
+    -
       name: id
       in: path
       description: A unique identifier for a `ModelVersion`.
@@ -760,7 +760,7 @@ paths:
           description: Invalid uri supplied
         404:
           description: Model Configuration not found
-      security: []       
+      security: []
     put:
       tags:
       - modelconfiguration
@@ -808,21 +808,21 @@ paths:
         type: string
 components:
   schemas:
-    DataSet:
+    DatasetSpecification:
       required:
       - id
       type: object
       properties:
         label:
           type: string
-        has_format:
+        hasFormat:
           type: string
         description:
           type: string
-        has_dimensionality:
+        hasDimensionality:
           format: int64
           type: integer
-        has_presentation:
+        hasPresentation:
           type: array
           items:
             $ref: '#/components/schemas/VariablePresentation'
@@ -835,16 +835,16 @@ components:
       example:
         id: crop-yield
         label: crop-yield
-        has_format: csv
+        hasFormat: csv
         description: Contains the yield elasticities to fertilizer use that are derived from
           Cycles output
-        has_dimensionality: 0
-        has_presentation:
-        - id: https://w3id.org/mint/instance/econ_ybarN          
+        hasDimensionality: 0
+        hasPresentation:
+        - id: https://w3id.org/mint/instance/econ_ybarN
     ModelConfiguration:
       type: object
       required:
-      - id      
+      - id
       properties:
         id:
           type: string
@@ -854,77 +854,77 @@ components:
             type: string
         label:
           type: string
-        has_input:
+        hasInput:
           type: array
           items:
-            $ref: '#/components/schemas/DataSet'
-        has_output:
+            $ref: '#/components/schemas/DatasetSpecification'
+        hasOutput:
           type: array
           items:
-            $ref: '#/components/schemas/DataSet'
+            $ref: '#/components/schemas/DatasetSpecification'
         description:
           type: string
-        has_cag:
+        hasCAG:
           type: array
           items:
             $ref: '#/components/schemas/CAG'
-        has_process:
+        hasProcess:
           type: array
           items:
             $ref: '#/components/schemas/Process'
-        has_time_interval:
+        hasTimeInterval:
           type: array
           items:
             $ref: '#/components/schemas/TimeInterval'
-        has_implementation_script_location:
+        hasImplementationScriptLocation:
           type: string
-        has_container:
+        hasContainer:
           type: array
           items:
             type: object
-        has_constraint:
+        hasConstraint:
           type: string
-        has_parameter:
+        hasParameter:
           type: array
           items:
             $ref: '#/components/schemas/Parameter'
-        has_component_location:
+        hasComponentLocation:
           type: string
       example:
         id: economic
         label: Economic aggregate crop supply
-        has_input:
+        hasInput:
         - id: econ_yield
-        has_output:
+        hasOutput:
         - id: econ_land_use
         description: Aggregate crop supply response model for the country of South Sudan configuration
-        has_cag:
+        hasCAG:
         - id: economic_aggregate_crop_supply_CAG_variables
         - id: economic_aggregate_crop_supply_CAG_process
-        has_process:
+        hasProcess:
         - id: crop_yield
         - id: crop_supply
-        has_time_interval:
+        hasTimeInterval:
         - id: economic_aggregate_crop_supply_TI
-        has_implementation_script_location: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        has_container:
+        hasImplementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
+        hasContainer:
         - id: https://w3id.org/mint/instance/mintproject/economic:latest
-        has_constraint: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
+        hasConstraint: "[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
           (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
           dcdom:region) uriConcat(?c '_region' ?location) -> (?in1 dcdom:region ?location)
           (?in2 dcdom:region ?location) print('Setting domain of ?in1 and ?in2 to ?location
           because both inputs to PIHM should be from the same region')]"
-        has_parameter:
+        hasParameter:
         - id: pihm_start-date
         - id: pihm_end-date
-        has_component_location: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
+        hasComponentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
     Parameter:
       required:
       - id
       type: object
       properties:
         id:
-            type: string          
+            type: string
         type:
           type: array
           items:
@@ -933,9 +933,9 @@ components:
           type: string
         description:
           type: string
-        has_default_value:
+        hasDefaultValue:
           type: string
-        has_data_type:
+        hasDataType:
           type: string
       example:
         id: pihm_start-date
@@ -943,8 +943,8 @@ components:
         - https://w3id.org/wings/export/MINT#StartDate
         label: pihm_start-date
         description: start date
-        has_default_value: '2017-01-01'
-        has_data_type: string
+        hasDefaultValue: '2017-01-01'
+        hasDataType: string
     Process:
       required:
       - id
@@ -969,7 +969,7 @@ components:
         id: crop_yield
         label: crop yield
         influences:
-        - id: https://w3id.org/mint/instance/crop_supply          
+        - id: https://w3id.org/mint/instance/crop_supply
     TimeInterval:
       required:
       - id
@@ -985,9 +985,9 @@ components:
           type: string
         description:
           type: string
-        has_unit:
+        usesUnit:
           $ref: '#/components/schemas/Unit'
-        has_value:
+        hasValue:
           format: int64
           type: integer
       example:
@@ -997,12 +997,12 @@ components:
         label: Simple economic time interval
         description: Time interval used in the aggregate crop supply response model for the
           country of South Sudan configuration
-        has_unit:
+        usesUnit:
           id: https://w3id.org/mint/instance/yearT
-        has_value: 1          
+        hasValue: 1
     Unit:
       required:
-      - id    
+      - id
       type: object
       properties:
         id:
@@ -1015,11 +1015,11 @@ components:
           type: string
         label:
           type: string
-        ccut_has_part:
+        ccut_hasPart:
           type: array
           items:
             type: string
-        ccut_has_dimensionality:
+        ccut_hasDimensionality:
           type: array
           items:
             type: string
@@ -1032,13 +1032,13 @@ components:
         type:
         - http://qudt.org/1.1/schema/qudt#Unit
         label: USD kg-1
-        ccut_has_part:
+        ccut_hasPart:
         - u_USD
         - u__1_M_kilo_gram_kg
-        ccut_has_dimensionality:
+        ccut_hasDimensionality:
         - M-1
         abbreviation:
-        - USD kg-1          
+        - USD kg-1
     VariablePresentation:
       required:
       - id
@@ -1054,53 +1054,38 @@ components:
           type: string
         description:
           type: string
-        has_long_name:
+        hasLongName:
           type: string
-        has_short_name:
+        hasShortName:
           type: string
-        has_standard_variable:
+        hasStandardVariable:
           type: array
           items:
-            $ref: '#/components/schemas/DataSet'
-        has_relevance_level:
+            $ref: '#/components/schemas/DatasetSpecification'
+        hasRelevanceLevel:
           format: int64
           type: integer
-        uses_unit:
+        usesUnit:
           $ref: '#/components/schemas/Unit'
       example:
         id: econ_ybarN
         label: ybarN
         description: Contains the yield elasticities to fertilizer use that are derived from
           Cycles output
-        has_long_name: yield elasticity
-        has_short_name: ybarN
-        has_standard_variable: 
+        hasLongName: yield elasticity
+        hasShortName: ybarN
+        hasStandardVariable:
         - id: crop_fertilizer~nitrogen__yield_elasticity
-        has_relevance_level: 1
-        uses_unit:
-          id: USD_kg_1M_1            
+        hasRelevanceLevel: 1
+        usesUnit:
+          id: USD_kg_1M_1
     User:
       type: object
       properties:
-        id:
-          format: int64
-          type: integer
         username:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
           type: string
         password:
           type: string
-        phone:
-          type: string
-        userStatus:
-          format: int32
-          description: User Status
-          type: integer
       xml:
         name: User
     ApiResponse:
@@ -1124,7 +1109,7 @@ components:
           type: array
           items:
             type: string
-        has_part:
+        hasPart:
           description: Array of Parameter or Variables
           type: array
           items:
@@ -1141,7 +1126,7 @@ components:
           the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
-        has_part:
+        hasPart:
         - id: https://w3id.org/mint/instance/econ_ybarN
         - id: https://w3id.org/mint/instance/econ_production
     Model:
@@ -1158,15 +1143,15 @@ components:
           type: array
           items:
             type: string
-        has_software_version:
+        hasSoftwareVersion:
           type: array
           items:
             type: object
-        has_model_category:
+        hasModelCategory:
           type: array
           items:
             type: string
-        has_documentation:
+        hasDocumentation:
           type: array
           items:
             type: string
@@ -1179,11 +1164,11 @@ components:
         type:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
-        has_software_version:
+        hasSoftwareVersion:
         - id: DSSAT_4.7
-        has_model_category:
+        hasModelCategory:
         - Agriculture
-        has_documentation:
+        hasDocumentation:
         - https://dssat.net
     ModelVersion:
       description: ""
@@ -1199,13 +1184,13 @@ components:
           type: array
           items:
             type: string
-        has_documentation:
+        hasDocumentation:
           type: array
           items:
             type: string
-        has_version_id:
+        hasVersionId:
           type: string
-        has_configuration:
+        hasConfiguration:
           type: array
           items:
             $ref: '#/components/schemas/ModelConfiguration'
@@ -1214,8 +1199,8 @@ components:
         label: DSSAT v4.7
         type:
         - http://ontosoft.org/software#SoftwareVersion
-        has_version_id: '4.7'
-        has_configuration:
+        hasVersionId: '4.7'
+        hasConfiguration:
         - id: economic
   securitySchemes:
     BearerAuth:
@@ -1223,7 +1208,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
       x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token
-      
+
 externalDocs:
   description: Find out more about MINT
   url: http://mint.isi.edu
