@@ -53,7 +53,7 @@ def create_user():  # noqa: E501
 
 
 def validate_username(username):
-    user = User.query.filter_by(username=username).first()
+    user = User.query.filter_by(_username=username).first()
     if user is not None:
         raise ValueError('Please use a different username.')
 
@@ -96,7 +96,7 @@ def login_user(username, password):  # noqa: E501
 
     :rtype: str
     """
-    user = User.query.filter_by(username=username).first()
+    user = User.query.filter_by(_username=username).first()
     if user is None or not user.check_password(password):
         return "Invalid User or Password", 401, {}
 
