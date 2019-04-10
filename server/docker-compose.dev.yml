@@ -1,7 +1,16 @@
 #Environment dev
 version: '3'
 services:
-  api-modelcatalog:
+  api-modelcatalog-dev:
     image: "mint-project/api-modelcatalog:dev"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - database_dev:/usr/src/app/openapi_server/database/
     ports:
       - 9092:8080
+
+
+volumes:
+    database_dev:

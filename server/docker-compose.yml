@@ -1,9 +1,0 @@
-version: '3'
-services:
-  api-modelcatalog:
-    image: "mint-project/api-modelcatalog:latest"
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./openapi/database/:openapi/database/
