@@ -40,9 +40,14 @@ def create_model_configuration(user):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        _ = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-        model_configuration_json = prepare_jsonld(connexion.request.get_json(), user, MODELCONFIGURATION_TYPE)
+        model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
+        if model_configuration.type:
+            model_configuration.type.append(MODELCONFIGURATION_TYPE)
+        else:
+            model_configuration.type = [MODELCONFIGURATION_TYPE]
+        model_configuration_json = prepare_jsonld(model_configuration, user)
         return insert_query(model_configuration_json, user)
+
     return "Bad request", 400, {}
 
 #todo: implement
@@ -102,10 +107,19 @@ def get_model_configurations(username=None):  # noqa: E501
 
     :rtype: List[ModelConfiguration]
     """
+
+    model_configuration = ModelConfiguration()
     try:
-        return get_all_resource(DATASETSPECIFICATION_TYPE, username)
+        response = get_all_resource(MODELCONFIGURATION_TYPE, model_configuration.openapi_types, username)
     except:
         return "Bad request", 400, {}
+
+    model_configurations = []
+    for d in response:
+        m = ModelConfiguration.from_dict(d)
+        model_configurations.append(m)
+    return model_configurations
+
 
 
 def get_model_configuraton(id, username=None):  # noqa: E501
@@ -120,10 +134,16 @@ def get_model_configuraton(id, username=None):  # noqa: E501
 
     :rtype: ModelConfiguration
     """
+    model_configuration = ModelConfiguration()
     try:
-        return get_resource(id, MODELCONFIGURATION_TYPE, username)
+        response = get_resource(id, MODELCONFIGURATION_TYPE, model_configuration.openapi_types, username)
+        model_configuration = ModelConfiguration.from_dict(response)
     except:
         return "Bad request", 400, {}
+    if not model_configuration.id:
+        return "Not found", 404, {}
+    return model_configuration
+
 
 
 def get_outputs_by_modelconfiguration(id, username=None):  # noqa: E501
@@ -154,7 +174,7 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
     :rtype: List[ApiResponse]
     """
     try:
-        return get_all_resources_related(id, "mc:hasParameter", username)
+        return get_all_resources_related(id, "mc:hasParameter", None, username)
     except:
         return "Bad request", 400, {}
 

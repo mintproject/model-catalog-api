@@ -4,104 +4,144 @@ from openapi_server.static import UPDATE_ENDPOINT, DEFAULT_MINT_INSTANCE, QUERY_
 from openapi_server.static_vars import *
 from flask import json
 import requests
+import re
 from pyld import jsonld
+import six
 
+def to_snake_name(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+def to_camel_case(snake_str):
+    components = snake_str.split('_')
+    return components[0] + ''.join(x.title() for x in components[1:])
 
 def update_panel_json(input_json, target_key):
     if isinstance(input_json, dict):
         for k, v in input_json.items():
+            #Obtain the rdf:type using the JSON key
+            if k in SUPPORTED_CLASSES and type(v) == list:
+                for item in v:
+                    item['type'] = MAPPING_TYPE[k]
+            elif k in SUPPORTED_CLASSES and type(v) == dict:
+                v['type'] = MAPPING_TYPE[k]
+            #Rename key to JSON-LD format
             if k in target_key:
+                if k == 'id':
+                    input_json[k] = build_user_resource_uri(input_json[k])
+                #rename a key, for example @id -> id
                 input_json[target_key[k]] = input_json.pop(k)
+
             update_panel_json(v, target_key)
 
     elif isinstance(input_json, list):
         for item in input_json:
             update_panel_json(item, target_key)
 
-def convert_to_json(resources_json_ld):
-    update_key = {
-        "@id": "id",
-        "@type": "type"
-    }
+def type_to_json(input_json):
+    if isinstance(input_json, dict):
+        for k, v in input_json.items():
+            #Obtain the rdf:type using the JSON key
+            if k in SUPPORTED_CLASSES and type(v) == list:
+                for item in v:
+                    item['type'] = MAPPING_TYPE[k]
+            elif k in SUPPORTED_CLASSES and type(v) == dict:
+                v['type'] = MAPPING_TYPE[k]
 
+
+    elif isinstance(input_json, list):
+        for item in input_json:
+            update_panel_json(item)
+
+def verify_data_types(json, openapi_types):
+    if '@type' in json and type(json['@type']) == str:
+        json['@type'] = [json['@type']]
+
+'''
+Convert the internal json-ld to JSON with the API format
+This method returns a array
+json_convert must use embedding #10
+
+'''
+#todo: Is the same method for get and insert?
+def convert_to_json(resources_json_ld, types):
     expand = jsonld.expand(resources_json_ld)
-    compact = jsonld.compact(expand, PREDICATE_CONTEXT)
-    update_panel_json(compact, update_key)
+    compact = jsonld.compact(expand, PREDICATE_CONTEXT, {'compactArrays': False})
     if '@graph' in compact:
         return compact['@graph']
     else:
         compact.pop('@context')
         return compact
 
-def get_all_resource(resource_type, username=None):
+def get_all_resource(resource_type, types, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_all_resource(resource_type, username)
     data = {'query': query}
     resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
-    resources_json = convert_to_json(resources_json_ld)
+    resources_json = convert_to_json(resources_json_ld, types)
+
+    if not resources_json:
+        resources_json = []
+    elif resources_json and type(resources_json) == dict:
+        resources_json = [resources_json]
     return resources_json
 
-def get_resource(resource_id, resource_type, username=None):
+def get_resource(resource_id, resource_type, types, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource(resource_id, username)
     data = {'query': query}
     try:
         response = requests.post(QUERY_ENDPOINT, headers=headers, data=data)
         resources_json_ld = response.json()
-        resources_json = convert_to_json(resources_json_ld)
-    except Exception as e:
-        print(e)
+    except Exception as error:
+        print(error)
+    resources_json = convert_to_json(resources_json_ld, types)
     return resources_json
 
-def get_all_resources_related(resource_id, relation, username=None):
+def get_all_resources_related(resource_id, relation, types, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource_related(resource_id, relation, username)
     data = {'query': query}
     resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
-    resources_json = convert_to_json(resources_json_ld)
+    resources_json = convert_to_json(resources_json_ld, types)
     return resources_json
 
-def prepare_jsonld(resource, username, default_type):
-    resource['@context'] = MINT_CONTEXT
-    resource['@id'] = build_user_resource_uri(resource['id'])
-    resource['@type'] = default_type
-    for key in SUPPORTED_CLASSES:
-        prepare_id_jsonld(resource, username, key)
-    return json.dumps(resource)
+def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
 
+    update_key = {
+        "id": "@id",
+        "type": "@type"
+    }
 
-def prepare_id_jsonld(json, username, key):
-    if key in json:
-        for item in json[key]:
-            item['@id'] = build_user_resource_uri(item['id'])
-            item['@type'] = [MAPPING_TYPE[key]]
+    resource_dict = resource.to_dict()
+    resource_dict['@context'] = MINT_CONTEXT
+    update_panel_json(resource_dict, update_key)
+    resource_json = json.dumps(resource_dict)
 
-            #include custom rdf:type
-            if 'type' in item:
-                for item_type in item['type']:
-                    item['@type'].append(item_type)
+    return resource_json
+
+def get_type_resource(resource_type):
+    return MAPPING_TYPE[resource_type]
+
 
 def build_graph_uri(username):
     return f'{DEFAULT_MINT_INSTANCE}{username}_graph'
 
 
+
 def build_user_resource_uri(resource):
-    return f'{DEFAULT_MINT_INSTANCE}{resource}'
+    regex = re.compile(
+        r'^(?:http|ftp)s?://'  # http:// or https://
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'  # domain...
+        r'localhost|'  # localhost...
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'  # ...or ip
+        r'(?::\d+)?'  # optional port
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
-
-def execute_query(endpoint):
-    if endpoint == '':
-        return 'No SPARQL endpoint indicated', 407, {}
-
-
-def select_query(endpoint, query):
-    if endpoint == '':
-        return 'No SPARQL endpoint indicated', 407, {}
-
-    sparql = SPARQLWrapper(endpoint)
-    sparql.setQuery(query)
-    sparql.setReturnFormat(JSON)
-    return sparql.query().convert()
+    if not re.match(regex, resource):
+        return f'{DEFAULT_MINT_INSTANCE}{resource}'
+    else:
+        return resource
 
 
 def insert_query(body, username):
@@ -110,7 +150,7 @@ def insert_query(body, username):
         return 'No SPARQL endpoint indicated', 407, {}
 
     graph = build_graph_uri(username)
-    prefixes, triples = prepare_jsonjd(body)
+    prefixes, triples = build_insert_query(body)
     prefixes = '\n'.join(prefixes)
     triples = '\n'.join(triples)
 
@@ -148,7 +188,7 @@ TODO: rdflib has some problems
 '''
 
 
-def prepare_jsonjd(jsonld):
+def build_insert_query(jsonld):
     prefixes = []
     g = Graph().parse(data=jsonld, format='json-ld')
 

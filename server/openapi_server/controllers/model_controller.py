@@ -16,8 +16,12 @@ def create_model(user):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        _ = Model.from_dict(connexion.request.get_json())  # noqa: E501
-        model_json = prepare_jsonld(connexion.request.get_json(), user, MODEL_TYPE)
+        model = Model.from_dict(connexion.request.get_json())  # noqa: E501
+        if model.type:
+            model.type.append(MODEL_TYPE)
+        else:
+            model.type = [MODEL_TYPE]
+        model_json = prepare_jsonld(model, user)
         return insert_query(model_json, user)
 
     return "Bad request", 400, {}
@@ -49,10 +53,17 @@ def get_model(id, username=None):  # noqa: E501
 
     :rtype: Model
     """
+    model = Model()
     try:
-        return get_resource(id, MODEL_TYPE, username)
+        response = get_resource(id, MODEL_TYPE, model.openapi_types, username)
+
     except:
         return "Bad request", 400, {}
+    if response:
+        model = Model.from_dict(response[0])
+    else:
+        return "Not found", 404, {}
+    return model
 
 def get_models(username=None):  # noqa: E501
     """List All models
@@ -64,10 +75,17 @@ def get_models(username=None):  # noqa: E501
 
     :rtype: List[Model]
     """
+    model = Model()
     try:
-        return get_all_resource(MODEL_TYPE, username)
+        response = get_all_resource(MODEL_TYPE, model.openapi_types, username)
     except:
         return "Bad request", 400, {}
+
+    models = []
+    for d in response:
+        models.append(Model.from_dict(d))
+    return models
+
 
 #todo: implement
 def update_model(id, model):  # noqa: E501

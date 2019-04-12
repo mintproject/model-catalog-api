@@ -2,6 +2,7 @@ import connexion
 import six
 
 from openapi_server.models.dataset_specification import DatasetSpecification  # noqa: E501
+from openapi_server.models.variable_presentation import VariablePresentation  # noqa: E501
 from openapi_server import util
 from openapi_server.static_vars import *
 from endpoint.utils import insert_query, prepare_jsonld, get_all_resource
@@ -18,8 +19,12 @@ def create_data_set(user):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        _ = DatasetSpecification.from_dict(connexion.request.get_json())  # noqa: E501
-        dataset_json = prepare_jsonld(connexion.request.get_json(), user, DATASET_TYPE)
+        dataset = DatasetSpecification.from_dict(connexion.request.get_json())  # noqa: E501
+        if dataset.type:
+            dataset.type.append(DATASETSPECIFICATION_TYPE)
+        else:
+            dataset.type = [DATASETSPECIFICATION_TYPE]
+        dataset_json = prepare_jsonld(dataset, user)
         return insert_query(dataset_json, user)
 
     return "Bad request", 400, {}
@@ -36,7 +41,14 @@ def get_data_sets(username=None):  # noqa: E501
 
     :rtype: List[DatasetSpecification]
     """
+    data = DatasetSpecification()
     try:
-        return get_all_resource(DATASETSPECIFICATION_TYPE, username)
+        response = get_all_resource(DATASETSPECIFICATION_TYPE, data.openapi_types, username)
     except:
         return "Bad request", 400, {}
+
+    data_sets = []
+    for d in response:
+        data_sets.append(DatasetSpecification.from_dict(d))
+
+    return data_sets

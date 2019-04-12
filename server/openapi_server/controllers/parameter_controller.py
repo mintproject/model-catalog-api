@@ -16,14 +16,18 @@ def create_parameter(user):  # noqa: E501
     :rtype: None
     """
     if connexion.request.is_json:
-        _ = Parameter.from_dict(connexion.request.get_json())  # noqa: E501
-        parameter_json = prepare_jsonld(connexion.request.get_json(), user, PARAMETER_TYPE)
+        parameter = Parameter.from_dict(connexion.request.get_json())  # noqa: E501
+        if parameter.type:
+            parameter.type.append(PARAMETER_TYPE)
+        else:
+            parameter.type = [PARAMETER_TYPE]
+        parameter_json = prepare_jsonld(parameter, user)
         return insert_query(parameter_json, user)
 
     return "Bad request", 400, {}
 
 
-def get_parameters():  # noqa: E501
+def get_parameters(username=None):  # noqa: E501
     """List All Parameters
 
     Gets a list of all &#x60;Parameter&#x60; entities. # noqa: E501
@@ -31,7 +35,13 @@ def get_parameters():  # noqa: E501
 
     :rtype: List[Parameter]
     """
+    parameter = Parameter()
     try:
-        return get_all_resource(PARAMETER_TYPE)
+        response = get_all_resource(PARAMETER_TYPE, types=parameter.openapi_types, username=username)
     except:
         return "Bad request", 400, {}
+
+    parameters = []
+    for d in response:
+        parameters.append(Parameter.from_dict(d))
+    return parameters

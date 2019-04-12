@@ -15,9 +15,14 @@ def create_model_version(user):  # noqa: E501
 
     :rtype: None
     """
+
     if connexion.request.is_json:
-        _ = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
-        model_version_json = prepare_jsonld(connexion.request.get_json(), user, MODELVERSION_TYPE)
+        model_version = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
+        if model_version.type:
+            model_version.type.append(MODELVERSION_TYPE)
+        else:
+            model_version.type = [MODELVERSION_TYPE]
+        model_version_json = prepare_jsonld(model_version, user)
         return insert_query(model_version_json, user)
 
     return "Bad request", 400, {}
@@ -48,11 +53,17 @@ def get_model_version(id, username=None):  # noqa: E501
 
     :rtype: ModelVersion
     """
-    response = get_resource(id, MODELVERSION_TYPE, username)
+    model_version = ModelVersion()
     try:
-        return response
+        response = get_resource(id, MODELVERSION_TYPE, model_version.openapi_types, username)
     except:
         return "Bad request", 400, {}
+
+    if response:
+        model_version = ModelVersion.from_dict(response[0])
+    else:
+        return "Not found", 404, {}
+    return model_version
 
 
 def get_model_versions(username=None):  # noqa: E501
@@ -65,11 +76,16 @@ def get_model_versions(username=None):  # noqa: E501
 
     :rtype: List[ModelVersion]
     """
-    response = get_all_resource(MODELVERSION_TYPE, username)
+    model_version = ModelVersion()
     try:
-        return response
+        response = get_all_resource(MODELVERSION_TYPE, model_version.openapi_types, username)
     except:
         return "Bad request", 400, {}
+
+    model_versions = []
+    for d in response:
+        model_versions.append(ModelVersion.from_dict(d))
+    return model_versions
 
 
 def update_model_version(id, model_version):  # noqa: E501

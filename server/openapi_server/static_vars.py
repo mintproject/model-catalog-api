@@ -12,9 +12,9 @@ PREFIX_CONTEXT = {
     "mc": "https://w3id.org/mint/modelCatalog#",
     "wingsexport": "https://w3id.org/wings/export/",
     "onsf": "http://ontosoft.org/software#",
-    "label": "rdf:label"
 }
-PREDICATE_CONTEXT = {'hasFileStructure': 'https://w3id.org/mint/modelCatalog#hasFileStructure',
+PREDICATE_CONTEXT = {    "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                        'hasFileStructure': 'https://w3id.org/mint/modelCatalog#hasFileStructure',
                      'hasConfiguration': 'https://w3id.org/mint/modelCatalog#hasConfiguration',
                      'hasSupportScriptLocation': 'https://w3id.org/mint/modelCatalog#hasSupportScriptLocation',
                      'hasIdentifier': 'http://ontosoft.org/software#hasIdentifier',
@@ -54,9 +54,60 @@ PREDICATE_CONTEXT = {'hasFileStructure': 'https://w3id.org/mint/modelCatalog#has
                      'hasModelCategory': 'https://w3id.org/mint/modelCatalog#hasModelCategory',
                      'hasSoftwareVersion': 'http://ontosoft.org/software#hasSoftwareVersion',
                      'hasComponentLocation': 'https://w3id.org/mint/modelCatalog#hasComponentLocation',
-                     'abbreviation': 'http://qudt.org/schema/qudt/abbreviation'}
+                     'abbreviation': 'http://qudt.org/schema/qudt/abbreviation',
+                    "has_file_structure": "https://w3id.org/mint/modelCatalog#hasFileStructure",
+                    "has_configuration": "https://w3id.org/mint/modelCatalog#hasConfiguration",
+                    "has_support_script_location": "https://w3id.org/mint/modelCatalog#hasSupportScriptLocation",
+                    "has_identifier": "http://ontosoft.org/software#hasIdentifier",
+                    "has_version_id": "http://ontosoft.org/software#hasVersionId",
+                    "had_grid": "https://w3id.org/mint/modelCatalog#hadGrid",
+                    "has_data_type": "https://w3id.org/mint/modelCatalog#hasDataType",
+                    "has_process": "https://w3id.org/mint/modelCatalog#hasProcess",
+                    "has_container": "http://ontosoft.org/software#hasContainer",
+                    "has_implementation_script_location": "http://ontosoft.org/software#hasImplementationScriptLocation",
+                    "has_installation_instructions": "http://ontosoft.org/software#hasInstallationInstructions",
+                    "has_presentation": "https://w3id.org/mint/modelCatalog#hasPresentation",
+                    "has_default_value": "https://w3id.org/mint/modelCatalog#hasDefaultValue",
+                    "has_constraint": "https://w3id.org/mint/modelCatalog#hasConstraint",
+                    "has_module": "https://w3id.org/mint/modelCatalog#hasModule",
+                    "has_documentation": "http://ontosoft.org/software#hasDocumentation",
+                    "has_cag": "https://w3id.org/mint/modelCatalog#hasCAG",
+                    "has_standard_variable": "https://w3id.org/mint/modelCatalog#hasStandardVariable",
+                    "has_short_name": "https://w3id.org/mint/modelCatalog#hasShortName",
+                    "has_parameter": "https://w3id.org/mint/modelCatalog#hasParameter",
+                    "influences": "https://w3id.org/mint/modelCatalog#influences",
+                    "has_relevance_level": "https://w3id.org/mint/modelCatalog#hasRelevanceLevel",
+                    "has_assumption": "https://w3id.org/mint/modelCatalog#hasAssumption",
+                    "has_maximum_accepted_value": "https://w3id.org/mint/modelCatalog#hasMaximumAcceptedValue",
+                    "has_dimensionality": "https://w3id.org/mint/modelCatalog#hasDimensionality",
+                    "has_part": "https://w3id.org/mint/modelCatalog#hasPart",
+                    "has_value": "https://w3id.org/mint/modelCatalog#hasValue",
+                    "has_input": "https://w3id.org/mint/modelCatalog#hasInput",
+                    "has_long_name": "https://w3id.org/mint/modelCatalog#hasLongName",
+                    "has_output": "https://w3id.org/mint/modelCatalog#hasOutput",
+                    "uses_unit": "https://w3id.org/mint/modelCatalog#usesUnit",
+                    "has_dataset": "https://w3id.org/mint/modelCatalog#hasDataset",
+                    "description": "http://purl.org/dc/terms/description",
+                    "has_time_interval": "https://w3id.org/mint/modelCatalog#hasTimeInterval",
+                    "has_format": "https://w3id.org/mint/modelCatalog#hasFormat",
+                    "has_execution_command": "http://ontosoft.org/software#hasExecutionCommand",
+                    "has_minimum_accepted_value": "https://w3id.org/mint/modelCatalog#hasMinimumAcceptedValue",
+                    "has_model_category": "https://w3id.org/mint/modelCatalog#hasModelCategory",
+                    "has_software_version": "http://ontosoft.org/software#hasSoftwareVersion",
+                    "has_component_location": "https://w3id.org/mint/modelCatalog#hasComponentLocation",
+                    "abbreviation": "http://qudt.org/schema/qudt/abbreviation",
+                         "type": "@type",
+                         "id": "@id"
+                     }
+def merge_two_dicts(x, y):
+    z = x.copy()   # start with x's keys and values
+    z.update(y)    # modifies z with y's keys and values & returns None
+    return z
 
-MINT_CONTEXT = PREFIX_CONTEXT.update(PREDICATE_CONTEXT)
+
+MINT_CONTEXT = merge_two_dicts(PREFIX_CONTEXT, PREDICATE_CONTEXT)
+
+
 # todo: support unit
 
 MODELCONFIGURTION_TYPE = "mc:ModelConfiguration"
