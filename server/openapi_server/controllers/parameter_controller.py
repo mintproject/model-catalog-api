@@ -37,7 +37,7 @@ def get_parameters(username=None):  # noqa: E501
     """
     parameter = Parameter()
     try:
-        response = get_all_resource(PARAMETER_TYPE, types=parameter.openapi_types, username=username)
+        response = get_all_resource(PARAMETER_TYPE, username=username)
     except:
         return "Bad request", 400, {}
 

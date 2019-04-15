@@ -15,7 +15,7 @@ class CAG(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, has_part=None, label=None):  # noqa: E501
+    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#CAG"], has_part=None, label=None):  # noqa: E501
         """CAG - a model defined in OpenAPI
 
         :param id: The id of this CAG.  # noqa: E501

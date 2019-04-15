@@ -14,7 +14,7 @@ class Unit(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, description=None, label=None, ccut_has_part=None, ccut_has_dimensionality=None, abbreviation=None):  # noqa: E501
+    def __init__(self, id=None, type=["http://qudt.org/1.1/schema/qudt#Unit"], description=None, label=None, ccut_has_part=None, ccut_has_dimensionality=None, abbreviation=None):  # noqa: E501
         """Unit - a model defined in OpenAPI
 
         :param id: The id of this Unit.  # noqa: E501

@@ -43,7 +43,7 @@ def get_data_sets(username=None):  # noqa: E501
     """
     data = DatasetSpecification()
     try:
-        response = get_all_resource(DATASETSPECIFICATION_TYPE, data.openapi_types, username)
+        response = get_all_resource(DATASETSPECIFICATION_TYPE, username)
     except:
         return "Bad request", 400, {}
 

@@ -4,134 +4,381 @@ INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 DEFAULT_MINT_INSTANCE = "https://w3id.org/mint/instance/"
 
 PREFIX_CONTEXT = {
-    "qudt": "http://qudt.org/schema/qudt/",
-    "owl": "http://www.w3.org/2002/07/owl",
-    "xsd": "http://www.w3.org/2001/XMLSchema",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns",
-    "purl": "http://purl.org/dc/terms/",
-    "mc": "https://w3id.org/mint/modelCatalog#",
-    "wingsexport": "https://w3id.org/wings/export/",
-    "onsf": "http://ontosoft.org/software#",
 }
-PREDICATE_CONTEXT = {    "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
-                        'hasFileStructure': 'https://w3id.org/mint/modelCatalog#hasFileStructure',
-                     'hasConfiguration': 'https://w3id.org/mint/modelCatalog#hasConfiguration',
-                     'hasSupportScriptLocation': 'https://w3id.org/mint/modelCatalog#hasSupportScriptLocation',
-                     'hasIdentifier': 'http://ontosoft.org/software#hasIdentifier',
-                     'hasVersionId': 'http://ontosoft.org/software#hasVersionId',
-                     'hadGrid': 'https://w3id.org/mint/modelCatalog#hadGrid',
-                     'hasDataType': 'https://w3id.org/mint/modelCatalog#hasDataType',
-                     'hasProcess': 'https://w3id.org/mint/modelCatalog#hasProcess',
-                     'hasContainer': 'http://ontosoft.org/software#hasContainer',
-                     'hasImplementationScriptLocation': 'http://ontosoft.org/software#hasImplementationScriptLocation',
-                     'hasInstallationInstructions': 'http://ontosoft.org/software#hasInstallationInstructions',
-                     'hasPresentation': 'https://w3id.org/mint/modelCatalog#hasPresentation',
-                     'hasDefaultValue': 'https://w3id.org/mint/modelCatalog#hasDefaultValue',
-                     'hasConstraint': 'https://w3id.org/mint/modelCatalog#hasConstraint',
-                     'hasModule': 'https://w3id.org/mint/modelCatalog#hasModule',
-                     'hasDocumentation': 'http://ontosoft.org/software#hasDocumentation',
-                     'hasCag': 'https://w3id.org/mint/modelCatalog#hasCAG',
-                     'hasStandardVariable': 'https://w3id.org/mint/modelCatalog#hasStandardVariable',
-                     'hasShortName': 'https://w3id.org/mint/modelCatalog#hasShortName',
-                     'hasParameter': 'https://w3id.org/mint/modelCatalog#hasParameter',
-                     'influences': 'https://w3id.org/mint/modelCatalog#influences',
-                     'hasRelevanceLevel': 'https://w3id.org/mint/modelCatalog#hasRelevanceLevel',
-                     'hasAssumption': 'https://w3id.org/mint/modelCatalog#hasAssumption',
-                     'hasMaximumAcceptedValue': 'https://w3id.org/mint/modelCatalog#hasMaximumAcceptedValue',
-                     'hasDimensionality': 'https://w3id.org/mint/modelCatalog#hasDimensionality',
-                     'hasPart': 'https://w3id.org/mint/modelCatalog#hasPart',
-                     'hasValue': 'https://w3id.org/mint/modelCatalog#hasValue',
-                     'hasInput': 'https://w3id.org/mint/modelCatalog#hasInput',
-                     'hasLongName': 'https://w3id.org/mint/modelCatalog#hasLongName',
-                     'hasOutput': 'https://w3id.org/mint/modelCatalog#hasOutput',
-                     'usesUnit': 'https://w3id.org/mint/modelCatalog#usesUnit',
-                     'hasDataset': 'https://w3id.org/mint/modelCatalog#hasDataset',
-                     'description': 'http://purl.org/dc/terms/description',
-                     'hasTimeInterval': 'https://w3id.org/mint/modelCatalog#hasTimeInterval',
-                     'hasFormat': 'https://w3id.org/mint/modelCatalog#hasFormat',
-                     'hasExecutionCommand': 'http://ontosoft.org/software#hasExecutionCommand',
-                     'hasMinimumAcceptedValue': 'https://w3id.org/mint/modelCatalog#hasMinimumAcceptedValue',
-                     'hasModelCategory': 'https://w3id.org/mint/modelCatalog#hasModelCategory',
-                     'hasSoftwareVersion': 'http://ontosoft.org/software#hasSoftwareVersion',
-                     'hasComponentLocation': 'https://w3id.org/mint/modelCatalog#hasComponentLocation',
-                     'abbreviation': 'http://qudt.org/schema/qudt/abbreviation',
-                    "has_file_structure": "https://w3id.org/mint/modelCatalog#hasFileStructure",
-                    "has_configuration": "https://w3id.org/mint/modelCatalog#hasConfiguration",
-                    "has_support_script_location": "https://w3id.org/mint/modelCatalog#hasSupportScriptLocation",
-                    "has_identifier": "http://ontosoft.org/software#hasIdentifier",
-                    "has_version_id": "http://ontosoft.org/software#hasVersionId",
-                    "had_grid": "https://w3id.org/mint/modelCatalog#hadGrid",
-                    "has_data_type": "https://w3id.org/mint/modelCatalog#hasDataType",
-                    "has_process": "https://w3id.org/mint/modelCatalog#hasProcess",
-                    "has_container": "http://ontosoft.org/software#hasContainer",
-                    "has_implementation_script_location": "http://ontosoft.org/software#hasImplementationScriptLocation",
-                    "has_installation_instructions": "http://ontosoft.org/software#hasInstallationInstructions",
-                    "has_presentation": "https://w3id.org/mint/modelCatalog#hasPresentation",
-                    "has_default_value": "https://w3id.org/mint/modelCatalog#hasDefaultValue",
-                    "has_constraint": "https://w3id.org/mint/modelCatalog#hasConstraint",
-                    "has_module": "https://w3id.org/mint/modelCatalog#hasModule",
-                    "has_documentation": "http://ontosoft.org/software#hasDocumentation",
-                    "has_cag": "https://w3id.org/mint/modelCatalog#hasCAG",
-                    "has_standard_variable": "https://w3id.org/mint/modelCatalog#hasStandardVariable",
-                    "has_short_name": "https://w3id.org/mint/modelCatalog#hasShortName",
-                    "has_parameter": "https://w3id.org/mint/modelCatalog#hasParameter",
-                    "influences": "https://w3id.org/mint/modelCatalog#influences",
-                    "has_relevance_level": "https://w3id.org/mint/modelCatalog#hasRelevanceLevel",
-                    "has_assumption": "https://w3id.org/mint/modelCatalog#hasAssumption",
-                    "has_maximum_accepted_value": "https://w3id.org/mint/modelCatalog#hasMaximumAcceptedValue",
-                    "has_dimensionality": "https://w3id.org/mint/modelCatalog#hasDimensionality",
-                    "has_part": "https://w3id.org/mint/modelCatalog#hasPart",
-                    "has_value": "https://w3id.org/mint/modelCatalog#hasValue",
-                    "has_input": "https://w3id.org/mint/modelCatalog#hasInput",
-                    "has_long_name": "https://w3id.org/mint/modelCatalog#hasLongName",
-                    "has_output": "https://w3id.org/mint/modelCatalog#hasOutput",
-                    "uses_unit": "https://w3id.org/mint/modelCatalog#usesUnit",
-                    "has_dataset": "https://w3id.org/mint/modelCatalog#hasDataset",
-                    "description": "http://purl.org/dc/terms/description",
-                    "has_time_interval": "https://w3id.org/mint/modelCatalog#hasTimeInterval",
-                    "has_format": "https://w3id.org/mint/modelCatalog#hasFormat",
-                    "has_execution_command": "http://ontosoft.org/software#hasExecutionCommand",
-                    "has_minimum_accepted_value": "https://w3id.org/mint/modelCatalog#hasMinimumAcceptedValue",
-                    "has_model_category": "https://w3id.org/mint/modelCatalog#hasModelCategory",
-                    "has_software_version": "http://ontosoft.org/software#hasSoftwareVersion",
-                    "has_component_location": "https://w3id.org/mint/modelCatalog#hasComponentLocation",
-                    "abbreviation": "http://qudt.org/schema/qudt/abbreviation",
-                         "type": "@type",
-                         "id": "@id"
-                     }
+
+PREDICATE_CONTEXT = {
+    "@context": {
+        "@base": "https://w3id.org/mint/instance/",
+        "abbreviation": {
+            "@id": "http://qudt.org/schema/qudt/abbreviation"
+        },
+        "ccut": "https://www.w3id.org/mint/ccut#",
+        "description": {
+            "@id": "http://purl.org/dc/terms/description"
+        },
+        "hasAssumption": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasAssumption",
+            "@container": "@set"
+        },
+        "hasCAG": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasCAG",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasComponentLocation": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasComponentLocation",
+            "@container": "@set"
+        },
+        "hasConfiguration": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasConfiguration",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasConstraint": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasConstraint",
+            "@container": "@set"
+        },
+        "hasContainer": {
+            "@id": "http://ontosoft.org/software#hasContainer",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasDataType": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDataType",
+            "@container": "@set"
+        },
+        "hasDataset": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDataset",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasDefaultValue": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDefaultValue",
+            "@container": "@set"
+        },
+        "hasDimensionality": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDimensionality",
+            "@container": "@set"
+
+        },
+        "hasDocumentation": {
+            "@id": "http://ontosoft.org/software#hasDocumentation",
+            "@container": "@set"
+        },
+        "hasExecutionCommand": {
+            "@id": "http://ontosoft.org/software#hasExecutionCommand",
+            "@container": "@set"
+        },
+        "hasFileStructure": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasFileStructure",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasFormat": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasFormat",
+            "@container": "@set"
+        },
+        "hasGrid": {
+            "@id": "https://w3id.org/mint/modelCatalog#hadGrid",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasIdentifier": {
+            "@id": "http://ontosoft.org/software#hasIdentifier"
+        },
+        "hasImplementationScriptLocation": {
+            "@id": "http://ontosoft.org/software#hasImplementationScriptLocation"
+        },
+        "hasInput": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasInput",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasInstallationInstructions": {
+            "@id": "http://ontosoft.org/software#hasInstallationInstructions",
+            "@container": "@set"
+        },
+        "hasLongName": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasLongName",
+            "@container": "@set"
+        },
+        "hasMaximumAcceptedValue": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasMaximumAcceptedValue",
+            "@container": "@set"
+        },
+        "hasMinimumAcceptedValue": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasMinimumAcceptedValue",
+            "@container": "@set"
+        },
+        "hasModelCategory": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasModelCategory",
+            "@container": "@set"
+        },
+        "hasModule": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasModule",
+            "@type": "@id"
+        },
+        "hasOutput": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasOutput",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasParameter": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasParameter",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasPart": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasPart",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasPresentation": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasPresentation",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasProcess": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasProcess",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasRelevanceLevel": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasRelevanceLevel",
+            "@container": "@set"
+        },
+        "hasShortName": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasShortName",
+            "@container": "@set"
+        },
+        "hasSoftwareVersion": {
+            "@id": "http://ontosoft.org/software#hasSoftwareVersion",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasStandardVariable": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasStandardVariable",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasSupportScriptLocation": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasSupportScriptLocation",
+            "@container": "@set"
+        },
+        "hasTimeInterval": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasTimeInterval",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "hasValue": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasValue",
+            "@container": "@set"
+        },
+        "hasVersionId": {
+            "@id": "http://ontosoft.org/software#hasVersionId",
+            "@container": "@set"
+        },
+        "has_assumption": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasAssumption"
+        },
+        "has_cag": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasCAG",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_component_location": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasComponentLocation"
+        },
+        "has_configuration": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasConfiguration",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_constraint": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasConstraint"
+        },
+        "has_container": {
+            "@id": "http://ontosoft.org/software#hasContainer",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_data_type": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDataType"
+        },
+        "has_dataset": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDataset",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_default_value": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDefaultValue"
+        },
+        "has_dimensionality": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasDimensionality"
+        },
+        "has_documentation": {
+            "@id": "http://ontosoft.org/software#hasDocumentation",
+            "@container": "@set"
+        },
+        "has_execution_command": {
+            "@id": "http://ontosoft.org/software#hasExecutionCommand"
+        },
+        "has_file_structure": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasFileStructure",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_format": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasFormat"
+        },
+        "has_grid": {
+            "@id": "https://w3id.org/mint/modelCatalog#hadGrid",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_identifier": {
+            "@id": "http://ontosoft.org/software#hasIdentifier"
+        },
+        "has_implementation_script_location": {
+            "@id": "http://ontosoft.org/software#hasImplementationScriptLocation"
+        },
+        "has_input": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasInput",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_installation_instructions": {
+            "@id": "http://ontosoft.org/software#hasInstallationInstructions"
+        },
+        "has_long_name": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasLongName"
+        },
+        "has_maximum_accepted_value": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasMaximumAcceptedValue"
+        },
+        "has_minimum_accepted_value": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasMinimumAcceptedValue"
+        },
+        "has_model_category": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasModelCategory"
+        },
+        "has_module": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasModule",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_output": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasOutput",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_parameter": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasParameter",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_part": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasPart",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_presentation": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasPresentation",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_process": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasProcess",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_relevance_level": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasRelevanceLevel"
+        },
+        "has_short_name": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasShortName"
+        },
+        "has_software_version": {
+            "@id": "http://ontosoft.org/software#hasSoftwareVersion",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_standard_variable": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasStandardVariable",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_support_script_location": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasSupportScriptLocation"
+        },
+        "has_time_interval": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasTimeInterval",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "has_value": {
+            "@id": "https://w3id.org/mint/modelCatalog#hasValue"
+        },
+        "has_version_id": {
+            "@id": "http://ontosoft.org/software#hasVersionId"
+        },
+        "id": "@id",
+        "influences": {
+            "@id": "https://w3id.org/mint/modelCatalog#influences",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "label": {
+            "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label"
+        },
+        "type": "@type",
+        "usesUnit": {
+            "@id": "https://w3id.org/mint/modelCatalog#usesUnit",
+            "@type": "@id",
+            "@container": "@set"
+        },
+        "uses_unit": {
+            "@id": "https://w3id.org/mint/modelCatalog#usesUnit",
+            "@type": "@id",
+            "@container": "@set"
+        }
+    },
+    "@type": "https://w3id.org/mint/modelCatalog#ModelConfiguration"
+}
+
+
 def merge_two_dicts(x, y):
-    z = x.copy()   # start with x's keys and values
-    z.update(y)    # modifies z with y's keys and values & returns None
+    z = x.copy()  # start with x's keys and values
+    z.update(y)  # modifies z with y's keys and values & returns None
     return z
 
 
 MINT_CONTEXT = merge_two_dicts(PREFIX_CONTEXT, PREDICATE_CONTEXT)
 
-
 # todo: support unit
 
-MODELCONFIGURTION_TYPE = "mc:ModelConfiguration"
-CAG_TYPE = "mc:CAG"
-CONCEPT_TYPE = "mc:CONCEPT"
-DATASTRUCTUREDEFINITION_TYPE = "mc:DataStructureDefinition"
-DATASET_TYPE = "mc:Dataset"
-DATASETSPECIFICATION_TYPE = "mc:DatasetSpecification"
-EMPIRICALMODEL_TYPE = "mc:EmpiricalModel"
-GRID_TYPE = "mc:Grid"
-GSNVARIABLE_TYPE = "mc:GSNVariable"
-HYBRIDMODEL_TYPE = "mc:HybridModel"
-ICASAVARIABLE_TYPE = "mc:ICASAVariable"
-MODEL_TYPE = "mc:Model"
-MODELCONFIGURATION_TYPE = "mc:ModelConfiguration"
-MODELVERSION_TYPE = "mc:ModelVersion"
-MODULE_TYPE = "mc:Module"
-PARAMETER_TYPE = "mc:Parameter"
-PROCESS_TYPE = "mc:Process"
-STANDARDVARIABLE_TYPE = "mc:StandardVariable"
-THEORYBASEDMODEL_TYPE = "mc:TheoryBasedModel"
-TIMEINTERVAL_TYPE = "mc:TimeInterval"
-UNIT_TYPE = "mc:Unit"
-VARIABLE_TYPE = "mc:Variable"
+MODELCONFIGURTION_TYPE = "https://w3id.org/mint/modelCatalog#ModelConfiguration"
+CAG_TYPE = "https://w3id.org/mint/modelCatalog#CAG"
+CONCEPT_TYPE = "https://w3id.org/mint/modelCatalog#CONCEPT"
+DATASTRUCTUREDEFINITION_TYPE = "https://w3id.org/mint/modelCatalog#DataStructureDefinition"
+DATASET_TYPE = "https://w3id.org/mint/modelCatalog#Dataset"
+DATASETSPECIFICATION_TYPE = "https://w3id.org/mint/modelCatalog#DatasetSpecification"
+EMPIRICALMODEL_TYPE = "https://w3id.org/mint/modelCatalog#EmpiricalModel"
+GRID_TYPE = "https://w3id.org/mint/modelCatalog#Grid"
+GSNVARIABLE_TYPE = "https://w3id.org/mint/modelCatalog#GSNVariable"
+HYBRIDMODEL_TYPE = "https://w3id.org/mint/modelCatalog#HybridModel"
+ICASAVARIABLE_TYPE = "https://w3id.org/mint/modelCatalog#ICASAVariable"
+MODEL_TYPE = "https://w3id.org/mint/modelCatalog#Model"
+MODELCONFIGURATION_TYPE = "https://w3id.org/mint/modelCatalog#ModelConfiguration"
+MODELVERSION_TYPE = "https://w3id.org/mint/modelCatalog#ModelVersion"
+MODULE_TYPE = "https://w3id.org/mint/modelCatalog#Module"
+PARAMETER_TYPE = "https://w3id.org/mint/modelCatalog#Parameter"
+PROCESS_TYPE = "https://w3id.org/mint/modelCatalog#Process"
+STANDARDVARIABLE_TYPE = "https://w3id.org/mint/modelCatalog#StandardVariable"
+THEORYBASEDMODEL_TYPE = "https://w3id.org/mint/modelCatalog#TheoryBasedModel"
+TIMEINTERVAL_TYPE = "https://w3id.org/mint/modelCatalog#TimeInterval"
+UNIT_TYPE = "https://w3id.org/mint/modelCatalog#Unit"
+VARIABLE_TYPE = "https://w3id.org/mint/modelCatalog#Variable"
 
 # todo: a relation can be PROCESS_TYPE or PARAMETER_TYPE
 MAPPING_TYPE = {

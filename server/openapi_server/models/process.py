@@ -15,7 +15,7 @@ class Process(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, influences=None):  # noqa: E501
+    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#Process"], label=None, influences=None):  # noqa: E501
         """Process - a model defined in OpenAPI
 
         :param id: The id of this Process.  # noqa: E501

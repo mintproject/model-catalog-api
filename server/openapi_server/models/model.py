@@ -15,7 +15,7 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, has_software_version=None, has_model_category=None, has_documentation=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#Model"], has_software_version=None, has_model_category=None, has_documentation=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
         :param id: The id of this Model.  # noqa: E501

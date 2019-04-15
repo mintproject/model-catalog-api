@@ -14,7 +14,7 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, has_default_value=None, has_data_type=None):  # noqa: E501
+    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#Parameter"], label=None, description=None, has_default_value=None, has_data_type=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param id: The id of this Parameter.  # noqa: E501

@@ -6,7 +6,6 @@ from flask import json
 import requests
 import re
 from pyld import jsonld
-import six
 
 def to_snake_name(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
@@ -15,6 +14,23 @@ def to_snake_name(name):
 def to_camel_case(snake_str):
     components = snake_str.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
+
+'''
+Force type as array.
+This is hack related to bug: https://github.com/w3c/json-ld-syntax/issues/34
+'''
+def convert_type_to_array(input_json):
+    if isinstance(input_json, dict):
+        for k, v in input_json.items():
+            if k in 'type' and type(v) == str:
+                input_json[k] = [v]
+
+            convert_type_to_array(v)
+
+    elif isinstance(input_json, list):
+        for item in input_json:
+            convert_type_to_array(item)
+
 
 def update_panel_json(input_json, target_key):
     if isinstance(input_json, dict):
@@ -38,25 +54,6 @@ def update_panel_json(input_json, target_key):
         for item in input_json:
             update_panel_json(item, target_key)
 
-def type_to_json(input_json):
-    if isinstance(input_json, dict):
-        for k, v in input_json.items():
-            #Obtain the rdf:type using the JSON key
-            if k in SUPPORTED_CLASSES and type(v) == list:
-                for item in v:
-                    item['type'] = MAPPING_TYPE[k]
-            elif k in SUPPORTED_CLASSES and type(v) == dict:
-                v['type'] = MAPPING_TYPE[k]
-
-
-    elif isinstance(input_json, list):
-        for item in input_json:
-            update_panel_json(item)
-
-def verify_data_types(json, openapi_types):
-    if '@type' in json and type(json['@type']) == str:
-        json['@type'] = [json['@type']]
-
 '''
 Convert the internal json-ld to JSON with the API format
 This method returns a array
@@ -64,29 +61,34 @@ json_convert must use embedding #10
 
 '''
 #todo: Is the same method for get and insert?
-def convert_to_json(resources_json_ld, types):
-    expand = jsonld.expand(resources_json_ld)
-    compact = jsonld.compact(expand, PREDICATE_CONTEXT, {'compactArrays': False})
-    if '@graph' in compact:
-        return compact['@graph']
+def convert_to_json(resources_json_ld, rdf_type):
+    frame = dict(PREDICATE_CONTEXT)
+    frame['@type'] = rdf_type
+    framed = jsonld.frame(resources_json_ld, frame)
+    if '@graph' in framed:
+        return framed['@graph']
     else:
-        compact.pop('@context')
-        return compact
+        return []
 
-def get_all_resource(resource_type, types, username=None):
+def get_all_resource(resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_all_resource(resource_type, username)
     data = {'query': query}
     resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
-    resources_json = convert_to_json(resources_json_ld, types)
+    resources_json = convert_to_json(resources_json_ld, resource_type)
 
     if not resources_json:
         resources_json = []
     elif resources_json and type(resources_json) == dict:
         resources_json = [resources_json]
+    try:
+        convert_type_to_array(resources_json)
+    except Exception as error:
+        print(error)
     return resources_json
 
-def get_resource(resource_id, resource_type, types, username=None):
+
+def get_resource(resource_id, resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource(resource_id, username)
     data = {'query': query}
@@ -95,15 +97,24 @@ def get_resource(resource_id, resource_type, types, username=None):
         resources_json_ld = response.json()
     except Exception as error:
         print(error)
-    resources_json = convert_to_json(resources_json_ld, types)
+    resources_json = convert_to_json(resources_json_ld, resource_type)
+
+    try:
+        convert_type_to_array(resources_json)
+    except Exception as error:
+        print(error)
     return resources_json
 
-def get_all_resources_related(resource_id, relation, types, username=None):
+def get_all_resources_related(resource_id, relation, resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource_related(resource_id, relation, username)
     data = {'query': query}
     resources_json_ld = requests.post(QUERY_ENDPOINT, headers=headers, data=data).json()
-    resources_json = convert_to_json(resources_json_ld, types)
+    resources_json = convert_to_json(resources_json_ld, resource_type)
+    try:
+        convert_type_to_array(resources_json)
+    except Exception as error:
+        print(error)
     return resources_json
 
 def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
@@ -115,7 +126,7 @@ def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
 
     resource_dict = resource.to_dict()
     resource_dict['@context'] = MINT_CONTEXT
-    update_panel_json(resource_dict, update_key)
+    #update_panel_json(resource_dict, update_key)
     resource_json = json.dumps(resource_dict)
 
     return resource_json
@@ -202,25 +213,34 @@ def build_insert_query(jsonld):
 def query_all_resource(resource_type, username):
     if username:
         graph_uri = build_graph_uri(username)
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
-        ?s ?o ?p 
+        query = f'''CONSTRUCT {{
+        ?item ?predicate_item ?prop .
+        ?prop ?a ?b .
+        ?prop a ?type 
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
-                ?s a {resource_type} .
-                ?s ?o ?p
+                ?item a <{resource_type}> .
+                {{ ?item ?predicate_item ?prop }}
+                UNION {{ ?prop a ?type }}
+                OPTIONAL {{
+                    {{ ?prop ?a ?b }}
+                }}
             }}
         }}
         '''
     else:
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
-        ?s ?o ?p 
+        query = f'''CONSTRUCT {{
+        ?item ?predicate_item ?prop .
+        ?prop ?a ?b .
+        ?prop a ?type 
         }}
         WHERE {{
-            ?s a {resource_type} .
-            ?s ?o ?p
+                ?item a <{resource_type}> .
+    UNION {{ ?prop a ?type }}
+    OPTIONAL {{
+        {{ ?prop ?a ?b }}
+    }}
         }}
         '''
     return query
@@ -229,24 +249,22 @@ def query_all_resource(resource_type, username):
 def query_resource_related(resource_uri, relation, username):
     if username:
         graph_uri = build_graph_uri(username)
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
+        query = f'''CONSTRUCT {{
         ?s ?o ?p 
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
-                <{resource_uri}> {relation} ?s . 
+                <{resource_uri}> <{relation}> ?s . 
                 ?s ?o ?p
             }}
         }}
         '''
     else:
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
+        query = f'''CONSTRUCT {{
         ?s ?o ?p 
         }}
         WHERE {{
-            <{resource_uri}> {relation} ?s .
+            <{resource_uri}> <{relation}> ?s .
             ?s ?o ?p
         }}
         '''
@@ -258,23 +276,31 @@ def query_resource(resource_id, username):
     if username:
         graph_uri = build_graph_uri(username)
 
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
-        <{resource_uri}> ?o ?p
+        query = f'''CONSTRUCT {{
+        ?item ?predicate_item ?prop .
+        ?prop ?a ?b .
+        ?prop a ?type 
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
-                <{resource_uri}> ?o ?p
+                {{ <{resource_id}> ?predicate_item ?prop }}
+                UNION {{ ?prop a ?type }}
+                OPTIONAL {{
+                    {{ ?prop ?a ?b }}
+                }}
             }}
         }}
         '''
     else:
-        query = f'''PREFIX mc: <https://w3id.org/mint/modelCatalog#>
-        CONSTRUCT {{
-            <{resource_uri}> ?o ?p
+        query = f'''CONSTRUCT {{
+            <{resource_uri}> ?o ?p .
+      		?p ?a ?b
         }}
         WHERE {{
             <{resource_uri}> ?o ?p
+            OPTIONAL {{
+                ?p ?a ?b
+            }}
         }}
         '''
     return query

@@ -15,7 +15,7 @@ class ModelVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, has_documentation=None, has_version_id=None, has_configuration=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#ModelVersion"], has_documentation=None, has_version_id=None, has_configuration=None):  # noqa: E501
         """ModelVersion - a model defined in OpenAPI
 
         :param id: The id of this ModelVersion.  # noqa: E501

@@ -55,7 +55,7 @@ def get_model(id, username=None):  # noqa: E501
     """
     model = Model()
     try:
-        response = get_resource(id, MODEL_TYPE, model.openapi_types, username)
+        response = get_resource(id, MODEL_TYPE, username)
 
     except:
         return "Bad request", 400, {}
@@ -77,7 +77,7 @@ def get_models(username=None):  # noqa: E501
     """
     model = Model()
     try:
-        response = get_all_resource(MODEL_TYPE, model.openapi_types, username)
+        response = get_all_resource(MODEL_TYPE, username)
     except:
         return "Bad request", 400, {}
 

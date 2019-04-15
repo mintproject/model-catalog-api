@@ -110,7 +110,7 @@ def get_model_configurations(username=None):  # noqa: E501
 
     model_configuration = ModelConfiguration()
     try:
-        response = get_all_resource(MODELCONFIGURATION_TYPE, model_configuration.openapi_types, username)
+        response = get_all_resource(MODELCONFIGURATION_TYPE, username)
     except:
         return "Bad request", 400, {}
 
@@ -136,11 +136,12 @@ def get_model_configuraton(id, username=None):  # noqa: E501
     """
     model_configuration = ModelConfiguration()
     try:
-        response = get_resource(id, MODELCONFIGURATION_TYPE, model_configuration.openapi_types, username)
-        model_configuration = ModelConfiguration.from_dict(response)
+        response = get_resource(id, MODELCONFIGURATION_TYPE, username)
     except:
         return "Bad request", 400, {}
-    if not model_configuration.id:
+    if response:
+        model_configuration = ModelConfiguration.from_dict(response[0])
+    else:
         return "Not found", 404, {}
     return model_configuration
 
@@ -174,7 +175,7 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
     :rtype: List[ApiResponse]
     """
     try:
-        return get_all_resources_related(id, "mc:hasParameter", None, username)
+        return get_all_resources_related(id, PARAMETER_TYPE, MODELCONFIGURATION_TYPE, username)
     except:
         return "Bad request", 400, {}
 

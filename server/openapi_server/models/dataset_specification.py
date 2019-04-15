@@ -15,7 +15,7 @@ class DatasetSpecification(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, label=None, has_format=None, description=None, has_dimensionality=None, has_presentation=None, type=None, id=None):  # noqa: E501
+    def __init__(self, label=None, has_format=None, description=None, has_dimensionality=None, has_presentation=None, type=["https://w3id.org/mint/modelCatalog#DatasetSpecification"], id=None):  # noqa: E501
         """DatasetSpecification - a model defined in OpenAPI
 
         :param label: The label of this DatasetSpecification.  # noqa: E501

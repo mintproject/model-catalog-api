@@ -19,7 +19,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, has_input=None, has_output=None, description=None, has_cag=None, has_process=None, has_time_interval=None, has_implementation_script_location=None, has_container=None, has_constraint=None, has_parameter=None, has_component_location=None):  # noqa: E501
+    def __init__(self, id=None, type=['mc:ModelConfiguration'], label=None, has_input=None, has_output=None, description=None, has_cag=None, has_process=None, has_time_interval=None, has_implementation_script_location=None, has_container=None, has_constraint=None, has_parameter=None, has_component_location=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param id: The id of this ModelConfiguration.  # noqa: E501
