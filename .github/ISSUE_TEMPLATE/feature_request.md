@@ -7,42 +7,16 @@ assignees: ''
 
 ---
 
-## Priority + Rationale
-(To be filled out after bug submission by a product owner)
-- Add stats if available on % of customers impacted
-- Is this visible by all customers, or in a high traffic area?
-- Is this tech debt?
-- If applicable, what % of revenue is possibly impacted by this?
+## Describe the ideal solution or feature request
+A clear and concise description of what the customer wants to happen.
 
-## Describe the bug
-A clear and concise description of what the bug is.
+## Difficulty, impact, and usage score
+| Technical difficulty | User goals | Usage frequency |
+|--------------------| --------------------| --------------------|
+| ie. Small, medium, large (filled out after submission) |  ie. How important is this to the user, what the user wants to accomplish | ie. Daily, weekly, monthly |
 
-## Steps to Reproduce
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## How does this tie into our current product?
+Describe whether this request is related to an existing workflow, feature, or otherwise something in the product today. Or, does this open us up to new markets and innovative ideas?
 
-## What do you believe the expected behavior is
-A clear and concise description of what you expected to happen.
-
-## Relevant screenshots
-If applicable, add screenshots to help explain your problem.
-
-## Platform details
-Where is this occurring and more details about the environment (computer setup) of the customer.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22 or web app]
-
-**Mobile (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-## Additional context
-Add any other context about the problem here.
+## Who asked for this?
+Add more on who asked for this, ie. company, person, how much they pay us, what their tier is, are they a strategic account, etc.
