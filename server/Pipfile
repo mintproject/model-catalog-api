@@ -18,6 +18,7 @@ SPARQLWrapper = "*"
 requests = "*"
 pyld = "*"
 flask-sqlalchemy = "*"
+Jinja2 = ">=2.10.1"
 
 [requires]
 python_version = "3.7"
