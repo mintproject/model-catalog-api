@@ -236,11 +236,12 @@ def query_all_resource(resource_type, username):
         ?prop a ?type 
         }}
         WHERE {{
-                ?item a <{resource_type}> .
-    UNION {{ ?prop a ?type }}
-    OPTIONAL {{
-        {{ ?prop ?a ?b }}
-    }}
+            ?item a <{resource_type}> .
+            {{ ?item ?predicate_item ?prop }}
+            UNION {{ ?prop a ?type }}
+            OPTIONAL {{
+                {{ ?prop ?a ?b }}
+            }}
         }}
         '''
     return query
@@ -264,7 +265,7 @@ def query_resource_related(resource_uri, relation, username):
         ?s ?o ?p 
         }}
         WHERE {{
-            <{resource_uri}> <{relation}> ?s .
+            <{resource_uri}> <{relation}> ?s . 
             ?s ?o ?p
         }}
         '''
@@ -293,14 +294,16 @@ def query_resource(resource_id, username):
         '''
     else:
         query = f'''CONSTRUCT {{
-            <{resource_uri}> ?o ?p .
-      		?p ?a ?b
+        ?item ?predicate_item ?prop .
+        ?prop ?a ?b .
+        ?prop a ?type 
         }}
         WHERE {{
-            <{resource_uri}> ?o ?p
-            OPTIONAL {{
-                ?p ?a ?b
-            }}
+                {{ <{resource_id}> ?predicate_item ?prop }}
+                UNION {{ ?prop a ?type }}
+                OPTIONAL {{
+                    {{ ?prop ?a ?b }}
+                }}
         }}
         '''
     return query
