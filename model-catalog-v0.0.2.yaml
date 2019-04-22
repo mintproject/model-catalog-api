@@ -816,19 +816,25 @@ components:
       properties:
         label:
           type: string
+          nullable: true
         hasFormat:
           type: string
+          nullable: true
         description:
           type: string
+          nullable: true
         hasDimensionality:
           format: int64
           type: integer
+          nullable: true
         hasPresentation:
           type: array
           items:
             $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
         type:
           type: array
+          nullable: true
           items:
             type: string
         id:
@@ -851,46 +857,59 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         label:
           type: string
+          nullable: true
         hasInput:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/DatasetSpecification'
         hasOutput:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/DatasetSpecification'
         description:
           type: string
+          nullable: true
         hasCAG:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/CAG'
         hasProcess:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/Process'
         hasTimeInterval:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/TimeInterval'
         hasImplementationScriptLocation:
           type: string
+          nullable: true
         hasContainer:
           type: array
+          nullable: true
           items:
             type: object
         hasConstraint:
           type: string
+          nullable: true
         hasParameter:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/Parameter'
         hasComponentLocation:
           type: string
+          nullable: true
       example:
         id: economic
         label: Economic aggregate crop supply
@@ -928,16 +947,21 @@ components:
             type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         label:
           type: string
+          nullable: true
         description:
           type: string
+          nullable: true
         hasDefaultValue:
           type: string
+          nullable: true
         hasDataType:
           type: string
+          nullable: true
       example:
         id: pihm_start-date
         type:
@@ -955,15 +979,18 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         label:
           type: string
+          nullable: true
         influences:
           description: Property that describe the causal relationship between two
             processes, two variables, a process and a variable or a variable and a
             process
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/Process'
       example:
@@ -980,15 +1007,20 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         label:
           type: string
+          nullable: true
         description:
           type: string
+          nullable: true
         usesUnit:
+          nullable: true
           $ref: '#/components/schemas/Unit'
         hasValue:
+          nullable: true
           format: int64
           type: integer
       example:
@@ -1010,22 +1042,28 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         description:
           type: string
+          nullable: true
         label:
           type: string
+          nullable: true
         ccut_hasPart:
           type: array
+          nullable: true
           items:
             type: string
         ccut_hasDimensionality:
           type: array
+          nullable: true
           items:
             type: string
         abbreviation:
           type: array
+          nullable: true
           items:
             type: string
       example:
@@ -1049,22 +1087,29 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         label:
           type: string
+          nullable: true
         description:
           type: string
+          nullable: true
         hasLongName:
           type: string
+          nullable: true
         hasShortName:
           type: string
+          nullable: true
         hasStandardVariable:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/DatasetSpecification'
         hasRelevanceLevel:
           format: int64
+          nullable: true
           type: integer
         usesUnit:
           $ref: '#/components/schemas/Unit'
@@ -1108,10 +1153,12 @@ components:
           type: string
         type:
           type: array
+          nullable: true
           items:
             type: string
         hasPart:
           description: Array of Parameter or Variables
+          nullable: true
           type: array
           items:
             $ref: '#/components/schemas/Parameter'
@@ -1121,6 +1168,7 @@ components:
         label:
           description: ''
           type: string
+          nullable: true
       example:
         id: economic_aggregate_crop_supply_CAG_variables
         label: CAG for Economic model for aggregate crop supply response model variables for
@@ -1140,20 +1188,25 @@ components:
           type: string
         label:
           type: string
+          nullable: true
         type:
           type: array
+          nullable: true
           items:
             type: string
         hasSoftwareVersion:
           type: array
+          nullable: true
           items:
             type: object
         hasModelCategory:
           type: array
+          nullable: true
           items:
             type: string
         hasDocumentation:
           type: array
+          nullable: true
           items:
             type: string
       example:
@@ -1181,20 +1234,26 @@ components:
           type: string
         label:
           type: string
+          nullable: true
         type:
           type: array
+          nullable: true
           items:
             type: string
         hasDocumentation:
           type: array
+          nullable: true
           items:
             type: string
         hasVersionId:
           type: string
+          nullable: true
         hasConfiguration:
           type: array
+          nullable: true
           items:
             $ref: '#/components/schemas/ModelConfiguration'
+          nullable: true
       example:
         id: DSSAT_4.7
         label: DSSAT v4.7
