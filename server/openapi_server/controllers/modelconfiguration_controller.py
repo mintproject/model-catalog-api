@@ -95,7 +95,7 @@ def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
     :rtype: List[ApiResponse]
     """
     try:
-        response = get_all_resources_related(id, HAS_INPUT, PARAMETER_TYPE, username)
+        response = get_all_resources_related(id, HAS_INPUT, DATASETSPECIFICATION_TYPE, username)
     except:
         return "Bad request", 400, {}
     data_sets = []
@@ -167,7 +167,7 @@ def get_outputs_by_modelconfiguration(id, username=None):  # noqa: E501
     :rtype: List[ApiResponse]
     """
     try:
-        response = get_all_resources_related(id, HAS_OUTPUT, PARAMETER_TYPE, username)
+        response = get_all_resources_related(id, HAS_OUTPUT, DATASETSPECIFICATION_TYPE, username)
     except:
         return "Bad request", 400, {}
     data_sets = []

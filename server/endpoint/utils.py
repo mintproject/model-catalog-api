@@ -7,18 +7,23 @@ import requests
 import re
 from pyld import jsonld
 
+
 def to_snake_name(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
 
 def to_camel_case(snake_str):
     components = snake_str.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
 
+
 '''
 Force type as array.
 This is hack related to bug: https://github.com/w3c/json-ld-syntax/issues/34
 '''
+
+
 def convert_type_to_array(input_json):
     if isinstance(input_json, dict):
         for k, v in input_json.items():
@@ -35,17 +40,17 @@ def convert_type_to_array(input_json):
 def update_panel_json(input_json, target_key):
     if isinstance(input_json, dict):
         for k, v in input_json.items():
-            #Obtain the rdf:type using the JSON key
+            # Obtain the rdf:type using the JSON key
             if k in SUPPORTED_CLASSES and type(v) == list:
                 for item in v:
                     item['type'] = MAPPING_TYPE[k]
             elif k in SUPPORTED_CLASSES and type(v) == dict:
                 v['type'] = MAPPING_TYPE[k]
-            #Rename key to JSON-LD format
+            # Rename key to JSON-LD format
             if k in target_key:
                 if k == 'id':
                     input_json[k] = build_user_resource_uri(input_json[k])
-                #rename a key, for example @id -> id
+                # rename a key, for example @id -> id
                 input_json[target_key[k]] = input_json.pop(k)
 
             update_panel_json(v, target_key)
@@ -54,13 +59,16 @@ def update_panel_json(input_json, target_key):
         for item in input_json:
             update_panel_json(item, target_key)
 
+
 '''
 Convert the internal json-ld to JSON with the API format
 This method returns a array
 json_convert must use embedding #10
 
 '''
-#todo: Is the same method for get and insert?
+
+
+# todo: Is the same method for get and insert?
 def convert_to_json(resources_json_ld, rdf_type):
     frame = dict(PREDICATE_CONTEXT)
     frame['@type'] = rdf_type
@@ -69,6 +77,7 @@ def convert_to_json(resources_json_ld, rdf_type):
         return framed['@graph']
     else:
         return []
+
 
 def get_all_resource(resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
@@ -105,6 +114,7 @@ def get_resource(resource_id, resource_type, username=None):
         print(error)
     return resources_json
 
+
 def get_all_resources_related(resource_id, relation, resource_type, username=None):
     headers = {'Accept': 'application/ld+json'}
     query = query_resource_related(resource_id, relation, username)
@@ -117,8 +127,8 @@ def get_all_resources_related(resource_id, relation, resource_type, username=Non
         print(error)
     return resources_json
 
-def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
 
+def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
     update_key = {
         "id": "@id",
         "type": "@type"
@@ -126,10 +136,11 @@ def prepare_jsonld(resource, username, default_type=None, attributes_map=None):
 
     resource_dict = resource.to_dict()
     resource_dict['@context'] = MINT_CONTEXT
-    #update_panel_json(resource_dict, update_key)
+    # update_panel_json(resource_dict, update_key)
     resource_json = json.dumps(resource_dict)
 
     return resource_json
+
 
 def get_type_resource(resource_type):
     return MAPPING_TYPE[resource_type]
@@ -137,7 +148,6 @@ def get_type_resource(resource_type):
 
 def build_graph_uri(username):
     return f'{DEFAULT_MINT_INSTANCE}{username}_graph'
-
 
 
 def build_user_resource_uri(resource):
@@ -178,6 +188,7 @@ def insert_query(body, username):
     except Exception as e:
         return "Error inserting query", 407, {}
     return "Created", 201, {}
+
 
 '''
 TODO: hack rdflib has some problems
@@ -221,7 +232,7 @@ def query_all_resource(resource_type, username):
             GRAPH <{graph_uri}> {{
                 ?item a <{resource_type}> .
                 {{ ?item ?predicate_item ?prop }}
-                UNION {{ ?prop a ?type }}
+                OPTIONAL {{ ?prop a ?type }}
             }}
         }}
         '''
@@ -234,7 +245,7 @@ def query_all_resource(resource_type, username):
         WHERE {{
             ?item a <{resource_type}> .
             {{ ?item ?predicate_item ?prop }}
-            UNION {{ ?prop a ?type }}
+            OPTIONAL {{ ?prop a ?type }}
         }}
         '''
     return query
@@ -245,22 +256,30 @@ def query_resource_related(resource_id, relation, username):
     if username:
         graph_uri = build_graph_uri(username)
         query = f'''CONSTRUCT {{
-        ?s ?o ?p 
+        ?s ?o ?p .
+        ?p a ?type 
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
                 <{resource_uri}> <{relation}> ?s . 
                 ?s ?o ?p
+                OPTIONAL {{
+                    ?p a ?type
+                }}
             }}
         }}
         '''
     else:
         query = f'''CONSTRUCT {{
-        ?s ?o ?p 
+        ?s ?o ?p .
+        ?p a ?type 
         }}
         WHERE {{
             <{resource_uri}> <{relation}> ?s . 
             ?s ?o ?p
+            OPTIONAL {{
+                ?p a ?type
+            }}
         }}
         '''
     return query
