@@ -240,7 +240,8 @@ def query_all_resource(resource_type, username):
     return query
 
 
-def query_resource_related(resource_uri, relation, username):
+def query_resource_related(resource_id, relation, username):
+    resource_uri = build_user_resource_uri(resource_id)
     if username:
         graph_uri = build_graph_uri(username)
         query = f'''CONSTRUCT {{

@@ -94,8 +94,15 @@ def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    return "Not Implemented", 501, {}
+    try:
+        response = get_all_resources_related(id, HAS_INPUT, PARAMETER_TYPE, username)
+    except:
+        return "Bad request", 400, {}
+    data_sets = []
+    for d in response:
+        data_sets.append(DatasetSpecification.from_dict(d))
 
+    return data_sets
 
 def get_model_configurations(username=None):  # noqa: E501
     """List modelconfiguration
@@ -159,7 +166,16 @@ def get_outputs_by_modelconfiguration(id, username=None):  # noqa: E501
 
     :rtype: List[ApiResponse]
     """
-    return "Not Implemented", 501, {}
+    try:
+        response = get_all_resources_related(id, HAS_OUTPUT, PARAMETER_TYPE, username)
+    except:
+        return "Bad request", 400, {}
+    data_sets = []
+    for d in response:
+        data_sets.append(DatasetSpecification.from_dict(d))
+
+    return data_sets
+
 
 
 def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
@@ -175,9 +191,13 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
     :rtype: List[ApiResponse]
     """
     try:
-        return get_all_resources_related(id, PARAMETER_TYPE, MODELCONFIGURATION_TYPE, username)
+        response = get_all_resources_related(id, HAS_PARAMETER, PARAMETER_TYPE, username)
     except:
         return "Bad request", 400, {}
+    parameters = []
+    for d in response:
+        parameters.append(Parameter.from_dict(d))
+    return parameters
 
 
 #todo: implement
