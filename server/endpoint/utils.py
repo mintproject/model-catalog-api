@@ -215,7 +215,6 @@ def query_all_resource(resource_type, username):
         graph_uri = build_graph_uri(username)
         query = f'''CONSTRUCT {{
         ?item ?predicate_item ?prop .
-        ?prop ?a ?b .
         ?prop a ?type 
         }}
         WHERE {{
@@ -223,9 +222,6 @@ def query_all_resource(resource_type, username):
                 ?item a <{resource_type}> .
                 {{ ?item ?predicate_item ?prop }}
                 UNION {{ ?prop a ?type }}
-                OPTIONAL {{
-                    {{ ?prop ?a ?b }}
-                }}
             }}
         }}
         '''
@@ -239,9 +235,6 @@ def query_all_resource(resource_type, username):
             ?item a <{resource_type}> .
             {{ ?item ?predicate_item ?prop }}
             UNION {{ ?prop a ?type }}
-            OPTIONAL {{
-                {{ ?prop ?a ?b }}
-            }}
         }}
         '''
     return query
@@ -278,32 +271,28 @@ def query_resource(resource_id, username):
         graph_uri = build_graph_uri(username)
 
         query = f'''CONSTRUCT {{
-        ?item ?predicate_item ?prop .
-        ?prop ?a ?b .
+        <{resource_uri}> ?predicate_item ?prop .
         ?prop a ?type 
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
-                {{ <{resource_id}> ?predicate_item ?prop }}
-                UNION {{ ?prop a ?type }}
-                OPTIONAL {{
-                    {{ ?prop ?a ?b }}
-                }}
-            }}
+                <{resource_uri}> ?predicate_item ?prop .
+  				OPTIONAL {{
+    				?prop a ?type
+  				}}
+  			}}
         }}
         '''
     else:
         query = f'''CONSTRUCT {{
-        ?item ?predicate_item ?prop .
-        ?prop ?a ?b .
+        <{resource_uri}> ?predicate_item ?prop .
         ?prop a ?type 
         }}
         WHERE {{
-                {{ <{resource_id}> ?predicate_item ?prop }}
-                UNION {{ ?prop a ?type }}
-                OPTIONAL {{
-                    {{ ?prop ?a ?b }}
-                }}
+            <{resource_uri}> ?predicate_item ?prop .
+            OPTIONAL {{
+                ?prop a ?type
+            }}
         }}
         '''
     return query
