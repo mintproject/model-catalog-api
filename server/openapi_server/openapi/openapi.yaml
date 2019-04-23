@@ -2,7 +2,8 @@ openapi: 3.0.1
 info:
   contact:
     email: mosorio@isi.edu
-  description: This is MINT Model Catalog You can find out more about     Model Catalog at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
+  description: This is MINT Model Catalog You can find out more about     Model Catalog
+    at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -17,6 +18,761 @@ servers:
 - url: https://dev.api.models.mint.isi.edu/v0.0.2
 - url: http://localhost:8080/v0.0.2
 paths:
+  /datasetspecifications:
+    get:
+      description: Gets a list of all `datasetspecification` entities.
+      operationId: get_data_sets
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DatasetSpecification'
+                type: array
+          description: Successful response - returns an array of `datasetspecification`
+            entities.
+      security: []
+      summary: List All datasetspecifications
+      tags:
+      - datasetspecification
+      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
+    post:
+      description: Creates a new instance of a `datasetspecification`.
+      operationId: create_data_set
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatasetSpecification'
+        description: A new `datasetspecification` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a datasetspecification
+      tags:
+      - datasetspecification
+      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
+  /model/{id}:
+    delete:
+      description: Deletes an existing `Model`.
+      operationId: delete_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Delete a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    get:
+      description: Gets the details of a single instance of a `Model`.
+      operationId: get_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Successful response - returns a single `Model`.
+      security: []
+      summary: Get a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    put:
+      description: Updates an existing `Model`.
+      operationId: update_model
+      parameters:
+      - description: A unique identifier for a `Model`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        description: Updated `Model` information.
+        required: true
+      responses:
+        202:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Update a Model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+  /modelconfiguration/{id}:
+    delete:
+      description: Deletes an existing `ModelConfiguration`.
+      operationId: delete_model_configuration
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+        400:
+          description: Invalid ID supplied
+        403:
+          description: You don't the permissions
+      security:
+      - BearerAuth: []
+      summary: Delete a ModelConfiguration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    get:
+      description: Gets the details of a single instance of a `ModelConfiguration`.
+      operationId: get_model_configuraton
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get modelconfiguration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    put:
+      operationId: update_model_configuration
+      parameters:
+      - description: A unique identifier for a `ModelConfiguration`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        200:
+          description: Updated
+      security:
+      - BearerAuth: []
+      summary: Update model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/inputs:
+    get:
+      operationId: get_inputs_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DatasetSpecification'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the inputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: create_inputs_by_modelconfiguration
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/DatasetSpecification'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Creates a new instance of a `DatasetSpecification` related as Input.
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/outputs:
+    get:
+      operationId: get_outputs_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DatasetSpecification'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the outputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: create_outputs_by_modelconfiguration
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/DatasetSpecification'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Create the output of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfiguration/{id}/parameters:
+    get:
+      operationId: get_parameters_by_modelconfiguration
+      parameters:
+      - description: |
+          The name of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Parameter'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+        404:
+          description: Model Configuration not found
+      security: []
+      summary: Get the parameters of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      description: Creates a new instance of a `DatasetSpecification` and it related
+        with the `ModelConfiguration`.
+      operationId: create_parameters_by_modelconfiguration
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Parameter'
+              type: array
+        required: true
+      responses:
+        201:
+          description: Created
+        400:
+          description: Request body is incorrect
+        403:
+          content:
+            application/json:
+              examples:
+                exit:
+                  value: |-
+                    {
+                        "code": 30,
+                        "type": "some text",
+                        "message": "some text"
+                    }
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: You are not authorized to do that
+      security:
+      - BearerAuth: []
+      summary: Create the inputs of a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /modelconfigurations:
+    get:
+      operationId: get_model_configurations
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelConfiguration'
+                type: array
+          description: successful operation
+        400:
+          description: Invalid uri supplied
+      security: []
+      summary: List modelconfiguration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+    post:
+      operationId: create_model_configuration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        required: true
+      responses:
+        201:
+          content:
+            application/json: {}
+          description: Created
+        400:
+          description: Invalid
+      security:
+      - BearerAuth: []
+      summary: Create a model configuration
+      tags:
+      - modelconfiguration
+      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+  /models:
+    get:
+      description: Gets a list of all `model` entities.
+      operationId: get_models
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Model'
+                type: array
+          description: Successful response - returns an array of `model` entities.
+      security: []
+      summary: List All models
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+    post:
+      description: Creates a new instance of a `model`.
+      operationId: create_model
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model'
+        description: A new `model` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a model
+      tags:
+      - model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+  /modelversion/{id}:
+    delete:
+      description: Deletes an existing `ModelVersion`.
+      operationId: delete_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        204:
+          description: Successful response.
+      security: []
+      summary: Delete a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    get:
+      description: Gets the details of a single instance of a `ModelVersion`.
+      operationId: get_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelVersion'
+          description: Successful response - returns a single `ModelVersion`.
+      security: []
+      summary: Get a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    put:
+      description: Updates an existing `ModelVersion`.
+      operationId: update_model_version
+      parameters:
+      - description: A unique identifier for a `ModelVersion`.
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        description: Updated `ModelVersion` information.
+        required: true
+      responses:
+        202:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Update a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+  /modelversions:
+    get:
+      description: Gets a list of all `ModelVersion` entities.
+      operationId: get_model_versions
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelVersion'
+                type: array
+          description: Successful response - returns an array of `ModelVersion` entities.
+      security: []
+      summary: List All ModelVersions
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+    post:
+      description: Creates a new instance of a `ModelVersion`.
+      operationId: create_model_version
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelVersion'
+        description: A new `ModelVersion` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a ModelVersion
+      tags:
+      - modelversion
+      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
+  /parameters:
+    get:
+      description: Gets a list of all `Parameter` entities.
+      operationId: get_parameters
+      parameters:
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Parameter'
+                type: array
+          description: Successful response - returns an array of `Parameter` entities.
+      security: []
+      summary: List All Parameters
+      tags:
+      - parameter
+      x-openapi-router-controller: openapi_server.controllers.parameter_controller
+    post:
+      description: Creates a new instance of a `Parameter`.
+      operationId: create_parameter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Parameter'
+        description: A new `Parameter` to be created.
+        required: true
+      responses:
+        201:
+          description: Successful response.
+      security:
+      - BearerAuth: []
+      summary: Create a Parameter
+      tags:
+      - parameter
+      x-openapi-router-controller: openapi_server.controllers.parameter_controller
   /user:
     post:
       description: This can only be done by the logged in user.
@@ -177,737 +933,6 @@ paths:
       tags:
       - user
       x-openapi-router-controller: openapi_server.controllers.user_controller
-  /modelconfigurations:
-    get:
-      operationId: get_model_configurations
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ModelConfiguration'
-                type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-      security: []
-      summary: List modelconfiguration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    post:
-      operationId: create_model_configuration
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelConfiguration'
-        required: true
-      responses:
-        201:
-          content:
-            application/json: {}
-          description: Created
-        400:
-          description: Invalid
-      security:
-      - BearerAuth: []
-      summary: Create a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/inputs:
-    get:
-      operationId: get_inputs_by_modelconfiguration
-      parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ApiResponse'
-                type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the inputs of a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    post:
-      operationId: create_inputs_by_modelconfiguration
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/DatasetSpecification'
-              type: array
-        required: true
-      responses:
-        201:
-          description: Created
-        400:
-          description: Request body is incorrect
-        403:
-          content:
-            application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
-              schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Creates a new instance of a `DatasetSpecification` related as Input.
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/outputs:
-    get:
-      operationId: get_outputs_by_modelconfiguration
-      parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ApiResponse'
-                type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the outputs of a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    post:
-      operationId: modelconfiguration_id_outputs_post
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/DatasetSpecification'
-              type: array
-        required: true
-      responses:
-        201:
-          description: Created
-        400:
-          description: Request body is incorrect
-        403:
-          content:
-            application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
-              schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Create the output of a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/parameters:
-    get:
-      operationId: get_parameters_by_modelconfiguration
-      parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ApiResponse'
-                type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the parameters of a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    post:
-      description: Creates a new instance of a `DatasetSpecification` and it related with the `ModelConfiguration`.
-      operationId: create_parameters_by_modelconfiguration
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/Parameter'
-              type: array
-        required: true
-      responses:
-        201:
-          description: Created
-        400:
-          description: Request body is incorrect
-        403:
-          content:
-            application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
-              schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Create the inputs of a model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelversions:
-    get:
-      description: Gets a list of all `ModelVersion` entities.
-      operationId: get_model_versions
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ModelVersion'
-                type: array
-          description: Successful response - returns an array of `ModelVersion` entities.
-      security: []
-      summary: List All ModelVersions
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    post:
-      description: Creates a new instance of a `ModelVersion`.
-      operationId: create_model_version
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelVersion'
-        description: A new `ModelVersion` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-  /datasetspecifications:
-    get:
-      description: Gets a list of all `datasetspecification` entities.
-      operationId: get_data_sets
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/DatasetSpecification'
-                type: array
-          description: Successful response - returns an array of `datasetspecification` entities.
-      security: []
-      summary: List All datasetspecifications
-      tags:
-      - datasetspecification
-      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
-    post:
-      description: Creates a new instance of a `datasetspecification`.
-      operationId: create_data_set
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DatasetSpecification'
-        description: A new `datasetspecification` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a datasetspecification
-      tags:
-      - datasetspecification
-      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
-  /models:
-    get:
-      description: Gets a list of all `model` entities.
-      operationId: get_models
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Model'
-                type: array
-          description: Successful response - returns an array of `model` entities.
-      security: []
-      summary: List All models
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-    post:
-      description: Creates a new instance of a `model`.
-      operationId: create_model
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Model'
-        description: A new `model` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-  /parameters:
-    get:
-      description: Gets a list of all `Parameter` entities.
-      operationId: get_parameters
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Parameter'
-                type: array
-          description: Successful response - returns an array of `Parameter` entities.
-      security: []
-      summary: List All Parameters
-      tags:
-      - parameter
-      x-openapi-router-controller: openapi_server.controllers.parameter_controller
-    post:
-      description: Creates a new instance of a `Parameter`.
-      operationId: create_parameter
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Parameter'
-        description: A new `Parameter` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a Parameter
-      tags:
-      - parameter
-      x-openapi-router-controller: openapi_server.controllers.parameter_controller
-  /model/{id}:
-    delete:
-      description: Deletes an existing `Model`.
-      operationId: delete_model
-      parameters:
-      - description: A unique identifier for a `Model`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        204:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Delete a Model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-    get:
-      description: Gets the details of a single instance of a `Model`.
-      operationId: get_model
-      parameters:
-      - description: A unique identifier for a `Model`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Model'
-          description: Successful response - returns a single `Model`.
-      security: []
-      summary: Get a Model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-    put:
-      description: Updates an existing `Model`.
-      operationId: update_model
-      parameters:
-      - description: A unique identifier for a `Model`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Model'
-        description: Updated `Model` information.
-        required: true
-      responses:
-        202:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Update a Model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-  /modelversion/{id}:
-    delete:
-      description: Deletes an existing `ModelVersion`.
-      operationId: delete_model_version
-      parameters:
-      - description: A unique identifier for a `ModelVersion`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        204:
-          description: Successful response.
-      security: []
-      summary: Delete a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    get:
-      description: Gets the details of a single instance of a `ModelVersion`.
-      operationId: get_model_version
-      parameters:
-      - description: A unique identifier for a `ModelVersion`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelVersion'
-          description: Successful response - returns a single `ModelVersion`.
-      security: []
-      summary: Get a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    put:
-      description: Updates an existing `ModelVersion`.
-      operationId: update_model_version
-      parameters:
-      - description: A unique identifier for a `ModelVersion`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelVersion'
-        description: Updated `ModelVersion` information.
-        required: true
-      responses:
-        202:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Update a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-  /modelconfiguration/{id}:
-    delete:
-      description: Deletes an existing `ModelConfiguration`.
-      operationId: delete_model_configuration
-      parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        204:
-          description: Successful response.
-        400:
-          description: Invalid ID supplied
-        403:
-          description: You don't the permissions
-      security:
-      - BearerAuth: []
-      summary: Delete a ModelConfiguration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    get:
-      description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuraton
-      parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelConfiguration'
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get modelconfiguration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-    put:
-      operationId: update_model_configuration
-      parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelConfiguration'
-        required: true
-      responses:
-        200:
-          description: Updated
-      security:
-      - BearerAuth: []
-      summary: Update model configuration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
 components:
   schemas:
     DatasetSpecification:
@@ -915,27 +940,34 @@ components:
         id: crop-yield
         label: crop-yield
         hasFormat: csv
-        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        description: Contains the yield elasticities to fertilizer use that are derived
+          from Cycles output
         hasDimensionality: 0
         hasPresentation:
         - id: https://w3id.org/mint/instance/econ_ybarN
       properties:
         label:
+          nullable: true
           type: string
         hasFormat:
+          nullable: true
           type: string
         description:
+          nullable: true
           type: string
         hasDimensionality:
           format: int64
+          nullable: true
           type: integer
         hasPresentation:
           items:
             $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
           type: array
         type:
           items:
             type: string
+          nullable: true
           type: array
         id:
           type: string
@@ -950,7 +982,8 @@ components:
         - id: econ_yield
         hasOutput:
         - id: econ_land_use
-        description: Aggregate crop supply response model for the country of South Sudan configuration
+        description: Aggregate crop supply response model for the country of South
+          Sudan configuration
         hasCAG:
         - id: economic_aggregate_crop_supply_CAG_variables
         - id: economic_aggregate_crop_supply_CAG_process
@@ -978,44 +1011,57 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
         hasInput:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
           type: array
         hasOutput:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
           type: array
         description:
+          nullable: true
           type: string
         hasCAG:
           items:
             $ref: '#/components/schemas/CAG'
+          nullable: true
           type: array
         hasProcess:
           items:
             $ref: '#/components/schemas/Process'
+          nullable: true
           type: array
         hasTimeInterval:
           items:
             $ref: '#/components/schemas/TimeInterval'
+          nullable: true
           type: array
         hasImplementationScriptLocation:
+          nullable: true
           type: string
         hasContainer:
           items:
             type: object
+          nullable: true
           type: array
         hasConstraint:
+          nullable: true
           type: string
         hasParameter:
           items:
             $ref: '#/components/schemas/Parameter'
+          nullable: true
           type: array
         hasComponentLocation:
+          nullable: true
           type: string
       required:
       - id
@@ -1035,14 +1081,19 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
         description:
+          nullable: true
           type: string
         hasDefaultValue:
+          nullable: true
           type: string
         hasDataType:
+          nullable: true
           type: string
       required:
       - id
@@ -1059,13 +1110,18 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
         influences:
-          description: Property that describe the causal relationship between two processes, two variables, a process and a variable or a variable and a process
+          description: Property that describe the causal relationship between two
+            processes, two variables, a process and a variable or a variable and a
+            process
           items:
             $ref: '#/components/schemas/Process'
+          nullable: true
           type: array
       required:
       - id
@@ -1076,7 +1132,8 @@ components:
         type:
         - https://example.org/externalCatalog#TimeInterval
         label: Simple economic time interval
-        description: Time interval used in the aggregate crop supply response model for the country of South Sudan configuration
+        description: Time interval used in the aggregate crop supply response model
+          for the country of South Sudan configuration
         usesUnit:
           id: https://w3id.org/mint/instance/yearT
         hasValue: 1
@@ -1086,15 +1143,19 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
         description:
+          nullable: true
           type: string
         usesUnit:
           $ref: '#/components/schemas/Unit'
         hasValue:
           format: int64
+          nullable: true
           type: integer
       required:
       - id
@@ -1118,22 +1179,28 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         description:
+          nullable: true
           type: string
         label:
+          nullable: true
           type: string
         ccut_hasPart:
           items:
             type: string
+          nullable: true
           type: array
         ccut_hasDimensionality:
           items:
             type: string
+          nullable: true
           type: array
         abbreviation:
           items:
             type: string
+          nullable: true
           type: array
       required:
       - id
@@ -1142,7 +1209,8 @@ components:
       example:
         id: econ_ybarN
         label: ybarN
-        description: Contains the yield elasticities to fertilizer use that are derived from Cycles output
+        description: Contains the yield elasticities to fertilizer use that are derived
+          from Cycles output
         hasLongName: yield elasticity
         hasShortName: ybarN
         hasStandardVariable:
@@ -1156,21 +1224,28 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
         description:
+          nullable: true
           type: string
         hasLongName:
+          nullable: true
           type: string
         hasShortName:
+          nullable: true
           type: string
         hasStandardVariable:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
           type: array
         hasRelevanceLevel:
           format: int64
+          nullable: true
           type: integer
         usesUnit:
           $ref: '#/components/schemas/Unit'
@@ -1190,10 +1265,6 @@ components:
       xml:
         name: User
     ApiResponse:
-      example:
-        code: 0
-        type: type
-        message: message
       properties:
         code:
           format: int32
@@ -1206,7 +1277,8 @@ components:
     CAG:
       example:
         id: economic_aggregate_crop_supply_CAG_variables
-        label: CAG for Economic model for aggregate crop supply response model variables for the country of South Sudan configuration
+        label: CAG for Economic model for aggregate crop supply response model variables
+          for the country of South Sudan configuration
         type:
         - https://w3id.org/mint/modelCatalog#CAG
         hasPart:
@@ -1218,13 +1290,16 @@ components:
         type:
           items:
             type: string
+          nullable: true
           type: array
         hasPart:
           description: Array of Parameter or Variables
           items:
             $ref: '#/components/schemas/Parameter'
+          nullable: true
           type: array
         label:
+          nullable: true
           type: string
       required:
       - id
@@ -1233,7 +1308,10 @@ components:
       example:
         id: DSSAT
         label: DSSAT
-        description: The Decision Support System for Agrotechnology Transfer (DSSAT) comprises dynamic crop growth simulation model for over 40 crops. The model simulates growth; development; and yield as a function of the soil-plant-atmosphere dynamics.
+        description: The Decision Support System for Agrotechnology Transfer (DSSAT)
+          comprises dynamic crop growth simulation model for over 40 crops. The model
+          simulates growth; development; and yield as a function of the soil-plant-atmosphere
+          dynamics.
         type:
         - https://w3id.org/mint/modelCatalog#Model
         - https://w3id.org/mint/modelCatalog#TheoryBasedModel
@@ -1247,22 +1325,30 @@ components:
         id:
           type: string
         label:
+          nullable: true
           type: string
         type:
           items:
             type: string
+          nullable: true
           type: array
         hasSoftwareVersion:
           items:
             type: object
+          nullable: true
           type: array
+        description:
+          nullable: true
+          type: string
         hasModelCategory:
           items:
             type: string
+          nullable: true
           type: array
         hasDocumentation:
           items:
             type: string
+          nullable: true
           type: array
       required:
       - id
@@ -1280,20 +1366,25 @@ components:
         id:
           type: string
         label:
+          nullable: true
           type: string
         type:
           items:
             type: string
+          nullable: true
           type: array
         hasDocumentation:
           items:
             type: string
+          nullable: true
           type: array
         hasVersionId:
+          nullable: true
           type: string
         hasConfiguration:
           items:
             $ref: '#/components/schemas/ModelConfiguration'
+          nullable: true
           type: array
       required:
       - id

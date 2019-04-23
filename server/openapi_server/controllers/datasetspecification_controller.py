@@ -2,7 +2,6 @@ import connexion
 import six
 
 from openapi_server.models.dataset_specification import DatasetSpecification  # noqa: E501
-from openapi_server.models.variable_presentation import VariablePresentation  # noqa: E501
 from openapi_server import util
 from openapi_server.static_vars import *
 from endpoint.utils import insert_query, prepare_jsonld, get_all_resource

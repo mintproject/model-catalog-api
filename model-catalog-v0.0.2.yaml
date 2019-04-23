@@ -230,7 +230,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ApiResponse'
+                  $ref: '#/components/schemas/DatasetSpecification'
         400:
           description: Invalid uri supplied
         404:
@@ -311,7 +311,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ApiResponse'
+                  $ref: '#/components/schemas/DatasetSpecification'
         400:
           description: Invalid uri supplied
         404:
@@ -392,7 +392,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/ApiResponse'
+                  $ref: '#/components/schemas/Parameter'
         400:
           description: Invalid uri supplied
         404:
@@ -1199,6 +1199,9 @@ components:
           nullable: true
           items:
             type: object
+        description:
+          type: string
+          nullable: true
         hasModelCategory:
           type: array
           nullable: true
@@ -1253,7 +1256,6 @@ components:
           nullable: true
           items:
             $ref: '#/components/schemas/ModelConfiguration'
-          nullable: true
       example:
         id: DSSAT_4.7
         label: DSSAT v4.7

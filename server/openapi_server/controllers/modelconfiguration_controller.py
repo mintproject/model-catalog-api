@@ -92,7 +92,7 @@ def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
     :param username: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     :type username: str
 
-    :rtype: List[ApiResponse]
+    :rtype: List[DatasetSpecification]
     """
     try:
         response = get_all_resources_related(id, HAS_INPUT, DATASETSPECIFICATION_TYPE, username)
@@ -164,7 +164,7 @@ def get_outputs_by_modelconfiguration(id, username=None):  # noqa: E501
     :param username: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     :type username: str
 
-    :rtype: List[ApiResponse]
+    :rtype: List[DatasetSpecification]
     """
     try:
         response = get_all_resources_related(id, HAS_OUTPUT, DATASETSPECIFICATION_TYPE, username)
@@ -188,7 +188,7 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
     :param username: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
     :type username: str
 
-    :rtype: List[ApiResponse]
+    :rtype: List[Parameter]
     """
     try:
         response = get_all_resources_related(id, HAS_PARAMETER, PARAMETER_TYPE, username)
@@ -201,7 +201,7 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
 
 
 #todo: implement
-def modelconfiguration_id_outputs_post(id, dataset_specification):  # noqa: E501
+def create_outputs_by_modelconfiguration(id, dataset_specification):  # noqa: E501
     """Create the output of a model configuration
 
      # noqa: E501
