@@ -993,6 +993,9 @@ components:
           nullable: true
           items:
             $ref: '#/components/schemas/Process'
+        description:
+          type: string
+          nullable: true
       example:
         id: crop_yield
         label: crop yield
@@ -1256,6 +1259,9 @@ components:
           nullable: true
           items:
             $ref: '#/components/schemas/ModelConfiguration'
+        description:
+          type: string
+          nullable: true
       example:
         id: DSSAT_4.7
         label: DSSAT v4.7
