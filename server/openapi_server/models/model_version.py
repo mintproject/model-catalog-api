@@ -15,7 +15,7 @@ class ModelVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#ModelVersion"], has_documentation=None, has_version_id=None, has_configuration=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#ModelVersion"], has_documentation=None, has_version_id=None, has_configuration=None, description=None):  # noqa: E501
         """ModelVersion - a model defined in OpenAPI
 
         :param id: The id of this ModelVersion.  # noqa: E501
@@ -30,6 +30,8 @@ class ModelVersion(Model):
         :type has_version_id: str
         :param has_configuration: The has_configuration of this ModelVersion.  # noqa: E501
         :type has_configuration: List[ModelConfiguration]
+        :param description: The description of this ModelVersion.  # noqa: E501
+        :type description: str
         """
         self.openapi_types = {
             'id': str,
@@ -37,7 +39,8 @@ class ModelVersion(Model):
             'type': List[str],
             'has_documentation': List[str],
             'has_version_id': str,
-            'has_configuration': List[ModelConfiguration]
+            'has_configuration': List[ModelConfiguration],
+            'description': str
         }
 
         self.attribute_map = {
@@ -46,7 +49,8 @@ class ModelVersion(Model):
             'type': 'type',
             'has_documentation': 'hasDocumentation',
             'has_version_id': 'hasVersionId',
-            'has_configuration': 'hasConfiguration'
+            'has_configuration': 'hasConfiguration',
+            'description': 'description'
         }
 
         self._id = id
@@ -55,6 +59,7 @@ class ModelVersion(Model):
         self._has_documentation = has_documentation
         self._has_version_id = has_version_id
         self._has_configuration = has_configuration
+        self._description = description
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelVersion':
@@ -194,3 +199,24 @@ class ModelVersion(Model):
         """
 
         self._has_configuration = has_configuration
+
+    @property
+    def description(self):
+        """Gets the description of this ModelVersion.
+
+
+        :return: The description of this ModelVersion.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ModelVersion.
+
+
+        :param description: The description of this ModelVersion.
+        :type description: str
+        """
+
+        self._description = description

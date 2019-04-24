@@ -16,7 +16,7 @@ class VariablePresentation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=None, label=None, description=None, has_long_name=None, has_short_name=None, has_standard_variable=None, has_relevance_level=None, uses_unit=None):  # noqa: E501
+    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#VariablePresentation"], label=None, description=None, has_long_name=None, has_short_name=None, has_standard_variable=None, has_relevance_level=None, uses_unit=None):  # noqa: E501
         """VariablePresentation - a model defined in OpenAPI
 
         :param id: The id of this VariablePresentation.  # noqa: E501

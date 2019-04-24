@@ -1123,6 +1123,9 @@ components:
             $ref: '#/components/schemas/Process'
           nullable: true
           type: array
+        description:
+          nullable: true
+          type: string
       required:
       - id
       type: object
@@ -1386,6 +1389,9 @@ components:
             $ref: '#/components/schemas/ModelConfiguration'
           nullable: true
           type: array
+        description:
+          nullable: true
+          type: string
       required:
       - id
       type: object

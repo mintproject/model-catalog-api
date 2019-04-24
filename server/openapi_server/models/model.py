@@ -15,7 +15,7 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#Model"], has_software_version=None, has_model_category=None, has_documentation=None):  # noqa: E501
+    def __init__(self, id=None, label=None, type=["https://w3id.org/mint/modelCatalog#Model"], has_software_version=None, has_model_category=None, has_documentation=None, description=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
         :param id: The id of this Model.  # noqa: E501
@@ -26,6 +26,8 @@ class Model(Model):
         :type type: List[str]
         :param has_software_version: The has_software_version of this Model.  # noqa: E501
         :type has_software_version: List[object]
+        :param description: The description of this Model.  # noqa: E501
+        :type description: str
         :param has_model_category: The has_model_category of this Model.  # noqa: E501
         :type has_model_category: List[str]
         :param has_documentation: The has_documentation of this Model.  # noqa: E501
@@ -36,6 +38,7 @@ class Model(Model):
             'label': str,
             'type': List[str],
             'has_software_version': List[object],
+            'description': str,
             'has_model_category': List[str],
             'has_documentation': List[str]
         }
@@ -45,6 +48,7 @@ class Model(Model):
             'label': 'label',
             'type': 'type',
             'has_software_version': 'hasSoftwareVersion',
+            'description': 'description',
             'has_model_category': 'hasModelCategory',
             'has_documentation': 'hasDocumentation'
         }
@@ -53,6 +57,7 @@ class Model(Model):
         self._label = label
         self._type = type
         self._has_software_version = has_software_version
+        self._description = description
         self._has_model_category = has_model_category
         self._has_documentation = has_documentation
 
@@ -152,6 +157,27 @@ class Model(Model):
         """
 
         self._has_software_version = has_software_version
+
+    @property
+    def description(self):
+        """Gets the description of this Model.
+
+
+        :return: The description of this Model.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Model.
+
+
+        :param description: The description of this Model.
+        :type description: str
+        """
+
+        self._description = description
 
     @property
     def has_model_category(self):

@@ -15,7 +15,7 @@ class Process(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#Process"], label=None, influences=None):  # noqa: E501
+    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#Process"], label=None, influences=None, description=None):  # noqa: E501
         """Process - a model defined in OpenAPI
 
         :param id: The id of this Process.  # noqa: E501
@@ -26,25 +26,30 @@ class Process(Model):
         :type label: str
         :param influences: The influences of this Process.  # noqa: E501
         :type influences: List[Process]
+        :param description: The description of this Process.  # noqa: E501
+        :type description: str
         """
         self.openapi_types = {
             'id': str,
             'type': List[str],
             'label': str,
-            'influences': List[Process]
+            'influences': List[Process],
+            'description': str
         }
 
         self.attribute_map = {
             'id': 'id',
             'type': 'type',
             'label': 'label',
-            'influences': 'influences'
+            'influences': 'influences',
+            'description': 'description'
         }
 
         self._id = id
         self._type = type
         self._label = label
         self._influences = influences
+        self._description = description
 
     @classmethod
     def from_dict(cls, dikt) -> 'Process':
@@ -144,3 +149,24 @@ class Process(Model):
         """
 
         self._influences = influences
+
+    @property
+    def description(self):
+        """Gets the description of this Process.
+
+
+        :return: The description of this Process.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Process.
+
+
+        :param description: The description of this Process.
+        :type description: str
+        """
+
+        self._description = description

@@ -1,4 +1,9 @@
+server/.gitignore
 server/Dockerfile
+server/openapi_server/models/user.py
+server/openapi_server/__main__.py
+server/openapi_server/test/__main__.py
+
 server/openapi_server/controllers/*
 server/openapi_server/util.py
 server/requirements.txt
