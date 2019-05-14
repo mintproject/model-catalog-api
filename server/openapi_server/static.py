@@ -52,8 +52,8 @@ DEFAULT_ENDPOINT_PASSWORD = config.get('defaults', 'password')
 
 DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
 ENDPOINT = "https://endpoint.mint.isi.edu"
-UPDATE_ENDPOINT = f'{ENDPOINT}/test/update'
-QUERY_ENDPOINT = f'{ENDPOINT}/test/query'
+UPDATE_ENDPOINT = f'{ENDPOINT}/ds/update'
+QUERY_ENDPOINT = f'{ENDPOINT}/ds/query'
 
 # Local folder where queries are loaded from
 LOCAL_SPARQL_DIR = config.get('local', 'local_sparql_dir')

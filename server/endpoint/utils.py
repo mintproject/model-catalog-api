@@ -175,7 +175,7 @@ def insert_query(body, username):
     prefixes = '\n'.join(prefixes)
     triples = '\n'.join(triples)
 
-    if not graph or graph == '' or graph == 'default':
+    if not graph or graph == '' or graph == 'urn:x-arq:DefaultGraph':
         return 'Default graph is read only', 403, {}
 
     query_string = f'{prefixes} INSERT DATA {{ GRAPH <{graph}> {{ {triples} }} }}'
