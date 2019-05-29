@@ -8,4 +8,5 @@ docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli \
      -o /local/server/ \
      --git-repo-id MINT-ModelCatalogIngestionAPI \
      --git-user-id mintproject \
+     --template-dir /local/.openapi-generator/template \ 
      --ignore-file-override /local/.openapi-generator-ignore
