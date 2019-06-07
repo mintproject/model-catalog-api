@@ -24,7 +24,6 @@ server/openapi_server/models/process.py
 server/openapi_server/models/time_interval.py
 server/openapi_server/models/unit.py
 server/openapi_server/models/user.py
-server/openapi_server/models/variable_presentation.py
 server/openapi_server/util.py
 
 server/requirements.txt
