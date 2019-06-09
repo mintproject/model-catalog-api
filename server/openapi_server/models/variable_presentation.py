@@ -6,12 +6,8 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
-from openapi_server.models.process import Process
-from openapi_server.models.standard_variable import StandardVariable
-from openapi_server.models.unit import Unit
+import openapi_server.models.dataset_specification
 from openapi_server import util
-
-from openapi_server.models.process import Process  # noqa: E501
 from openapi_server.models.standard_variable import StandardVariable  # noqa: E501
 from openapi_server.models.unit import Unit  # noqa: E501
 
@@ -21,7 +17,7 @@ class VariablePresentation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_standard_variable=None, has_maximum_accepted_value=None, has_constraint=None, description=None, label=None, type=None, has_long_name=None, has_relevance_level=None, has_short_name=None, has_minimum_accepted_value=None, has_dataset=None, influences_process=None, influences_variable_presentation=None, id=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_standard_variable=None, has_maximum_accepted_value=None, has_constraint=None, description=None, label=None, type=["https://w3id.org/mint/modelCatalog#VariablePresentation"], has_long_name=None, has_relevance_level=None, has_short_name=None, has_minimum_accepted_value=None, has_dataset=None, id=None, uses_unit=None):  # noqa: E501
         """VariablePresentation - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this VariablePresentation.  # noqa: E501
@@ -33,9 +29,9 @@ class VariablePresentation(Model):
         :param has_constraint: The has_constraint of this VariablePresentation.  # noqa: E501
         :type has_constraint: List[str]
         :param description: The description of this VariablePresentation.  # noqa: E501
-        :type description: List[str]
+        :type description: str
         :param label: The label of this VariablePresentation.  # noqa: E501
-        :type label: List[str]
+        :type label: str
         :param type: The type of this VariablePresentation.  # noqa: E501
         :type type: List[str]
         :param has_long_name: The has_long_name of this VariablePresentation.  # noqa: E501
@@ -48,10 +44,6 @@ class VariablePresentation(Model):
         :type has_minimum_accepted_value: List[float]
         :param has_dataset: The has_dataset of this VariablePresentation.  # noqa: E501
         :type has_dataset: List[DatasetSpecification]
-        :param influences_process: The influences_process of this VariablePresentation.  # noqa: E501
-        :type influences_process: List[Process]
-        :param influences_variable_presentation: The influences_variable_presentation of this VariablePresentation.  # noqa: E501
-        :type influences_variable_presentation: List[VariablePresentation]
         :param id: The id of this VariablePresentation.  # noqa: E501
         :type id: str
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
@@ -64,16 +56,14 @@ class VariablePresentation(Model):
             'has_standard_variable': List[StandardVariable],
             'has_maximum_accepted_value': List[float],
             'has_constraint': List[str],
-            'description': List[str],
-            'label': List[str],
+            'description': str,
+            'label': str,
             'type': List[str],
             'has_long_name': List[str],
             'has_relevance_level': List[float],
             'has_short_name': List[str],
             'has_minimum_accepted_value': List[float],
             'has_dataset': List[DatasetSpecification],
-            'influences_process': List[Process],
-            'influences_variable_presentation': List[VariablePresentation],
             'id': str,
             'uses_unit': List[Unit]
         }
@@ -91,8 +81,6 @@ class VariablePresentation(Model):
             'has_short_name': 'hasShortName',
             'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
             'has_dataset': 'hasDataset',
-            'influences_process': 'influencesProcess',
-            'influences_variable_presentation': 'influencesVariablePresentation',
             'id': 'id',
             'uses_unit': 'usesUnit'
         }
@@ -109,8 +97,6 @@ class VariablePresentation(Model):
         self._has_short_name = has_short_name
         self._has_minimum_accepted_value = has_minimum_accepted_value
         self._has_dataset = has_dataset
-        self._influences_process = influences_process
-        self._influences_variable_presentation = influences_variable_presentation
         self._id = id
         self._uses_unit = uses_unit
 
@@ -215,7 +201,7 @@ class VariablePresentation(Model):
 
 
         :return: The description of this VariablePresentation.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._description
 
@@ -225,7 +211,7 @@ class VariablePresentation(Model):
 
 
         :param description: The description of this VariablePresentation.
-        :type description: List[str]
+        :type description: str
         """
 
         self._description = description
@@ -236,7 +222,7 @@ class VariablePresentation(Model):
 
 
         :return: The label of this VariablePresentation.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._label
 
@@ -246,7 +232,7 @@ class VariablePresentation(Model):
 
 
         :param label: The label of this VariablePresentation.
-        :type label: List[str]
+        :type label: str
         """
 
         self._label = label
@@ -378,48 +364,6 @@ class VariablePresentation(Model):
         """
 
         self._has_dataset = has_dataset
-
-    @property
-    def influences_process(self):
-        """Gets the influences_process of this VariablePresentation.
-
-
-        :return: The influences_process of this VariablePresentation.
-        :rtype: List[Process]
-        """
-        return self._influences_process
-
-    @influences_process.setter
-    def influences_process(self, influences_process):
-        """Sets the influences_process of this VariablePresentation.
-
-
-        :param influences_process: The influences_process of this VariablePresentation.
-        :type influences_process: List[Process]
-        """
-
-        self._influences_process = influences_process
-
-    @property
-    def influences_variable_presentation(self):
-        """Gets the influences_variable_presentation of this VariablePresentation.
-
-
-        :return: The influences_variable_presentation of this VariablePresentation.
-        :rtype: List[VariablePresentation]
-        """
-        return self._influences_variable_presentation
-
-    @influences_variable_presentation.setter
-    def influences_variable_presentation(self, influences_variable_presentation):
-        """Sets the influences_variable_presentation of this VariablePresentation.
-
-
-        :param influences_variable_presentation: The influences_variable_presentation of this VariablePresentation.
-        :type influences_variable_presentation: List[VariablePresentation]
-        """
-
-        self._influences_variable_presentation = influences_variable_presentation
 
     @property
     def id(self):

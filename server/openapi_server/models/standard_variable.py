@@ -19,18 +19,18 @@ class StandardVariable(Model):
         """StandardVariable - a model defined in OpenAPI
 
         :param description: The description of this StandardVariable.  # noqa: E501
-        :type description: List[str]
+        :type description: str
         :param id: The id of this StandardVariable.  # noqa: E501
-        :type id: List[str]
+        :type id: str
         :param label: The label of this StandardVariable.  # noqa: E501
-        :type label: List[str]
+        :type label: str
         :param type: The type of this StandardVariable.  # noqa: E501
         :type type: List[str]
         """
         self.openapi_types = {
-            'description': List[str],
-            'id': List[str],
-            'label': List[str],
+            'description': str,
+            'id': str,
+            'label': str,
             'type': List[str]
         }
 
@@ -63,7 +63,7 @@ class StandardVariable(Model):
 
 
         :return: The description of this StandardVariable.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._description
 
@@ -73,7 +73,7 @@ class StandardVariable(Model):
 
 
         :param description: The description of this StandardVariable.
-        :type description: List[str]
+        :type description: str
         """
 
         self._description = description
@@ -84,7 +84,7 @@ class StandardVariable(Model):
 
 
         :return: The id of this StandardVariable.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._id
 
@@ -94,7 +94,7 @@ class StandardVariable(Model):
 
 
         :param id: The id of this StandardVariable.
-        :type id: List[str]
+        :type id: str
         """
 
         self._id = id
@@ -105,7 +105,7 @@ class StandardVariable(Model):
 
 
         :return: The label of this StandardVariable.
-        :rtype: List[str]
+        :rtype: str
         """
         return self._label
 
@@ -115,7 +115,7 @@ class StandardVariable(Model):
 
 
         :param label: The label of this StandardVariable.
-        :type label: List[str]
+        :type label: str
         """
 
         self._label = label

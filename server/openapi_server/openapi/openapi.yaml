@@ -1281,15 +1281,11 @@ components:
           nullable: true
           type: array
         description:
-          items:
-            type: string
           nullable: true
-          type: array
+          type: string
         label:
-          items:
-            type: string
           nullable: true
-          type: array
+          type: string
         type:
           items:
             type: string
@@ -1318,14 +1314,6 @@ components:
         hasDataset:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
-          type: array
-        influencesProcess:
-          items:
-            $ref: '#/components/schemas/Process'
-          type: array
-        influencesVariablePresentation:
-          items:
-            $ref: '#/components/schemas/VariablePresentation'
           type: array
         id:
           type: string
@@ -1480,20 +1468,13 @@ components:
     StandardVariable:
       properties:
         description:
-          items:
-            type: string
           nullable: true
-          type: array
+          type: string
         id:
-          items:
-            type: string
-          nullable: false
-          type: array
+          type: string
         label:
-          items:
-            type: string
           nullable: true
-          type: array
+          type: string
         type:
           items:
             type: string

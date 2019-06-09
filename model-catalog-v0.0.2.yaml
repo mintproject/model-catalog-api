@@ -1133,15 +1133,11 @@ components:
           nullable: true
           type: array
         description:
-          items:
-            type: string
+          type: string
           nullable: true
-          type: array
         label:
-          items:
-            type: string
+          type: string
           nullable: true
-          type: array
         type:
           items:
             type: string
@@ -1172,16 +1168,16 @@ components:
             $ref: '#/components/schemas/DatasetSpecification'
             nullable: true
             type: array
-        influencesProcess:
-          items:
-            $ref: '#/components/schemas/Process'
-            nullable: true
-            type: array
-        influencesVariablePresentation:
-           items:
-            $ref: '#/components/schemas/VariablePresentation'
-            nullable: true
-            type: array
+#        influences:
+#          anyOf:
+#          - items:
+#              $ref: '#/components/schemas/Process'
+#            nullable: true
+#            type: array
+#          - items:
+#              $ref: '#/components/schemas/VariablePresentation'
+#            nullable: true
+#            type: array
         id:
           type: string
         usesUnit:
@@ -1350,25 +1346,18 @@ components:
     StandardVariable:
       properties:
         description:
-          items:
-            type: string
+          type: string
           nullable: true
-          type: array
         id:
-          items:
-            type: string
-          nullable: false
-          type: array
+          type: string
         label:
-          items:
-            type: string
+          type: string
           nullable: true
-          type: array
         type:
+          type: array
+          nullable: true
           items:
             type: string
-          nullable: true
-          type: array
       required:
       - type
       type: object
