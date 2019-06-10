@@ -9,7 +9,7 @@ services:
     volumes:
       - database_dev:/usr/src/app/openapi_server/database/
     ports:
-      - 9092:8080
+      - 9091:8080
 
 
 volumes:
