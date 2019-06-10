@@ -256,30 +256,22 @@ def query_resource_related(resource_id, relation, username):
     if username:
         graph_uri = build_graph_uri(username)
         query = f'''CONSTRUCT {{
-        ?s ?o ?p .
-        ?p a ?type 
+        ?s ?o ?p
         }}
         WHERE {{
             GRAPH <{graph_uri}> {{
                 <{resource_uri}> <{relation}> ?s . 
                 ?s ?o ?p
-                OPTIONAL {{
-                    ?p a ?type
-                }}
             }}
         }}
         '''
     else:
         query = f'''CONSTRUCT {{
-        ?s ?o ?p .
-        ?p a ?type 
+        ?s ?o ?p
         }}
         WHERE {{
             <{resource_uri}> <{relation}> ?s . 
             ?s ?o ?p
-            OPTIONAL {{
-                ?p a ?type
-            }}
         }}
         '''
     return query

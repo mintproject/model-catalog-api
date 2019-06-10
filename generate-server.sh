@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 dir=${PWD}
 
-docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli \
+docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli:v4.0.0 \
      generate  \
      -i /local/model-catalog-v0.0.2.yaml\
      -g python-flask  \

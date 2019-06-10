@@ -379,12 +379,13 @@ THEORYBASEDMODEL_TYPE = "https://w3id.org/mint/modelCatalog#TheoryBasedModel"
 TIMEINTERVAL_TYPE = "https://w3id.org/mint/modelCatalog#TimeInterval"
 UNIT_TYPE = "https://w3id.org/mint/modelCatalog#Unit"
 VARIABLE_TYPE = "https://w3id.org/mint/modelCatalog#Variable"
+VARIABLE_PRESENTATION_TYPE = "https://w3id.org/mint/modelCatalog#VariablePresentation"
 
 
 HAS_PARAMETER = "https://w3id.org/mint/modelCatalog#hasParameter"
 HAS_INPUT = "https://w3id.org/mint/modelCatalog#hasInput"
 HAS_OUTPUT = "https://w3id.org/mint/modelCatalog#hasOutput"
-
+HAS_PRESENTATION = "https://w3id.org/mint/modelCatalog#hasPresentation"
 
 
 # todo: a relation can be PROCESS_TYPE or PARAMETER_TYPE

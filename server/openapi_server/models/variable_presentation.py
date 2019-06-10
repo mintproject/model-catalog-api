@@ -6,8 +6,9 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
+import openapi_server.models.dataset_specification
 from openapi_server import util
-
+from openapi_server.models.standard_variable import StandardVariable  # noqa: E501
 from openapi_server.models.unit import Unit  # noqa: E501
 
 class VariablePresentation(Model):
@@ -16,63 +17,87 @@ class VariablePresentation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, type=["https://w3id.org/mint/modelCatalog#VariablePresentation"], label=None, description=None, has_long_name=None, has_short_name=None, has_standard_variable=None, has_relevance_level=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_standard_variable=None, has_maximum_accepted_value=None, has_constraint=None, description=None, label=None, type=["https://w3id.org/mint/modelCatalog#VariablePresentation"], has_long_name=None, has_relevance_level=None, has_short_name=None, has_minimum_accepted_value=None, has_dataset=None, id=None, uses_unit=None):  # noqa: E501
         """VariablePresentation - a model defined in OpenAPI
 
-        :param id: The id of this VariablePresentation.  # noqa: E501
-        :type id: str
-        :param type: The type of this VariablePresentation.  # noqa: E501
-        :type type: List[str]
-        :param label: The label of this VariablePresentation.  # noqa: E501
-        :type label: str
+        :param has_default_value: The has_default_value of this VariablePresentation.  # noqa: E501
+        :type has_default_value: List[float]
+        :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
+        :type has_standard_variable: List[StandardVariable]
+        :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.  # noqa: E501
+        :type has_maximum_accepted_value: List[float]
+        :param has_constraint: The has_constraint of this VariablePresentation.  # noqa: E501
+        :type has_constraint: List[str]
         :param description: The description of this VariablePresentation.  # noqa: E501
         :type description: str
+        :param label: The label of this VariablePresentation.  # noqa: E501
+        :type label: str
+        :param type: The type of this VariablePresentation.  # noqa: E501
+        :type type: List[str]
         :param has_long_name: The has_long_name of this VariablePresentation.  # noqa: E501
-        :type has_long_name: str
-        :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
-        :type has_short_name: str
-        :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
-        :type has_standard_variable: List[DatasetSpecification]
+        :type has_long_name: List[str]
         :param has_relevance_level: The has_relevance_level of this VariablePresentation.  # noqa: E501
-        :type has_relevance_level: int
+        :type has_relevance_level: List[float]
+        :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
+        :type has_short_name: List[str]
+        :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.  # noqa: E501
+        :type has_minimum_accepted_value: List[float]
+        :param has_dataset: The has_dataset of this VariablePresentation.  # noqa: E501
+        :type has_dataset: List[DatasetSpecification]
+        :param id: The id of this VariablePresentation.  # noqa: E501
+        :type id: str
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
-        :type uses_unit: Unit
+        :type uses_unit: List[Unit]
         """
-
-        from openapi_server.models.dataset_specification import DatasetSpecification
+        from openapi_server.models.dataset_specification import DatasetSpecification  # noqa: E501
 
         self.openapi_types = {
-            'id': str,
-            'type': List[str],
-            'label': str,
+            'has_default_value': List[float],
+            'has_standard_variable': List[StandardVariable],
+            'has_maximum_accepted_value': List[float],
+            'has_constraint': List[str],
             'description': str,
-            'has_long_name': str,
-            'has_short_name': str,
-            'has_standard_variable': List[DatasetSpecification],
-            'has_relevance_level': int,
-            'uses_unit': Unit
+            'label': str,
+            'type': List[str],
+            'has_long_name': List[str],
+            'has_relevance_level': List[float],
+            'has_short_name': List[str],
+            'has_minimum_accepted_value': List[float],
+            'has_dataset': List[DatasetSpecification],
+            'id': str,
+            'uses_unit': List[Unit]
         }
 
         self.attribute_map = {
-            'id': 'id',
-            'type': 'type',
-            'label': 'label',
-            'description': 'description',
-            'has_long_name': 'hasLongName',
-            'has_short_name': 'hasShortName',
+            'has_default_value': 'hasDefaultValue',
             'has_standard_variable': 'hasStandardVariable',
+            'has_maximum_accepted_value': 'hasMaximumAcceptedValue',
+            'has_constraint': 'hasConstraint',
+            'description': 'description',
+            'label': 'label',
+            'type': 'type',
+            'has_long_name': 'hasLongName',
             'has_relevance_level': 'hasRelevanceLevel',
+            'has_short_name': 'hasShortName',
+            'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
+            'has_dataset': 'hasDataset',
+            'id': 'id',
             'uses_unit': 'usesUnit'
         }
 
-        self._id = id
-        self._type = type
-        self._label = label
-        self._description = description
-        self._has_long_name = has_long_name
-        self._has_short_name = has_short_name
+        self._has_default_value = has_default_value
         self._has_standard_variable = has_standard_variable
+        self._has_maximum_accepted_value = has_maximum_accepted_value
+        self._has_constraint = has_constraint
+        self._description = description
+        self._label = label
+        self._type = type
+        self._has_long_name = has_long_name
         self._has_relevance_level = has_relevance_level
+        self._has_short_name = has_short_name
+        self._has_minimum_accepted_value = has_minimum_accepted_value
+        self._has_dataset = has_dataset
+        self._id = id
         self._uses_unit = uses_unit
 
     @classmethod
@@ -87,69 +112,88 @@ class VariablePresentation(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def id(self):
-        """Gets the id of this VariablePresentation.
+    def has_default_value(self):
+        """Gets the has_default_value of this VariablePresentation.
 
 
-        :return: The id of this VariablePresentation.
-        :rtype: str
+        :return: The has_default_value of this VariablePresentation.
+        :rtype: List[float]
         """
-        return self._id
+        return self._has_default_value
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this VariablePresentation.
+    @has_default_value.setter
+    def has_default_value(self, has_default_value):
+        """Sets the has_default_value of this VariablePresentation.
 
 
-        :param id: The id of this VariablePresentation.
-        :type id: str
+        :param has_default_value: The has_default_value of this VariablePresentation.
+        :type has_default_value: List[float]
         """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
-        self._id = id
+        self._has_default_value = has_default_value
 
     @property
-    def type(self):
-        """Gets the type of this VariablePresentation.
+    def has_standard_variable(self):
+        """Gets the has_standard_variable of this VariablePresentation.
 
 
-        :return: The type of this VariablePresentation.
+        :return: The has_standard_variable of this VariablePresentation.
+        :rtype: List[StandardVariable]
+        """
+        return self._has_standard_variable
+
+    @has_standard_variable.setter
+    def has_standard_variable(self, has_standard_variable):
+        """Sets the has_standard_variable of this VariablePresentation.
+
+
+        :param has_standard_variable: The has_standard_variable of this VariablePresentation.
+        :type has_standard_variable: List[StandardVariable]
+        """
+
+        self._has_standard_variable = has_standard_variable
+
+    @property
+    def has_maximum_accepted_value(self):
+        """Gets the has_maximum_accepted_value of this VariablePresentation.
+
+
+        :return: The has_maximum_accepted_value of this VariablePresentation.
+        :rtype: List[float]
+        """
+        return self._has_maximum_accepted_value
+
+    @has_maximum_accepted_value.setter
+    def has_maximum_accepted_value(self, has_maximum_accepted_value):
+        """Sets the has_maximum_accepted_value of this VariablePresentation.
+
+
+        :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.
+        :type has_maximum_accepted_value: List[float]
+        """
+
+        self._has_maximum_accepted_value = has_maximum_accepted_value
+
+    @property
+    def has_constraint(self):
+        """Gets the has_constraint of this VariablePresentation.
+
+
+        :return: The has_constraint of this VariablePresentation.
         :rtype: List[str]
         """
-        return self._type
+        return self._has_constraint
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this VariablePresentation.
+    @has_constraint.setter
+    def has_constraint(self, has_constraint):
+        """Sets the has_constraint of this VariablePresentation.
 
 
-        :param type: The type of this VariablePresentation.
-        :type type: List[str]
+        :param has_constraint: The has_constraint of this VariablePresentation.
+        :type has_constraint: List[str]
         """
 
-        self._type = type
-
-    @property
-    def label(self):
-        """Gets the label of this VariablePresentation.
-
-
-        :return: The label of this VariablePresentation.
-        :rtype: str
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this VariablePresentation.
-
-
-        :param label: The label of this VariablePresentation.
-        :type label: str
-        """
-
-        self._label = label
+        self._has_constraint = has_constraint
 
     @property
     def description(self):
@@ -173,12 +217,56 @@ class VariablePresentation(Model):
         self._description = description
 
     @property
+    def label(self):
+        """Gets the label of this VariablePresentation.
+
+
+        :return: The label of this VariablePresentation.
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this VariablePresentation.
+
+
+        :param label: The label of this VariablePresentation.
+        :type label: str
+        """
+
+        self._label = label
+
+    @property
+    def type(self):
+        """Gets the type of this VariablePresentation.
+
+
+        :return: The type of this VariablePresentation.
+        :rtype: List[str]
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this VariablePresentation.
+
+
+        :param type: The type of this VariablePresentation.
+        :type type: List[str]
+        """
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
+
+    @property
     def has_long_name(self):
         """Gets the has_long_name of this VariablePresentation.
 
 
         :return: The has_long_name of this VariablePresentation.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._has_long_name
 
@@ -188,52 +276,10 @@ class VariablePresentation(Model):
 
 
         :param has_long_name: The has_long_name of this VariablePresentation.
-        :type has_long_name: str
+        :type has_long_name: List[str]
         """
 
         self._has_long_name = has_long_name
-
-    @property
-    def has_short_name(self):
-        """Gets the has_short_name of this VariablePresentation.
-
-
-        :return: The has_short_name of this VariablePresentation.
-        :rtype: str
-        """
-        return self._has_short_name
-
-    @has_short_name.setter
-    def has_short_name(self, has_short_name):
-        """Sets the has_short_name of this VariablePresentation.
-
-
-        :param has_short_name: The has_short_name of this VariablePresentation.
-        :type has_short_name: str
-        """
-
-        self._has_short_name = has_short_name
-
-    @property
-    def has_standard_variable(self):
-        """Gets the has_standard_variable of this VariablePresentation.
-
-
-        :return: The has_standard_variable of this VariablePresentation.
-        :rtype: List[DatasetSpecification]
-        """
-        return self._has_standard_variable
-
-    @has_standard_variable.setter
-    def has_standard_variable(self, has_standard_variable):
-        """Sets the has_standard_variable of this VariablePresentation.
-
-
-        :param has_standard_variable: The has_standard_variable of this VariablePresentation.
-        :type has_standard_variable: List[DatasetSpecification]
-        """
-
-        self._has_standard_variable = has_standard_variable
 
     @property
     def has_relevance_level(self):
@@ -241,7 +287,7 @@ class VariablePresentation(Model):
 
 
         :return: The has_relevance_level of this VariablePresentation.
-        :rtype: int
+        :rtype: List[float]
         """
         return self._has_relevance_level
 
@@ -251,10 +297,94 @@ class VariablePresentation(Model):
 
 
         :param has_relevance_level: The has_relevance_level of this VariablePresentation.
-        :type has_relevance_level: int
+        :type has_relevance_level: List[float]
         """
 
         self._has_relevance_level = has_relevance_level
+
+    @property
+    def has_short_name(self):
+        """Gets the has_short_name of this VariablePresentation.
+
+
+        :return: The has_short_name of this VariablePresentation.
+        :rtype: List[str]
+        """
+        return self._has_short_name
+
+    @has_short_name.setter
+    def has_short_name(self, has_short_name):
+        """Sets the has_short_name of this VariablePresentation.
+
+
+        :param has_short_name: The has_short_name of this VariablePresentation.
+        :type has_short_name: List[str]
+        """
+
+        self._has_short_name = has_short_name
+
+    @property
+    def has_minimum_accepted_value(self):
+        """Gets the has_minimum_accepted_value of this VariablePresentation.
+
+
+        :return: The has_minimum_accepted_value of this VariablePresentation.
+        :rtype: List[float]
+        """
+        return self._has_minimum_accepted_value
+
+    @has_minimum_accepted_value.setter
+    def has_minimum_accepted_value(self, has_minimum_accepted_value):
+        """Sets the has_minimum_accepted_value of this VariablePresentation.
+
+
+        :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.
+        :type has_minimum_accepted_value: List[float]
+        """
+
+        self._has_minimum_accepted_value = has_minimum_accepted_value
+
+    @property
+    def has_dataset(self):
+        """Gets the has_dataset of this VariablePresentation.
+
+
+        :return: The has_dataset of this VariablePresentation.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._has_dataset
+
+    @has_dataset.setter
+    def has_dataset(self, has_dataset):
+        """Sets the has_dataset of this VariablePresentation.
+
+
+        :param has_dataset: The has_dataset of this VariablePresentation.
+        :type has_dataset: List[DatasetSpecification]
+        """
+
+        self._has_dataset = has_dataset
+
+    @property
+    def id(self):
+        """Gets the id of this VariablePresentation.
+
+
+        :return: The id of this VariablePresentation.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this VariablePresentation.
+
+
+        :param id: The id of this VariablePresentation.
+        :type id: str
+        """
+
+        self._id = id
 
     @property
     def uses_unit(self):
@@ -262,7 +392,7 @@ class VariablePresentation(Model):
 
 
         :return: The uses_unit of this VariablePresentation.
-        :rtype: Unit
+        :rtype: List[Unit]
         """
         return self._uses_unit
 
@@ -272,7 +402,7 @@ class VariablePresentation(Model):
 
 
         :param uses_unit: The uses_unit of this VariablePresentation.
-        :type uses_unit: Unit
+        :type uses_unit: List[Unit]
         """
 
         self._uses_unit = uses_unit
