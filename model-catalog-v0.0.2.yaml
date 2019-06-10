@@ -152,6 +152,12 @@ paths:
           required: true
           schema:
             type: string
+        - name: username
+          in: query
+          required: false
+          schema:
+            type: string
+          description: To obtain the results maintained by the MINT project, you must not set up the variable. If you want the results of a user, you must set up the variable with the username
       responses:
         '400':
           description: Invalid username supplied
@@ -752,8 +758,7 @@ paths:
           description: Successful response.
       security: []
     parameters:
-    -
-      name: id
+    - name: id
       in: path
       description: A unique identifier for a `ModelVersion`.
       required: true
@@ -765,7 +770,7 @@ paths:
       - modelconfiguration
       summary: Get modelconfiguration
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: getModelConfiguraton
+      operationId: getModelConfiguration
       parameters:
       - name: id
         in: path

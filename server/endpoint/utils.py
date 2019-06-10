@@ -190,6 +190,29 @@ def insert_query(body, username):
     return "Created", 201, {}
 
 
+def delete_query(resource_id, username):
+    endpoint = UPDATE_ENDPOINT
+
+    if endpoint == '':
+        return 'No SPARQL endpoint indicated', 405, {}
+
+    graph = build_graph_uri(username)
+
+    if not graph or graph == '' or graph == 'urn:x-arq:DefaultGraph':
+        return 'Default graph is read only', 403, {}
+
+    query_string = delete_resource(resource_id, username)
+    sparql = SPARQLWrapper(endpoint)
+    sparql.method = 'POST'
+
+    try:
+        sparql.setQuery(query_string)
+        sparql.query()
+    except Exception as e:
+        return "Error delete query", 405, {}
+    return "Deleted", 204, {}
+
+
 '''
 TODO: hack rdflib has some problems
 https://github.com/RDFLib/rdflib/issues/899
@@ -305,6 +328,26 @@ def query_resource(resource_id, username):
             OPTIONAL {{
                 ?prop a ?type
             }}
+        }}
+        '''
+    return query
+
+
+def delete_resource(resource_id, username):
+    resource_uri = build_user_resource_uri(resource_id)
+    if username:
+        graph_uri = build_graph_uri(username)
+        query = f'''
+        DELETE WHERE {{
+            GRAPH <{graph_uri}> {{
+                <{resource_uri}> ?p ?o .
+            }}
+        }}
+        '''
+    else:
+        query = f'''
+        DELETE WHERE {{
+                <{resource_uri}> ?p ?o .
         }}
         '''
     return query

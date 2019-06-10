@@ -7,11 +7,11 @@ from openapi_server.models.parameter import Parameter  # noqa: E501
 
 from openapi_server.models.model_configuration import ModelConfiguration  # noqa: E501
 
-from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource, get_all_resources_related
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource, get_all_resources_related, delete_query
 from openapi_server.static_vars import *
 
 
-#todo: implement
+#todo: implement create_inputs_by_modelconfiguration
 def create_inputs_by_modelconfiguration(id, dataset_specification):  # noqa: E501
     """Creates a new instance of a &#x60;DatasetSpecification&#x60; related as Input.
 
@@ -50,7 +50,7 @@ def create_model_configuration(user):  # noqa: E501
 
     return "Bad request", 400, {}
 
-#todo: implement
+#todo: implement create_parameters_by_modelconfiguration
 def create_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
     """Create the inputs of a model configuration
 
@@ -68,8 +68,7 @@ def create_parameters_by_modelconfiguration(id, parameter):  # noqa: E501
     return "Not Implemented", 501, {}
 
 
-#todo: implement
-def delete_model_configuration(id):  # noqa: E501
+def delete_model_configuration(id, user):  # noqa: E501
     """Delete a ModelConfiguration
 
     Deletes an existing &#x60;ModelConfiguration&#x60;. # noqa: E501
@@ -79,7 +78,10 @@ def delete_model_configuration(id):  # noqa: E501
 
     :rtype: None
     """
-    return "Not Implemented", 501, {}
+    try:
+        return delete_query(id, user)
+    except:
+        return "Bad request", 400, {}
 
 
 def get_inputs_by_modelconfiguration(id, username=None):  # noqa: E501
@@ -129,7 +131,7 @@ def get_model_configurations(username=None):  # noqa: E501
 
 
 
-def get_model_configuraton(id, username=None):  # noqa: E501
+def get_model_configuration(id, username=None):  # noqa: E501
     """Get modelconfiguration
 
     Gets the details of a single instance of a &#x60;ModelConfiguration&#x60;. # noqa: E501
@@ -200,7 +202,7 @@ def get_parameters_by_modelconfiguration(id, username=None):  # noqa: E501
     return parameters
 
 
-#todo: implement
+#todo: implement create_outputs_by_modelconfiguration
 def create_outputs_by_modelconfiguration(id, dataset_specification):  # noqa: E501
     """Create the output of a model configuration
 
@@ -218,8 +220,8 @@ def create_outputs_by_modelconfiguration(id, dataset_specification):  # noqa: E5
     return 'do some magic!'
 
 
-#todo: implement
-def update_model_configuration(id, model_configuration):  # noqa: E501
+#todo: implement update_model_configuration
+def update_model_configuration(id, user):  # noqa: E501
     """Update model configuration
 
      # noqa: E501
@@ -233,4 +235,11 @@ def update_model_configuration(id, model_configuration):  # noqa: E501
     """
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
-    return 'do some magic!'
+        if model_configuration.type:
+            model_configuration.type.append(MODELCONFIGURATION_TYPE)
+        else:
+            model_configuration.type = [MODELCONFIGURATION_TYPE]
+        model_configuration_json = prepare_jsonld(model_configuration, user)
+        delete_query(id, user);
+        return insert_query(model_configuration_json, user)
+    return "Bad request", 400, {}

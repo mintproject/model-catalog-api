@@ -217,7 +217,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
     get:
       description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuraton
+      operationId: get_model_configuration
       parameters:
       - description: A unique identifier for a `ModelConfiguration`.
         explode: false
@@ -903,6 +903,16 @@ paths:
         schema:
           type: string
         style: simple
+      - description: To obtain the results maintained by the MINT project, you must
+          not set up the variable. If you want the results of a user, you must set
+          up the variable with the username
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         400:
           description: Invalid username supplied

@@ -1,7 +1,7 @@
 import connexion
 
 from openapi_server.models.model_version import ModelVersion  # noqa: E501
-from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource, delete_query
 from openapi_server.static_vars import *
 
 
@@ -27,8 +27,8 @@ def create_model_version(user):  # noqa: E501
 
     return "Bad request", 400, {}
 
-#todo: implement
-def delete_model_version(id):  # noqa: E501
+
+def delete_model_version(id, user):  # noqa: E501
     """Delete a ModelVersion
 
     Deletes an existing &#x60;ModelVersion&#x60;. # noqa: E501
@@ -38,8 +38,10 @@ def delete_model_version(id):  # noqa: E501
 
     :rtype: None
     """
-    return "Not Implemented", 501, {}
-
+    try:
+        return delete_query(id, user)
+    except:
+        return "Bad request", 400, {}
 
 def get_model_version(id, username=None):  # noqa: E501
     """Get a ModelVersion
@@ -88,7 +90,7 @@ def get_model_versions(username=None):  # noqa: E501
     return model_versions
 
 
-def update_model_version(id, model_version):  # noqa: E501
+def update_model_version(id, user):  # noqa: E501
     """Update a ModelVersion
 
     Updates an existing &#x60;ModelVersion&#x60;. # noqa: E501
@@ -102,4 +104,11 @@ def update_model_version(id, model_version):  # noqa: E501
     """
     if connexion.request.is_json:
         model_version = ModelVersion.from_dict(connexion.request.get_json())  # noqa: E501
-    return "Not Implemented", 501, {}
+        if model_version.type:
+            model_version.type.append(MODELVERSION_TYPE)
+        else:
+            model_version.type = [MODELVERSION_TYPE]
+        model_version_json = prepare_jsonld(model_version, user)
+        delete_query(id, user);
+        return insert_query(model_version_json, user)
+    return "Bad request", 400, {}

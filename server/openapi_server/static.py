@@ -51,9 +51,9 @@ DEFAULT_ENDPOINT_USER = config.get('defaults', 'user')
 DEFAULT_ENDPOINT_PASSWORD = config.get('defaults', 'password')
 
 DEFAULT_MINT_INSTANCE = "https://w3id.org/instance/mint/"
-ENDPOINT = "https://endpoint.mint.isi.edu"
-UPDATE_ENDPOINT = f'{ENDPOINT}/ds/update'
-QUERY_ENDPOINT = f'{ENDPOINT}/ds/query'
+ENDPOINT = DEFAULT_ENDPOINT
+UPDATE_ENDPOINT = f'{ENDPOINT}/update'
+QUERY_ENDPOINT = f'{ENDPOINT}/query'
 
 # Local folder where queries are loaded from
 LOCAL_SPARQL_DIR = config.get('local', 'local_sparql_dir')
@@ -61,8 +61,6 @@ LOCAL_SPARQL_DIR = config.get('local', 'local_sparql_dir')
 # server name, used by the Flask app and in the swagger spec
 SERVER_NAME = config.get('defaults', 'server_name')
 
-# Pattern for INSERT query call names
-INSERT_PATTERN = "INSERT DATA { GRAPH ?_g_iri { <s> <p> <o> }}"
 
 QUERY_ENDPOINT_GRLC = "https://query.mint.isi.edu/api/mintproject/MINT-ModelCatalogQueries"
 

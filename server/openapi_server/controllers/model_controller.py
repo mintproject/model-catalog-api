@@ -1,7 +1,7 @@
 import connexion
 
 from openapi_server.models.model import Model  # noqa: E501
-from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource
+from endpoint.utils import insert_query, prepare_jsonld, get_all_resource, get_resource, delete_query
 from openapi_server.static_vars import *
 
 
@@ -26,9 +26,7 @@ def create_model(user):  # noqa: E501
 
     return "Bad request", 400, {}
 
-
-#todo: implement
-def delete_model(id):  # noqa: E501
+def delete_model(id, user):  # noqa: E501
     """Delete a Model
 
     Deletes an existing &#x60;Model&#x60;. # noqa: E501
@@ -38,8 +36,10 @@ def delete_model(id):  # noqa: E501
 
     :rtype: None
     """
-    return "Not Implemented", 501, {}
-
+    try:
+        return delete_query(id, user)
+    except:
+        return "Bad request", 400, {}
 
 def get_model(id, username=None):  # noqa: E501
     """Get a Model
@@ -88,7 +88,7 @@ def get_models(username=None):  # noqa: E501
 
 
 #todo: implement
-def update_model(id, model):  # noqa: E501
+def update_model(id, user):  # noqa: E501
     """Update a Model
 
     Updates an existing &#x60;Model&#x60;. # noqa: E501
@@ -102,4 +102,11 @@ def update_model(id, model):  # noqa: E501
     """
     if connexion.request.is_json:
         model = Model.from_dict(connexion.request.get_json())  # noqa: E501
-    return "Not Implemented", 501, {}
+        if model.type:
+            model.type.append(MODEL_TYPE)
+        else:
+            model.type = [MODEL_TYPE]
+        model_json = prepare_jsonld(model, user)
+        delete_query(id, user);
+        return insert_query(model_json, user)
+    return "Bad request", 400, {}

@@ -26,7 +26,6 @@ def create_parameter(user):  # noqa: E501
 
     return "Bad request", 400, {}
 
-
 def get_parameters(username=None):  # noqa: E501
     """List All Parameters
 
