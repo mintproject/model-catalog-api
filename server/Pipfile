@@ -20,6 +20,7 @@ pyld = "*"
 flask-sqlalchemy = "*"
 Jinja2 = ">=2.10.1"
 urllib3 = ">=1.24.2"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.7"

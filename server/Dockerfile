@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-RUN apk add --no-cache build-base openssl-dev libffi-dev
+RUN apk add --no-cache build-base openssl-dev libffi-dev python-dev alpine-sdk mariadb-connector-c mariadb-connector-c-dev
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
