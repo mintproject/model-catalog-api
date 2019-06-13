@@ -1,15 +1,22 @@
 version: '3'
 services:
-  api-modelcatalog-prod:
+  api:
     image: "mint-project/api-modelcatalog:prod"
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - database_prod:/usr/src/app/openapi_server/database/
     ports:
       - 8082:8080
-
-
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: users
+      MYSQL_USER: api
+      MYSQL_PASSWORD: example
+    volumes:
+      - db:/var/lib/mysql
 volumes:
-    database_prod:
+  db:

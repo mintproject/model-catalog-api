@@ -5,6 +5,7 @@ import connexion
 from openapi_server import encoder
 from openapi_server.config import app
 
+import os
 
 def main():
     app.app.json_encoder = encoder.JSONEncoder
