@@ -1,13 +1,13 @@
 version: '3'
 services:
-  api:
+  api-prod:
     image: "mint-project/api-modelcatalog:prod"
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 8082:8080
-  db:
+  db-prod:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
