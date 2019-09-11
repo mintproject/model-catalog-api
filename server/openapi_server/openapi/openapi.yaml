@@ -1,69 +1,23 @@
 openapi: 3.0.1
 info:
-  contact:
-    email: mosorio@isi.edu
-  description: This is MINT Model Catalog You can find out more about     Model Catalog
+  description: This is MINT Model Catalog You can find out more about Model Catalog
     at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
-  termsOfService: http://swagger.io/terms/
   title: Model Catalog
-  version: 0.0.2
+  version: v1.0.0
 externalDocs:
-  description: Find out more about MINT
-  url: http://mint.isi.edu
+  description: Model Catalog
+  url: https://w3id.org/mint/modelCatalog/
 servers:
-- url: https://api.models.mint.isi.edu/v0.0.2
-- url: https://dev.api.models.mint.isi.edu/v0.0.2
-- url: http://localhost:8080/v0.0.2
+- url: https://api.models.mint.isi.edu/v1.0.0
+- url: https://dev.api.models.mint.isi.edu/v1.0.0
+- url: http://localhost:8080/v1.0.0
 paths:
-  /datasetspecification/{id}/variablepresentations:
+  /causaldiagrams:
     get:
-      description: Gets a list of all `VariablePresentation` entities.
-      operationId: datasetspecification_id_variablepresentations_get
+      description: Gets a list of all CausalDiagram entities
+      operationId: causaldiagrams_get
       parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: A unique identifier for a `DatasetSpecification`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/VariablePresentation'
-                type: array
-          description: Successful response - returns an array of `VariablePresentation`
-            entities.
-      security: []
-      summary: List variable presentations related with a datasetspecification
-      tags:
-      - variablespresentations
-      x-openapi-router-controller: openapi_server.controllers.variablespresentations_controller
-  /datasetspecifications:
-    get:
-      description: Gets a list of all `datasetspecification` entities.
-      operationId: get_data_sets
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -77,40 +31,36 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/DatasetSpecification'
+                  $ref: '#/components/schemas/CausalDiagram'
                 type: array
-          description: Successful response - returns an array of `datasetspecification`
-            entities.
-      security: []
-      summary: List All datasetspecifications
+          description: Successful response - returns an array of CausalDiagram entities.
+      summary: List all CausalDiagram entities
       tags:
-      - datasetspecification
-      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
+      - CausalDiagram
+      x-openapi-router-controller: openapi_server.controllers.causal_diagram_controller
     post:
-      description: Creates a new instance of a `datasetspecification`.
-      operationId: create_data_set
+      description: Create a new instance of a CausalDiagram
+      operationId: causaldiagrams_post
+      parameters: []
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DatasetSpecification'
-        description: A new `datasetspecification` to be created.
-        required: true
+              $ref: '#/components/schemas/CausalDiagram'
+        description: A new CausalDiagramto be created
       responses:
         201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a datasetspecification
+          description: Created
+      summary: Create a CausalDiagram
       tags:
-      - datasetspecification
-      x-openapi-router-controller: openapi_server.controllers.datasetspecification_controller
-  /model/{id}:
+      - CausalDiagram
+      x-openapi-router-controller: openapi_server.controllers.causal_diagram_controller
+  /causaldiagrams/{id}:
     delete:
-      description: Deletes an existing `Model`.
-      operationId: delete_model
+      description: Delete an existing CausalDiagram
+      operationId: causaldiagrams_id_delete
       parameters:
-      - description: A unique identifier for a `Model`.
+      - description: The ID of the resource
         explode: false
         in: path
         name: id
@@ -118,118 +68,20 @@ paths:
         schema:
           type: string
         style: simple
-      responses:
-        204:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Delete a Model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-    get:
-      description: Gets the details of a single instance of a `Model`.
-      operationId: get_model
-      parameters:
-      - description: A unique identifier for a `Model`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Model'
-          description: Successful response - returns a single `Model`.
-      security: []
-      summary: Get a Model
-      tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-    put:
-      description: Updates an existing `Model`.
-      operationId: update_model
-      parameters:
-      - description: A unique identifier for a `Model`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Model'
-        description: Updated `Model` information.
-        required: true
       responses:
         202:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Update a Model
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a CausalDiagram
       tags:
-      - model
-      x-openapi-router-controller: openapi_server.controllers.model_controller
-  /modelconfiguration/{id}:
-    delete:
-      description: Deletes an existing `ModelConfiguration`.
-      operationId: delete_model_configuration
-      parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        204:
-          description: Successful response.
-        400:
-          description: Invalid ID supplied
-        403:
-          description: You don't the permissions
-      security:
-      - BearerAuth: []
-      summary: Delete a ModelConfiguration
-      tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - CausalDiagram
+      x-openapi-router-controller: openapi_server.controllers.causal_diagram_controller
     get:
-      description: Gets the details of a single instance of a `ModelConfiguration`.
-      operationId: get_model_configuration
+      description: Gets the details of a single instance of a CausalDiagram
+      operationId: causaldiagrams_id_get
       parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -237,26 +89,30 @@ paths:
         schema:
           type: string
         style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ModelConfiguration'
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get modelconfiguration
+                $ref: '#/components/schemas/CausalDiagram'
+          description: Gets the details of a single instance of  CausalDiagram
+      summary: Get a CausalDiagram
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - CausalDiagram
+      x-openapi-router-controller: openapi_server.controllers.causal_diagram_controller
     put:
-      operationId: update_model_configuration
+      description: Updates an existing CausalDiagram
+      operationId: causaldiagrams_id_put
       parameters:
-      - description: A unique identifier for a `ModelConfiguration`.
+      - description: The ID of the resource
         explode: false
         in: path
         name: id
@@ -268,33 +124,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ModelConfiguration'
-        required: true
+              $ref: '#/components/schemas/CausalDiagram'
+        description: An old CausalDiagramto be updated
       responses:
         200:
           description: Updated
-      security:
-      - BearerAuth: []
-      summary: Update model configuration
+        404:
+          description: Not Found
+      summary: Update a CausalDiagram
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/inputs:
+      - CausalDiagram
+      x-openapi-router-controller: openapi_server.controllers.causal_diagram_controller
+  /empiricalmodels:
     get:
-      operationId: get_inputs_by_modelconfiguration
+      description: Gets a list of all EmpiricalModel entities
+      operationId: empiricalmodels_get
       parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -308,22 +154,89 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/DatasetSpecification'
+                  $ref: '#/components/schemas/EmpiricalModel'
                 type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the inputs of a model configuration
+          description: Successful response - returns an array of EmpiricalModel entities.
+      summary: List all EmpiricalModel entities
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - EmpiricalModel
+      x-openapi-router-controller: openapi_server.controllers.empirical_model_controller
     post:
-      operationId: create_inputs_by_modelconfiguration
+      description: Create a new instance of a EmpiricalModel
+      operationId: empiricalmodels_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmpiricalModel'
+        description: A new EmpiricalModelto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a EmpiricalModel
+      tags:
+      - EmpiricalModel
+      x-openapi-router-controller: openapi_server.controllers.empirical_model_controller
+  /empiricalmodels/{id}:
+    delete:
+      description: Delete an existing EmpiricalModel
+      operationId: empiricalmodels_id_delete
       parameters:
-      - explode: false
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a EmpiricalModel
+      tags:
+      - EmpiricalModel
+      x-openapi-router-controller: openapi_server.controllers.empirical_model_controller
+    get:
+      description: Gets the details of a single instance of a EmpiricalModel
+      operationId: empiricalmodels_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmpiricalModel'
+          description: Gets the details of a single instance of  EmpiricalModel
+      summary: Get a EmpiricalModel
+      tags:
+      - EmpiricalModel
+      x-openapi-router-controller: openapi_server.controllers.empirical_model_controller
+    put:
+      description: Updates an existing EmpiricalModel
+      operationId: empiricalmodels_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
         in: path
         name: id
         required: true
@@ -334,51 +247,23 @@ paths:
         content:
           application/json:
             schema:
-              items:
-                $ref: '#/components/schemas/DatasetSpecification'
-              type: array
-        required: true
+              $ref: '#/components/schemas/EmpiricalModel'
+        description: An old EmpiricalModelto be updated
       responses:
-        201:
-          description: Created
-        400:
-          description: Request body is incorrect
-        403:
-          content:
-            application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
-              schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Creates a new instance of a `DatasetSpecification` related as Input.
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a EmpiricalModel
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/outputs:
+      - EmpiricalModel
+      x-openapi-router-controller: openapi_server.controllers.empirical_model_controller
+  /emulators:
     get:
-      operationId: get_outputs_by_modelconfiguration
+      description: Gets a list of all Emulator entities
+      operationId: emulators_get
       parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -392,22 +277,89 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/DatasetSpecification'
+                  $ref: '#/components/schemas/Emulator'
                 type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the outputs of a model configuration
+          description: Successful response - returns an array of Emulator entities.
+      summary: List all Emulator entities
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - Emulator
+      x-openapi-router-controller: openapi_server.controllers.emulator_controller
     post:
-      operationId: create_outputs_by_modelconfiguration
+      description: Create a new instance of a Emulator
+      operationId: emulators_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Emulator'
+        description: A new Emulatorto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Emulator
+      tags:
+      - Emulator
+      x-openapi-router-controller: openapi_server.controllers.emulator_controller
+  /emulators/{id}:
+    delete:
+      description: Delete an existing Emulator
+      operationId: emulators_id_delete
       parameters:
-      - explode: false
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Emulator
+      tags:
+      - Emulator
+      x-openapi-router-controller: openapi_server.controllers.emulator_controller
+    get:
+      description: Gets the details of a single instance of a Emulator
+      operationId: emulators_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emulator'
+          description: Gets the details of a single instance of  Emulator
+      summary: Get a Emulator
+      tags:
+      - Emulator
+      x-openapi-router-controller: openapi_server.controllers.emulator_controller
+    put:
+      description: Updates an existing Emulator
+      operationId: emulators_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
         in: path
         name: id
         required: true
@@ -418,51 +370,23 @@ paths:
         content:
           application/json:
             schema:
-              items:
-                $ref: '#/components/schemas/DatasetSpecification'
-              type: array
-        required: true
+              $ref: '#/components/schemas/Emulator'
+        description: An old Emulatorto be updated
       responses:
-        201:
-          description: Created
-        400:
-          description: Request body is incorrect
-        403:
-          content:
-            application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
-              schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Create the output of a model configuration
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Emulator
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
-  /modelconfiguration/{id}/parameters:
+      - Emulator
+      x-openapi-router-controller: openapi_server.controllers.emulator_controller
+  /equations:
     get:
-      operationId: get_parameters_by_modelconfiguration
+      description: Gets a list of all Equation entities
+      operationId: equations_get
       parameters:
-      - description: |
-          The name of the resource
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -476,24 +400,89 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Parameter'
+                  $ref: '#/components/schemas/Equation'
                 type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-        404:
-          description: Model Configuration not found
-      security: []
-      summary: Get the parameters of a model configuration
+          description: Successful response - returns an array of Equation entities.
+      summary: List all Equation entities
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - Equation
+      x-openapi-router-controller: openapi_server.controllers.equation_controller
     post:
-      description: Creates a new instance of a `DatasetSpecification` and it related
-        with the `ModelConfiguration`.
-      operationId: create_parameters_by_modelconfiguration
+      description: Create a new instance of a Equation
+      operationId: equations_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Equation'
+        description: A new Equationto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Equation
+      tags:
+      - Equation
+      x-openapi-router-controller: openapi_server.controllers.equation_controller
+  /equations/{id}:
+    delete:
+      description: Delete an existing Equation
+      operationId: equations_id_delete
       parameters:
-      - explode: false
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Equation
+      tags:
+      - Equation
+      x-openapi-router-controller: openapi_server.controllers.equation_controller
+    get:
+      description: Gets the details of a single instance of a Equation
+      operationId: equations_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Equation'
+          description: Gets the details of a single instance of  Equation
+      summary: Get a Equation
+      tags:
+      - Equation
+      x-openapi-router-controller: openapi_server.controllers.equation_controller
+    put:
+      description: Updates an existing Equation
+      operationId: equations_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
         in: path
         name: id
         required: true
@@ -504,42 +493,515 @@ paths:
         content:
           application/json:
             schema:
-              items:
-                $ref: '#/components/schemas/Parameter'
-              type: array
-        required: true
+              $ref: '#/components/schemas/Equation'
+        description: An old Equationto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Equation
+      tags:
+      - Equation
+      x-openapi-router-controller: openapi_server.controllers.equation_controller
+  /geocoordinatess:
+    get:
+      description: Gets a list of all GeoCoordinates entities
+      operationId: geocoordinatess_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GeoCoordinates'
+                type: array
+          description: Successful response - returns an array of GeoCoordinates entities.
+      summary: List all GeoCoordinates entities
+      tags:
+      - GeoCoordinates
+      x-openapi-router-controller: openapi_server.controllers.geo_coordinates_controller
+    post:
+      description: Create a new instance of a GeoCoordinates
+      operationId: geocoordinatess_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoCoordinates'
+        description: A new GeoCoordinatesto be created
       responses:
         201:
           description: Created
-        400:
-          description: Request body is incorrect
-        403:
+      summary: Create a GeoCoordinates
+      tags:
+      - GeoCoordinates
+      x-openapi-router-controller: openapi_server.controllers.geo_coordinates_controller
+  /geocoordinatess/{id}:
+    delete:
+      description: Delete an existing GeoCoordinates
+      operationId: geocoordinatess_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a GeoCoordinates
+      tags:
+      - GeoCoordinates
+      x-openapi-router-controller: openapi_server.controllers.geo_coordinates_controller
+    get:
+      description: Gets the details of a single instance of a GeoCoordinates
+      operationId: geocoordinatess_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
           content:
             application/json:
-              examples:
-                exit:
-                  value: |-
-                    {
-                        "code": 30,
-                        "type": "some text",
-                        "message": "some text"
-                    }
               schema:
-                $ref: '#/components/schemas/ApiResponse'
-          description: You are not authorized to do that
-      security:
-      - BearerAuth: []
-      summary: Create the inputs of a model configuration
+                $ref: '#/components/schemas/GeoCoordinates'
+          description: Gets the details of a single instance of  GeoCoordinates
+      summary: Get a GeoCoordinates
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - GeoCoordinates
+      x-openapi-router-controller: openapi_server.controllers.geo_coordinates_controller
+    put:
+      description: Updates an existing GeoCoordinates
+      operationId: geocoordinatess_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoCoordinates'
+        description: An old GeoCoordinatesto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a GeoCoordinates
+      tags:
+      - GeoCoordinates
+      x-openapi-router-controller: openapi_server.controllers.geo_coordinates_controller
+  /geoshapes:
+    get:
+      description: Gets a list of all GeoShape entities
+      operationId: geoshapes_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GeoShape'
+                type: array
+          description: Successful response - returns an array of GeoShape entities.
+      summary: List all GeoShape entities
+      tags:
+      - GeoShape
+      x-openapi-router-controller: openapi_server.controllers.geo_shape_controller
+    post:
+      description: Create a new instance of a GeoShape
+      operationId: geoshapes_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoShape'
+        description: A new GeoShapeto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a GeoShape
+      tags:
+      - GeoShape
+      x-openapi-router-controller: openapi_server.controllers.geo_shape_controller
+  /geoshapes/{id}:
+    delete:
+      description: Delete an existing GeoShape
+      operationId: geoshapes_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a GeoShape
+      tags:
+      - GeoShape
+      x-openapi-router-controller: openapi_server.controllers.geo_shape_controller
+    get:
+      description: Gets the details of a single instance of a GeoShape
+      operationId: geoshapes_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeoShape'
+          description: Gets the details of a single instance of  GeoShape
+      summary: Get a GeoShape
+      tags:
+      - GeoShape
+      x-openapi-router-controller: openapi_server.controllers.geo_shape_controller
+    put:
+      description: Updates an existing GeoShape
+      operationId: geoshapes_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeoShape'
+        description: An old GeoShapeto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a GeoShape
+      tags:
+      - GeoShape
+      x-openapi-router-controller: openapi_server.controllers.geo_shape_controller
+  /grids:
+    get:
+      description: Gets a list of all Grid entities
+      operationId: grids_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Grid'
+                type: array
+          description: Successful response - returns an array of Grid entities.
+      summary: List all Grid entities
+      tags:
+      - Grid
+      x-openapi-router-controller: openapi_server.controllers.grid_controller
+    post:
+      description: Create a new instance of a Grid
+      operationId: grids_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Grid'
+        description: A new Gridto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Grid
+      tags:
+      - Grid
+      x-openapi-router-controller: openapi_server.controllers.grid_controller
+  /grids/{id}:
+    delete:
+      description: Delete an existing Grid
+      operationId: grids_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Grid
+      tags:
+      - Grid
+      x-openapi-router-controller: openapi_server.controllers.grid_controller
+    get:
+      description: Gets the details of a single instance of a Grid
+      operationId: grids_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Grid'
+          description: Gets the details of a single instance of  Grid
+      summary: Get a Grid
+      tags:
+      - Grid
+      x-openapi-router-controller: openapi_server.controllers.grid_controller
+    put:
+      description: Updates an existing Grid
+      operationId: grids_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Grid'
+        description: An old Gridto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Grid
+      tags:
+      - Grid
+      x-openapi-router-controller: openapi_server.controllers.grid_controller
+  /hybridmodels:
+    get:
+      description: Gets a list of all HybridModel entities
+      operationId: hybridmodels_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HybridModel'
+                type: array
+          description: Successful response - returns an array of HybridModel entities.
+      summary: List all HybridModel entities
+      tags:
+      - HybridModel
+      x-openapi-router-controller: openapi_server.controllers.hybrid_model_controller
+    post:
+      description: Create a new instance of a HybridModel
+      operationId: hybridmodels_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HybridModel'
+        description: A new HybridModelto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a HybridModel
+      tags:
+      - HybridModel
+      x-openapi-router-controller: openapi_server.controllers.hybrid_model_controller
+  /hybridmodels/{id}:
+    delete:
+      description: Delete an existing HybridModel
+      operationId: hybridmodels_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a HybridModel
+      tags:
+      - HybridModel
+      x-openapi-router-controller: openapi_server.controllers.hybrid_model_controller
+    get:
+      description: Gets the details of a single instance of a HybridModel
+      operationId: hybridmodels_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HybridModel'
+          description: Gets the details of a single instance of  HybridModel
+      summary: Get a HybridModel
+      tags:
+      - HybridModel
+      x-openapi-router-controller: openapi_server.controllers.hybrid_model_controller
+    put:
+      description: Updates an existing HybridModel
+      operationId: hybridmodels_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HybridModel'
+        description: An old HybridModelto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a HybridModel
+      tags:
+      - HybridModel
+      x-openapi-router-controller: openapi_server.controllers.hybrid_model_controller
   /modelconfigurations:
     get:
-      operationId: get_model_configurations
+      description: Gets a list of all ModelConfiguration entities
+      operationId: modelconfigurations_get
       parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -555,43 +1017,115 @@ paths:
                 items:
                   $ref: '#/components/schemas/ModelConfiguration'
                 type: array
-          description: successful operation
-        400:
-          description: Invalid uri supplied
-      security: []
-      summary: List modelconfiguration
+          description: Successful response - returns an array of ModelConfiguration
+            entities.
+      summary: List all ModelConfiguration entities
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - ModelConfiguration
+      x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
     post:
-      operationId: create_model_configuration
+      description: Create a new instance of a ModelConfiguration
+      operationId: modelconfigurations_post
+      parameters: []
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/ModelConfiguration'
-        required: true
+        description: A new ModelConfigurationto be created
       responses:
         201:
-          content:
-            application/json: {}
           description: Created
-        400:
-          description: Invalid
-      security:
-      - BearerAuth: []
-      summary: Create a model configuration
+      summary: Create a ModelConfiguration
       tags:
-      - modelconfiguration
-      x-openapi-router-controller: openapi_server.controllers.modelconfiguration_controller
+      - ModelConfiguration
+      x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
+  /modelconfigurations/{id}:
+    delete:
+      description: Delete an existing ModelConfiguration
+      operationId: modelconfigurations_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a ModelConfiguration
+      tags:
+      - ModelConfiguration
+      x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
+    get:
+      description: Gets the details of a single instance of a ModelConfiguration
+      operationId: modelconfigurations_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
+          description: Gets the details of a single instance of  ModelConfiguration
+      summary: Get a ModelConfiguration
+      tags:
+      - ModelConfiguration
+      x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
+    put:
+      description: Updates an existing ModelConfiguration
+      operationId: modelconfigurations_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelConfiguration'
+        description: An old ModelConfigurationto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a ModelConfiguration
+      tags:
+      - ModelConfiguration
+      x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
   /models:
     get:
-      description: Gets a list of all `model` entities.
-      operationId: get_models
+      description: Gets a list of all Model entities
+      operationId: models_get
       parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
+      - description: Username to query
         explode: true
         in: query
         name: username
@@ -607,37 +1141,34 @@ paths:
                 items:
                   $ref: '#/components/schemas/Model'
                 type: array
-          description: Successful response - returns an array of `model` entities.
-      security: []
-      summary: List All models
+          description: Successful response - returns an array of Model entities.
+      summary: List all Model entities
       tags:
-      - model
+      - Model
       x-openapi-router-controller: openapi_server.controllers.model_controller
     post:
-      description: Creates a new instance of a `model`.
-      operationId: create_model
+      description: Create a new instance of a Model
+      operationId: models_post
+      parameters: []
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Model'
-        description: A new `model` to be created.
-        required: true
+        description: A new Modelto be created
       responses:
         201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a model
+          description: Created
+      summary: Create a Model
       tags:
-      - model
+      - Model
       x-openapi-router-controller: openapi_server.controllers.model_controller
-  /modelversion/{id}:
+  /models/{id}:
     delete:
-      description: Deletes an existing `ModelVersion`.
-      operationId: delete_model_version
+      description: Delete an existing Model
+      operationId: models_id_delete
       parameters:
-      - description: A unique identifier for a `ModelVersion`.
+      - description: The ID of the resource
         explode: false
         in: path
         name: id
@@ -645,290 +1176,31 @@ paths:
         schema:
           type: string
         style: simple
-      responses:
-        204:
-          description: Successful response.
-      security: []
-      summary: Delete a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    get:
-      description: Gets the details of a single instance of a `ModelVersion`.
-      operationId: get_model_version
-      parameters:
-      - description: A unique identifier for a `ModelVersion`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelVersion'
-          description: Successful response - returns a single `ModelVersion`.
-      security: []
-      summary: Get a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    put:
-      description: Updates an existing `ModelVersion`.
-      operationId: update_model_version
-      parameters:
-      - description: A unique identifier for a `ModelVersion`.
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelVersion'
-        description: Updated `ModelVersion` information.
-        required: true
       responses:
         202:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Update a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-  /modelversions:
-    get:
-      description: Gets a list of all `ModelVersion` entities.
-      operationId: get_model_versions
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ModelVersion'
-                type: array
-          description: Successful response - returns an array of `ModelVersion` entities.
-      security: []
-      summary: List All ModelVersions
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-    post:
-      description: Creates a new instance of a `ModelVersion`.
-      operationId: create_model_version
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ModelVersion'
-        description: A new `ModelVersion` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a ModelVersion
-      tags:
-      - modelversion
-      x-openapi-router-controller: openapi_server.controllers.modelversion_controller
-  /parameters:
-    get:
-      description: Gets a list of all `Parameter` entities.
-      operationId: get_parameters
-      parameters:
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Parameter'
-                type: array
-          description: Successful response - returns an array of `Parameter` entities.
-      security: []
-      summary: List All Parameters
-      tags:
-      - parameter
-      x-openapi-router-controller: openapi_server.controllers.parameter_controller
-    post:
-      description: Creates a new instance of a `Parameter`.
-      operationId: create_parameter
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Parameter'
-        description: A new `Parameter` to be created.
-        required: true
-      responses:
-        201:
-          description: Successful response.
-      security:
-      - BearerAuth: []
-      summary: Create a Parameter
-      tags:
-      - parameter
-      x-openapi-router-controller: openapi_server.controllers.parameter_controller
-  /user:
-    post:
-      description: This can only be done by the logged in user.
-      operationId: create_user
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-        description: Created user object
-        required: true
-      responses:
-        default:
-          description: successful operation
-      summary: Create user
-      tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
-  /user/login:
-    get:
-      operationId: login_user
-      parameters:
-      - description: The user name for login
-        explode: true
-        in: query
-        name: username
-        required: true
-        schema:
-          type: string
-        style: form
-      - description: The password for login in clear text
-        explode: true
-        in: query
-        name: password
-        required: true
-        schema:
-          type: string
-        style: form
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: string
-            application/xml:
-              schema:
-                type: string
-          description: successful operation
-          headers:
-            X-Rate-Limit:
-              description: calls per hour allowed by the user
-              explode: false
-              schema:
-                format: int32
-                type: integer
-              style: simple
-            X-Expires-After:
-              description: date in UTC when token expires
-              explode: false
-              schema:
-                format: date-time
-                type: string
-              style: simple
-        400:
-          description: Invalid username/password supplied
-      summary: Logs user into the system
-      tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
-  /user/logout:
-    get:
-      operationId: logout_user
-      responses:
-        default:
-          description: successful operation
-      summary: Logs out current logged in user session
-      tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
-  /user/{username}:
-    delete:
-      description: This can only be done by the logged in user.
-      operationId: delete_user
-      parameters:
-      - description: The name that needs to be deleted
-        explode: false
-        in: path
-        name: username
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: To obtain the results maintained by the MINT project, you must
-          not set up the variable. If you want the results of a user, you must set
-          up the variable with the username
-        explode: true
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        400:
-          description: Invalid username supplied
+          description: Deleted
         404:
-          description: User not found
-      summary: Delete user
+          description: Not Found
+      summary: Delete a Model
       tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
+      - Model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
     get:
-      operationId: get_user_by_name
+      description: Gets the details of a single instance of a Model
+      operationId: models_id_get
       parameters:
-      - description: The name that needs to be fetched. Use user1 for testing.
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
         explode: false
         in: path
-        name: username
+        name: id
         required: true
         schema:
           type: string
@@ -938,27 +1210,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
-          description: successful operation
-        400:
-          description: Invalid username supplied
-        404:
-          description: User not found
-      summary: Get user by user name
+                $ref: '#/components/schemas/Model'
+          description: Gets the details of a single instance of  Model
+      summary: Get a Model
       tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
+      - Model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
     put:
-      description: This can only be done by the logged in user.
-      operationId: update_user
+      description: Updates an existing Model
+      operationId: models_id_put
       parameters:
-      - description: name that need to be updated
+      - description: The ID of the resource
         explode: false
         in: path
-        name: username
+        name: id
         required: true
         schema:
           type: string
@@ -967,49 +1232,903 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
-        description: Updated user object
-        required: true
+              $ref: '#/components/schemas/Model'
+        description: An old Modelto be updated
       responses:
-        400:
-          description: Invalid user supplied
+        200:
+          description: Updated
         404:
-          description: User not found
-      security:
-      - BearerAuth: []
-      summary: Updated user
+          description: Not Found
+      summary: Update a Model
       tags:
-      - user
-      x-openapi-router-controller: openapi_server.controllers.user_controller
+      - Model
+      x-openapi-router-controller: openapi_server.controllers.model_controller
+  /pointbasedgrids:
+    get:
+      description: Gets a list of all PointBasedGrid entities
+      operationId: pointbasedgrids_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/PointBasedGrid'
+                type: array
+          description: Successful response - returns an array of PointBasedGrid entities.
+      summary: List all PointBasedGrid entities
+      tags:
+      - PointBasedGrid
+      x-openapi-router-controller: openapi_server.controllers.point_based_grid_controller
+    post:
+      description: Create a new instance of a PointBasedGrid
+      operationId: pointbasedgrids_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PointBasedGrid'
+        description: A new PointBasedGridto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a PointBasedGrid
+      tags:
+      - PointBasedGrid
+      x-openapi-router-controller: openapi_server.controllers.point_based_grid_controller
+  /pointbasedgrids/{id}:
+    delete:
+      description: Delete an existing PointBasedGrid
+      operationId: pointbasedgrids_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a PointBasedGrid
+      tags:
+      - PointBasedGrid
+      x-openapi-router-controller: openapi_server.controllers.point_based_grid_controller
+    get:
+      description: Gets the details of a single instance of a PointBasedGrid
+      operationId: pointbasedgrids_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointBasedGrid'
+          description: Gets the details of a single instance of  PointBasedGrid
+      summary: Get a PointBasedGrid
+      tags:
+      - PointBasedGrid
+      x-openapi-router-controller: openapi_server.controllers.point_based_grid_controller
+    put:
+      description: Updates an existing PointBasedGrid
+      operationId: pointbasedgrids_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PointBasedGrid'
+        description: An old PointBasedGridto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a PointBasedGrid
+      tags:
+      - PointBasedGrid
+      x-openapi-router-controller: openapi_server.controllers.point_based_grid_controller
+  /processs:
+    get:
+      description: Gets a list of all Process entities
+      operationId: processs_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Process'
+                type: array
+          description: Successful response - returns an array of Process entities.
+      summary: List all Process entities
+      tags:
+      - Process
+      x-openapi-router-controller: openapi_server.controllers.process_controller
+    post:
+      description: Create a new instance of a Process
+      operationId: processs_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Process'
+        description: A new Processto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Process
+      tags:
+      - Process
+      x-openapi-router-controller: openapi_server.controllers.process_controller
+  /processs/{id}:
+    delete:
+      description: Delete an existing Process
+      operationId: processs_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Process
+      tags:
+      - Process
+      x-openapi-router-controller: openapi_server.controllers.process_controller
+    get:
+      description: Gets the details of a single instance of a Process
+      operationId: processs_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Process'
+          description: Gets the details of a single instance of  Process
+      summary: Get a Process
+      tags:
+      - Process
+      x-openapi-router-controller: openapi_server.controllers.process_controller
+    put:
+      description: Updates an existing Process
+      operationId: processs_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Process'
+        description: An old Processto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Process
+      tags:
+      - Process
+      x-openapi-router-controller: openapi_server.controllers.process_controller
+  /regions:
+    get:
+      description: Gets a list of all Region entities
+      operationId: regions_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Region'
+                type: array
+          description: Successful response - returns an array of Region entities.
+      summary: List all Region entities
+      tags:
+      - Region
+      x-openapi-router-controller: openapi_server.controllers.region_controller
+    post:
+      description: Create a new instance of a Region
+      operationId: regions_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+        description: A new Regionto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Region
+      tags:
+      - Region
+      x-openapi-router-controller: openapi_server.controllers.region_controller
+  /regions/{id}:
+    delete:
+      description: Delete an existing Region
+      operationId: regions_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Region
+      tags:
+      - Region
+      x-openapi-router-controller: openapi_server.controllers.region_controller
+    get:
+      description: Gets the details of a single instance of a Region
+      operationId: regions_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+          description: Gets the details of a single instance of  Region
+      summary: Get a Region
+      tags:
+      - Region
+      x-openapi-router-controller: openapi_server.controllers.region_controller
+    put:
+      description: Updates an existing Region
+      operationId: regions_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Region'
+        description: An old Regionto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Region
+      tags:
+      - Region
+      x-openapi-router-controller: openapi_server.controllers.region_controller
+  /spatiallydistributedgrids:
+    get:
+      description: Gets a list of all SpatiallyDistributedGrid entities
+      operationId: spatiallydistributedgrids_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/SpatiallyDistributedGrid'
+                type: array
+          description: Successful response - returns an array of SpatiallyDistributedGrid
+            entities.
+      summary: List all SpatiallyDistributedGrid entities
+      tags:
+      - SpatiallyDistributedGrid
+      x-openapi-router-controller: openapi_server.controllers.spatially_distributed_grid_controller
+    post:
+      description: Create a new instance of a SpatiallyDistributedGrid
+      operationId: spatiallydistributedgrids_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpatiallyDistributedGrid'
+        description: A new SpatiallyDistributedGridto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a SpatiallyDistributedGrid
+      tags:
+      - SpatiallyDistributedGrid
+      x-openapi-router-controller: openapi_server.controllers.spatially_distributed_grid_controller
+  /spatiallydistributedgrids/{id}:
+    delete:
+      description: Delete an existing SpatiallyDistributedGrid
+      operationId: spatiallydistributedgrids_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a SpatiallyDistributedGrid
+      tags:
+      - SpatiallyDistributedGrid
+      x-openapi-router-controller: openapi_server.controllers.spatially_distributed_grid_controller
+    get:
+      description: Gets the details of a single instance of a SpatiallyDistributedGrid
+      operationId: spatiallydistributedgrids_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatiallyDistributedGrid'
+          description: Gets the details of a single instance of  SpatiallyDistributedGrid
+      summary: Get a SpatiallyDistributedGrid
+      tags:
+      - SpatiallyDistributedGrid
+      x-openapi-router-controller: openapi_server.controllers.spatially_distributed_grid_controller
+    put:
+      description: Updates an existing SpatiallyDistributedGrid
+      operationId: spatiallydistributedgrids_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpatiallyDistributedGrid'
+        description: An old SpatiallyDistributedGridto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a SpatiallyDistributedGrid
+      tags:
+      - SpatiallyDistributedGrid
+      x-openapi-router-controller: openapi_server.controllers.spatially_distributed_grid_controller
+  /spatialresolutions:
+    get:
+      description: Gets a list of all SpatialResolution entities
+      operationId: spatialresolutions_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/SpatialResolution'
+                type: array
+          description: Successful response - returns an array of SpatialResolution
+            entities.
+      summary: List all SpatialResolution entities
+      tags:
+      - SpatialResolution
+      x-openapi-router-controller: openapi_server.controllers.spatial_resolution_controller
+    post:
+      description: Create a new instance of a SpatialResolution
+      operationId: spatialresolutions_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpatialResolution'
+        description: A new SpatialResolutionto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a SpatialResolution
+      tags:
+      - SpatialResolution
+      x-openapi-router-controller: openapi_server.controllers.spatial_resolution_controller
+  /spatialresolutions/{id}:
+    delete:
+      description: Delete an existing SpatialResolution
+      operationId: spatialresolutions_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a SpatialResolution
+      tags:
+      - SpatialResolution
+      x-openapi-router-controller: openapi_server.controllers.spatial_resolution_controller
+    get:
+      description: Gets the details of a single instance of a SpatialResolution
+      operationId: spatialresolutions_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatialResolution'
+          description: Gets the details of a single instance of  SpatialResolution
+      summary: Get a SpatialResolution
+      tags:
+      - SpatialResolution
+      x-openapi-router-controller: openapi_server.controllers.spatial_resolution_controller
+    put:
+      description: Updates an existing SpatialResolution
+      operationId: spatialresolutions_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpatialResolution'
+        description: An old SpatialResolutionto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a SpatialResolution
+      tags:
+      - SpatialResolution
+      x-openapi-router-controller: openapi_server.controllers.spatial_resolution_controller
+  /theory-guidedmodels:
+    get:
+      description: Gets a list of all Theory-GuidedModel entities
+      operationId: theory_guidedmodels_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Theory-GuidedModel'
+                type: array
+          description: Successful response - returns an array of Theory-GuidedModel
+            entities.
+      summary: List all Theory-GuidedModel entities
+      tags:
+      - Theory-GuidedModel
+      x-openapi-router-controller: openapi_server.controllers.theory_guided_model_controller
+    post:
+      description: Create a new instance of a Theory-GuidedModel
+      operationId: theory_guidedmodels_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Theory-GuidedModel'
+        description: A new Theory-GuidedModelto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a Theory-GuidedModel
+      tags:
+      - Theory-GuidedModel
+      x-openapi-router-controller: openapi_server.controllers.theory_guided_model_controller
+  /theory-guidedmodels/{id}:
+    delete:
+      description: Delete an existing Theory-GuidedModel
+      operationId: theory_guidedmodels_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a Theory-GuidedModel
+      tags:
+      - Theory-GuidedModel
+      x-openapi-router-controller: openapi_server.controllers.theory_guided_model_controller
+    get:
+      description: Gets the details of a single instance of a Theory-GuidedModel
+      operationId: theory_guidedmodels_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theory-GuidedModel'
+          description: Gets the details of a single instance of  Theory-GuidedModel
+      summary: Get a Theory-GuidedModel
+      tags:
+      - Theory-GuidedModel
+      x-openapi-router-controller: openapi_server.controllers.theory_guided_model_controller
+    put:
+      description: Updates an existing Theory-GuidedModel
+      operationId: theory_guidedmodels_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Theory-GuidedModel'
+        description: An old Theory-GuidedModelto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a Theory-GuidedModel
+      tags:
+      - Theory-GuidedModel
+      x-openapi-router-controller: openapi_server.controllers.theory_guided_model_controller
+  /timeintervals:
+    get:
+      description: Gets a list of all TimeInterval entities
+      operationId: timeintervals_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TimeInterval'
+                type: array
+          description: Successful response - returns an array of TimeInterval entities.
+      summary: List all TimeInterval entities
+      tags:
+      - TimeInterval
+      x-openapi-router-controller: openapi_server.controllers.time_interval_controller
+    post:
+      description: Create a new instance of a TimeInterval
+      operationId: timeintervals_post
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeInterval'
+        description: A new TimeIntervalto be created
+      responses:
+        201:
+          description: Created
+      summary: Create a TimeInterval
+      tags:
+      - TimeInterval
+      x-openapi-router-controller: openapi_server.controllers.time_interval_controller
+  /timeintervals/{id}:
+    delete:
+      description: Delete an existing TimeInterval
+      operationId: timeintervals_id_delete
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      summary: Delete a TimeInterval
+      tags:
+      - TimeInterval
+      x-openapi-router-controller: openapi_server.controllers.time_interval_controller
+    get:
+      description: Gets the details of a single instance of a TimeInterval
+      operationId: timeintervals_id_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeInterval'
+          description: Gets the details of a single instance of  TimeInterval
+      summary: Get a TimeInterval
+      tags:
+      - TimeInterval
+      x-openapi-router-controller: openapi_server.controllers.time_interval_controller
+    put:
+      description: Updates an existing TimeInterval
+      operationId: timeintervals_id_put
+      parameters:
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeInterval'
+        description: An old TimeIntervalto be updated
+      responses:
+        200:
+          description: Updated
+        404:
+          description: Not Found
+      summary: Update a TimeInterval
+      tags:
+      - TimeInterval
+      x-openapi-router-controller: openapi_server.controllers.time_interval_controller
 components:
   schemas:
-    DatasetSpecification:
+    TimeInterval:
       example:
-        id: crop-yield
-        label: crop-yield
-        hasFormat: csv
-        description: Contains the yield elasticities to fertilizer use that are derived
-          from Cycles output
-        hasDimensionality: 0
-        hasPresentation:
-        - id: https://w3id.org/mint/instance/econ_ybarN
-      properties:
+        id:
+        - id
+        - id
         label:
-          nullable: true
-          type: string
-        hasFormat:
-          nullable: true
-          type: string
-        description:
-          nullable: true
-          type: string
-        hasDimensionality:
-          format: int64
-          nullable: true
-          type: integer
-        hasPresentation:
+        - label
+        - label
+        type:
+        - type
+        - type
+      properties:
+        id:
           items:
-            $ref: '#/components/schemas/VariablePresentation'
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
           nullable: true
           type: array
         type:
@@ -1017,238 +2136,1320 @@ components:
             type: string
           nullable: true
           type: array
-        id:
-          type: string
       required:
       - id
       type: object
-    ModelConfiguration:
+    GeoShape:
       example:
-        id: economic
-        label: Economic aggregate crop supply
-        hasInput:
-        - id: econ_yield
-        hasOutput:
-        - id: econ_land_use
-        description: Aggregate crop supply response model for the country of South
-          Sudan configuration
-        hasCAG:
-        - id: economic_aggregate_crop_supply_CAG_variables
-        - id: economic_aggregate_crop_supply_CAG_process
-        hasProcess:
-        - id: crop_yield
-        - id: crop_supply
-        hasTimeInterval:
-        - id: economic_aggregate_crop_supply_TI
-        hasImplementationScriptLocation: https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/economic/run
-        hasContainer:
-        - id: https://w3id.org/mint/instance/mintproject/economic:latest
-        hasConstraint: '[ backwardPIHMInputsDataHaveSameRegion: (?c rdf:type acdom:pihmClass)
-          (?c ac:hasInput ?in1) (?c ac:hasInput ?in2) noValue(?in1 dcdom:region) noValue(?in2
-          dcdom:region) uriConcat(?c ''_region'' ?location) -> (?in1 dcdom:region
-          ?location) (?in2 dcdom:region ?location) print(''Setting domain of ?in1
-          and ?in2 to ?location because both inputs to PIHM should be from the same
-          region'')]'
-        hasParameter:
-        - id: pihm_start-date
-        - id: pihm_end-date
-        hasComponentLocation: https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/economic/economic.zip
-      properties:
+        elevation:
+        - elevation
+        - elevation
+        latitude:
+        - latitude
+        - latitude
+        box:
+        - box
+        - box
         id:
-          type: string
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        longitude:
+        - longitude
+        - longitude
+      properties:
+        elevation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        latitude:
+          items:
+            type: string
+          nullable: true
+          type: array
+        box:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
         type:
           items:
             type: string
           nullable: true
           type: array
+        longitude:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    Grid:
+      example:
+        hasDimensionality:
+        - 0.8008281904610115
+        - 0.8008281904610115
+        hasFormat:
+        - hasFormat
+        - hasFormat
+        hasFileStructure: '{}'
+        hasPresentation:
+        - '{}'
+        - '{}'
         label:
-          nullable: true
-          type: string
-        hasInput:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasFixedResource:
+        - '{}'
+        - '{}'
+        hasSpatialResolution:
+        - hasSpatialResolution
+        - hasSpatialResolution
+        hasCoordinateSystem:
+        - hasCoordinateSystem
+        - hasCoordinateSystem
+        hasShape:
+        - hasShape
+        - hasShape
+        hasDimension:
+        - hasDimension
+        - hasDimension
+        position:
+        - 6.027456183070403
+        - 6.027456183070403
+        id:
+        - id
+        - id
+      properties:
+        hasDimensionality:
           items:
-            $ref: '#/components/schemas/DatasetSpecification'
+            type: number
           nullable: true
           type: array
-        hasOutput:
+        hasFormat:
           items:
-            $ref: '#/components/schemas/DatasetSpecification'
+            type: string
           nullable: true
           type: array
-        description:
+        hasFileStructure:
           nullable: true
-          type: string
-        hasCAG:
-          items:
-            $ref: '#/components/schemas/CAG'
-          nullable: true
-          type: array
-        hasProcess:
-          items:
-            $ref: '#/components/schemas/Process'
-          nullable: true
-          type: array
-        hasTimeInterval:
-          items:
-            $ref: '#/components/schemas/TimeInterval'
-          nullable: true
-          type: array
-        hasImplementationScriptLocation:
-          nullable: true
-          type: string
-        hasContainer:
+          type: object
+        hasPresentation:
           items:
             type: object
           nullable: true
           type: array
-        hasConstraint:
-          nullable: true
-          type: string
-        hasParameter:
+        label:
           items:
-            $ref: '#/components/schemas/Parameter'
+            type: string
           nullable: true
           type: array
-        hasComponentLocation:
-          nullable: true
-          type: string
-      required:
-      - id
-      type: object
-    Parameter:
-      example:
-        id: pihm_start-date
-        type:
-        - https://w3id.org/wings/export/MINT#StartDate
-        label: pihm_start-date
-        description: start date
-        hasDefaultValue: 2017-01-01
-        hasDataType: string
-      properties:
-        id:
-          type: string
         type:
           items:
             type: string
           nullable: true
           type: array
+        hasFixedResource:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasSpatialResolution:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasCoordinateSystem:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasShape:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDimension:
+          items:
+            type: string
+          nullable: true
+          type: array
+        position:
+          items:
+            type: number
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+      required:
+      - id
+      type: object
+    HybridModel:
+      example:
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        id:
+        - id
+        - id
         label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
+      properties:
+        hasGrid:
+          items:
+            $ref: '#/components/schemas/Grid'
           nullable: true
-          type: string
-        description:
+          type: array
+        hasExplanationDiagram:
+          items:
+            type: object
           nullable: true
-          type: string
-        hasDefaultValue:
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
-          type: string
-        hasDataType:
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    Equation:
+      example:
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+      properties:
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    CausalDiagram:
+      example:
+        hasPart: ""
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+      properties:
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasPart:
+          anyOf:
+          - items:
+              type: object
+            nullable: true
+            type: array
+          - items:
+              $ref: '#/components/schemas/Process'
+            nullable: true
+            type: array
+      required:
+      - id
+      type: object
+    Emulator:
+      example:
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
+      properties:
+        hasGrid:
+          items:
+            $ref: '#/components/schemas/Grid'
+          nullable: true
+          type: array
+        hasExplanationDiagram:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
       required:
       - id
       type: object
     Process:
       example:
-        id: crop_yield
-        label: crop yield
         influences:
-        - id: https://w3id.org/mint/instance/crop_supply
+        - null
+        - null
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
       properties:
         id:
-          type: string
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
         type:
           items:
             type: string
           nullable: true
           type: array
-        label:
-          nullable: true
-          type: string
         influences:
-          description: Property that describe the causal relationship between two
-            processes, two variables, a process and a variable or a variable and a
-            process
           items:
             $ref: '#/components/schemas/Process'
           nullable: true
           type: array
-        description:
-          nullable: true
-          type: string
       required:
       - id
       type: object
-    TimeInterval:
+    PointBasedGrid:
       example:
-        id: economic_aggregate_crop_supply_TI
+        hasShape:
+        - hasShape
+        - hasShape
+        hasDimension:
+        - hasDimension
+        - hasDimension
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
         type:
-        - https://example.org/externalCatalog#TimeInterval
-        label: Simple economic time interval
-        description: Time interval used in the aggregate crop supply response model
-          for the country of South Sudan configuration
-        usesUnit:
-          id: https://w3id.org/mint/instance/yearT
-        hasValue: 1
+        - type
+        - type
+        hasSpatialResolution:
+        - hasSpatialResolution
+        - hasSpatialResolution
+        hasCoordinateSystem:
+        - hasCoordinateSystem
+        - hasCoordinateSystem
+      properties:
+        hasShape:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDimension:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSpatialResolution:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasCoordinateSystem:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    GeoCoordinates:
+      example:
+        elevation:
+        - elevation
+        - elevation
+        latitude:
+        - latitude
+        - latitude
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        longitude:
+        - longitude
+        - longitude
+      properties:
+        elevation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        latitude:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        longitude:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    SpatialResolution:
+      example:
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
       properties:
         id:
-          type: string
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
         type:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    Theory-GuidedModel:
+      example:
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
+      properties:
+        hasGrid:
+          items:
+            $ref: '#/components/schemas/Grid'
+          nullable: true
+          type: array
+        hasExplanationDiagram:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    Model:
+      example:
+        keywords:
+        - keywords
+        - keywords
+        hasDocumentation:
+        - hasDocumentation
+        - hasDocumentation
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        softwareRequirements:
+        - softwareRequirements
+        - softwareRequirements
+        hasVersion:
+        - '{}'
+        - '{}'
+        hasTypicalDataSource:
+        - hasTypicalDataSource
+        - hasTypicalDataSource
+        hasDownloadURL:
+        - hasDownloadURL
+        - hasDownloadURL
+        referencePublication:
+        - referencePublication
+        - referencePublication
+        description:
+        - description
+        - description
+        screenshot:
+        - '{}'
+        - '{}'
+        type:
+        - type
+        - type
+        hasInstallationInstructions:
+        - hasInstallationInstructions
+        - hasInstallationInstructions
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
+        dateCreated:
+        - dateCreated
+        - dateCreated
+        contributor:
+        - '{}'
+        - '{}'
+        hasFAQ:
+        - hasFAQ
+        - hasFAQ
+        hasContactPerson:
+        - '{}'
+        - '{}'
+        logo:
+        - '{}'
+        - '{}'
+        hasPurpose:
+        - hasPurpose
+        - hasPurpose
+        id:
+        - id
+        - id
+        hasSampleVisualization:
+        - '{}'
+        - '{}'
+        identifier:
+        - identifier
+        - identifier
+        memoryRequirements:
+        - memoryRequirements
+        - memoryRequirements
+        website:
+        - website
+        - website
+        citation:
+        - citation
+        - citation
+        author: ""
+        processorRequirements:
+        - processorRequirements
+        - processorRequirements
+        shortDescription:
+        - shortDescription
+        - shortDescription
+        label:
+        - label
+        - label
+        hasAssumption:
+        - hasAssumption
+        - hasAssumption
+        datePublished:
+        - datePublished
+        - datePublished
+        operatingSystems:
+        - operatingSystems
+        - operatingSystems
+        license:
+        - license
+        - license
+        hasSourceCode:
+        - '{}'
+        - '{}'
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        publisher: ""
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        fundingSource:
+        - '{}'
+        - '{}'
+      properties:
+        keywords:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDocumentation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasGrid:
+          items:
+            $ref: '#/components/schemas/Grid'
+          nullable: true
+          type: array
+        softwareRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasVersion:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasTypicalDataSource:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDownloadURL:
+          items:
+            type: string
+          nullable: true
+          type: array
+        referencePublication:
+          items:
+            type: string
+          nullable: true
+          type: array
+        description:
+          items:
+            type: string
+          nullable: true
+          type: array
+        screenshot:
+          items:
+            type: object
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasInstallationInstructions:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
+        dateCreated:
+          items:
+            type: string
+          nullable: true
+          type: array
+        contributor:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasFAQ:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasPurpose:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        hasSampleVisualization:
+          items:
+            type: object
+          nullable: true
+          type: array
+        identifier:
+          items:
+            type: string
+          nullable: true
+          type: array
+        memoryRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        website:
+          items:
+            type: string
+          nullable: true
+          type: array
+        citation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        author:
+          anyOf:
+          - items:
+              type: object
+            nullable: true
+            type: array
+          - items:
+              type: object
+            nullable: true
+            type: array
+        processorRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        shortDescription:
           items:
             type: string
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
-        description:
+          type: array
+        hasAssumption:
+          items:
+            type: string
           nullable: true
-          type: string
-        usesUnit:
-          $ref: '#/components/schemas/Unit'
-        hasValue:
-          format: int64
+          type: array
+        datePublished:
+          items:
+            type: string
           nullable: true
-          type: integer
+          type: array
+        operatingSystems:
+          items:
+            type: string
+          nullable: true
+          type: array
+        license:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSourceCode:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasExplanationDiagram:
+          items:
+            type: object
+          nullable: true
+          type: array
+        publisher:
+          anyOf:
+          - items:
+              type: object
+            nullable: true
+            type: array
+          - items:
+              type: object
+            nullable: true
+            type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        fundingSource:
+          items:
+            type: object
+          nullable: true
+          type: array
       required:
       - id
       type: object
-    Unit:
+    Region:
       example:
-        id: USD_kg_1M_1
-        type:
-        - http://qudt.org/1.1/schema/qudt#Unit
-        label: USD kg-1
-        ccut_hasPart:
-        - u_USD
-        - u__1_M_kilo_gram_kg
-        ccut_hasDimensionality:
-        - M-1
-        abbreviation:
-        - USD kg-1
-      properties:
+        geo: ""
         id:
-          type: string
-        type:
-          items:
-            type: string
-          nullable: true
-          type: array
-        description:
-          nullable: true
-          type: string
+        - id
+        - id
         label:
-          nullable: true
-          type: string
-        ccut_hasPart:
+        - label
+        - label
+        type:
+        - type
+        - type
+      properties:
+        geo:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/GeoCoordinates'
+            nullable: true
+            type: array
+          - items:
+              $ref: '#/components/schemas/GeoShape'
+            nullable: true
+            type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
           items:
             type: string
           nullable: true
           type: array
-        ccut_hasDimensionality:
-          items:
-            type: string
-          nullable: true
-          type: array
-        abbreviation:
+        type:
           items:
             type: string
           nullable: true
@@ -1256,33 +3457,512 @@ components:
       required:
       - id
       type: object
-    VariablePresentation:
+    EmpiricalModel:
       example:
-        id: econ_ybarN
-        label: ybarN
-        description: Contains the yield elasticities to fertilizer use that are derived
-          from Cycles output
-        hasLongName: yield elasticity
-        hasShortName: ybarN
-        hasStandardVariable:
-        - id: crop_fertilizer~nitrogen__yield_elasticity
-        hasRelevanceLevel: 1
-        usesUnit:
-          id: USD_kg_1M_1
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        id:
+        - id
+        - id
+        label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
       properties:
-        hasDefaultValue:
+        hasGrid:
           items:
-            type: number
+            $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        hasStandardVariable:
+        hasExplanationDiagram:
           items:
-            $ref: '#/components/schemas/StandardVariable'
+            type: object
           nullable: true
           type: array
-        hasMaximumAcceptedValue:
+        hasEquation:
           items:
-            type: number
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
+      required:
+      - id
+      type: object
+    ModelConfiguration:
+      example:
+        parameterAssignmentMethod:
+        - parameterAssignmentMethod
+        - parameterAssignmentMethod
+        hasComponentLocation:
+        - hasComponentLocation
+        - hasComponentLocation
+        hasGrid:
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        - hasDimensionality:
+          - 0.8008281904610115
+          - 0.8008281904610115
+          hasFormat:
+          - hasFormat
+          - hasFormat
+          hasFileStructure: '{}'
+          hasPresentation:
+          - '{}'
+          - '{}'
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+          hasFixedResource:
+          - '{}'
+          - '{}'
+          hasSpatialResolution:
+          - hasSpatialResolution
+          - hasSpatialResolution
+          hasCoordinateSystem:
+          - hasCoordinateSystem
+          - hasCoordinateSystem
+          hasShape:
+          - hasShape
+          - hasShape
+          hasDimension:
+          - hasDimension
+          - hasDimension
+          position:
+          - 6.027456183070403
+          - 6.027456183070403
+          id:
+          - id
+          - id
+        hasProcess:
+        - influences:
+          - null
+          - null
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - influences:
+          - null
+          - null
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        hasImplementationScriptLocation:
+        - hasImplementationScriptLocation
+        - hasImplementationScriptLocation
+        type:
+        - type
+        - type
+        calibratedVariable:
+        - '{}'
+        - '{}'
+        hasModelCategory:
+        - hasModelCategory
+        - hasModelCategory
+        hasSoftwareImage:
+        - '{}'
+        - '{}'
+        compatibleVisualizationSoftware:
+        - '{}'
+        - '{}'
+        calibrationMethod:
+        - calibrationMethod
+        - calibrationMethod
+        hasRegion:
+        - geo: ""
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - geo: ""
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        hasModelResultTable:
+        - hasModelResultTable
+        - hasModelResultTable
+        calibrationTargetVariable:
+        - '{}'
+        - '{}'
+        id:
+        - id
+        - id
+        hasExpertTunedModel:
+        - null
+        - null
+        hasCalibration:
+        - null
+        - null
+        hasCausalDiagram:
+        - hasPart: ""
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - hasPart: ""
+          id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        hasSampleExecution:
+        - '{}'
+        - '{}'
+        hasSampleResult:
+        - '{}'
+        - '{}'
+        hasConstraint:
+        - hasConstraint
+        - hasConstraint
+        adjustableParameter:
+        - '{}'
+        - '{}'
+        hasSupportScriptLocation:
+        - hasSupportScriptLocation
+        - hasSupportScriptLocation
+        label:
+        - label
+        - label
+        hasExecutionCommand:
+        - hasExecutionCommand
+        - hasExecutionCommand
+        hasParameter:
+        - '{}'
+        - '{}'
+        hasExplanationDiagram:
+        - '{}'
+        - '{}'
+        hasEquation:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        hasOutput:
+        - '{}'
+        - '{}'
+        hasOutputTimeInterval:
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        - id:
+          - id
+          - id
+          label:
+          - label
+          - label
+          type:
+          - type
+          - type
+        hasInput:
+        - '{}'
+        - '{}'
+      properties:
+        parameterAssignmentMethod:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasComponentLocation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasGrid:
+          items:
+            $ref: '#/components/schemas/Grid'
+          nullable: true
+          type: array
+        hasProcess:
+          items:
+            $ref: '#/components/schemas/Process'
+          nullable: true
+          type: array
+        hasImplementationScriptLocation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        calibratedVariable:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasModelCategory:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSoftwareImage:
+          items:
+            type: object
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            type: object
+          nullable: true
+          type: array
+        calibrationMethod:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasRegion:
+          items:
+            $ref: '#/components/schemas/Region'
+          nullable: true
+          type: array
+        hasModelResultTable:
+          items:
+            type: string
+          nullable: true
+          type: array
+        calibrationTargetVariable:
+          items:
+            type: object
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        hasExpertTunedModel:
+          items:
+            $ref: '#/components/schemas/ModelConfiguration'
+          nullable: true
+          type: array
+        hasCalibration:
+          items:
+            $ref: '#/components/schemas/ModelConfiguration'
+          nullable: true
+          type: array
+        hasCausalDiagram:
+          items:
+            $ref: '#/components/schemas/CausalDiagram'
+          nullable: true
+          type: array
+        hasSampleExecution:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasSampleResult:
+          items:
+            type: object
           nullable: true
           type: array
         hasConstraint:
@@ -1290,212 +3970,118 @@ components:
             type: string
           nullable: true
           type: array
-        description:
-          nullable: true
-          type: string
-        label:
-          nullable: true
-          type: string
-        type:
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasLongName:
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasRelevanceLevel:
-          items:
-            type: number
-          nullable: true
-          type: array
-        hasShortName:
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasMinimumAcceptedValue:
-          items:
-            type: number
-          nullable: true
-          type: array
-        hasDataset:
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
-          type: array
-        id:
-          type: string
-        usesUnit:
-          items:
-            $ref: '#/components/schemas/Unit'
-          nullable: true
-          type: array
-      required:
-      - type
-      type: object
-    User:
-      example:
-        password: password
-        username: username
-      properties:
-        username:
-          type: string
-        password:
-          type: string
-      type: object
-      xml:
-        name: User
-    ApiResponse:
-      properties:
-        code:
-          format: int32
-          type: integer
-        type:
-          type: string
-        message:
-          type: string
-      type: object
-    CAG:
-      example:
-        id: economic_aggregate_crop_supply_CAG_variables
-        label: CAG for Economic model for aggregate crop supply response model variables
-          for the country of South Sudan configuration
-        type:
-        - https://w3id.org/mint/modelCatalog#CAG
-        hasPart:
-        - id: https://w3id.org/mint/instance/econ_ybarN
-        - id: https://w3id.org/mint/instance/econ_production
-      properties:
-        id:
-          type: string
-        type:
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasPart:
-          description: Array of Parameter or Variables
-          items:
-            $ref: '#/components/schemas/Parameter'
-          nullable: true
-          type: array
-        label:
-          nullable: true
-          type: string
-      required:
-      - id
-      type: object
-    Model:
-      example:
-        id: DSSAT
-        label: DSSAT
-        description: The Decision Support System for Agrotechnology Transfer (DSSAT)
-          comprises dynamic crop growth simulation model for over 40 crops. The model
-          simulates growth; development; and yield as a function of the soil-plant-atmosphere
-          dynamics.
-        type:
-        - https://w3id.org/mint/modelCatalog#Model
-        - https://w3id.org/mint/modelCatalog#TheoryBasedModel
-        hasSoftwareVersion:
-        - id: DSSAT_4.7
-        hasModelCategory:
-        - Agriculture
-        hasDocumentation:
-        - https://dssat.net
-      properties:
-        id:
-          type: string
-        label:
-          nullable: true
-          type: string
-        type:
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSoftwareVersion:
+        adjustableParameter:
           items:
             type: object
           nullable: true
           type: array
-        description:
-          nullable: true
-          type: string
-        hasModelCategory:
+        hasSupportScriptLocation:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        label:
           items:
             type: string
+          nullable: true
+          type: array
+        hasExecutionCommand:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasParameter:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasExplanationDiagram:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        hasOutput:
+          items:
+            type: object
+          nullable: true
+          type: array
+        hasOutputTimeInterval:
+          items:
+            $ref: '#/components/schemas/TimeInterval'
+          nullable: true
+          type: array
+        hasInput:
+          items:
+            type: object
           nullable: true
           type: array
       required:
       - id
       type: object
-    ModelVersion:
+    SpatiallyDistributedGrid:
       example:
-        id: DSSAT_4.7
-        label: DSSAT v4.7
-        type:
-        - http://ontosoft.org/software#SoftwareVersion
-        hasVersionId: "4.7"
-        hasConfiguration:
-        - id: economic
-      properties:
+        hasShape:
+        - hasShape
+        - hasShape
+        hasDimension:
+        - hasDimension
+        - hasDimension
         id:
-          type: string
+        - id
+        - id
         label:
+        - label
+        - label
+        type:
+        - type
+        - type
+        hasSpatialResolution:
+        - hasSpatialResolution
+        - hasSpatialResolution
+        hasCoordinateSystem:
+        - hasCoordinateSystem
+        - hasCoordinateSystem
+      properties:
+        hasShape:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
+        hasDimension:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          items:
+            type: string
+          nullable: false
+          type: array
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
         type:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasVersionId:
-          nullable: true
-          type: string
-        hasConfiguration:
+        hasCoordinateSystem:
           items:
-            $ref: '#/components/schemas/ModelConfiguration'
+            type: string
           nullable: true
           type: array
-        description:
-          nullable: true
-          type: string
       required:
       - id
       type: object
-    StandardVariable:
-      properties:
-        description:
-          nullable: true
-          type: string
-        id:
-          type: string
-        label:
-          nullable: true
-          type: string
-        type:
-          items:
-            type: string
-          nullable: true
-          type: array
-      required:
-      - type
-      type: object
-  securitySchemes:
-    BearerAuth:
-      bearerFormat: JWT
-      scheme: bearer
-      type: http
-      x-bearerInfoFunc: openapi_server.controllers.user_controller.decode_token
