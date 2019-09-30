@@ -6,18 +6,8 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from {{modelPackage}}.base_model_ import Model
-{{#models}}
-{{#model}}
-{{#pyImports}}
-{{import}}
-{{/pyImports}}
-{{/model}}
-{{/models}}
 from {{packageName}} import util
 
-{{#imports}}
-{{{import}}}  # noqa: E501
-{{/imports}}
 
 {{#models}}
 {{#model}}
@@ -43,6 +33,18 @@ class {{classname}}(Model):
         :type {{name}}: {{dataType}}
         {{/vars}}
         """
+        {{#models}}
+        {{#model}}
+        {{#pyImports}}
+        {{import}}
+        {{/pyImports}}
+        {{/model}}
+        {{/models}}
+
+        {{#imports}}
+        {{{import}}}  # noqa: E501
+        {{/imports}}
+
         self.openapi_types = {
 {{#vars}}
             '{{name}}': {{{dataType}}}{{#hasMore}},{{/hasMore}}
