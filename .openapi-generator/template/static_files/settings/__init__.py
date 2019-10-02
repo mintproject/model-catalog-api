@@ -1,6 +1,10 @@
 from configparser import ConfigParser
 import os
-# Setting headersto use access_token for the GitHub API
+from pathlib import Path
+
+path = Path(__file__).parent.parent.parent
+
+# Setting headers to use access_token for the GitHub API
 config_fallbacks = {
     'github_access_token': '',
     'endpoint': '',
@@ -10,8 +14,9 @@ config_fallbacks = {
     'prefix': '',
     'graph_base': '',
     'firebase_key': '',
-    'local_sparql_dir': ''
-
+    'local_sparql_dir': '',
+    'query_dir': '',
+    'context_dir': '',
 }
 config = ConfigParser(config_fallbacks)
 config.add_section('auth')
@@ -28,11 +33,9 @@ ENDPOINT_PASSWORD = config.get('defaults', 'password')
 PREFIX = config.get('defaults', 'prefix')
 GRAPH_BASE = config.get('defaults', 'graph_base')
 FIREBASE_KEY = config.get('defaults', 'firebase_key')
-UPDATE_ENDPOINT = f'{ENDPOINT}/update'
-QUERY_ENDPOINT = f'{ENDPOINT}/query'
 
-QUERY_DIRECTORY = "/Users/mosorio/repos/isi/MINT-ModelCatalogIngestionAPI/server-v1.0.0/queries/"
-CONTEXT_DIRECTORY = "/Users/mosorio/repos/isi/MINT-ModelCatalogIngestionAPI/server-v1.0.0/contexts/"
+QUERY_DIRECTORY = path/config.get('defaults', 'queries_dir')
+CONTEXT_DIRECTORY = path/config.get('defaults', 'context_dir')
 
 mime_types = {
     'csv': 'text/csv; q=1.0, */*; q=0.1',
@@ -40,6 +43,9 @@ mime_types = {
     'html': 'text/html; q=1.0, */*; q=0.1',
     'ttl': 'text/turtle'
 }
+
+UPDATE_ENDPOINT = f'{ENDPOINT}/update'
+QUERY_ENDPOINT = f'{ENDPOINT}/query'
 
 QUERIES_TYPES = ["get_all", "get_all_related", "get_all_related_user", "get_all_user", "get_one", "get_one_user"]
 

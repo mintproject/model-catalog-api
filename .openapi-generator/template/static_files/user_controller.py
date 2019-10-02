@@ -63,4 +63,13 @@ def user_login_get(username, password):  # noqa: E501
         "sub": str(username),
     }
 
-    return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+    access_token = jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+    return {
+        "access_token": access_token,
+        "token_type": "bearer",
+        "expires_in": JWT_LIFETIME_SECONDS,
+        "refresh_token": "IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk",
+        "scope": "create"
+    }
+
+

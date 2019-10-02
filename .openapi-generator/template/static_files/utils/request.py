@@ -91,7 +91,7 @@ def get_all_resource(**kwargs):
 
 def put_resource(**kwargs):
     body = kwargs["body"]
-    body.id = generate_new_uri()
+    body.id = kwargs["id"]
 
     try:
         username = kwargs["user"]
@@ -139,7 +139,7 @@ def convert_json_to_triples(body):
 def delete_resource(**kwargs):
     resource_uri = build_instance_uri(kwargs["id"])
     try:
-        username = kwargs["username"]
+        username = kwargs["user"]
     except Exception:
         logger.error("Missing username", exc_info=True)
         return "Bad request: missing username", 400, {}
