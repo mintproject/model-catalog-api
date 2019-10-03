@@ -186,7 +186,7 @@ def post_resource(**kwargs):
 def get_insert_query(resource_json):
     prefixes = []
     triples = []
-    g = Graph().parse(data=resource_json, format='json-ld')
+    g = Graph().parse(data=resource_json, format='json-ld', publicID=PREFIX)
     s = g.serialize(format='turtle')
     for n in g.namespace_manager.namespaces():
         prefixes.append(f'PREFIX {n[0]}: <{n[1]}>')
