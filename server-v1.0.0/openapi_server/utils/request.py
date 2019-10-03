@@ -90,8 +90,9 @@ def get_all_resource(**kwargs):
 
 
 def put_resource(**kwargs):
+    resource_uri = build_instance_uri(kwargs["id"])
     body = kwargs["body"]
-    body.id = kwargs["id"]
+    body.id = resource_uri
 
     try:
         username = kwargs["user"]
@@ -100,7 +101,6 @@ def put_resource(**kwargs):
         return "Bad request: missing username", 400, {}
 
     #DELETE QUERY
-    resource_uri = build_instance_uri(kwargs["id"])
     request_args_delete: Dict[str, str] = {
         "resource": resource_uri,
         "g": generate_graph(username)
