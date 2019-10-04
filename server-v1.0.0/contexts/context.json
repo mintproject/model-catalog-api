@@ -70,7 +70,7 @@
       "@id" : "https://w3id.org/okn/o/sdm#Grid"
     },
     "Person" : {
-      "@id" : "http://schema.org/Person"
+      "@id" : "https://w3id.org/okn/o/sd#Person"
     },
     "SoftwareImage" : {
       "@id" : "https://w3id.org/okn/o/sd#SoftwareImage"
