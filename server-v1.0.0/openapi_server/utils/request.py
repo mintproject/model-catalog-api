@@ -160,6 +160,11 @@ def post_resource(**kwargs):
     :rtype:
     """
     body = kwargs["body"]
+    rdf_type_uri = kwargs["rdf_type_uri"]
+    if body.type and rdf_type_uri is not body.type:
+        body.type.append(rdf_type_uri)
+    else:
+        body.type = [rdf_type_uri]
     body.id = generate_new_uri()
     try:
         username = kwargs["user"]
