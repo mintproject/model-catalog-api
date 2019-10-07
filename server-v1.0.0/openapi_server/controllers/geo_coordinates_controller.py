@@ -6,13 +6,15 @@ from openapi_server.utils.vars import GEOCOORDINATES_TYPE_NAME, GEOCOORDINATES_T
 from openapi_server.models.geo_coordinates import GeoCoordinates  # noqa: E501
 from openapi_server import util
 
-def geocoordinatess_get(username=None):  # noqa: E501
+def geocoordinatess_get(username=None, query_text=None):  # noqa: E501
     """List all GeoCoordinates entities
 
     Gets a list of all GeoCoordinates entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[GeoCoordinates]
     """
@@ -20,6 +22,7 @@ def geocoordinatess_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=GEOCOORDINATES_TYPE_URI,
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 
         kls=GeoCoordinates)

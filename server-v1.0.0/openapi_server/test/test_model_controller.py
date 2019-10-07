@@ -18,7 +18,8 @@ class TestModelController(BaseTestCase):
 
         List all Model entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -68,8 +69,8 @@ class TestModelController(BaseTestCase):
         Update a Model
         """
         model = {
-  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -78,8 +79,8 @@ class TestModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -92,8 +93,8 @@ class TestModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -117,8 +118,8 @@ class TestModelController(BaseTestCase):
   "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "id" : "id",
   "hasSampleVisualization" : [ "{}", "{}" ],
-  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
   "identifier" : [ "identifier", "identifier" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
   "website" : [ "website", "website" ],
   "citation" : [ "citation", "citation" ],
   "author" : [ "{}", "{}" ],
@@ -127,8 +128,8 @@ class TestModelController(BaseTestCase):
   "label" : "label",
   "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
   "datePublished" : [ "datePublished", "datePublished" ],
-  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasSourceCode" : [ "{}", "{}" ],
   "hasExplanationDiagram" : [ "{}", "{}" ],
   "hasEquation" : [ {
@@ -162,8 +163,8 @@ class TestModelController(BaseTestCase):
         Create a Model
         """
         model = {
-  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -172,8 +173,8 @@ class TestModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -186,8 +187,8 @@ class TestModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -211,8 +212,8 @@ class TestModelController(BaseTestCase):
   "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "id" : "id",
   "hasSampleVisualization" : [ "{}", "{}" ],
-  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
   "identifier" : [ "identifier", "identifier" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
   "website" : [ "website", "website" ],
   "citation" : [ "citation", "citation" ],
   "author" : [ "{}", "{}" ],
@@ -221,8 +222,8 @@ class TestModelController(BaseTestCase):
   "label" : "label",
   "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
   "datePublished" : [ "datePublished", "datePublished" ],
-  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasSourceCode" : [ "{}", "{}" ],
   "hasExplanationDiagram" : [ "{}", "{}" ],
   "hasEquation" : [ {

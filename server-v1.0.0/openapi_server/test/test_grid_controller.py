@@ -18,7 +18,8 @@ class TestGridController(BaseTestCase):
 
         List all Grid entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -75,8 +76,8 @@ class TestGridController(BaseTestCase):
   "label" : "label",
   "type" : [ "type", "type" ],
   "hasFixedResource" : [ "{}", "{}" ],
-  "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
   "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+  "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
   "hasShape" : [ "hasShape", "hasShape" ],
   "hasDimension" : [ "hasDimension", "hasDimension" ],
   "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -108,8 +109,8 @@ class TestGridController(BaseTestCase):
   "label" : "label",
   "type" : [ "type", "type" ],
   "hasFixedResource" : [ "{}", "{}" ],
-  "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
   "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+  "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
   "hasShape" : [ "hasShape", "hasShape" ],
   "hasDimension" : [ "hasDimension", "hasDimension" ],
   "position" : [ 6.027456183070403, 6.027456183070403 ],

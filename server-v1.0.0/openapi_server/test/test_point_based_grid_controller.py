@@ -18,7 +18,8 @@ class TestPointBasedGridController(BaseTestCase):
 
         List all PointBasedGrid entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -68,13 +69,19 @@ class TestPointBasedGridController(BaseTestCase):
         Update a PointBasedGrid
         """
         point_based_grid = {
-  "hasShape" : [ "hasShape", "hasShape" ],
-  "hasDimension" : [ "hasDimension", "hasDimension" ],
-  "id" : "id",
+  "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
+  "hasFormat" : [ "hasFormat", "hasFormat" ],
+  "hasFileStructure" : "{}",
+  "hasPresentation" : [ "{}", "{}" ],
   "label" : "label",
   "type" : [ "type", "type" ],
+  "hasFixedResource" : [ "{}", "{}" ],
+  "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
   "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
-  "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ]
+  "hasShape" : [ "hasShape", "hasShape" ],
+  "hasDimension" : [ "hasDimension", "hasDimension" ],
+  "position" : [ 6.027456183070403, 6.027456183070403 ],
+  "id" : "id"
 }
         headers = { 
             'Content-Type': 'application/json',
@@ -95,13 +102,19 @@ class TestPointBasedGridController(BaseTestCase):
         Create a PointBasedGrid
         """
         point_based_grid = {
-  "hasShape" : [ "hasShape", "hasShape" ],
-  "hasDimension" : [ "hasDimension", "hasDimension" ],
-  "id" : "id",
+  "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
+  "hasFormat" : [ "hasFormat", "hasFormat" ],
+  "hasFileStructure" : "{}",
+  "hasPresentation" : [ "{}", "{}" ],
   "label" : "label",
   "type" : [ "type", "type" ],
+  "hasFixedResource" : [ "{}", "{}" ],
+  "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
   "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
-  "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ]
+  "hasShape" : [ "hasShape", "hasShape" ],
+  "hasDimension" : [ "hasDimension", "hasDimension" ],
+  "position" : [ 6.027456183070403, 6.027456183070403 ],
+  "id" : "id"
 }
         headers = { 
             'Content-Type': 'application/json',
