@@ -6,13 +6,15 @@ from openapi_server.utils.vars import SAMPLERESOURCE_TYPE_NAME, SAMPLERESOURCE_T
 from openapi_server.models.sample_resource import SampleResource  # noqa: E501
 from openapi_server import util
 
-def sampleresources_get(username=None):  # noqa: E501
+def sampleresources_get(username=None, query_text=None):  # noqa: E501
     """List all SampleResource entities
 
     Gets a list of all SampleResource entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[SampleResource]
     """
@@ -20,6 +22,7 @@ def sampleresources_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=SAMPLERESOURCE_TYPE_URI,
         rdf_type_name=SAMPLERESOURCE_TYPE_NAME, 
         kls=SampleResource)

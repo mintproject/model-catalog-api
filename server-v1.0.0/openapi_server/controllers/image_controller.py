@@ -6,13 +6,15 @@ from openapi_server.utils.vars import IMAGE_TYPE_NAME, IMAGE_TYPE_URI
 from openapi_server.models.image import Image  # noqa: E501
 from openapi_server import util
 
-def images_get(username=None):  # noqa: E501
+def images_get(username=None, query_text=None):  # noqa: E501
     """List all Image entities
 
     Gets a list of all Image entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[Image]
     """
@@ -20,6 +22,7 @@ def images_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=IMAGE_TYPE_URI,
         rdf_type_name=IMAGE_TYPE_NAME, 
         kls=Image)

@@ -6,13 +6,15 @@ from openapi_server.utils.vars import SVOVARIABLE_TYPE_NAME, SVOVARIABLE_TYPE_UR
 from openapi_server.models.svo_variable import SVOVariable  # noqa: E501
 from openapi_server import util
 
-def svovariables_get(username=None):  # noqa: E501
+def svovariables_get(username=None, query_text=None):  # noqa: E501
     """List all SVOVariable entities
 
     Gets a list of all SVOVariable entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[SVOVariable]
     """
@@ -20,6 +22,7 @@ def svovariables_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=SVOVARIABLE_TYPE_URI,
         rdf_type_name=SVOVARIABLE_TYPE_NAME, 
         kls=SVOVariable)
