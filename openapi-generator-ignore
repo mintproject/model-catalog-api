@@ -1,5 +1,6 @@
+server-v1.0.0/openapi_server/__init__.py
 server/.gitignore
 server/Dockerfile
-
-server/requirements.txt
+server*/Dockerfile
+server*/requirements.txt
 server/setup.py
