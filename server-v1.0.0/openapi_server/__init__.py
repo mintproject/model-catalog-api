@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from obasparql import QueryManager
 from openapi_server.settings import CONTEXT_DIRECTORY, QUERY_DIRECTORY, QUERIES_TYPES
 

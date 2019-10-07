@@ -15,13 +15,13 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, has_equation=None, publisher=None, funding_source=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_equation=None, publisher=None, funding_source=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
-        :param has_documentation: The has_documentation of this Model.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this Model.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this Model.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_grid: The has_grid of this Model.  # noqa: E501
         :type has_grid: List[Grid]
         :param software_requirements: The software_requirements of this Model.  # noqa: E501
@@ -60,10 +60,10 @@ class Model(Model):
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this Model.  # noqa: E501
         :type has_sample_visualization: List[object]
-        :param memory_requirements: The memory_requirements of this Model.  # noqa: E501
-        :type memory_requirements: List[str]
         :param identifier: The identifier of this Model.  # noqa: E501
         :type identifier: List[str]
+        :param memory_requirements: The memory_requirements of this Model.  # noqa: E501
+        :type memory_requirements: List[str]
         :param website: The website of this Model.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this Model.  # noqa: E501
@@ -80,10 +80,10 @@ class Model(Model):
         :type has_assumption: List[str]
         :param date_published: The date_published of this Model.  # noqa: E501
         :type date_published: List[str]
-        :param operating_systems: The operating_systems of this Model.  # noqa: E501
-        :type operating_systems: List[str]
         :param license: The license of this Model.  # noqa: E501
         :type license: List[str]
+        :param operating_systems: The operating_systems of this Model.  # noqa: E501
+        :type operating_systems: List[str]
         :param has_source_code: The has_source_code of this Model.  # noqa: E501
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this Model.  # noqa: E501
@@ -102,8 +102,8 @@ class Model(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'has_grid': List[Grid],
             'software_requirements': List[str],
             'has_version': List[object],
@@ -123,8 +123,8 @@ class Model(Model):
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
-            'memory_requirements': List[str],
             'identifier': List[str],
+            'memory_requirements': List[str],
             'website': List[str],
             'citation': List[str],
             'author': List[object],
@@ -133,8 +133,8 @@ class Model(Model):
             'label': str,
             'has_assumption': List[str],
             'date_published': List[str],
-            'operating_systems': List[str],
             'license': List[str],
+            'operating_systems': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
             'has_equation': List[Equation],
@@ -143,8 +143,8 @@ class Model(Model):
         }
 
         self.attribute_map = {
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
             'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
@@ -164,8 +164,8 @@ class Model(Model):
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'memory_requirements': 'memoryRequirements',
             'identifier': 'identifier',
+            'memory_requirements': 'memoryRequirements',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
@@ -174,8 +174,8 @@ class Model(Model):
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'date_published': 'datePublished',
-            'operating_systems': 'operatingSystems',
             'license': 'license',
+            'operating_systems': 'operatingSystems',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
             'has_equation': 'hasEquation',
@@ -183,8 +183,8 @@ class Model(Model):
             'funding_source': 'fundingSource'
         }
 
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_grid = has_grid
         self._software_requirements = software_requirements
         self._has_version = has_version
@@ -204,8 +204,8 @@ class Model(Model):
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._memory_requirements = memory_requirements
         self._identifier = identifier
+        self._memory_requirements = memory_requirements
         self._website = website
         self._citation = citation
         self._author = author
@@ -214,8 +214,8 @@ class Model(Model):
         self._label = label
         self._has_assumption = has_assumption
         self._date_published = date_published
-        self._operating_systems = operating_systems
         self._license = license
+        self._operating_systems = operating_systems
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
         self._has_equation = has_equation
@@ -232,27 +232,6 @@ class Model(Model):
         :rtype: Model
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def has_documentation(self):
-        """Gets the has_documentation of this Model.
-
-
-        :return: The has_documentation of this Model.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this Model.
-
-
-        :param has_documentation: The has_documentation of this Model.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
 
     @property
     def keywords(self):
@@ -274,6 +253,27 @@ class Model(Model):
         """
 
         self._keywords = keywords
+
+    @property
+    def has_documentation(self):
+        """Gets the has_documentation of this Model.
+
+
+        :return: The has_documentation of this Model.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this Model.
+
+
+        :param has_documentation: The has_documentation of this Model.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
 
     @property
     def has_grid(self):
@@ -675,27 +675,6 @@ class Model(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def memory_requirements(self):
-        """Gets the memory_requirements of this Model.
-
-
-        :return: The memory_requirements of this Model.
-        :rtype: List[str]
-        """
-        return self._memory_requirements
-
-    @memory_requirements.setter
-    def memory_requirements(self, memory_requirements):
-        """Sets the memory_requirements of this Model.
-
-
-        :param memory_requirements: The memory_requirements of this Model.
-        :type memory_requirements: List[str]
-        """
-
-        self._memory_requirements = memory_requirements
-
-    @property
     def identifier(self):
         """Gets the identifier of this Model.
 
@@ -715,6 +694,27 @@ class Model(Model):
         """
 
         self._identifier = identifier
+
+    @property
+    def memory_requirements(self):
+        """Gets the memory_requirements of this Model.
+
+
+        :return: The memory_requirements of this Model.
+        :rtype: List[str]
+        """
+        return self._memory_requirements
+
+    @memory_requirements.setter
+    def memory_requirements(self, memory_requirements):
+        """Sets the memory_requirements of this Model.
+
+
+        :param memory_requirements: The memory_requirements of this Model.
+        :type memory_requirements: List[str]
+        """
+
+        self._memory_requirements = memory_requirements
 
     @property
     def website(self):
@@ -885,27 +885,6 @@ class Model(Model):
         self._date_published = date_published
 
     @property
-    def operating_systems(self):
-        """Gets the operating_systems of this Model.
-
-
-        :return: The operating_systems of this Model.
-        :rtype: List[str]
-        """
-        return self._operating_systems
-
-    @operating_systems.setter
-    def operating_systems(self, operating_systems):
-        """Sets the operating_systems of this Model.
-
-
-        :param operating_systems: The operating_systems of this Model.
-        :type operating_systems: List[str]
-        """
-
-        self._operating_systems = operating_systems
-
-    @property
     def license(self):
         """Gets the license of this Model.
 
@@ -925,6 +904,27 @@ class Model(Model):
         """
 
         self._license = license
+
+    @property
+    def operating_systems(self):
+        """Gets the operating_systems of this Model.
+
+
+        :return: The operating_systems of this Model.
+        :rtype: List[str]
+        """
+        return self._operating_systems
+
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """Sets the operating_systems of this Model.
+
+
+        :param operating_systems: The operating_systems of this Model.
+        :type operating_systems: List[str]
+        """
+
+        self._operating_systems = operating_systems
 
     @property
     def has_source_code(self):
