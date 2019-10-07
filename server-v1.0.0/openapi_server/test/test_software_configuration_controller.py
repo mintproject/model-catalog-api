@@ -18,7 +18,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
 
         List all SoftwareConfiguration entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -226,21 +227,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -365,6 +351,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -523,21 +524,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -663,6 +649,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -676,8 +677,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -860,21 +861,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -1000,6 +986,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -1013,8 +1014,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -1203,21 +1204,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -1343,6 +1329,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -1356,8 +1357,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -1540,21 +1541,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -1680,6 +1666,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -1693,8 +1694,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -1740,8 +1741,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -1925,21 +1926,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -2064,6 +2050,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -2222,21 +2223,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -2362,6 +2348,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -2375,8 +2376,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -2559,21 +2560,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -2699,6 +2685,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -2712,8 +2713,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -2902,21 +2903,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -3042,6 +3028,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -3055,8 +3056,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -3239,21 +3240,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -3379,6 +3365,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -3392,8 +3393,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -3439,8 +3440,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -3760,21 +3761,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -3899,6 +3885,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -4057,21 +4058,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -4197,6 +4183,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -4210,8 +4211,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -4394,21 +4395,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -4534,6 +4520,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -4547,8 +4548,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -4737,21 +4738,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -4877,6 +4863,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -4890,8 +4891,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -5074,21 +5075,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -5214,6 +5200,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -5227,8 +5228,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -5274,8 +5275,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -5459,21 +5460,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -5598,6 +5584,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -5756,21 +5757,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -5896,6 +5882,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -5909,8 +5910,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -6093,21 +6094,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -6233,6 +6219,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -6246,8 +6247,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -6436,21 +6437,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -6576,6 +6562,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -6589,8 +6590,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -6773,21 +6774,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -6913,6 +6899,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -6926,8 +6927,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -6973,8 +6974,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -7154,21 +7155,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -7293,6 +7279,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -7451,21 +7452,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -7591,6 +7577,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -7604,8 +7605,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -7788,21 +7789,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -7928,6 +7914,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -7941,8 +7942,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -8131,21 +8132,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -8271,6 +8257,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -8284,8 +8285,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -8468,21 +8469,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -8608,6 +8594,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -8621,8 +8622,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -8668,8 +8669,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -8856,21 +8857,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -8995,6 +8981,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -9153,21 +9154,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -9293,6 +9279,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -9306,8 +9307,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -9490,21 +9491,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -9630,6 +9616,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -9643,8 +9644,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -9833,21 +9834,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -9973,6 +9959,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -9986,8 +9987,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -10170,21 +10171,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -10310,6 +10296,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -10323,8 +10324,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -10370,8 +10371,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -10555,21 +10556,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -10694,6 +10680,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -10852,21 +10853,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -10992,6 +10978,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -11005,8 +11006,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -11189,21 +11190,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -11329,6 +11315,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -11342,8 +11343,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -11532,21 +11533,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -11672,6 +11658,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -11685,8 +11686,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -11869,21 +11870,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -12009,6 +11995,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -12022,8 +12023,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -12069,8 +12070,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -12250,21 +12251,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -12389,6 +12375,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -12547,21 +12548,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -12687,6 +12673,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -12700,8 +12701,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -12884,21 +12885,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -13024,6 +13010,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -13037,8 +13038,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -13227,21 +13228,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -13367,6 +13353,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -13380,8 +13381,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -13564,21 +13565,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -13704,6 +13690,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -13717,8 +13718,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -13764,8 +13765,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -13797,6 +13798,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
     } ]
   } ],
   "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  }, {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  } ],
   "compatibleVisualizationSoftware" : [ {
     "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
     "keywords" : [ "keywords", "keywords" ],
@@ -13950,21 +13966,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -14090,6 +14091,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -14103,8 +14119,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -14287,21 +14303,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -14427,6 +14428,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -14440,8 +14456,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -14472,37 +14488,7 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "type" : [ "type", "type" ]
     } ]
   } ],
-  "contributor" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  } ],
   "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-  "hasContactPerson" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  } ],
   "logo" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -14627,6 +14613,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "type" : [ "type", "type" ]
     } ]
+  } ],
+  "hasContactPerson" : [ {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  }, {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
   } ],
   "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "id" : "id",
@@ -14785,21 +14786,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -14925,6 +14911,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -14938,8 +14939,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -15122,21 +15123,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -15262,6 +15248,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -15275,8 +15276,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -15465,21 +15466,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -15605,6 +15591,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -15618,8 +15619,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -15802,21 +15803,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -15942,6 +15928,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -15955,8 +15956,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -16135,8 +16136,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "type" : [ "type", "type" ]
   } ],
   "datePublished" : [ "datePublished", "datePublished" ],
-  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasSourceCode" : [ {
     "license" : [ "license", "license" ],
     "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -16594,21 +16595,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -16733,6 +16719,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -16891,21 +16892,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -17031,6 +17017,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -17044,8 +17045,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -17228,21 +17229,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -17368,6 +17354,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -17381,8 +17382,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -17571,21 +17572,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -17711,6 +17697,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -17724,8 +17725,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -17908,21 +17909,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -18048,6 +18034,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -18061,8 +18062,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -18108,8 +18109,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -18293,21 +18294,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -18432,6 +18418,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -18590,21 +18591,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -18730,6 +18716,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -18743,8 +18744,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -18927,21 +18928,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -19067,6 +19053,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -19080,8 +19081,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -19270,21 +19271,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -19410,6 +19396,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -19423,8 +19424,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -19607,21 +19608,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -19747,6 +19733,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -19760,8 +19761,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -19807,8 +19808,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -20128,21 +20129,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -20267,6 +20253,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -20425,21 +20426,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -20565,6 +20551,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -20578,8 +20579,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -20762,21 +20763,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -20902,6 +20888,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -20915,8 +20916,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -21105,21 +21106,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -21245,6 +21231,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -21258,8 +21259,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -21442,21 +21443,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -21582,6 +21568,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -21595,8 +21596,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -21642,8 +21643,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -21827,21 +21828,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -21966,6 +21952,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -22124,21 +22125,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -22264,6 +22250,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -22277,8 +22278,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -22461,21 +22462,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -22601,6 +22587,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -22614,8 +22615,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -22804,21 +22805,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -22944,6 +22930,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -22957,8 +22958,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -23141,21 +23142,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -23281,6 +23267,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -23294,8 +23295,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -23341,8 +23342,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -23522,21 +23523,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -23661,6 +23647,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -23819,21 +23820,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -23959,6 +23945,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -23972,8 +23973,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -24156,21 +24157,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -24296,6 +24282,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -24309,8 +24310,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -24499,21 +24500,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -24639,6 +24625,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -24652,8 +24653,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -24836,21 +24837,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -24976,6 +24962,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -24989,8 +24990,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -25036,8 +25037,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -25224,21 +25225,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -25363,6 +25349,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -25521,21 +25522,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -25661,6 +25647,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -25674,8 +25675,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -25858,21 +25859,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -25998,6 +25984,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -26011,8 +26012,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -26201,21 +26202,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -26341,6 +26327,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -26354,8 +26355,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -26538,21 +26539,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -26678,6 +26664,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -26691,8 +26692,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -26738,8 +26739,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -26923,21 +26924,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -27062,6 +27048,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "type" : [ "type", "type" ]
         } ]
+      } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
       } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
@@ -27220,21 +27221,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -27360,6 +27346,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -27373,8 +27374,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -27557,21 +27558,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -27697,6 +27683,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -27710,8 +27711,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -27900,21 +27901,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -28040,6 +28026,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -28053,8 +28054,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -28237,21 +28238,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "email" : [ "email", "email" ]
           } ],
           "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-          "hasContactPerson" : [ {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          }, {
-            "identifier" : [ "identifier", "identifier" ],
-            "website" : [ "website", "website" ],
-            "id" : "id",
-            "label" : "label",
-            "type" : [ "type", "type" ],
-            "email" : [ "email", "email" ]
-          } ],
           "logo" : [ {
             "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
             "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -28377,6 +28363,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
               "type" : [ "type", "type" ]
             } ]
           } ],
+          "hasContactPerson" : [ {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          }, {
+            "identifier" : [ "identifier", "identifier" ],
+            "website" : [ "website", "website" ],
+            "id" : "id",
+            "label" : "label",
+            "type" : [ "type", "type" ],
+            "email" : [ "email", "email" ]
+          } ],
           "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
           "id" : "id",
           "hasSampleVisualization" : [ null, null ],
@@ -28390,8 +28391,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "label" : "label",
           "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
           "datePublished" : [ "datePublished", "datePublished" ],
-          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "license" : [ "license", "license" ],
+          "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
           "hasSourceCode" : [ {
             "license" : [ "license", "license" ],
             "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -28437,8 +28438,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -28618,21 +28619,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -28757,6 +28743,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "type" : [ "type", "type" ]
       } ]
+    } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
     } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
@@ -28915,21 +28916,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -29055,6 +29041,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -29068,8 +29069,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -29252,21 +29253,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -29392,6 +29378,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -29405,8 +29406,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -29595,21 +29596,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -29735,6 +29721,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -29748,8 +29749,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -29932,21 +29933,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "email" : [ "email", "email" ]
         } ],
         "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-        "hasContactPerson" : [ {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        }, {
-          "identifier" : [ "identifier", "identifier" ],
-          "website" : [ "website", "website" ],
-          "id" : "id",
-          "label" : "label",
-          "type" : [ "type", "type" ],
-          "email" : [ "email", "email" ]
-        } ],
         "logo" : [ {
           "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
           "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -30072,6 +30058,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
             "type" : [ "type", "type" ]
           } ]
         } ],
+        "hasContactPerson" : [ {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        }, {
+          "identifier" : [ "identifier", "identifier" ],
+          "website" : [ "website", "website" ],
+          "id" : "id",
+          "label" : "label",
+          "type" : [ "type", "type" ],
+          "email" : [ "email", "email" ]
+        } ],
         "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
         "id" : "id",
         "hasSampleVisualization" : [ null, null ],
@@ -30085,8 +30086,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "label" : "label",
         "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
         "datePublished" : [ "datePublished", "datePublished" ],
-        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "license" : [ "license", "license" ],
+        "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
         "hasSourceCode" : [ {
           "license" : [ "license", "license" ],
           "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -30132,8 +30133,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -30165,6 +30166,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
     } ]
   } ],
   "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  }, {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  } ],
   "compatibleVisualizationSoftware" : [ {
     "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
     "keywords" : [ "keywords", "keywords" ],
@@ -30318,21 +30334,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -30458,6 +30459,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -30471,8 +30487,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -30655,21 +30671,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -30795,6 +30796,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -30808,8 +30824,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -30840,37 +30856,7 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "type" : [ "type", "type" ]
     } ]
   } ],
-  "contributor" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  } ],
   "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-  "hasContactPerson" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ],
-    "email" : [ "email", "email" ]
-  } ],
   "logo" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -30995,6 +30981,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "type" : [ "type", "type" ]
     } ]
+  } ],
+  "hasContactPerson" : [ {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
+  }, {
+    "identifier" : [ "identifier", "identifier" ],
+    "website" : [ "website", "website" ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ],
+    "email" : [ "email", "email" ]
   } ],
   "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "id" : "id",
@@ -31153,21 +31154,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -31293,6 +31279,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -31306,8 +31307,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -31490,21 +31491,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -31630,6 +31616,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -31643,8 +31644,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -31833,21 +31834,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -31973,6 +31959,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -31986,8 +31987,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -32170,21 +32171,6 @@ class TestSoftwareConfigurationController(BaseTestCase):
         "email" : [ "email", "email" ]
       } ],
       "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-      "hasContactPerson" : [ {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      }, {
-        "identifier" : [ "identifier", "identifier" ],
-        "website" : [ "website", "website" ],
-        "id" : "id",
-        "label" : "label",
-        "type" : [ "type", "type" ],
-        "email" : [ "email", "email" ]
-      } ],
       "logo" : [ {
         "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
         "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -32310,6 +32296,21 @@ class TestSoftwareConfigurationController(BaseTestCase):
           "type" : [ "type", "type" ]
         } ]
       } ],
+      "hasContactPerson" : [ {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      }, {
+        "identifier" : [ "identifier", "identifier" ],
+        "website" : [ "website", "website" ],
+        "id" : "id",
+        "label" : "label",
+        "type" : [ "type", "type" ],
+        "email" : [ "email", "email" ]
+      } ],
       "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
       "id" : "id",
       "hasSampleVisualization" : [ null, null ],
@@ -32323,8 +32324,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
       "label" : "label",
       "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
       "datePublished" : [ "datePublished", "datePublished" ],
-      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "license" : [ "license", "license" ],
+      "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
       "hasSourceCode" : [ {
         "license" : [ "license", "license" ],
         "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -32503,8 +32504,8 @@ class TestSoftwareConfigurationController(BaseTestCase):
     "type" : [ "type", "type" ]
   } ],
   "datePublished" : [ "datePublished", "datePublished" ],
-  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasSourceCode" : [ {
     "license" : [ "license", "license" ],
     "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
