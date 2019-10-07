@@ -6,13 +6,15 @@ from openapi_server.utils.vars import EMPIRICALMODEL_TYPE_NAME, EMPIRICALMODEL_T
 from openapi_server.models.empirical_model import EmpiricalModel  # noqa: E501
 from openapi_server import util
 
-def empiricalmodels_get(username=None):  # noqa: E501
+def empiricalmodels_get(username=None, query_text=None):  # noqa: E501
     """List all EmpiricalModel entities
 
     Gets a list of all EmpiricalModel entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[EmpiricalModel]
     """
@@ -20,6 +22,7 @@ def empiricalmodels_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=EMPIRICALMODEL_TYPE_URI,
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 
         kls=EmpiricalModel)

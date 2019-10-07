@@ -18,7 +18,8 @@ class TestVisualizationController(BaseTestCase):
 
         List all Visualization entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -222,21 +223,6 @@ class TestVisualizationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -362,6 +348,21 @@ class TestVisualizationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -375,8 +376,8 @@ class TestVisualizationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -559,21 +560,6 @@ class TestVisualizationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -699,6 +685,21 @@ class TestVisualizationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -712,8 +713,8 @@ class TestVisualizationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -921,21 +922,6 @@ class TestVisualizationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -1061,6 +1047,21 @@ class TestVisualizationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -1074,8 +1075,8 @@ class TestVisualizationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],
@@ -1258,21 +1259,6 @@ class TestVisualizationController(BaseTestCase):
       "email" : [ "email", "email" ]
     } ],
     "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
-    "hasContactPerson" : [ {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    }, {
-      "identifier" : [ "identifier", "identifier" ],
-      "website" : [ "website", "website" ],
-      "id" : "id",
-      "label" : "label",
-      "type" : [ "type", "type" ],
-      "email" : [ "email", "email" ]
-    } ],
     "logo" : [ {
       "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
       "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -1398,6 +1384,21 @@ class TestVisualizationController(BaseTestCase):
         "type" : [ "type", "type" ]
       } ]
     } ],
+    "hasContactPerson" : [ {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    }, {
+      "identifier" : [ "identifier", "identifier" ],
+      "website" : [ "website", "website" ],
+      "id" : "id",
+      "label" : "label",
+      "type" : [ "type", "type" ],
+      "email" : [ "email", "email" ]
+    } ],
     "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
     "id" : "id",
     "hasSampleVisualization" : [ null, null ],
@@ -1411,8 +1412,8 @@ class TestVisualizationController(BaseTestCase):
     "label" : "label",
     "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
     "datePublished" : [ "datePublished", "datePublished" ],
-    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "license" : [ "license", "license" ],
+    "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
     "hasSourceCode" : [ {
       "license" : [ "license", "license" ],
       "programmingLanguage" : [ "programmingLanguage", "programmingLanguage" ],

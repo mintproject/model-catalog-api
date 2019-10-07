@@ -18,7 +18,8 @@ class TestModelConfigurationController(BaseTestCase):
 
         List all ModelConfiguration entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -68,8 +69,8 @@ class TestModelConfigurationController(BaseTestCase):
         Update a ModelConfiguration
         """
         model_configuration = {
-  "parameterAssignmentMethod" : [ "parameterAssignmentMethod", "parameterAssignmentMethod" ],
-  "hasComponentLocation" : [ "hasComponentLocation", "hasComponentLocation" ],
+  "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -78,8 +79,8 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -92,29 +93,19 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
     "id" : "id"
   } ],
-  "hasProcess" : [ {
-    "influences" : [ null, null ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  }, {
-    "influences" : [ null, null ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  } ],
+  "softwareRequirements" : [ "softwareRequirements", "softwareRequirements" ],
   "hasImplementationScriptLocation" : [ "hasImplementationScriptLocation", "hasImplementationScriptLocation" ],
+  "hasDownloadURL" : [ "hasDownloadURL", "hasDownloadURL" ],
   "type" : [ "type", "type" ],
   "calibratedVariable" : [ "{}", "{}" ],
-  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
-  "hasSoftwareImage" : [ "{}", "{}" ],
+  "hasInstallationInstructions" : [ "hasInstallationInstructions", "hasInstallationInstructions" ],
   "compatibleVisualizationSoftware" : [ "{}", "{}" ],
   "calibrationMethod" : [ "calibrationMethod", "calibrationMethod" ],
   "hasRegion" : [ {
@@ -128,10 +119,60 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
+  "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
+  "logo" : [ "{}", "{}" ],
+  "hasContactPerson" : [ "{}", "{}" ],
+  "id" : "id",
+  "identifier" : [ "identifier", "identifier" ],
+  "hasSampleExecution" : [ "{}", "{}" ],
+  "hasSampleResult" : [ "{}", "{}" ],
+  "author" : [ "{}", "{}" ],
+  "hasConstraint" : [ "hasConstraint", "hasConstraint" ],
+  "shortDescription" : [ "shortDescription", "shortDescription" ],
+  "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
+  "datePublished" : [ "datePublished", "datePublished" ],
+  "license" : [ "license", "license" ],
+  "hasSourceCode" : [ "{}", "{}" ],
+  "hasExplanationDiagram" : [ "{}", "{}" ],
+  "publisher" : [ "{}", "{}" ],
+  "hasOutput" : [ "{}", "{}" ],
+  "fundingSource" : [ "{}", "{}" ],
+  "hasOutputTimeInterval" : [ {
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  }, {
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  } ],
+  "parameterAssignmentMethod" : [ "parameterAssignmentMethod", "parameterAssignmentMethod" ],
+  "hasComponentLocation" : [ "hasComponentLocation", "hasComponentLocation" ],
+  "hasProcess" : [ {
+    "influences" : [ null, null ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  }, {
+    "influences" : [ null, null ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  } ],
+  "hasVersion" : [ "{}", "{}" ],
+  "hasTypicalDataSource" : [ "hasTypicalDataSource", "hasTypicalDataSource" ],
+  "referencePublication" : [ "referencePublication", "referencePublication" ],
+  "description" : [ "description", "description" ],
+  "screenshot" : [ "{}", "{}" ],
+  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
+  "hasSoftwareImage" : [ "{}", "{}" ],
+  "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ "{}", "{}" ],
   "hasModelResultTable" : [ "hasModelResultTable", "hasModelResultTable" ],
   "calibrationTargetVariable" : [ "{}", "{}" ],
-  "id" : "id",
+  "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "hasExpertTunedModel" : [ null, null ],
+  "hasSampleVisualization" : [ "{}", "{}" ],
   "hasCalibration" : [ null, null ],
   "hasCausalDiagram" : [ {
     "hasPart" : [ "{}", "{}" ],
@@ -144,26 +185,17 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
-  "hasSampleExecution" : [ "{}", "{}" ],
-  "hasSampleResult" : [ "{}", "{}" ],
-  "hasConstraint" : [ "hasConstraint", "hasConstraint" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
+  "website" : [ "website", "website" ],
+  "citation" : [ "citation", "citation" ],
+  "processorRequirements" : [ "processorRequirements", "processorRequirements" ],
   "adjustableParameter" : [ "{}", "{}" ],
   "hasSupportScriptLocation" : [ "hasSupportScriptLocation", "hasSupportScriptLocation" ],
   "label" : "label",
-  "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
+  "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
   "hasParameter" : [ "{}", "{}" ],
-  "hasExplanationDiagram" : [ "{}", "{}" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasEquation" : [ {
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  }, {
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  } ],
-  "hasOutput" : [ "{}", "{}" ],
-  "hasOutputTimeInterval" : [ {
     "id" : "id",
     "label" : "label",
     "type" : [ "type", "type" ]
@@ -193,8 +225,8 @@ class TestModelConfigurationController(BaseTestCase):
         Create a ModelConfiguration
         """
         model_configuration = {
-  "parameterAssignmentMethod" : [ "parameterAssignmentMethod", "parameterAssignmentMethod" ],
-  "hasComponentLocation" : [ "hasComponentLocation", "hasComponentLocation" ],
+  "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -203,8 +235,8 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -217,29 +249,19 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
     "id" : "id"
   } ],
-  "hasProcess" : [ {
-    "influences" : [ null, null ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  }, {
-    "influences" : [ null, null ],
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  } ],
+  "softwareRequirements" : [ "softwareRequirements", "softwareRequirements" ],
   "hasImplementationScriptLocation" : [ "hasImplementationScriptLocation", "hasImplementationScriptLocation" ],
+  "hasDownloadURL" : [ "hasDownloadURL", "hasDownloadURL" ],
   "type" : [ "type", "type" ],
   "calibratedVariable" : [ "{}", "{}" ],
-  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
-  "hasSoftwareImage" : [ "{}", "{}" ],
+  "hasInstallationInstructions" : [ "hasInstallationInstructions", "hasInstallationInstructions" ],
   "compatibleVisualizationSoftware" : [ "{}", "{}" ],
   "calibrationMethod" : [ "calibrationMethod", "calibrationMethod" ],
   "hasRegion" : [ {
@@ -253,10 +275,60 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
+  "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
+  "logo" : [ "{}", "{}" ],
+  "hasContactPerson" : [ "{}", "{}" ],
+  "id" : "id",
+  "identifier" : [ "identifier", "identifier" ],
+  "hasSampleExecution" : [ "{}", "{}" ],
+  "hasSampleResult" : [ "{}", "{}" ],
+  "author" : [ "{}", "{}" ],
+  "hasConstraint" : [ "hasConstraint", "hasConstraint" ],
+  "shortDescription" : [ "shortDescription", "shortDescription" ],
+  "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
+  "datePublished" : [ "datePublished", "datePublished" ],
+  "license" : [ "license", "license" ],
+  "hasSourceCode" : [ "{}", "{}" ],
+  "hasExplanationDiagram" : [ "{}", "{}" ],
+  "publisher" : [ "{}", "{}" ],
+  "hasOutput" : [ "{}", "{}" ],
+  "fundingSource" : [ "{}", "{}" ],
+  "hasOutputTimeInterval" : [ {
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  }, {
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  } ],
+  "parameterAssignmentMethod" : [ "parameterAssignmentMethod", "parameterAssignmentMethod" ],
+  "hasComponentLocation" : [ "hasComponentLocation", "hasComponentLocation" ],
+  "hasProcess" : [ {
+    "influences" : [ null, null ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  }, {
+    "influences" : [ null, null ],
+    "id" : "id",
+    "label" : "label",
+    "type" : [ "type", "type" ]
+  } ],
+  "hasVersion" : [ "{}", "{}" ],
+  "hasTypicalDataSource" : [ "hasTypicalDataSource", "hasTypicalDataSource" ],
+  "referencePublication" : [ "referencePublication", "referencePublication" ],
+  "description" : [ "description", "description" ],
+  "screenshot" : [ "{}", "{}" ],
+  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
+  "hasSoftwareImage" : [ "{}", "{}" ],
+  "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ "{}", "{}" ],
   "hasModelResultTable" : [ "hasModelResultTable", "hasModelResultTable" ],
   "calibrationTargetVariable" : [ "{}", "{}" ],
-  "id" : "id",
+  "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
   "hasExpertTunedModel" : [ null, null ],
+  "hasSampleVisualization" : [ "{}", "{}" ],
   "hasCalibration" : [ null, null ],
   "hasCausalDiagram" : [ {
     "hasPart" : [ "{}", "{}" ],
@@ -269,26 +341,17 @@ class TestModelConfigurationController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
-  "hasSampleExecution" : [ "{}", "{}" ],
-  "hasSampleResult" : [ "{}", "{}" ],
-  "hasConstraint" : [ "hasConstraint", "hasConstraint" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
+  "website" : [ "website", "website" ],
+  "citation" : [ "citation", "citation" ],
+  "processorRequirements" : [ "processorRequirements", "processorRequirements" ],
   "adjustableParameter" : [ "{}", "{}" ],
   "hasSupportScriptLocation" : [ "hasSupportScriptLocation", "hasSupportScriptLocation" ],
   "label" : "label",
-  "hasExecutionCommand" : [ "hasExecutionCommand", "hasExecutionCommand" ],
+  "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
   "hasParameter" : [ "{}", "{}" ],
-  "hasExplanationDiagram" : [ "{}", "{}" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
   "hasEquation" : [ {
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  }, {
-    "id" : "id",
-    "label" : "label",
-    "type" : [ "type", "type" ]
-  } ],
-  "hasOutput" : [ "{}", "{}" ],
-  "hasOutputTimeInterval" : [ {
     "id" : "id",
     "label" : "label",
     "type" : [ "type", "type" ]

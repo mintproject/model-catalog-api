@@ -8,7 +8,6 @@ if [ "$#" -ne 1 ]; then
 fi
 MODEL_ID=$1
 
-TOKEN=$(curl -s -X GET "$SERVER/v1.0.0/user/login?username=mint%40isi.edu&password=mint123" -H "accept: application/json" | jq -r '.access_token')
 echo "Obtaining the model: $MODEL_ID"
 curl -X GET "$SERVER/v1.0.0/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
 echo "Deleting the model: $MODEL_ID"

@@ -15,7 +15,7 @@ class SoftwareConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_component_location=None, has_documentation=None, keywords=None, has_implementation_script_location=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_software_image=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, has_sample_execution=None, has_sample_result=None, citation=None, author=None, processor_requirements=None, has_constraint=None, has_support_script_location=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, has_parameter=None, date_published=None, operating_systems=None, license=None, has_source_code=None, publisher=None, has_output=None, funding_source=None, has_input=None):  # noqa: E501
+    def __init__(self, has_component_location=None, has_documentation=None, keywords=None, has_implementation_script_location=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_software_image=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, has_sample_execution=None, has_sample_result=None, citation=None, author=None, processor_requirements=None, has_constraint=None, has_support_script_location=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, has_parameter=None, date_published=None, license=None, operating_systems=None, has_source_code=None, publisher=None, has_output=None, funding_source=None, has_input=None):  # noqa: E501
         """SoftwareConfiguration - a model defined in OpenAPI
 
         :param has_component_location: The has_component_location of this SoftwareConfiguration.  # noqa: E501
@@ -48,16 +48,16 @@ class SoftwareConfiguration(Model):
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this SoftwareConfiguration.  # noqa: E501
         :type date_created: List[str]
-        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareConfiguration.  # noqa: E501
-        :type compatible_visualization_software: List[Software]
         :param contributor: The contributor of this SoftwareConfiguration.  # noqa: E501
         :type contributor: List[Person]
+        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareConfiguration.  # noqa: E501
+        :type compatible_visualization_software: List[Software]
         :param has_faq: The has_faq of this SoftwareConfiguration.  # noqa: E501
         :type has_faq: List[str]
-        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.  # noqa: E501
-        :type has_contact_person: List[Person]
         :param logo: The logo of this SoftwareConfiguration.  # noqa: E501
         :type logo: List[Image]
+        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.  # noqa: E501
+        :type has_contact_person: List[Person]
         :param has_purpose: The has_purpose of this SoftwareConfiguration.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this SoftwareConfiguration.  # noqa: E501
@@ -96,10 +96,10 @@ class SoftwareConfiguration(Model):
         :type has_parameter: List[Parameter]
         :param date_published: The date_published of this SoftwareConfiguration.  # noqa: E501
         :type date_published: List[str]
-        :param operating_systems: The operating_systems of this SoftwareConfiguration.  # noqa: E501
-        :type operating_systems: List[str]
         :param license: The license of this SoftwareConfiguration.  # noqa: E501
         :type license: List[str]
+        :param operating_systems: The operating_systems of this SoftwareConfiguration.  # noqa: E501
+        :type operating_systems: List[str]
         :param has_source_code: The has_source_code of this SoftwareConfiguration.  # noqa: E501
         :type has_source_code: List[SourceCode]
         :param publisher: The publisher of this SoftwareConfiguration.  # noqa: E501
@@ -153,11 +153,11 @@ class SoftwareConfiguration(Model):
             'has_installation_instructions': List[str],
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
-            'compatible_visualization_software': List[Software],
             'contributor': List[Person],
+            'compatible_visualization_software': List[Software],
             'has_faq': List[str],
-            'has_contact_person': List[Person],
             'logo': List[Image],
+            'has_contact_person': List[Person],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[Visualization],
@@ -177,8 +177,8 @@ class SoftwareConfiguration(Model):
             'has_assumption': List[str],
             'has_parameter': List[Parameter],
             'date_published': List[str],
-            'operating_systems': List[str],
             'license': List[str],
+            'operating_systems': List[str],
             'has_source_code': List[SourceCode],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
@@ -202,11 +202,11 @@ class SoftwareConfiguration(Model):
             'has_installation_instructions': 'hasInstallationInstructions',
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
-            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
+            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'has_faq': 'hasFAQ',
-            'has_contact_person': 'hasContactPerson',
             'logo': 'logo',
+            'has_contact_person': 'hasContactPerson',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -226,8 +226,8 @@ class SoftwareConfiguration(Model):
             'has_assumption': 'hasAssumption',
             'has_parameter': 'hasParameter',
             'date_published': 'datePublished',
-            'operating_systems': 'operatingSystems',
             'license': 'license',
+            'operating_systems': 'operatingSystems',
             'has_source_code': 'hasSourceCode',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
@@ -250,11 +250,11 @@ class SoftwareConfiguration(Model):
         self._has_installation_instructions = has_installation_instructions
         self._has_software_image = has_software_image
         self._date_created = date_created
-        self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
+        self._compatible_visualization_software = compatible_visualization_software
         self._has_faq = has_faq
-        self._has_contact_person = has_contact_person
         self._logo = logo
+        self._has_contact_person = has_contact_person
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
@@ -274,8 +274,8 @@ class SoftwareConfiguration(Model):
         self._has_assumption = has_assumption
         self._has_parameter = has_parameter
         self._date_published = date_published
-        self._operating_systems = operating_systems
         self._license = license
+        self._operating_systems = operating_systems
         self._has_source_code = has_source_code
         self._publisher = publisher
         self._has_output = has_output
@@ -609,27 +609,6 @@ class SoftwareConfiguration(Model):
         self._date_created = date_created
 
     @property
-    def compatible_visualization_software(self):
-        """Gets the compatible_visualization_software of this SoftwareConfiguration.
-
-
-        :return: The compatible_visualization_software of this SoftwareConfiguration.
-        :rtype: List[Software]
-        """
-        return self._compatible_visualization_software
-
-    @compatible_visualization_software.setter
-    def compatible_visualization_software(self, compatible_visualization_software):
-        """Sets the compatible_visualization_software of this SoftwareConfiguration.
-
-
-        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareConfiguration.
-        :type compatible_visualization_software: List[Software]
-        """
-
-        self._compatible_visualization_software = compatible_visualization_software
-
-    @property
     def contributor(self):
         """Gets the contributor of this SoftwareConfiguration.
 
@@ -649,6 +628,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._contributor = contributor
+
+    @property
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this SoftwareConfiguration.
+
+
+        :return: The compatible_visualization_software of this SoftwareConfiguration.
+        :rtype: List[Software]
+        """
+        return self._compatible_visualization_software
+
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this SoftwareConfiguration.
+
+
+        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareConfiguration.
+        :type compatible_visualization_software: List[Software]
+        """
+
+        self._compatible_visualization_software = compatible_visualization_software
 
     @property
     def has_faq(self):
@@ -672,27 +672,6 @@ class SoftwareConfiguration(Model):
         self._has_faq = has_faq
 
     @property
-    def has_contact_person(self):
-        """Gets the has_contact_person of this SoftwareConfiguration.
-
-
-        :return: The has_contact_person of this SoftwareConfiguration.
-        :rtype: List[Person]
-        """
-        return self._has_contact_person
-
-    @has_contact_person.setter
-    def has_contact_person(self, has_contact_person):
-        """Sets the has_contact_person of this SoftwareConfiguration.
-
-
-        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.
-        :type has_contact_person: List[Person]
-        """
-
-        self._has_contact_person = has_contact_person
-
-    @property
     def logo(self):
         """Gets the logo of this SoftwareConfiguration.
 
@@ -712,6 +691,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._logo = logo
+
+    @property
+    def has_contact_person(self):
+        """Gets the has_contact_person of this SoftwareConfiguration.
+
+
+        :return: The has_contact_person of this SoftwareConfiguration.
+        :rtype: List[Person]
+        """
+        return self._has_contact_person
+
+    @has_contact_person.setter
+    def has_contact_person(self, has_contact_person):
+        """Sets the has_contact_person of this SoftwareConfiguration.
+
+
+        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.
+        :type has_contact_person: List[Person]
+        """
+
+        self._has_contact_person = has_contact_person
 
     @property
     def has_purpose(self):
@@ -1113,27 +1113,6 @@ class SoftwareConfiguration(Model):
         self._date_published = date_published
 
     @property
-    def operating_systems(self):
-        """Gets the operating_systems of this SoftwareConfiguration.
-
-
-        :return: The operating_systems of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._operating_systems
-
-    @operating_systems.setter
-    def operating_systems(self, operating_systems):
-        """Sets the operating_systems of this SoftwareConfiguration.
-
-
-        :param operating_systems: The operating_systems of this SoftwareConfiguration.
-        :type operating_systems: List[str]
-        """
-
-        self._operating_systems = operating_systems
-
-    @property
     def license(self):
         """Gets the license of this SoftwareConfiguration.
 
@@ -1153,6 +1132,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._license = license
+
+    @property
+    def operating_systems(self):
+        """Gets the operating_systems of this SoftwareConfiguration.
+
+
+        :return: The operating_systems of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._operating_systems
+
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """Sets the operating_systems of this SoftwareConfiguration.
+
+
+        :param operating_systems: The operating_systems of this SoftwareConfiguration.
+        :type operating_systems: List[str]
+        """
+
+        self._operating_systems = operating_systems
 
     @property
     def has_source_code(self):

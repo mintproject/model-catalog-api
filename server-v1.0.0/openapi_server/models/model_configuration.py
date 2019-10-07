@@ -15,69 +15,131 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, parameter_assignment_method=None, has_component_location=None, has_grid=None, has_process=None, has_implementation_script_location=None, type=None, calibrated_variable=None, has_model_category=None, has_software_image=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_model_result_table=None, calibration_target_variable=None, id=None, has_expert_tuned_model=None, has_calibration=None, has_causal_diagram=None, has_sample_execution=None, has_sample_result=None, has_constraint=None, adjustable_parameter=None, has_support_script_location=None, label=None, has_execution_command=None, has_parameter=None, has_explanation_diagram=None, has_equation=None, has_output=None, has_output_time_interval=None, has_input=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_output=None, funding_source=None, has_output_time_interval=None, parameter_assignment_method=None, has_component_location=None, has_process=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, has_model_category=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_expert_tuned_model=None, has_sample_visualization=None, has_calibration=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
-        :param parameter_assignment_method: The parameter_assignment_method of this ModelConfiguration.  # noqa: E501
-        :type parameter_assignment_method: List[str]
-        :param has_component_location: The has_component_location of this ModelConfiguration.  # noqa: E501
-        :type has_component_location: List[str]
+        :param keywords: The keywords of this ModelConfiguration.  # noqa: E501
+        :type keywords: List[str]
+        :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_grid: The has_grid of this ModelConfiguration.  # noqa: E501
         :type has_grid: List[Grid]
-        :param has_process: The has_process of this ModelConfiguration.  # noqa: E501
-        :type has_process: List[Process]
+        :param software_requirements: The software_requirements of this ModelConfiguration.  # noqa: E501
+        :type software_requirements: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
         :type has_implementation_script_location: List[str]
+        :param has_download_url: The has_download_url of this ModelConfiguration.  # noqa: E501
+        :type has_download_url: List[str]
         :param type: The type of this ModelConfiguration.  # noqa: E501
         :type type: List[str]
         :param calibrated_variable: The calibrated_variable of this ModelConfiguration.  # noqa: E501
         :type calibrated_variable: List[object]
-        :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
-        :type has_model_category: List[str]
-        :param has_software_image: The has_software_image of this ModelConfiguration.  # noqa: E501
-        :type has_software_image: List[object]
+        :param has_installation_instructions: The has_installation_instructions of this ModelConfiguration.  # noqa: E501
+        :type has_installation_instructions: List[str]
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfiguration.  # noqa: E501
         :type compatible_visualization_software: List[object]
         :param calibration_method: The calibration_method of this ModelConfiguration.  # noqa: E501
         :type calibration_method: List[str]
         :param has_region: The has_region of this ModelConfiguration.  # noqa: E501
         :type has_region: List[Region]
-        :param has_model_result_table: The has_model_result_table of this ModelConfiguration.  # noqa: E501
-        :type has_model_result_table: List[str]
-        :param calibration_target_variable: The calibration_target_variable of this ModelConfiguration.  # noqa: E501
-        :type calibration_target_variable: List[object]
+        :param has_faq: The has_faq of this ModelConfiguration.  # noqa: E501
+        :type has_faq: List[str]
+        :param logo: The logo of this ModelConfiguration.  # noqa: E501
+        :type logo: List[object]
+        :param has_contact_person: The has_contact_person of this ModelConfiguration.  # noqa: E501
+        :type has_contact_person: List[object]
         :param id: The id of this ModelConfiguration.  # noqa: E501
         :type id: str
-        :param has_expert_tuned_model: The has_expert_tuned_model of this ModelConfiguration.  # noqa: E501
-        :type has_expert_tuned_model: List[ModelConfiguration]
-        :param has_calibration: The has_calibration of this ModelConfiguration.  # noqa: E501
-        :type has_calibration: List[ModelConfiguration]
-        :param has_causal_diagram: The has_causal_diagram of this ModelConfiguration.  # noqa: E501
-        :type has_causal_diagram: List[CausalDiagram]
+        :param identifier: The identifier of this ModelConfiguration.  # noqa: E501
+        :type identifier: List[str]
         :param has_sample_execution: The has_sample_execution of this ModelConfiguration.  # noqa: E501
         :type has_sample_execution: List[object]
         :param has_sample_result: The has_sample_result of this ModelConfiguration.  # noqa: E501
         :type has_sample_result: List[object]
+        :param author: The author of this ModelConfiguration.  # noqa: E501
+        :type author: List[object]
         :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
         :type has_constraint: List[str]
+        :param short_description: The short_description of this ModelConfiguration.  # noqa: E501
+        :type short_description: List[str]
+        :param has_execution_command: The has_execution_command of this ModelConfiguration.  # noqa: E501
+        :type has_execution_command: List[str]
+        :param date_published: The date_published of this ModelConfiguration.  # noqa: E501
+        :type date_published: List[str]
+        :param license: The license of this ModelConfiguration.  # noqa: E501
+        :type license: List[str]
+        :param has_source_code: The has_source_code of this ModelConfiguration.  # noqa: E501
+        :type has_source_code: List[object]
+        :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.  # noqa: E501
+        :type has_explanation_diagram: List[object]
+        :param publisher: The publisher of this ModelConfiguration.  # noqa: E501
+        :type publisher: List[object]
+        :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
+        :type has_output: List[object]
+        :param funding_source: The funding_source of this ModelConfiguration.  # noqa: E501
+        :type funding_source: List[object]
+        :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
+        :type has_output_time_interval: List[TimeInterval]
+        :param parameter_assignment_method: The parameter_assignment_method of this ModelConfiguration.  # noqa: E501
+        :type parameter_assignment_method: List[str]
+        :param has_component_location: The has_component_location of this ModelConfiguration.  # noqa: E501
+        :type has_component_location: List[str]
+        :param has_process: The has_process of this ModelConfiguration.  # noqa: E501
+        :type has_process: List[Process]
+        :param has_version: The has_version of this ModelConfiguration.  # noqa: E501
+        :type has_version: List[object]
+        :param has_typical_data_source: The has_typical_data_source of this ModelConfiguration.  # noqa: E501
+        :type has_typical_data_source: List[str]
+        :param reference_publication: The reference_publication of this ModelConfiguration.  # noqa: E501
+        :type reference_publication: List[str]
+        :param description: The description of this ModelConfiguration.  # noqa: E501
+        :type description: List[str]
+        :param screenshot: The screenshot of this ModelConfiguration.  # noqa: E501
+        :type screenshot: List[object]
+        :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
+        :type has_model_category: List[str]
+        :param has_software_image: The has_software_image of this ModelConfiguration.  # noqa: E501
+        :type has_software_image: List[object]
+        :param date_created: The date_created of this ModelConfiguration.  # noqa: E501
+        :type date_created: List[str]
+        :param contributor: The contributor of this ModelConfiguration.  # noqa: E501
+        :type contributor: List[object]
+        :param has_model_result_table: The has_model_result_table of this ModelConfiguration.  # noqa: E501
+        :type has_model_result_table: List[str]
+        :param calibration_target_variable: The calibration_target_variable of this ModelConfiguration.  # noqa: E501
+        :type calibration_target_variable: List[object]
+        :param has_purpose: The has_purpose of this ModelConfiguration.  # noqa: E501
+        :type has_purpose: List[str]
+        :param has_expert_tuned_model: The has_expert_tuned_model of this ModelConfiguration.  # noqa: E501
+        :type has_expert_tuned_model: List[ModelConfiguration]
+        :param has_sample_visualization: The has_sample_visualization of this ModelConfiguration.  # noqa: E501
+        :type has_sample_visualization: List[object]
+        :param has_calibration: The has_calibration of this ModelConfiguration.  # noqa: E501
+        :type has_calibration: List[ModelConfiguration]
+        :param has_causal_diagram: The has_causal_diagram of this ModelConfiguration.  # noqa: E501
+        :type has_causal_diagram: List[CausalDiagram]
+        :param memory_requirements: The memory_requirements of this ModelConfiguration.  # noqa: E501
+        :type memory_requirements: List[str]
+        :param website: The website of this ModelConfiguration.  # noqa: E501
+        :type website: List[str]
+        :param citation: The citation of this ModelConfiguration.  # noqa: E501
+        :type citation: List[str]
+        :param processor_requirements: The processor_requirements of this ModelConfiguration.  # noqa: E501
+        :type processor_requirements: List[str]
         :param adjustable_parameter: The adjustable_parameter of this ModelConfiguration.  # noqa: E501
         :type adjustable_parameter: List[object]
         :param has_support_script_location: The has_support_script_location of this ModelConfiguration.  # noqa: E501
         :type has_support_script_location: List[str]
         :param label: The label of this ModelConfiguration.  # noqa: E501
         :type label: str
-        :param has_execution_command: The has_execution_command of this ModelConfiguration.  # noqa: E501
-        :type has_execution_command: List[str]
+        :param has_assumption: The has_assumption of this ModelConfiguration.  # noqa: E501
+        :type has_assumption: List[str]
         :param has_parameter: The has_parameter of this ModelConfiguration.  # noqa: E501
         :type has_parameter: List[object]
-        :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.  # noqa: E501
-        :type has_explanation_diagram: List[object]
+        :param operating_systems: The operating_systems of this ModelConfiguration.  # noqa: E501
+        :type operating_systems: List[str]
         :param has_equation: The has_equation of this ModelConfiguration.  # noqa: E501
         :type has_equation: List[Equation]
-        :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
-        :type has_output: List[object]
-        :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
-        :type has_output_time_interval: List[TimeInterval]
         :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
         :type has_input: List[object]
         """
@@ -96,103 +158,196 @@ class ModelConfiguration(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'parameter_assignment_method': List[str],
-            'has_component_location': List[str],
+            'keywords': List[str],
+            'has_documentation': List[str],
             'has_grid': List[Grid],
-            'has_process': List[Process],
+            'software_requirements': List[str],
             'has_implementation_script_location': List[str],
+            'has_download_url': List[str],
             'type': List[str],
             'calibrated_variable': List[object],
-            'has_model_category': List[str],
-            'has_software_image': List[object],
+            'has_installation_instructions': List[str],
             'compatible_visualization_software': List[object],
             'calibration_method': List[str],
             'has_region': List[Region],
-            'has_model_result_table': List[str],
-            'calibration_target_variable': List[object],
+            'has_faq': List[str],
+            'logo': List[object],
+            'has_contact_person': List[object],
             'id': str,
-            'has_expert_tuned_model': List[ModelConfiguration],
-            'has_calibration': List[ModelConfiguration],
-            'has_causal_diagram': List[CausalDiagram],
+            'identifier': List[str],
             'has_sample_execution': List[object],
             'has_sample_result': List[object],
+            'author': List[object],
             'has_constraint': List[str],
+            'short_description': List[str],
+            'has_execution_command': List[str],
+            'date_published': List[str],
+            'license': List[str],
+            'has_source_code': List[object],
+            'has_explanation_diagram': List[object],
+            'publisher': List[object],
+            'has_output': List[object],
+            'funding_source': List[object],
+            'has_output_time_interval': List[TimeInterval],
+            'parameter_assignment_method': List[str],
+            'has_component_location': List[str],
+            'has_process': List[Process],
+            'has_version': List[object],
+            'has_typical_data_source': List[str],
+            'reference_publication': List[str],
+            'description': List[str],
+            'screenshot': List[object],
+            'has_model_category': List[str],
+            'has_software_image': List[object],
+            'date_created': List[str],
+            'contributor': List[object],
+            'has_model_result_table': List[str],
+            'calibration_target_variable': List[object],
+            'has_purpose': List[str],
+            'has_expert_tuned_model': List[ModelConfiguration],
+            'has_sample_visualization': List[object],
+            'has_calibration': List[ModelConfiguration],
+            'has_causal_diagram': List[CausalDiagram],
+            'memory_requirements': List[str],
+            'website': List[str],
+            'citation': List[str],
+            'processor_requirements': List[str],
             'adjustable_parameter': List[object],
             'has_support_script_location': List[str],
             'label': str,
-            'has_execution_command': List[str],
+            'has_assumption': List[str],
             'has_parameter': List[object],
-            'has_explanation_diagram': List[object],
+            'operating_systems': List[str],
             'has_equation': List[Equation],
-            'has_output': List[object],
-            'has_output_time_interval': List[TimeInterval],
             'has_input': List[object]
         }
 
         self.attribute_map = {
-            'parameter_assignment_method': 'parameterAssignmentMethod',
-            'has_component_location': 'hasComponentLocation',
+            'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
-            'has_process': 'hasProcess',
+            'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
+            'has_download_url': 'hasDownloadURL',
             'type': 'type',
             'calibrated_variable': 'calibratedVariable',
-            'has_model_category': 'hasModelCategory',
-            'has_software_image': 'hasSoftwareImage',
+            'has_installation_instructions': 'hasInstallationInstructions',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'calibration_method': 'calibrationMethod',
             'has_region': 'hasRegion',
-            'has_model_result_table': 'hasModelResultTable',
-            'calibration_target_variable': 'calibrationTargetVariable',
+            'has_faq': 'hasFAQ',
+            'logo': 'logo',
+            'has_contact_person': 'hasContactPerson',
             'id': 'id',
-            'has_expert_tuned_model': 'hasExpertTunedModel',
-            'has_calibration': 'hasCalibration',
-            'has_causal_diagram': 'hasCausalDiagram',
+            'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
             'has_sample_result': 'hasSampleResult',
+            'author': 'author',
             'has_constraint': 'hasConstraint',
+            'short_description': 'shortDescription',
+            'has_execution_command': 'hasExecutionCommand',
+            'date_published': 'datePublished',
+            'license': 'license',
+            'has_source_code': 'hasSourceCode',
+            'has_explanation_diagram': 'hasExplanationDiagram',
+            'publisher': 'publisher',
+            'has_output': 'hasOutput',
+            'funding_source': 'fundingSource',
+            'has_output_time_interval': 'hasOutputTimeInterval',
+            'parameter_assignment_method': 'parameterAssignmentMethod',
+            'has_component_location': 'hasComponentLocation',
+            'has_process': 'hasProcess',
+            'has_version': 'hasVersion',
+            'has_typical_data_source': 'hasTypicalDataSource',
+            'reference_publication': 'referencePublication',
+            'description': 'description',
+            'screenshot': 'screenshot',
+            'has_model_category': 'hasModelCategory',
+            'has_software_image': 'hasSoftwareImage',
+            'date_created': 'dateCreated',
+            'contributor': 'contributor',
+            'has_model_result_table': 'hasModelResultTable',
+            'calibration_target_variable': 'calibrationTargetVariable',
+            'has_purpose': 'hasPurpose',
+            'has_expert_tuned_model': 'hasExpertTunedModel',
+            'has_sample_visualization': 'hasSampleVisualization',
+            'has_calibration': 'hasCalibration',
+            'has_causal_diagram': 'hasCausalDiagram',
+            'memory_requirements': 'memoryRequirements',
+            'website': 'website',
+            'citation': 'citation',
+            'processor_requirements': 'processorRequirements',
             'adjustable_parameter': 'adjustableParameter',
             'has_support_script_location': 'hasSupportScriptLocation',
             'label': 'label',
-            'has_execution_command': 'hasExecutionCommand',
+            'has_assumption': 'hasAssumption',
             'has_parameter': 'hasParameter',
-            'has_explanation_diagram': 'hasExplanationDiagram',
+            'operating_systems': 'operatingSystems',
             'has_equation': 'hasEquation',
-            'has_output': 'hasOutput',
-            'has_output_time_interval': 'hasOutputTimeInterval',
             'has_input': 'hasInput'
         }
 
-        self._parameter_assignment_method = parameter_assignment_method
-        self._has_component_location = has_component_location
+        self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_grid = has_grid
-        self._has_process = has_process
+        self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
+        self._has_download_url = has_download_url
         self._type = type
         self._calibrated_variable = calibrated_variable
-        self._has_model_category = has_model_category
-        self._has_software_image = has_software_image
+        self._has_installation_instructions = has_installation_instructions
         self._compatible_visualization_software = compatible_visualization_software
         self._calibration_method = calibration_method
         self._has_region = has_region
-        self._has_model_result_table = has_model_result_table
-        self._calibration_target_variable = calibration_target_variable
+        self._has_faq = has_faq
+        self._logo = logo
+        self._has_contact_person = has_contact_person
         self._id = id
-        self._has_expert_tuned_model = has_expert_tuned_model
-        self._has_calibration = has_calibration
-        self._has_causal_diagram = has_causal_diagram
+        self._identifier = identifier
         self._has_sample_execution = has_sample_execution
         self._has_sample_result = has_sample_result
+        self._author = author
         self._has_constraint = has_constraint
+        self._short_description = short_description
+        self._has_execution_command = has_execution_command
+        self._date_published = date_published
+        self._license = license
+        self._has_source_code = has_source_code
+        self._has_explanation_diagram = has_explanation_diagram
+        self._publisher = publisher
+        self._has_output = has_output
+        self._funding_source = funding_source
+        self._has_output_time_interval = has_output_time_interval
+        self._parameter_assignment_method = parameter_assignment_method
+        self._has_component_location = has_component_location
+        self._has_process = has_process
+        self._has_version = has_version
+        self._has_typical_data_source = has_typical_data_source
+        self._reference_publication = reference_publication
+        self._description = description
+        self._screenshot = screenshot
+        self._has_model_category = has_model_category
+        self._has_software_image = has_software_image
+        self._date_created = date_created
+        self._contributor = contributor
+        self._has_model_result_table = has_model_result_table
+        self._calibration_target_variable = calibration_target_variable
+        self._has_purpose = has_purpose
+        self._has_expert_tuned_model = has_expert_tuned_model
+        self._has_sample_visualization = has_sample_visualization
+        self._has_calibration = has_calibration
+        self._has_causal_diagram = has_causal_diagram
+        self._memory_requirements = memory_requirements
+        self._website = website
+        self._citation = citation
+        self._processor_requirements = processor_requirements
         self._adjustable_parameter = adjustable_parameter
         self._has_support_script_location = has_support_script_location
         self._label = label
-        self._has_execution_command = has_execution_command
+        self._has_assumption = has_assumption
         self._has_parameter = has_parameter
-        self._has_explanation_diagram = has_explanation_diagram
+        self._operating_systems = operating_systems
         self._has_equation = has_equation
-        self._has_output = has_output
-        self._has_output_time_interval = has_output_time_interval
         self._has_input = has_input
 
     @classmethod
@@ -207,46 +362,46 @@ class ModelConfiguration(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def parameter_assignment_method(self):
-        """Gets the parameter_assignment_method of this ModelConfiguration.
+    def keywords(self):
+        """Gets the keywords of this ModelConfiguration.
 
 
-        :return: The parameter_assignment_method of this ModelConfiguration.
+        :return: The keywords of this ModelConfiguration.
         :rtype: List[str]
         """
-        return self._parameter_assignment_method
+        return self._keywords
 
-    @parameter_assignment_method.setter
-    def parameter_assignment_method(self, parameter_assignment_method):
-        """Sets the parameter_assignment_method of this ModelConfiguration.
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this ModelConfiguration.
 
 
-        :param parameter_assignment_method: The parameter_assignment_method of this ModelConfiguration.
-        :type parameter_assignment_method: List[str]
+        :param keywords: The keywords of this ModelConfiguration.
+        :type keywords: List[str]
         """
 
-        self._parameter_assignment_method = parameter_assignment_method
+        self._keywords = keywords
 
     @property
-    def has_component_location(self):
-        """Gets the has_component_location of this ModelConfiguration.
+    def has_documentation(self):
+        """Gets the has_documentation of this ModelConfiguration.
 
 
-        :return: The has_component_location of this ModelConfiguration.
+        :return: The has_documentation of this ModelConfiguration.
         :rtype: List[str]
         """
-        return self._has_component_location
+        return self._has_documentation
 
-    @has_component_location.setter
-    def has_component_location(self, has_component_location):
-        """Sets the has_component_location of this ModelConfiguration.
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this ModelConfiguration.
 
 
-        :param has_component_location: The has_component_location of this ModelConfiguration.
-        :type has_component_location: List[str]
+        :param has_documentation: The has_documentation of this ModelConfiguration.
+        :type has_documentation: List[str]
         """
 
-        self._has_component_location = has_component_location
+        self._has_documentation = has_documentation
 
     @property
     def has_grid(self):
@@ -270,25 +425,25 @@ class ModelConfiguration(Model):
         self._has_grid = has_grid
 
     @property
-    def has_process(self):
-        """Gets the has_process of this ModelConfiguration.
+    def software_requirements(self):
+        """Gets the software_requirements of this ModelConfiguration.
 
 
-        :return: The has_process of this ModelConfiguration.
-        :rtype: List[Process]
+        :return: The software_requirements of this ModelConfiguration.
+        :rtype: List[str]
         """
-        return self._has_process
+        return self._software_requirements
 
-    @has_process.setter
-    def has_process(self, has_process):
-        """Sets the has_process of this ModelConfiguration.
+    @software_requirements.setter
+    def software_requirements(self, software_requirements):
+        """Sets the software_requirements of this ModelConfiguration.
 
 
-        :param has_process: The has_process of this ModelConfiguration.
-        :type has_process: List[Process]
+        :param software_requirements: The software_requirements of this ModelConfiguration.
+        :type software_requirements: List[str]
         """
 
-        self._has_process = has_process
+        self._software_requirements = software_requirements
 
     @property
     def has_implementation_script_location(self):
@@ -310,6 +465,27 @@ class ModelConfiguration(Model):
         """
 
         self._has_implementation_script_location = has_implementation_script_location
+
+    @property
+    def has_download_url(self):
+        """Gets the has_download_url of this ModelConfiguration.
+
+
+        :return: The has_download_url of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_download_url
+
+    @has_download_url.setter
+    def has_download_url(self, has_download_url):
+        """Sets the has_download_url of this ModelConfiguration.
+
+
+        :param has_download_url: The has_download_url of this ModelConfiguration.
+        :type has_download_url: List[str]
+        """
+
+        self._has_download_url = has_download_url
 
     @property
     def type(self):
@@ -354,46 +530,25 @@ class ModelConfiguration(Model):
         self._calibrated_variable = calibrated_variable
 
     @property
-    def has_model_category(self):
-        """Gets the has_model_category of this ModelConfiguration.
+    def has_installation_instructions(self):
+        """Gets the has_installation_instructions of this ModelConfiguration.
 
 
-        :return: The has_model_category of this ModelConfiguration.
+        :return: The has_installation_instructions of this ModelConfiguration.
         :rtype: List[str]
         """
-        return self._has_model_category
+        return self._has_installation_instructions
 
-    @has_model_category.setter
-    def has_model_category(self, has_model_category):
-        """Sets the has_model_category of this ModelConfiguration.
+    @has_installation_instructions.setter
+    def has_installation_instructions(self, has_installation_instructions):
+        """Sets the has_installation_instructions of this ModelConfiguration.
 
 
-        :param has_model_category: The has_model_category of this ModelConfiguration.
-        :type has_model_category: List[str]
+        :param has_installation_instructions: The has_installation_instructions of this ModelConfiguration.
+        :type has_installation_instructions: List[str]
         """
 
-        self._has_model_category = has_model_category
-
-    @property
-    def has_software_image(self):
-        """Gets the has_software_image of this ModelConfiguration.
-
-
-        :return: The has_software_image of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._has_software_image
-
-    @has_software_image.setter
-    def has_software_image(self, has_software_image):
-        """Sets the has_software_image of this ModelConfiguration.
-
-
-        :param has_software_image: The has_software_image of this ModelConfiguration.
-        :type has_software_image: List[object]
-        """
-
-        self._has_software_image = has_software_image
+        self._has_installation_instructions = has_installation_instructions
 
     @property
     def compatible_visualization_software(self):
@@ -459,46 +614,67 @@ class ModelConfiguration(Model):
         self._has_region = has_region
 
     @property
-    def has_model_result_table(self):
-        """Gets the has_model_result_table of this ModelConfiguration.
+    def has_faq(self):
+        """Gets the has_faq of this ModelConfiguration.
 
 
-        :return: The has_model_result_table of this ModelConfiguration.
+        :return: The has_faq of this ModelConfiguration.
         :rtype: List[str]
         """
-        return self._has_model_result_table
+        return self._has_faq
 
-    @has_model_result_table.setter
-    def has_model_result_table(self, has_model_result_table):
-        """Sets the has_model_result_table of this ModelConfiguration.
+    @has_faq.setter
+    def has_faq(self, has_faq):
+        """Sets the has_faq of this ModelConfiguration.
 
 
-        :param has_model_result_table: The has_model_result_table of this ModelConfiguration.
-        :type has_model_result_table: List[str]
+        :param has_faq: The has_faq of this ModelConfiguration.
+        :type has_faq: List[str]
         """
 
-        self._has_model_result_table = has_model_result_table
+        self._has_faq = has_faq
 
     @property
-    def calibration_target_variable(self):
-        """Gets the calibration_target_variable of this ModelConfiguration.
+    def logo(self):
+        """Gets the logo of this ModelConfiguration.
 
 
-        :return: The calibration_target_variable of this ModelConfiguration.
+        :return: The logo of this ModelConfiguration.
         :rtype: List[object]
         """
-        return self._calibration_target_variable
+        return self._logo
 
-    @calibration_target_variable.setter
-    def calibration_target_variable(self, calibration_target_variable):
-        """Sets the calibration_target_variable of this ModelConfiguration.
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this ModelConfiguration.
 
 
-        :param calibration_target_variable: The calibration_target_variable of this ModelConfiguration.
-        :type calibration_target_variable: List[object]
+        :param logo: The logo of this ModelConfiguration.
+        :type logo: List[object]
         """
 
-        self._calibration_target_variable = calibration_target_variable
+        self._logo = logo
+
+    @property
+    def has_contact_person(self):
+        """Gets the has_contact_person of this ModelConfiguration.
+
+
+        :return: The has_contact_person of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_contact_person
+
+    @has_contact_person.setter
+    def has_contact_person(self, has_contact_person):
+        """Sets the has_contact_person of this ModelConfiguration.
+
+
+        :param has_contact_person: The has_contact_person of this ModelConfiguration.
+        :type has_contact_person: List[object]
+        """
+
+        self._has_contact_person = has_contact_person
 
     @property
     def id(self):
@@ -522,67 +698,25 @@ class ModelConfiguration(Model):
         self._id = id
 
     @property
-    def has_expert_tuned_model(self):
-        """Gets the has_expert_tuned_model of this ModelConfiguration.
+    def identifier(self):
+        """Gets the identifier of this ModelConfiguration.
 
 
-        :return: The has_expert_tuned_model of this ModelConfiguration.
-        :rtype: List[ModelConfiguration]
+        :return: The identifier of this ModelConfiguration.
+        :rtype: List[str]
         """
-        return self._has_expert_tuned_model
+        return self._identifier
 
-    @has_expert_tuned_model.setter
-    def has_expert_tuned_model(self, has_expert_tuned_model):
-        """Sets the has_expert_tuned_model of this ModelConfiguration.
-
-
-        :param has_expert_tuned_model: The has_expert_tuned_model of this ModelConfiguration.
-        :type has_expert_tuned_model: List[ModelConfiguration]
-        """
-
-        self._has_expert_tuned_model = has_expert_tuned_model
-
-    @property
-    def has_calibration(self):
-        """Gets the has_calibration of this ModelConfiguration.
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this ModelConfiguration.
 
 
-        :return: The has_calibration of this ModelConfiguration.
-        :rtype: List[ModelConfiguration]
-        """
-        return self._has_calibration
-
-    @has_calibration.setter
-    def has_calibration(self, has_calibration):
-        """Sets the has_calibration of this ModelConfiguration.
-
-
-        :param has_calibration: The has_calibration of this ModelConfiguration.
-        :type has_calibration: List[ModelConfiguration]
+        :param identifier: The identifier of this ModelConfiguration.
+        :type identifier: List[str]
         """
 
-        self._has_calibration = has_calibration
-
-    @property
-    def has_causal_diagram(self):
-        """Gets the has_causal_diagram of this ModelConfiguration.
-
-
-        :return: The has_causal_diagram of this ModelConfiguration.
-        :rtype: List[CausalDiagram]
-        """
-        return self._has_causal_diagram
-
-    @has_causal_diagram.setter
-    def has_causal_diagram(self, has_causal_diagram):
-        """Sets the has_causal_diagram of this ModelConfiguration.
-
-
-        :param has_causal_diagram: The has_causal_diagram of this ModelConfiguration.
-        :type has_causal_diagram: List[CausalDiagram]
-        """
-
-        self._has_causal_diagram = has_causal_diagram
+        self._identifier = identifier
 
     @property
     def has_sample_execution(self):
@@ -627,6 +761,27 @@ class ModelConfiguration(Model):
         self._has_sample_result = has_sample_result
 
     @property
+    def author(self):
+        """Gets the author of this ModelConfiguration.
+
+
+        :return: The author of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._author
+
+    @author.setter
+    def author(self, author):
+        """Sets the author of this ModelConfiguration.
+
+
+        :param author: The author of this ModelConfiguration.
+        :type author: List[object]
+        """
+
+        self._author = author
+
+    @property
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfiguration.
 
@@ -646,6 +801,699 @@ class ModelConfiguration(Model):
         """
 
         self._has_constraint = has_constraint
+
+    @property
+    def short_description(self):
+        """Gets the short_description of this ModelConfiguration.
+
+
+        :return: The short_description of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._short_description
+
+    @short_description.setter
+    def short_description(self, short_description):
+        """Sets the short_description of this ModelConfiguration.
+
+
+        :param short_description: The short_description of this ModelConfiguration.
+        :type short_description: List[str]
+        """
+
+        self._short_description = short_description
+
+    @property
+    def has_execution_command(self):
+        """Gets the has_execution_command of this ModelConfiguration.
+
+
+        :return: The has_execution_command of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_execution_command
+
+    @has_execution_command.setter
+    def has_execution_command(self, has_execution_command):
+        """Sets the has_execution_command of this ModelConfiguration.
+
+
+        :param has_execution_command: The has_execution_command of this ModelConfiguration.
+        :type has_execution_command: List[str]
+        """
+
+        self._has_execution_command = has_execution_command
+
+    @property
+    def date_published(self):
+        """Gets the date_published of this ModelConfiguration.
+
+
+        :return: The date_published of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._date_published
+
+    @date_published.setter
+    def date_published(self, date_published):
+        """Sets the date_published of this ModelConfiguration.
+
+
+        :param date_published: The date_published of this ModelConfiguration.
+        :type date_published: List[str]
+        """
+
+        self._date_published = date_published
+
+    @property
+    def license(self):
+        """Gets the license of this ModelConfiguration.
+
+
+        :return: The license of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this ModelConfiguration.
+
+
+        :param license: The license of this ModelConfiguration.
+        :type license: List[str]
+        """
+
+        self._license = license
+
+    @property
+    def has_source_code(self):
+        """Gets the has_source_code of this ModelConfiguration.
+
+
+        :return: The has_source_code of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_source_code
+
+    @has_source_code.setter
+    def has_source_code(self, has_source_code):
+        """Sets the has_source_code of this ModelConfiguration.
+
+
+        :param has_source_code: The has_source_code of this ModelConfiguration.
+        :type has_source_code: List[object]
+        """
+
+        self._has_source_code = has_source_code
+
+    @property
+    def has_explanation_diagram(self):
+        """Gets the has_explanation_diagram of this ModelConfiguration.
+
+
+        :return: The has_explanation_diagram of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_explanation_diagram
+
+    @has_explanation_diagram.setter
+    def has_explanation_diagram(self, has_explanation_diagram):
+        """Sets the has_explanation_diagram of this ModelConfiguration.
+
+
+        :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.
+        :type has_explanation_diagram: List[object]
+        """
+
+        self._has_explanation_diagram = has_explanation_diagram
+
+    @property
+    def publisher(self):
+        """Gets the publisher of this ModelConfiguration.
+
+
+        :return: The publisher of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._publisher
+
+    @publisher.setter
+    def publisher(self, publisher):
+        """Sets the publisher of this ModelConfiguration.
+
+
+        :param publisher: The publisher of this ModelConfiguration.
+        :type publisher: List[object]
+        """
+
+        self._publisher = publisher
+
+    @property
+    def has_output(self):
+        """Gets the has_output of this ModelConfiguration.
+
+
+        :return: The has_output of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_output
+
+    @has_output.setter
+    def has_output(self, has_output):
+        """Sets the has_output of this ModelConfiguration.
+
+
+        :param has_output: The has_output of this ModelConfiguration.
+        :type has_output: List[object]
+        """
+
+        self._has_output = has_output
+
+    @property
+    def funding_source(self):
+        """Gets the funding_source of this ModelConfiguration.
+
+
+        :return: The funding_source of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._funding_source
+
+    @funding_source.setter
+    def funding_source(self, funding_source):
+        """Sets the funding_source of this ModelConfiguration.
+
+
+        :param funding_source: The funding_source of this ModelConfiguration.
+        :type funding_source: List[object]
+        """
+
+        self._funding_source = funding_source
+
+    @property
+    def has_output_time_interval(self):
+        """Gets the has_output_time_interval of this ModelConfiguration.
+
+
+        :return: The has_output_time_interval of this ModelConfiguration.
+        :rtype: List[TimeInterval]
+        """
+        return self._has_output_time_interval
+
+    @has_output_time_interval.setter
+    def has_output_time_interval(self, has_output_time_interval):
+        """Sets the has_output_time_interval of this ModelConfiguration.
+
+
+        :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.
+        :type has_output_time_interval: List[TimeInterval]
+        """
+
+        self._has_output_time_interval = has_output_time_interval
+
+    @property
+    def parameter_assignment_method(self):
+        """Gets the parameter_assignment_method of this ModelConfiguration.
+
+
+        :return: The parameter_assignment_method of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._parameter_assignment_method
+
+    @parameter_assignment_method.setter
+    def parameter_assignment_method(self, parameter_assignment_method):
+        """Sets the parameter_assignment_method of this ModelConfiguration.
+
+
+        :param parameter_assignment_method: The parameter_assignment_method of this ModelConfiguration.
+        :type parameter_assignment_method: List[str]
+        """
+
+        self._parameter_assignment_method = parameter_assignment_method
+
+    @property
+    def has_component_location(self):
+        """Gets the has_component_location of this ModelConfiguration.
+
+
+        :return: The has_component_location of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_component_location
+
+    @has_component_location.setter
+    def has_component_location(self, has_component_location):
+        """Sets the has_component_location of this ModelConfiguration.
+
+
+        :param has_component_location: The has_component_location of this ModelConfiguration.
+        :type has_component_location: List[str]
+        """
+
+        self._has_component_location = has_component_location
+
+    @property
+    def has_process(self):
+        """Gets the has_process of this ModelConfiguration.
+
+
+        :return: The has_process of this ModelConfiguration.
+        :rtype: List[Process]
+        """
+        return self._has_process
+
+    @has_process.setter
+    def has_process(self, has_process):
+        """Sets the has_process of this ModelConfiguration.
+
+
+        :param has_process: The has_process of this ModelConfiguration.
+        :type has_process: List[Process]
+        """
+
+        self._has_process = has_process
+
+    @property
+    def has_version(self):
+        """Gets the has_version of this ModelConfiguration.
+
+
+        :return: The has_version of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_version
+
+    @has_version.setter
+    def has_version(self, has_version):
+        """Sets the has_version of this ModelConfiguration.
+
+
+        :param has_version: The has_version of this ModelConfiguration.
+        :type has_version: List[object]
+        """
+
+        self._has_version = has_version
+
+    @property
+    def has_typical_data_source(self):
+        """Gets the has_typical_data_source of this ModelConfiguration.
+
+
+        :return: The has_typical_data_source of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_typical_data_source
+
+    @has_typical_data_source.setter
+    def has_typical_data_source(self, has_typical_data_source):
+        """Sets the has_typical_data_source of this ModelConfiguration.
+
+
+        :param has_typical_data_source: The has_typical_data_source of this ModelConfiguration.
+        :type has_typical_data_source: List[str]
+        """
+
+        self._has_typical_data_source = has_typical_data_source
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this ModelConfiguration.
+
+
+        :return: The reference_publication of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this ModelConfiguration.
+
+
+        :param reference_publication: The reference_publication of this ModelConfiguration.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
+
+    @property
+    def description(self):
+        """Gets the description of this ModelConfiguration.
+
+
+        :return: The description of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ModelConfiguration.
+
+
+        :param description: The description of this ModelConfiguration.
+        :type description: List[str]
+        """
+
+        self._description = description
+
+    @property
+    def screenshot(self):
+        """Gets the screenshot of this ModelConfiguration.
+
+
+        :return: The screenshot of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._screenshot
+
+    @screenshot.setter
+    def screenshot(self, screenshot):
+        """Sets the screenshot of this ModelConfiguration.
+
+
+        :param screenshot: The screenshot of this ModelConfiguration.
+        :type screenshot: List[object]
+        """
+
+        self._screenshot = screenshot
+
+    @property
+    def has_model_category(self):
+        """Gets the has_model_category of this ModelConfiguration.
+
+
+        :return: The has_model_category of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_model_category
+
+    @has_model_category.setter
+    def has_model_category(self, has_model_category):
+        """Sets the has_model_category of this ModelConfiguration.
+
+
+        :param has_model_category: The has_model_category of this ModelConfiguration.
+        :type has_model_category: List[str]
+        """
+
+        self._has_model_category = has_model_category
+
+    @property
+    def has_software_image(self):
+        """Gets the has_software_image of this ModelConfiguration.
+
+
+        :return: The has_software_image of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_software_image
+
+    @has_software_image.setter
+    def has_software_image(self, has_software_image):
+        """Sets the has_software_image of this ModelConfiguration.
+
+
+        :param has_software_image: The has_software_image of this ModelConfiguration.
+        :type has_software_image: List[object]
+        """
+
+        self._has_software_image = has_software_image
+
+    @property
+    def date_created(self):
+        """Gets the date_created of this ModelConfiguration.
+
+
+        :return: The date_created of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created):
+        """Sets the date_created of this ModelConfiguration.
+
+
+        :param date_created: The date_created of this ModelConfiguration.
+        :type date_created: List[str]
+        """
+
+        self._date_created = date_created
+
+    @property
+    def contributor(self):
+        """Gets the contributor of this ModelConfiguration.
+
+
+        :return: The contributor of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._contributor
+
+    @contributor.setter
+    def contributor(self, contributor):
+        """Sets the contributor of this ModelConfiguration.
+
+
+        :param contributor: The contributor of this ModelConfiguration.
+        :type contributor: List[object]
+        """
+
+        self._contributor = contributor
+
+    @property
+    def has_model_result_table(self):
+        """Gets the has_model_result_table of this ModelConfiguration.
+
+
+        :return: The has_model_result_table of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_model_result_table
+
+    @has_model_result_table.setter
+    def has_model_result_table(self, has_model_result_table):
+        """Sets the has_model_result_table of this ModelConfiguration.
+
+
+        :param has_model_result_table: The has_model_result_table of this ModelConfiguration.
+        :type has_model_result_table: List[str]
+        """
+
+        self._has_model_result_table = has_model_result_table
+
+    @property
+    def calibration_target_variable(self):
+        """Gets the calibration_target_variable of this ModelConfiguration.
+
+
+        :return: The calibration_target_variable of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._calibration_target_variable
+
+    @calibration_target_variable.setter
+    def calibration_target_variable(self, calibration_target_variable):
+        """Sets the calibration_target_variable of this ModelConfiguration.
+
+
+        :param calibration_target_variable: The calibration_target_variable of this ModelConfiguration.
+        :type calibration_target_variable: List[object]
+        """
+
+        self._calibration_target_variable = calibration_target_variable
+
+    @property
+    def has_purpose(self):
+        """Gets the has_purpose of this ModelConfiguration.
+
+
+        :return: The has_purpose of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_purpose
+
+    @has_purpose.setter
+    def has_purpose(self, has_purpose):
+        """Sets the has_purpose of this ModelConfiguration.
+
+
+        :param has_purpose: The has_purpose of this ModelConfiguration.
+        :type has_purpose: List[str]
+        """
+
+        self._has_purpose = has_purpose
+
+    @property
+    def has_expert_tuned_model(self):
+        """Gets the has_expert_tuned_model of this ModelConfiguration.
+
+
+        :return: The has_expert_tuned_model of this ModelConfiguration.
+        :rtype: List[ModelConfiguration]
+        """
+        return self._has_expert_tuned_model
+
+    @has_expert_tuned_model.setter
+    def has_expert_tuned_model(self, has_expert_tuned_model):
+        """Sets the has_expert_tuned_model of this ModelConfiguration.
+
+
+        :param has_expert_tuned_model: The has_expert_tuned_model of this ModelConfiguration.
+        :type has_expert_tuned_model: List[ModelConfiguration]
+        """
+
+        self._has_expert_tuned_model = has_expert_tuned_model
+
+    @property
+    def has_sample_visualization(self):
+        """Gets the has_sample_visualization of this ModelConfiguration.
+
+
+        :return: The has_sample_visualization of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_sample_visualization
+
+    @has_sample_visualization.setter
+    def has_sample_visualization(self, has_sample_visualization):
+        """Sets the has_sample_visualization of this ModelConfiguration.
+
+
+        :param has_sample_visualization: The has_sample_visualization of this ModelConfiguration.
+        :type has_sample_visualization: List[object]
+        """
+
+        self._has_sample_visualization = has_sample_visualization
+
+    @property
+    def has_calibration(self):
+        """Gets the has_calibration of this ModelConfiguration.
+
+
+        :return: The has_calibration of this ModelConfiguration.
+        :rtype: List[ModelConfiguration]
+        """
+        return self._has_calibration
+
+    @has_calibration.setter
+    def has_calibration(self, has_calibration):
+        """Sets the has_calibration of this ModelConfiguration.
+
+
+        :param has_calibration: The has_calibration of this ModelConfiguration.
+        :type has_calibration: List[ModelConfiguration]
+        """
+
+        self._has_calibration = has_calibration
+
+    @property
+    def has_causal_diagram(self):
+        """Gets the has_causal_diagram of this ModelConfiguration.
+
+
+        :return: The has_causal_diagram of this ModelConfiguration.
+        :rtype: List[CausalDiagram]
+        """
+        return self._has_causal_diagram
+
+    @has_causal_diagram.setter
+    def has_causal_diagram(self, has_causal_diagram):
+        """Sets the has_causal_diagram of this ModelConfiguration.
+
+
+        :param has_causal_diagram: The has_causal_diagram of this ModelConfiguration.
+        :type has_causal_diagram: List[CausalDiagram]
+        """
+
+        self._has_causal_diagram = has_causal_diagram
+
+    @property
+    def memory_requirements(self):
+        """Gets the memory_requirements of this ModelConfiguration.
+
+
+        :return: The memory_requirements of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._memory_requirements
+
+    @memory_requirements.setter
+    def memory_requirements(self, memory_requirements):
+        """Sets the memory_requirements of this ModelConfiguration.
+
+
+        :param memory_requirements: The memory_requirements of this ModelConfiguration.
+        :type memory_requirements: List[str]
+        """
+
+        self._memory_requirements = memory_requirements
+
+    @property
+    def website(self):
+        """Gets the website of this ModelConfiguration.
+
+
+        :return: The website of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this ModelConfiguration.
+
+
+        :param website: The website of this ModelConfiguration.
+        :type website: List[str]
+        """
+
+        self._website = website
+
+    @property
+    def citation(self):
+        """Gets the citation of this ModelConfiguration.
+
+
+        :return: The citation of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._citation
+
+    @citation.setter
+    def citation(self, citation):
+        """Sets the citation of this ModelConfiguration.
+
+
+        :param citation: The citation of this ModelConfiguration.
+        :type citation: List[str]
+        """
+
+        self._citation = citation
+
+    @property
+    def processor_requirements(self):
+        """Gets the processor_requirements of this ModelConfiguration.
+
+
+        :return: The processor_requirements of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._processor_requirements
+
+    @processor_requirements.setter
+    def processor_requirements(self, processor_requirements):
+        """Sets the processor_requirements of this ModelConfiguration.
+
+
+        :param processor_requirements: The processor_requirements of this ModelConfiguration.
+        :type processor_requirements: List[str]
+        """
+
+        self._processor_requirements = processor_requirements
 
     @property
     def adjustable_parameter(self):
@@ -711,25 +1559,25 @@ class ModelConfiguration(Model):
         self._label = label
 
     @property
-    def has_execution_command(self):
-        """Gets the has_execution_command of this ModelConfiguration.
+    def has_assumption(self):
+        """Gets the has_assumption of this ModelConfiguration.
 
 
-        :return: The has_execution_command of this ModelConfiguration.
+        :return: The has_assumption of this ModelConfiguration.
         :rtype: List[str]
         """
-        return self._has_execution_command
+        return self._has_assumption
 
-    @has_execution_command.setter
-    def has_execution_command(self, has_execution_command):
-        """Sets the has_execution_command of this ModelConfiguration.
+    @has_assumption.setter
+    def has_assumption(self, has_assumption):
+        """Sets the has_assumption of this ModelConfiguration.
 
 
-        :param has_execution_command: The has_execution_command of this ModelConfiguration.
-        :type has_execution_command: List[str]
+        :param has_assumption: The has_assumption of this ModelConfiguration.
+        :type has_assumption: List[str]
         """
 
-        self._has_execution_command = has_execution_command
+        self._has_assumption = has_assumption
 
     @property
     def has_parameter(self):
@@ -753,25 +1601,25 @@ class ModelConfiguration(Model):
         self._has_parameter = has_parameter
 
     @property
-    def has_explanation_diagram(self):
-        """Gets the has_explanation_diagram of this ModelConfiguration.
+    def operating_systems(self):
+        """Gets the operating_systems of this ModelConfiguration.
 
 
-        :return: The has_explanation_diagram of this ModelConfiguration.
-        :rtype: List[object]
+        :return: The operating_systems of this ModelConfiguration.
+        :rtype: List[str]
         """
-        return self._has_explanation_diagram
+        return self._operating_systems
 
-    @has_explanation_diagram.setter
-    def has_explanation_diagram(self, has_explanation_diagram):
-        """Sets the has_explanation_diagram of this ModelConfiguration.
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """Sets the operating_systems of this ModelConfiguration.
 
 
-        :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.
-        :type has_explanation_diagram: List[object]
+        :param operating_systems: The operating_systems of this ModelConfiguration.
+        :type operating_systems: List[str]
         """
 
-        self._has_explanation_diagram = has_explanation_diagram
+        self._operating_systems = operating_systems
 
     @property
     def has_equation(self):
@@ -793,48 +1641,6 @@ class ModelConfiguration(Model):
         """
 
         self._has_equation = has_equation
-
-    @property
-    def has_output(self):
-        """Gets the has_output of this ModelConfiguration.
-
-
-        :return: The has_output of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._has_output
-
-    @has_output.setter
-    def has_output(self, has_output):
-        """Sets the has_output of this ModelConfiguration.
-
-
-        :param has_output: The has_output of this ModelConfiguration.
-        :type has_output: List[object]
-        """
-
-        self._has_output = has_output
-
-    @property
-    def has_output_time_interval(self):
-        """Gets the has_output_time_interval of this ModelConfiguration.
-
-
-        :return: The has_output_time_interval of this ModelConfiguration.
-        :rtype: List[TimeInterval]
-        """
-        return self._has_output_time_interval
-
-    @has_output_time_interval.setter
-    def has_output_time_interval(self, has_output_time_interval):
-        """Sets the has_output_time_interval of this ModelConfiguration.
-
-
-        :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.
-        :type has_output_time_interval: List[TimeInterval]
-        """
-
-        self._has_output_time_interval = has_output_time_interval
 
     @property
     def has_input(self):

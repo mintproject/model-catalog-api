@@ -18,7 +18,8 @@ class TestEmpiricalModelController(BaseTestCase):
 
         List all EmpiricalModel entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }
@@ -68,6 +69,8 @@ class TestEmpiricalModelController(BaseTestCase):
         Update a EmpiricalModel
         """
         empirical_model = {
+  "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -76,8 +79,8 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -90,13 +93,44 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
     "id" : "id"
   } ],
+  "softwareRequirements" : [ "softwareRequirements", "softwareRequirements" ],
+  "hasVersion" : [ "{}", "{}" ],
+  "hasTypicalDataSource" : [ "hasTypicalDataSource", "hasTypicalDataSource" ],
+  "hasDownloadURL" : [ "hasDownloadURL", "hasDownloadURL" ],
+  "referencePublication" : [ "referencePublication", "referencePublication" ],
+  "description" : [ "description", "description" ],
+  "screenshot" : [ "{}", "{}" ],
+  "type" : [ "type", "type" ],
+  "hasInstallationInstructions" : [ "hasInstallationInstructions", "hasInstallationInstructions" ],
+  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
+  "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ "{}", "{}" ],
+  "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
+  "logo" : [ "{}", "{}" ],
+  "hasContactPerson" : [ "{}", "{}" ],
+  "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
+  "id" : "id",
+  "hasSampleVisualization" : [ "{}", "{}" ],
+  "identifier" : [ "identifier", "identifier" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
+  "website" : [ "website", "website" ],
+  "citation" : [ "citation", "citation" ],
+  "author" : [ "{}", "{}" ],
+  "processorRequirements" : [ "processorRequirements", "processorRequirements" ],
+  "shortDescription" : [ "shortDescription", "shortDescription" ],
+  "label" : "label",
+  "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
+  "datePublished" : [ "datePublished", "datePublished" ],
+  "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
+  "hasSourceCode" : [ "{}", "{}" ],
   "hasExplanationDiagram" : [ "{}", "{}" ],
   "hasEquation" : [ {
     "id" : "id",
@@ -107,10 +141,8 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
-  "id" : "id",
-  "label" : "label",
-  "type" : [ "type", "type" ],
-  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ]
+  "publisher" : [ "{}", "{}" ],
+  "fundingSource" : [ "{}", "{}" ]
 }
         headers = { 
             'Content-Type': 'application/json',
@@ -131,6 +163,8 @@ class TestEmpiricalModelController(BaseTestCase):
         Create a EmpiricalModel
         """
         empirical_model = {
+  "keywords" : [ "keywords", "keywords" ],
+  "hasDocumentation" : [ "hasDocumentation", "hasDocumentation" ],
   "hasGrid" : [ {
     "hasDimensionality" : [ 0.8008281904610115, 0.8008281904610115 ],
     "hasFormat" : [ "hasFormat", "hasFormat" ],
@@ -139,8 +173,8 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
@@ -153,13 +187,44 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ],
     "hasFixedResource" : [ "{}", "{}" ],
-    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasCoordinateSystem" : [ "hasCoordinateSystem", "hasCoordinateSystem" ],
+    "hasSpatialResolution" : [ "hasSpatialResolution", "hasSpatialResolution" ],
     "hasShape" : [ "hasShape", "hasShape" ],
     "hasDimension" : [ "hasDimension", "hasDimension" ],
     "position" : [ 6.027456183070403, 6.027456183070403 ],
     "id" : "id"
   } ],
+  "softwareRequirements" : [ "softwareRequirements", "softwareRequirements" ],
+  "hasVersion" : [ "{}", "{}" ],
+  "hasTypicalDataSource" : [ "hasTypicalDataSource", "hasTypicalDataSource" ],
+  "hasDownloadURL" : [ "hasDownloadURL", "hasDownloadURL" ],
+  "referencePublication" : [ "referencePublication", "referencePublication" ],
+  "description" : [ "description", "description" ],
+  "screenshot" : [ "{}", "{}" ],
+  "type" : [ "type", "type" ],
+  "hasInstallationInstructions" : [ "hasInstallationInstructions", "hasInstallationInstructions" ],
+  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ],
+  "dateCreated" : [ "dateCreated", "dateCreated" ],
+  "contributor" : [ "{}", "{}" ],
+  "hasFAQ" : [ "hasFAQ", "hasFAQ" ],
+  "logo" : [ "{}", "{}" ],
+  "hasContactPerson" : [ "{}", "{}" ],
+  "hasPurpose" : [ "hasPurpose", "hasPurpose" ],
+  "id" : "id",
+  "hasSampleVisualization" : [ "{}", "{}" ],
+  "identifier" : [ "identifier", "identifier" ],
+  "memoryRequirements" : [ "memoryRequirements", "memoryRequirements" ],
+  "website" : [ "website", "website" ],
+  "citation" : [ "citation", "citation" ],
+  "author" : [ "{}", "{}" ],
+  "processorRequirements" : [ "processorRequirements", "processorRequirements" ],
+  "shortDescription" : [ "shortDescription", "shortDescription" ],
+  "label" : "label",
+  "hasAssumption" : [ "hasAssumption", "hasAssumption" ],
+  "datePublished" : [ "datePublished", "datePublished" ],
+  "license" : [ "license", "license" ],
+  "operatingSystems" : [ "operatingSystems", "operatingSystems" ],
+  "hasSourceCode" : [ "{}", "{}" ],
   "hasExplanationDiagram" : [ "{}", "{}" ],
   "hasEquation" : [ {
     "id" : "id",
@@ -170,10 +235,8 @@ class TestEmpiricalModelController(BaseTestCase):
     "label" : "label",
     "type" : [ "type", "type" ]
   } ],
-  "id" : "id",
-  "label" : "label",
-  "type" : [ "type", "type" ],
-  "hasModelCategory" : [ "hasModelCategory", "hasModelCategory" ]
+  "publisher" : [ "{}", "{}" ],
+  "fundingSource" : [ "{}", "{}" ]
 }
         headers = { 
             'Content-Type': 'application/json',

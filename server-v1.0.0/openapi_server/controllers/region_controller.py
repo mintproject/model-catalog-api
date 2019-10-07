@@ -6,13 +6,15 @@ from openapi_server.utils.vars import REGION_TYPE_NAME, REGION_TYPE_URI
 from openapi_server.models.region import Region  # noqa: E501
 from openapi_server import util
 
-def regions_get(username=None):  # noqa: E501
+def regions_get(username=None, query_text=None):  # noqa: E501
     """List all Region entities
 
     Gets a list of all Region entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[Region]
     """
@@ -20,6 +22,7 @@ def regions_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=REGION_TYPE_URI,
         rdf_type_name=REGION_TYPE_NAME, 
         kls=Region)

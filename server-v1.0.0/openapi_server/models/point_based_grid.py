@@ -15,53 +15,83 @@ class PointBasedGrid(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_shape=None, has_dimension=None, id=None, label=None, type=None, has_spatial_resolution=None, has_coordinate_system=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_coordinate_system=None, has_spatial_resolution=None, has_shape=None, has_dimension=None, position=None, id=None):  # noqa: E501
         """PointBasedGrid - a model defined in OpenAPI
 
-        :param has_shape: The has_shape of this PointBasedGrid.  # noqa: E501
-        :type has_shape: List[str]
-        :param has_dimension: The has_dimension of this PointBasedGrid.  # noqa: E501
-        :type has_dimension: List[str]
-        :param id: The id of this PointBasedGrid.  # noqa: E501
-        :type id: str
+        :param has_dimensionality: The has_dimensionality of this PointBasedGrid.  # noqa: E501
+        :type has_dimensionality: List[float]
+        :param has_format: The has_format of this PointBasedGrid.  # noqa: E501
+        :type has_format: List[str]
+        :param has_file_structure: The has_file_structure of this PointBasedGrid.  # noqa: E501
+        :type has_file_structure: object
+        :param has_presentation: The has_presentation of this PointBasedGrid.  # noqa: E501
+        :type has_presentation: List[object]
         :param label: The label of this PointBasedGrid.  # noqa: E501
         :type label: str
         :param type: The type of this PointBasedGrid.  # noqa: E501
         :type type: List[str]
-        :param has_spatial_resolution: The has_spatial_resolution of this PointBasedGrid.  # noqa: E501
-        :type has_spatial_resolution: List[str]
+        :param has_fixed_resource: The has_fixed_resource of this PointBasedGrid.  # noqa: E501
+        :type has_fixed_resource: List[object]
         :param has_coordinate_system: The has_coordinate_system of this PointBasedGrid.  # noqa: E501
         :type has_coordinate_system: List[str]
+        :param has_spatial_resolution: The has_spatial_resolution of this PointBasedGrid.  # noqa: E501
+        :type has_spatial_resolution: List[str]
+        :param has_shape: The has_shape of this PointBasedGrid.  # noqa: E501
+        :type has_shape: List[str]
+        :param has_dimension: The has_dimension of this PointBasedGrid.  # noqa: E501
+        :type has_dimension: List[str]
+        :param position: The position of this PointBasedGrid.  # noqa: E501
+        :type position: List[float]
+        :param id: The id of this PointBasedGrid.  # noqa: E501
+        :type id: str
         """
 
 
         self.openapi_types = {
-            'has_shape': List[str],
-            'has_dimension': List[str],
-            'id': str,
+            'has_dimensionality': List[float],
+            'has_format': List[str],
+            'has_file_structure': object,
+            'has_presentation': List[object],
             'label': str,
             'type': List[str],
+            'has_fixed_resource': List[object],
+            'has_coordinate_system': List[str],
             'has_spatial_resolution': List[str],
-            'has_coordinate_system': List[str]
+            'has_shape': List[str],
+            'has_dimension': List[str],
+            'position': List[float],
+            'id': str
         }
 
         self.attribute_map = {
-            'has_shape': 'hasShape',
-            'has_dimension': 'hasDimension',
-            'id': 'id',
+            'has_dimensionality': 'hasDimensionality',
+            'has_format': 'hasFormat',
+            'has_file_structure': 'hasFileStructure',
+            'has_presentation': 'hasPresentation',
             'label': 'label',
             'type': 'type',
+            'has_fixed_resource': 'hasFixedResource',
+            'has_coordinate_system': 'hasCoordinateSystem',
             'has_spatial_resolution': 'hasSpatialResolution',
-            'has_coordinate_system': 'hasCoordinateSystem'
+            'has_shape': 'hasShape',
+            'has_dimension': 'hasDimension',
+            'position': 'position',
+            'id': 'id'
         }
 
-        self._has_shape = has_shape
-        self._has_dimension = has_dimension
-        self._id = id
+        self._has_dimensionality = has_dimensionality
+        self._has_format = has_format
+        self._has_file_structure = has_file_structure
+        self._has_presentation = has_presentation
         self._label = label
         self._type = type
-        self._has_spatial_resolution = has_spatial_resolution
+        self._has_fixed_resource = has_fixed_resource
         self._has_coordinate_system = has_coordinate_system
+        self._has_spatial_resolution = has_spatial_resolution
+        self._has_shape = has_shape
+        self._has_dimension = has_dimension
+        self._position = position
+        self._id = id
 
     @classmethod
     def from_dict(cls, dikt) -> 'PointBasedGrid':
@@ -75,67 +105,88 @@ class PointBasedGrid(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def has_shape(self):
-        """Gets the has_shape of this PointBasedGrid.
+    def has_dimensionality(self):
+        """Gets the has_dimensionality of this PointBasedGrid.
 
 
-        :return: The has_shape of this PointBasedGrid.
-        :rtype: List[str]
+        :return: The has_dimensionality of this PointBasedGrid.
+        :rtype: List[float]
         """
-        return self._has_shape
+        return self._has_dimensionality
 
-    @has_shape.setter
-    def has_shape(self, has_shape):
-        """Sets the has_shape of this PointBasedGrid.
+    @has_dimensionality.setter
+    def has_dimensionality(self, has_dimensionality):
+        """Sets the has_dimensionality of this PointBasedGrid.
 
 
-        :param has_shape: The has_shape of this PointBasedGrid.
-        :type has_shape: List[str]
+        :param has_dimensionality: The has_dimensionality of this PointBasedGrid.
+        :type has_dimensionality: List[float]
         """
 
-        self._has_shape = has_shape
+        self._has_dimensionality = has_dimensionality
 
     @property
-    def has_dimension(self):
-        """Gets the has_dimension of this PointBasedGrid.
+    def has_format(self):
+        """Gets the has_format of this PointBasedGrid.
 
 
-        :return: The has_dimension of this PointBasedGrid.
+        :return: The has_format of this PointBasedGrid.
         :rtype: List[str]
         """
-        return self._has_dimension
+        return self._has_format
 
-    @has_dimension.setter
-    def has_dimension(self, has_dimension):
-        """Sets the has_dimension of this PointBasedGrid.
+    @has_format.setter
+    def has_format(self, has_format):
+        """Sets the has_format of this PointBasedGrid.
 
 
-        :param has_dimension: The has_dimension of this PointBasedGrid.
-        :type has_dimension: List[str]
+        :param has_format: The has_format of this PointBasedGrid.
+        :type has_format: List[str]
         """
 
-        self._has_dimension = has_dimension
+        self._has_format = has_format
 
     @property
-    def id(self):
-        """Gets the id of this PointBasedGrid.
+    def has_file_structure(self):
+        """Gets the has_file_structure of this PointBasedGrid.
 
 
-        :return: The id of this PointBasedGrid.
-        :rtype: str
+        :return: The has_file_structure of this PointBasedGrid.
+        :rtype: object
         """
-        return self._id
+        return self._has_file_structure
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PointBasedGrid.
+    @has_file_structure.setter
+    def has_file_structure(self, has_file_structure):
+        """Sets the has_file_structure of this PointBasedGrid.
 
 
-        :param id: The id of this PointBasedGrid.
-        :type id: str
+        :param has_file_structure: The has_file_structure of this PointBasedGrid.
+        :type has_file_structure: object
         """
 
-        self._id = id
+        self._has_file_structure = has_file_structure
+
+    @property
+    def has_presentation(self):
+        """Gets the has_presentation of this PointBasedGrid.
+
+
+        :return: The has_presentation of this PointBasedGrid.
+        :rtype: List[object]
+        """
+        return self._has_presentation
+
+    @has_presentation.setter
+    def has_presentation(self, has_presentation):
+        """Sets the has_presentation of this PointBasedGrid.
+
+
+        :param has_presentation: The has_presentation of this PointBasedGrid.
+        :type has_presentation: List[object]
+        """
+
+        self._has_presentation = has_presentation
 
     @property
     def label(self):
@@ -180,25 +231,25 @@ class PointBasedGrid(Model):
         self._type = type
 
     @property
-    def has_spatial_resolution(self):
-        """Gets the has_spatial_resolution of this PointBasedGrid.
+    def has_fixed_resource(self):
+        """Gets the has_fixed_resource of this PointBasedGrid.
 
 
-        :return: The has_spatial_resolution of this PointBasedGrid.
-        :rtype: List[str]
+        :return: The has_fixed_resource of this PointBasedGrid.
+        :rtype: List[object]
         """
-        return self._has_spatial_resolution
+        return self._has_fixed_resource
 
-    @has_spatial_resolution.setter
-    def has_spatial_resolution(self, has_spatial_resolution):
-        """Sets the has_spatial_resolution of this PointBasedGrid.
+    @has_fixed_resource.setter
+    def has_fixed_resource(self, has_fixed_resource):
+        """Sets the has_fixed_resource of this PointBasedGrid.
 
 
-        :param has_spatial_resolution: The has_spatial_resolution of this PointBasedGrid.
-        :type has_spatial_resolution: List[str]
+        :param has_fixed_resource: The has_fixed_resource of this PointBasedGrid.
+        :type has_fixed_resource: List[object]
         """
 
-        self._has_spatial_resolution = has_spatial_resolution
+        self._has_fixed_resource = has_fixed_resource
 
     @property
     def has_coordinate_system(self):
@@ -220,3 +271,108 @@ class PointBasedGrid(Model):
         """
 
         self._has_coordinate_system = has_coordinate_system
+
+    @property
+    def has_spatial_resolution(self):
+        """Gets the has_spatial_resolution of this PointBasedGrid.
+
+
+        :return: The has_spatial_resolution of this PointBasedGrid.
+        :rtype: List[str]
+        """
+        return self._has_spatial_resolution
+
+    @has_spatial_resolution.setter
+    def has_spatial_resolution(self, has_spatial_resolution):
+        """Sets the has_spatial_resolution of this PointBasedGrid.
+
+
+        :param has_spatial_resolution: The has_spatial_resolution of this PointBasedGrid.
+        :type has_spatial_resolution: List[str]
+        """
+
+        self._has_spatial_resolution = has_spatial_resolution
+
+    @property
+    def has_shape(self):
+        """Gets the has_shape of this PointBasedGrid.
+
+
+        :return: The has_shape of this PointBasedGrid.
+        :rtype: List[str]
+        """
+        return self._has_shape
+
+    @has_shape.setter
+    def has_shape(self, has_shape):
+        """Sets the has_shape of this PointBasedGrid.
+
+
+        :param has_shape: The has_shape of this PointBasedGrid.
+        :type has_shape: List[str]
+        """
+
+        self._has_shape = has_shape
+
+    @property
+    def has_dimension(self):
+        """Gets the has_dimension of this PointBasedGrid.
+
+
+        :return: The has_dimension of this PointBasedGrid.
+        :rtype: List[str]
+        """
+        return self._has_dimension
+
+    @has_dimension.setter
+    def has_dimension(self, has_dimension):
+        """Sets the has_dimension of this PointBasedGrid.
+
+
+        :param has_dimension: The has_dimension of this PointBasedGrid.
+        :type has_dimension: List[str]
+        """
+
+        self._has_dimension = has_dimension
+
+    @property
+    def position(self):
+        """Gets the position of this PointBasedGrid.
+
+
+        :return: The position of this PointBasedGrid.
+        :rtype: List[float]
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this PointBasedGrid.
+
+
+        :param position: The position of this PointBasedGrid.
+        :type position: List[float]
+        """
+
+        self._position = position
+
+    @property
+    def id(self):
+        """Gets the id of this PointBasedGrid.
+
+
+        :return: The id of this PointBasedGrid.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PointBasedGrid.
+
+
+        :param id: The id of this PointBasedGrid.
+        :type id: str
+        """
+
+        self._id = id

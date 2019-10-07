@@ -5,14 +5,12 @@ import validators
 from rdflib import Graph
 
 from openapi_server import query_manager
-from openapi_server.settings import ENDPOINT, PREFIX
+from openapi_server.settings import ENDPOINT, PREFIX, GRAPH_BASE
 from openapi_server import logger
-
-graph_base="http://ontosoft.isi.edu:3030/modelCatalog-1.0.0/data/"
 
 
 def generate_graph(username):
-    return "{}{}".format(graph_base, username)
+    return "{}{}".format(GRAPH_BASE, username)
 
 
 def get_resource(**kwargs):
@@ -160,6 +158,11 @@ def post_resource(**kwargs):
     :rtype:
     """
     body = kwargs["body"]
+    rdf_type_uri = kwargs["rdf_type_uri"]
+    if body.type and rdf_type_uri is not body.type:
+        body.type.append(rdf_type_uri)
+    else:
+        body.type = [rdf_type_uri]
     body.id = generate_new_uri()
     try:
         username = kwargs["user"]

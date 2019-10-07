@@ -18,7 +18,8 @@ class TestSampleExecutionController(BaseTestCase):
 
         List all SampleExecution entities
         """
-        query_string = [('username', 'username_example')]
+        query_string = [('username', 'username_example'),
+                        ('query_text', 'query_text_example')]
         headers = { 
             'Accept': 'application/json',
         }

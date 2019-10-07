@@ -6,13 +6,15 @@ from openapi_server.utils.vars import THEORYGUIDEDMODEL_TYPE_NAME, THEORYGUIDEDM
 from openapi_server.models.theory_guided_model import TheoryGuidedModel  # noqa: E501
 from openapi_server import util
 
-def theory_guidedmodels_get(username=None):  # noqa: E501
+def theory_guidedmodels_get(username=None, query_text=None):  # noqa: E501
     """List all Theory-GuidedModel entities
 
     Gets a list of all Theory-GuidedModel entities # noqa: E501
 
     :param username: Username to query
     :type username: str
+    :param query_text: A value of type string that will substitute ?_text in the original query
+    :type query_text: str
 
     :rtype: List[TheoryGuidedModel]
     """
@@ -20,6 +22,7 @@ def theory_guidedmodels_get(username=None):  # noqa: E501
 
     return get_resource(
         username=username,
+        query_text=query_text,
         rdf_type_uri=THEORYGUIDEDMODEL_TYPE_URI,
         rdf_type_name=THEORYGUIDEDMODEL_TYPE_NAME, 
         kls=TheoryGuidedModel)
