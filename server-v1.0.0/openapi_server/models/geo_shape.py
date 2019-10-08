@@ -27,7 +27,7 @@ class GeoShape(Model):
         :param id: The id of this GeoShape.  # noqa: E501
         :type id: str
         :param label: The label of this GeoShape.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this GeoShape.  # noqa: E501
         :type type: List[str]
         :param longitude: The longitude of this GeoShape.  # noqa: E501
@@ -40,7 +40,7 @@ class GeoShape(Model):
             'latitude': List[str],
             'box': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'longitude': List[str]
         }
@@ -164,7 +164,7 @@ class GeoShape(Model):
 
 
         :return: The label of this GeoShape.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -174,7 +174,7 @@ class GeoShape(Model):
 
 
         :param label: The label of this GeoShape.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

@@ -21,7 +21,7 @@ class Process(Model):
         :param id: The id of this Process.  # noqa: E501
         :type id: str
         :param label: The label of this Process.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Process.  # noqa: E501
         :type type: List[str]
         :param influences: The influences of this Process.  # noqa: E501
@@ -31,7 +31,7 @@ class Process(Model):
 
         self.openapi_types = {
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'influences': List[Process]
         }
@@ -86,7 +86,7 @@ class Process(Model):
 
 
         :return: The label of this Process.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -96,7 +96,7 @@ class Process(Model):
 
 
         :param label: The label of this Process.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

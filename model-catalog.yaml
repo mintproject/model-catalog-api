@@ -4903,8 +4903,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -4932,8 +4934,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -4966,8 +4970,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5044,12 +5050,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5112,12 +5118,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5148,8 +5154,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5160,12 +5168,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5202,8 +5210,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5216,8 +5226,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5266,12 +5278,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5334,12 +5346,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5370,8 +5382,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5382,12 +5396,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5424,8 +5438,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5458,8 +5474,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5515,8 +5533,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5534,8 +5554,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5579,12 +5601,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5647,12 +5669,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5683,8 +5705,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5695,12 +5719,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5768,12 +5792,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5836,12 +5860,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5872,8 +5896,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5884,12 +5910,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5931,8 +5957,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5976,12 +6004,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6044,12 +6072,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6080,8 +6108,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -6092,12 +6122,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -6273,14 +6303,14 @@ components:
             type: object
           nullable: true
           type: array
-        fundingSource:
-          items:
-            type: object
-          nullable: true
-          type: array
         hasOutputTimeInterval:
           items:
             $ref: '#/components/schemas/TimeInterval'
+          nullable: true
+          type: array
+        fundingSource:
+          items:
+            type: object
           nullable: true
           type: array
         parameterAssignmentMethod:
@@ -6308,12 +6338,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6409,8 +6439,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -6458,8 +6490,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6505,8 +6539,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6529,8 +6565,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6563,8 +6601,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6587,8 +6627,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6601,8 +6643,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6615,8 +6659,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6652,8 +6698,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6671,8 +6719,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6721,12 +6771,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6756,14 +6806,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -6794,12 +6844,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6850,8 +6900,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasExecutionCommand:
           items:
             type: string
@@ -6872,12 +6924,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -6937,8 +6989,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6956,8 +7010,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6970,8 +7026,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -7010,12 +7068,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7073,12 +7131,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7114,8 +7172,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -7126,12 +7186,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7189,12 +7249,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7252,12 +7312,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7288,8 +7348,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasExecutionCommand:
           items:
             type: string
@@ -7305,12 +7367,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7377,8 +7439,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -7396,8 +7460,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -7436,12 +7502,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7499,12 +7565,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7535,8 +7601,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -7547,12 +7615,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7609,8 +7677,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         partOfDataset:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
@@ -7648,8 +7718,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string

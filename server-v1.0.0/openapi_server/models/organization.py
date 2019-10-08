@@ -25,7 +25,7 @@ class Organization(Model):
         :param id: The id of this Organization.  # noqa: E501
         :type id: str
         :param label: The label of this Organization.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Organization.  # noqa: E501
         :type type: List[str]
         """
@@ -35,7 +35,7 @@ class Organization(Model):
             'identifier': List[str],
             'website': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -133,7 +133,7 @@ class Organization(Model):
 
 
         :return: The label of this Organization.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -143,7 +143,7 @@ class Organization(Model):
 
 
         :param label: The label of this Organization.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

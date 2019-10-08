@@ -21,7 +21,7 @@ class TimeInterval(Model):
         :param id: The id of this TimeInterval.  # noqa: E501
         :type id: str
         :param label: The label of this TimeInterval.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this TimeInterval.  # noqa: E501
         :type type: List[str]
         """
@@ -29,7 +29,7 @@ class TimeInterval(Model):
 
         self.openapi_types = {
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -81,7 +81,7 @@ class TimeInterval(Model):
 
 
         :return: The label of this TimeInterval.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -91,7 +91,7 @@ class TimeInterval(Model):
 
 
         :param label: The label of this TimeInterval.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

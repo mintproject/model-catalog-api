@@ -21,7 +21,7 @@ class SampleExecution(Model):
         :param id: The id of this SampleExecution.  # noqa: E501
         :type id: str
         :param label: The label of this SampleExecution.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this SampleExecution.  # noqa: E501
         :type type: List[str]
         :param has_execution_command: The has_execution_command of this SampleExecution.  # noqa: E501
@@ -31,7 +31,7 @@ class SampleExecution(Model):
 
         self.openapi_types = {
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'has_execution_command': List[str]
         }
@@ -86,7 +86,7 @@ class SampleExecution(Model):
 
 
         :return: The label of this SampleExecution.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -96,7 +96,7 @@ class SampleExecution(Model):
 
 
         :param label: The label of this SampleExecution.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

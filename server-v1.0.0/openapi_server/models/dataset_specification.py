@@ -31,7 +31,7 @@ class DatasetSpecification(Model):
         :param id: The id of this DatasetSpecification.  # noqa: E501
         :type id: str
         :param label: The label of this DatasetSpecification.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this DatasetSpecification.  # noqa: E501
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this DatasetSpecification.  # noqa: E501
@@ -50,7 +50,7 @@ class DatasetSpecification(Model):
             'has_presentation': List[VariablePresentation],
             'position': List[float],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'has_fixed_resource': List[SampleResource]
         }
@@ -220,7 +220,7 @@ class DatasetSpecification(Model):
 
 
         :return: The label of this DatasetSpecification.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -230,7 +230,7 @@ class DatasetSpecification(Model):
 
 
         :param label: The label of this DatasetSpecification.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

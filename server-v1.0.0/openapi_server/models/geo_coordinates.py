@@ -25,7 +25,7 @@ class GeoCoordinates(Model):
         :param id: The id of this GeoCoordinates.  # noqa: E501
         :type id: str
         :param label: The label of this GeoCoordinates.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this GeoCoordinates.  # noqa: E501
         :type type: List[str]
         :param longitude: The longitude of this GeoCoordinates.  # noqa: E501
@@ -37,7 +37,7 @@ class GeoCoordinates(Model):
             'elevation': List[str],
             'latitude': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'longitude': List[str]
         }
@@ -138,7 +138,7 @@ class GeoCoordinates(Model):
 
 
         :return: The label of this GeoCoordinates.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -148,7 +148,7 @@ class GeoCoordinates(Model):
 
 
         :param label: The label of this GeoCoordinates.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

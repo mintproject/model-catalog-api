@@ -27,7 +27,7 @@ class Grid(Model):
         :param has_presentation: The has_presentation of this Grid.  # noqa: E501
         :type has_presentation: List[object]
         :param label: The label of this Grid.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Grid.  # noqa: E501
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this Grid.  # noqa: E501
@@ -52,7 +52,7 @@ class Grid(Model):
             'has_format': List[str],
             'has_file_structure': object,
             'has_presentation': List[object],
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'has_fixed_resource': List[object],
             'has_coordinate_system': List[str],
@@ -194,7 +194,7 @@ class Grid(Model):
 
 
         :return: The label of this Grid.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -204,7 +204,7 @@ class Grid(Model):
 
 
         :param label: The label of this Grid.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

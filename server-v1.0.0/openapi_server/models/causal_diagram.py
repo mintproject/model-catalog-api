@@ -21,7 +21,7 @@ class CausalDiagram(Model):
         :param id: The id of this CausalDiagram.  # noqa: E501
         :type id: str
         :param label: The label of this CausalDiagram.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this CausalDiagram.  # noqa: E501
         :type type: List[str]
         :param has_part: The has_part of this CausalDiagram.  # noqa: E501
@@ -31,7 +31,7 @@ class CausalDiagram(Model):
 
         self.openapi_types = {
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'has_part': List[object]
         }
@@ -86,7 +86,7 @@ class CausalDiagram(Model):
 
 
         :return: The label of this CausalDiagram.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -96,7 +96,7 @@ class CausalDiagram(Model):
 
 
         :param label: The label of this CausalDiagram.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label
