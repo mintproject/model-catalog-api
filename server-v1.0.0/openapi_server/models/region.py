@@ -23,7 +23,7 @@ class Region(Model):
         :param id: The id of this Region.  # noqa: E501
         :type id: str
         :param label: The label of this Region.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Region.  # noqa: E501
         :type type: List[str]
         """
@@ -32,7 +32,7 @@ class Region(Model):
         self.openapi_types = {
             'geo': List[object],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -107,7 +107,7 @@ class Region(Model):
 
 
         :return: The label of this Region.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -117,7 +117,7 @@ class Region(Model):
 
 
         :param label: The label of this Region.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

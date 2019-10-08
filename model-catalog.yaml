@@ -64,10 +64,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -198,10 +197,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -332,10 +330,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -466,10 +463,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -600,10 +596,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -734,10 +729,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -868,10 +862,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1002,10 +995,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1136,10 +1128,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1270,10 +1261,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1405,10 +1395,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1539,10 +1528,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1673,10 +1661,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1807,10 +1794,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -1942,10 +1928,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2077,10 +2062,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2212,10 +2196,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2346,10 +2329,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2481,10 +2463,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2615,10 +2596,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2749,10 +2729,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -2883,10 +2862,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3017,10 +2995,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3151,10 +3128,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3285,10 +3261,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3419,10 +3394,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3553,10 +3527,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3687,10 +3660,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3822,10 +3794,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -3956,10 +3927,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4090,10 +4060,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4224,10 +4193,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4359,10 +4327,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4493,10 +4460,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4627,10 +4593,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4762,10 +4727,9 @@ paths:
         required: false
         schema:
           type: string
-      - description: A value of type string that will substitute ?_text in the original
-          query
+      - description: Filter by label
         in: query
-        name: query_text
+        name: label
         required: false
         schema:
           type: string
@@ -4903,8 +4867,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -4932,8 +4898,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -4966,8 +4934,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -4978,12 +4948,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -5044,12 +5014,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5112,12 +5082,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5148,8 +5118,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5160,12 +5132,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5180,14 +5152,14 @@ components:
             type: object
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         fundingSource:
@@ -5202,8 +5174,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5216,8 +5190,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5266,12 +5242,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5334,12 +5310,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5370,8 +5346,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5382,12 +5360,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5402,14 +5380,14 @@ components:
             type: object
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         fundingSource:
@@ -5424,8 +5402,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5458,8 +5438,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5470,12 +5452,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -5515,8 +5497,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5534,8 +5518,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5579,12 +5565,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5647,12 +5633,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5683,8 +5669,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5695,12 +5683,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5715,14 +5703,14 @@ components:
             type: object
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         fundingSource:
@@ -5768,12 +5756,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5836,12 +5824,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5872,8 +5860,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -5884,12 +5874,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -5904,14 +5894,14 @@ components:
             type: object
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         fundingSource:
@@ -5931,8 +5921,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -5976,12 +5968,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6044,12 +6036,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6080,8 +6072,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -6092,12 +6086,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -6112,14 +6106,14 @@ components:
             type: object
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
+          nullable: true
+          type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         fundingSource:
@@ -6273,14 +6267,14 @@ components:
             type: object
           nullable: true
           type: array
-        fundingSource:
-          items:
-            type: object
-          nullable: true
-          type: array
         hasOutputTimeInterval:
           items:
             $ref: '#/components/schemas/TimeInterval'
+          nullable: true
+          type: array
+        fundingSource:
+          items:
+            type: object
           nullable: true
           type: array
         parameterAssignmentMethod:
@@ -6308,12 +6302,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6409,8 +6403,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -6458,8 +6454,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6470,12 +6468,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -6505,8 +6503,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6529,8 +6529,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6563,8 +6565,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6587,8 +6591,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6601,8 +6607,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6615,8 +6623,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6652,8 +6662,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6671,8 +6683,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6686,12 +6700,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -6721,12 +6735,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6756,14 +6770,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -6771,14 +6785,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -6794,12 +6808,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6850,8 +6864,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasExecutionCommand:
           items:
             type: string
@@ -6872,12 +6888,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -6897,14 +6913,14 @@ components:
             $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
-        fundingSource:
-          items:
-            $ref: '#/components/schemas/Organization'
-          nullable: true
-          type: array
         hasInput:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        fundingSource:
+          items:
+            $ref: '#/components/schemas/Organization'
           nullable: true
           type: array
       type: object
@@ -6937,8 +6953,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6956,8 +6974,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6970,8 +6990,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -6980,12 +7002,12 @@ components:
       type: object
     SoftwareVersion:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7010,12 +7032,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7050,14 +7072,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -7073,12 +7095,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7114,8 +7136,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -7126,12 +7150,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7159,12 +7183,12 @@ components:
       type: object
     SoftwareImage:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7189,12 +7213,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7229,14 +7253,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -7252,12 +7276,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7288,8 +7312,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasExecutionCommand:
           items:
             type: string
@@ -7305,12 +7331,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7377,8 +7403,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -7396,8 +7424,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string
@@ -7406,12 +7436,12 @@ components:
       type: object
     Software:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7436,12 +7466,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7476,14 +7506,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -7499,12 +7529,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7535,8 +7565,10 @@ components:
           nullable: true
           type: array
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         hasAssumption:
           items:
             type: string
@@ -7547,12 +7579,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7609,8 +7641,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         partOfDataset:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
@@ -7648,8 +7682,10 @@ components:
           nullable: false
           type: string
         label:
+          items:
+            type: string
           nullable: true
-          type: string
+          type: array
         type:
           items:
             type: string

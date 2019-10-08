@@ -33,7 +33,7 @@ class VariablePresentation(Model):
         :param id: The id of this VariablePresentation.  # noqa: E501
         :type id: str
         :param label: The label of this VariablePresentation.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param part_of_dataset: The part_of_dataset of this VariablePresentation.  # noqa: E501
         :type part_of_dataset: List[DatasetSpecification]
         :param type: The type of this VariablePresentation.  # noqa: E501
@@ -57,7 +57,7 @@ class VariablePresentation(Model):
             'has_maximum_accepted_value': List[object],
             'has_constraint': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'part_of_dataset': List[DatasetSpecification],
             'type': List[str],
             'uses_unit': List[object],
@@ -256,7 +256,7 @@ class VariablePresentation(Model):
 
 
         :return: The label of this VariablePresentation.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -266,7 +266,7 @@ class VariablePresentation(Model):
 
 
         :param label: The label of this VariablePresentation.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

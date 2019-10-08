@@ -15,7 +15,7 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_equation=None, publisher=None, funding_source=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_equation=None, funding_source=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
         :param keywords: The keywords of this Model.  # noqa: E501
@@ -32,10 +32,10 @@ class Model(Model):
         :type has_typical_data_source: List[str]
         :param has_download_url: The has_download_url of this Model.  # noqa: E501
         :type has_download_url: List[str]
-        :param reference_publication: The reference_publication of this Model.  # noqa: E501
-        :type reference_publication: List[str]
         :param description: The description of this Model.  # noqa: E501
         :type description: List[str]
+        :param reference_publication: The reference_publication of this Model.  # noqa: E501
+        :type reference_publication: List[str]
         :param screenshot: The screenshot of this Model.  # noqa: E501
         :type screenshot: List[object]
         :param type: The type of this Model.  # noqa: E501
@@ -60,10 +60,10 @@ class Model(Model):
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this Model.  # noqa: E501
         :type has_sample_visualization: List[object]
-        :param identifier: The identifier of this Model.  # noqa: E501
-        :type identifier: List[str]
         :param memory_requirements: The memory_requirements of this Model.  # noqa: E501
         :type memory_requirements: List[str]
+        :param identifier: The identifier of this Model.  # noqa: E501
+        :type identifier: List[str]
         :param website: The website of this Model.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this Model.  # noqa: E501
@@ -75,23 +75,23 @@ class Model(Model):
         :param short_description: The short_description of this Model.  # noqa: E501
         :type short_description: List[str]
         :param label: The label of this Model.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param has_assumption: The has_assumption of this Model.  # noqa: E501
         :type has_assumption: List[str]
         :param date_published: The date_published of this Model.  # noqa: E501
         :type date_published: List[str]
-        :param license: The license of this Model.  # noqa: E501
-        :type license: List[str]
         :param operating_systems: The operating_systems of this Model.  # noqa: E501
         :type operating_systems: List[str]
+        :param license: The license of this Model.  # noqa: E501
+        :type license: List[str]
         :param has_source_code: The has_source_code of this Model.  # noqa: E501
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this Model.  # noqa: E501
         :type has_explanation_diagram: List[object]
-        :param has_equation: The has_equation of this Model.  # noqa: E501
-        :type has_equation: List[Equation]
         :param publisher: The publisher of this Model.  # noqa: E501
         :type publisher: List[object]
+        :param has_equation: The has_equation of this Model.  # noqa: E501
+        :type has_equation: List[Equation]
         :param funding_source: The funding_source of this Model.  # noqa: E501
         :type funding_source: List[object]
         """
@@ -109,8 +109,8 @@ class Model(Model):
             'has_version': List[object],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
-            'reference_publication': List[str],
             'description': List[str],
+            'reference_publication': List[str],
             'screenshot': List[object],
             'type': List[str],
             'has_installation_instructions': List[str],
@@ -123,22 +123,22 @@ class Model(Model):
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
-            'identifier': List[str],
             'memory_requirements': List[str],
+            'identifier': List[str],
             'website': List[str],
             'citation': List[str],
             'author': List[object],
             'processor_requirements': List[str],
             'short_description': List[str],
-            'label': str,
+            'label': List[str],
             'has_assumption': List[str],
             'date_published': List[str],
-            'license': List[str],
             'operating_systems': List[str],
+            'license': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
-            'has_equation': List[Equation],
             'publisher': List[object],
+            'has_equation': List[Equation],
             'funding_source': List[object]
         }
 
@@ -150,8 +150,8 @@ class Model(Model):
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
-            'reference_publication': 'referencePublication',
             'description': 'description',
+            'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
@@ -164,8 +164,8 @@ class Model(Model):
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'identifier': 'identifier',
             'memory_requirements': 'memoryRequirements',
+            'identifier': 'identifier',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
@@ -174,12 +174,12 @@ class Model(Model):
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'date_published': 'datePublished',
-            'license': 'license',
             'operating_systems': 'operatingSystems',
+            'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
-            'has_equation': 'hasEquation',
             'publisher': 'publisher',
+            'has_equation': 'hasEquation',
             'funding_source': 'fundingSource'
         }
 
@@ -190,8 +190,8 @@ class Model(Model):
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
-        self._reference_publication = reference_publication
         self._description = description
+        self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._type = type
         self._has_installation_instructions = has_installation_instructions
@@ -204,8 +204,8 @@ class Model(Model):
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._identifier = identifier
         self._memory_requirements = memory_requirements
+        self._identifier = identifier
         self._website = website
         self._citation = citation
         self._author = author
@@ -214,12 +214,12 @@ class Model(Model):
         self._label = label
         self._has_assumption = has_assumption
         self._date_published = date_published
-        self._license = license
         self._operating_systems = operating_systems
+        self._license = license
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
-        self._has_equation = has_equation
         self._publisher = publisher
+        self._has_equation = has_equation
         self._funding_source = funding_source
 
     @classmethod
@@ -381,27 +381,6 @@ class Model(Model):
         self._has_download_url = has_download_url
 
     @property
-    def reference_publication(self):
-        """Gets the reference_publication of this Model.
-
-
-        :return: The reference_publication of this Model.
-        :rtype: List[str]
-        """
-        return self._reference_publication
-
-    @reference_publication.setter
-    def reference_publication(self, reference_publication):
-        """Sets the reference_publication of this Model.
-
-
-        :param reference_publication: The reference_publication of this Model.
-        :type reference_publication: List[str]
-        """
-
-        self._reference_publication = reference_publication
-
-    @property
     def description(self):
         """Gets the description of this Model.
 
@@ -421,6 +400,27 @@ class Model(Model):
         """
 
         self._description = description
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this Model.
+
+
+        :return: The reference_publication of this Model.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this Model.
+
+
+        :param reference_publication: The reference_publication of this Model.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
 
     @property
     def screenshot(self):
@@ -675,27 +675,6 @@ class Model(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def identifier(self):
-        """Gets the identifier of this Model.
-
-
-        :return: The identifier of this Model.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this Model.
-
-
-        :param identifier: The identifier of this Model.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
-
-    @property
     def memory_requirements(self):
         """Gets the memory_requirements of this Model.
 
@@ -715,6 +694,27 @@ class Model(Model):
         """
 
         self._memory_requirements = memory_requirements
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this Model.
+
+
+        :return: The identifier of this Model.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this Model.
+
+
+        :param identifier: The identifier of this Model.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
 
     @property
     def website(self):
@@ -827,7 +827,7 @@ class Model(Model):
 
 
         :return: The label of this Model.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -837,7 +837,7 @@ class Model(Model):
 
 
         :param label: The label of this Model.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label
@@ -885,27 +885,6 @@ class Model(Model):
         self._date_published = date_published
 
     @property
-    def license(self):
-        """Gets the license of this Model.
-
-
-        :return: The license of this Model.
-        :rtype: List[str]
-        """
-        return self._license
-
-    @license.setter
-    def license(self, license):
-        """Sets the license of this Model.
-
-
-        :param license: The license of this Model.
-        :type license: List[str]
-        """
-
-        self._license = license
-
-    @property
     def operating_systems(self):
         """Gets the operating_systems of this Model.
 
@@ -925,6 +904,27 @@ class Model(Model):
         """
 
         self._operating_systems = operating_systems
+
+    @property
+    def license(self):
+        """Gets the license of this Model.
+
+
+        :return: The license of this Model.
+        :rtype: List[str]
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this Model.
+
+
+        :param license: The license of this Model.
+        :type license: List[str]
+        """
+
+        self._license = license
 
     @property
     def has_source_code(self):
@@ -969,27 +969,6 @@ class Model(Model):
         self._has_explanation_diagram = has_explanation_diagram
 
     @property
-    def has_equation(self):
-        """Gets the has_equation of this Model.
-
-
-        :return: The has_equation of this Model.
-        :rtype: List[Equation]
-        """
-        return self._has_equation
-
-    @has_equation.setter
-    def has_equation(self, has_equation):
-        """Sets the has_equation of this Model.
-
-
-        :param has_equation: The has_equation of this Model.
-        :type has_equation: List[Equation]
-        """
-
-        self._has_equation = has_equation
-
-    @property
     def publisher(self):
         """Gets the publisher of this Model.
 
@@ -1009,6 +988,27 @@ class Model(Model):
         """
 
         self._publisher = publisher
+
+    @property
+    def has_equation(self):
+        """Gets the has_equation of this Model.
+
+
+        :return: The has_equation of this Model.
+        :rtype: List[Equation]
+        """
+        return self._has_equation
+
+    @has_equation.setter
+    def has_equation(self, has_equation):
+        """Sets the has_equation of this Model.
+
+
+        :param has_equation: The has_equation of this Model.
+        :type has_equation: List[Equation]
+        """
+
+        self._has_equation = has_equation
 
     @property
     def funding_source(self):

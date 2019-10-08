@@ -15,13 +15,13 @@ class Software(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, publisher=None, funding_source=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, date_created=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, publisher=None, funding_source=None):  # noqa: E501
         """Software - a model defined in OpenAPI
 
-        :param has_documentation: The has_documentation of this Software.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this Software.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this Software.  # noqa: E501
+        :type has_documentation: List[str]
         :param software_requirements: The software_requirements of this Software.  # noqa: E501
         :type software_requirements: List[str]
         :param has_version: The has_version of this Software.  # noqa: E501
@@ -30,10 +30,10 @@ class Software(Model):
         :type has_typical_data_source: List[str]
         :param has_download_url: The has_download_url of this Software.  # noqa: E501
         :type has_download_url: List[str]
-        :param reference_publication: The reference_publication of this Software.  # noqa: E501
-        :type reference_publication: List[str]
         :param description: The description of this Software.  # noqa: E501
         :type description: List[str]
+        :param reference_publication: The reference_publication of this Software.  # noqa: E501
+        :type reference_publication: List[str]
         :param screenshot: The screenshot of this Software.  # noqa: E501
         :type screenshot: List[Image]
         :param type: The type of this Software.  # noqa: E501
@@ -46,20 +46,20 @@ class Software(Model):
         :type contributor: List[Person]
         :param has_faq: The has_faq of this Software.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this Software.  # noqa: E501
-        :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this Software.  # noqa: E501
         :type has_contact_person: List[Person]
+        :param logo: The logo of this Software.  # noqa: E501
+        :type logo: List[Image]
         :param has_purpose: The has_purpose of this Software.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this Software.  # noqa: E501
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this Software.  # noqa: E501
         :type has_sample_visualization: List[Visualization]
-        :param identifier: The identifier of this Software.  # noqa: E501
-        :type identifier: List[str]
         :param memory_requirements: The memory_requirements of this Software.  # noqa: E501
         :type memory_requirements: List[str]
+        :param identifier: The identifier of this Software.  # noqa: E501
+        :type identifier: List[str]
         :param website: The website of this Software.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this Software.  # noqa: E501
@@ -71,15 +71,15 @@ class Software(Model):
         :param short_description: The short_description of this Software.  # noqa: E501
         :type short_description: List[str]
         :param label: The label of this Software.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param has_assumption: The has_assumption of this Software.  # noqa: E501
         :type has_assumption: List[str]
         :param date_published: The date_published of this Software.  # noqa: E501
         :type date_published: List[str]
-        :param license: The license of this Software.  # noqa: E501
-        :type license: List[str]
         :param operating_systems: The operating_systems of this Software.  # noqa: E501
         :type operating_systems: List[str]
+        :param license: The license of this Software.  # noqa: E501
+        :type license: List[str]
         :param has_source_code: The has_source_code of this Software.  # noqa: E501
         :type has_source_code: List[SourceCode]
         :param publisher: The publisher of this Software.  # noqa: E501
@@ -102,64 +102,64 @@ class Software(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'software_requirements': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
-            'reference_publication': List[str],
             'description': List[str],
+            'reference_publication': List[str],
             'screenshot': List[Image],
             'type': List[str],
             'has_installation_instructions': List[str],
             'date_created': List[str],
             'contributor': List[Person],
             'has_faq': List[str],
-            'logo': List[Image],
             'has_contact_person': List[Person],
+            'logo': List[Image],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[Visualization],
-            'identifier': List[str],
             'memory_requirements': List[str],
+            'identifier': List[str],
             'website': List[str],
             'citation': List[str],
             'author': List[object],
             'processor_requirements': List[str],
             'short_description': List[str],
-            'label': str,
+            'label': List[str],
             'has_assumption': List[str],
             'date_published': List[str],
-            'license': List[str],
             'operating_systems': List[str],
+            'license': List[str],
             'has_source_code': List[SourceCode],
             'publisher': List[object],
             'funding_source': List[Organization]
         }
 
         self.attribute_map = {
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
-            'reference_publication': 'referencePublication',
             'description': 'description',
+            'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'identifier': 'identifier',
             'memory_requirements': 'memoryRequirements',
+            'identifier': 'identifier',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
@@ -168,34 +168,34 @@ class Software(Model):
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'date_published': 'datePublished',
-            'license': 'license',
             'operating_systems': 'operatingSystems',
+            'license': 'license',
             'has_source_code': 'hasSourceCode',
             'publisher': 'publisher',
             'funding_source': 'fundingSource'
         }
 
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._software_requirements = software_requirements
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
-        self._reference_publication = reference_publication
         self._description = description
+        self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._date_created = date_created
         self._contributor = contributor
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._identifier = identifier
         self._memory_requirements = memory_requirements
+        self._identifier = identifier
         self._website = website
         self._citation = citation
         self._author = author
@@ -204,8 +204,8 @@ class Software(Model):
         self._label = label
         self._has_assumption = has_assumption
         self._date_published = date_published
-        self._license = license
         self._operating_systems = operating_systems
+        self._license = license
         self._has_source_code = has_source_code
         self._publisher = publisher
         self._funding_source = funding_source
@@ -220,27 +220,6 @@ class Software(Model):
         :rtype: Software
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def has_documentation(self):
-        """Gets the has_documentation of this Software.
-
-
-        :return: The has_documentation of this Software.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this Software.
-
-
-        :param has_documentation: The has_documentation of this Software.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
 
     @property
     def keywords(self):
@@ -262,6 +241,27 @@ class Software(Model):
         """
 
         self._keywords = keywords
+
+    @property
+    def has_documentation(self):
+        """Gets the has_documentation of this Software.
+
+
+        :return: The has_documentation of this Software.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this Software.
+
+
+        :param has_documentation: The has_documentation of this Software.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
 
     @property
     def software_requirements(self):
@@ -348,27 +348,6 @@ class Software(Model):
         self._has_download_url = has_download_url
 
     @property
-    def reference_publication(self):
-        """Gets the reference_publication of this Software.
-
-
-        :return: The reference_publication of this Software.
-        :rtype: List[str]
-        """
-        return self._reference_publication
-
-    @reference_publication.setter
-    def reference_publication(self, reference_publication):
-        """Sets the reference_publication of this Software.
-
-
-        :param reference_publication: The reference_publication of this Software.
-        :type reference_publication: List[str]
-        """
-
-        self._reference_publication = reference_publication
-
-    @property
     def description(self):
         """Gets the description of this Software.
 
@@ -388,6 +367,27 @@ class Software(Model):
         """
 
         self._description = description
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this Software.
+
+
+        :return: The reference_publication of this Software.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this Software.
+
+
+        :param reference_publication: The reference_publication of this Software.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
 
     @property
     def screenshot(self):
@@ -516,27 +516,6 @@ class Software(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this Software.
-
-
-        :return: The logo of this Software.
-        :rtype: List[Image]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this Software.
-
-
-        :param logo: The logo of this Software.
-        :type logo: List[Image]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this Software.
 
@@ -556,6 +535,27 @@ class Software(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this Software.
+
+
+        :return: The logo of this Software.
+        :rtype: List[Image]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this Software.
+
+
+        :param logo: The logo of this Software.
+        :type logo: List[Image]
+        """
+
+        self._logo = logo
 
     @property
     def has_purpose(self):
@@ -621,27 +621,6 @@ class Software(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def identifier(self):
-        """Gets the identifier of this Software.
-
-
-        :return: The identifier of this Software.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this Software.
-
-
-        :param identifier: The identifier of this Software.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
-
-    @property
     def memory_requirements(self):
         """Gets the memory_requirements of this Software.
 
@@ -661,6 +640,27 @@ class Software(Model):
         """
 
         self._memory_requirements = memory_requirements
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this Software.
+
+
+        :return: The identifier of this Software.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this Software.
+
+
+        :param identifier: The identifier of this Software.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
 
     @property
     def website(self):
@@ -773,7 +773,7 @@ class Software(Model):
 
 
         :return: The label of this Software.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -783,7 +783,7 @@ class Software(Model):
 
 
         :param label: The label of this Software.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label
@@ -831,27 +831,6 @@ class Software(Model):
         self._date_published = date_published
 
     @property
-    def license(self):
-        """Gets the license of this Software.
-
-
-        :return: The license of this Software.
-        :rtype: List[str]
-        """
-        return self._license
-
-    @license.setter
-    def license(self, license):
-        """Sets the license of this Software.
-
-
-        :param license: The license of this Software.
-        :type license: List[str]
-        """
-
-        self._license = license
-
-    @property
     def operating_systems(self):
         """Gets the operating_systems of this Software.
 
@@ -871,6 +850,27 @@ class Software(Model):
         """
 
         self._operating_systems = operating_systems
+
+    @property
+    def license(self):
+        """Gets the license of this Software.
+
+
+        :return: The license of this Software.
+        :rtype: List[str]
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this Software.
+
+
+        :param license: The license of this Software.
+        :type license: List[str]
+        """
+
+        self._license = license
 
     @property
     def has_source_code(self):

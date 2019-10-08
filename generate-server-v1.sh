@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 dir=${PWD}
-rm -rf server-v1.0.0
 docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli:v4.1.2 \
      generate  \
-     -i /local/model-catalog-v1.0.0.yaml\
+     -i /local/model-catalog.yaml\
      -g python-flask  \
      -o /local/server-v1.0.0/ \
      --git-repo-id MINT-ModelCatalogIngestionAPI \

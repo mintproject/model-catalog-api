@@ -23,7 +23,7 @@ class Visualization(Model):
         :param id: The id of this Visualization.  # noqa: E501
         :type id: str
         :param label: The label of this Visualization.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Visualization.  # noqa: E501
         :type type: List[str]
         :param was_derived_from_software: The was_derived_from_software of this Visualization.  # noqa: E501
@@ -36,7 +36,7 @@ class Visualization(Model):
         self.openapi_types = {
             'has_format': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'was_derived_from_software': List[Software]
         }
@@ -114,7 +114,7 @@ class Visualization(Model):
 
 
         :return: The label of this Visualization.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -124,7 +124,7 @@ class Visualization(Model):
 
 
         :param label: The label of this Visualization.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

@@ -27,7 +27,7 @@ class SourceCode(Model):
         :param id: The id of this SourceCode.  # noqa: E501
         :type id: str
         :param label: The label of this SourceCode.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this SourceCode.  # noqa: E501
         :type type: List[str]
         """
@@ -38,7 +38,7 @@ class SourceCode(Model):
             'programming_language': List[str],
             'code_repository': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -159,7 +159,7 @@ class SourceCode(Model):
 
 
         :return: The label of this SourceCode.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -169,7 +169,7 @@ class SourceCode(Model):
 
 
         :param label: The label of this SourceCode.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

@@ -23,7 +23,7 @@ class SampleResource(Model):
         :param id: The id of this SampleResource.  # noqa: E501
         :type id: str
         :param label: The label of this SampleResource.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this SampleResource.  # noqa: E501
         :type type: List[str]
         """
@@ -32,7 +32,7 @@ class SampleResource(Model):
         self.openapi_types = {
             'data_catalog_identifier': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -107,7 +107,7 @@ class SampleResource(Model):
 
 
         :return: The label of this SampleResource.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -117,7 +117,7 @@ class SampleResource(Model):
 
 
         :param label: The label of this SampleResource.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

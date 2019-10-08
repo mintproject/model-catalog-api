@@ -21,7 +21,7 @@ class ICASAVariable(Model):
         :param id: The id of this ICASAVariable.  # noqa: E501
         :type id: str
         :param label: The label of this ICASAVariable.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this ICASAVariable.  # noqa: E501
         :type type: List[str]
         """
@@ -29,7 +29,7 @@ class ICASAVariable(Model):
 
         self.openapi_types = {
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -81,7 +81,7 @@ class ICASAVariable(Model):
 
 
         :return: The label of this ICASAVariable.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -91,7 +91,7 @@ class ICASAVariable(Model):
 
 
         :param label: The label of this ICASAVariable.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

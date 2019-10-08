@@ -37,7 +37,7 @@ class Parameter(Model):
         :param id: The id of this Parameter.  # noqa: E501
         :type id: str
         :param label: The label of this Parameter.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Parameter.  # noqa: E501
         :type type: List[str]
         """
@@ -55,7 +55,7 @@ class Parameter(Model):
             'has_presentation': List[VariablePresentation],
             'position': List[float],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str]
         }
 
@@ -291,7 +291,7 @@ class Parameter(Model):
 
 
         :return: The label of this Parameter.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -301,7 +301,7 @@ class Parameter(Model):
 
 
         :param label: The label of this Parameter.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

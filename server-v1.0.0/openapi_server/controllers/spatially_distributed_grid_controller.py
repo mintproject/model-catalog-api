@@ -6,15 +6,15 @@ from openapi_server.utils.vars import SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, SPATIA
 from openapi_server.models.spatially_distributed_grid import SpatiallyDistributedGrid  # noqa: E501
 from openapi_server import util
 
-def spatiallydistributedgrids_get(username=None, query_text=None):  # noqa: E501
+def spatiallydistributedgrids_get(username=None, label=None):  # noqa: E501
     """List all SpatiallyDistributedGrid entities
 
     Gets a list of all SpatiallyDistributedGrid entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[SpatiallyDistributedGrid]
     """
@@ -22,7 +22,7 @@ def spatiallydistributedgrids_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=SPATIALLYDISTRIBUTEDGRID_TYPE_URI,
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 
         kls=SpatiallyDistributedGrid)

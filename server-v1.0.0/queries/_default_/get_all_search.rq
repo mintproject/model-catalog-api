@@ -11,11 +11,10 @@ WHERE {
 GRAPH ?_g_iri {
 ?item a  ?_type_iri .
 ?item ?predicate ?prop
-VALUES ?predicate { sd:description rdfs:label }
-?w ?property ?desc.
+VALUES ?property { sd:description rdfs:label }
+?item ?property ?desc.
 OPTIONAL {
 ?prop a ?type
 }
 filter regex(str(?desc),?_text,"i")
-
 }}

@@ -15,7 +15,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_output=None, funding_source=None, has_output_time_interval=None, parameter_assignment_method=None, has_component_location=None, has_process=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, has_model_category=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_expert_tuned_model=None, has_sample_visualization=None, has_calibration=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, has_input=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_output=None, has_output_time_interval=None, funding_source=None, parameter_assignment_method=None, has_component_location=None, has_process=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_expert_tuned_model=None, has_sample_visualization=None, has_calibration=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param keywords: The keywords of this ModelConfiguration.  # noqa: E501
@@ -76,10 +76,10 @@ class ModelConfiguration(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
         :type has_output: List[object]
-        :param funding_source: The funding_source of this ModelConfiguration.  # noqa: E501
-        :type funding_source: List[object]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
+        :param funding_source: The funding_source of this ModelConfiguration.  # noqa: E501
+        :type funding_source: List[object]
         :param parameter_assignment_method: The parameter_assignment_method of this ModelConfiguration.  # noqa: E501
         :type parameter_assignment_method: List[str]
         :param has_component_location: The has_component_location of this ModelConfiguration.  # noqa: E501
@@ -90,10 +90,10 @@ class ModelConfiguration(Model):
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this ModelConfiguration.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param reference_publication: The reference_publication of this ModelConfiguration.  # noqa: E501
-        :type reference_publication: List[str]
         :param description: The description of this ModelConfiguration.  # noqa: E501
         :type description: List[str]
+        :param reference_publication: The reference_publication of this ModelConfiguration.  # noqa: E501
+        :type reference_publication: List[str]
         :param screenshot: The screenshot of this ModelConfiguration.  # noqa: E501
         :type screenshot: List[object]
         :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
@@ -131,7 +131,7 @@ class ModelConfiguration(Model):
         :param has_support_script_location: The has_support_script_location of this ModelConfiguration.  # noqa: E501
         :type has_support_script_location: List[str]
         :param label: The label of this ModelConfiguration.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param has_assumption: The has_assumption of this ModelConfiguration.  # noqa: E501
         :type has_assumption: List[str]
         :param has_parameter: The has_parameter of this ModelConfiguration.  # noqa: E501
@@ -187,15 +187,15 @@ class ModelConfiguration(Model):
             'has_explanation_diagram': List[object],
             'publisher': List[object],
             'has_output': List[object],
-            'funding_source': List[object],
             'has_output_time_interval': List[TimeInterval],
+            'funding_source': List[object],
             'parameter_assignment_method': List[str],
             'has_component_location': List[str],
             'has_process': List[Process],
             'has_version': List[object],
             'has_typical_data_source': List[str],
-            'reference_publication': List[str],
             'description': List[str],
+            'reference_publication': List[str],
             'screenshot': List[object],
             'has_model_category': List[str],
             'has_software_image': List[object],
@@ -214,7 +214,7 @@ class ModelConfiguration(Model):
             'processor_requirements': List[str],
             'adjustable_parameter': List[object],
             'has_support_script_location': List[str],
-            'label': str,
+            'label': List[str],
             'has_assumption': List[str],
             'has_parameter': List[object],
             'operating_systems': List[str],
@@ -252,15 +252,15 @@ class ModelConfiguration(Model):
             'has_explanation_diagram': 'hasExplanationDiagram',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
-            'funding_source': 'fundingSource',
             'has_output_time_interval': 'hasOutputTimeInterval',
+            'funding_source': 'fundingSource',
             'parameter_assignment_method': 'parameterAssignmentMethod',
             'has_component_location': 'hasComponentLocation',
             'has_process': 'hasProcess',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'reference_publication': 'referencePublication',
             'description': 'description',
+            'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'has_model_category': 'hasModelCategory',
             'has_software_image': 'hasSoftwareImage',
@@ -316,15 +316,15 @@ class ModelConfiguration(Model):
         self._has_explanation_diagram = has_explanation_diagram
         self._publisher = publisher
         self._has_output = has_output
-        self._funding_source = funding_source
         self._has_output_time_interval = has_output_time_interval
+        self._funding_source = funding_source
         self._parameter_assignment_method = parameter_assignment_method
         self._has_component_location = has_component_location
         self._has_process = has_process
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._reference_publication = reference_publication
         self._description = description
+        self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._has_model_category = has_model_category
         self._has_software_image = has_software_image
@@ -971,27 +971,6 @@ class ModelConfiguration(Model):
         self._has_output = has_output
 
     @property
-    def funding_source(self):
-        """Gets the funding_source of this ModelConfiguration.
-
-
-        :return: The funding_source of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._funding_source
-
-    @funding_source.setter
-    def funding_source(self, funding_source):
-        """Sets the funding_source of this ModelConfiguration.
-
-
-        :param funding_source: The funding_source of this ModelConfiguration.
-        :type funding_source: List[object]
-        """
-
-        self._funding_source = funding_source
-
-    @property
     def has_output_time_interval(self):
         """Gets the has_output_time_interval of this ModelConfiguration.
 
@@ -1011,6 +990,27 @@ class ModelConfiguration(Model):
         """
 
         self._has_output_time_interval = has_output_time_interval
+
+    @property
+    def funding_source(self):
+        """Gets the funding_source of this ModelConfiguration.
+
+
+        :return: The funding_source of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._funding_source
+
+    @funding_source.setter
+    def funding_source(self, funding_source):
+        """Sets the funding_source of this ModelConfiguration.
+
+
+        :param funding_source: The funding_source of this ModelConfiguration.
+        :type funding_source: List[object]
+        """
+
+        self._funding_source = funding_source
 
     @property
     def parameter_assignment_method(self):
@@ -1118,27 +1118,6 @@ class ModelConfiguration(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def reference_publication(self):
-        """Gets the reference_publication of this ModelConfiguration.
-
-
-        :return: The reference_publication of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._reference_publication
-
-    @reference_publication.setter
-    def reference_publication(self, reference_publication):
-        """Sets the reference_publication of this ModelConfiguration.
-
-
-        :param reference_publication: The reference_publication of this ModelConfiguration.
-        :type reference_publication: List[str]
-        """
-
-        self._reference_publication = reference_publication
-
-    @property
     def description(self):
         """Gets the description of this ModelConfiguration.
 
@@ -1158,6 +1137,27 @@ class ModelConfiguration(Model):
         """
 
         self._description = description
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this ModelConfiguration.
+
+
+        :return: The reference_publication of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this ModelConfiguration.
+
+
+        :param reference_publication: The reference_publication of this ModelConfiguration.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
 
     @property
     def screenshot(self):
@@ -1543,7 +1543,7 @@ class ModelConfiguration(Model):
 
 
         :return: The label of this ModelConfiguration.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -1553,7 +1553,7 @@ class ModelConfiguration(Model):
 
 
         :param label: The label of this ModelConfiguration.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

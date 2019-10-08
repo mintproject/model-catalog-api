@@ -25,7 +25,7 @@ class Person(Model):
         :param id: The id of this Person.  # noqa: E501
         :type id: str
         :param label: The label of this Person.  # noqa: E501
-        :type label: str
+        :type label: List[str]
         :param type: The type of this Person.  # noqa: E501
         :type type: List[str]
         :param email: The email of this Person.  # noqa: E501
@@ -37,7 +37,7 @@ class Person(Model):
             'identifier': List[str],
             'website': List[str],
             'id': str,
-            'label': str,
+            'label': List[str],
             'type': List[str],
             'email': List[str]
         }
@@ -138,7 +138,7 @@ class Person(Model):
 
 
         :return: The label of this Person.
-        :rtype: str
+        :rtype: List[str]
         """
         return self._label
 
@@ -148,7 +148,7 @@ class Person(Model):
 
 
         :param label: The label of this Person.
-        :type label: str
+        :type label: List[str]
         """
 
         self._label = label

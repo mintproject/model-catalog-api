@@ -6,15 +6,15 @@ from openapi_server.utils.vars import EMULATOR_TYPE_NAME, EMULATOR_TYPE_URI
 from openapi_server.models.emulator import Emulator  # noqa: E501
 from openapi_server import util
 
-def emulators_get(username=None, query_text=None):  # noqa: E501
+def emulators_get(username=None, label=None):  # noqa: E501
     """List all Emulator entities
 
     Gets a list of all Emulator entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[Emulator]
     """
@@ -22,7 +22,7 @@ def emulators_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=EMULATOR_TYPE_URI,
         rdf_type_name=EMULATOR_TYPE_NAME, 
         kls=Emulator)
