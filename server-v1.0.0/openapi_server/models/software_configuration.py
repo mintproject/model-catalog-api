@@ -15,15 +15,15 @@ class SoftwareConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_component_location=None, has_documentation=None, keywords=None, has_implementation_script_location=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_software_image=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, has_sample_execution=None, has_sample_result=None, citation=None, author=None, processor_requirements=None, has_constraint=None, has_support_script_location=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, has_parameter=None, date_published=None, operating_systems=None, license=None, has_source_code=None, publisher=None, has_output=None, funding_source=None, has_input=None):  # noqa: E501
+    def __init__(self, has_component_location=None, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_software_image=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, has_sample_execution=None, has_sample_result=None, citation=None, author=None, processor_requirements=None, has_constraint=None, has_support_script_location=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, has_parameter=None, date_published=None, operating_systems=None, license=None, has_source_code=None, publisher=None, has_output=None, has_input=None, funding_source=None):  # noqa: E501
         """SoftwareConfiguration - a model defined in OpenAPI
 
         :param has_component_location: The has_component_location of this SoftwareConfiguration.  # noqa: E501
         :type has_component_location: List[str]
-        :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.  # noqa: E501
         :type has_implementation_script_location: List[str]
         :param software_requirements: The software_requirements of this SoftwareConfiguration.  # noqa: E501
@@ -54,10 +54,10 @@ class SoftwareConfiguration(Model):
         :type contributor: List[Person]
         :param has_faq: The has_faq of this SoftwareConfiguration.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this SoftwareConfiguration.  # noqa: E501
-        :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this SoftwareConfiguration.  # noqa: E501
         :type has_contact_person: List[Person]
+        :param logo: The logo of this SoftwareConfiguration.  # noqa: E501
+        :type logo: List[Image]
         :param has_purpose: The has_purpose of this SoftwareConfiguration.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this SoftwareConfiguration.  # noqa: E501
@@ -106,10 +106,10 @@ class SoftwareConfiguration(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this SoftwareConfiguration.  # noqa: E501
         :type has_output: List[DatasetSpecification]
-        :param funding_source: The funding_source of this SoftwareConfiguration.  # noqa: E501
-        :type funding_source: List[Organization]
         :param has_input: The has_input of this SoftwareConfiguration.  # noqa: E501
         :type has_input: List[DatasetSpecification]
+        :param funding_source: The funding_source of this SoftwareConfiguration.  # noqa: E501
+        :type funding_source: List[Organization]
         """
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.image import Image
@@ -139,8 +139,8 @@ class SoftwareConfiguration(Model):
 
         self.openapi_types = {
             'has_component_location': List[str],
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'has_implementation_script_location': List[str],
             'software_requirements': List[str],
             'has_version': List[SoftwareVersion],
@@ -156,8 +156,8 @@ class SoftwareConfiguration(Model):
             'compatible_visualization_software': List[Software],
             'contributor': List[Person],
             'has_faq': List[str],
-            'logo': List[Image],
             'has_contact_person': List[Person],
+            'logo': List[Image],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[Visualization],
@@ -182,14 +182,14 @@ class SoftwareConfiguration(Model):
             'has_source_code': List[SourceCode],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
-            'funding_source': List[Organization],
-            'has_input': List[DatasetSpecification]
+            'has_input': List[DatasetSpecification],
+            'funding_source': List[Organization]
         }
 
         self.attribute_map = {
             'has_component_location': 'hasComponentLocation',
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
             'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
@@ -205,8 +205,8 @@ class SoftwareConfiguration(Model):
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -231,13 +231,13 @@ class SoftwareConfiguration(Model):
             'has_source_code': 'hasSourceCode',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
-            'funding_source': 'fundingSource',
-            'has_input': 'hasInput'
+            'has_input': 'hasInput',
+            'funding_source': 'fundingSource'
         }
 
         self._has_component_location = has_component_location
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_implementation_script_location = has_implementation_script_location
         self._software_requirements = software_requirements
         self._has_version = has_version
@@ -253,8 +253,8 @@ class SoftwareConfiguration(Model):
         self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
@@ -279,8 +279,8 @@ class SoftwareConfiguration(Model):
         self._has_source_code = has_source_code
         self._publisher = publisher
         self._has_output = has_output
-        self._funding_source = funding_source
         self._has_input = has_input
+        self._funding_source = funding_source
 
     @classmethod
     def from_dict(cls, dikt) -> 'SoftwareConfiguration':
@@ -315,27 +315,6 @@ class SoftwareConfiguration(Model):
         self._has_component_location = has_component_location
 
     @property
-    def has_documentation(self):
-        """Gets the has_documentation of this SoftwareConfiguration.
-
-
-        :return: The has_documentation of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this SoftwareConfiguration.
-
-
-        :param has_documentation: The has_documentation of this SoftwareConfiguration.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
-
-    @property
     def keywords(self):
         """Gets the keywords of this SoftwareConfiguration.
 
@@ -355,6 +334,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._keywords = keywords
+
+    @property
+    def has_documentation(self):
+        """Gets the has_documentation of this SoftwareConfiguration.
+
+
+        :return: The has_documentation of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this SoftwareConfiguration.
+
+
+        :param has_documentation: The has_documentation of this SoftwareConfiguration.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
 
     @property
     def has_implementation_script_location(self):
@@ -672,27 +672,6 @@ class SoftwareConfiguration(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this SoftwareConfiguration.
-
-
-        :return: The logo of this SoftwareConfiguration.
-        :rtype: List[Image]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this SoftwareConfiguration.
-
-
-        :param logo: The logo of this SoftwareConfiguration.
-        :type logo: List[Image]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this SoftwareConfiguration.
 
@@ -712,6 +691,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this SoftwareConfiguration.
+
+
+        :return: The logo of this SoftwareConfiguration.
+        :rtype: List[Image]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this SoftwareConfiguration.
+
+
+        :param logo: The logo of this SoftwareConfiguration.
+        :type logo: List[Image]
+        """
+
+        self._logo = logo
 
     @property
     def has_purpose(self):
@@ -1218,27 +1218,6 @@ class SoftwareConfiguration(Model):
         self._has_output = has_output
 
     @property
-    def funding_source(self):
-        """Gets the funding_source of this SoftwareConfiguration.
-
-
-        :return: The funding_source of this SoftwareConfiguration.
-        :rtype: List[Organization]
-        """
-        return self._funding_source
-
-    @funding_source.setter
-    def funding_source(self, funding_source):
-        """Sets the funding_source of this SoftwareConfiguration.
-
-
-        :param funding_source: The funding_source of this SoftwareConfiguration.
-        :type funding_source: List[Organization]
-        """
-
-        self._funding_source = funding_source
-
-    @property
     def has_input(self):
         """Gets the has_input of this SoftwareConfiguration.
 
@@ -1258,3 +1237,24 @@ class SoftwareConfiguration(Model):
         """
 
         self._has_input = has_input
+
+    @property
+    def funding_source(self):
+        """Gets the funding_source of this SoftwareConfiguration.
+
+
+        :return: The funding_source of this SoftwareConfiguration.
+        :rtype: List[Organization]
+        """
+        return self._funding_source
+
+    @funding_source.setter
+    def funding_source(self, funding_source):
+        """Sets the funding_source of this SoftwareConfiguration.
+
+
+        :param funding_source: The funding_source of this SoftwareConfiguration.
+        :type funding_source: List[Organization]
+        """
+
+        self._funding_source = funding_source

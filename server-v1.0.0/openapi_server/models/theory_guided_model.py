@@ -15,7 +15,7 @@ class TheoryGuidedModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, has_equation=None, publisher=None, funding_source=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_equation=None, funding_source=None):  # noqa: E501
         """TheoryGuidedModel - a model defined in OpenAPI
 
         :param keywords: The keywords of this TheoryGuidedModel.  # noqa: E501
@@ -88,10 +88,10 @@ class TheoryGuidedModel(Model):
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this TheoryGuidedModel.  # noqa: E501
         :type has_explanation_diagram: List[object]
-        :param has_equation: The has_equation of this TheoryGuidedModel.  # noqa: E501
-        :type has_equation: List[Equation]
         :param publisher: The publisher of this TheoryGuidedModel.  # noqa: E501
         :type publisher: List[object]
+        :param has_equation: The has_equation of this TheoryGuidedModel.  # noqa: E501
+        :type has_equation: List[Equation]
         :param funding_source: The funding_source of this TheoryGuidedModel.  # noqa: E501
         :type funding_source: List[object]
         """
@@ -137,8 +137,8 @@ class TheoryGuidedModel(Model):
             'license': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
-            'has_equation': List[Equation],
             'publisher': List[object],
+            'has_equation': List[Equation],
             'funding_source': List[object]
         }
 
@@ -178,8 +178,8 @@ class TheoryGuidedModel(Model):
             'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
-            'has_equation': 'hasEquation',
             'publisher': 'publisher',
+            'has_equation': 'hasEquation',
             'funding_source': 'fundingSource'
         }
 
@@ -218,8 +218,8 @@ class TheoryGuidedModel(Model):
         self._license = license
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
-        self._has_equation = has_equation
         self._publisher = publisher
+        self._has_equation = has_equation
         self._funding_source = funding_source
 
     @classmethod
@@ -969,27 +969,6 @@ class TheoryGuidedModel(Model):
         self._has_explanation_diagram = has_explanation_diagram
 
     @property
-    def has_equation(self):
-        """Gets the has_equation of this TheoryGuidedModel.
-
-
-        :return: The has_equation of this TheoryGuidedModel.
-        :rtype: List[Equation]
-        """
-        return self._has_equation
-
-    @has_equation.setter
-    def has_equation(self, has_equation):
-        """Sets the has_equation of this TheoryGuidedModel.
-
-
-        :param has_equation: The has_equation of this TheoryGuidedModel.
-        :type has_equation: List[Equation]
-        """
-
-        self._has_equation = has_equation
-
-    @property
     def publisher(self):
         """Gets the publisher of this TheoryGuidedModel.
 
@@ -1009,6 +988,27 @@ class TheoryGuidedModel(Model):
         """
 
         self._publisher = publisher
+
+    @property
+    def has_equation(self):
+        """Gets the has_equation of this TheoryGuidedModel.
+
+
+        :return: The has_equation of this TheoryGuidedModel.
+        :rtype: List[Equation]
+        """
+        return self._has_equation
+
+    @has_equation.setter
+    def has_equation(self, has_equation):
+        """Sets the has_equation of this TheoryGuidedModel.
+
+
+        :param has_equation: The has_equation of this TheoryGuidedModel.
+        :type has_equation: List[Equation]
+        """
+
+        self._has_equation = has_equation
 
     @property
     def funding_source(self):

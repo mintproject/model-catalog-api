@@ -6,15 +6,15 @@ from openapi_server.utils.vars import CAUSALDIAGRAM_TYPE_NAME, CAUSALDIAGRAM_TYP
 from openapi_server.models.causal_diagram import CausalDiagram  # noqa: E501
 from openapi_server import util
 
-def causaldiagrams_get(username=None, query_text=None):  # noqa: E501
+def causaldiagrams_get(username=None, label=None):  # noqa: E501
     """List all CausalDiagram entities
 
     Gets a list of all CausalDiagram entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[CausalDiagram]
     """
@@ -22,7 +22,7 @@ def causaldiagrams_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)

@@ -6,15 +6,15 @@ from openapi_server.utils.vars import HYBRIDMODEL_TYPE_NAME, HYBRIDMODEL_TYPE_UR
 from openapi_server.models.hybrid_model import HybridModel  # noqa: E501
 from openapi_server import util
 
-def hybridmodels_get(username=None, query_text=None):  # noqa: E501
+def hybridmodels_get(username=None, label=None):  # noqa: E501
     """List all HybridModel entities
 
     Gets a list of all HybridModel entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[HybridModel]
     """
@@ -22,7 +22,7 @@ def hybridmodels_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=HYBRIDMODEL_TYPE_URI,
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
         kls=HybridModel)

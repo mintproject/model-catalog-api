@@ -6,15 +6,15 @@ from openapi_server.utils.vars import TIMEINTERVAL_TYPE_NAME, TIMEINTERVAL_TYPE_
 from openapi_server.models.time_interval import TimeInterval  # noqa: E501
 from openapi_server import util
 
-def timeintervals_get(username=None, query_text=None):  # noqa: E501
+def timeintervals_get(username=None, label=None):  # noqa: E501
     """List all TimeInterval entities
 
     Gets a list of all TimeInterval entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[TimeInterval]
     """
@@ -22,7 +22,7 @@ def timeintervals_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=TIMEINTERVAL_TYPE_URI,
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 
         kls=TimeInterval)

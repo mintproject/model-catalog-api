@@ -6,15 +6,15 @@ from openapi_server.utils.vars import SOURCECODE_TYPE_NAME, SOURCECODE_TYPE_URI
 from openapi_server.models.source_code import SourceCode  # noqa: E501
 from openapi_server import util
 
-def sourcecodes_get(username=None, query_text=None):  # noqa: E501
+def sourcecodes_get(username=None, label=None):  # noqa: E501
     """List all SourceCode entities
 
     Gets a list of all SourceCode entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[SourceCode]
     """
@@ -22,7 +22,7 @@ def sourcecodes_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=SOURCECODE_TYPE_URI,
         rdf_type_name=SOURCECODE_TYPE_NAME, 
         kls=SourceCode)

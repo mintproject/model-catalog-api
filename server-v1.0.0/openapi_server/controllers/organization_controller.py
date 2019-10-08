@@ -6,15 +6,15 @@ from openapi_server.utils.vars import ORGANIZATION_TYPE_NAME, ORGANIZATION_TYPE_
 from openapi_server.models.organization import Organization  # noqa: E501
 from openapi_server import util
 
-def organizations_get(username=None, query_text=None):  # noqa: E501
+def organizations_get(username=None, label=None):  # noqa: E501
     """List all Organization entities
 
     Gets a list of all Organization entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[Organization]
     """
@@ -22,7 +22,7 @@ def organizations_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=ORGANIZATION_TYPE_URI,
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
         kls=Organization)

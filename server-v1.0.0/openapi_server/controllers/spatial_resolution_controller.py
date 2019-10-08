@@ -6,15 +6,15 @@ from openapi_server.utils.vars import SPATIALRESOLUTION_TYPE_NAME, SPATIALRESOLU
 from openapi_server.models.spatial_resolution import SpatialResolution  # noqa: E501
 from openapi_server import util
 
-def spatialresolutions_get(username=None, query_text=None):  # noqa: E501
+def spatialresolutions_get(username=None, label=None):  # noqa: E501
     """List all SpatialResolution entities
 
     Gets a list of all SpatialResolution entities # noqa: E501
 
     :param username: Username to query
     :type username: str
-    :param query_text: A value of type string that will substitute ?_text in the original query
-    :type query_text: str
+    :param label: Filter by label
+    :type label: str
 
     :rtype: List[SpatialResolution]
     """
@@ -22,7 +22,7 @@ def spatialresolutions_get(username=None, query_text=None):  # noqa: E501
 
     return get_resource(
         username=username,
-        query_text=query_text,
+        label=label,
         rdf_type_uri=SPATIALRESOLUTION_TYPE_URI,
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 
         kls=SpatialResolution)
