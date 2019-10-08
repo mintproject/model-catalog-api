@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker tag model-catalog-api mintproject/modelcatalog-api:$TRAVIS_TAG
+docker push -f mintproject/modelcatalog-api:$TRAVIS_TAG
