@@ -1,0 +1,9 @@
+version: '3'
+services:
+  dev:
+    image: "mint-project/api-modelcatalog:dev_v1"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 22222:8080
