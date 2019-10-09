@@ -8,6 +8,7 @@ from openapi_server.models.dataset_specification import DatasetSpecification
 from openapi_server.models.empirical_model import EmpiricalModel
 from openapi_server.models.emulator import Emulator
 from openapi_server.models.equation import Equation
+from openapi_server.models.funding_information import FundingInformation
 from openapi_server.models.geo_coordinates import GeoCoordinates
 from openapi_server.models.geo_shape import GeoShape
 from openapi_server.models.grid import Grid

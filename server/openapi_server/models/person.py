@@ -15,13 +15,15 @@ class Person(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, identifier=None, website=None, id=None, label=None, type=None, email=None):  # noqa: E501
+    def __init__(self, identifier=None, website=None, description=None, id=None, label=None, type=None, email=None):  # noqa: E501
         """Person - a model defined in OpenAPI
 
         :param identifier: The identifier of this Person.  # noqa: E501
         :type identifier: List[str]
         :param website: The website of this Person.  # noqa: E501
         :type website: List[str]
+        :param description: The description of this Person.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this Person.  # noqa: E501
         :type id: str
         :param label: The label of this Person.  # noqa: E501
@@ -36,6 +38,7 @@ class Person(Model):
         self.openapi_types = {
             'identifier': List[str],
             'website': List[str],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -45,6 +48,7 @@ class Person(Model):
         self.attribute_map = {
             'identifier': 'identifier',
             'website': 'website',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
@@ -53,6 +57,7 @@ class Person(Model):
 
         self._identifier = identifier
         self._website = website
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -110,6 +115,27 @@ class Person(Model):
         """
 
         self._website = website
+
+    @property
+    def description(self):
+        """Gets the description of this Person.
+
+
+        :return: The description of this Person.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Person.
+
+
+        :param description: The description of this Person.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

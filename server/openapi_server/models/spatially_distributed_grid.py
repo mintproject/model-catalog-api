@@ -15,7 +15,7 @@ class SpatiallyDistributedGrid(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_spatial_resolution=None, has_coordinate_system=None, has_shape=None, has_dimension=None, position=None, id=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_spatial_resolution=None, has_coordinate_system=None, has_shape=None, has_dimension=None, position=None, id=None):  # noqa: E501
         """SpatiallyDistributedGrid - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this SpatiallyDistributedGrid.  # noqa: E501
@@ -24,6 +24,8 @@ class SpatiallyDistributedGrid(Model):
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_file_structure: object
+        :param description: The description of this SpatiallyDistributedGrid.  # noqa: E501
+        :type description: List[str]
         :param has_presentation: The has_presentation of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_presentation: List[object]
         :param label: The label of this SpatiallyDistributedGrid.  # noqa: E501
@@ -51,6 +53,7 @@ class SpatiallyDistributedGrid(Model):
             'has_dimensionality': List[float],
             'has_format': List[str],
             'has_file_structure': object,
+            'description': List[str],
             'has_presentation': List[object],
             'label': List[str],
             'type': List[str],
@@ -67,6 +70,7 @@ class SpatiallyDistributedGrid(Model):
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
             'has_file_structure': 'hasFileStructure',
+            'description': 'description',
             'has_presentation': 'hasPresentation',
             'label': 'label',
             'type': 'type',
@@ -82,6 +86,7 @@ class SpatiallyDistributedGrid(Model):
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
         self._has_file_structure = has_file_structure
+        self._description = description
         self._has_presentation = has_presentation
         self._label = label
         self._type = type
@@ -166,6 +171,27 @@ class SpatiallyDistributedGrid(Model):
         """
 
         self._has_file_structure = has_file_structure
+
+    @property
+    def description(self):
+        """Gets the description of this SpatiallyDistributedGrid.
+
+
+        :return: The description of this SpatiallyDistributedGrid.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SpatiallyDistributedGrid.
+
+
+        :param description: The description of this SpatiallyDistributedGrid.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def has_presentation(self):

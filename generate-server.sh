@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 dir=${PWD}
 SERVER_DIR=server
-rm -rf server
 docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli:v4.1.2 \
      generate  \
      -i /local/model-catalog.yaml\

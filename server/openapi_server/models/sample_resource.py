@@ -15,11 +15,13 @@ class SampleResource(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, data_catalog_identifier=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, data_catalog_identifier=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """SampleResource - a model defined in OpenAPI
 
         :param data_catalog_identifier: The data_catalog_identifier of this SampleResource.  # noqa: E501
         :type data_catalog_identifier: List[str]
+        :param description: The description of this SampleResource.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this SampleResource.  # noqa: E501
         :type id: str
         :param label: The label of this SampleResource.  # noqa: E501
@@ -31,6 +33,7 @@ class SampleResource(Model):
 
         self.openapi_types = {
             'data_catalog_identifier': List[str],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str]
@@ -38,12 +41,14 @@ class SampleResource(Model):
 
         self.attribute_map = {
             'data_catalog_identifier': 'dataCatalogIdentifier',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type'
         }
 
         self._data_catalog_identifier = data_catalog_identifier
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -79,6 +84,27 @@ class SampleResource(Model):
         """
 
         self._data_catalog_identifier = data_catalog_identifier
+
+    @property
+    def description(self):
+        """Gets the description of this SampleResource.
+
+
+        :return: The description of this SampleResource.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SampleResource.
+
+
+        :param description: The description of this SampleResource.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

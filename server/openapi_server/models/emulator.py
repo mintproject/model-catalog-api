@@ -15,9 +15,11 @@ class Emulator(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, publisher=None, has_equation=None, funding_source=None):  # noqa: E501
+    def __init__(self, has_funding=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, has_equation=None):  # noqa: E501
         """Emulator - a model defined in OpenAPI
 
+        :param has_funding: The has_funding of this Emulator.  # noqa: E501
+        :type has_funding: List[object]
         :param keywords: The keywords of this Emulator.  # noqa: E501
         :type keywords: List[str]
         :param has_documentation: The has_documentation of this Emulator.  # noqa: E501
@@ -32,10 +34,10 @@ class Emulator(Model):
         :type has_typical_data_source: List[str]
         :param has_download_url: The has_download_url of this Emulator.  # noqa: E501
         :type has_download_url: List[str]
-        :param description: The description of this Emulator.  # noqa: E501
-        :type description: List[str]
         :param reference_publication: The reference_publication of this Emulator.  # noqa: E501
         :type reference_publication: List[str]
+        :param description: The description of this Emulator.  # noqa: E501
+        :type description: List[str]
         :param screenshot: The screenshot of this Emulator.  # noqa: E501
         :type screenshot: List[object]
         :param type: The type of this Emulator.  # noqa: E501
@@ -46,24 +48,26 @@ class Emulator(Model):
         :type has_model_category: List[str]
         :param date_created: The date_created of this Emulator.  # noqa: E501
         :type date_created: List[str]
+        :param compatible_visualization_software: The compatible_visualization_software of this Emulator.  # noqa: E501
+        :type compatible_visualization_software: List[object]
         :param contributor: The contributor of this Emulator.  # noqa: E501
         :type contributor: List[object]
         :param has_faq: The has_faq of this Emulator.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this Emulator.  # noqa: E501
-        :type logo: List[object]
         :param has_contact_person: The has_contact_person of this Emulator.  # noqa: E501
         :type has_contact_person: List[object]
+        :param logo: The logo of this Emulator.  # noqa: E501
+        :type logo: List[object]
         :param has_purpose: The has_purpose of this Emulator.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this Emulator.  # noqa: E501
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this Emulator.  # noqa: E501
         :type has_sample_visualization: List[object]
-        :param memory_requirements: The memory_requirements of this Emulator.  # noqa: E501
-        :type memory_requirements: List[str]
         :param identifier: The identifier of this Emulator.  # noqa: E501
         :type identifier: List[str]
+        :param memory_requirements: The memory_requirements of this Emulator.  # noqa: E501
+        :type memory_requirements: List[str]
         :param website: The website of this Emulator.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this Emulator.  # noqa: E501
@@ -72,6 +76,8 @@ class Emulator(Model):
         :type author: List[object]
         :param processor_requirements: The processor_requirements of this Emulator.  # noqa: E501
         :type processor_requirements: List[str]
+        :param has_usage_notes: The has_usage_notes of this Emulator.  # noqa: E501
+        :type has_usage_notes: List[str]
         :param short_description: The short_description of this Emulator.  # noqa: E501
         :type short_description: List[str]
         :param label: The label of this Emulator.  # noqa: E501
@@ -88,12 +94,12 @@ class Emulator(Model):
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this Emulator.  # noqa: E501
         :type has_explanation_diagram: List[object]
+        :param has_example: The has_example of this Emulator.  # noqa: E501
+        :type has_example: List[str]
         :param publisher: The publisher of this Emulator.  # noqa: E501
         :type publisher: List[object]
         :param has_equation: The has_equation of this Emulator.  # noqa: E501
         :type has_equation: List[Equation]
-        :param funding_source: The funding_source of this Emulator.  # noqa: E501
-        :type funding_source: List[object]
         """
         from openapi_server.models.equation import Equation
         from openapi_server.models.grid import Grid
@@ -102,6 +108,7 @@ class Emulator(Model):
           # noqa: E501
 
         self.openapi_types = {
+            'has_funding': List[object],
             'keywords': List[str],
             'has_documentation': List[str],
             'has_grid': List[Grid],
@@ -109,26 +116,28 @@ class Emulator(Model):
             'has_version': List[object],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
-            'description': List[str],
             'reference_publication': List[str],
+            'description': List[str],
             'screenshot': List[object],
             'type': List[str],
             'has_installation_instructions': List[str],
             'has_model_category': List[str],
             'date_created': List[str],
+            'compatible_visualization_software': List[object],
             'contributor': List[object],
             'has_faq': List[str],
-            'logo': List[object],
             'has_contact_person': List[object],
+            'logo': List[object],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
-            'memory_requirements': List[str],
             'identifier': List[str],
+            'memory_requirements': List[str],
             'website': List[str],
             'citation': List[str],
             'author': List[object],
             'processor_requirements': List[str],
+            'has_usage_notes': List[str],
             'short_description': List[str],
             'label': List[str],
             'has_assumption': List[str],
@@ -137,12 +146,13 @@ class Emulator(Model):
             'license': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
+            'has_example': List[str],
             'publisher': List[object],
-            'has_equation': List[Equation],
-            'funding_source': List[object]
+            'has_equation': List[Equation]
         }
 
         self.attribute_map = {
+            'has_funding': 'hasFunding',
             'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
@@ -150,26 +160,28 @@ class Emulator(Model):
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
-            'description': 'description',
             'reference_publication': 'referencePublication',
+            'description': 'description',
             'screenshot': 'screenshot',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'has_model_category': 'hasModelCategory',
             'date_created': 'dateCreated',
+            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'memory_requirements': 'memoryRequirements',
             'identifier': 'identifier',
+            'memory_requirements': 'memoryRequirements',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
             'processor_requirements': 'processorRequirements',
+            'has_usage_notes': 'hasUsageNotes',
             'short_description': 'shortDescription',
             'label': 'label',
             'has_assumption': 'hasAssumption',
@@ -178,11 +190,12 @@ class Emulator(Model):
             'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
+            'has_example': 'hasExample',
             'publisher': 'publisher',
-            'has_equation': 'hasEquation',
-            'funding_source': 'fundingSource'
+            'has_equation': 'hasEquation'
         }
 
+        self._has_funding = has_funding
         self._keywords = keywords
         self._has_documentation = has_documentation
         self._has_grid = has_grid
@@ -190,26 +203,28 @@ class Emulator(Model):
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
-        self._description = description
         self._reference_publication = reference_publication
+        self._description = description
         self._screenshot = screenshot
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._has_model_category = has_model_category
         self._date_created = date_created
+        self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._memory_requirements = memory_requirements
         self._identifier = identifier
+        self._memory_requirements = memory_requirements
         self._website = website
         self._citation = citation
         self._author = author
         self._processor_requirements = processor_requirements
+        self._has_usage_notes = has_usage_notes
         self._short_description = short_description
         self._label = label
         self._has_assumption = has_assumption
@@ -218,9 +233,9 @@ class Emulator(Model):
         self._license = license
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
+        self._has_example = has_example
         self._publisher = publisher
         self._has_equation = has_equation
-        self._funding_source = funding_source
 
     @classmethod
     def from_dict(cls, dikt) -> 'Emulator':
@@ -232,6 +247,27 @@ class Emulator(Model):
         :rtype: Emulator
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_funding(self):
+        """Gets the has_funding of this Emulator.
+
+
+        :return: The has_funding of this Emulator.
+        :rtype: List[object]
+        """
+        return self._has_funding
+
+    @has_funding.setter
+    def has_funding(self, has_funding):
+        """Sets the has_funding of this Emulator.
+
+
+        :param has_funding: The has_funding of this Emulator.
+        :type has_funding: List[object]
+        """
+
+        self._has_funding = has_funding
 
     @property
     def keywords(self):
@@ -381,27 +417,6 @@ class Emulator(Model):
         self._has_download_url = has_download_url
 
     @property
-    def description(self):
-        """Gets the description of this Emulator.
-
-
-        :return: The description of this Emulator.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Emulator.
-
-
-        :param description: The description of this Emulator.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def reference_publication(self):
         """Gets the reference_publication of this Emulator.
 
@@ -421,6 +436,27 @@ class Emulator(Model):
         """
 
         self._reference_publication = reference_publication
+
+    @property
+    def description(self):
+        """Gets the description of this Emulator.
+
+
+        :return: The description of this Emulator.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Emulator.
+
+
+        :param description: The description of this Emulator.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def screenshot(self):
@@ -528,6 +564,27 @@ class Emulator(Model):
         self._date_created = date_created
 
     @property
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this Emulator.
+
+
+        :return: The compatible_visualization_software of this Emulator.
+        :rtype: List[object]
+        """
+        return self._compatible_visualization_software
+
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this Emulator.
+
+
+        :param compatible_visualization_software: The compatible_visualization_software of this Emulator.
+        :type compatible_visualization_software: List[object]
+        """
+
+        self._compatible_visualization_software = compatible_visualization_software
+
+    @property
     def contributor(self):
         """Gets the contributor of this Emulator.
 
@@ -570,27 +627,6 @@ class Emulator(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this Emulator.
-
-
-        :return: The logo of this Emulator.
-        :rtype: List[object]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this Emulator.
-
-
-        :param logo: The logo of this Emulator.
-        :type logo: List[object]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this Emulator.
 
@@ -610,6 +646,27 @@ class Emulator(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this Emulator.
+
+
+        :return: The logo of this Emulator.
+        :rtype: List[object]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this Emulator.
+
+
+        :param logo: The logo of this Emulator.
+        :type logo: List[object]
+        """
+
+        self._logo = logo
 
     @property
     def has_purpose(self):
@@ -675,27 +732,6 @@ class Emulator(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def memory_requirements(self):
-        """Gets the memory_requirements of this Emulator.
-
-
-        :return: The memory_requirements of this Emulator.
-        :rtype: List[str]
-        """
-        return self._memory_requirements
-
-    @memory_requirements.setter
-    def memory_requirements(self, memory_requirements):
-        """Sets the memory_requirements of this Emulator.
-
-
-        :param memory_requirements: The memory_requirements of this Emulator.
-        :type memory_requirements: List[str]
-        """
-
-        self._memory_requirements = memory_requirements
-
-    @property
     def identifier(self):
         """Gets the identifier of this Emulator.
 
@@ -715,6 +751,27 @@ class Emulator(Model):
         """
 
         self._identifier = identifier
+
+    @property
+    def memory_requirements(self):
+        """Gets the memory_requirements of this Emulator.
+
+
+        :return: The memory_requirements of this Emulator.
+        :rtype: List[str]
+        """
+        return self._memory_requirements
+
+    @memory_requirements.setter
+    def memory_requirements(self, memory_requirements):
+        """Sets the memory_requirements of this Emulator.
+
+
+        :param memory_requirements: The memory_requirements of this Emulator.
+        :type memory_requirements: List[str]
+        """
+
+        self._memory_requirements = memory_requirements
 
     @property
     def website(self):
@@ -799,6 +856,27 @@ class Emulator(Model):
         """
 
         self._processor_requirements = processor_requirements
+
+    @property
+    def has_usage_notes(self):
+        """Gets the has_usage_notes of this Emulator.
+
+
+        :return: The has_usage_notes of this Emulator.
+        :rtype: List[str]
+        """
+        return self._has_usage_notes
+
+    @has_usage_notes.setter
+    def has_usage_notes(self, has_usage_notes):
+        """Sets the has_usage_notes of this Emulator.
+
+
+        :param has_usage_notes: The has_usage_notes of this Emulator.
+        :type has_usage_notes: List[str]
+        """
+
+        self._has_usage_notes = has_usage_notes
 
     @property
     def short_description(self):
@@ -969,6 +1047,27 @@ class Emulator(Model):
         self._has_explanation_diagram = has_explanation_diagram
 
     @property
+    def has_example(self):
+        """Gets the has_example of this Emulator.
+
+
+        :return: The has_example of this Emulator.
+        :rtype: List[str]
+        """
+        return self._has_example
+
+    @has_example.setter
+    def has_example(self, has_example):
+        """Sets the has_example of this Emulator.
+
+
+        :param has_example: The has_example of this Emulator.
+        :type has_example: List[str]
+        """
+
+        self._has_example = has_example
+
+    @property
     def publisher(self):
         """Gets the publisher of this Emulator.
 
@@ -1009,24 +1108,3 @@ class Emulator(Model):
         """
 
         self._has_equation = has_equation
-
-    @property
-    def funding_source(self):
-        """Gets the funding_source of this Emulator.
-
-
-        :return: The funding_source of this Emulator.
-        :rtype: List[object]
-        """
-        return self._funding_source
-
-    @funding_source.setter
-    def funding_source(self, funding_source):
-        """Sets the funding_source of this Emulator.
-
-
-        :param funding_source: The funding_source of this Emulator.
-        :type funding_source: List[object]
-        """
-
-        self._funding_source = funding_source

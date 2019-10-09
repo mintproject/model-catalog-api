@@ -15,11 +15,13 @@ class Visualization(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_format=None, id=None, label=None, type=None, was_derived_from_software=None):  # noqa: E501
+    def __init__(self, has_format=None, description=None, id=None, label=None, type=None, was_derived_from_software=None):  # noqa: E501
         """Visualization - a model defined in OpenAPI
 
         :param has_format: The has_format of this Visualization.  # noqa: E501
         :type has_format: List[str]
+        :param description: The description of this Visualization.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this Visualization.  # noqa: E501
         :type id: str
         :param label: The label of this Visualization.  # noqa: E501
@@ -35,6 +37,7 @@ class Visualization(Model):
 
         self.openapi_types = {
             'has_format': List[str],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -43,6 +46,7 @@ class Visualization(Model):
 
         self.attribute_map = {
             'has_format': 'hasFormat',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
@@ -50,6 +54,7 @@ class Visualization(Model):
         }
 
         self._has_format = has_format
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -86,6 +91,27 @@ class Visualization(Model):
         """
 
         self._has_format = has_format
+
+    @property
+    def description(self):
+        """Gets the description of this Visualization.
+
+
+        :return: The description of this Visualization.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Visualization.
+
+
+        :param description: The description of this Visualization.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

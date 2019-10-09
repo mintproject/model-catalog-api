@@ -15,7 +15,7 @@ class DatasetSpecification(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
         """DatasetSpecification - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.  # noqa: E501
@@ -24,6 +24,8 @@ class DatasetSpecification(Model):
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this DatasetSpecification.  # noqa: E501
         :type has_file_structure: object
+        :param description: The description of this DatasetSpecification.  # noqa: E501
+        :type description: List[str]
         :param has_presentation: The has_presentation of this DatasetSpecification.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param position: The position of this DatasetSpecification.  # noqa: E501
@@ -47,6 +49,7 @@ class DatasetSpecification(Model):
             'has_dimensionality': List[float],
             'has_format': List[str],
             'has_file_structure': object,
+            'description': List[str],
             'has_presentation': List[VariablePresentation],
             'position': List[float],
             'id': str,
@@ -59,6 +62,7 @@ class DatasetSpecification(Model):
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
             'has_file_structure': 'hasFileStructure',
+            'description': 'description',
             'has_presentation': 'hasPresentation',
             'position': 'position',
             'id': 'id',
@@ -70,6 +74,7 @@ class DatasetSpecification(Model):
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
         self._has_file_structure = has_file_structure
+        self._description = description
         self._has_presentation = has_presentation
         self._position = position
         self._id = id
@@ -150,6 +155,27 @@ class DatasetSpecification(Model):
         """
 
         self._has_file_structure = has_file_structure
+
+    @property
+    def description(self):
+        """Gets the description of this DatasetSpecification.
+
+
+        :return: The description of this DatasetSpecification.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this DatasetSpecification.
+
+
+        :param description: The description of this DatasetSpecification.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def has_presentation(self):

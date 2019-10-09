@@ -15,13 +15,15 @@ class SourceCode(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, license=None, programming_language=None, code_repository=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, license=None, programming_language=None, description=None, code_repository=None, id=None, label=None, type=None):  # noqa: E501
         """SourceCode - a model defined in OpenAPI
 
         :param license: The license of this SourceCode.  # noqa: E501
         :type license: List[str]
         :param programming_language: The programming_language of this SourceCode.  # noqa: E501
         :type programming_language: List[str]
+        :param description: The description of this SourceCode.  # noqa: E501
+        :type description: List[str]
         :param code_repository: The code_repository of this SourceCode.  # noqa: E501
         :type code_repository: List[str]
         :param id: The id of this SourceCode.  # noqa: E501
@@ -36,6 +38,7 @@ class SourceCode(Model):
         self.openapi_types = {
             'license': List[str],
             'programming_language': List[str],
+            'description': List[str],
             'code_repository': List[str],
             'id': str,
             'label': List[str],
@@ -45,6 +48,7 @@ class SourceCode(Model):
         self.attribute_map = {
             'license': 'license',
             'programming_language': 'programmingLanguage',
+            'description': 'description',
             'code_repository': 'codeRepository',
             'id': 'id',
             'label': 'label',
@@ -53,6 +57,7 @@ class SourceCode(Model):
 
         self._license = license
         self._programming_language = programming_language
+        self._description = description
         self._code_repository = code_repository
         self._id = id
         self._label = label
@@ -110,6 +115,27 @@ class SourceCode(Model):
         """
 
         self._programming_language = programming_language
+
+    @property
+    def description(self):
+        """Gets the description of this SourceCode.
+
+
+        :return: The description of this SourceCode.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SourceCode.
+
+
+        :param description: The description of this SourceCode.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def code_repository(self):

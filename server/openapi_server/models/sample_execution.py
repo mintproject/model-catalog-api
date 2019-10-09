@@ -15,9 +15,11 @@ class SampleExecution(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, has_execution_command=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, type=None, has_execution_command=None):  # noqa: E501
         """SampleExecution - a model defined in OpenAPI
 
+        :param description: The description of this SampleExecution.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this SampleExecution.  # noqa: E501
         :type id: str
         :param label: The label of this SampleExecution.  # noqa: E501
@@ -30,6 +32,7 @@ class SampleExecution(Model):
 
 
         self.openapi_types = {
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -37,12 +40,14 @@ class SampleExecution(Model):
         }
 
         self.attribute_map = {
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
             'has_execution_command': 'hasExecutionCommand'
         }
 
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -58,6 +63,27 @@ class SampleExecution(Model):
         :rtype: SampleExecution
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def description(self):
+        """Gets the description of this SampleExecution.
+
+
+        :return: The description of this SampleExecution.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SampleExecution.
+
+
+        :param description: The description of this SampleExecution.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

@@ -15,13 +15,15 @@ class Organization(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, identifier=None, website=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, identifier=None, website=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """Organization - a model defined in OpenAPI
 
         :param identifier: The identifier of this Organization.  # noqa: E501
         :type identifier: List[str]
         :param website: The website of this Organization.  # noqa: E501
         :type website: List[str]
+        :param description: The description of this Organization.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this Organization.  # noqa: E501
         :type id: str
         :param label: The label of this Organization.  # noqa: E501
@@ -34,6 +36,7 @@ class Organization(Model):
         self.openapi_types = {
             'identifier': List[str],
             'website': List[str],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str]
@@ -42,6 +45,7 @@ class Organization(Model):
         self.attribute_map = {
             'identifier': 'identifier',
             'website': 'website',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type'
@@ -49,6 +53,7 @@ class Organization(Model):
 
         self._identifier = identifier
         self._website = website
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -105,6 +110,27 @@ class Organization(Model):
         """
 
         self._website = website
+
+    @property
+    def description(self):
+        """Gets the description of this Organization.
+
+
+        :return: The description of this Organization.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Organization.
+
+
+        :param description: The description of this Organization.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

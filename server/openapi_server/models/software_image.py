@@ -15,9 +15,11 @@ class SoftwareImage(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, date_created=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, publisher=None, funding_source=None):  # noqa: E501
+    def __init__(self, has_funding=None, keywords=None, has_documentation=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_example=None, publisher=None):  # noqa: E501
         """SoftwareImage - a model defined in OpenAPI
 
+        :param has_funding: The has_funding of this SoftwareImage.  # noqa: E501
+        :type has_funding: List[FundingInformation]
         :param keywords: The keywords of this SoftwareImage.  # noqa: E501
         :type keywords: List[str]
         :param has_documentation: The has_documentation of this SoftwareImage.  # noqa: E501
@@ -42,12 +44,14 @@ class SoftwareImage(Model):
         :type has_installation_instructions: List[str]
         :param date_created: The date_created of this SoftwareImage.  # noqa: E501
         :type date_created: List[str]
+        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareImage.  # noqa: E501
+        :type compatible_visualization_software: List[Software]
         :param contributor: The contributor of this SoftwareImage.  # noqa: E501
         :type contributor: List[Person]
         :param has_faq: The has_faq of this SoftwareImage.  # noqa: E501
         :type has_faq: List[str]
         :param has_contact_person: The has_contact_person of this SoftwareImage.  # noqa: E501
-        :type has_contact_person: List[Person]
+        :type has_contact_person: List[object]
         :param logo: The logo of this SoftwareImage.  # noqa: E501
         :type logo: List[Image]
         :param has_purpose: The has_purpose of this SoftwareImage.  # noqa: E501
@@ -68,6 +72,8 @@ class SoftwareImage(Model):
         :type author: List[object]
         :param processor_requirements: The processor_requirements of this SoftwareImage.  # noqa: E501
         :type processor_requirements: List[str]
+        :param has_usage_notes: The has_usage_notes of this SoftwareImage.  # noqa: E501
+        :type has_usage_notes: List[str]
         :param short_description: The short_description of this SoftwareImage.  # noqa: E501
         :type short_description: List[str]
         :param label: The label of this SoftwareImage.  # noqa: E501
@@ -84,14 +90,15 @@ class SoftwareImage(Model):
         :type license: List[str]
         :param has_source_code: The has_source_code of this SoftwareImage.  # noqa: E501
         :type has_source_code: List[SourceCode]
+        :param has_example: The has_example of this SoftwareImage.  # noqa: E501
+        :type has_example: List[str]
         :param publisher: The publisher of this SoftwareImage.  # noqa: E501
         :type publisher: List[object]
-        :param funding_source: The funding_source of this SoftwareImage.  # noqa: E501
-        :type funding_source: List[Organization]
         """
+        from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
-        from openapi_server.models.organization import Organization
         from openapi_server.models.person import Person
+        from openapi_server.models.software import Software
         from openapi_server.models.software_version import SoftwareVersion
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
@@ -102,8 +109,10 @@ class SoftwareImage(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
+            'has_funding': List[FundingInformation],
             'keywords': List[str],
             'has_documentation': List[str],
             'software_requirements': List[str],
@@ -116,9 +125,10 @@ class SoftwareImage(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'date_created': List[str],
+            'compatible_visualization_software': List[Software],
             'contributor': List[Person],
             'has_faq': List[str],
-            'has_contact_person': List[Person],
+            'has_contact_person': List[object],
             'logo': List[Image],
             'has_purpose': List[str],
             'id': str,
@@ -129,6 +139,7 @@ class SoftwareImage(Model):
             'citation': List[str],
             'author': List[object],
             'processor_requirements': List[str],
+            'has_usage_notes': List[str],
             'short_description': List[str],
             'label': List[str],
             'has_execution_command': List[str],
@@ -137,11 +148,12 @@ class SoftwareImage(Model):
             'operating_systems': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
-            'publisher': List[object],
-            'funding_source': List[Organization]
+            'has_example': List[str],
+            'publisher': List[object]
         }
 
         self.attribute_map = {
+            'has_funding': 'hasFunding',
             'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
             'software_requirements': 'softwareRequirements',
@@ -154,6 +166,7 @@ class SoftwareImage(Model):
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'date_created': 'dateCreated',
+            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
             'has_faq': 'hasFAQ',
             'has_contact_person': 'hasContactPerson',
@@ -167,6 +180,7 @@ class SoftwareImage(Model):
             'citation': 'citation',
             'author': 'author',
             'processor_requirements': 'processorRequirements',
+            'has_usage_notes': 'hasUsageNotes',
             'short_description': 'shortDescription',
             'label': 'label',
             'has_execution_command': 'hasExecutionCommand',
@@ -175,10 +189,11 @@ class SoftwareImage(Model):
             'operating_systems': 'operatingSystems',
             'license': 'license',
             'has_source_code': 'hasSourceCode',
-            'publisher': 'publisher',
-            'funding_source': 'fundingSource'
+            'has_example': 'hasExample',
+            'publisher': 'publisher'
         }
 
+        self._has_funding = has_funding
         self._keywords = keywords
         self._has_documentation = has_documentation
         self._software_requirements = software_requirements
@@ -191,6 +206,7 @@ class SoftwareImage(Model):
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._date_created = date_created
+        self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
         self._has_faq = has_faq
         self._has_contact_person = has_contact_person
@@ -204,6 +220,7 @@ class SoftwareImage(Model):
         self._citation = citation
         self._author = author
         self._processor_requirements = processor_requirements
+        self._has_usage_notes = has_usage_notes
         self._short_description = short_description
         self._label = label
         self._has_execution_command = has_execution_command
@@ -212,8 +229,8 @@ class SoftwareImage(Model):
         self._operating_systems = operating_systems
         self._license = license
         self._has_source_code = has_source_code
+        self._has_example = has_example
         self._publisher = publisher
-        self._funding_source = funding_source
 
     @classmethod
     def from_dict(cls, dikt) -> 'SoftwareImage':
@@ -225,6 +242,27 @@ class SoftwareImage(Model):
         :rtype: SoftwareImage
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_funding(self):
+        """Gets the has_funding of this SoftwareImage.
+
+
+        :return: The has_funding of this SoftwareImage.
+        :rtype: List[FundingInformation]
+        """
+        return self._has_funding
+
+    @has_funding.setter
+    def has_funding(self, has_funding):
+        """Sets the has_funding of this SoftwareImage.
+
+
+        :param has_funding: The has_funding of this SoftwareImage.
+        :type has_funding: List[FundingInformation]
+        """
+
+        self._has_funding = has_funding
 
     @property
     def keywords(self):
@@ -479,6 +517,27 @@ class SoftwareImage(Model):
         self._date_created = date_created
 
     @property
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this SoftwareImage.
+
+
+        :return: The compatible_visualization_software of this SoftwareImage.
+        :rtype: List[Software]
+        """
+        return self._compatible_visualization_software
+
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this SoftwareImage.
+
+
+        :param compatible_visualization_software: The compatible_visualization_software of this SoftwareImage.
+        :type compatible_visualization_software: List[Software]
+        """
+
+        self._compatible_visualization_software = compatible_visualization_software
+
+    @property
     def contributor(self):
         """Gets the contributor of this SoftwareImage.
 
@@ -526,7 +585,7 @@ class SoftwareImage(Model):
 
 
         :return: The has_contact_person of this SoftwareImage.
-        :rtype: List[Person]
+        :rtype: List[object]
         """
         return self._has_contact_person
 
@@ -536,7 +595,7 @@ class SoftwareImage(Model):
 
 
         :param has_contact_person: The has_contact_person of this SoftwareImage.
-        :type has_contact_person: List[Person]
+        :type has_contact_person: List[object]
         """
 
         self._has_contact_person = has_contact_person
@@ -752,6 +811,27 @@ class SoftwareImage(Model):
         self._processor_requirements = processor_requirements
 
     @property
+    def has_usage_notes(self):
+        """Gets the has_usage_notes of this SoftwareImage.
+
+
+        :return: The has_usage_notes of this SoftwareImage.
+        :rtype: List[str]
+        """
+        return self._has_usage_notes
+
+    @has_usage_notes.setter
+    def has_usage_notes(self, has_usage_notes):
+        """Sets the has_usage_notes of this SoftwareImage.
+
+
+        :param has_usage_notes: The has_usage_notes of this SoftwareImage.
+        :type has_usage_notes: List[str]
+        """
+
+        self._has_usage_notes = has_usage_notes
+
+    @property
     def short_description(self):
         """Gets the short_description of this SoftwareImage.
 
@@ -920,6 +1000,27 @@ class SoftwareImage(Model):
         self._has_source_code = has_source_code
 
     @property
+    def has_example(self):
+        """Gets the has_example of this SoftwareImage.
+
+
+        :return: The has_example of this SoftwareImage.
+        :rtype: List[str]
+        """
+        return self._has_example
+
+    @has_example.setter
+    def has_example(self, has_example):
+        """Sets the has_example of this SoftwareImage.
+
+
+        :param has_example: The has_example of this SoftwareImage.
+        :type has_example: List[str]
+        """
+
+        self._has_example = has_example
+
+    @property
     def publisher(self):
         """Gets the publisher of this SoftwareImage.
 
@@ -939,24 +1040,3 @@ class SoftwareImage(Model):
         """
 
         self._publisher = publisher
-
-    @property
-    def funding_source(self):
-        """Gets the funding_source of this SoftwareImage.
-
-
-        :return: The funding_source of this SoftwareImage.
-        :rtype: List[Organization]
-        """
-        return self._funding_source
-
-    @funding_source.setter
-    def funding_source(self, funding_source):
-        """Sets the funding_source of this SoftwareImage.
-
-
-        :param funding_source: The funding_source of this SoftwareImage.
-        :type funding_source: List[Organization]
-        """
-
-        self._funding_source = funding_source
