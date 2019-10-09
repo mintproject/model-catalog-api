@@ -1,12 +1,5 @@
-server-v1.0.0/Pipfile
-server-v1.0.0/requirements.txt
-server-v1.0.0/openapi_server/controllers/__init__.py
-server-v1.0.0/openapi_server/__init__.py
-Dockerfile
-docker-compose.yml
-server-v1.0.0/openapi_server/__init__.py
-server/.gitignore
+server/requirements.txt
 server/Dockerfile
-server*/Dockerfile
-server*/requirements.txt
-server/setup.py
+server/docker-compose.yml 
+server/requirements.txt
+server/.gitignore

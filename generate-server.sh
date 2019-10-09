@@ -11,7 +11,7 @@ docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli:v4.1.2 \
      --git-user-id mintproject \
      --template-dir /local/.openapi-generator/template \
      --ignore-file-override /local/.openapi-generator-ignore
-rm -f $SERVER_DIR-v1.0.0/openapi_server/controllers/default_controller.py
+rm -f $SERVER_DIR/openapi_server/controllers/default_controller.py
 cp -rv ${PWD}/.openapi-generator/template/static_files/utils/ ${PWD}/$SERVER_DIR/openapi_server/utils/
 cp -rv ${PWD}/.openapi-generator/template/static_files/settings/ ${PWD}/$SERVER_DIR/openapi_server/settings/
 cp -rv ${PWD}/.openapi-generator/template/static_files/user_controller.py ${PWD}/$SERVER_DIR/openapi_server/controllers/
