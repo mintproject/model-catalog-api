@@ -11,7 +11,8 @@ before_install:
   -s`-`uname -m` > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
-- docker build -f server/Dockerfile model-catalog-api
+- cd server
+- docker build -t model-catalog-api .
 - docker tag -f model-catalog-api mintproject/model-catalog-api:latest
 - docker push mintproject/model-catalog-api:latest
 deploy:
