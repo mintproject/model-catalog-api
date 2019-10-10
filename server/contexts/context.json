@@ -1,678 +1,676 @@
 {
-  "@context" : {
+  "@context": {
+    "Activity": {
+      "@id": "http://www.w3.org/ns/prov#Activity"
+    },
+    "CausalDiagram": {
+      "@id": "https://w3id.org/okn/o/sdm#CausalDiagram"
+    },
+    "DataStructureDefinition": {
+      "@id": "http://purl.org/linked-data/cube#DataStructureDefinition"
+    },
+    "DatasetSpecification": {
+      "@id": "https://w3id.org/okn/o/sd#DatasetSpecification"
+    },
+    "EmpiricalModel": {
+      "@id": "https://w3id.org/okn/o/sdm#EmpiricalModel"
+    },
+    "Emulator": {
+      "@id": "https://w3id.org/okn/o/sdm#Emulator"
+    },
+    "Entity": {
+      "@id": "http://www.w3.org/ns/prov#Entity"
+    },
+    "Equation": {
+      "@id": "https://w3id.org/okn/o/sdm#Equation"
+    },
+    "GeoCoordinates": {
+      "@id": "http://schema.org/GeoCoordinates"
+    },
+    "GeoShape": {
+      "@id": "https://w3id.org/okn/o/sdm#GeoShape"
+    },
+    "Grid": {
+      "@id": "https://w3id.org/okn/o/sdm#Grid"
+    },
+    "HybridModel": {
+      "@id": "https://w3id.org/okn/o/sdm#HybridModel"
+    },
+    "ICASAVariable": {
+      "@id": "https://w3id.org/okn/o/sd#ICASAVariable"
+    },
+    "Image": {
+      "@id": "https://w3id.org/okn/o/sd#Image"
+    },
+    "Model": {
+      "@id": "https://w3id.org/okn/o/sdm#Model"
+    },
+    "ModelConfiguration": {
+      "@id": "https://w3id.org/okn/o/sdm#ModelConfiguration"
+    },
+    "Organization": {
+      "@id": "http://schema.org/Organization"
+    },
+    "Parameter": {
+      "@id": "https://w3id.org/okn/o/sd#Parameter"
+    },
+    "Person": {
+      "@id": "https://w3id.org/okn/o/sd#Person"
+    },
+    "Place": {
+      "@id": "http://schema.org/Place"
+    },
+    "PointBasedGrid": {
+      "@id": "https://w3id.org/okn/o/sdm#PointBasedGrid"
+    },
+    "Process": {
+      "@id": "https://w3id.org/okn/o/sdm#Process"
+    },
+    "Region": {
+      "@id": "https://w3id.org/okn/o/sdm#Region"
+    },
+    "SVOVariable": {
+      "@id": "https://w3id.org/okn/o/sd#SVOVariable"
+    },
+    "SampleExecution": {
+      "@id": "https://w3id.org/okn/o/sd#SampleExecution"
+    },
+    "SampleResource": {
+      "@id": "https://w3id.org/okn/o/sd#SampleResource"
+    },
+    "Software": {
+      "@id": "https://w3id.org/okn/o/sd#Software"
+    },
+    "SoftwareApplication": {
+      "@id": "http://schema.org/SoftwareApplication"
+    },
+    "SoftwareConfiguration": {
+      "@id": "https://w3id.org/okn/o/sd#SoftwareConfiguration"
+    },
+    "SoftwareImage": {
+      "@id": "https://w3id.org/okn/o/sd#SoftwareImage"
+    },
+    "SoftwareSourceCode": {
+      "@id": "http://schema.org/SoftwareSourceCode"
+    },
+    "SoftwareVersion": {
+      "@id": "https://w3id.org/okn/o/sd#SoftwareVersion"
+    },
+    "SourceCode": {
+      "@id": "https://w3id.org/okn/o/sd#SourceCode"
+    },
+    "SpatialResolution": {
+      "@id": "https://w3id.org/okn/o/sdm#SpatialResolution"
+    },
+    "SpatiallyDistributedGrid": {
+      "@id": "https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid"
+    },
+    "StandardVariable": {
+      "@id": "https://w3id.org/okn/o/sd#StandardVariable"
+    },
+    "Theory-GuidedModel": {
+      "@id": "https://w3id.org/okn/o/sdm#Theory-GuidedModel"
+    },
+    "TimeInterval": {
+      "@id": "https://w3id.org/okn/o/sdm#TimeInterval"
+    },
+    "Unit": {
+      "@id": "http://qudt.org/schema/qudt/Unit"
+    },
+    "Variable": {
+      "@id": "http://www.geoscienceontology.org/geo-upper#Variable"
+    },
+    "VariablePresentation": {
+      "@id": "https://w3id.org/okn/o/sd#VariablePresentation"
+    },
+    "Visualization": {
+      "@id": "https://w3id.org/okn/o/sd#Visualization"
+    },
+    "abstract": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/elements/1.1/abstract"
+    },
+    "adjustableParameter": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#adjustableParameter",
+      "@type": "@id"
+    },
+    "adjustsVariable": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#adjustsVariable",
+      "@type": "@id"
+    },
+    "author": {
+      "@container": "@set",
+      "@id": "http://schema.org/author",
+      "@type": "@id"
+    },
+    "box": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#box",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "calibratedVariable": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#calibratedVariable",
+      "@type": "@id"
+    },
+    "calibrationMethod": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#calibrationMethod",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "calibrationTargetVariable": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#calibrationTargetVariable",
+      "@type": "@id"
+    },
+    "citation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#citation",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "codeRepository": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#codeRepository",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "comment": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "compatibleVisualizationSoftware": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#compatibleVisualizationSoftware",
+      "@type": "@id"
+    },
+    "contentLocation": {
+      "@container": "@set",
+      "@id": "http://schema.org/contentLocation",
+      "@type": "@id"
+    },
+    "contributor": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#contributor",
+      "@type": "@id"
+    },
+    "creator": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/elements/1.1/creator"
+    },
+    "dataCatalogIdentifier": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#dataCatalogIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "dateCreated": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#dateCreated",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "datePublished": {
+      "@container": "@set",
+      "@id": "http://schema.org/datePublished"
+    },
+    "description": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#description",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "elevation": {
+      "@container": "@set",
+      "@id": "http://schema.org/elevation"
+    },
+    "email": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#email",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "funding": {
+      "@container": "@set",
+      "@id": "https://codemeta.github.io/terms/funding",
+      "@type": "@id"
+    },
+    "fundingSource": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#fundingSource",
+      "@type": "@id"
+    },
+    "geo": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#geo",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/prov#hadPrimarySource",
+      "@type": "@id"
+    },
+    "hasAssumption": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasAssumption",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasCalibration": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasCalibration",
+      "@type": "@id"
+    },
+    "hasCausalDiagram": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasCausalDiagram",
+      "@type": "@id"
+    },
+    "hasComponentLocation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasConfiguration": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasConfiguration",
+      "@type": "@id"
+    },
+    "hasConstraint": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasConstraint",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasContactPerson": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasContactPerson",
+      "@type": "@id"
+    },
+    "hasCoordinateSystem": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasCoordinateSystem",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasDataType": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasDataType",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasDefaultValue": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasDefaultValue"
+    },
+    "hasDimension": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasDimension",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasDimensionality": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasDimensionality",
+      "@type": "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "hasDocumentation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasDocumentation",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasDownloadURL": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasDownloadURL",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasEquation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasEquation",
+      "@type": "@id"
+    },
+    "hasExecutionCommand": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasExecutionCommand",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasExpertTunedModel": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasExpertTunedModel",
+      "@type": "@id"
+    },
+    "hasExplanationDiagram": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasExplanationDiagram",
+      "@type": "@id"
+    },
+    "hasFAQ": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasFAQ",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasFileStructure": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasFileStructure",
+      "@type": "@id"
+    },
+    "hasFixedResource": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasFixedResource",
+      "@type": "@id"
+    },
+    "hasFixedValue": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasFixedValue"
+    },
+    "hasFormat": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasFormat",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasGrid": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasGrid",
+      "@type": "@id"
+    },
+    "hasImplementationScriptLocation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasImplementationScriptLocation",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasInput": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasInput",
+      "@type": "@id"
+    },
+    "hasInstallationInstructions": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasInstallationInstructions",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasLongName": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasLongName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasMaximumAcceptedValue": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasMaximumAcceptedValue"
+    },
+    "hasMinimumAcceptedValue": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasMinimumAcceptedValue"
+    },
+    "hasModelCategory": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasModelCategory",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasModelResultTable": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasModelResultTable",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasOutput": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasOutput",
+      "@type": "@id"
+    },
+    "hasOutputTimeInterval": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasOutputTimeInterval",
+      "@type": "@id"
+    },
+    "hasParameter": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasParameter",
+      "@type": "@id"
+    },
+    "hasPart": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasPart",
+      "@type": "@id"
+    },
+    "hasPresentation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasPresentation",
+      "@type": "@id"
+    },
+    "hasProcess": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasProcess",
+      "@type": "@id"
+    },
+    "hasPurpose": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasPurpose",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasRegion": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasRegion",
+      "@type": "@id"
+    },
+    "hasSampleExecution": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSampleExecution",
+      "@type": "@id"
+    },
+    "hasSampleResult": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSampleResult",
+      "@type": "@id"
+    },
+    "hasSampleVisualization": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSampleVisualization",
+      "@type": "@id"
+    },
+    "hasShape": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasShape",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasShortName": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasShortName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasSoftwareImage": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSoftwareImage",
+      "@type": "@id"
+    },
+    "hasSourceCode": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSourceCode",
+      "@type": "@id"
+    },
+    "hasSpatialResolution": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#hasSpatialResolution",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "hasStandardVariable": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasStandardVariable",
+      "@type": "@id"
+    },
+    "hasSupportScriptLocation": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasSupportScriptLocation",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasTypicalDataSource": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasTypicalDataSource",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "hasVersion": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasVersion",
+      "@type": "@id"
+    },
+    "hasVersionId": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasVersionId",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
     "id": "@id",
+    "identifier": {
+      "@container": "@set",
+      "@id": "http://schema.org/identifier"
+    },
+    "influences": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#influences",
+      "@type": "@id"
+    },
+    "isDefinedBy": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "keywords": {
+      "@container": "@set",
+      "@id": "http://schema.org/keywords"
+    },
+    "label": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "latitude": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#latitude",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license": {
+      "@container": "@set",
+      "@id": "http://schema.org/license"
+    },
+    "logo": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#logo",
+      "@type": "@id"
+    },
+    "longitude": {
+      "@container": "@set",
+      "@id": "http://schema.org/longitude"
+    },
+    "memoryRequirements": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#memoryRequirements",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "name": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#name",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "operatingSystems": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#operatingSystems",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "parameterAssignmentMethod": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#parameterAssignmentMethod",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "partOfDataset": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#partOfDataset",
+      "@type": "@id"
+    },
+    "position": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#position",
+      "@type": "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "preferredNamespacePrefix": {
+      "@container": "@set",
+      "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "preferredNamespaceURI": {
+      "@container": "@set",
+      "@id": "http://purl.org/vocab/vann/preferredNamespaceURI"
+    },
+    "preferredNamespaceUri": {
+      "@container": "@set",
+      "@id": "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "priorVersion": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/2002/07/owl#priorVersion"
+    },
+    "processorRequirements": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#processorRequirements",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "programmingLanguage": {
+      "@container": "@set",
+      "@id": "http://schema.org/programmingLanguage"
+    },
+    "publisher": {
+      "@container": "@set",
+      "@id": "http://schema.org/publisher",
+      "@type": "@id"
+    },
+    "referencePublication": {
+      "@container": "@set",
+      "@id": "https://codemeta.github.io/terms/referencePublication"
+    },
+    "screenshot": {
+      "@container": "@set",
+      "@id": "http://schema.org/screenshot",
+      "@type": "@id"
+    },
+    "shortDescription": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#shortDescription",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "softwareRequirements": {
+      "@container": "@set",
+      "@id": "http://schema.org/softwareRequirements"
+    },
+    "supportDetails": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#supportDetails"
+    },
+    "title": {
+      "@container": "@set",
+      "@id": "http://purl.org/dc/elements/1.1/title"
+    },
     "type": "@type",
-
-    "Unit" : {
-      "@id" : "http://qudt.org/schema/qudt/Unit"
-    },
-    "Theory-GuidedModel" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Theory-GuidedModel"
-    },
-    "Software" : {
-      "@id" : "https://w3id.org/okn/o/sd#Software"
-    },
-    "SoftwareVersion" : {
-      "@id" : "https://w3id.org/okn/o/sd#SoftwareVersion"
-    },
-    "HybridModel" : {
-      "@id" : "https://w3id.org/okn/o/sdm#HybridModel"
-    },
-    "Equation" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Equation"
-    },
-    "Organization" : {
-      "@id" : "http://schema.org/Organization"
-    },
-    "ModelConfiguration" : {
-      "@id" : "https://w3id.org/okn/o/sdm#ModelConfiguration"
-    },
-    "SourceCode" : {
-      "@id" : "https://w3id.org/okn/o/sd#SourceCode"
-    },
-    "SpatiallyDistributedGrid" : {
-      "@id" : "https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid"
-    },
-    "GeoCoordinates" : {
-      "@id" : "http://schema.org/GeoCoordinates"
-    },
-    "SpatialResolution" : {
-      "@id" : "https://w3id.org/okn/o/sdm#SpatialResolution"
-    },
-    "DatasetSpecification" : {
-      "@id" : "https://w3id.org/okn/o/sd#DatasetSpecification"
-    },
-    "EmpiricalModel" : {
-      "@id" : "https://w3id.org/okn/o/sdm#EmpiricalModel"
-    },
-    "PointBasedGrid" : {
-      "@id" : "https://w3id.org/okn/o/sdm#PointBasedGrid"
-    },
-    "SoftwareApplication" : {
-      "@id" : "http://schema.org/SoftwareApplication"
-    },
-    "VariablePresentation" : {
-      "@id" : "https://w3id.org/okn/o/sd#VariablePresentation"
-    },
-    "Activity" : {
-      "@id" : "http://www.w3.org/ns/prov#Activity"
-    },
-    "CausalDiagram" : {
-      "@id" : "https://w3id.org/okn/o/sdm#CausalDiagram"
-    },
-    "StandardVariable" : {
-      "@id" : "https://w3id.org/okn/o/sd#StandardVariable"
-    },
-    "SoftwareConfiguration" : {
-      "@id" : "https://w3id.org/okn/o/sd#SoftwareConfiguration"
-    },
-    "Grid" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Grid"
-    },
-    "Person" : {
-      "@id" : "https://w3id.org/okn/o/sd#Person"
-    },
-    "SoftwareImage" : {
-      "@id" : "https://w3id.org/okn/o/sd#SoftwareImage"
-    },
-    "SampleExecution" : {
-      "@id" : "https://w3id.org/okn/o/sd#SampleExecution"
-    },
-    "Model" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Model"
-    },
-    "TimeInterval" : {
-      "@id" : "https://w3id.org/okn/o/sdm#TimeInterval"
-    },
-    "SampleResource" : {
-      "@id" : "https://w3id.org/okn/o/sd#SampleResource"
-    },
-    "Emulator" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Emulator"
-    },
-    "Place" : {
-      "@id" : "http://schema.org/Place"
-    },
-    "Parameter" : {
-      "@id" : "https://w3id.org/okn/o/sd#Parameter"
-    },
-    "SoftwareSourceCode" : {
-      "@id" : "http://schema.org/SoftwareSourceCode"
-    },
-    "SVOVariable" : {
-      "@id" : "https://w3id.org/okn/o/sd#SVOVariable"
-    },
-    "Variable" : {
-      "@id" : "http://www.geoscienceontology.org/geo-upper#Variable"
-    },
-    "Entity" : {
-      "@id" : "http://www.w3.org/ns/prov#Entity"
-    },
-    "Process" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Process"
-    },
-    "Image" : {
-      "@id" : "https://w3id.org/okn/o/sd#Image"
-    },
-    "GeoShape" : {
-      "@id" : "https://w3id.org/okn/o/sdm#GeoShape"
-    },
-    "ICASAVariable" : {
-      "@id" : "https://w3id.org/okn/o/sd#ICASAVariable"
-    },
-    "Region" : {
-      "@id" : "https://w3id.org/okn/o/sdm#Region"
-    },
-    "Visualization" : {
-      "@id" : "https://w3id.org/okn/o/sd#Visualization"
-    },
-    "DataStructureDefinition" : {
-      "@id" : "http://purl.org/linked-data/cube#DataStructureDefinition"
-    },
-
-    "abstract" : {
-      "@id" : "http://purl.org/dc/elements/1.1/abstract",
-      "@container": "@set"
-    },
-    "hasShape" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasShape",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "fundingSource" : {
-      "@id" : "https://w3id.org/okn/o/sd#fundingSource",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasExecutionCommand" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasExecutionCommand",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasStandardVariable" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasStandardVariable",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "compatibleVisualizationSoftware" : {
-      "@id" : "https://w3id.org/okn/o/sd#compatibleVisualizationSoftware",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "wasGeneratedBy" : {
-      "@id" : "http://www.w3.org/ns/prov#wasGeneratedBy",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "versionInfo" : {
-      "@id" : "http://www.w3.org/2002/07/owl#versionInfo",
-      "@container": "@set"
-    },
-    "partOfDataset" : {
-      "@id" : "https://w3id.org/okn/o/sd#partOfDataset",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "softwareRequirements" : {
-      "@id" : "http://schema.org/softwareRequirements",
-      "@container": "@set"
-    },
-    "license" : {
-      "@id" : "http://schema.org/license",
-      "@container": "@set"
-    },
-    "hasModelResultTable" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasModelResultTable",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "dateCreated" : {
-      "@id" : "https://w3id.org/okn/o/sd#dateCreated",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "contentLocation" : {
-      "@id" : "http://schema.org/contentLocation",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "citation" : {
-      "@id" : "https://w3id.org/okn/o/sd#citation",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasEquation" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasEquation",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasFAQ" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasFAQ",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasSoftwareImage" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSoftwareImage",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "codeRepository" : {
-      "@id" : "https://w3id.org/okn/o/sd#codeRepository",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "priorVersion" : {
-      "@id" : "http://www.w3.org/2002/07/owl#priorVersion",
-      "@container": "@set"
-    },
-    "hasOutput" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasOutput",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasVersion" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasVersion",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "referencePublication" : {
-      "@id" : "https://codemeta.github.io/terms/referencePublication",
-      "@container": "@set"
-    },
-    "calibrationMethod" : {
-      "@id" : "https://w3id.org/okn/o/sdm#calibrationMethod",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasContactPerson" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasContactPerson",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasImplementationScriptLocation" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasImplementationScriptLocation",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasFixedValue" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasFixedValue",
-      "@container": "@set"
-    },
-    "label" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#label",
-      "@container": "@set"
-    },
-    "author" : {
-      "@id" : "http://schema.org/author",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "elevation" : {
-      "@id" : "http://schema.org/elevation",
-      "@container": "@set"
-    },
-    "hasInstallationInstructions" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasInstallationInstructions",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "longitude" : {
-      "@id" : "http://schema.org/longitude",
-      "@container": "@set"
-    },
-    "hasPart" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasPart",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "programmingLanguage" : {
-      "@id" : "http://schema.org/programmingLanguage",
-      "@container": "@set"
-    },
-    "calibratedVariable" : {
-      "@id" : "https://w3id.org/okn/o/sdm#calibratedVariable",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "supportDetails" : {
-      "@id" : "https://w3id.org/okn/o/sd#supportDetails",
-      "@container": "@set"
-    },
-    "adjustsVariable" : {
-      "@id" : "https://w3id.org/okn/o/sd#adjustsVariable",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "website" : {
-      "@id" : "https://w3id.org/okn/o/sd#website",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasGrid" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasGrid",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "parameterAssignmentMethod" : {
-      "@id" : "https://w3id.org/okn/o/sdm#parameterAssignmentMethod",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasSampleVisualization" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSampleVisualization",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasExplanationDiagram" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasExplanationDiagram",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "used" : {
-      "@id" : "http://www.w3.org/ns/prov#used",
+    "used": {
       "@container": "@set",
-      "@type" : "@id"
+      "@id": "http://www.w3.org/ns/prov#used",
+      "@type": "@id"
     },
-    "email" : {
-      "@id" : "https://w3id.org/okn/o/sd#email",
+    "usesUnit": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://w3id.org/okn/o/sd#usesUnit",
+      "@type": "@id"
     },
-    "hasCalibration" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasCalibration",
+    "value": {
       "@container": "@set",
-      "@type" : "@id"
+      "@id": "http://www.w3.org/ns/prov#value"
     },
-    "box" : {
-      "@id" : "https://w3id.org/okn/o/sdm#box",
+    "versionInfo": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "http://www.w3.org/2002/07/owl#versionInfo"
     },
-    "processorRequirements" : {
-      "@id" : "https://w3id.org/okn/o/sd#processorRequirements",
+    "wasDerivedFrom": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "@type": "@id"
     },
-    "hasDimensionality" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasDimensionality",
+    "wasDerivedFromSoftware": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+      "@id": "https://w3id.org/okn/o/sd#wasDerivedFromSoftware",
+      "@type": "@id"
     },
-    "latitude" : {
-      "@id" : "https://w3id.org/okn/o/sdm#latitude",
+    "wasGeneratedBy": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
+      "@type": "@id"
     },
-    "memoryRequirements" : {
-      "@id" : "https://w3id.org/okn/o/sd#memoryRequirements",
+    "website": {
       "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasModelCategory" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasModelCategory",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "position" : {
-      "@id" : "https://w3id.org/okn/o/sd#position",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#int"
-    },
-    "creator" : {
-      "@id" : "http://purl.org/dc/elements/1.1/creator",
-      "@container": "@set"
-    },
-    "name" : {
-      "@id" : "https://w3id.org/okn/o/sd#name",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "geo" : {
-      "@id" : "https://w3id.org/okn/o/sdm#geo",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasProcess" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasProcess",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "value" : {
-      "@id" : "http://www.w3.org/ns/prov#value",
-      "@container": "@set"
-    },
-    "wasDerivedFrom" : {
-      "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasInput" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasInput",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasPurpose" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasPurpose",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "operatingSystems" : {
-      "@id" : "https://w3id.org/okn/o/sd#operatingSystems",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "influences" : {
-      "@id" : "https://w3id.org/okn/o/sdm#influences",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hadPrimarySource" : {
-      "@id" : "http://www.w3.org/ns/prov#hadPrimarySource",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasVersionId" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasVersionId",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "shortDescription" : {
-      "@id" : "https://w3id.org/okn/o/sd#shortDescription",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasTypicalDataSource" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasTypicalDataSource",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "wasDerivedFromSoftware" : {
-      "@id" : "https://w3id.org/okn/o/sd#wasDerivedFromSoftware",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "identifier" : {
-      "@id" : "http://schema.org/identifier",
-      "@container": "@set"
-    },
-    "screenshot" : {
-      "@id" : "http://schema.org/screenshot",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "preferredNamespacePrefix" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
-      "@container": "@set"
-    },
-    "preferredNamespaceURI" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespaceURI",
-      "@container": "@set"
-    },
-    "isDefinedBy" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-      "@container": "@set"
-    },
-    "hasConfiguration" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasConfiguration",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasFixedResource" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasFixedResource",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "keywords" : {
-      "@id" : "http://schema.org/keywords",
-      "@container": "@set"
-    },
-    "hasConstraint" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasConstraint",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasDefaultValue" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasDefaultValue",
-      "@container": "@set"
-    },
-    "hasMaximumAcceptedValue" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasMaximumAcceptedValue",
-      "@container": "@set"
-    },
-    "hasCausalDiagram" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasCausalDiagram",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasSupportScriptLocation" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSupportScriptLocation",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasSampleExecution" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSampleExecution",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasSpatialResolution" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasSpatialResolution",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "title" : {
-      "@id" : "http://purl.org/dc/elements/1.1/title",
-      "@container": "@set"
-    },
-    "hasPresentation" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasPresentation",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "publisher" : {
-      "@id" : "http://schema.org/publisher",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasSourceCode" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSourceCode",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "datePublished" : {
-      "@id" : "http://schema.org/datePublished",
-      "@container": "@set"
-    },
-    "calibrationTargetVariable" : {
-      "@id" : "https://w3id.org/okn/o/sdm#calibrationTargetVariable",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasComponentLocation" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasComponentLocation",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "adjustableParameter" : {
-      "@id" : "https://w3id.org/okn/o/sdm#adjustableParameter",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasFileStructure" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasFileStructure",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasShortName" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasShortName",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasLongName" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasLongName",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasParameter" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasParameter",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "logo" : {
-      "@id" : "https://w3id.org/okn/o/sd#logo",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasDataType" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasDataType",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasOutputTimeInterval" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasOutputTimeInterval",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasCoordinateSystem" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasCoordinateSystem",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "comment" : {
-      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment",
-      "@container": "@set"
-    },
-    "hasDocumentation" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasDocumentation",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasSampleResult" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasSampleResult",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasDownloadURL" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasDownloadURL",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    "hasDimension" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasDimension",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "usesUnit" : {
-      "@id" : "https://w3id.org/okn/o/sd#usesUnit",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "contributor" : {
-      "@id" : "https://w3id.org/okn/o/sd#contributor",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasMinimumAcceptedValue" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasMinimumAcceptedValue",
-      "@container": "@set"
-    },
-    "hasExpertTunedModel" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasExpertTunedModel",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasRegion" : {
-      "@id" : "https://w3id.org/okn/o/sdm#hasRegion",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "funding" : {
-      "@id" : "https://codemeta.github.io/terms/funding",
-      "@container": "@set",
-      "@type" : "@id"
-    },
-    "hasFormat" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasFormat",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "description" : {
-      "@id" : "https://w3id.org/okn/o/sd#description",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasAssumption" : {
-      "@id" : "https://w3id.org/okn/o/sd#hasAssumption",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "dataCatalogIdentifier" : {
-      "@id" : "https://w3id.org/okn/o/sd#dataCatalogIdentifier",
-      "@container": "@set",
-      "@type" : "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "preferredNamespaceUri" : {
-      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
-      "@container": "@set"
+      "@id": "https://w3id.org/okn/o/sd#website",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     }
   }
 }
