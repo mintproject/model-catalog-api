@@ -78,7 +78,7 @@ def softwareconfigurations_id_put(id, user, software_configuration=None):  # noq
     :param software_configuration: An old SoftwareConfigurationto be updated
     :type software_configuration: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareConfiguration
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def softwareconfigurations_post(user, software_configuration=None):  # noqa: E50
     :param software_configuration: A new SoftwareConfigurationto be created
     :type software_configuration: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareConfiguration
     """
 
     if connexion.request.is_json:

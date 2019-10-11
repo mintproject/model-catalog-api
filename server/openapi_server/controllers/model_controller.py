@@ -78,7 +78,7 @@ def models_id_put(id, user, model=None):  # noqa: E501
     :param model: An old Modelto be updated
     :type model: dict | bytes
 
-    :rtype: None
+    :rtype: Model
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def models_post(user, model=None):  # noqa: E501
     :param model: A new Modelto be created
     :type model: dict | bytes
 
-    :rtype: None
+    :rtype: Model
     """
 
     if connexion.request.is_json:

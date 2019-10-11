@@ -78,7 +78,7 @@ def theory_guidedmodels_id_put(id, user, theory_guided_model=None):  # noqa: E50
     :param theory_guided_model: An old Theory-GuidedModelto be updated
     :type theory_guided_model: dict | bytes
 
-    :rtype: None
+    :rtype: TheoryGuidedModel
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def theory_guidedmodels_post(user, theory_guided_model=None):  # noqa: E501
     :param theory_guided_model: A new Theory-GuidedModelto be created
     :type theory_guided_model: dict | bytes
 
-    :rtype: None
+    :rtype: TheoryGuidedModel
     """
 
     if connexion.request.is_json:

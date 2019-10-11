@@ -78,7 +78,7 @@ def spatiallydistributedgrids_id_put(id, user, spatially_distributed_grid=None):
     :param spatially_distributed_grid: An old SpatiallyDistributedGridto be updated
     :type spatially_distributed_grid: dict | bytes
 
-    :rtype: None
+    :rtype: SpatiallyDistributedGrid
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def spatiallydistributedgrids_post(user, spatially_distributed_grid=None):  # no
     :param spatially_distributed_grid: A new SpatiallyDistributedGridto be created
     :type spatially_distributed_grid: dict | bytes
 
-    :rtype: None
+    :rtype: SpatiallyDistributedGrid
     """
 
     if connexion.request.is_json:

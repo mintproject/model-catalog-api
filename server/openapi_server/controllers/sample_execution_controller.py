@@ -78,7 +78,7 @@ def sampleexecutions_id_put(id, user, sample_execution=None):  # noqa: E501
     :param sample_execution: An old SampleExecutionto be updated
     :type sample_execution: dict | bytes
 
-    :rtype: None
+    :rtype: SampleExecution
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def sampleexecutions_post(user, sample_execution=None):  # noqa: E501
     :param sample_execution: A new SampleExecutionto be created
     :type sample_execution: dict | bytes
 
-    :rtype: None
+    :rtype: SampleExecution
     """
 
     if connexion.request.is_json:

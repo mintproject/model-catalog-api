@@ -78,7 +78,7 @@ def persons_id_put(id, user, person=None):  # noqa: E501
     :param person: An old Personto be updated
     :type person: dict | bytes
 
-    :rtype: None
+    :rtype: Person
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def persons_post(user, person=None):  # noqa: E501
     :param person: A new Personto be created
     :type person: dict | bytes
 
-    :rtype: None
+    :rtype: Person
     """
 
     if connexion.request.is_json:

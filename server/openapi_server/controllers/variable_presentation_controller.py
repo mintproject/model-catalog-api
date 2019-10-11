@@ -78,7 +78,7 @@ def variablepresentations_id_put(id, user, variable_presentation=None):  # noqa:
     :param variable_presentation: An old VariablePresentationto be updated
     :type variable_presentation: dict | bytes
 
-    :rtype: None
+    :rtype: VariablePresentation
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def variablepresentations_post(user, variable_presentation=None):  # noqa: E501
     :param variable_presentation: A new VariablePresentationto be created
     :type variable_presentation: dict | bytes
 
-    :rtype: None
+    :rtype: VariablePresentation
     """
 
     if connexion.request.is_json:

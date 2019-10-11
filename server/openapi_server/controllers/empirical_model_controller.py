@@ -78,7 +78,7 @@ def empiricalmodels_id_put(id, user, empirical_model=None):  # noqa: E501
     :param empirical_model: An old EmpiricalModelto be updated
     :type empirical_model: dict | bytes
 
-    :rtype: None
+    :rtype: EmpiricalModel
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def empiricalmodels_post(user, empirical_model=None):  # noqa: E501
     :param empirical_model: A new EmpiricalModelto be created
     :type empirical_model: dict | bytes
 
-    :rtype: None
+    :rtype: EmpiricalModel
     """
 
     if connexion.request.is_json:

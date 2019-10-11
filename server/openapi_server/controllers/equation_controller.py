@@ -78,7 +78,7 @@ def equations_id_put(id, user, equation=None):  # noqa: E501
     :param equation: An old Equationto be updated
     :type equation: dict | bytes
 
-    :rtype: None
+    :rtype: Equation
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def equations_post(user, equation=None):  # noqa: E501
     :param equation: A new Equationto be created
     :type equation: dict | bytes
 
-    :rtype: None
+    :rtype: Equation
     """
 
     if connexion.request.is_json:

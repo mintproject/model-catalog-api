@@ -78,7 +78,7 @@ def softwareimages_id_put(id, user, software_image=None):  # noqa: E501
     :param software_image: An old SoftwareImageto be updated
     :type software_image: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareImage
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def softwareimages_post(user, software_image=None):  # noqa: E501
     :param software_image: A new SoftwareImageto be created
     :type software_image: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareImage
     """
 
     if connexion.request.is_json:

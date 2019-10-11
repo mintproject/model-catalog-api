@@ -15,9 +15,11 @@ class ICASAVariable(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, type=None):  # noqa: E501
         """ICASAVariable - a model defined in OpenAPI
 
+        :param description: The description of this ICASAVariable.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this ICASAVariable.  # noqa: E501
         :type id: str
         :param label: The label of this ICASAVariable.  # noqa: E501
@@ -28,17 +30,20 @@ class ICASAVariable(Model):
 
 
         self.openapi_types = {
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str]
         }
 
         self.attribute_map = {
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type'
         }
 
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -53,6 +58,27 @@ class ICASAVariable(Model):
         :rtype: ICASAVariable
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def description(self):
+        """Gets the description of this ICASAVariable.
+
+
+        :return: The description of this ICASAVariable.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ICASAVariable.
+
+
+        :param description: The description of this ICASAVariable.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

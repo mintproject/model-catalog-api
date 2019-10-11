@@ -78,7 +78,7 @@ def sampleresources_id_put(id, user, sample_resource=None):  # noqa: E501
     :param sample_resource: An old SampleResourceto be updated
     :type sample_resource: dict | bytes
 
-    :rtype: None
+    :rtype: SampleResource
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def sampleresources_post(user, sample_resource=None):  # noqa: E501
     :param sample_resource: A new SampleResourceto be created
     :type sample_resource: dict | bytes
 
-    :rtype: None
+    :rtype: SampleResource
     """
 
     if connexion.request.is_json:

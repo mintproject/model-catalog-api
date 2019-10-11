@@ -15,9 +15,11 @@ class FundingInformation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id=None, label=None, type=None, funding_source=None, funding_grant=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, type=None, funding_source=None, funding_grant=None):  # noqa: E501
         """FundingInformation - a model defined in OpenAPI
 
+        :param description: The description of this FundingInformation.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this FundingInformation.  # noqa: E501
         :type id: str
         :param label: The label of this FundingInformation.  # noqa: E501
@@ -34,6 +36,7 @@ class FundingInformation(Model):
           # noqa: E501
 
         self.openapi_types = {
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -42,6 +45,7 @@ class FundingInformation(Model):
         }
 
         self.attribute_map = {
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
@@ -49,6 +53,7 @@ class FundingInformation(Model):
             'funding_grant': 'fundingGrant'
         }
 
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -65,6 +70,27 @@ class FundingInformation(Model):
         :rtype: FundingInformation
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def description(self):
+        """Gets the description of this FundingInformation.
+
+
+        :return: The description of this FundingInformation.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this FundingInformation.
+
+
+        :param description: The description of this FundingInformation.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

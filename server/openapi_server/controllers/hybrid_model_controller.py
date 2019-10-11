@@ -78,7 +78,7 @@ def hybridmodels_id_put(id, user, hybrid_model=None):  # noqa: E501
     :param hybrid_model: An old HybridModelto be updated
     :type hybrid_model: dict | bytes
 
-    :rtype: None
+    :rtype: HybridModel
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def hybridmodels_post(user, hybrid_model=None):  # noqa: E501
     :param hybrid_model: A new HybridModelto be created
     :type hybrid_model: dict | bytes
 
-    :rtype: None
+    :rtype: HybridModel
     """
 
     if connexion.request.is_json:

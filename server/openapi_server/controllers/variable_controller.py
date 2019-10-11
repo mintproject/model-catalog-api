@@ -78,7 +78,7 @@ def variables_id_put(id, user, variable=None):  # noqa: E501
     :param variable: An old Variableto be updated
     :type variable: dict | bytes
 
-    :rtype: None
+    :rtype: Variable
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def variables_post(user, variable=None):  # noqa: E501
     :param variable: A new Variableto be created
     :type variable: dict | bytes
 
-    :rtype: None
+    :rtype: Variable
     """
 
     if connexion.request.is_json:

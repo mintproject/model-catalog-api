@@ -37,7 +37,6 @@ def get_one_resource(**kwargs):
     """
     username = kwargs["username"]
     owl_class_name = kwargs["rdf_type_name"]
-    resource_type_uri = kwargs["rdf_type_uri"]
     query_type = "get_one_user"
     kls = kwargs["kls"]
     request_args: Dict[str, str] = {
@@ -46,7 +45,6 @@ def get_one_resource(**kwargs):
     }
     try:
         response = query_manager.obtain_query(owl_class_name=owl_class_name,
-                                              owl_class_uri=resource_type_uri,
                                               query_type=query_type,
                                               endpoint=ENDPOINT,
                                               request_args=request_args)
@@ -74,18 +72,17 @@ def get_all_resource(**kwargs):
         "type": resource_type_uri,
         "g": generate_graph(username)
     }
-
+    
     if "label" in kwargs and kwargs["label"] is not None:
         query_text = kwargs["label"]
-        logger.debug("searching by label " + query_text)
+        logger.debug("searching by label " + query_text)        
         query_type = "get_all_search"
         request_args["text"] = query_text
     else:
         query_type = "get_all_user"
-
+        
     try:
         response = query_manager.obtain_query(owl_class_name=owl_class_name,
-                                              owl_class_uri=resource_type_uri,
                                               query_type=query_type,
                                               endpoint=ENDPOINT,
                                               request_args=request_args)

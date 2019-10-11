@@ -78,7 +78,7 @@ def images_id_put(id, user, image=None):  # noqa: E501
     :param image: An old Imageto be updated
     :type image: dict | bytes
 
-    :rtype: None
+    :rtype: Image
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def images_post(user, image=None):  # noqa: E501
     :param image: A new Imageto be created
     :type image: dict | bytes
 
-    :rtype: None
+    :rtype: Image
     """
 
     if connexion.request.is_json:

@@ -78,7 +78,7 @@ def softwares_id_put(id, user, software=None):  # noqa: E501
     :param software: An old Softwareto be updated
     :type software: dict | bytes
 
-    :rtype: None
+    :rtype: Software
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def softwares_post(user, software=None):  # noqa: E501
     :param software: A new Softwareto be created
     :type software: dict | bytes
 
-    :rtype: None
+    :rtype: Software
     """
 
     if connexion.request.is_json:

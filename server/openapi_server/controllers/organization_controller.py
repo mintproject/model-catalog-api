@@ -78,7 +78,7 @@ def organizations_id_put(id, user, organization=None):  # noqa: E501
     :param organization: An old Organizationto be updated
     :type organization: dict | bytes
 
-    :rtype: None
+    :rtype: Organization
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def organizations_post(user, organization=None):  # noqa: E501
     :param organization: A new Organizationto be created
     :type organization: dict | bytes
 
-    :rtype: None
+    :rtype: Organization
     """
 
     if connexion.request.is_json:

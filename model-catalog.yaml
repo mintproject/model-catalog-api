@@ -99,6 +99,10 @@ paths:
         description: A new CausalDiagramto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CausalDiagram'
           description: Created
       security:
       - BearerAuth: []
@@ -179,6 +183,10 @@ paths:
         description: An old CausalDiagramto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CausalDiagram'
           description: Updated
         404:
           description: Not Found
@@ -232,6 +240,10 @@ paths:
         description: A new EmpiricalModelto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmpiricalModel'
           description: Created
       security:
       - BearerAuth: []
@@ -312,6 +324,10 @@ paths:
         description: An old EmpiricalModelto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmpiricalModel'
           description: Updated
         404:
           description: Not Found
@@ -365,6 +381,10 @@ paths:
         description: A new Emulatorto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emulator'
           description: Created
       security:
       - BearerAuth: []
@@ -445,6 +465,10 @@ paths:
         description: An old Emulatorto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Emulator'
           description: Updated
         404:
           description: Not Found
@@ -498,6 +522,10 @@ paths:
         description: A new Equationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Equation'
           description: Created
       security:
       - BearerAuth: []
@@ -578,6 +606,10 @@ paths:
         description: An old Equationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Equation'
           description: Updated
         404:
           description: Not Found
@@ -631,6 +663,10 @@ paths:
         description: A new GeoCoordinatesto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeoCoordinates'
           description: Created
       security:
       - BearerAuth: []
@@ -711,6 +747,10 @@ paths:
         description: An old GeoCoordinatesto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeoCoordinates'
           description: Updated
         404:
           description: Not Found
@@ -764,6 +804,10 @@ paths:
         description: A new GeoShapeto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeoShape'
           description: Created
       security:
       - BearerAuth: []
@@ -844,6 +888,10 @@ paths:
         description: An old GeoShapeto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeoShape'
           description: Updated
         404:
           description: Not Found
@@ -897,6 +945,10 @@ paths:
         description: A new Gridto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Grid'
           description: Created
       security:
       - BearerAuth: []
@@ -977,6 +1029,10 @@ paths:
         description: An old Gridto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Grid'
           description: Updated
         404:
           description: Not Found
@@ -1030,6 +1086,10 @@ paths:
         description: A new HybridModelto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HybridModel'
           description: Created
       security:
       - BearerAuth: []
@@ -1110,6 +1170,10 @@ paths:
         description: An old HybridModelto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HybridModel'
           description: Updated
         404:
           description: Not Found
@@ -1163,6 +1227,10 @@ paths:
         description: A new Modelto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
           description: Created
       security:
       - BearerAuth: []
@@ -1243,6 +1311,10 @@ paths:
         description: An old Modelto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
           description: Updated
         404:
           description: Not Found
@@ -1297,6 +1369,10 @@ paths:
         description: A new ModelConfigurationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
           description: Created
       security:
       - BearerAuth: []
@@ -1377,6 +1453,10 @@ paths:
         description: An old ModelConfigurationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelConfiguration'
           description: Updated
         404:
           description: Not Found
@@ -1430,6 +1510,10 @@ paths:
         description: A new PointBasedGridto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointBasedGrid'
           description: Created
       security:
       - BearerAuth: []
@@ -1510,6 +1594,10 @@ paths:
         description: An old PointBasedGridto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointBasedGrid'
           description: Updated
         404:
           description: Not Found
@@ -1563,6 +1651,10 @@ paths:
         description: A new Processto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Process'
           description: Created
       security:
       - BearerAuth: []
@@ -1643,6 +1735,10 @@ paths:
         description: An old Processto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Process'
           description: Updated
         404:
           description: Not Found
@@ -1696,6 +1792,10 @@ paths:
         description: A new Regionto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
           description: Created
       security:
       - BearerAuth: []
@@ -1776,6 +1876,10 @@ paths:
         description: An old Regionto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
           description: Updated
         404:
           description: Not Found
@@ -1830,6 +1934,10 @@ paths:
         description: A new SpatialResolutionto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatialResolution'
           description: Created
       security:
       - BearerAuth: []
@@ -1910,6 +2018,10 @@ paths:
         description: An old SpatialResolutionto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatialResolution'
           description: Updated
         404:
           description: Not Found
@@ -1964,6 +2076,10 @@ paths:
         description: A new SpatiallyDistributedGridto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatiallyDistributedGrid'
           description: Created
       security:
       - BearerAuth: []
@@ -2044,6 +2160,10 @@ paths:
         description: An old SpatiallyDistributedGridto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpatiallyDistributedGrid'
           description: Updated
         404:
           description: Not Found
@@ -2098,6 +2218,10 @@ paths:
         description: A new Theory-GuidedModelto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theory-GuidedModel'
           description: Created
       security:
       - BearerAuth: []
@@ -2178,6 +2302,10 @@ paths:
         description: An old Theory-GuidedModelto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Theory-GuidedModel'
           description: Updated
         404:
           description: Not Found
@@ -2231,6 +2359,10 @@ paths:
         description: A new TimeIntervalto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeInterval'
           description: Created
       security:
       - BearerAuth: []
@@ -2311,6 +2443,10 @@ paths:
         description: An old TimeIntervalto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeInterval'
           description: Updated
         404:
           description: Not Found
@@ -2365,6 +2501,10 @@ paths:
         description: A new DatasetSpecificationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetSpecification'
           description: Created
       security:
       - BearerAuth: []
@@ -2445,6 +2585,10 @@ paths:
         description: An old DatasetSpecificationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetSpecification'
           description: Updated
         404:
           description: Not Found
@@ -2499,6 +2643,10 @@ paths:
         description: A new FundingInformationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingInformation'
           description: Created
       security:
       - BearerAuth: []
@@ -2579,6 +2727,10 @@ paths:
         description: An old FundingInformationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingInformation'
           description: Updated
         404:
           description: Not Found
@@ -2632,6 +2784,10 @@ paths:
         description: A new ICASAVariableto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ICASAVariable'
           description: Created
       security:
       - BearerAuth: []
@@ -2712,6 +2868,10 @@ paths:
         description: An old ICASAVariableto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ICASAVariable'
           description: Updated
         404:
           description: Not Found
@@ -2765,6 +2925,10 @@ paths:
         description: A new Imageto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
           description: Created
       security:
       - BearerAuth: []
@@ -2845,6 +3009,10 @@ paths:
         description: An old Imageto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
           description: Updated
         404:
           description: Not Found
@@ -2898,6 +3066,10 @@ paths:
         description: A new Organizationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
           description: Created
       security:
       - BearerAuth: []
@@ -2978,6 +3150,10 @@ paths:
         description: An old Organizationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
           description: Updated
         404:
           description: Not Found
@@ -3031,6 +3207,10 @@ paths:
         description: A new Parameterto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Parameter'
           description: Created
       security:
       - BearerAuth: []
@@ -3111,6 +3291,10 @@ paths:
         description: An old Parameterto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Parameter'
           description: Updated
         404:
           description: Not Found
@@ -3164,6 +3348,10 @@ paths:
         description: A new Personto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
           description: Created
       security:
       - BearerAuth: []
@@ -3244,6 +3432,10 @@ paths:
         description: An old Personto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
           description: Updated
         404:
           description: Not Found
@@ -3297,6 +3489,10 @@ paths:
         description: A new SVOVariableto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SVOVariable'
           description: Created
       security:
       - BearerAuth: []
@@ -3377,6 +3573,10 @@ paths:
         description: An old SVOVariableto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SVOVariable'
           description: Updated
         404:
           description: Not Found
@@ -3430,6 +3630,10 @@ paths:
         description: A new SampleExecutionto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleExecution'
           description: Created
       security:
       - BearerAuth: []
@@ -3510,6 +3714,10 @@ paths:
         description: An old SampleExecutionto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleExecution'
           description: Updated
         404:
           description: Not Found
@@ -3563,6 +3771,10 @@ paths:
         description: A new SampleResourceto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleResource'
           description: Created
       security:
       - BearerAuth: []
@@ -3643,6 +3855,10 @@ paths:
         description: An old SampleResourceto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleResource'
           description: Updated
         404:
           description: Not Found
@@ -3696,6 +3912,10 @@ paths:
         description: A new Softwareto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Software'
           description: Created
       security:
       - BearerAuth: []
@@ -3776,6 +3996,10 @@ paths:
         description: An old Softwareto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Software'
           description: Updated
         404:
           description: Not Found
@@ -3830,6 +4054,10 @@ paths:
         description: A new SoftwareConfigurationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareConfiguration'
           description: Created
       security:
       - BearerAuth: []
@@ -3910,6 +4138,10 @@ paths:
         description: An old SoftwareConfigurationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareConfiguration'
           description: Updated
         404:
           description: Not Found
@@ -3963,6 +4195,10 @@ paths:
         description: A new SoftwareImageto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareImage'
           description: Created
       security:
       - BearerAuth: []
@@ -4043,6 +4279,10 @@ paths:
         description: An old SoftwareImageto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareImage'
           description: Updated
         404:
           description: Not Found
@@ -4096,6 +4336,10 @@ paths:
         description: A new SoftwareVersionto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareVersion'
           description: Created
       security:
       - BearerAuth: []
@@ -4176,6 +4420,10 @@ paths:
         description: An old SoftwareVersionto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SoftwareVersion'
           description: Updated
         404:
           description: Not Found
@@ -4229,6 +4477,10 @@ paths:
         description: A new SourceCodeto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceCode'
           description: Created
       security:
       - BearerAuth: []
@@ -4309,6 +4561,10 @@ paths:
         description: An old SourceCodeto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SourceCode'
           description: Updated
         404:
           description: Not Found
@@ -4363,6 +4619,10 @@ paths:
         description: A new StandardVariableto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardVariable'
           description: Created
       security:
       - BearerAuth: []
@@ -4443,6 +4703,10 @@ paths:
         description: An old StandardVariableto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardVariable'
           description: Updated
         404:
           description: Not Found
@@ -4496,6 +4760,10 @@ paths:
         description: A new Unitto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
           description: Created
       security:
       - BearerAuth: []
@@ -4576,6 +4844,10 @@ paths:
         description: An old Unitto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Unit'
           description: Updated
         404:
           description: Not Found
@@ -4629,6 +4901,10 @@ paths:
         description: A new Variableto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Variable'
           description: Created
       security:
       - BearerAuth: []
@@ -4709,6 +4985,10 @@ paths:
         description: An old Variableto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Variable'
           description: Updated
         404:
           description: Not Found
@@ -4763,6 +5043,10 @@ paths:
         description: A new VariablePresentationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VariablePresentation'
           description: Created
       security:
       - BearerAuth: []
@@ -4843,6 +5127,10 @@ paths:
         description: An old VariablePresentationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VariablePresentation'
           description: Updated
         404:
           description: Not Found
@@ -4896,6 +5184,10 @@ paths:
         description: A new Visualizationto be created
       responses:
         201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Visualization'
           description: Created
       security:
       - BearerAuth: []
@@ -4976,6 +5268,10 @@ paths:
         description: An old Visualizationto be updated
       responses:
         200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Visualization'
           description: Updated
         404:
           description: Not Found
@@ -5133,12 +5429,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -5168,12 +5464,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5218,12 +5514,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -5386,12 +5682,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -5421,12 +5717,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5471,12 +5767,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -5744,12 +6040,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -5779,12 +6075,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -5829,12 +6125,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -5950,12 +6246,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -5985,12 +6281,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6035,12 +6331,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -6182,12 +6478,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -6217,12 +6513,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6267,12 +6563,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -6383,12 +6679,12 @@ components:
       type: object
     ModelConfiguration:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -6448,12 +6744,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -6576,12 +6872,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7050,22 +7346,22 @@ components:
       type: object
     SoftwareConfiguration:
       properties:
-        keywords:
-          items:
-            type: string
-          nullable: true
-          type: array
         hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        hasImplementationScriptLocation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
         softwareRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasImplementationScriptLocation:
           items:
             type: string
           nullable: true
@@ -7095,14 +7391,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         id:
@@ -7198,12 +7494,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -7397,12 +7693,12 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
@@ -7427,12 +7723,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -7457,14 +7753,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7472,14 +7768,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -7593,12 +7889,12 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
@@ -7623,12 +7919,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -7653,14 +7949,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7668,14 +7964,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -7876,12 +8172,12 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
@@ -7906,12 +8202,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -7936,14 +8232,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7951,14 +8247,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:

@@ -78,7 +78,7 @@ def svovariables_id_put(id, user, svo_variable=None):  # noqa: E501
     :param svo_variable: An old SVOVariableto be updated
     :type svo_variable: dict | bytes
 
-    :rtype: None
+    :rtype: SVOVariable
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def svovariables_post(user, svo_variable=None):  # noqa: E501
     :param svo_variable: A new SVOVariableto be created
     :type svo_variable: dict | bytes
 
-    :rtype: None
+    :rtype: SVOVariable
     """
 
     if connexion.request.is_json:

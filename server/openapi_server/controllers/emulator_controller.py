@@ -78,7 +78,7 @@ def emulators_id_put(id, user, emulator=None):  # noqa: E501
     :param emulator: An old Emulatorto be updated
     :type emulator: dict | bytes
 
-    :rtype: None
+    :rtype: Emulator
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def emulators_post(user, emulator=None):  # noqa: E501
     :param emulator: A new Emulatorto be created
     :type emulator: dict | bytes
 
-    :rtype: None
+    :rtype: Emulator
     """
 
     if connexion.request.is_json:

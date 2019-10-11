@@ -78,7 +78,7 @@ def parameters_id_put(id, user, parameter=None):  # noqa: E501
     :param parameter: An old Parameterto be updated
     :type parameter: dict | bytes
 
-    :rtype: None
+    :rtype: Parameter
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def parameters_post(user, parameter=None):  # noqa: E501
     :param parameter: A new Parameterto be created
     :type parameter: dict | bytes
 
-    :rtype: None
+    :rtype: Parameter
     """
 
     if connexion.request.is_json:

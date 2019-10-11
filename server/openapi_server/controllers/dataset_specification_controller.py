@@ -78,7 +78,7 @@ def datasetspecifications_id_put(id, user, dataset_specification=None):  # noqa:
     :param dataset_specification: An old DatasetSpecificationto be updated
     :type dataset_specification: dict | bytes
 
-    :rtype: None
+    :rtype: DatasetSpecification
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def datasetspecifications_post(user, dataset_specification=None):  # noqa: E501
     :param dataset_specification: A new DatasetSpecificationto be created
     :type dataset_specification: dict | bytes
 
-    :rtype: None
+    :rtype: DatasetSpecification
     """
 
     if connexion.request.is_json:

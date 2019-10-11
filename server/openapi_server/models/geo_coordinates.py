@@ -15,13 +15,15 @@ class GeoCoordinates(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, elevation=None, latitude=None, id=None, label=None, type=None, longitude=None):  # noqa: E501
+    def __init__(self, elevation=None, latitude=None, description=None, id=None, label=None, type=None, longitude=None):  # noqa: E501
         """GeoCoordinates - a model defined in OpenAPI
 
         :param elevation: The elevation of this GeoCoordinates.  # noqa: E501
         :type elevation: List[str]
         :param latitude: The latitude of this GeoCoordinates.  # noqa: E501
         :type latitude: List[str]
+        :param description: The description of this GeoCoordinates.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this GeoCoordinates.  # noqa: E501
         :type id: str
         :param label: The label of this GeoCoordinates.  # noqa: E501
@@ -36,6 +38,7 @@ class GeoCoordinates(Model):
         self.openapi_types = {
             'elevation': List[str],
             'latitude': List[str],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -45,6 +48,7 @@ class GeoCoordinates(Model):
         self.attribute_map = {
             'elevation': 'elevation',
             'latitude': 'latitude',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
@@ -53,6 +57,7 @@ class GeoCoordinates(Model):
 
         self._elevation = elevation
         self._latitude = latitude
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -110,6 +115,27 @@ class GeoCoordinates(Model):
         """
 
         self._latitude = latitude
+
+    @property
+    def description(self):
+        """Gets the description of this GeoCoordinates.
+
+
+        :return: The description of this GeoCoordinates.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this GeoCoordinates.
+
+
+        :param description: The description of this GeoCoordinates.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

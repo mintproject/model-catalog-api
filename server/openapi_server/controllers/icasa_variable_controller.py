@@ -78,7 +78,7 @@ def icasavariables_id_put(id, user, icasa_variable=None):  # noqa: E501
     :param icasa_variable: An old ICASAVariableto be updated
     :type icasa_variable: dict | bytes
 
-    :rtype: None
+    :rtype: ICASAVariable
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def icasavariables_post(user, icasa_variable=None):  # noqa: E501
     :param icasa_variable: A new ICASAVariableto be created
     :type icasa_variable: dict | bytes
 
-    :rtype: None
+    :rtype: ICASAVariable
     """
 
     if connexion.request.is_json:

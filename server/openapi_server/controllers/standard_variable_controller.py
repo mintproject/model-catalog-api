@@ -78,7 +78,7 @@ def standardvariables_id_put(id, user, standard_variable=None):  # noqa: E501
     :param standard_variable: An old StandardVariableto be updated
     :type standard_variable: dict | bytes
 
-    :rtype: None
+    :rtype: StandardVariable
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def standardvariables_post(user, standard_variable=None):  # noqa: E501
     :param standard_variable: A new StandardVariableto be created
     :type standard_variable: dict | bytes
 
-    :rtype: None
+    :rtype: StandardVariable
     """
 
     if connexion.request.is_json:

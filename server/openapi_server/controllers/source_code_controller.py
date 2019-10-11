@@ -78,7 +78,7 @@ def sourcecodes_id_put(id, user, source_code=None):  # noqa: E501
     :param source_code: An old SourceCodeto be updated
     :type source_code: dict | bytes
 
-    :rtype: None
+    :rtype: SourceCode
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def sourcecodes_post(user, source_code=None):  # noqa: E501
     :param source_code: A new SourceCodeto be created
     :type source_code: dict | bytes
 
-    :rtype: None
+    :rtype: SourceCode
     """
 
     if connexion.request.is_json:

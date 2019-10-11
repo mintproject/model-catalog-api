@@ -78,7 +78,7 @@ def geoshapes_id_put(id, user, geo_shape=None):  # noqa: E501
     :param geo_shape: An old GeoShapeto be updated
     :type geo_shape: dict | bytes
 
-    :rtype: None
+    :rtype: GeoShape
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def geoshapes_post(user, geo_shape=None):  # noqa: E501
     :param geo_shape: A new GeoShapeto be created
     :type geo_shape: dict | bytes
 
-    :rtype: None
+    :rtype: GeoShape
     """
 
     if connexion.request.is_json:

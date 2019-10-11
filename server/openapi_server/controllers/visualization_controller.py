@@ -78,7 +78,7 @@ def visualizations_id_put(id, user, visualization=None):  # noqa: E501
     :param visualization: An old Visualizationto be updated
     :type visualization: dict | bytes
 
-    :rtype: None
+    :rtype: Visualization
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def visualizations_post(user, visualization=None):  # noqa: E501
     :param visualization: A new Visualizationto be created
     :type visualization: dict | bytes
 
-    :rtype: None
+    :rtype: Visualization
     """
 
     if connexion.request.is_json:

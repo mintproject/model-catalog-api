@@ -78,7 +78,7 @@ def regions_id_put(id, user, region=None):  # noqa: E501
     :param region: An old Regionto be updated
     :type region: dict | bytes
 
-    :rtype: None
+    :rtype: Region
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def regions_post(user, region=None):  # noqa: E501
     :param region: A new Regionto be created
     :type region: dict | bytes
 
-    :rtype: None
+    :rtype: Region
     """
 
     if connexion.request.is_json:

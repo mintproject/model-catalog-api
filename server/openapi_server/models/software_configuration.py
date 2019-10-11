@@ -15,17 +15,17 @@ class SoftwareConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, has_contact_person=None, logo=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
+    def __init__(self, has_documentation=None, keywords=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
         """SoftwareConfiguration - a model defined in OpenAPI
 
-        :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
         :type has_documentation: List[str]
-        :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.  # noqa: E501
-        :type has_implementation_script_location: List[str]
+        :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
+        :type keywords: List[str]
         :param software_requirements: The software_requirements of this SoftwareConfiguration.  # noqa: E501
         :type software_requirements: List[str]
+        :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.  # noqa: E501
+        :type has_implementation_script_location: List[str]
         :param has_download_url: The has_download_url of this SoftwareConfiguration.  # noqa: E501
         :type has_download_url: List[str]
         :param type: The type of this SoftwareConfiguration.  # noqa: E501
@@ -36,10 +36,10 @@ class SoftwareConfiguration(Model):
         :type compatible_visualization_software: List[Software]
         :param has_faq: The has_faq of this SoftwareConfiguration.  # noqa: E501
         :type has_faq: List[str]
-        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.  # noqa: E501
-        :type has_contact_person: List[object]
         :param logo: The logo of this SoftwareConfiguration.  # noqa: E501
         :type logo: List[Image]
+        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.  # noqa: E501
+        :type has_contact_person: List[object]
         :param id: The id of this SoftwareConfiguration.  # noqa: E501
         :type id: str
         :param identifier: The identifier of this SoftwareConfiguration.  # noqa: E501
@@ -78,10 +78,10 @@ class SoftwareConfiguration(Model):
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this SoftwareConfiguration.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param description: The description of this SoftwareConfiguration.  # noqa: E501
-        :type description: List[str]
         :param reference_publication: The reference_publication of this SoftwareConfiguration.  # noqa: E501
         :type reference_publication: List[str]
+        :param description: The description of this SoftwareConfiguration.  # noqa: E501
+        :type description: List[str]
         :param screenshot: The screenshot of this SoftwareConfiguration.  # noqa: E501
         :type screenshot: List[Image]
         :param has_software_image: The has_software_image of this SoftwareConfiguration.  # noqa: E501
@@ -146,17 +146,17 @@ class SoftwareConfiguration(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'keywords': List[str],
             'has_documentation': List[str],
-            'has_implementation_script_location': List[str],
+            'keywords': List[str],
             'software_requirements': List[str],
+            'has_implementation_script_location': List[str],
             'has_download_url': List[str],
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
             'has_faq': List[str],
-            'has_contact_person': List[object],
             'logo': List[Image],
+            'has_contact_person': List[object],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
@@ -176,8 +176,8 @@ class SoftwareConfiguration(Model):
             'has_component_location': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
-            'description': List[str],
             'reference_publication': List[str],
+            'description': List[str],
             'screenshot': List[Image],
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
@@ -199,17 +199,17 @@ class SoftwareConfiguration(Model):
         }
 
         self.attribute_map = {
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
-            'has_implementation_script_location': 'hasImplementationScriptLocation',
+            'keywords': 'keywords',
             'software_requirements': 'softwareRequirements',
+            'has_implementation_script_location': 'hasImplementationScriptLocation',
             'has_download_url': 'hasDownloadURL',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'has_faq': 'hasFAQ',
-            'has_contact_person': 'hasContactPerson',
             'logo': 'logo',
+            'has_contact_person': 'hasContactPerson',
             'id': 'id',
             'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
@@ -229,8 +229,8 @@ class SoftwareConfiguration(Model):
             'has_component_location': 'hasComponentLocation',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'description': 'description',
             'reference_publication': 'referencePublication',
+            'description': 'description',
             'screenshot': 'screenshot',
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
@@ -251,17 +251,17 @@ class SoftwareConfiguration(Model):
             'has_input': 'hasInput'
         }
 
-        self._keywords = keywords
         self._has_documentation = has_documentation
-        self._has_implementation_script_location = has_implementation_script_location
+        self._keywords = keywords
         self._software_requirements = software_requirements
+        self._has_implementation_script_location = has_implementation_script_location
         self._has_download_url = has_download_url
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._compatible_visualization_software = compatible_visualization_software
         self._has_faq = has_faq
-        self._has_contact_person = has_contact_person
         self._logo = logo
+        self._has_contact_person = has_contact_person
         self._id = id
         self._identifier = identifier
         self._has_sample_execution = has_sample_execution
@@ -281,8 +281,8 @@ class SoftwareConfiguration(Model):
         self._has_component_location = has_component_location
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._description = description
         self._reference_publication = reference_publication
+        self._description = description
         self._screenshot = screenshot
         self._has_software_image = has_software_image
         self._date_created = date_created
@@ -314,27 +314,6 @@ class SoftwareConfiguration(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def keywords(self):
-        """Gets the keywords of this SoftwareConfiguration.
-
-
-        :return: The keywords of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this SoftwareConfiguration.
-
-
-        :param keywords: The keywords of this SoftwareConfiguration.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this SoftwareConfiguration.
 
@@ -356,25 +335,25 @@ class SoftwareConfiguration(Model):
         self._has_documentation = has_documentation
 
     @property
-    def has_implementation_script_location(self):
-        """Gets the has_implementation_script_location of this SoftwareConfiguration.
+    def keywords(self):
+        """Gets the keywords of this SoftwareConfiguration.
 
 
-        :return: The has_implementation_script_location of this SoftwareConfiguration.
+        :return: The keywords of this SoftwareConfiguration.
         :rtype: List[str]
         """
-        return self._has_implementation_script_location
+        return self._keywords
 
-    @has_implementation_script_location.setter
-    def has_implementation_script_location(self, has_implementation_script_location):
-        """Sets the has_implementation_script_location of this SoftwareConfiguration.
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this SoftwareConfiguration.
 
 
-        :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.
-        :type has_implementation_script_location: List[str]
+        :param keywords: The keywords of this SoftwareConfiguration.
+        :type keywords: List[str]
         """
 
-        self._has_implementation_script_location = has_implementation_script_location
+        self._keywords = keywords
 
     @property
     def software_requirements(self):
@@ -396,6 +375,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._software_requirements = software_requirements
+
+    @property
+    def has_implementation_script_location(self):
+        """Gets the has_implementation_script_location of this SoftwareConfiguration.
+
+
+        :return: The has_implementation_script_location of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_implementation_script_location
+
+    @has_implementation_script_location.setter
+    def has_implementation_script_location(self, has_implementation_script_location):
+        """Sets the has_implementation_script_location of this SoftwareConfiguration.
+
+
+        :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.
+        :type has_implementation_script_location: List[str]
+        """
+
+        self._has_implementation_script_location = has_implementation_script_location
 
     @property
     def has_download_url(self):
@@ -503,27 +503,6 @@ class SoftwareConfiguration(Model):
         self._has_faq = has_faq
 
     @property
-    def has_contact_person(self):
-        """Gets the has_contact_person of this SoftwareConfiguration.
-
-
-        :return: The has_contact_person of this SoftwareConfiguration.
-        :rtype: List[object]
-        """
-        return self._has_contact_person
-
-    @has_contact_person.setter
-    def has_contact_person(self, has_contact_person):
-        """Sets the has_contact_person of this SoftwareConfiguration.
-
-
-        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.
-        :type has_contact_person: List[object]
-        """
-
-        self._has_contact_person = has_contact_person
-
-    @property
     def logo(self):
         """Gets the logo of this SoftwareConfiguration.
 
@@ -543,6 +522,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._logo = logo
+
+    @property
+    def has_contact_person(self):
+        """Gets the has_contact_person of this SoftwareConfiguration.
+
+
+        :return: The has_contact_person of this SoftwareConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_contact_person
+
+    @has_contact_person.setter
+    def has_contact_person(self, has_contact_person):
+        """Sets the has_contact_person of this SoftwareConfiguration.
+
+
+        :param has_contact_person: The has_contact_person of this SoftwareConfiguration.
+        :type has_contact_person: List[object]
+        """
+
+        self._has_contact_person = has_contact_person
 
     @property
     def id(self):
@@ -944,27 +944,6 @@ class SoftwareConfiguration(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def description(self):
-        """Gets the description of this SoftwareConfiguration.
-
-
-        :return: The description of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SoftwareConfiguration.
-
-
-        :param description: The description of this SoftwareConfiguration.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def reference_publication(self):
         """Gets the reference_publication of this SoftwareConfiguration.
 
@@ -984,6 +963,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._reference_publication = reference_publication
+
+    @property
+    def description(self):
+        """Gets the description of this SoftwareConfiguration.
+
+
+        :return: The description of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SoftwareConfiguration.
+
+
+        :param description: The description of this SoftwareConfiguration.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def screenshot(self):

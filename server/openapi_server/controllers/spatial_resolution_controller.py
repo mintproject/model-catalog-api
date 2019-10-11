@@ -78,7 +78,7 @@ def spatialresolutions_id_put(id, user, spatial_resolution=None):  # noqa: E501
     :param spatial_resolution: An old SpatialResolutionto be updated
     :type spatial_resolution: dict | bytes
 
-    :rtype: None
+    :rtype: SpatialResolution
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def spatialresolutions_post(user, spatial_resolution=None):  # noqa: E501
     :param spatial_resolution: A new SpatialResolutionto be created
     :type spatial_resolution: dict | bytes
 
-    :rtype: None
+    :rtype: SpatialResolution
     """
 
     if connexion.request.is_json:

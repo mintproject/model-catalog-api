@@ -78,7 +78,7 @@ def processs_id_put(id, user, process=None):  # noqa: E501
     :param process: An old Processto be updated
     :type process: dict | bytes
 
-    :rtype: None
+    :rtype: Process
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def processs_post(user, process=None):  # noqa: E501
     :param process: A new Processto be created
     :type process: dict | bytes
 
-    :rtype: None
+    :rtype: Process
     """
 
     if connexion.request.is_json:

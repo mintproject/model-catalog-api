@@ -78,7 +78,7 @@ def causaldiagrams_id_put(id, user, causal_diagram=None):  # noqa: E501
     :param causal_diagram: An old CausalDiagramto be updated
     :type causal_diagram: dict | bytes
 
-    :rtype: None
+    :rtype: CausalDiagram
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def causaldiagrams_post(user, causal_diagram=None):  # noqa: E501
     :param causal_diagram: A new CausalDiagramto be created
     :type causal_diagram: dict | bytes
 
-    :rtype: None
+    :rtype: CausalDiagram
     """
 
     if connexion.request.is_json:

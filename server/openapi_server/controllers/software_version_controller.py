@@ -78,7 +78,7 @@ def softwareversions_id_put(id, user, software_version=None):  # noqa: E501
     :param software_version: An old SoftwareVersionto be updated
     :type software_version: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareVersion
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def softwareversions_post(user, software_version=None):  # noqa: E501
     :param software_version: A new SoftwareVersionto be created
     :type software_version: dict | bytes
 
-    :rtype: None
+    :rtype: SoftwareVersion
     """
 
     if connexion.request.is_json:

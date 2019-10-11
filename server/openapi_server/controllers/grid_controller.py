@@ -78,7 +78,7 @@ def grids_id_put(id, user, grid=None):  # noqa: E501
     :param grid: An old Gridto be updated
     :type grid: dict | bytes
 
-    :rtype: None
+    :rtype: Grid
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def grids_post(user, grid=None):  # noqa: E501
     :param grid: A new Gridto be created
     :type grid: dict | bytes
 
-    :rtype: None
+    :rtype: Grid
     """
 
     if connexion.request.is_json:

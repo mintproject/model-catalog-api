@@ -78,7 +78,7 @@ def pointbasedgrids_id_put(id, user, point_based_grid=None):  # noqa: E501
     :param point_based_grid: An old PointBasedGridto be updated
     :type point_based_grid: dict | bytes
 
-    :rtype: None
+    :rtype: PointBasedGrid
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def pointbasedgrids_post(user, point_based_grid=None):  # noqa: E501
     :param point_based_grid: A new PointBasedGridto be created
     :type point_based_grid: dict | bytes
 
-    :rtype: None
+    :rtype: PointBasedGrid
     """
 
     if connexion.request.is_json:

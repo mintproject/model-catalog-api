@@ -78,7 +78,7 @@ def geocoordinatess_id_put(id, user, geo_coordinates=None):  # noqa: E501
     :param geo_coordinates: An old GeoCoordinatesto be updated
     :type geo_coordinates: dict | bytes
 
-    :rtype: None
+    :rtype: GeoCoordinates
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def geocoordinatess_post(user, geo_coordinates=None):  # noqa: E501
     :param geo_coordinates: A new GeoCoordinatesto be created
     :type geo_coordinates: dict | bytes
 
-    :rtype: None
+    :rtype: GeoCoordinates
     """
 
     if connexion.request.is_json:

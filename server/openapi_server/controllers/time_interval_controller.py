@@ -78,7 +78,7 @@ def timeintervals_id_put(id, user, time_interval=None):  # noqa: E501
     :param time_interval: An old TimeIntervalto be updated
     :type time_interval: dict | bytes
 
-    :rtype: None
+    :rtype: TimeInterval
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def timeintervals_post(user, time_interval=None):  # noqa: E501
     :param time_interval: A new TimeIntervalto be created
     :type time_interval: dict | bytes
 
-    :rtype: None
+    :rtype: TimeInterval
     """
 
     if connexion.request.is_json:

@@ -15,13 +15,15 @@ class GeoShape(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, elevation=None, latitude=None, box=None, id=None, label=None, type=None, longitude=None):  # noqa: E501
+    def __init__(self, elevation=None, latitude=None, description=None, box=None, id=None, label=None, type=None, longitude=None):  # noqa: E501
         """GeoShape - a model defined in OpenAPI
 
         :param elevation: The elevation of this GeoShape.  # noqa: E501
         :type elevation: List[str]
         :param latitude: The latitude of this GeoShape.  # noqa: E501
         :type latitude: List[str]
+        :param description: The description of this GeoShape.  # noqa: E501
+        :type description: List[str]
         :param box: The box of this GeoShape.  # noqa: E501
         :type box: List[str]
         :param id: The id of this GeoShape.  # noqa: E501
@@ -38,6 +40,7 @@ class GeoShape(Model):
         self.openapi_types = {
             'elevation': List[str],
             'latitude': List[str],
+            'description': List[str],
             'box': List[str],
             'id': str,
             'label': List[str],
@@ -48,6 +51,7 @@ class GeoShape(Model):
         self.attribute_map = {
             'elevation': 'elevation',
             'latitude': 'latitude',
+            'description': 'description',
             'box': 'box',
             'id': 'id',
             'label': 'label',
@@ -57,6 +61,7 @@ class GeoShape(Model):
 
         self._elevation = elevation
         self._latitude = latitude
+        self._description = description
         self._box = box
         self._id = id
         self._label = label
@@ -115,6 +120,27 @@ class GeoShape(Model):
         """
 
         self._latitude = latitude
+
+    @property
+    def description(self):
+        """Gets the description of this GeoShape.
+
+
+        :return: The description of this GeoShape.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this GeoShape.
+
+
+        :param description: The description of this GeoShape.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def box(self):

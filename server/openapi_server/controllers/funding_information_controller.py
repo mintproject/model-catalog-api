@@ -78,7 +78,7 @@ def fundinginformations_id_put(id, user, funding_information=None):  # noqa: E50
     :param funding_information: An old FundingInformationto be updated
     :type funding_information: dict | bytes
 
-    :rtype: None
+    :rtype: FundingInformation
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def fundinginformations_post(user, funding_information=None):  # noqa: E501
     :param funding_information: A new FundingInformationto be created
     :type funding_information: dict | bytes
 
-    :rtype: None
+    :rtype: FundingInformation
     """
 
     if connexion.request.is_json:

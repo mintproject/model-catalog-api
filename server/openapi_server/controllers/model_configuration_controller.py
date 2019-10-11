@@ -78,7 +78,7 @@ def modelconfigurations_id_put(id, user, model_configuration=None):  # noqa: E50
     :param model_configuration: An old ModelConfigurationto be updated
     :type model_configuration: dict | bytes
 
-    :rtype: None
+    :rtype: ModelConfiguration
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def modelconfigurations_post(user, model_configuration=None):  # noqa: E501
     :param model_configuration: A new ModelConfigurationto be created
     :type model_configuration: dict | bytes
 
-    :rtype: None
+    :rtype: ModelConfiguration
     """
 
     if connexion.request.is_json:

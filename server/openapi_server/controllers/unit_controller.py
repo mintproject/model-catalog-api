@@ -78,7 +78,7 @@ def units_id_put(id, user, unit=None):  # noqa: E501
     :param unit: An old Unitto be updated
     :type unit: dict | bytes
 
-    :rtype: None
+    :rtype: Unit
     """
 
     if connexion.request.is_json:
@@ -100,7 +100,7 @@ def units_post(user, unit=None):  # noqa: E501
     :param unit: A new Unitto be created
     :type unit: dict | bytes
 
-    :rtype: None
+    :rtype: Unit
     """
 
     if connexion.request.is_json:
