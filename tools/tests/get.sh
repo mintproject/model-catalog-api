@@ -1,4 +1,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/env
-#GET
-curl -s -X GET "$SERVER/v1.0.0/models?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+
+if [ "$#" -ne 1 ] ; then
+    echo "Illegal number of parameters"
+    echo "bash get.sh datasetspecifications"
+    exit 1
+fi
+CLASS=$1
+echo "Get all resources $CLASS"
+
+curl -X GET "$SERVER/$CLASS?username=mint@isi.edu" -H "accept: application/json" | jq -r "."

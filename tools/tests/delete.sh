@@ -9,7 +9,7 @@ fi
 MODEL_ID=$1
 
 echo "Obtaining the model: $MODEL_ID"
-curl -X GET "$SERVER/v1.0.0/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+curl -X GET "$SERVER/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
 echo "Deleting the model: $MODEL_ID"
-curl -X DELETE -H "Authorization: Bearer $TOKEN" "$SERVER/v1.0.0/models/$MODEL_ID" -H "accept: application/json"
-curl -X GET "$SERVER/v1.0.0/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+curl -X DELETE -H "Authorization: Bearer $TOKEN" "$SERVER/models/$MODEL_ID" -H "accept: application/json"
+curl -X GET "$SERVER/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
