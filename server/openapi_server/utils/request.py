@@ -5,7 +5,7 @@ import validators
 from rdflib import Graph
 
 from openapi_server import query_manager
-from openapi_server.settings import ENDPOINT, PREFIX, GRAPH_BASE
+from openapi_server.settings import ENDPOINT, PREFIX, GRAPH_BASE, UPDATE_ENDPOINT
 from openapi_server import logger
 
 
@@ -116,7 +116,7 @@ def put_resource(**kwargs):
     }
 
     try:
-        query_manager.delete_query(ENDPOINT, request_args=request_args_delete)
+        query_manager.delete_query(UPDATE_ENDPOINT, request_args=request_args_delete)
     except:
         return "Error deleting query", 407, {}
 
@@ -131,7 +131,7 @@ def put_resource(**kwargs):
         "triples": triples,
         "g": generate_graph(username)
     }
-    if query_manager.insert_query(ENDPOINT, request_args=request_args):
+    if query_manager.insert_query(UPDATE_ENDPOINT, request_args=request_args):
         return body, 201, {}
     else:
         return "Error inserting query", 407, {}
@@ -157,7 +157,7 @@ def delete_resource(**kwargs):
         "resource": resource_uri,
         "g": generate_graph(username)
     }
-    return query_manager.delete_query(ENDPOINT, request_args=request_args)
+    return query_manager.delete_query(UPDATE_ENDPOINT, request_args=request_args)
 
 
 def post_resource(**kwargs):
@@ -191,7 +191,7 @@ def post_resource(**kwargs):
         "triples": triples,
         "g": generate_graph(username)
     }
-    if query_manager.insert_query(ENDPOINT, request_args=request_args):
+    if query_manager.insert_query(UPDATE_ENDPOINT, request_args=request_args):
         return body, 201, {}
     else:
         return "Error inserting query", 407, {}

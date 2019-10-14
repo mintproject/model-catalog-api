@@ -1,11 +1,14 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/env
 
-#POST
-echo "Inserting the model"
-payload=$(cat input.json)
-MODEL=$(curl -X POST "$SERVER/modelconfigurations" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json" -d "$payload")
-MODEL_ID=$(echo $MODEL | jq -r '.id')
-echo "ID model is: $MODEL_ID"
-echo "Obtain the model"
-curl -X GET "$SERVER/modelconfigurations/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+if [ "$#" -ne 2 ] ; then
+    echo "Illegal number of parameters"
+    echo "bash post.sh datasetspecifications cycles_crop.json"
+    exit 1
+fi
+CLASS=$1
+FILE=$2
+echo "Inserting a $CLASS"
+
+payload=$(cat $FILE)
+curl -v -X POST "$SERVER/$CLASS" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json" -d "$payload"

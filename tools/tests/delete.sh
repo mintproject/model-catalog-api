@@ -1,15 +1,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $DIR/env
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ] ; then
     echo "Illegal number of parameters"
-    echo "bash delete.sh ID"
+    echo "bash delete.sh datasetspecifications cycles_crop.json"
     exit 1
 fi
-MODEL_ID=$1
-
-echo "Obtaining the model: $MODEL_ID"
-curl -X GET "$SERVER/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
-echo "Deleting the model: $MODEL_ID"
-curl -X DELETE -H "Authorization: Bearer $TOKEN" "$SERVER/models/$MODEL_ID" -H "accept: application/json"
-curl -X GET "$SERVER/models/$MODEL_ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+CLASS=$1
+ID=$2
+echo "Deleting $CLASS $ID"
+curl -v -X DELETE "$SERVER/$CLASS/$ID" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json"
