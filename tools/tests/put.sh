@@ -13,4 +13,4 @@ echo "Updating $CLASS $ID, using $FILE"
 
 #PUT
 payload=$(cat $FILE)
-curl -v -X PUT "$SERVER/$CLASS/$ID" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json" -d "$payload"
+curl -X PUT "$SERVER/$CLASS/$ID" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json" -d "$payload"
