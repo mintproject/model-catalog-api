@@ -290,8 +290,7 @@
     },
     "hasComponentLocation": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation"
     },
     "hasConfiguration": {
       "@container": "@set",
