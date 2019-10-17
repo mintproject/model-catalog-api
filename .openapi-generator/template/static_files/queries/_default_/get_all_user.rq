@@ -4,12 +4,15 @@ CONSTRUCT {
 ?prop a ?type
 }
 WHERE {
-GRAPH ?_g_iri {
-?item a  ?_type_iri . 
-{
-?item ?predicate ?prop
+    GRAPH ?_g_iri {
+        {
+          SELECT DISTINCT ?item where {
+             ?item a ?_type_iri .
+          }
+        }
+        ?item ?predicate ?prop
+        OPTIONAL {
+            ?prop a ?type
+        }
+    }
 }
-OPTIONAL {
-?prop a ?type
-}
-}}

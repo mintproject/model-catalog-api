@@ -145,7 +145,7 @@
     },
     "author": {
       "@container": "@set",
-      "@id": "http://schema.org/author",
+      "@id": "https://w3id.org/okn/o/sd#author",
       "@type": "@id"
     },
     "box": {
@@ -290,8 +290,7 @@
     },
     "hasComponentLocation": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
-      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation"
     },
     "hasConfiguration": {
       "@container": "@set",
@@ -565,7 +564,7 @@
     },
     "keywords": {
       "@container": "@set",
-      "@id": "http://schema.org/keywords"
+      "@id": "https://w3id.org/okn/o/sd#keywords"
     },
     "label": {
       "@container": "@set",
@@ -716,7 +715,7 @@
       "@type": "@id"
     },
     "website": {
-      "@container": "@set",      
+      "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#website",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
