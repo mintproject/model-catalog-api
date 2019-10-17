@@ -15,7 +15,7 @@ class HybridModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None):  # noqa: E501
+    def __init__(self, has_funding=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None):  # noqa: E501
         """HybridModel - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this HybridModel.  # noqa: E501
@@ -64,10 +64,10 @@ class HybridModel(Model):
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this HybridModel.  # noqa: E501
         :type has_sample_visualization: List[object]
-        :param identifier: The identifier of this HybridModel.  # noqa: E501
-        :type identifier: List[str]
         :param memory_requirements: The memory_requirements of this HybridModel.  # noqa: E501
         :type memory_requirements: List[str]
+        :param identifier: The identifier of this HybridModel.  # noqa: E501
+        :type identifier: List[str]
         :param website: The website of this HybridModel.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this HybridModel.  # noqa: E501
@@ -131,8 +131,8 @@ class HybridModel(Model):
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
-            'identifier': List[str],
             'memory_requirements': List[str],
+            'identifier': List[str],
             'website': List[str],
             'citation': List[str],
             'author': List[object],
@@ -175,8 +175,8 @@ class HybridModel(Model):
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'identifier': 'identifier',
             'memory_requirements': 'memoryRequirements',
+            'identifier': 'identifier',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
@@ -218,8 +218,8 @@ class HybridModel(Model):
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._identifier = identifier
         self._memory_requirements = memory_requirements
+        self._identifier = identifier
         self._website = website
         self._citation = citation
         self._author = author
@@ -732,27 +732,6 @@ class HybridModel(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def identifier(self):
-        """Gets the identifier of this HybridModel.
-
-
-        :return: The identifier of this HybridModel.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this HybridModel.
-
-
-        :param identifier: The identifier of this HybridModel.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
-
-    @property
     def memory_requirements(self):
         """Gets the memory_requirements of this HybridModel.
 
@@ -772,6 +751,27 @@ class HybridModel(Model):
         """
 
         self._memory_requirements = memory_requirements
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this HybridModel.
+
+
+        :return: The identifier of this HybridModel.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this HybridModel.
+
+
+        :param identifier: The identifier of this HybridModel.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
 
     @property
     def website(self):

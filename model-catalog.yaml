@@ -3,14 +3,14 @@ info:
   description: This is MINT Model Catalog You can find out more about Model Catalog
     at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   title: Model Catalog
-  version: v1.0.0
+  version: v1.1.0
 externalDocs:
   description: Model Catalog
   url: https://w3id.org/mint/modelCatalog/
 servers:
-- url: https://api.models.mint.isi.edu/v1.0.0
-- url: https://dev.api.models.mint.isi.edu/v1.0.0
-- url: http://localhost:8080/v1.0.0
+- url: https://api.models.mint.isi.edu/v1.1.0
+- url: https://dev.api.models.mint.isi.edu/v1.1.0
+- url: http://localhost:8080/v1.1.0
 paths:
   /user/login:
     get:
