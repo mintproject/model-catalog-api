@@ -1,0 +1,168 @@
+{
+  "author": [
+    {
+      "id": "https://w3id.org/okn/i/mint/khider_deborah",
+      "label": [
+        "Deborah Khider"
+      ],
+      "type": "Person"
+    }
+  ],
+  "description": [
+    "WGEN basic configuration adapted from GWGEN (globally applicable weather generator)"
+  ],
+  "hasComponentLocation": [
+    "https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/weather_generator/weather_generator.zip"
+  ],
+  "hasImplementationScriptLocation": [
+    "https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/weather_generator/run"
+  ],
+  "hasInput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_monthly",
+      "label": [
+        "monthly-weather"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#FLDAS",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_daily",
+      "label": [
+        "daily-weather"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#FLDAS",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasModelCategory": [
+    "Weather"
+  ],
+  "hasOutput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_output",
+      "label": [
+        "fldas-wgen"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#WGenWeather",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasOutputTimeInterval": [
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_1.0.1_cfg_timeinterval",
+      "label": [
+        "WGEN time interval"
+      ],
+      "type": [
+        "TimeInterval"
+      ]
+    }
+  ],
+  "hasParameter": [
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_min_month",
+      "label": [
+        "min_month"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MinMonth",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_min_lat",
+      "label": [
+        "min_lat"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MinLatitude",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_level",
+      "label": [
+        "level"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#Level",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_flagP",
+      "label": [
+        "flagP"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#FlagP",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_max_lat",
+      "label": [
+        "max_lat"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MaxLatitude",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_min_lon",
+      "label": [
+        "min_lon"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MinLongitude",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_max_lon",
+      "label": [
+        "max_lon"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MaxLongitude",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/wgen_max_month",
+      "label": [
+        "max_month"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#MaxMonth",
+        "Parameter"
+      ]
+    }
+  ],
+  "hasSoftwareImage": [
+    {
+      "id": "https://w3id.org/okn/i/mint/mintproject/WEATHER-GENERATOR:LATEST",
+      "label": [
+        "mintproject/weather-generator:latest"
+      ],
+      "type": "SoftwareImage"
+    }
+  ],
+  "id": "https://w3id.org/okn/i/mint/daecd75c-0629-476d-8586-f958366e50ed",
+  "label": [
+    "WGEN Basic configuration"
+  ],
+  "type": [
+    "EmpiricalModel",
+    "ModelConfiguration",
+    "SoftwareConfiguration"
+  ]
+}

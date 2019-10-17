@@ -1,0 +1,105 @@
+{
+  "description": [
+    "Geologic file edit"
+  ],
+  "hasDimensionality": [
+    0
+  ],
+  "hasFormat": [
+    "geol"
+  ],
+  "hasPresentation": [
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_Alpha",
+      "label": [
+        "Alpha"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_gThetaR",
+      "label": [
+        "ThetaR"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_gThetaS",
+      "label": [
+        "ThetaS"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_KsatV",
+      "label": [
+        "KsatV"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_macKsatH",
+      "label": [
+        "macKsatH"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_ginfD",
+      "label": [
+        "infD"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_vAreaF",
+      "label": [
+        "vAreaF"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_Beta",
+      "label": [
+        "Beta"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/pihm_macD",
+      "label": [
+        "macD"
+      ],
+      "type": [
+        "VariablePresentation"
+      ]
+    }
+  ],
+  "id": "https://w3id.org/okn/i/mint/pihm_geol",
+  "label": [
+    "pihm-geol"
+  ],
+  "position": [
+    6
+  ],
+  "type": [
+    "https://w3id.org/wings/export/MINT#PIHMGeologic",
+    "DatasetSpecification"
+  ]
+}

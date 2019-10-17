@@ -1,0 +1,31 @@
+{
+  "description": [
+    "minimum latitude"
+  ],
+  "hasDataType": [
+    "float"
+  ],
+  "hasDefaultValue": [
+    "6.700375"
+  ],
+  "id": "https://w3id.org/okn/i/mint/wgen_min_lat",
+  "label": [
+    "min_lat"
+  ],
+  "position": [
+    4
+  ],
+  "type": [
+    "https://w3id.org/wings/export/MINT#MinLatitude",
+    "Parameter"
+  ],
+  "usesUnit": [
+    {
+      "id": "https://w3id.org/okn/i/mint/degree",
+      "label": [
+        "degree"
+      ],
+      "type": "http://qudt.org/1.1/schema/qudt#Unit"
+    }
+  ]
+}

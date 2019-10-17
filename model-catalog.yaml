@@ -3,14 +3,14 @@ info:
   description: This is MINT Model Catalog You can find out more about Model Catalog
     at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
   title: Model Catalog
-  version: v1.1.0
+  version: v1.0.0
 externalDocs:
   description: Model Catalog
   url: https://w3id.org/mint/modelCatalog/
 servers:
-- url: https://api.models.mint.isi.edu/v1.1.0
-- url: https://dev.api.models.mint.isi.edu/v1.1.0
-- url: http://localhost:8080/v1.1.0
+- url: https://api.models.mint.isi.edu/v1.0.0
+- url: https://dev.api.models.mint.isi.edu/v1.0.0
+- url: http://localhost:8080/v1.0.0
 paths:
   /user/login:
     get:
@@ -5393,12 +5393,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -5537,12 +5537,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5790,12 +5790,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -5947,12 +5947,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -6148,12 +6148,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6354,12 +6354,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -6586,12 +6586,12 @@ components:
             type: object
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
@@ -7048,12 +7048,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -7494,12 +7494,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7723,12 +7723,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7851,12 +7851,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7919,12 +7919,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -8047,12 +8047,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -8077,12 +8077,12 @@ components:
       properties:
         hasDefaultValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         hasMaximumAcceptedValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         description:
@@ -8097,7 +8097,7 @@ components:
           type: array
         hasFixedValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         hasPresentation:
@@ -8117,7 +8117,7 @@ components:
           type: array
         hasMinimumAcceptedValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         adjustsVariable:
@@ -8202,12 +8202,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -8325,12 +8325,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -8355,7 +8355,7 @@ components:
       properties:
         hasDefaultValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         hasStandardVariable:
@@ -8365,7 +8365,7 @@ components:
           type: array
         hasMaximumAcceptedValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         hasConstraint:
@@ -8400,7 +8400,7 @@ components:
           type: array
         hasMinimumAcceptedValue:
           items:
-            type: object
+            type: string
           nullable: true
           type: array
         id:
