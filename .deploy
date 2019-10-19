@@ -7,10 +7,12 @@ git clone https://github.com/mintproject/model-catalog-python-api-client.git
 pushd model-catalog-python-api-client
 bash generate-client.sh $TRAVIS_TAG
 release-it --config .release-it.json --ci
+git push
 popd
 
 git clone https://github.com/mintproject/model-catalog-fetch-api-client.git
 pushd model-catalog-fetch-api-client
 bash generate-client.sh $TRAVIS_TAG
 echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+git push
 release-it --config .release-it.json --ci
