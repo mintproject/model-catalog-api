@@ -17,10 +17,11 @@ before_install:
   -s`-`uname -m` > docker-compose
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
-- cd server
+- pushd server
 - docker build -t model-catalog-api .
 - docker tag model-catalog-api mintproject/model-catalog-api:latest
 - docker push mintproject/model-catalog-api:latest
+- popd
 deploy:
   provider: script
   script: bash .deploy

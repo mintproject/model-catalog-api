@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flask-testing = "*"
 
 [packages]
 certifi = "==2019.9.11"
