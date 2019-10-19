@@ -1,4 +1,4 @@
-language: node_js
+language: generic
 env:
   matrix:
   - DOCKER_COMPOSE_VERSION=1.23.2
@@ -8,6 +8,8 @@ env:
 services:
 - docker
 before_install:
+- curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+- sudo apt-get install nodejs
 - npm install --global release-it
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 - sudo rm /usr/local/bin/docker-compose
