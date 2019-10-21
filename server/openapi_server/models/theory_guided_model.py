@@ -15,17 +15,19 @@ class TheoryGuidedModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
         """TheoryGuidedModel - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this TheoryGuidedModel.  # noqa: E501
         :type has_funding: List[object]
-        :param keywords: The keywords of this TheoryGuidedModel.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this TheoryGuidedModel.  # noqa: E501
         :type has_documentation: List[str]
+        :param keywords: The keywords of this TheoryGuidedModel.  # noqa: E501
+        :type keywords: List[str]
         :param has_grid: The has_grid of this TheoryGuidedModel.  # noqa: E501
         :type has_grid: List[Grid]
+        :param support_details: The support_details of this TheoryGuidedModel.  # noqa: E501
+        :type support_details: List[str]
         :param software_requirements: The software_requirements of this TheoryGuidedModel.  # noqa: E501
         :type software_requirements: List[str]
         :param has_version: The has_version of this TheoryGuidedModel.  # noqa: E501
@@ -46,18 +48,20 @@ class TheoryGuidedModel(Model):
         :type has_installation_instructions: List[str]
         :param has_model_category: The has_model_category of this TheoryGuidedModel.  # noqa: E501
         :type has_model_category: List[str]
+        :param had_primary_source: The had_primary_source of this TheoryGuidedModel.  # noqa: E501
+        :type had_primary_source: List[object]
         :param date_created: The date_created of this TheoryGuidedModel.  # noqa: E501
         :type date_created: List[str]
-        :param contributor: The contributor of this TheoryGuidedModel.  # noqa: E501
-        :type contributor: List[object]
         :param compatible_visualization_software: The compatible_visualization_software of this TheoryGuidedModel.  # noqa: E501
         :type compatible_visualization_software: List[object]
+        :param contributor: The contributor of this TheoryGuidedModel.  # noqa: E501
+        :type contributor: List[object]
         :param has_faq: The has_faq of this TheoryGuidedModel.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this TheoryGuidedModel.  # noqa: E501
-        :type logo: List[object]
         :param has_contact_person: The has_contact_person of this TheoryGuidedModel.  # noqa: E501
         :type has_contact_person: List[object]
+        :param logo: The logo of this TheoryGuidedModel.  # noqa: E501
+        :type logo: List[object]
         :param has_purpose: The has_purpose of this TheoryGuidedModel.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this TheoryGuidedModel.  # noqa: E501
@@ -96,22 +100,27 @@ class TheoryGuidedModel(Model):
         :type has_explanation_diagram: List[object]
         :param has_example: The has_example of this TheoryGuidedModel.  # noqa: E501
         :type has_example: List[str]
-        :param has_equation: The has_equation of this TheoryGuidedModel.  # noqa: E501
-        :type has_equation: List[Equation]
         :param publisher: The publisher of this TheoryGuidedModel.  # noqa: E501
         :type publisher: List[object]
+        :param has_equation: The has_equation of this TheoryGuidedModel.  # noqa: E501
+        :type has_equation: List[Equation]
+        :param useful_for_calculating_index: The useful_for_calculating_index of this TheoryGuidedModel.  # noqa: E501
+        :type useful_for_calculating_index: List[Index]
         """
         from openapi_server.models.equation import Equation
         from openapi_server.models.grid import Grid
+        from openapi_server.models.index import Index
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
             'has_funding': List[object],
-            'keywords': List[str],
             'has_documentation': List[str],
+            'keywords': List[str],
             'has_grid': List[Grid],
+            'support_details': List[str],
             'software_requirements': List[str],
             'has_version': List[object],
             'has_typical_data_source': List[str],
@@ -122,12 +131,13 @@ class TheoryGuidedModel(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'has_model_category': List[str],
+            'had_primary_source': List[object],
             'date_created': List[str],
-            'contributor': List[object],
             'compatible_visualization_software': List[object],
+            'contributor': List[object],
             'has_faq': List[str],
-            'logo': List[object],
             'has_contact_person': List[object],
+            'logo': List[object],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
@@ -147,15 +157,17 @@ class TheoryGuidedModel(Model):
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
             'has_example': List[str],
+            'publisher': List[object],
             'has_equation': List[Equation],
-            'publisher': List[object]
+            'useful_for_calculating_index': List[Index]
         }
 
         self.attribute_map = {
             'has_funding': 'hasFunding',
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
+            'keywords': 'keywords',
             'has_grid': 'hasGrid',
+            'support_details': 'supportDetails',
             'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
@@ -166,12 +178,13 @@ class TheoryGuidedModel(Model):
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'has_model_category': 'hasModelCategory',
+            'had_primary_source': 'hadPrimarySource',
             'date_created': 'dateCreated',
-            'contributor': 'contributor',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'contributor': 'contributor',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -191,14 +204,16 @@ class TheoryGuidedModel(Model):
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
             'has_example': 'hasExample',
+            'publisher': 'publisher',
             'has_equation': 'hasEquation',
-            'publisher': 'publisher'
+            'useful_for_calculating_index': 'usefulForCalculatingIndex'
         }
 
         self._has_funding = has_funding
-        self._keywords = keywords
         self._has_documentation = has_documentation
+        self._keywords = keywords
         self._has_grid = has_grid
+        self._support_details = support_details
         self._software_requirements = software_requirements
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
@@ -209,12 +224,13 @@ class TheoryGuidedModel(Model):
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._has_model_category = has_model_category
+        self._had_primary_source = had_primary_source
         self._date_created = date_created
-        self._contributor = contributor
         self._compatible_visualization_software = compatible_visualization_software
+        self._contributor = contributor
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
@@ -234,8 +250,9 @@ class TheoryGuidedModel(Model):
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
         self._has_example = has_example
-        self._has_equation = has_equation
         self._publisher = publisher
+        self._has_equation = has_equation
+        self._useful_for_calculating_index = useful_for_calculating_index
 
     @classmethod
     def from_dict(cls, dikt) -> 'TheoryGuidedModel':
@@ -270,27 +287,6 @@ class TheoryGuidedModel(Model):
         self._has_funding = has_funding
 
     @property
-    def keywords(self):
-        """Gets the keywords of this TheoryGuidedModel.
-
-
-        :return: The keywords of this TheoryGuidedModel.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this TheoryGuidedModel.
-
-
-        :param keywords: The keywords of this TheoryGuidedModel.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this TheoryGuidedModel.
 
@@ -312,6 +308,27 @@ class TheoryGuidedModel(Model):
         self._has_documentation = has_documentation
 
     @property
+    def keywords(self):
+        """Gets the keywords of this TheoryGuidedModel.
+
+
+        :return: The keywords of this TheoryGuidedModel.
+        :rtype: List[str]
+        """
+        return self._keywords
+
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this TheoryGuidedModel.
+
+
+        :param keywords: The keywords of this TheoryGuidedModel.
+        :type keywords: List[str]
+        """
+
+        self._keywords = keywords
+
+    @property
     def has_grid(self):
         """Gets the has_grid of this TheoryGuidedModel.
 
@@ -331,6 +348,27 @@ class TheoryGuidedModel(Model):
         """
 
         self._has_grid = has_grid
+
+    @property
+    def support_details(self):
+        """Gets the support_details of this TheoryGuidedModel.
+
+
+        :return: The support_details of this TheoryGuidedModel.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this TheoryGuidedModel.
+
+
+        :param support_details: The support_details of this TheoryGuidedModel.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
 
     @property
     def software_requirements(self):
@@ -543,6 +581,27 @@ class TheoryGuidedModel(Model):
         self._has_model_category = has_model_category
 
     @property
+    def had_primary_source(self):
+        """Gets the had_primary_source of this TheoryGuidedModel.
+
+
+        :return: The had_primary_source of this TheoryGuidedModel.
+        :rtype: List[object]
+        """
+        return self._had_primary_source
+
+    @had_primary_source.setter
+    def had_primary_source(self, had_primary_source):
+        """Sets the had_primary_source of this TheoryGuidedModel.
+
+
+        :param had_primary_source: The had_primary_source of this TheoryGuidedModel.
+        :type had_primary_source: List[object]
+        """
+
+        self._had_primary_source = had_primary_source
+
+    @property
     def date_created(self):
         """Gets the date_created of this TheoryGuidedModel.
 
@@ -562,27 +621,6 @@ class TheoryGuidedModel(Model):
         """
 
         self._date_created = date_created
-
-    @property
-    def contributor(self):
-        """Gets the contributor of this TheoryGuidedModel.
-
-
-        :return: The contributor of this TheoryGuidedModel.
-        :rtype: List[object]
-        """
-        return self._contributor
-
-    @contributor.setter
-    def contributor(self, contributor):
-        """Sets the contributor of this TheoryGuidedModel.
-
-
-        :param contributor: The contributor of this TheoryGuidedModel.
-        :type contributor: List[object]
-        """
-
-        self._contributor = contributor
 
     @property
     def compatible_visualization_software(self):
@@ -606,6 +644,27 @@ class TheoryGuidedModel(Model):
         self._compatible_visualization_software = compatible_visualization_software
 
     @property
+    def contributor(self):
+        """Gets the contributor of this TheoryGuidedModel.
+
+
+        :return: The contributor of this TheoryGuidedModel.
+        :rtype: List[object]
+        """
+        return self._contributor
+
+    @contributor.setter
+    def contributor(self, contributor):
+        """Sets the contributor of this TheoryGuidedModel.
+
+
+        :param contributor: The contributor of this TheoryGuidedModel.
+        :type contributor: List[object]
+        """
+
+        self._contributor = contributor
+
+    @property
     def has_faq(self):
         """Gets the has_faq of this TheoryGuidedModel.
 
@@ -627,27 +686,6 @@ class TheoryGuidedModel(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this TheoryGuidedModel.
-
-
-        :return: The logo of this TheoryGuidedModel.
-        :rtype: List[object]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this TheoryGuidedModel.
-
-
-        :param logo: The logo of this TheoryGuidedModel.
-        :type logo: List[object]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this TheoryGuidedModel.
 
@@ -667,6 +705,27 @@ class TheoryGuidedModel(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this TheoryGuidedModel.
+
+
+        :return: The logo of this TheoryGuidedModel.
+        :rtype: List[object]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this TheoryGuidedModel.
+
+
+        :param logo: The logo of this TheoryGuidedModel.
+        :type logo: List[object]
+        """
+
+        self._logo = logo
 
     @property
     def has_purpose(self):
@@ -1068,6 +1127,27 @@ class TheoryGuidedModel(Model):
         self._has_example = has_example
 
     @property
+    def publisher(self):
+        """Gets the publisher of this TheoryGuidedModel.
+
+
+        :return: The publisher of this TheoryGuidedModel.
+        :rtype: List[object]
+        """
+        return self._publisher
+
+    @publisher.setter
+    def publisher(self, publisher):
+        """Sets the publisher of this TheoryGuidedModel.
+
+
+        :param publisher: The publisher of this TheoryGuidedModel.
+        :type publisher: List[object]
+        """
+
+        self._publisher = publisher
+
+    @property
     def has_equation(self):
         """Gets the has_equation of this TheoryGuidedModel.
 
@@ -1089,22 +1169,22 @@ class TheoryGuidedModel(Model):
         self._has_equation = has_equation
 
     @property
-    def publisher(self):
-        """Gets the publisher of this TheoryGuidedModel.
+    def useful_for_calculating_index(self):
+        """Gets the useful_for_calculating_index of this TheoryGuidedModel.
 
 
-        :return: The publisher of this TheoryGuidedModel.
-        :rtype: List[object]
+        :return: The useful_for_calculating_index of this TheoryGuidedModel.
+        :rtype: List[Index]
         """
-        return self._publisher
+        return self._useful_for_calculating_index
 
-    @publisher.setter
-    def publisher(self, publisher):
-        """Sets the publisher of this TheoryGuidedModel.
+    @useful_for_calculating_index.setter
+    def useful_for_calculating_index(self, useful_for_calculating_index):
+        """Sets the useful_for_calculating_index of this TheoryGuidedModel.
 
 
-        :param publisher: The publisher of this TheoryGuidedModel.
-        :type publisher: List[object]
+        :param useful_for_calculating_index: The useful_for_calculating_index of this TheoryGuidedModel.
+        :type useful_for_calculating_index: List[Index]
         """
 
-        self._publisher = publisher
+        self._useful_for_calculating_index = useful_for_calculating_index

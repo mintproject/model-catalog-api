@@ -15,7 +15,7 @@ class SampleResource(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, data_catalog_identifier=None, description=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, data_catalog_identifier=None, description=None, id=None, label=None, type=None, value=None):  # noqa: E501
         """SampleResource - a model defined in OpenAPI
 
         :param data_catalog_identifier: The data_catalog_identifier of this SampleResource.  # noqa: E501
@@ -28,6 +28,8 @@ class SampleResource(Model):
         :type label: List[str]
         :param type: The type of this SampleResource.  # noqa: E501
         :type type: List[str]
+        :param value: The value of this SampleResource.  # noqa: E501
+        :type value: List[str]
         """
 
 
@@ -36,7 +38,8 @@ class SampleResource(Model):
             'description': List[str],
             'id': str,
             'label': List[str],
-            'type': List[str]
+            'type': List[str],
+            'value': List[str]
         }
 
         self.attribute_map = {
@@ -44,7 +47,8 @@ class SampleResource(Model):
             'description': 'description',
             'id': 'id',
             'label': 'label',
-            'type': 'type'
+            'type': 'type',
+            'value': 'value'
         }
 
         self._data_catalog_identifier = data_catalog_identifier
@@ -52,6 +56,7 @@ class SampleResource(Model):
         self._id = id
         self._label = label
         self._type = type
+        self._value = value
 
     @classmethod
     def from_dict(cls, dikt) -> 'SampleResource':
@@ -168,3 +173,24 @@ class SampleResource(Model):
         """
 
         self._type = type
+
+    @property
+    def value(self):
+        """Gets the value of this SampleResource.
+
+
+        :return: The value of this SampleResource.
+        :rtype: List[str]
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this SampleResource.
+
+
+        :param value: The value of this SampleResource.
+        :type value: List[str]
+        """
+
+        self._value = value
