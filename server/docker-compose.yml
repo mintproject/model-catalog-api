@@ -1,9 +1,9 @@
 version: '3'
 services:
   dev:
-    image: "mintproject/model-catalog-api:1.1.1"
+    image: "mintproject/model-catalog-api:${VERSION}"
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 22111:8080
+      - ${PORT}:8080
