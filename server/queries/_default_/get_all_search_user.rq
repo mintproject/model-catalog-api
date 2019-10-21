@@ -1,0 +1,17 @@
+#+ summary: Given a rdf type and label, returns all the resources related to the type and the label
+CONSTRUCT {
+?item ?predicate ?prop .
+?prop a ?type
+}
+WHERE {
+GRAPH ?_g_iri {
+?item a  ?_type_iri . 
+{
+?item ?predicate ?prop
+VALUES ?predicate { sd:description rdfs:label }
+?w ?property ?desc.
+OPTIONAL {
+?prop a ?type
+}
+filter regex(str(?desc),?_text,"i")
+}}

@@ -15,11 +15,15 @@ class Visualization(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_format=None, description=None, id=None, label=None, type=None, was_derived_from_software=None):  # noqa: E501
+    def __init__(self, has_format=None, had_primary_source=None, was_derived_from_software=None, description=None, id=None, label=None, type=None, value=None):  # noqa: E501
         """Visualization - a model defined in OpenAPI
 
         :param has_format: The has_format of this Visualization.  # noqa: E501
         :type has_format: List[str]
+        :param had_primary_source: The had_primary_source of this Visualization.  # noqa: E501
+        :type had_primary_source: List[object]
+        :param was_derived_from_software: The was_derived_from_software of this Visualization.  # noqa: E501
+        :type was_derived_from_software: List[Software]
         :param description: The description of this Visualization.  # noqa: E501
         :type description: List[str]
         :param id: The id of this Visualization.  # noqa: E501
@@ -28,8 +32,8 @@ class Visualization(Model):
         :type label: List[str]
         :param type: The type of this Visualization.  # noqa: E501
         :type type: List[str]
-        :param was_derived_from_software: The was_derived_from_software of this Visualization.  # noqa: E501
-        :type was_derived_from_software: List[Software]
+        :param value: The value of this Visualization.  # noqa: E501
+        :type value: List[str]
         """
         from openapi_server.models.software import Software
 
@@ -37,28 +41,34 @@ class Visualization(Model):
 
         self.openapi_types = {
             'has_format': List[str],
+            'had_primary_source': List[object],
+            'was_derived_from_software': List[Software],
             'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
-            'was_derived_from_software': List[Software]
+            'value': List[str]
         }
 
         self.attribute_map = {
             'has_format': 'hasFormat',
+            'had_primary_source': 'hadPrimarySource',
+            'was_derived_from_software': 'wasDerivedFromSoftware',
             'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'was_derived_from_software': 'wasDerivedFromSoftware'
+            'value': 'value'
         }
 
         self._has_format = has_format
+        self._had_primary_source = had_primary_source
+        self._was_derived_from_software = was_derived_from_software
         self._description = description
         self._id = id
         self._label = label
         self._type = type
-        self._was_derived_from_software = was_derived_from_software
+        self._value = value
 
     @classmethod
     def from_dict(cls, dikt) -> 'Visualization':
@@ -91,6 +101,48 @@ class Visualization(Model):
         """
 
         self._has_format = has_format
+
+    @property
+    def had_primary_source(self):
+        """Gets the had_primary_source of this Visualization.
+
+
+        :return: The had_primary_source of this Visualization.
+        :rtype: List[object]
+        """
+        return self._had_primary_source
+
+    @had_primary_source.setter
+    def had_primary_source(self, had_primary_source):
+        """Sets the had_primary_source of this Visualization.
+
+
+        :param had_primary_source: The had_primary_source of this Visualization.
+        :type had_primary_source: List[object]
+        """
+
+        self._had_primary_source = had_primary_source
+
+    @property
+    def was_derived_from_software(self):
+        """Gets the was_derived_from_software of this Visualization.
+
+
+        :return: The was_derived_from_software of this Visualization.
+        :rtype: List[Software]
+        """
+        return self._was_derived_from_software
+
+    @was_derived_from_software.setter
+    def was_derived_from_software(self, was_derived_from_software):
+        """Sets the was_derived_from_software of this Visualization.
+
+
+        :param was_derived_from_software: The was_derived_from_software of this Visualization.
+        :type was_derived_from_software: List[Software]
+        """
+
+        self._was_derived_from_software = was_derived_from_software
 
     @property
     def description(self):
@@ -177,22 +229,22 @@ class Visualization(Model):
         self._type = type
 
     @property
-    def was_derived_from_software(self):
-        """Gets the was_derived_from_software of this Visualization.
+    def value(self):
+        """Gets the value of this Visualization.
 
 
-        :return: The was_derived_from_software of this Visualization.
-        :rtype: List[Software]
+        :return: The value of this Visualization.
+        :rtype: List[str]
         """
-        return self._was_derived_from_software
+        return self._value
 
-    @was_derived_from_software.setter
-    def was_derived_from_software(self, was_derived_from_software):
-        """Sets the was_derived_from_software of this Visualization.
+    @value.setter
+    def value(self, value):
+        """Sets the value of this Visualization.
 
 
-        :param was_derived_from_software: The was_derived_from_software of this Visualization.
-        :type was_derived_from_software: List[Software]
+        :param value: The value of this Visualization.
+        :type value: List[str]
         """
 
-        self._was_derived_from_software = was_derived_from_software
+        self._value = value

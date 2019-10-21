@@ -15,13 +15,13 @@ class SoftwareConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
         """SoftwareConfiguration - a model defined in OpenAPI
 
-        :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
+        :type has_documentation: List[str]
         :param software_requirements: The software_requirements of this SoftwareConfiguration.  # noqa: E501
         :type software_requirements: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.  # noqa: E501
@@ -63,7 +63,7 @@ class SoftwareConfiguration(Model):
         :param has_source_code: The has_source_code of this SoftwareConfiguration.  # noqa: E501
         :type has_source_code: List[SourceCode]
         :param has_setup: The has_setup of this SoftwareConfiguration.  # noqa: E501
-        :type has_setup: List[SoftwareConfiguration]
+        :type has_setup: List[ConfigurationSetup]
         :param has_example: The has_example of this SoftwareConfiguration.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this SoftwareConfiguration.  # noqa: E501
@@ -74,16 +74,20 @@ class SoftwareConfiguration(Model):
         :type has_funding: List[FundingInformation]
         :param has_component_location: The has_component_location of this SoftwareConfiguration.  # noqa: E501
         :type has_component_location: List[str]
+        :param support_details: The support_details of this SoftwareConfiguration.  # noqa: E501
+        :type support_details: List[str]
         :param has_version: The has_version of this SoftwareConfiguration.  # noqa: E501
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this SoftwareConfiguration.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param description: The description of this SoftwareConfiguration.  # noqa: E501
-        :type description: List[str]
         :param reference_publication: The reference_publication of this SoftwareConfiguration.  # noqa: E501
         :type reference_publication: List[str]
+        :param description: The description of this SoftwareConfiguration.  # noqa: E501
+        :type description: List[str]
         :param screenshot: The screenshot of this SoftwareConfiguration.  # noqa: E501
         :type screenshot: List[Image]
+        :param had_primary_source: The had_primary_source of this SoftwareConfiguration.  # noqa: E501
+        :type had_primary_source: List[object]
         :param has_software_image: The has_software_image of this SoftwareConfiguration.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this SoftwareConfiguration.  # noqa: E501
@@ -102,8 +106,6 @@ class SoftwareConfiguration(Model):
         :type citation: List[str]
         :param processor_requirements: The processor_requirements of this SoftwareConfiguration.  # noqa: E501
         :type processor_requirements: List[str]
-        :param adjustable_parameter: The adjustable_parameter of this SoftwareConfiguration.  # noqa: E501
-        :type adjustable_parameter: List[Parameter]
         :param has_usage_notes: The has_usage_notes of this SoftwareConfiguration.  # noqa: E501
         :type has_usage_notes: List[str]
         :param has_support_script_location: The has_support_script_location of this SoftwareConfiguration.  # noqa: E501
@@ -119,6 +121,7 @@ class SoftwareConfiguration(Model):
         :param has_input: The has_input of this SoftwareConfiguration.  # noqa: E501
         :type has_input: List[DatasetSpecification]
         """
+        from openapi_server.models.configuration_setup import ConfigurationSetup
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
@@ -144,10 +147,11 @@ class SoftwareConfiguration(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'software_requirements': List[str],
             'has_implementation_script_location': List[str],
             'has_download_url': List[str],
@@ -168,17 +172,19 @@ class SoftwareConfiguration(Model):
             'date_published': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
-            'has_setup': List[SoftwareConfiguration],
+            'has_setup': List[ConfigurationSetup],
             'has_example': List[str],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
             'has_funding': List[FundingInformation],
             'has_component_location': List[str],
+            'support_details': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
-            'description': List[str],
             'reference_publication': List[str],
+            'description': List[str],
             'screenshot': List[Image],
+            'had_primary_source': List[object],
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
             'contributor': List[Person],
@@ -188,7 +194,6 @@ class SoftwareConfiguration(Model):
             'website': List[str],
             'citation': List[str],
             'processor_requirements': List[str],
-            'adjustable_parameter': List[Parameter],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
             'label': List[str],
@@ -199,8 +204,8 @@ class SoftwareConfiguration(Model):
         }
 
         self.attribute_map = {
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
             'has_download_url': 'hasDownloadURL',
@@ -227,11 +232,13 @@ class SoftwareConfiguration(Model):
             'has_output': 'hasOutput',
             'has_funding': 'hasFunding',
             'has_component_location': 'hasComponentLocation',
+            'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'description': 'description',
             'reference_publication': 'referencePublication',
+            'description': 'description',
             'screenshot': 'screenshot',
+            'had_primary_source': 'hadPrimarySource',
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
@@ -241,7 +248,6 @@ class SoftwareConfiguration(Model):
             'website': 'website',
             'citation': 'citation',
             'processor_requirements': 'processorRequirements',
-            'adjustable_parameter': 'adjustableParameter',
             'has_usage_notes': 'hasUsageNotes',
             'has_support_script_location': 'hasSupportScriptLocation',
             'label': 'label',
@@ -251,8 +257,8 @@ class SoftwareConfiguration(Model):
             'has_input': 'hasInput'
         }
 
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
         self._has_download_url = has_download_url
@@ -279,11 +285,13 @@ class SoftwareConfiguration(Model):
         self._has_output = has_output
         self._has_funding = has_funding
         self._has_component_location = has_component_location
+        self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._description = description
         self._reference_publication = reference_publication
+        self._description = description
         self._screenshot = screenshot
+        self._had_primary_source = had_primary_source
         self._has_software_image = has_software_image
         self._date_created = date_created
         self._contributor = contributor
@@ -293,7 +301,6 @@ class SoftwareConfiguration(Model):
         self._website = website
         self._citation = citation
         self._processor_requirements = processor_requirements
-        self._adjustable_parameter = adjustable_parameter
         self._has_usage_notes = has_usage_notes
         self._has_support_script_location = has_support_script_location
         self._label = label
@@ -312,27 +319,6 @@ class SoftwareConfiguration(Model):
         :rtype: SoftwareConfiguration
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def has_documentation(self):
-        """Gets the has_documentation of this SoftwareConfiguration.
-
-
-        :return: The has_documentation of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this SoftwareConfiguration.
-
-
-        :param has_documentation: The has_documentation of this SoftwareConfiguration.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
 
     @property
     def keywords(self):
@@ -354,6 +340,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._keywords = keywords
+
+    @property
+    def has_documentation(self):
+        """Gets the has_documentation of this SoftwareConfiguration.
+
+
+        :return: The has_documentation of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this SoftwareConfiguration.
+
+
+        :param has_documentation: The has_documentation of this SoftwareConfiguration.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
 
     @property
     def software_requirements(self):
@@ -781,7 +788,7 @@ class SoftwareConfiguration(Model):
 
 
         :return: The has_setup of this SoftwareConfiguration.
-        :rtype: List[SoftwareConfiguration]
+        :rtype: List[ConfigurationSetup]
         """
         return self._has_setup
 
@@ -791,7 +798,7 @@ class SoftwareConfiguration(Model):
 
 
         :param has_setup: The has_setup of this SoftwareConfiguration.
-        :type has_setup: List[SoftwareConfiguration]
+        :type has_setup: List[ConfigurationSetup]
         """
 
         self._has_setup = has_setup
@@ -902,6 +909,27 @@ class SoftwareConfiguration(Model):
         self._has_component_location = has_component_location
 
     @property
+    def support_details(self):
+        """Gets the support_details of this SoftwareConfiguration.
+
+
+        :return: The support_details of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this SoftwareConfiguration.
+
+
+        :param support_details: The support_details of this SoftwareConfiguration.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
+
+    @property
     def has_version(self):
         """Gets the has_version of this SoftwareConfiguration.
 
@@ -944,27 +972,6 @@ class SoftwareConfiguration(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def description(self):
-        """Gets the description of this SoftwareConfiguration.
-
-
-        :return: The description of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SoftwareConfiguration.
-
-
-        :param description: The description of this SoftwareConfiguration.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def reference_publication(self):
         """Gets the reference_publication of this SoftwareConfiguration.
 
@@ -986,6 +993,27 @@ class SoftwareConfiguration(Model):
         self._reference_publication = reference_publication
 
     @property
+    def description(self):
+        """Gets the description of this SoftwareConfiguration.
+
+
+        :return: The description of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SoftwareConfiguration.
+
+
+        :param description: The description of this SoftwareConfiguration.
+        :type description: List[str]
+        """
+
+        self._description = description
+
+    @property
     def screenshot(self):
         """Gets the screenshot of this SoftwareConfiguration.
 
@@ -1005,6 +1033,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._screenshot = screenshot
+
+    @property
+    def had_primary_source(self):
+        """Gets the had_primary_source of this SoftwareConfiguration.
+
+
+        :return: The had_primary_source of this SoftwareConfiguration.
+        :rtype: List[object]
+        """
+        return self._had_primary_source
+
+    @had_primary_source.setter
+    def had_primary_source(self, had_primary_source):
+        """Sets the had_primary_source of this SoftwareConfiguration.
+
+
+        :param had_primary_source: The had_primary_source of this SoftwareConfiguration.
+        :type had_primary_source: List[object]
+        """
+
+        self._had_primary_source = had_primary_source
 
     @property
     def has_software_image(self):
@@ -1194,27 +1243,6 @@ class SoftwareConfiguration(Model):
         """
 
         self._processor_requirements = processor_requirements
-
-    @property
-    def adjustable_parameter(self):
-        """Gets the adjustable_parameter of this SoftwareConfiguration.
-
-
-        :return: The adjustable_parameter of this SoftwareConfiguration.
-        :rtype: List[Parameter]
-        """
-        return self._adjustable_parameter
-
-    @adjustable_parameter.setter
-    def adjustable_parameter(self, adjustable_parameter):
-        """Sets the adjustable_parameter of this SoftwareConfiguration.
-
-
-        :param adjustable_parameter: The adjustable_parameter of this SoftwareConfiguration.
-        :type adjustable_parameter: List[Parameter]
-        """
-
-        self._adjustable_parameter = adjustable_parameter
 
     @property
     def has_usage_notes(self):
