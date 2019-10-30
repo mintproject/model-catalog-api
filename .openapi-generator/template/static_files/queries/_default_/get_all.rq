@@ -5,11 +5,12 @@ CONSTRUCT {
 }
 WHERE {
 
-?item a  ?_type_iri . 
 {
-?item ?predicate ?prop
+ SELECT DISTINCT ?item where {
+   ?item a ?_type_iri .
+ }
 }
-OPTIONAL {
-?prop a ?type
+?item ?predicate ?propOPTIONAL {
+ ?prop a ?type
 }
 }
