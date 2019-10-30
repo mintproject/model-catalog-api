@@ -1,12 +1,11 @@
 openapi: 3.0.1
 info:
-  description: This is MINT Model Catalog You can find out more about Model Catalog
-    at [https://w3id.org/mint/modelCatalog/](https://w3id.org/mint/modelCatalog/)
+  description: This is the API of the  Software Description Ontology at [https://mintproject.github.io/Mint-ModelCatalog-Ontology/release/1.2.0/index-en.html](https://w3id.org/okn/o/sdm)
   title: Model Catalog
   version: v1.2.0
 externalDocs:
   description: Model Catalog
-  url: https://w3id.org/mint/modelCatalog/
+  url: https://w3id.org/okn/o/sdm
 servers:
 - url: https://api.models.mint.isi.edu/v1.2.0
 - url: https://dev.api.models.mint.isi.edu/v1.2.0
@@ -4434,6 +4433,148 @@ paths:
       summary: Update a SVOVariable
       tags:
       - SVOVariable
+  /samplecollections:
+    get:
+      description: Gets a list of all SampleCollection entities
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/SampleCollection'
+                type: array
+          description: Successful response - returns an array of SampleCollection
+            entities.
+      summary: List all SampleCollection entities
+      tags:
+      - SampleCollection
+    post:
+      description: Create a new instance of a SampleCollection
+      parameters:
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleCollection'
+        description: A new SampleCollectionto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleCollection'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create a SampleCollection
+      tags:
+      - SampleCollection
+  /samplecollections/{id}:
+    delete:
+      description: Delete an existing SampleCollection
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete a SampleCollection
+      tags:
+      - SampleCollection
+    get:
+      description: Gets the details of a single instance of a SampleCollection
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleCollection'
+          description: Gets the details of a single instance of  SampleCollection
+      summary: Get a SampleCollection
+      tags:
+      - SampleCollection
+    put:
+      description: Updates an existing SampleCollection
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleCollection'
+        description: An old SampleCollectionto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleCollection'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update a SampleCollection
+      tags:
+      - SampleCollection
   /sampleexecutions:
     get:
       description: Gets a list of all SampleExecution entities
@@ -6294,12 +6435,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -6330,12 +6471,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -6345,12 +6486,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -6448,12 +6589,12 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -6598,12 +6739,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -6613,12 +6754,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -6716,12 +6857,12 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -6920,12 +7061,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -7008,12 +7149,12 @@ components:
       type: object
     ModelConfigurationSetup:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7336,14 +7477,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        hasInput:
-          items:
-            type: object
-          nullable: true
-          type: array
         usefulForCalculatingIndex:
           items:
             $ref: '#/components/schemas/Index'
+          nullable: true
+          type: array
+        hasInput:
+          items:
+            type: object
           nullable: true
           type: array
       type: object
@@ -7354,12 +7495,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7369,12 +7510,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -7472,12 +7613,12 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -7575,12 +7716,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7590,12 +7731,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -7693,12 +7834,12 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -7822,12 +7963,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -7837,12 +7978,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -7940,12 +8081,12 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -8038,12 +8179,12 @@ components:
       type: object
     ModelConfiguration:
       properties:
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
@@ -8331,14 +8472,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        hasInput:
-          items:
-            type: object
-          nullable: true
-          type: array
         usefulForCalculatingIndex:
           items:
             $ref: '#/components/schemas/Index'
+          nullable: true
+          type: array
+        hasInput:
+          items:
+            type: object
           nullable: true
           type: array
       type: object
@@ -8382,12 +8523,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -8568,12 +8709,12 @@ components:
       type: object
     ConfigurationSetup:
       properties:
-        keywords:
+        hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        hasDocumentation:
+        keywords:
           items:
             type: string
           nullable: true
@@ -8721,12 +8862,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -8949,14 +9090,50 @@ components:
           nullable: true
           type: array
       type: object
-    SoftwareConfiguration:
+    SampleCollection:
       properties:
-        keywords:
+        dataCatalogIdentifier:
           items:
             type: string
           nullable: true
           type: array
+        hasPart:
+          items:
+            $ref: '#/components/schemas/SampleResource'
+          nullable: true
+          type: array
+        description:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          nullable: false
+          type: string
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
+          nullable: true
+          type: array
+        value:
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
+    SoftwareConfiguration:
+      properties:
         hasDocumentation:
+          items:
+            type: string
+          nullable: true
+          type: array
+        keywords:
           items:
             type: string
           nullable: true
@@ -9104,12 +9281,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -9313,22 +9490,22 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
-          items:
-            type: string
-          nullable: true
-          type: array
         hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
         softwareRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -9348,12 +9525,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -9519,22 +9696,22 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
-          items:
-            type: string
-          nullable: true
-          type: array
         hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
         softwareRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -9554,12 +9731,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -9725,12 +9902,12 @@ components:
             type: number
           nullable: true
           type: array
-        hasDataType:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        hasDataType:
           items:
             type: string
           nullable: true
@@ -9758,6 +9935,11 @@ components:
         hasMinimumAcceptedValue:
           items:
             type: number
+          nullable: true
+          type: array
+        hasAcceptedValues:
+          items:
+            type: string
           nullable: true
           type: array
         adjustsVariable:
@@ -9817,22 +9999,22 @@ components:
             $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
-        keywords:
-          items:
-            type: string
-          nullable: true
-          type: array
         hasDocumentation:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        keywords:
           items:
             type: string
           nullable: true
           type: array
         softwareRequirements:
+          items:
+            type: string
+          nullable: true
+          type: array
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -9852,12 +10034,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
