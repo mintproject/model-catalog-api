@@ -15,19 +15,19 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, has_contact_person=None, logo=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
-        :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this ModelConfiguration.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_grid: The has_grid of this ModelConfiguration.  # noqa: E501
         :type has_grid: List[Grid]
-        :param software_requirements: The software_requirements of this ModelConfiguration.  # noqa: E501
-        :type software_requirements: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
         :type has_implementation_script_location: List[str]
+        :param software_requirements: The software_requirements of this ModelConfiguration.  # noqa: E501
+        :type software_requirements: List[str]
         :param has_download_url: The has_download_url of this ModelConfiguration.  # noqa: E501
         :type has_download_url: List[str]
         :param type: The type of this ModelConfiguration.  # noqa: E501
@@ -40,10 +40,10 @@ class ModelConfiguration(Model):
         :type has_region: List[Region]
         :param has_faq: The has_faq of this ModelConfiguration.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this ModelConfiguration.  # noqa: E501
-        :type logo: List[object]
         :param has_contact_person: The has_contact_person of this ModelConfiguration.  # noqa: E501
         :type has_contact_person: List[object]
+        :param logo: The logo of this ModelConfiguration.  # noqa: E501
+        :type logo: List[object]
         :param id: The id of this ModelConfiguration.  # noqa: E501
         :type id: str
         :param identifier: The identifier of this ModelConfiguration.  # noqa: E501
@@ -90,10 +90,10 @@ class ModelConfiguration(Model):
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this ModelConfiguration.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param description: The description of this ModelConfiguration.  # noqa: E501
-        :type description: List[str]
         :param reference_publication: The reference_publication of this ModelConfiguration.  # noqa: E501
         :type reference_publication: List[str]
+        :param description: The description of this ModelConfiguration.  # noqa: E501
+        :type description: List[str]
         :param screenshot: The screenshot of this ModelConfiguration.  # noqa: E501
         :type screenshot: List[object]
         :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
@@ -158,19 +158,19 @@ class ModelConfiguration(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'has_grid': List[Grid],
-            'software_requirements': List[str],
             'has_implementation_script_location': List[str],
+            'software_requirements': List[str],
             'has_download_url': List[str],
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[object],
             'has_region': List[Region],
             'has_faq': List[str],
-            'logo': List[object],
             'has_contact_person': List[object],
+            'logo': List[object],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[object],
@@ -194,8 +194,8 @@ class ModelConfiguration(Model):
             'support_details': List[str],
             'has_version': List[object],
             'has_typical_data_source': List[str],
-            'description': List[str],
             'reference_publication': List[str],
+            'description': List[str],
             'screenshot': List[object],
             'has_model_category': List[str],
             'had_primary_source': List[object],
@@ -222,19 +222,19 @@ class ModelConfiguration(Model):
         }
 
         self.attribute_map = {
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
-            'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
+            'software_requirements': 'softwareRequirements',
             'has_download_url': 'hasDownloadURL',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'has_region': 'hasRegion',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'id': 'id',
             'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
@@ -258,8 +258,8 @@ class ModelConfiguration(Model):
             'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'description': 'description',
             'reference_publication': 'referencePublication',
+            'description': 'description',
             'screenshot': 'screenshot',
             'has_model_category': 'hasModelCategory',
             'had_primary_source': 'hadPrimarySource',
@@ -285,19 +285,19 @@ class ModelConfiguration(Model):
             'has_input': 'hasInput'
         }
 
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_grid = has_grid
-        self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
+        self._software_requirements = software_requirements
         self._has_download_url = has_download_url
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._compatible_visualization_software = compatible_visualization_software
         self._has_region = has_region
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._id = id
         self._identifier = identifier
         self._has_sample_execution = has_sample_execution
@@ -321,8 +321,8 @@ class ModelConfiguration(Model):
         self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._description = description
         self._reference_publication = reference_publication
+        self._description = description
         self._screenshot = screenshot
         self._has_model_category = has_model_category
         self._had_primary_source = had_primary_source
@@ -359,27 +359,6 @@ class ModelConfiguration(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def has_documentation(self):
-        """Gets the has_documentation of this ModelConfiguration.
-
-
-        :return: The has_documentation of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this ModelConfiguration.
-
-
-        :param has_documentation: The has_documentation of this ModelConfiguration.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
-
-    @property
     def keywords(self):
         """Gets the keywords of this ModelConfiguration.
 
@@ -399,6 +378,27 @@ class ModelConfiguration(Model):
         """
 
         self._keywords = keywords
+
+    @property
+    def has_documentation(self):
+        """Gets the has_documentation of this ModelConfiguration.
+
+
+        :return: The has_documentation of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this ModelConfiguration.
+
+
+        :param has_documentation: The has_documentation of this ModelConfiguration.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
 
     @property
     def has_grid(self):
@@ -422,27 +422,6 @@ class ModelConfiguration(Model):
         self._has_grid = has_grid
 
     @property
-    def software_requirements(self):
-        """Gets the software_requirements of this ModelConfiguration.
-
-
-        :return: The software_requirements of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._software_requirements
-
-    @software_requirements.setter
-    def software_requirements(self, software_requirements):
-        """Sets the software_requirements of this ModelConfiguration.
-
-
-        :param software_requirements: The software_requirements of this ModelConfiguration.
-        :type software_requirements: List[str]
-        """
-
-        self._software_requirements = software_requirements
-
-    @property
     def has_implementation_script_location(self):
         """Gets the has_implementation_script_location of this ModelConfiguration.
 
@@ -462,6 +441,27 @@ class ModelConfiguration(Model):
         """
 
         self._has_implementation_script_location = has_implementation_script_location
+
+    @property
+    def software_requirements(self):
+        """Gets the software_requirements of this ModelConfiguration.
+
+
+        :return: The software_requirements of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._software_requirements
+
+    @software_requirements.setter
+    def software_requirements(self, software_requirements):
+        """Sets the software_requirements of this ModelConfiguration.
+
+
+        :param software_requirements: The software_requirements of this ModelConfiguration.
+        :type software_requirements: List[str]
+        """
+
+        self._software_requirements = software_requirements
 
     @property
     def has_download_url(self):
@@ -590,27 +590,6 @@ class ModelConfiguration(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this ModelConfiguration.
-
-
-        :return: The logo of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this ModelConfiguration.
-
-
-        :param logo: The logo of this ModelConfiguration.
-        :type logo: List[object]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this ModelConfiguration.
 
@@ -630,6 +609,27 @@ class ModelConfiguration(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this ModelConfiguration.
+
+
+        :return: The logo of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this ModelConfiguration.
+
+
+        :param logo: The logo of this ModelConfiguration.
+        :type logo: List[object]
+        """
+
+        self._logo = logo
 
     @property
     def id(self):
@@ -1115,27 +1115,6 @@ class ModelConfiguration(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def description(self):
-        """Gets the description of this ModelConfiguration.
-
-
-        :return: The description of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ModelConfiguration.
-
-
-        :param description: The description of this ModelConfiguration.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def reference_publication(self):
         """Gets the reference_publication of this ModelConfiguration.
 
@@ -1155,6 +1134,27 @@ class ModelConfiguration(Model):
         """
 
         self._reference_publication = reference_publication
+
+    @property
+    def description(self):
+        """Gets the description of this ModelConfiguration.
+
+
+        :return: The description of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ModelConfiguration.
+
+
+        :param description: The description of this ModelConfiguration.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def screenshot(self):
