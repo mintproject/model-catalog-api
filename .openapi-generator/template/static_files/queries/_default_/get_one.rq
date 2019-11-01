@@ -1,7 +1,8 @@
 #+ summary: Return the query to a resource by the resource_iri
 CONSTRUCT {
-?_resource_iri ?predicate ?prop .
-?prop a ?type
+ ?_resource_iri ?predicate ?prop .
+ ?prop a ?type .
+ ?prop rdfs:label ?label 
 }
 WHERE {
 
@@ -10,6 +11,7 @@ WHERE {
 ?item ?predicate ?prop
 }
 OPTIONAL {
-?prop a ?type
+?prop rdfs:label ?label ;
+      a ?type
 }
 }

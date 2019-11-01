@@ -6,6 +6,9 @@
     "CausalDiagram": {
       "@id": "https://w3id.org/okn/o/sdm#CausalDiagram"
     },
+    "ConfigurationSetup": {
+      "@id": "https://w3id.org/okn/o/sd#ConfigurationSetup"
+    },
     "DataStructureDefinition": {
       "@id": "http://purl.org/linked-data/cube#DataStructureDefinition"
     },
@@ -23,6 +26,9 @@
     },
     "Equation": {
       "@id": "https://w3id.org/okn/o/sdm#Equation"
+    },
+    "FarmingPractices": {
+      "@id": "https://w3id.org/okn/o/sdm#FarmingPractices"
     },
     "FundingInformation": {
       "@id": "https://w3id.org/okn/o/sd#FundingInformation"
@@ -45,11 +51,20 @@
     "Image": {
       "@id": "https://w3id.org/okn/o/sd#Image"
     },
+    "Index": {
+      "@id": "https://w3id.org/okn/o/sdm#Index"
+    },
+    "Intervention": {
+      "@id": "https://w3id.org/okn/o/sdm#Intervention"
+    },
     "Model": {
       "@id": "https://w3id.org/okn/o/sdm#Model"
     },
     "ModelConfiguration": {
       "@id": "https://w3id.org/okn/o/sdm#ModelConfiguration"
+    },
+    "ModelConfigurationSetup": {
+      "@id": "https://w3id.org/okn/o/sdm#ModelConfigurationSetup"
     },
     "Organization": {
       "@id": "http://schema.org/Organization"
@@ -74,6 +89,9 @@
     },
     "SVOVariable": {
       "@id": "https://w3id.org/okn/o/sd#SVOVariable"
+    },
+    "SampleCollection": {
+      "@id": "https://w3id.org/okn/o/sd#SampleCollection"
     },
     "SampleExecution": {
       "@id": "https://w3id.org/okn/o/sd#SampleExecution"
@@ -111,8 +129,14 @@
     "StandardVariable": {
       "@id": "https://w3id.org/okn/o/sd#StandardVariable"
     },
+    "Subsidy": {
+      "@id": "https://w3id.org/okn/o/sdm#Subsidy"
+    },
     "Theory-GuidedModel": {
       "@id": "https://w3id.org/okn/o/sdm#Theory-GuidedModel"
+    },
+    "Thing": {
+      "@id": "http://www.w3.org/2002/07/owl#Thing"
     },
     "TimeInterval": {
       "@id": "https://w3id.org/okn/o/sdm#TimeInterval"
@@ -212,6 +236,11 @@
       "@id": "https://w3id.org/okn/o/sd#copyrightYear",
       "@type": "@id"
     },
+    "country": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#country",
+      "@type": "@id"
+    },
     "created": {
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/created"
@@ -250,8 +279,7 @@
     },
     "funding": {
       "@container": "@set",
-      "@id": "https://codemeta.github.io/terms/funding",
-      "@type": "@id"
+      "@id": "https://codemeta.github.io/terms/funding"
     },
     "fundingGrant": {
       "@container": "@set",
@@ -273,15 +301,15 @@
       "@id": "http://www.w3.org/ns/prov#hadPrimarySource",
       "@type": "@id"
     },
+    "hasAcceptedValues": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasAcceptedValues",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
     "hasAssumption": {
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#hasAssumption",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "hasCalibration": {
-      "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasCalibration",
-      "@type": "@id"
     },
     "hasCausalDiagram": {
       "@container": "@set",
@@ -450,7 +478,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasPart",
+      "@id": "https://w3id.org/okn/o/sd#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {
@@ -558,13 +586,22 @@
       "@id": "https://w3id.org/okn/o/sdm#influences",
       "@type": "@id"
     },
+    "intervalUnit": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#intervalUnit",
+      "@type": "@id"
+    },
+    "intervalValue": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#intervalValue"
+    },
     "isDefinedBy": {
       "@container": "@set",
       "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
     },
     "keywords": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#keywords"
+      "@id": "http://schema.org/keywords"
     },
     "label": {
       "@container": "@set",
@@ -641,12 +678,17 @@
     },
     "publisher": {
       "@container": "@set",
-      "@id": "http://schema.org/publisher",
+      "@id": "https://w3id.org/okn/o/sd#publisher",
       "@type": "@id"
     },
     "referencePublication": {
       "@container": "@set",
       "@id": "https://codemeta.github.io/terms/referencePublication"
+    },
+    "relevantForIntervention": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#relevantForIntervention",
+      "@type": "@id"
     },
     "screenshot": {
       "@container": "@set",
@@ -664,13 +706,13 @@
     },
     "supportDetails": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#supportDetails"
+      "@id": "https://w3id.org/okn/o/sd#supportDetails",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "title": {
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/title"
     },
-    "type": "@type",
     "topObjectProperty": {
       "@container": "@set",
       "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -679,6 +721,11 @@
     "used": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/prov#used",
+      "@type": "@id"
+    },
+    "usefulForCalculatingIndex": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#usefulForCalculatingIndex",
       "@type": "@id"
     },
     "usesUnit": {

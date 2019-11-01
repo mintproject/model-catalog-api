@@ -15,19 +15,19 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, description=None, has_data_type=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, adjusts_variable=None, position=None, id=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, description=None, has_data_type=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
         :type has_default_value: List[str]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.  # noqa: E501
-        :type has_maximum_accepted_value: List[str]
+        :type has_maximum_accepted_value: List[float]
         :param description: The description of this Parameter.  # noqa: E501
         :type description: List[str]
         :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
         :type has_data_type: List[str]
         :param has_fixed_value: The has_fixed_value of this Parameter.  # noqa: E501
-        :type has_fixed_value: List[str]
+        :type has_fixed_value: List[object]
         :param has_presentation: The has_presentation of this Parameter.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param label: The label of this Parameter.  # noqa: E501
@@ -35,7 +35,9 @@ class Parameter(Model):
         :param type: The type of this Parameter.  # noqa: E501
         :type type: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this Parameter.  # noqa: E501
-        :type has_minimum_accepted_value: List[str]
+        :type has_minimum_accepted_value: List[float]
+        :param has_accepted_values: The has_accepted_values of this Parameter.  # noqa: E501
+        :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this Parameter.  # noqa: E501
         :type adjusts_variable: List[object]
         :param position: The position of this Parameter.  # noqa: E501
@@ -51,14 +53,15 @@ class Parameter(Model):
 
         self.openapi_types = {
             'has_default_value': List[str],
-            'has_maximum_accepted_value': List[str],
+            'has_maximum_accepted_value': List[float],
             'description': List[str],
             'has_data_type': List[str],
-            'has_fixed_value': List[str],
+            'has_fixed_value': List[object],
             'has_presentation': List[VariablePresentation],
             'label': List[str],
             'type': List[str],
-            'has_minimum_accepted_value': List[str],
+            'has_minimum_accepted_value': List[float],
+            'has_accepted_values': List[str],
             'adjusts_variable': List[object],
             'position': List[float],
             'id': str,
@@ -75,6 +78,7 @@ class Parameter(Model):
             'label': 'label',
             'type': 'type',
             'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
+            'has_accepted_values': 'hasAcceptedValues',
             'adjusts_variable': 'adjustsVariable',
             'position': 'position',
             'id': 'id',
@@ -90,6 +94,7 @@ class Parameter(Model):
         self._label = label
         self._type = type
         self._has_minimum_accepted_value = has_minimum_accepted_value
+        self._has_accepted_values = has_accepted_values
         self._adjusts_variable = adjusts_variable
         self._position = position
         self._id = id
@@ -133,7 +138,7 @@ class Parameter(Model):
 
 
         :return: The has_maximum_accepted_value of this Parameter.
-        :rtype: List[str]
+        :rtype: List[float]
         """
         return self._has_maximum_accepted_value
 
@@ -143,7 +148,7 @@ class Parameter(Model):
 
 
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.
-        :type has_maximum_accepted_value: List[str]
+        :type has_maximum_accepted_value: List[float]
         """
 
         self._has_maximum_accepted_value = has_maximum_accepted_value
@@ -196,7 +201,7 @@ class Parameter(Model):
 
 
         :return: The has_fixed_value of this Parameter.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_fixed_value
 
@@ -206,7 +211,7 @@ class Parameter(Model):
 
 
         :param has_fixed_value: The has_fixed_value of this Parameter.
-        :type has_fixed_value: List[str]
+        :type has_fixed_value: List[object]
         """
 
         self._has_fixed_value = has_fixed_value
@@ -280,7 +285,7 @@ class Parameter(Model):
 
 
         :return: The has_minimum_accepted_value of this Parameter.
-        :rtype: List[str]
+        :rtype: List[float]
         """
         return self._has_minimum_accepted_value
 
@@ -290,10 +295,31 @@ class Parameter(Model):
 
 
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this Parameter.
-        :type has_minimum_accepted_value: List[str]
+        :type has_minimum_accepted_value: List[float]
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value
+
+    @property
+    def has_accepted_values(self):
+        """Gets the has_accepted_values of this Parameter.
+
+
+        :return: The has_accepted_values of this Parameter.
+        :rtype: List[str]
+        """
+        return self._has_accepted_values
+
+    @has_accepted_values.setter
+    def has_accepted_values(self, has_accepted_values):
+        """Sets the has_accepted_values of this Parameter.
+
+
+        :param has_accepted_values: The has_accepted_values of this Parameter.
+        :type has_accepted_values: List[str]
+        """
+
+        self._has_accepted_values = has_accepted_values
 
     @property
     def adjusts_variable(self):

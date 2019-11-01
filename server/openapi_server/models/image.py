@@ -15,13 +15,15 @@ class Image(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, had_primary_source=None, has_file_structure=None, description=None, has_presentation=None, position=None, id=None, label=None, type=None, value=None, has_fixed_resource=None):  # noqa: E501
         """Image - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this Image.  # noqa: E501
         :type has_dimensionality: List[float]
         :param has_format: The has_format of this Image.  # noqa: E501
         :type has_format: List[str]
+        :param had_primary_source: The had_primary_source of this Image.  # noqa: E501
+        :type had_primary_source: List[object]
         :param has_file_structure: The has_file_structure of this Image.  # noqa: E501
         :type has_file_structure: object
         :param description: The description of this Image.  # noqa: E501
@@ -36,6 +38,8 @@ class Image(Model):
         :type label: List[str]
         :param type: The type of this Image.  # noqa: E501
         :type type: List[str]
+        :param value: The value of this Image.  # noqa: E501
+        :type value: List[str]
         :param has_fixed_resource: The has_fixed_resource of this Image.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
         """
@@ -48,6 +52,7 @@ class Image(Model):
         self.openapi_types = {
             'has_dimensionality': List[float],
             'has_format': List[str],
+            'had_primary_source': List[object],
             'has_file_structure': object,
             'description': List[str],
             'has_presentation': List[VariablePresentation],
@@ -55,12 +60,14 @@ class Image(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
+            'value': List[str],
             'has_fixed_resource': List[SampleResource]
         }
 
         self.attribute_map = {
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
+            'had_primary_source': 'hadPrimarySource',
             'has_file_structure': 'hasFileStructure',
             'description': 'description',
             'has_presentation': 'hasPresentation',
@@ -68,11 +75,13 @@ class Image(Model):
             'id': 'id',
             'label': 'label',
             'type': 'type',
+            'value': 'value',
             'has_fixed_resource': 'hasFixedResource'
         }
 
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
+        self._had_primary_source = had_primary_source
         self._has_file_structure = has_file_structure
         self._description = description
         self._has_presentation = has_presentation
@@ -80,6 +89,7 @@ class Image(Model):
         self._id = id
         self._label = label
         self._type = type
+        self._value = value
         self._has_fixed_resource = has_fixed_resource
 
     @classmethod
@@ -134,6 +144,27 @@ class Image(Model):
         """
 
         self._has_format = has_format
+
+    @property
+    def had_primary_source(self):
+        """Gets the had_primary_source of this Image.
+
+
+        :return: The had_primary_source of this Image.
+        :rtype: List[object]
+        """
+        return self._had_primary_source
+
+    @had_primary_source.setter
+    def had_primary_source(self, had_primary_source):
+        """Sets the had_primary_source of this Image.
+
+
+        :param had_primary_source: The had_primary_source of this Image.
+        :type had_primary_source: List[object]
+        """
+
+        self._had_primary_source = had_primary_source
 
     @property
     def has_file_structure(self):
@@ -281,6 +312,27 @@ class Image(Model):
         """
 
         self._type = type
+
+    @property
+    def value(self):
+        """Gets the value of this Image.
+
+
+        :return: The value of this Image.
+        :rtype: List[str]
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this Image.
+
+
+        :param value: The value of this Image.
+        :type value: List[str]
+        """
+
+        self._value = value
 
     @property
     def has_fixed_resource(self):
