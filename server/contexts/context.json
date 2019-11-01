@@ -90,6 +90,9 @@
     "SVOVariable": {
       "@id": "https://w3id.org/okn/o/sd#SVOVariable"
     },
+    "SampleCollection": {
+      "@id": "https://w3id.org/okn/o/sd#SampleCollection"
+    },
     "SampleExecution": {
       "@id": "https://w3id.org/okn/o/sd#SampleExecution"
     },
@@ -233,6 +236,11 @@
       "@id": "https://w3id.org/okn/o/sd#copyrightYear",
       "@type": "@id"
     },
+    "country": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#country",
+      "@type": "@id"
+    },
     "created": {
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/created"
@@ -292,6 +300,11 @@
       "@container": "@set",
       "@id": "http://www.w3.org/ns/prov#hadPrimarySource",
       "@type": "@id"
+    },
+    "hasAcceptedValues": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasAcceptedValues",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "hasAssumption": {
       "@container": "@set",
@@ -465,7 +478,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasPart",
+      "@id": "https://w3id.org/okn/o/sd#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {
@@ -700,7 +713,6 @@
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/title"
     },
-    "type": "@type",
     "topObjectProperty": {
       "@container": "@set",
       "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -753,6 +765,9 @@
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#website",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-    }
+    },
+    "sd": "https://w3id.org/okn/o/sd#",
+    "sdm": "https://w3id.org/okn/o/sdm#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   }
 }

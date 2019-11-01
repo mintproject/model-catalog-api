@@ -236,6 +236,11 @@
       "@id": "https://w3id.org/okn/o/sd#copyrightYear",
       "@type": "@id"
     },
+    "country": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#country",
+      "@type": "@id"
+    },
     "created": {
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/created"
@@ -274,8 +279,7 @@
     },
     "funding": {
       "@container": "@set",
-      "@id": "https://codemeta.github.io/terms/funding",
-      "@type": "@id"
+      "@id": "https://codemeta.github.io/terms/funding"
     },
     "fundingGrant": {
       "@container": "@set",
@@ -474,7 +478,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasPart",
+      "@id": "https://w3id.org/okn/o/sd#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {

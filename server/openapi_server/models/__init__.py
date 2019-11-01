@@ -29,6 +29,7 @@ from openapi_server.models.point_based_grid import PointBasedGrid
 from openapi_server.models.process import Process
 from openapi_server.models.region import Region
 from openapi_server.models.svo_variable import SVOVariable
+from openapi_server.models.sample_collection import SampleCollection
 from openapi_server.models.sample_execution import SampleExecution
 from openapi_server.models.sample_resource import SampleResource
 from openapi_server.models.software import Software

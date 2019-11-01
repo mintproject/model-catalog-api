@@ -15,19 +15,19 @@ class SoftwareVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, has_configuration=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_example=None, publisher=None, has_version_id=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, software_requirements=None, support_details=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, has_configuration=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_example=None, publisher=None, has_version_id=None):  # noqa: E501
         """SoftwareVersion - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this SoftwareVersion.  # noqa: E501
         :type has_funding: List[FundingInformation]
-        :param keywords: The keywords of this SoftwareVersion.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this SoftwareVersion.  # noqa: E501
         :type has_documentation: List[str]
-        :param support_details: The support_details of this SoftwareVersion.  # noqa: E501
-        :type support_details: List[str]
+        :param keywords: The keywords of this SoftwareVersion.  # noqa: E501
+        :type keywords: List[str]
         :param software_requirements: The software_requirements of this SoftwareVersion.  # noqa: E501
         :type software_requirements: List[str]
+        :param support_details: The support_details of this SoftwareVersion.  # noqa: E501
+        :type support_details: List[str]
         :param has_version: The has_version of this SoftwareVersion.  # noqa: E501
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this SoftwareVersion.  # noqa: E501
@@ -64,10 +64,10 @@ class SoftwareVersion(Model):
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this SoftwareVersion.  # noqa: E501
         :type has_sample_visualization: List[Visualization]
-        :param identifier: The identifier of this SoftwareVersion.  # noqa: E501
-        :type identifier: List[str]
         :param memory_requirements: The memory_requirements of this SoftwareVersion.  # noqa: E501
         :type memory_requirements: List[str]
+        :param identifier: The identifier of this SoftwareVersion.  # noqa: E501
+        :type identifier: List[str]
         :param website: The website of this SoftwareVersion.  # noqa: E501
         :type website: List[str]
         :param citation: The citation of this SoftwareVersion.  # noqa: E501
@@ -119,10 +119,10 @@ class SoftwareVersion(Model):
 
         self.openapi_types = {
             'has_funding': List[FundingInformation],
-            'keywords': List[str],
             'has_documentation': List[str],
-            'support_details': List[str],
+            'keywords': List[str],
             'software_requirements': List[str],
+            'support_details': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
@@ -141,8 +141,8 @@ class SoftwareVersion(Model):
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[Visualization],
-            'identifier': List[str],
             'memory_requirements': List[str],
+            'identifier': List[str],
             'website': List[str],
             'citation': List[str],
             'has_configuration': List[SoftwareConfiguration],
@@ -163,10 +163,10 @@ class SoftwareVersion(Model):
 
         self.attribute_map = {
             'has_funding': 'hasFunding',
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
-            'support_details': 'supportDetails',
+            'keywords': 'keywords',
             'software_requirements': 'softwareRequirements',
+            'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
@@ -185,8 +185,8 @@ class SoftwareVersion(Model):
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'identifier': 'identifier',
             'memory_requirements': 'memoryRequirements',
+            'identifier': 'identifier',
             'website': 'website',
             'citation': 'citation',
             'has_configuration': 'hasConfiguration',
@@ -206,10 +206,10 @@ class SoftwareVersion(Model):
         }
 
         self._has_funding = has_funding
-        self._keywords = keywords
         self._has_documentation = has_documentation
-        self._support_details = support_details
+        self._keywords = keywords
         self._software_requirements = software_requirements
+        self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
@@ -228,8 +228,8 @@ class SoftwareVersion(Model):
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._identifier = identifier
         self._memory_requirements = memory_requirements
+        self._identifier = identifier
         self._website = website
         self._citation = citation
         self._has_configuration = has_configuration
@@ -280,27 +280,6 @@ class SoftwareVersion(Model):
         self._has_funding = has_funding
 
     @property
-    def keywords(self):
-        """Gets the keywords of this SoftwareVersion.
-
-
-        :return: The keywords of this SoftwareVersion.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this SoftwareVersion.
-
-
-        :param keywords: The keywords of this SoftwareVersion.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this SoftwareVersion.
 
@@ -322,25 +301,25 @@ class SoftwareVersion(Model):
         self._has_documentation = has_documentation
 
     @property
-    def support_details(self):
-        """Gets the support_details of this SoftwareVersion.
+    def keywords(self):
+        """Gets the keywords of this SoftwareVersion.
 
 
-        :return: The support_details of this SoftwareVersion.
+        :return: The keywords of this SoftwareVersion.
         :rtype: List[str]
         """
-        return self._support_details
+        return self._keywords
 
-    @support_details.setter
-    def support_details(self, support_details):
-        """Sets the support_details of this SoftwareVersion.
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this SoftwareVersion.
 
 
-        :param support_details: The support_details of this SoftwareVersion.
-        :type support_details: List[str]
+        :param keywords: The keywords of this SoftwareVersion.
+        :type keywords: List[str]
         """
 
-        self._support_details = support_details
+        self._keywords = keywords
 
     @property
     def software_requirements(self):
@@ -362,6 +341,27 @@ class SoftwareVersion(Model):
         """
 
         self._software_requirements = software_requirements
+
+    @property
+    def support_details(self):
+        """Gets the support_details of this SoftwareVersion.
+
+
+        :return: The support_details of this SoftwareVersion.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this SoftwareVersion.
+
+
+        :param support_details: The support_details of this SoftwareVersion.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
 
     @property
     def has_version(self):
@@ -742,27 +742,6 @@ class SoftwareVersion(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def identifier(self):
-        """Gets the identifier of this SoftwareVersion.
-
-
-        :return: The identifier of this SoftwareVersion.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this SoftwareVersion.
-
-
-        :param identifier: The identifier of this SoftwareVersion.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
-
-    @property
     def memory_requirements(self):
         """Gets the memory_requirements of this SoftwareVersion.
 
@@ -782,6 +761,27 @@ class SoftwareVersion(Model):
         """
 
         self._memory_requirements = memory_requirements
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this SoftwareVersion.
+
+
+        :return: The identifier of this SoftwareVersion.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this SoftwareVersion.
+
+
+        :param identifier: The identifier of this SoftwareVersion.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
 
     @property
     def website(self):

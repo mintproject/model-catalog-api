@@ -15,7 +15,7 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, adjusts_variable=None, position=None, id=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
@@ -36,6 +36,8 @@ class Parameter(Model):
         :type type: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this Parameter.  # noqa: E501
         :type has_minimum_accepted_value: List[float]
+        :param has_accepted_values: The has_accepted_values of this Parameter.  # noqa: E501
+        :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this Parameter.  # noqa: E501
         :type adjusts_variable: List[object]
         :param position: The position of this Parameter.  # noqa: E501
@@ -59,6 +61,7 @@ class Parameter(Model):
             'label': List[str],
             'type': List[str],
             'has_minimum_accepted_value': List[float],
+            'has_accepted_values': List[str],
             'adjusts_variable': List[object],
             'position': List[float],
             'id': str,
@@ -75,6 +78,7 @@ class Parameter(Model):
             'label': 'label',
             'type': 'type',
             'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
+            'has_accepted_values': 'hasAcceptedValues',
             'adjusts_variable': 'adjustsVariable',
             'position': 'position',
             'id': 'id',
@@ -90,6 +94,7 @@ class Parameter(Model):
         self._label = label
         self._type = type
         self._has_minimum_accepted_value = has_minimum_accepted_value
+        self._has_accepted_values = has_accepted_values
         self._adjusts_variable = adjusts_variable
         self._position = position
         self._id = id
@@ -294,6 +299,27 @@ class Parameter(Model):
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value
+
+    @property
+    def has_accepted_values(self):
+        """Gets the has_accepted_values of this Parameter.
+
+
+        :return: The has_accepted_values of this Parameter.
+        :rtype: List[str]
+        """
+        return self._has_accepted_values
+
+    @has_accepted_values.setter
+    def has_accepted_values(self, has_accepted_values):
+        """Sets the has_accepted_values of this Parameter.
+
+
+        :param has_accepted_values: The has_accepted_values of this Parameter.
+        :type has_accepted_values: List[str]
+        """
+
+        self._has_accepted_values = has_accepted_values
 
     @property
     def adjusts_variable(self):

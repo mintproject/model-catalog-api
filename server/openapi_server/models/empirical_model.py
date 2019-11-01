@@ -15,7 +15,7 @@ class EmpiricalModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, software_requirements=None, support_details=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
         """EmpiricalModel - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this EmpiricalModel.  # noqa: E501
@@ -26,10 +26,10 @@ class EmpiricalModel(Model):
         :type keywords: List[str]
         :param has_grid: The has_grid of this EmpiricalModel.  # noqa: E501
         :type has_grid: List[Grid]
-        :param support_details: The support_details of this EmpiricalModel.  # noqa: E501
-        :type support_details: List[str]
         :param software_requirements: The software_requirements of this EmpiricalModel.  # noqa: E501
         :type software_requirements: List[str]
+        :param support_details: The support_details of this EmpiricalModel.  # noqa: E501
+        :type support_details: List[str]
         :param has_version: The has_version of this EmpiricalModel.  # noqa: E501
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this EmpiricalModel.  # noqa: E501
@@ -58,10 +58,10 @@ class EmpiricalModel(Model):
         :type contributor: List[object]
         :param has_faq: The has_faq of this EmpiricalModel.  # noqa: E501
         :type has_faq: List[str]
-        :param has_contact_person: The has_contact_person of this EmpiricalModel.  # noqa: E501
-        :type has_contact_person: List[object]
         :param logo: The logo of this EmpiricalModel.  # noqa: E501
         :type logo: List[object]
+        :param has_contact_person: The has_contact_person of this EmpiricalModel.  # noqa: E501
+        :type has_contact_person: List[object]
         :param has_purpose: The has_purpose of this EmpiricalModel.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this EmpiricalModel.  # noqa: E501
@@ -90,10 +90,10 @@ class EmpiricalModel(Model):
         :type has_assumption: List[str]
         :param date_published: The date_published of this EmpiricalModel.  # noqa: E501
         :type date_published: List[str]
-        :param license: The license of this EmpiricalModel.  # noqa: E501
-        :type license: List[str]
         :param operating_systems: The operating_systems of this EmpiricalModel.  # noqa: E501
         :type operating_systems: List[str]
+        :param license: The license of this EmpiricalModel.  # noqa: E501
+        :type license: List[str]
         :param has_source_code: The has_source_code of this EmpiricalModel.  # noqa: E501
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this EmpiricalModel.  # noqa: E501
@@ -120,8 +120,8 @@ class EmpiricalModel(Model):
             'has_documentation': List[str],
             'keywords': List[str],
             'has_grid': List[Grid],
-            'support_details': List[str],
             'software_requirements': List[str],
+            'support_details': List[str],
             'has_version': List[object],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
@@ -136,8 +136,8 @@ class EmpiricalModel(Model):
             'compatible_visualization_software': List[object],
             'contributor': List[object],
             'has_faq': List[str],
-            'has_contact_person': List[object],
             'logo': List[object],
+            'has_contact_person': List[object],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
@@ -152,8 +152,8 @@ class EmpiricalModel(Model):
             'label': List[str],
             'has_assumption': List[str],
             'date_published': List[str],
-            'license': List[str],
             'operating_systems': List[str],
+            'license': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
             'has_example': List[str],
@@ -167,8 +167,8 @@ class EmpiricalModel(Model):
             'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
             'has_grid': 'hasGrid',
-            'support_details': 'supportDetails',
             'software_requirements': 'softwareRequirements',
+            'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
@@ -183,8 +183,8 @@ class EmpiricalModel(Model):
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
             'has_faq': 'hasFAQ',
-            'has_contact_person': 'hasContactPerson',
             'logo': 'logo',
+            'has_contact_person': 'hasContactPerson',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -199,8 +199,8 @@ class EmpiricalModel(Model):
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'date_published': 'datePublished',
-            'license': 'license',
             'operating_systems': 'operatingSystems',
+            'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
             'has_example': 'hasExample',
@@ -213,8 +213,8 @@ class EmpiricalModel(Model):
         self._has_documentation = has_documentation
         self._keywords = keywords
         self._has_grid = has_grid
-        self._support_details = support_details
         self._software_requirements = software_requirements
+        self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
@@ -229,8 +229,8 @@ class EmpiricalModel(Model):
         self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
         self._has_faq = has_faq
-        self._has_contact_person = has_contact_person
         self._logo = logo
+        self._has_contact_person = has_contact_person
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
@@ -245,8 +245,8 @@ class EmpiricalModel(Model):
         self._label = label
         self._has_assumption = has_assumption
         self._date_published = date_published
-        self._license = license
         self._operating_systems = operating_systems
+        self._license = license
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
         self._has_example = has_example
@@ -350,27 +350,6 @@ class EmpiricalModel(Model):
         self._has_grid = has_grid
 
     @property
-    def support_details(self):
-        """Gets the support_details of this EmpiricalModel.
-
-
-        :return: The support_details of this EmpiricalModel.
-        :rtype: List[str]
-        """
-        return self._support_details
-
-    @support_details.setter
-    def support_details(self, support_details):
-        """Sets the support_details of this EmpiricalModel.
-
-
-        :param support_details: The support_details of this EmpiricalModel.
-        :type support_details: List[str]
-        """
-
-        self._support_details = support_details
-
-    @property
     def software_requirements(self):
         """Gets the software_requirements of this EmpiricalModel.
 
@@ -390,6 +369,27 @@ class EmpiricalModel(Model):
         """
 
         self._software_requirements = software_requirements
+
+    @property
+    def support_details(self):
+        """Gets the support_details of this EmpiricalModel.
+
+
+        :return: The support_details of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this EmpiricalModel.
+
+
+        :param support_details: The support_details of this EmpiricalModel.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
 
     @property
     def has_version(self):
@@ -686,27 +686,6 @@ class EmpiricalModel(Model):
         self._has_faq = has_faq
 
     @property
-    def has_contact_person(self):
-        """Gets the has_contact_person of this EmpiricalModel.
-
-
-        :return: The has_contact_person of this EmpiricalModel.
-        :rtype: List[object]
-        """
-        return self._has_contact_person
-
-    @has_contact_person.setter
-    def has_contact_person(self, has_contact_person):
-        """Sets the has_contact_person of this EmpiricalModel.
-
-
-        :param has_contact_person: The has_contact_person of this EmpiricalModel.
-        :type has_contact_person: List[object]
-        """
-
-        self._has_contact_person = has_contact_person
-
-    @property
     def logo(self):
         """Gets the logo of this EmpiricalModel.
 
@@ -726,6 +705,27 @@ class EmpiricalModel(Model):
         """
 
         self._logo = logo
+
+    @property
+    def has_contact_person(self):
+        """Gets the has_contact_person of this EmpiricalModel.
+
+
+        :return: The has_contact_person of this EmpiricalModel.
+        :rtype: List[object]
+        """
+        return self._has_contact_person
+
+    @has_contact_person.setter
+    def has_contact_person(self, has_contact_person):
+        """Sets the has_contact_person of this EmpiricalModel.
+
+
+        :param has_contact_person: The has_contact_person of this EmpiricalModel.
+        :type has_contact_person: List[object]
+        """
+
+        self._has_contact_person = has_contact_person
 
     @property
     def has_purpose(self):
@@ -1022,27 +1022,6 @@ class EmpiricalModel(Model):
         self._date_published = date_published
 
     @property
-    def license(self):
-        """Gets the license of this EmpiricalModel.
-
-
-        :return: The license of this EmpiricalModel.
-        :rtype: List[str]
-        """
-        return self._license
-
-    @license.setter
-    def license(self, license):
-        """Sets the license of this EmpiricalModel.
-
-
-        :param license: The license of this EmpiricalModel.
-        :type license: List[str]
-        """
-
-        self._license = license
-
-    @property
     def operating_systems(self):
         """Gets the operating_systems of this EmpiricalModel.
 
@@ -1062,6 +1041,27 @@ class EmpiricalModel(Model):
         """
 
         self._operating_systems = operating_systems
+
+    @property
+    def license(self):
+        """Gets the license of this EmpiricalModel.
+
+
+        :return: The license of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this EmpiricalModel.
+
+
+        :param license: The license of this EmpiricalModel.
+        :type license: List[str]
+        """
+
+        self._license = license
 
     @property
     def has_source_code(self):

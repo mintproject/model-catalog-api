@@ -15,13 +15,13 @@ class SoftwareConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
+    def __init__(self, has_documentation=None, keywords=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
         """SoftwareConfiguration - a model defined in OpenAPI
 
-        :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this SoftwareConfiguration.  # noqa: E501
         :type has_documentation: List[str]
+        :param keywords: The keywords of this SoftwareConfiguration.  # noqa: E501
+        :type keywords: List[str]
         :param software_requirements: The software_requirements of this SoftwareConfiguration.  # noqa: E501
         :type software_requirements: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this SoftwareConfiguration.  # noqa: E501
@@ -150,8 +150,8 @@ class SoftwareConfiguration(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'keywords': List[str],
             'has_documentation': List[str],
+            'keywords': List[str],
             'software_requirements': List[str],
             'has_implementation_script_location': List[str],
             'has_download_url': List[str],
@@ -204,8 +204,8 @@ class SoftwareConfiguration(Model):
         }
 
         self.attribute_map = {
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
+            'keywords': 'keywords',
             'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
             'has_download_url': 'hasDownloadURL',
@@ -257,8 +257,8 @@ class SoftwareConfiguration(Model):
             'has_input': 'hasInput'
         }
 
-        self._keywords = keywords
         self._has_documentation = has_documentation
+        self._keywords = keywords
         self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
         self._has_download_url = has_download_url
@@ -321,27 +321,6 @@ class SoftwareConfiguration(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def keywords(self):
-        """Gets the keywords of this SoftwareConfiguration.
-
-
-        :return: The keywords of this SoftwareConfiguration.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this SoftwareConfiguration.
-
-
-        :param keywords: The keywords of this SoftwareConfiguration.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this SoftwareConfiguration.
 
@@ -361,6 +340,27 @@ class SoftwareConfiguration(Model):
         """
 
         self._has_documentation = has_documentation
+
+    @property
+    def keywords(self):
+        """Gets the keywords of this SoftwareConfiguration.
+
+
+        :return: The keywords of this SoftwareConfiguration.
+        :rtype: List[str]
+        """
+        return self._keywords
+
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this SoftwareConfiguration.
+
+
+        :param keywords: The keywords of this SoftwareConfiguration.
+        :type keywords: List[str]
+        """
+
+        self._keywords = keywords
 
     @property
     def software_requirements(self):
