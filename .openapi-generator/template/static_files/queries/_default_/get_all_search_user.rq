@@ -1,4 +1,6 @@
 #+ summary: Given a rdf type and label, returns all the resources related to the type and the label
+PREFIX sd: <https://w3id.org/okn/o/sd#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 CONSTRUCT {
 ?item ?predicate ?prop .
 ?prop a ?type
