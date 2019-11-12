@@ -1,5 +1,7 @@
 {
   "@context": {
+    "@id": "id",
+    "@type": "type",
     "Activity": {
       "@id": "http://www.w3.org/ns/prov#Activity"
     },
@@ -51,9 +53,6 @@
     "Image": {
       "@id": "https://w3id.org/okn/o/sd#Image"
     },
-    "Index": {
-      "@id": "https://w3id.org/okn/o/sdm#Index"
-    },
     "Intervention": {
       "@id": "https://w3id.org/okn/o/sdm#Intervention"
     },
@@ -66,6 +65,9 @@
     "ModelConfigurationSetup": {
       "@id": "https://w3id.org/okn/o/sdm#ModelConfigurationSetup"
     },
+    "NumericalIndex": {
+      "@id": "https://w3id.org/okn/o/sdm#NumericalIndex"
+    },
     "Organization": {
       "@id": "http://schema.org/Organization"
     },
@@ -73,7 +75,7 @@
       "@id": "https://w3id.org/okn/o/sd#Parameter"
     },
     "Person": {
-      "@id": "https://w3id.org/okn/o/sd#Person"
+      "@id": "http://schema.org/Person"
     },
     "Place": {
       "@id": "http://schema.org/Place"
@@ -169,7 +171,7 @@
     },
     "author": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#author",
+      "@id": "http://schema.org/author",
       "@type": "@id"
     },
     "box": {
@@ -318,7 +320,8 @@
     },
     "hasComponentLocation": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation"
+      "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "hasConfiguration": {
       "@container": "@set",
@@ -478,7 +481,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasPart",
+      "@id": "https://w3id.org/okn/o/sdm#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {
@@ -576,7 +579,6 @@
       "@id": "https://w3id.org/okn/o/sd#hasVersionId",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "id": "@id",
     "identifier": {
       "@container": "@set",
       "@id": "http://schema.org/identifier"
