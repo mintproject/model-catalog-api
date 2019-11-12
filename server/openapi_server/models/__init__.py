@@ -17,11 +17,11 @@ from openapi_server.models.grid import Grid
 from openapi_server.models.hybrid_model import HybridModel
 from openapi_server.models.icasa_variable import ICASAVariable
 from openapi_server.models.image import Image
-from openapi_server.models.index import Index
 from openapi_server.models.intervention import Intervention
 from openapi_server.models.model import Model
 from openapi_server.models.model_configuration import ModelConfiguration
 from openapi_server.models.model_configuration_setup import ModelConfigurationSetup
+from openapi_server.models.numerical_index import NumericalIndex
 from openapi_server.models.organization import Organization
 from openapi_server.models.parameter import Parameter
 from openapi_server.models.person import Person

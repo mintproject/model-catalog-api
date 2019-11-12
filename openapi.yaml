@@ -1323,147 +1323,6 @@ paths:
       summary: Update a HybridModel
       tags:
       - HybridModel
-  /indexs:
-    get:
-      description: Gets a list of all Index entities
-      parameters:
-      - description: Username to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: Filter by label
-        in: query
-        name: label
-        required: false
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Index'
-                type: array
-          description: Successful response - returns an array of Index entities.
-      summary: List all Index entities
-      tags:
-      - Index
-    post:
-      description: Create a new instance of a Index
-      parameters:
-      - description: Username
-        in: path
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Index'
-        description: A new Indexto be created
-      responses:
-        201:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Index'
-          description: Created
-      security:
-      - BearerAuth: []
-      summary: Create a Index
-      tags:
-      - Index
-  /indexs/{id}:
-    delete:
-      description: Delete an existing Index
-      parameters:
-      - description: The ID of the resource
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: path
-        name: user
-        required: false
-        schema:
-          type: string
-      responses:
-        202:
-          description: Deleted
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Delete a Index
-      tags:
-      - Index
-    get:
-      description: Gets the details of a single instance of a Index
-      parameters:
-      - description: Username to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: The ID of the resource
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Index'
-          description: Gets the details of a single instance of  Index
-      summary: Get a Index
-      tags:
-      - Index
-    put:
-      description: Updates an existing Index
-      parameters:
-      - description: The ID of the resource
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: path
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Index'
-        description: An old Indexto be updated
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Index'
-          description: Updated
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Update a Index
-      tags:
-      - Index
   /interventions:
     get:
       description: Gets a list of all Intervention entities
@@ -2030,6 +1889,147 @@ paths:
       summary: Update a ModelConfigurationSetup
       tags:
       - ModelConfigurationSetup
+  /numericalindexs:
+    get:
+      description: Gets a list of all NumericalIndex entities
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/NumericalIndex'
+                type: array
+          description: Successful response - returns an array of NumericalIndex entities.
+      summary: List all NumericalIndex entities
+      tags:
+      - NumericalIndex
+    post:
+      description: Create a new instance of a NumericalIndex
+      parameters:
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumericalIndex'
+        description: A new NumericalIndexto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumericalIndex'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create a NumericalIndex
+      tags:
+      - NumericalIndex
+  /numericalindexs/{id}:
+    delete:
+      description: Delete an existing NumericalIndex
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete a NumericalIndex
+      tags:
+      - NumericalIndex
+    get:
+      description: Gets the details of a single instance of a NumericalIndex
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumericalIndex'
+          description: Gets the details of a single instance of  NumericalIndex
+      summary: Get a NumericalIndex
+      tags:
+      - NumericalIndex
+    put:
+      description: Updates an existing NumericalIndex
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NumericalIndex'
+        description: An old NumericalIndexto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NumericalIndex'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update a NumericalIndex
+      tags:
+      - NumericalIndex
   /pointbasedgrids:
     get:
       description: Gets a list of all PointBasedGrid entities
@@ -6435,12 +6435,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -6486,12 +6486,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -6511,12 +6511,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6551,12 +6551,12 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
+        compatibleVisualizationSoftware:
           items:
             type: object
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
+        contributor:
           items:
             type: object
           nullable: true
@@ -6566,12 +6566,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -6669,19 +6669,19 @@ components:
             type: string
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
           nullable: true
           type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -6754,12 +6754,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -6779,12 +6779,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -6819,12 +6819,12 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
+        compatibleVisualizationSoftware:
           items:
             type: object
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
+        contributor:
           items:
             type: object
           nullable: true
@@ -6834,12 +6834,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -6937,40 +6937,19 @@ components:
             type: string
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
           nullable: true
           type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
-          nullable: true
-          type: array
-      type: object
-    Index:
-      properties:
-        description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        id:
-          nullable: false
-          type: string
-        label:
-          items:
-            type: string
-          nullable: true
-          type: array
-        type:
-          items:
-            type: string
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -7061,12 +7040,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -7164,12 +7143,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        hasImplementationScriptLocation:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        hasImplementationScriptLocation:
           items:
             type: string
           nullable: true
@@ -7214,12 +7193,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -7347,12 +7326,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7479,7 +7458,7 @@ components:
           type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
         hasInput:
@@ -7510,12 +7489,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -7535,12 +7514,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7575,12 +7554,12 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
+        compatibleVisualizationSoftware:
           items:
             type: object
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
+        contributor:
           items:
             type: object
           nullable: true
@@ -7590,12 +7569,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -7693,19 +7672,40 @@ components:
             type: string
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
           nullable: true
           type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+      type: object
+    NumericalIndex:
+      properties:
+        description:
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          nullable: false
+          type: string
+        label:
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          items:
+            type: string
           nullable: true
           type: array
       type: object
@@ -7731,12 +7731,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -7756,12 +7756,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -7796,12 +7796,12 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
+        compatibleVisualizationSoftware:
           items:
             type: object
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
+        contributor:
           items:
             type: object
           nullable: true
@@ -7811,12 +7811,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -7914,19 +7914,19 @@ components:
             type: string
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
           nullable: true
           type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -7983,12 +7983,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
@@ -8008,12 +8008,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -8048,12 +8048,12 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
+        compatibleVisualizationSoftware:
           items:
             type: object
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
+        contributor:
           items:
             type: object
           nullable: true
@@ -8063,12 +8063,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -8166,19 +8166,19 @@ components:
             type: string
           nullable: true
           type: array
-        hasEquation:
-          items:
-            $ref: '#/components/schemas/Equation'
-          nullable: true
-          type: array
         publisher:
           items:
             type: object
           nullable: true
           type: array
+        hasEquation:
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -8199,12 +8199,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        hasImplementationScriptLocation:
+        softwareRequirements:
           items:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        hasImplementationScriptLocation:
           items:
             type: string
           nullable: true
@@ -8239,12 +8239,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
@@ -8362,12 +8362,12 @@ components:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
@@ -8479,7 +8479,7 @@ components:
           type: array
         usefulForCalculatingIndex:
           items:
-            $ref: '#/components/schemas/Index'
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
         hasInput:
@@ -8528,12 +8528,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
@@ -8759,14 +8759,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         id:
@@ -8867,12 +8867,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -9178,14 +9178,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         id:
@@ -9286,12 +9286,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -9530,12 +9530,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -9565,14 +9565,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -9580,14 +9580,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -9663,12 +9663,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -9736,12 +9736,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -9771,14 +9771,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -9786,14 +9786,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -9869,12 +9869,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -10039,12 +10039,12 @@ components:
             type: string
           nullable: true
           type: array
-        description:
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
-        referencePublication:
+        description:
           items:
             type: string
           nullable: true
@@ -10074,14 +10074,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -10089,14 +10089,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -10167,12 +10167,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
