@@ -1,0 +1,25 @@
+{
+  "description": [
+    "Use forcing data from a hydrology model (when available)"
+  ],
+  "hasDataType": [
+    "boolean"
+  ],
+  "hasDefaultValue": [
+    "FALSE"
+  ],
+  "hasFixedValue": [
+    "FALSE"
+  ],
+  "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-ethiopia-multiple-points_use_forcing",
+  "label": [
+    "use_forcing"
+  ],
+  "position": [
+    8
+  ],
+  "type": [
+    "https://w3id.org/wings/export/MINT#CyclesUseForcing",
+    "Parameter"
+  ]
+}
