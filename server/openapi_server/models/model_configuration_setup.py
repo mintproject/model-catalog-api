@@ -15,13 +15,13 @@ class ModelConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_documentation=None, keywords=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfigurationSetup - a model defined in OpenAPI
 
-        :param keywords: The keywords of this ModelConfigurationSetup.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this ModelConfigurationSetup.  # noqa: E501
         :type has_documentation: List[str]
+        :param keywords: The keywords of this ModelConfigurationSetup.  # noqa: E501
+        :type keywords: List[str]
         :param has_grid: The has_grid of this ModelConfigurationSetup.  # noqa: E501
         :type has_grid: List[Grid]
         :param software_requirements: The software_requirements of this ModelConfigurationSetup.  # noqa: E501
@@ -98,10 +98,10 @@ class ModelConfigurationSetup(Model):
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this ModelConfigurationSetup.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param description: The description of this ModelConfigurationSetup.  # noqa: E501
-        :type description: List[str]
         :param reference_publication: The reference_publication of this ModelConfigurationSetup.  # noqa: E501
         :type reference_publication: List[str]
+        :param description: The description of this ModelConfigurationSetup.  # noqa: E501
+        :type description: List[str]
         :param screenshot: The screenshot of this ModelConfigurationSetup.  # noqa: E501
         :type screenshot: List[object]
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.  # noqa: E501
@@ -172,8 +172,8 @@ class ModelConfigurationSetup(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'keywords': List[str],
             'has_documentation': List[str],
+            'keywords': List[str],
             'has_grid': List[Grid],
             'software_requirements': List[str],
             'has_implementation_script_location': List[str],
@@ -212,8 +212,8 @@ class ModelConfigurationSetup(Model):
             'support_details': List[str],
             'has_version': List[object],
             'has_typical_data_source': List[str],
-            'description': List[str],
             'reference_publication': List[str],
+            'description': List[str],
             'screenshot': List[object],
             'has_model_category': List[str],
             'had_primary_source': List[object],
@@ -243,8 +243,8 @@ class ModelConfigurationSetup(Model):
         }
 
         self.attribute_map = {
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
+            'keywords': 'keywords',
             'has_grid': 'hasGrid',
             'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
@@ -283,8 +283,8 @@ class ModelConfigurationSetup(Model):
             'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'description': 'description',
             'reference_publication': 'referencePublication',
+            'description': 'description',
             'screenshot': 'screenshot',
             'has_model_category': 'hasModelCategory',
             'had_primary_source': 'hadPrimarySource',
@@ -313,8 +313,8 @@ class ModelConfigurationSetup(Model):
             'has_input': 'hasInput'
         }
 
-        self._keywords = keywords
         self._has_documentation = has_documentation
+        self._keywords = keywords
         self._has_grid = has_grid
         self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
@@ -353,8 +353,8 @@ class ModelConfigurationSetup(Model):
         self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._description = description
         self._reference_publication = reference_publication
+        self._description = description
         self._screenshot = screenshot
         self._has_model_category = has_model_category
         self._had_primary_source = had_primary_source
@@ -394,27 +394,6 @@ class ModelConfigurationSetup(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def keywords(self):
-        """Gets the keywords of this ModelConfigurationSetup.
-
-
-        :return: The keywords of this ModelConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this ModelConfigurationSetup.
-
-
-        :param keywords: The keywords of this ModelConfigurationSetup.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this ModelConfigurationSetup.
 
@@ -434,6 +413,27 @@ class ModelConfigurationSetup(Model):
         """
 
         self._has_documentation = has_documentation
+
+    @property
+    def keywords(self):
+        """Gets the keywords of this ModelConfigurationSetup.
+
+
+        :return: The keywords of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._keywords
+
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this ModelConfigurationSetup.
+
+
+        :param keywords: The keywords of this ModelConfigurationSetup.
+        :type keywords: List[str]
+        """
+
+        self._keywords = keywords
 
     @property
     def has_grid(self):
@@ -1234,27 +1234,6 @@ class ModelConfigurationSetup(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def description(self):
-        """Gets the description of this ModelConfigurationSetup.
-
-
-        :return: The description of this ModelConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ModelConfigurationSetup.
-
-
-        :param description: The description of this ModelConfigurationSetup.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def reference_publication(self):
         """Gets the reference_publication of this ModelConfigurationSetup.
 
@@ -1274,6 +1253,27 @@ class ModelConfigurationSetup(Model):
         """
 
         self._reference_publication = reference_publication
+
+    @property
+    def description(self):
+        """Gets the description of this ModelConfigurationSetup.
+
+
+        :return: The description of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ModelConfigurationSetup.
+
+
+        :param description: The description of this ModelConfigurationSetup.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def screenshot(self):

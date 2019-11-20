@@ -15,13 +15,13 @@ class ConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, reference_publication=None, description=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
+    def __init__(self, has_documentation=None, keywords=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_input=None):  # noqa: E501
         """ConfigurationSetup - a model defined in OpenAPI
 
-        :param keywords: The keywords of this ConfigurationSetup.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this ConfigurationSetup.  # noqa: E501
         :type has_documentation: List[str]
+        :param keywords: The keywords of this ConfigurationSetup.  # noqa: E501
+        :type keywords: List[str]
         :param software_requirements: The software_requirements of this ConfigurationSetup.  # noqa: E501
         :type software_requirements: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this ConfigurationSetup.  # noqa: E501
@@ -80,10 +80,10 @@ class ConfigurationSetup(Model):
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this ConfigurationSetup.  # noqa: E501
         :type has_typical_data_source: List[str]
-        :param reference_publication: The reference_publication of this ConfigurationSetup.  # noqa: E501
-        :type reference_publication: List[str]
         :param description: The description of this ConfigurationSetup.  # noqa: E501
         :type description: List[str]
+        :param reference_publication: The reference_publication of this ConfigurationSetup.  # noqa: E501
+        :type reference_publication: List[str]
         :param screenshot: The screenshot of this ConfigurationSetup.  # noqa: E501
         :type screenshot: List[Image]
         :param had_primary_source: The had_primary_source of this ConfigurationSetup.  # noqa: E501
@@ -150,8 +150,8 @@ class ConfigurationSetup(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'keywords': List[str],
             'has_documentation': List[str],
+            'keywords': List[str],
             'software_requirements': List[str],
             'has_implementation_script_location': List[str],
             'has_download_url': List[str],
@@ -181,8 +181,8 @@ class ConfigurationSetup(Model):
             'support_details': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
-            'reference_publication': List[str],
             'description': List[str],
+            'reference_publication': List[str],
             'screenshot': List[Image],
             'had_primary_source': List[object],
             'has_software_image': List[SoftwareImage],
@@ -205,8 +205,8 @@ class ConfigurationSetup(Model):
         }
 
         self.attribute_map = {
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
+            'keywords': 'keywords',
             'software_requirements': 'softwareRequirements',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
             'has_download_url': 'hasDownloadURL',
@@ -236,8 +236,8 @@ class ConfigurationSetup(Model):
             'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
-            'reference_publication': 'referencePublication',
             'description': 'description',
+            'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'had_primary_source': 'hadPrimarySource',
             'has_software_image': 'hasSoftwareImage',
@@ -259,8 +259,8 @@ class ConfigurationSetup(Model):
             'has_input': 'hasInput'
         }
 
-        self._keywords = keywords
         self._has_documentation = has_documentation
+        self._keywords = keywords
         self._software_requirements = software_requirements
         self._has_implementation_script_location = has_implementation_script_location
         self._has_download_url = has_download_url
@@ -290,8 +290,8 @@ class ConfigurationSetup(Model):
         self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
-        self._reference_publication = reference_publication
         self._description = description
+        self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._had_primary_source = had_primary_source
         self._has_software_image = has_software_image
@@ -324,27 +324,6 @@ class ConfigurationSetup(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def keywords(self):
-        """Gets the keywords of this ConfigurationSetup.
-
-
-        :return: The keywords of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this ConfigurationSetup.
-
-
-        :param keywords: The keywords of this ConfigurationSetup.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this ConfigurationSetup.
 
@@ -364,6 +343,27 @@ class ConfigurationSetup(Model):
         """
 
         self._has_documentation = has_documentation
+
+    @property
+    def keywords(self):
+        """Gets the keywords of this ConfigurationSetup.
+
+
+        :return: The keywords of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._keywords
+
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this ConfigurationSetup.
+
+
+        :param keywords: The keywords of this ConfigurationSetup.
+        :type keywords: List[str]
+        """
+
+        self._keywords = keywords
 
     @property
     def software_requirements(self):
@@ -975,27 +975,6 @@ class ConfigurationSetup(Model):
         self._has_typical_data_source = has_typical_data_source
 
     @property
-    def reference_publication(self):
-        """Gets the reference_publication of this ConfigurationSetup.
-
-
-        :return: The reference_publication of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._reference_publication
-
-    @reference_publication.setter
-    def reference_publication(self, reference_publication):
-        """Sets the reference_publication of this ConfigurationSetup.
-
-
-        :param reference_publication: The reference_publication of this ConfigurationSetup.
-        :type reference_publication: List[str]
-        """
-
-        self._reference_publication = reference_publication
-
-    @property
     def description(self):
         """Gets the description of this ConfigurationSetup.
 
@@ -1015,6 +994,27 @@ class ConfigurationSetup(Model):
         """
 
         self._description = description
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this ConfigurationSetup.
+
+
+        :return: The reference_publication of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this ConfigurationSetup.
+
+
+        :param reference_publication: The reference_publication of this ConfigurationSetup.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
 
     @property
     def screenshot(self):

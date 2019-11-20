@@ -15,29 +15,29 @@ class SoftwareVersion(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, has_configuration=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_example=None, publisher=None, has_version_id=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, software_requirements=None, support_details=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, has_configuration=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_example=None, publisher=None, has_version_id=None):  # noqa: E501
         """SoftwareVersion - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this SoftwareVersion.  # noqa: E501
         :type has_funding: List[FundingInformation]
-        :param keywords: The keywords of this SoftwareVersion.  # noqa: E501
-        :type keywords: List[str]
         :param has_documentation: The has_documentation of this SoftwareVersion.  # noqa: E501
         :type has_documentation: List[str]
-        :param support_details: The support_details of this SoftwareVersion.  # noqa: E501
-        :type support_details: List[str]
+        :param keywords: The keywords of this SoftwareVersion.  # noqa: E501
+        :type keywords: List[str]
         :param software_requirements: The software_requirements of this SoftwareVersion.  # noqa: E501
         :type software_requirements: List[str]
+        :param support_details: The support_details of this SoftwareVersion.  # noqa: E501
+        :type support_details: List[str]
         :param has_version: The has_version of this SoftwareVersion.  # noqa: E501
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this SoftwareVersion.  # noqa: E501
         :type has_typical_data_source: List[str]
         :param has_download_url: The has_download_url of this SoftwareVersion.  # noqa: E501
         :type has_download_url: List[str]
-        :param reference_publication: The reference_publication of this SoftwareVersion.  # noqa: E501
-        :type reference_publication: List[str]
         :param description: The description of this SoftwareVersion.  # noqa: E501
         :type description: List[str]
+        :param reference_publication: The reference_publication of this SoftwareVersion.  # noqa: E501
+        :type reference_publication: List[str]
         :param screenshot: The screenshot of this SoftwareVersion.  # noqa: E501
         :type screenshot: List[Image]
         :param type: The type of this SoftwareVersion.  # noqa: E501
@@ -48,10 +48,10 @@ class SoftwareVersion(Model):
         :type had_primary_source: List[object]
         :param date_created: The date_created of this SoftwareVersion.  # noqa: E501
         :type date_created: List[str]
-        :param contributor: The contributor of this SoftwareVersion.  # noqa: E501
-        :type contributor: List[Person]
         :param compatible_visualization_software: The compatible_visualization_software of this SoftwareVersion.  # noqa: E501
         :type compatible_visualization_software: List[Software]
+        :param contributor: The contributor of this SoftwareVersion.  # noqa: E501
+        :type contributor: List[Person]
         :param has_faq: The has_faq of this SoftwareVersion.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this SoftwareVersion.  # noqa: E501
@@ -119,22 +119,22 @@ class SoftwareVersion(Model):
 
         self.openapi_types = {
             'has_funding': List[FundingInformation],
-            'keywords': List[str],
             'has_documentation': List[str],
-            'support_details': List[str],
+            'keywords': List[str],
             'software_requirements': List[str],
+            'support_details': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
-            'reference_publication': List[str],
             'description': List[str],
+            'reference_publication': List[str],
             'screenshot': List[Image],
             'type': List[str],
             'has_installation_instructions': List[str],
             'had_primary_source': List[object],
             'date_created': List[str],
-            'contributor': List[Person],
             'compatible_visualization_software': List[Software],
+            'contributor': List[Person],
             'has_faq': List[str],
             'logo': List[Image],
             'has_contact_person': List[object],
@@ -163,22 +163,22 @@ class SoftwareVersion(Model):
 
         self.attribute_map = {
             'has_funding': 'hasFunding',
-            'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
-            'support_details': 'supportDetails',
+            'keywords': 'keywords',
             'software_requirements': 'softwareRequirements',
+            'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
-            'reference_publication': 'referencePublication',
             'description': 'description',
+            'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'had_primary_source': 'hadPrimarySource',
             'date_created': 'dateCreated',
-            'contributor': 'contributor',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'contributor': 'contributor',
             'has_faq': 'hasFAQ',
             'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
@@ -206,22 +206,22 @@ class SoftwareVersion(Model):
         }
 
         self._has_funding = has_funding
-        self._keywords = keywords
         self._has_documentation = has_documentation
-        self._support_details = support_details
+        self._keywords = keywords
         self._software_requirements = software_requirements
+        self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
-        self._reference_publication = reference_publication
         self._description = description
+        self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._had_primary_source = had_primary_source
         self._date_created = date_created
-        self._contributor = contributor
         self._compatible_visualization_software = compatible_visualization_software
+        self._contributor = contributor
         self._has_faq = has_faq
         self._logo = logo
         self._has_contact_person = has_contact_person
@@ -280,27 +280,6 @@ class SoftwareVersion(Model):
         self._has_funding = has_funding
 
     @property
-    def keywords(self):
-        """Gets the keywords of this SoftwareVersion.
-
-
-        :return: The keywords of this SoftwareVersion.
-        :rtype: List[str]
-        """
-        return self._keywords
-
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this SoftwareVersion.
-
-
-        :param keywords: The keywords of this SoftwareVersion.
-        :type keywords: List[str]
-        """
-
-        self._keywords = keywords
-
-    @property
     def has_documentation(self):
         """Gets the has_documentation of this SoftwareVersion.
 
@@ -322,25 +301,25 @@ class SoftwareVersion(Model):
         self._has_documentation = has_documentation
 
     @property
-    def support_details(self):
-        """Gets the support_details of this SoftwareVersion.
+    def keywords(self):
+        """Gets the keywords of this SoftwareVersion.
 
 
-        :return: The support_details of this SoftwareVersion.
+        :return: The keywords of this SoftwareVersion.
         :rtype: List[str]
         """
-        return self._support_details
+        return self._keywords
 
-    @support_details.setter
-    def support_details(self, support_details):
-        """Sets the support_details of this SoftwareVersion.
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this SoftwareVersion.
 
 
-        :param support_details: The support_details of this SoftwareVersion.
-        :type support_details: List[str]
+        :param keywords: The keywords of this SoftwareVersion.
+        :type keywords: List[str]
         """
 
-        self._support_details = support_details
+        self._keywords = keywords
 
     @property
     def software_requirements(self):
@@ -362,6 +341,27 @@ class SoftwareVersion(Model):
         """
 
         self._software_requirements = software_requirements
+
+    @property
+    def support_details(self):
+        """Gets the support_details of this SoftwareVersion.
+
+
+        :return: The support_details of this SoftwareVersion.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this SoftwareVersion.
+
+
+        :param support_details: The support_details of this SoftwareVersion.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
 
     @property
     def has_version(self):
@@ -427,27 +427,6 @@ class SoftwareVersion(Model):
         self._has_download_url = has_download_url
 
     @property
-    def reference_publication(self):
-        """Gets the reference_publication of this SoftwareVersion.
-
-
-        :return: The reference_publication of this SoftwareVersion.
-        :rtype: List[str]
-        """
-        return self._reference_publication
-
-    @reference_publication.setter
-    def reference_publication(self, reference_publication):
-        """Sets the reference_publication of this SoftwareVersion.
-
-
-        :param reference_publication: The reference_publication of this SoftwareVersion.
-        :type reference_publication: List[str]
-        """
-
-        self._reference_publication = reference_publication
-
-    @property
     def description(self):
         """Gets the description of this SoftwareVersion.
 
@@ -467,6 +446,27 @@ class SoftwareVersion(Model):
         """
 
         self._description = description
+
+    @property
+    def reference_publication(self):
+        """Gets the reference_publication of this SoftwareVersion.
+
+
+        :return: The reference_publication of this SoftwareVersion.
+        :rtype: List[str]
+        """
+        return self._reference_publication
+
+    @reference_publication.setter
+    def reference_publication(self, reference_publication):
+        """Sets the reference_publication of this SoftwareVersion.
+
+
+        :param reference_publication: The reference_publication of this SoftwareVersion.
+        :type reference_publication: List[str]
+        """
+
+        self._reference_publication = reference_publication
 
     @property
     def screenshot(self):
@@ -574,27 +574,6 @@ class SoftwareVersion(Model):
         self._date_created = date_created
 
     @property
-    def contributor(self):
-        """Gets the contributor of this SoftwareVersion.
-
-
-        :return: The contributor of this SoftwareVersion.
-        :rtype: List[Person]
-        """
-        return self._contributor
-
-    @contributor.setter
-    def contributor(self, contributor):
-        """Sets the contributor of this SoftwareVersion.
-
-
-        :param contributor: The contributor of this SoftwareVersion.
-        :type contributor: List[Person]
-        """
-
-        self._contributor = contributor
-
-    @property
     def compatible_visualization_software(self):
         """Gets the compatible_visualization_software of this SoftwareVersion.
 
@@ -614,6 +593,27 @@ class SoftwareVersion(Model):
         """
 
         self._compatible_visualization_software = compatible_visualization_software
+
+    @property
+    def contributor(self):
+        """Gets the contributor of this SoftwareVersion.
+
+
+        :return: The contributor of this SoftwareVersion.
+        :rtype: List[Person]
+        """
+        return self._contributor
+
+    @contributor.setter
+    def contributor(self, contributor):
+        """Sets the contributor of this SoftwareVersion.
+
+
+        :param contributor: The contributor of this SoftwareVersion.
+        :type contributor: List[Person]
+        """
+
+        self._contributor = contributor
 
     @property
     def has_faq(self):

@@ -1,3 +1,4 @@
+set -e
 #!/usr/bin/env bash
 dir=${PWD}
 SERVER_DIR=server
