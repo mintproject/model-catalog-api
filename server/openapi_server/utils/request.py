@@ -158,7 +158,6 @@ def delete_resource(**kwargs):
         "resource": resource_uri,
         "g": generate_graph(username),
         "delete_incoming_relations": True
-
     }
     return query_manager.delete_query(UPDATE_ENDPOINT, request_args=request_args)
 
