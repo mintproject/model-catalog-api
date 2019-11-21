@@ -19,13 +19,13 @@ class SourceCode(Model):
         """SourceCode - a model defined in OpenAPI
 
         :param license: The license of this SourceCode.  # noqa: E501
-        :type license: List[str]
+        :type license: List[object]
         :param programming_language: The programming_language of this SourceCode.  # noqa: E501
         :type programming_language: List[str]
         :param description: The description of this SourceCode.  # noqa: E501
         :type description: List[str]
         :param code_repository: The code_repository of this SourceCode.  # noqa: E501
-        :type code_repository: List[str]
+        :type code_repository: List[object]
         :param id: The id of this SourceCode.  # noqa: E501
         :type id: str
         :param label: The label of this SourceCode.  # noqa: E501
@@ -36,10 +36,10 @@ class SourceCode(Model):
 
 
         self.openapi_types = {
-            'license': List[str],
+            'license': List[object],
             'programming_language': List[str],
             'description': List[str],
-            'code_repository': List[str],
+            'code_repository': List[object],
             'id': str,
             'label': List[str],
             'type': List[str]
@@ -80,7 +80,7 @@ class SourceCode(Model):
 
 
         :return: The license of this SourceCode.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._license
 
@@ -90,7 +90,7 @@ class SourceCode(Model):
 
 
         :param license: The license of this SourceCode.
-        :type license: List[str]
+        :type license: List[object]
         """
 
         self._license = license
@@ -143,7 +143,7 @@ class SourceCode(Model):
 
 
         :return: The code_repository of this SourceCode.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._code_repository
 
@@ -153,7 +153,7 @@ class SourceCode(Model):
 
 
         :param code_repository: The code_repository of this SourceCode.
-        :type code_repository: List[str]
+        :type code_repository: List[object]
         """
 
         self._code_repository = code_repository

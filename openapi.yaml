@@ -6323,8 +6323,7 @@ components:
           nullable: true
           type: array
         intervalValue:
-          items:
-            type: number
+          items: {}
           nullable: true
           type: array
         intervalUnit:
@@ -6399,7 +6398,8 @@ components:
       properties:
         hasDimensionality:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         hasFormat:
@@ -6457,7 +6457,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -6472,8 +6473,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -6502,13 +6502,11 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -6566,12 +6564,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -6589,19 +6587,18 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
-          items:
-            type: string
-          nullable: true
-          type: array
         identifier:
           items:
             type: string
           nullable: true
           type: array
-        website:
+        memoryRequirements:
           items:
             type: string
+          nullable: true
+          type: array
+        website:
+          items: {}
           nullable: true
           type: array
         citation:
@@ -6644,12 +6641,11 @@ components:
             type: string
           nullable: true
           type: array
-        operatingSystems:
-          items:
-            type: string
+        license:
+          items: {}
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
@@ -6740,8 +6736,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -6770,13 +6765,11 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -6834,12 +6827,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -6857,19 +6850,18 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
-          items:
-            type: string
-          nullable: true
-          type: array
         identifier:
           items:
             type: string
           nullable: true
           type: array
-        website:
+        memoryRequirements:
           items:
             type: string
+          nullable: true
+          type: array
+        website:
+          items: {}
           nullable: true
           type: array
         citation:
@@ -6912,12 +6904,11 @@ components:
             type: string
           nullable: true
           type: array
-        operatingSystems:
-          items:
-            type: string
+        license:
+          items: {}
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
@@ -7004,7 +6995,8 @@ components:
       properties:
         hasDimensionality:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         hasFormat:
@@ -7062,7 +7054,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -7129,8 +7122,7 @@ components:
     ModelConfigurationSetup:
       properties:
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -7149,13 +7141,11 @@ components:
           nullable: true
           type: array
         hasImplementationScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         type:
@@ -7193,12 +7183,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -7247,8 +7237,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -7302,8 +7291,7 @@ components:
           nullable: true
           type: array
         hasComponentLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasProcess:
@@ -7322,8 +7310,7 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -7397,8 +7384,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -7422,8 +7408,7 @@ components:
           nullable: true
           type: array
         hasSupportScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         label:
@@ -7456,14 +7441,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        usefulForCalculatingIndex:
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
         hasInput:
           items:
             type: object
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -7475,8 +7460,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -7505,13 +7489,11 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -7569,12 +7551,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -7592,19 +7574,18 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
-          items:
-            type: string
-          nullable: true
-          type: array
         identifier:
           items:
             type: string
           nullable: true
           type: array
-        website:
+        memoryRequirements:
           items:
             type: string
+          nullable: true
+          type: array
+        website:
+          items: {}
           nullable: true
           type: array
         citation:
@@ -7647,12 +7628,11 @@ components:
             type: string
           nullable: true
           type: array
-        operatingSystems:
-          items:
-            type: string
+        license:
+          items: {}
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
@@ -7717,8 +7697,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -7747,13 +7726,11 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -7811,12 +7788,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -7834,19 +7811,18 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
-          items:
-            type: string
-          nullable: true
-          type: array
         identifier:
           items:
             type: string
           nullable: true
           type: array
-        website:
+        memoryRequirements:
           items:
             type: string
+          nullable: true
+          type: array
+        website:
+          items: {}
           nullable: true
           type: array
         citation:
@@ -7889,12 +7865,11 @@ components:
             type: string
           nullable: true
           type: array
-        operatingSystems:
-          items:
-            type: string
+        license:
+          items: {}
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
@@ -7969,8 +7944,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -7999,13 +7973,11 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -8063,12 +8035,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -8086,19 +8058,18 @@ components:
             type: object
           nullable: true
           type: array
-        memoryRequirements:
-          items:
-            type: string
-          nullable: true
-          type: array
         identifier:
           items:
             type: string
           nullable: true
           type: array
-        website:
+        memoryRequirements:
           items:
             type: string
+          nullable: true
+          type: array
+        website:
+          items: {}
           nullable: true
           type: array
         citation:
@@ -8141,12 +8112,11 @@ components:
             type: string
           nullable: true
           type: array
-        operatingSystems:
-          items:
-            type: string
+        license:
+          items: {}
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
@@ -8185,8 +8155,7 @@ components:
     ModelConfiguration:
       properties:
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -8205,13 +8174,11 @@ components:
           nullable: true
           type: array
         hasImplementationScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         type:
@@ -8239,12 +8206,12 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
+        hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        hasContactPerson:
+        logo:
           items:
             type: object
           nullable: true
@@ -8293,8 +8260,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -8338,8 +8304,7 @@ components:
           nullable: true
           type: array
         hasComponentLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasProcess:
@@ -8358,8 +8323,7 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         referencePublication:
@@ -8428,8 +8392,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -8448,8 +8411,7 @@ components:
           nullable: true
           type: array
         hasSupportScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         label:
@@ -8477,14 +8439,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        usefulForCalculatingIndex:
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
         hasInput:
           items:
             type: object
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -8492,7 +8454,8 @@ components:
       properties:
         hasDimensionality:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         hasFormat:
@@ -8550,7 +8513,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -8619,16 +8583,14 @@ components:
           nullable: true
           type: array
         value:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
       type: object
     SourceCode:
       properties:
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         programmingLanguage:
@@ -8642,8 +8604,7 @@ components:
           nullable: true
           type: array
         codeRepository:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         id:
@@ -8668,8 +8629,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         description:
@@ -8715,8 +8675,7 @@ components:
     ConfigurationSetup:
       properties:
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -8730,13 +8689,11 @@ components:
           nullable: true
           type: array
         hasImplementationScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         type:
@@ -8759,14 +8716,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         id:
@@ -8813,8 +8770,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -8848,8 +8804,7 @@ components:
           nullable: true
           type: array
         hasComponentLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         supportDetails:
@@ -8863,16 +8818,15 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
+          items: {}
+          nullable: true
+          type: array
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
         description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
           items:
             type: string
           nullable: true
@@ -8918,8 +8872,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -8943,8 +8896,7 @@ components:
           nullable: true
           type: array
         hasSupportScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         label:
@@ -8998,7 +8950,8 @@ components:
       properties:
         hasDimensionality:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         hasFormat:
@@ -9021,7 +8974,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -9126,16 +9080,14 @@ components:
           nullable: true
           type: array
         value:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
       type: object
     SoftwareConfiguration:
       properties:
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -9149,13 +9101,11 @@ components:
           nullable: true
           type: array
         hasImplementationScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         type:
@@ -9178,14 +9128,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         id:
@@ -9232,8 +9182,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -9267,8 +9216,7 @@ components:
           nullable: true
           type: array
         hasComponentLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         supportDetails:
@@ -9282,16 +9230,15 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
+          items: {}
+          nullable: true
+          type: array
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
         description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
           items:
             type: string
           nullable: true
@@ -9337,8 +9284,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -9357,8 +9303,7 @@ components:
           nullable: true
           type: array
         hasSupportScriptLocation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         label:
@@ -9391,7 +9336,8 @@ components:
       properties:
         hasDimensionality:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         hasFormat:
@@ -9419,7 +9365,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -9436,8 +9383,7 @@ components:
           nullable: true
           type: array
         value:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasFixedResource:
@@ -9496,8 +9442,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -9505,12 +9450,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9521,21 +9466,19 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
+          items: {}
+          nullable: true
+          type: array
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
         description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
           items:
             type: string
           nullable: true
@@ -9580,14 +9523,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -9614,8 +9557,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -9669,8 +9611,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -9702,8 +9643,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -9711,12 +9651,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9727,21 +9667,19 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
+          items: {}
+          nullable: true
+          type: array
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
         description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
           items:
             type: string
           nullable: true
@@ -9786,14 +9724,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -9820,8 +9758,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -9875,8 +9812,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -9898,21 +9834,19 @@ components:
     Parameter:
       properties:
         hasDefaultValue:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasMaximumAcceptedValue:
-          items:
-            type: number
+          items: {}
           nullable: true
           type: array
-        description:
+        hasDataType:
           items:
             type: string
           nullable: true
           type: array
-        hasDataType:
+        description:
           items:
             type: string
           nullable: true
@@ -9937,8 +9871,7 @@ components:
           nullable: true
           type: array
         hasMinimumAcceptedValue:
-          items:
-            type: number
+          items: {}
           nullable: true
           type: array
         hasAcceptedValues:
@@ -9953,7 +9886,8 @@ components:
           type: array
         position:
           items:
-            type: number
+            format: int32
+            type: integer
           nullable: true
           type: array
         id:
@@ -9991,8 +9925,7 @@ components:
           nullable: true
           type: array
         value:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
       type: object
@@ -10004,8 +9937,7 @@ components:
           nullable: true
           type: array
         hasDocumentation:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         keywords:
@@ -10013,12 +9945,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -10029,21 +9961,19 @@ components:
           nullable: true
           type: array
         hasTypicalDataSource:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasDownloadURL:
+          items: {}
+          nullable: true
+          type: array
+        referencePublication:
           items:
             type: string
           nullable: true
           type: array
         description:
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
           items:
             type: string
           nullable: true
@@ -10088,14 +10018,14 @@ components:
             type: string
           nullable: true
           type: array
-        logo:
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasPurpose:
@@ -10122,8 +10052,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         citation:
@@ -10172,8 +10101,7 @@ components:
           nullable: true
           type: array
         license:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasSourceCode:
@@ -10195,8 +10123,7 @@ components:
     VariablePresentation:
       properties:
         hasDefaultValue:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         hasStandardVariable:
@@ -10205,8 +10132,7 @@ components:
           nullable: true
           type: array
         hasMaximumAcceptedValue:
-          items:
-            type: number
+          items: {}
           nullable: true
           type: array
         hasConstraint:
@@ -10240,8 +10166,7 @@ components:
           nullable: true
           type: array
         hasMinimumAcceptedValue:
-          items:
-            type: number
+          items: {}
           nullable: true
           type: array
         id:
@@ -10266,8 +10191,7 @@ components:
           nullable: true
           type: array
         website:
-          items:
-            type: string
+          items: {}
           nullable: true
           type: array
         description:

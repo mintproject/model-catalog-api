@@ -29,7 +29,7 @@ class SampleResource(Model):
         :param type: The type of this SampleResource.  # noqa: E501
         :type type: List[str]
         :param value: The value of this SampleResource.  # noqa: E501
-        :type value: List[str]
+        :type value: List[object]
         """
 
 
@@ -39,7 +39,7 @@ class SampleResource(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[str]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -180,7 +180,7 @@ class SampleResource(Model):
 
 
         :return: The value of this SampleResource.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._value
 
@@ -190,7 +190,7 @@ class SampleResource(Model):
 
 
         :param value: The value of this SampleResource.
-        :type value: List[str]
+        :type value: List[object]
         """
 
         self._value = value

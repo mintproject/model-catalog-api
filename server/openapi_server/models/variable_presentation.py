@@ -19,11 +19,11 @@ class VariablePresentation(Model):
         """VariablePresentation - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this VariablePresentation.  # noqa: E501
-        :type has_default_value: List[str]
+        :type has_default_value: List[object]
         :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
         :type has_standard_variable: List[StandardVariable]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.  # noqa: E501
-        :type has_maximum_accepted_value: List[float]
+        :type has_maximum_accepted_value: List[object]
         :param has_constraint: The has_constraint of this VariablePresentation.  # noqa: E501
         :type has_constraint: List[str]
         :param description: The description of this VariablePresentation.  # noqa: E501
@@ -37,7 +37,7 @@ class VariablePresentation(Model):
         :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
         :type has_short_name: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.  # noqa: E501
-        :type has_minimum_accepted_value: List[float]
+        :type has_minimum_accepted_value: List[object]
         :param id: The id of this VariablePresentation.  # noqa: E501
         :type id: str
         :param part_of_dataset: The part_of_dataset of this VariablePresentation.  # noqa: E501
@@ -52,16 +52,16 @@ class VariablePresentation(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_default_value': List[str],
+            'has_default_value': List[object],
             'has_standard_variable': List[StandardVariable],
-            'has_maximum_accepted_value': List[float],
+            'has_maximum_accepted_value': List[object],
             'has_constraint': List[str],
             'description': List[str],
             'label': List[str],
             'type': List[str],
             'has_long_name': List[str],
             'has_short_name': List[str],
-            'has_minimum_accepted_value': List[float],
+            'has_minimum_accepted_value': List[object],
             'id': str,
             'part_of_dataset': List[DatasetSpecification],
             'uses_unit': List[object]
@@ -114,7 +114,7 @@ class VariablePresentation(Model):
 
 
         :return: The has_default_value of this VariablePresentation.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_default_value
 
@@ -124,7 +124,7 @@ class VariablePresentation(Model):
 
 
         :param has_default_value: The has_default_value of this VariablePresentation.
-        :type has_default_value: List[str]
+        :type has_default_value: List[object]
         """
 
         self._has_default_value = has_default_value
@@ -156,7 +156,7 @@ class VariablePresentation(Model):
 
 
         :return: The has_maximum_accepted_value of this VariablePresentation.
-        :rtype: List[float]
+        :rtype: List[object]
         """
         return self._has_maximum_accepted_value
 
@@ -166,7 +166,7 @@ class VariablePresentation(Model):
 
 
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.
-        :type has_maximum_accepted_value: List[float]
+        :type has_maximum_accepted_value: List[object]
         """
 
         self._has_maximum_accepted_value = has_maximum_accepted_value
@@ -303,7 +303,7 @@ class VariablePresentation(Model):
 
 
         :return: The has_minimum_accepted_value of this VariablePresentation.
-        :rtype: List[float]
+        :rtype: List[object]
         """
         return self._has_minimum_accepted_value
 
@@ -313,7 +313,7 @@ class VariablePresentation(Model):
 
 
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.
-        :type has_minimum_accepted_value: List[float]
+        :type has_minimum_accepted_value: List[object]
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value

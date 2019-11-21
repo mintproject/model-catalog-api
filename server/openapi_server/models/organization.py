@@ -21,7 +21,7 @@ class Organization(Model):
         :param identifier: The identifier of this Organization.  # noqa: E501
         :type identifier: List[str]
         :param website: The website of this Organization.  # noqa: E501
-        :type website: List[str]
+        :type website: List[object]
         :param description: The description of this Organization.  # noqa: E501
         :type description: List[str]
         :param id: The id of this Organization.  # noqa: E501
@@ -35,7 +35,7 @@ class Organization(Model):
 
         self.openapi_types = {
             'identifier': List[str],
-            'website': List[str],
+            'website': List[object],
             'description': List[str],
             'id': str,
             'label': List[str],
@@ -96,7 +96,7 @@ class Organization(Model):
 
 
         :return: The website of this Organization.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._website
 
@@ -106,7 +106,7 @@ class Organization(Model):
 
 
         :param website: The website of this Organization.
-        :type website: List[str]
+        :type website: List[object]
         """
 
         self._website = website

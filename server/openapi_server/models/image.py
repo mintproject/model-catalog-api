@@ -19,7 +19,7 @@ class Image(Model):
         """Image - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this Image.  # noqa: E501
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         :param has_format: The has_format of this Image.  # noqa: E501
         :type has_format: List[str]
         :param had_primary_source: The had_primary_source of this Image.  # noqa: E501
@@ -31,7 +31,7 @@ class Image(Model):
         :param has_presentation: The has_presentation of this Image.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param position: The position of this Image.  # noqa: E501
-        :type position: List[float]
+        :type position: List[int]
         :param id: The id of this Image.  # noqa: E501
         :type id: str
         :param label: The label of this Image.  # noqa: E501
@@ -39,7 +39,7 @@ class Image(Model):
         :param type: The type of this Image.  # noqa: E501
         :type type: List[str]
         :param value: The value of this Image.  # noqa: E501
-        :type value: List[str]
+        :type value: List[object]
         :param has_fixed_resource: The has_fixed_resource of this Image.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
         """
@@ -50,17 +50,17 @@ class Image(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_dimensionality': List[float],
+            'has_dimensionality': List[int],
             'has_format': List[str],
             'had_primary_source': List[object],
             'has_file_structure': object,
             'description': List[str],
             'has_presentation': List[VariablePresentation],
-            'position': List[float],
+            'position': List[int],
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[str],
+            'value': List[object],
             'has_fixed_resource': List[SampleResource]
         }
 
@@ -109,7 +109,7 @@ class Image(Model):
 
 
         :return: The has_dimensionality of this Image.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._has_dimensionality
 
@@ -119,7 +119,7 @@ class Image(Model):
 
 
         :param has_dimensionality: The has_dimensionality of this Image.
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         """
 
         self._has_dimensionality = has_dimensionality
@@ -235,7 +235,7 @@ class Image(Model):
 
 
         :return: The position of this Image.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._position
 
@@ -245,7 +245,7 @@ class Image(Model):
 
 
         :param position: The position of this Image.
-        :type position: List[float]
+        :type position: List[int]
         """
 
         self._position = position
@@ -319,7 +319,7 @@ class Image(Model):
 
 
         :return: The value of this Image.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._value
 
@@ -329,7 +329,7 @@ class Image(Model):
 
 
         :param value: The value of this Image.
-        :type value: List[str]
+        :type value: List[object]
         """
 
         self._value = value

@@ -33,7 +33,7 @@ class Visualization(Model):
         :param type: The type of this Visualization.  # noqa: E501
         :type type: List[str]
         :param value: The value of this Visualization.  # noqa: E501
-        :type value: List[str]
+        :type value: List[object]
         """
         from openapi_server.models.software import Software
 
@@ -47,7 +47,7 @@ class Visualization(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[str]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -234,7 +234,7 @@ class Visualization(Model):
 
 
         :return: The value of this Visualization.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._value
 
@@ -244,7 +244,7 @@ class Visualization(Model):
 
 
         :param value: The value of this Visualization.
-        :type value: List[str]
+        :type value: List[object]
         """
 
         self._value = value

@@ -19,7 +19,7 @@ class DatasetSpecification(Model):
         """DatasetSpecification - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.  # noqa: E501
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         :param has_format: The has_format of this DatasetSpecification.  # noqa: E501
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this DatasetSpecification.  # noqa: E501
@@ -29,7 +29,7 @@ class DatasetSpecification(Model):
         :param has_presentation: The has_presentation of this DatasetSpecification.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param position: The position of this DatasetSpecification.  # noqa: E501
-        :type position: List[float]
+        :type position: List[int]
         :param id: The id of this DatasetSpecification.  # noqa: E501
         :type id: str
         :param label: The label of this DatasetSpecification.  # noqa: E501
@@ -46,12 +46,12 @@ class DatasetSpecification(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_dimensionality': List[float],
+            'has_dimensionality': List[int],
             'has_format': List[str],
             'has_file_structure': object,
             'description': List[str],
             'has_presentation': List[VariablePresentation],
-            'position': List[float],
+            'position': List[int],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -99,7 +99,7 @@ class DatasetSpecification(Model):
 
 
         :return: The has_dimensionality of this DatasetSpecification.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._has_dimensionality
 
@@ -109,7 +109,7 @@ class DatasetSpecification(Model):
 
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         """
 
         self._has_dimensionality = has_dimensionality
@@ -204,7 +204,7 @@ class DatasetSpecification(Model):
 
 
         :return: The position of this DatasetSpecification.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._position
 
@@ -214,7 +214,7 @@ class DatasetSpecification(Model):
 
 
         :param position: The position of this DatasetSpecification.
-        :type position: List[float]
+        :type position: List[int]
         """
 
         self._position = position

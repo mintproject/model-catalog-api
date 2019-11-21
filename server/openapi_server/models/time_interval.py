@@ -27,7 +27,7 @@ class TimeInterval(Model):
         :param type: The type of this TimeInterval.  # noqa: E501
         :type type: List[str]
         :param interval_value: The interval_value of this TimeInterval.  # noqa: E501
-        :type interval_value: List[float]
+        :type interval_value: List[object]
         :param interval_unit: The interval_unit of this TimeInterval.  # noqa: E501
         :type interval_unit: List[object]
         """
@@ -38,7 +38,7 @@ class TimeInterval(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'interval_value': List[float],
+            'interval_value': List[object],
             'interval_unit': List[object]
         }
 
@@ -159,7 +159,7 @@ class TimeInterval(Model):
 
 
         :return: The interval_value of this TimeInterval.
-        :rtype: List[float]
+        :rtype: List[object]
         """
         return self._interval_value
 
@@ -169,7 +169,7 @@ class TimeInterval(Model):
 
 
         :param interval_value: The interval_value of this TimeInterval.
-        :type interval_value: List[float]
+        :type interval_value: List[object]
         """
 
         self._interval_value = interval_value

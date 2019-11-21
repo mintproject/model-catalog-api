@@ -21,7 +21,7 @@ class Person(Model):
         :param identifier: The identifier of this Person.  # noqa: E501
         :type identifier: List[str]
         :param website: The website of this Person.  # noqa: E501
-        :type website: List[str]
+        :type website: List[object]
         :param description: The description of this Person.  # noqa: E501
         :type description: List[str]
         :param id: The id of this Person.  # noqa: E501
@@ -37,7 +37,7 @@ class Person(Model):
 
         self.openapi_types = {
             'identifier': List[str],
-            'website': List[str],
+            'website': List[object],
             'description': List[str],
             'id': str,
             'label': List[str],
@@ -101,7 +101,7 @@ class Person(Model):
 
 
         :return: The website of this Person.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._website
 
@@ -111,7 +111,7 @@ class Person(Model):
 
 
         :param website: The website of this Person.
-        :type website: List[str]
+        :type website: List[object]
         """
 
         self._website = website

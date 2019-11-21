@@ -15,13 +15,13 @@ class Model(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, reference_publication=None, description=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, has_contact_person=None, logo=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None, useful_for_calculating_index=None):  # noqa: E501
         """Model - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this Model.  # noqa: E501
         :type has_funding: List[object]
         :param has_documentation: The has_documentation of this Model.  # noqa: E501
-        :type has_documentation: List[str]
+        :type has_documentation: List[object]
         :param keywords: The keywords of this Model.  # noqa: E501
         :type keywords: List[str]
         :param has_grid: The has_grid of this Model.  # noqa: E501
@@ -33,9 +33,9 @@ class Model(Model):
         :param has_version: The has_version of this Model.  # noqa: E501
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this Model.  # noqa: E501
-        :type has_typical_data_source: List[str]
+        :type has_typical_data_source: List[object]
         :param has_download_url: The has_download_url of this Model.  # noqa: E501
-        :type has_download_url: List[str]
+        :type has_download_url: List[object]
         :param reference_publication: The reference_publication of this Model.  # noqa: E501
         :type reference_publication: List[str]
         :param description: The description of this Model.  # noqa: E501
@@ -58,22 +58,22 @@ class Model(Model):
         :type compatible_visualization_software: List[object]
         :param has_faq: The has_faq of this Model.  # noqa: E501
         :type has_faq: List[str]
-        :param logo: The logo of this Model.  # noqa: E501
-        :type logo: List[object]
         :param has_contact_person: The has_contact_person of this Model.  # noqa: E501
         :type has_contact_person: List[object]
+        :param logo: The logo of this Model.  # noqa: E501
+        :type logo: List[object]
         :param has_purpose: The has_purpose of this Model.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this Model.  # noqa: E501
         :type id: str
         :param has_sample_visualization: The has_sample_visualization of this Model.  # noqa: E501
         :type has_sample_visualization: List[object]
-        :param memory_requirements: The memory_requirements of this Model.  # noqa: E501
-        :type memory_requirements: List[str]
         :param identifier: The identifier of this Model.  # noqa: E501
         :type identifier: List[str]
+        :param memory_requirements: The memory_requirements of this Model.  # noqa: E501
+        :type memory_requirements: List[str]
         :param website: The website of this Model.  # noqa: E501
-        :type website: List[str]
+        :type website: List[object]
         :param citation: The citation of this Model.  # noqa: E501
         :type citation: List[str]
         :param author: The author of this Model.  # noqa: E501
@@ -90,10 +90,10 @@ class Model(Model):
         :type has_assumption: List[str]
         :param date_published: The date_published of this Model.  # noqa: E501
         :type date_published: List[str]
+        :param license: The license of this Model.  # noqa: E501
+        :type license: List[object]
         :param operating_systems: The operating_systems of this Model.  # noqa: E501
         :type operating_systems: List[str]
-        :param license: The license of this Model.  # noqa: E501
-        :type license: List[str]
         :param has_source_code: The has_source_code of this Model.  # noqa: E501
         :type has_source_code: List[object]
         :param has_explanation_diagram: The has_explanation_diagram of this Model.  # noqa: E501
@@ -117,14 +117,14 @@ class Model(Model):
 
         self.openapi_types = {
             'has_funding': List[object],
-            'has_documentation': List[str],
+            'has_documentation': List[object],
             'keywords': List[str],
             'has_grid': List[Grid],
             'support_details': List[str],
             'software_requirements': List[str],
             'has_version': List[object],
-            'has_typical_data_source': List[str],
-            'has_download_url': List[str],
+            'has_typical_data_source': List[object],
+            'has_download_url': List[object],
             'reference_publication': List[str],
             'description': List[str],
             'screenshot': List[object],
@@ -136,14 +136,14 @@ class Model(Model):
             'contributor': List[object],
             'compatible_visualization_software': List[object],
             'has_faq': List[str],
-            'logo': List[object],
             'has_contact_person': List[object],
+            'logo': List[object],
             'has_purpose': List[str],
             'id': str,
             'has_sample_visualization': List[object],
-            'memory_requirements': List[str],
             'identifier': List[str],
-            'website': List[str],
+            'memory_requirements': List[str],
+            'website': List[object],
             'citation': List[str],
             'author': List[object],
             'processor_requirements': List[str],
@@ -152,8 +152,8 @@ class Model(Model):
             'label': List[str],
             'has_assumption': List[str],
             'date_published': List[str],
+            'license': List[object],
             'operating_systems': List[str],
-            'license': List[str],
             'has_source_code': List[object],
             'has_explanation_diagram': List[object],
             'has_example': List[str],
@@ -183,13 +183,13 @@ class Model(Model):
             'contributor': 'contributor',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'has_faq': 'hasFAQ',
-            'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'logo': 'logo',
             'has_purpose': 'hasPurpose',
             'id': 'id',
             'has_sample_visualization': 'hasSampleVisualization',
-            'memory_requirements': 'memoryRequirements',
             'identifier': 'identifier',
+            'memory_requirements': 'memoryRequirements',
             'website': 'website',
             'citation': 'citation',
             'author': 'author',
@@ -199,8 +199,8 @@ class Model(Model):
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'date_published': 'datePublished',
-            'operating_systems': 'operatingSystems',
             'license': 'license',
+            'operating_systems': 'operatingSystems',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
             'has_example': 'hasExample',
@@ -229,13 +229,13 @@ class Model(Model):
         self._contributor = contributor
         self._compatible_visualization_software = compatible_visualization_software
         self._has_faq = has_faq
-        self._logo = logo
         self._has_contact_person = has_contact_person
+        self._logo = logo
         self._has_purpose = has_purpose
         self._id = id
         self._has_sample_visualization = has_sample_visualization
-        self._memory_requirements = memory_requirements
         self._identifier = identifier
+        self._memory_requirements = memory_requirements
         self._website = website
         self._citation = citation
         self._author = author
@@ -245,8 +245,8 @@ class Model(Model):
         self._label = label
         self._has_assumption = has_assumption
         self._date_published = date_published
-        self._operating_systems = operating_systems
         self._license = license
+        self._operating_systems = operating_systems
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
         self._has_example = has_example
@@ -292,7 +292,7 @@ class Model(Model):
 
 
         :return: The has_documentation of this Model.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_documentation
 
@@ -302,7 +302,7 @@ class Model(Model):
 
 
         :param has_documentation: The has_documentation of this Model.
-        :type has_documentation: List[str]
+        :type has_documentation: List[object]
         """
 
         self._has_documentation = has_documentation
@@ -418,7 +418,7 @@ class Model(Model):
 
 
         :return: The has_typical_data_source of this Model.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_typical_data_source
 
@@ -428,7 +428,7 @@ class Model(Model):
 
 
         :param has_typical_data_source: The has_typical_data_source of this Model.
-        :type has_typical_data_source: List[str]
+        :type has_typical_data_source: List[object]
         """
 
         self._has_typical_data_source = has_typical_data_source
@@ -439,7 +439,7 @@ class Model(Model):
 
 
         :return: The has_download_url of this Model.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._has_download_url
 
@@ -449,7 +449,7 @@ class Model(Model):
 
 
         :param has_download_url: The has_download_url of this Model.
-        :type has_download_url: List[str]
+        :type has_download_url: List[object]
         """
 
         self._has_download_url = has_download_url
@@ -686,27 +686,6 @@ class Model(Model):
         self._has_faq = has_faq
 
     @property
-    def logo(self):
-        """Gets the logo of this Model.
-
-
-        :return: The logo of this Model.
-        :rtype: List[object]
-        """
-        return self._logo
-
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this Model.
-
-
-        :param logo: The logo of this Model.
-        :type logo: List[object]
-        """
-
-        self._logo = logo
-
-    @property
     def has_contact_person(self):
         """Gets the has_contact_person of this Model.
 
@@ -726,6 +705,27 @@ class Model(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def logo(self):
+        """Gets the logo of this Model.
+
+
+        :return: The logo of this Model.
+        :rtype: List[object]
+        """
+        return self._logo
+
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this Model.
+
+
+        :param logo: The logo of this Model.
+        :type logo: List[object]
+        """
+
+        self._logo = logo
 
     @property
     def has_purpose(self):
@@ -791,27 +791,6 @@ class Model(Model):
         self._has_sample_visualization = has_sample_visualization
 
     @property
-    def memory_requirements(self):
-        """Gets the memory_requirements of this Model.
-
-
-        :return: The memory_requirements of this Model.
-        :rtype: List[str]
-        """
-        return self._memory_requirements
-
-    @memory_requirements.setter
-    def memory_requirements(self, memory_requirements):
-        """Sets the memory_requirements of this Model.
-
-
-        :param memory_requirements: The memory_requirements of this Model.
-        :type memory_requirements: List[str]
-        """
-
-        self._memory_requirements = memory_requirements
-
-    @property
     def identifier(self):
         """Gets the identifier of this Model.
 
@@ -833,12 +812,33 @@ class Model(Model):
         self._identifier = identifier
 
     @property
+    def memory_requirements(self):
+        """Gets the memory_requirements of this Model.
+
+
+        :return: The memory_requirements of this Model.
+        :rtype: List[str]
+        """
+        return self._memory_requirements
+
+    @memory_requirements.setter
+    def memory_requirements(self, memory_requirements):
+        """Sets the memory_requirements of this Model.
+
+
+        :param memory_requirements: The memory_requirements of this Model.
+        :type memory_requirements: List[str]
+        """
+
+        self._memory_requirements = memory_requirements
+
+    @property
     def website(self):
         """Gets the website of this Model.
 
 
         :return: The website of this Model.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._website
 
@@ -848,7 +848,7 @@ class Model(Model):
 
 
         :param website: The website of this Model.
-        :type website: List[str]
+        :type website: List[object]
         """
 
         self._website = website
@@ -1022,6 +1022,27 @@ class Model(Model):
         self._date_published = date_published
 
     @property
+    def license(self):
+        """Gets the license of this Model.
+
+
+        :return: The license of this Model.
+        :rtype: List[object]
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """Sets the license of this Model.
+
+
+        :param license: The license of this Model.
+        :type license: List[object]
+        """
+
+        self._license = license
+
+    @property
     def operating_systems(self):
         """Gets the operating_systems of this Model.
 
@@ -1041,27 +1062,6 @@ class Model(Model):
         """
 
         self._operating_systems = operating_systems
-
-    @property
-    def license(self):
-        """Gets the license of this Model.
-
-
-        :return: The license of this Model.
-        :rtype: List[str]
-        """
-        return self._license
-
-    @license.setter
-    def license(self, license):
-        """Sets the license of this Model.
-
-
-        :param license: The license of this Model.
-        :type license: List[str]
-        """
-
-        self._license = license
 
     @property
     def has_source_code(self):

@@ -31,7 +31,7 @@ class SampleCollection(Model):
         :param type: The type of this SampleCollection.  # noqa: E501
         :type type: List[str]
         :param value: The value of this SampleCollection.  # noqa: E501
-        :type value: List[str]
+        :type value: List[object]
         """
         from openapi_server.models.sample_resource import SampleResource
 
@@ -44,7 +44,7 @@ class SampleCollection(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[str]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -208,7 +208,7 @@ class SampleCollection(Model):
 
 
         :return: The value of this SampleCollection.
-        :rtype: List[str]
+        :rtype: List[object]
         """
         return self._value
 
@@ -218,7 +218,7 @@ class SampleCollection(Model):
 
 
         :param value: The value of this SampleCollection.
-        :type value: List[str]
+        :type value: List[object]
         """
 
         self._value = value

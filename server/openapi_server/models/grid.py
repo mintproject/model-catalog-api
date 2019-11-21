@@ -19,7 +19,7 @@ class Grid(Model):
         """Grid - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this Grid.  # noqa: E501
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         :param has_format: The has_format of this Grid.  # noqa: E501
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this Grid.  # noqa: E501
@@ -43,14 +43,14 @@ class Grid(Model):
         :param has_dimension: The has_dimension of this Grid.  # noqa: E501
         :type has_dimension: List[str]
         :param position: The position of this Grid.  # noqa: E501
-        :type position: List[float]
+        :type position: List[int]
         :param id: The id of this Grid.  # noqa: E501
         :type id: str
         """
 
 
         self.openapi_types = {
-            'has_dimensionality': List[float],
+            'has_dimensionality': List[int],
             'has_format': List[str],
             'has_file_structure': object,
             'description': List[str],
@@ -62,7 +62,7 @@ class Grid(Model):
             'has_spatial_resolution': List[str],
             'has_shape': List[str],
             'has_dimension': List[str],
-            'position': List[float],
+            'position': List[int],
             'id': str
         }
 
@@ -115,7 +115,7 @@ class Grid(Model):
 
 
         :return: The has_dimensionality of this Grid.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._has_dimensionality
 
@@ -125,7 +125,7 @@ class Grid(Model):
 
 
         :param has_dimensionality: The has_dimensionality of this Grid.
-        :type has_dimensionality: List[float]
+        :type has_dimensionality: List[int]
         """
 
         self._has_dimensionality = has_dimensionality
@@ -367,7 +367,7 @@ class Grid(Model):
 
 
         :return: The position of this Grid.
-        :rtype: List[float]
+        :rtype: List[int]
         """
         return self._position
 
@@ -377,7 +377,7 @@ class Grid(Model):
 
 
         :param position: The position of this Grid.
-        :type position: List[float]
+        :type position: List[int]
         """
 
         self._position = position
