@@ -112,7 +112,8 @@ def put_resource(**kwargs):
     #DELETE QUERY
     request_args_delete: Dict[str, str] = {
         "resource": resource_uri,
-        "g": generate_graph(username)
+        "g": generate_graph(username),
+        "delete_incoming_relations": False
     }
 
     try:
@@ -155,7 +156,9 @@ def delete_resource(**kwargs):
 
     request_args: Dict[str, str] = {
         "resource": resource_uri,
-        "g": generate_graph(username)
+        "g": generate_graph(username),
+        "delete_incoming_relations": True
+
     }
     return query_manager.delete_query(UPDATE_ENDPOINT, request_args=request_args)
 
