@@ -1,0 +1,386 @@
+{
+  "author": [
+    {
+      "id": "https://w3id.org/okn/i/mint/mayani_rajiv",
+      "label": [
+        "Rajiv Mayani"
+      ],
+      "type": "sd:Person"
+    }
+  ],
+  "description": [
+    "Cycles (version 0.9.3) configuration to run the model with multiple points"
+  ],
+  "hasCausalDiagram": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_cfg_complex_CAG",
+      "label": [
+        "CAG for Cycles representing a more complex version of the variables and processes of the model"
+      ],
+      "type": [
+        "CausalDiagram"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_cfg_simple_CAG",
+      "label": [
+        "CAG for Cycles with the most important variables in the model"
+      ],
+      "type": [
+        "CausalDiagram"
+      ]
+    }
+  ],
+  "hasComponentLocation": [
+    "https://github.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/cycles_multiple_points/cycles_multiple_points.zip"
+  ],
+  "hasGrid": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_grid",
+      "label": [
+        "Grid from the Cycles agriculture model"
+      ],
+      "type": [
+        "Grid",
+        "PointBasedGrid"
+      ]
+    }
+  ],
+  "hasImplementationScriptLocation": [
+    "https://raw.githubusercontent.com/KnowledgeCaptureAndDiscovery/MINT-WorkflowDomain/master/WINGSWorkflowComponents/cycles_multiple_points/run"
+  ],
+  "hasInput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_reinit",
+      "label": [
+        "cycles_reinit"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesREINIT",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_cropname",
+      "label": [
+        "cycles_cropname"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesCropName",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_weather",
+      "label": [
+        "cycles_weather"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesWeather",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_percent_increase_fertilizer",
+      "label": [
+        "cycles_percent_increase_fertilizer"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesPercentIncreaseFertilizer",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_soil",
+      "label": [
+        "cycles_soil"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesSoil",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasModelCategory": [
+    "Agriculture"
+  ],
+  "hasOutput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_seasonConfig",
+      "label": [
+        "cycles_seasonConfig"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesSeasonConfig",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_weatherOutput",
+      "label": [
+        "cycles_weatherOutput"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesWeatherOutput",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_nitrogen",
+      "label": [
+        "cycles_nitrogen"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesNitrogen",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_crop",
+      "label": [
+        "cycles_crop"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesCropOutput",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_season",
+      "label": [
+        "cycles_season"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesSeason",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_somF",
+      "label": [
+        "cycles_som"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesAnnualSOM",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_summary",
+      "label": [
+        "cycles_summary"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesSummary",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_water",
+      "label": [
+        "cycles_water"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesWaterOutput",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_soilProfile",
+      "label": [
+        "cycles_soilProfile"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesAnnualSoilProfile",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasOutputTimeInterval": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_cfg_simple_TI",
+      "label": [
+        "Simple cycles time interval"
+      ],
+      "type": [
+        "TimeInterval"
+      ]
+    }
+  ],
+  "hasParameter": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_planting-day-1-duration",
+      "label": [
+        "cycles_planting-day-1-duration"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesPlantingDay1Duration",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_planting-day-1",
+      "label": [
+        "cycles_planting-day-1"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesPlantingDay1",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_planting-day-2",
+      "label": [
+        "cycles_planting-day-2"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesPlantingDay2",
+        "Parameter"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_mp_planting-day-2-duration",
+      "label": [
+        "cycles_planting-day-2-duration"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#CyclesPlantingDay2Duration",
+        "Parameter"
+      ]
+    }
+  ],
+  "hasProcess": [
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_Nuptake_process",
+      "label": [
+        "Nitrogen uptake"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_biomassgrowth_process",
+      "label": [
+        "Biomass growth"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_management_process",
+      "label": [
+        "Management"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_Nmineralizationandimmobalization_process",
+      "label": [
+        "Nitrogen mineralization and immobalization"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_humification_process",
+      "label": [
+        "Humification"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_precipitation_process",
+      "label": [
+        "Precipitation"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_Ntransport_process",
+      "label": [
+        "Nitrogen transport"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_respiration_process",
+      "label": [
+        "Respiration"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_transpiration_process",
+      "label": [
+        "Transpiration"
+      ],
+      "type": [
+        "Process"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/cycles_solarradiation_process",
+      "label": [
+        "Solar radiation"
+      ],
+      "type": [
+        "Process"
+      ]
+    }
+  ],
+  "hasSoftwareImage": [
+    {
+      "id": "https://w3id.org/okn/i/mint/MINTPROJECT-CYCLES:0.9.3-ALPHA",
+      "label": [
+        "mintproject/cycles:0.9.3-alpha"
+      ],
+      "type": "SoftwareImage"
+    }
+  ],
+  "hasSourceCode": [
+    {
+      "id": "https://w3id.org/okn/i/mint/source_cycles_config_mp",
+      "label": [
+        "Cycles configuration component (multiple points)"
+      ],
+      "type": "SourceCode"
+    }
+  ],
+  "id": "https://w3id.org/okn/i/mint/cycles_multiple_points",
+  "keywords": [
+    "agriculture; cycles; crop growth; weather;soil;crop management"
+  ],
+  "label": [
+    "Cycles configuration (v0.9.3) using multiple points"
+  ],
+  "type": [
+    "ModelConfiguration",
+    "Theory-GuidedModel",
+    "SoftwareConfiguration"
+  ],
+  "usefulForCalculatingIndex": [
+    {
+      "id": "http://www.geoscienceontology.org/svo/svl/variable#crop_production__seasonal_production_index",
+      "label": [
+        "crop__seasonal_production_index"
+      ],
+      "type": [
+        "http://www.geoscienceontology.org/svo/svu#Variable",
+        "http://www.w3.org/2002/07/owl#NamedIndividual"
+      ]
+    }
+  ]
+}
