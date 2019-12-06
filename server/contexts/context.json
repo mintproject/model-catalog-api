@@ -742,7 +742,7 @@
     },
     "value": {
       "@container": "@set",
-      "@id": "http://www.w3.org/ns/prov#value"
+      "@id": "https://w3id.org/okn/o/sd#value"
     },
     "versionInfo": {
       "@container": "@set",
