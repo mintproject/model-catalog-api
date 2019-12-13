@@ -15,7 +15,7 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
@@ -46,6 +46,8 @@ class Parameter(Model):
         :type id: str
         :param uses_unit: The uses_unit of this Parameter.  # noqa: E501
         :type uses_unit: List[object]
+        :param has_step_size: The has_step_size of this Parameter.  # noqa: E501
+        :type has_step_size: List[float]
         """
         from openapi_server.models.variable_presentation import VariablePresentation
 
@@ -65,7 +67,8 @@ class Parameter(Model):
             'adjusts_variable': List[object],
             'position': List[int],
             'id': str,
-            'uses_unit': List[object]
+            'uses_unit': List[object],
+            'has_step_size': List[float]
         }
 
         self.attribute_map = {
@@ -82,7 +85,8 @@ class Parameter(Model):
             'adjusts_variable': 'adjustsVariable',
             'position': 'position',
             'id': 'id',
-            'uses_unit': 'usesUnit'
+            'uses_unit': 'usesUnit',
+            'has_step_size': 'hasStepSize'
         }
 
         self._has_default_value = has_default_value
@@ -99,6 +103,7 @@ class Parameter(Model):
         self._position = position
         self._id = id
         self._uses_unit = uses_unit
+        self._has_step_size = has_step_size
 
     @classmethod
     def from_dict(cls, dikt) -> 'Parameter':
@@ -404,3 +409,24 @@ class Parameter(Model):
         """
 
         self._uses_unit = uses_unit
+
+    @property
+    def has_step_size(self):
+        """Gets the has_step_size of this Parameter.
+
+
+        :return: The has_step_size of this Parameter.
+        :rtype: List[float]
+        """
+        return self._has_step_size
+
+    @has_step_size.setter
+    def has_step_size(self, has_step_size):
+        """Sets the has_step_size of this Parameter.
+
+
+        :param has_step_size: The has_step_size of this Parameter.
+        :type has_step_size: List[float]
+        """
+
+        self._has_step_size = has_step_size
