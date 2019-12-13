@@ -1,7 +1,7 @@
 {
   "@context": {
-    "id": "@id",
-    "type": "@type",
+    "@id": "id",
+    "@type": "type",
     "Activity": {
       "@id": "http://www.w3.org/ns/prov#Activity"
     },
@@ -481,7 +481,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasPart",
+      "@id": "https://w3id.org/okn/o/sdm#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {
@@ -553,11 +553,6 @@
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#hasStandardVariable",
       "@type": "@id"
-    },
-    "hasStepSize": {
-      "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#hasStepSize",
-      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "hasSupportScriptLocation": {
       "@container": "@set",
@@ -747,7 +742,7 @@
     },
     "value": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#value"
+      "@id": "http://www.w3.org/ns/prov#value"
     },
     "versionInfo": {
       "@container": "@set",
