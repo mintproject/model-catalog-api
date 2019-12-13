@@ -481,7 +481,7 @@
     },
     "hasPart": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasPart",
+      "@id": "https://w3id.org/okn/o/sd#hasPart",
       "@type": "@id"
     },
     "hasPresentation": {
@@ -553,6 +553,11 @@
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#hasStandardVariable",
       "@type": "@id"
+    },
+    "hasStepSize": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sd#hasStepSize",
+      "@type": "http://www.w3.org/2001/XMLSchema#float"
     },
     "hasSupportScriptLocation": {
       "@container": "@set",
