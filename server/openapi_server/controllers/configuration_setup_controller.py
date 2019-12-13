@@ -4,6 +4,7 @@ from openapi_server.utils.request import get_resource, get_all_resource, put_res
 from openapi_server.utils.vars import CONFIGURATIONSETUP_TYPE_NAME, CONFIGURATIONSETUP_TYPE_URI
 
 from openapi_server.models.configuration_setup import ConfigurationSetup  # noqa: E501
+from openapi_server.models.model_configuration_setup import ModelConfigurationSetup  # noqa: E501
 from openapi_server import util
 
 def configurationsetups_get(username=None, label=None):  # noqa: E501
@@ -108,6 +109,29 @@ def configurationsetups_post(user, configuration_setup=None):  # noqa: E501
 
     return post_resource(user=user,
         body=configuration_setup,
+        rdf_type_uri=CONFIGURATIONSETUP_TYPE_URI,
+        rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
+        kls=ConfigurationSetup)
+
+def custom_configurationsetups_id_get(id, username=None, custom_query_name=None):  # noqa: E501
+    """Get a ModelConfigurationSetup
+
+    Gets the details of a single instance of a ModelConfigurationSetup # noqa: E501
+
+    :param id: The ID of the resource
+    :type id: str
+    :param username: Username to query
+    :type username: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
+
+    :rtype: ModelConfigurationSetup
+    """
+
+
+    return get_resource(id=id,
+        username=username,
+        custom_query_name=custom_query_name,
         rdf_type_uri=CONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
         kls=ConfigurationSetup)
