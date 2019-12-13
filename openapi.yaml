@@ -7,9 +7,9 @@ externalDocs:
   description: Model Catalog
   url: https://w3id.org/okn/o/sdm
 servers:
-- url: https://api.models.mint.isi.edu/v1.2.0
-- url: https://dev.api.models.mint.isi.edu/v1.2.0
-- url: http://localhost:8080/v1.2.0
+- url: https://api.models.mint.isi.edu/v1.3.0
+- url: https://dev.api.models.mint.isi.edu/v1.3.0
+- url: http://localhost:8080/v1.3.0
 paths:
   /user/login:
     get:
