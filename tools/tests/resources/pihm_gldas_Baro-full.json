@@ -1,0 +1,18 @@
+{
+  "dataCatalogIdentifier": [
+    "FFF-3s5c113e-c7ae-4cda-ba23-e4f2286pih21"
+  ],
+  "description": [
+    "PIHM prepared from GLDAS from years 2000-2018 for Baro (Ethiopia)"
+  ],
+  "id": "https://w3id.org/okn/i/mint/pihm_gldas_Baro-full",
+  "label": [
+    "PIHM prepared from GLDAS from years 2000-2018 for Baro (Ethiopia)"
+  ],
+  "type": [
+    "SampleResource"
+  ],
+  "value": [
+    "https://data.mint.isi.edu/files/wings-dev/mint/mint-test/data/pihm-input-baro-gam-6bf82b55ecdeb2169b090fc124ef8117.tgz"
+  ]
+}
