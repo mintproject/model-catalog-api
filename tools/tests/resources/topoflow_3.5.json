@@ -1,0 +1,11 @@
+{
+  "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple",
+  "label": [
+    "TopoFlow basic configuration with precipitation rates"
+  ],
+  "type": [
+    "ModelConfiguration",
+    "Theory-GuidedModel",
+    "SoftwareConfiguration"
+  ]
+}

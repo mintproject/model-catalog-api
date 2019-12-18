@@ -1,0 +1,133 @@
+{
+  "author": [
+    {
+      "id": "https://w3id.org/okn/i/mint/osorio_maximiliano",
+      "label": [
+        "Maximiliano Osorio"
+      ],
+      "type": "sd:Person"
+    }
+  ],
+  "description": [
+    "EDITED A basic configuration of the TopoFlow model calibrated for the Shebelle region in Ethiopia with a default precipitation file for 2008"
+  ],
+  "hasComponentLocation": [
+    "https://github.com/mintproject/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/topoflow-3.6.0-precipitation-viz/topoflow-3.6.0-precipitation-viz.zip"
+  ],
+  "hasGrid": [
+    {
+      "id": "https://w3id.org/okn/i/mint/topoflow_grid_Baro",
+      "label": [
+        "Grid from the TopoFlow hydrology model for the area of South Sudan"
+      ],
+      "type": [
+        "Grid",
+        "SpatiallyDistributedGrid"
+      ]
+    }
+  ],
+  "hasImplementationScriptLocation": [
+    "https://github.com/mintproject/MINT-WorkflowDomain/raw/master/WINGSWorkflowComponents/topoflow-3.6.0-precipitation-viz/src/run"
+  ],
+  "hasInput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple_Shebelle_aggregatedInput",
+      "label": [
+        "aggregated-inputs"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#TopoflowAggregatedInput",
+        "DatasetSpecification"
+      ]
+    },
+    {
+      "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple_Shebelle_rainRates",
+      "label": [
+        "precipitation-rates"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#TopoflowPrecipitationRate",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasModelCategory": [
+    "Hydrology"
+  ],
+  "hasOutput": [
+    {
+      "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple_Shebelle_aggregatedOutput",
+      "label": [
+        "aggregated-outputs"
+      ],
+      "type": [
+        "https://w3id.org/wings/export/MINT#TopoflowAggregatedOutputs",
+        "DatasetSpecification"
+      ]
+    }
+  ],
+  "hasOutputTimeInterval": [
+    {
+      "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple_TI",
+      "label": [
+        "Topoflow time interval"
+      ],
+      "type": [
+        "TimeInterval"
+      ]
+    }
+  ],
+  "hasRegion": [
+    {
+      "id": "https://w3id.org/okn/i/mint/Shebelle",
+      "label": [
+        "Shebelle (Ethiopia)"
+      ],
+      "type": [
+        "Region"
+      ]
+    }
+  ],
+  "hasSoftwareImage": [
+    {
+      "id": "https://w3id.org/okn/i/mint/MINTPROJECT-TOPOFLOW:VIZ_V2",
+      "label": [
+        "mintproject/topoflow:viz_v2"
+      ],
+      "type": "SoftwareImage"
+    }
+  ],
+  "hasSourceCode": [
+    {
+      "id": "https://w3id.org/okn/i/mint/source_topoflow36",
+      "label": [
+        "Topoflow component"
+      ],
+      "type": "SourceCode"
+    }
+  ],
+  "id": "https://w3id.org/okn/i/mint/topoflow_cfg_simple_Shebelle",
+  "keywords": [
+    "snowmelt;precipitation;evapotranspiration;infiltration;channel/overland flow;shallow subsurface flow;flow diversions"
+  ],
+  "label": [
+    "TopoFlow calibrated model for the Shebelle region in Ethiopia"
+  ],
+  "type": [
+    "Theory-GuidedModel",
+    "ModelConfigurationSetup",
+    "ModelConfiguration",
+    "ConfigurationSetup"
+  ],
+  "usefulForCalculatingIndex": [
+    {
+      "id": "https://w3id.org/okn/i/mint/DOWNSTREAM_VOLUME_FLOW_RATE",
+      "label": [
+        "downstream_volume_flow_rate"
+      ],
+      "type": [
+        "sdm:Index"
+      ]
+    }
+  ]
+}
