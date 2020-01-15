@@ -1,4 +1,6 @@
 #+ summary: Given a rdf type, returns all the resources related to the type
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
 CONSTRUCT {
 ?item ?predicate ?prop .
 ?prop a ?type
