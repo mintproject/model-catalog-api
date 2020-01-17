@@ -50,8 +50,10 @@ def get_one_resource(**kwargs):
                                               query_type=query_type,
                                               endpoint=ENDPOINT,
                                               request_args=request_args)
-        if response:
+        if len(response) > 0:
             return kls.from_dict(response[0])
+        else:
+            return "Not found", 404, {}
 
     except:
         logger.error("Exception occurred", exc_info=True)
