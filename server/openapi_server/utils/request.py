@@ -182,24 +182,30 @@ def post_resource(**kwargs):
     body.id = generate_new_uri()
     try:
         username = kwargs["user"]
-    except Exception:
+    except Exception as e:
         logger.error("Missing username", exc_info=True)
         return "Bad request: missing username", 400, {}
 
+    insert_response = insert_all_resources(body, username)
+
+    if insert_response:
+        return body, 201, {}
+    else:
+        return "Error inserting query", 407, {}
+
+
+def insert_all_resources(body, username):
     body_json = prepare_jsonld(body)
     prefixes, triples = get_insert_query(body_json)
     prefixes = '\n'.join(prefixes)
     triples = '\n'.join(triples)
-
     request_args: Dict[str, str] = {
         "prefixes": prefixes,
         "triples": triples,
         "g": generate_graph(username)
     }
-    if query_manager.insert_query(UPDATE_ENDPOINT, request_args=request_args):
-        return body, 201, {}
-    else:
-        return "Error inserting query", 407, {}
+    insert_response = query_manager.insert_query(UPDATE_ENDPOINT, request_args=request_args)
+    return insert_response
 
 
 def get_insert_query(resource_json):
