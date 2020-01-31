@@ -22,7 +22,6 @@ def modelconfigurations_post(user, model_configuration=None):  # noqa: E501
     """
 
     model_configuration = ModelConfiguration.from_dict(data)  # noqa: E501
-
     return post_resource(user=user,
         body=model_configuration,
         rdf_type_uri=MODELCONFIGURATION_TYPE_URI,
@@ -30,10 +29,10 @@ def modelconfigurations_post(user, model_configuration=None):  # noqa: E501
         kls=ModelConfiguration)
 
 
-configuration_json = "input_tests/cycles-0.9.4-alpha.json"
+configuration_json = "input_tests/cycles-0.9.4-alpha-without-id.json"
 with open(configuration_json, 'r') as file:
     data = json.load(file)
-    user = "mint@isi.edu"
+    user = "dhruvrpa@usc.edu"
     #Create a modelconfiguration
     m = modelconfigurations_post(user, data)
     print(m[0].id)

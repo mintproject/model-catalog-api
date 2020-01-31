@@ -182,18 +182,51 @@ def post_resource(**kwargs):
     body.id = generate_new_uri()
     try:
         username = kwargs["user"]
+
     except Exception as e:
         logger.error("Missing username", exc_info=True)
         return "Bad request: missing username", 400, {}
+    traverse_obj(body,username)
+  
 
+    print(body)
     insert_response = insert_all_resources(body, username)
 
     if insert_response:
         return body, 201, {}
     else:
         return "Error inserting query", 407, {}
+def traverse_obj(body,username):
+    for key, value in body.__dict__.items():
+        if key != "openapi_types" and key != "attribute_map":
+            if isinstance(value, list):
+                #print(type(value[0]))
+                for inner_values in value:
+                    if not isinstance(inner_values, str) and not isinstance(inner_values, dict) :
+                        list_of_obj=get_all_complex_objects(inner_values,username)
+                        if len(list_of_obj)==0:
+                            inner_values.id=generate_new_uri()
+                            insert_response = insert_all_resources(inner_values, username)
+                        else:
+                            traverse_obj(inner_values)
 
+                        #print(inner_values)
+            elif isinstance(value, dict):
+                pass
 
+def get_all_complex_objects(body,username):
+    l=[]
+    for key, value in body.__dict__.items():
+        if key != "openapi_types" and key != "attribute_map":
+            if isinstance(value, list):
+                #print(type(value[0]))
+                for inner_values in value:
+                    if not isinstance(inner_values, str) and not isinstance(inner_values, dict) :
+                        l.append(inner_values)
+                        #print(inner_values)
+            elif isinstance(value, dict):
+                pass
+    return l
 def insert_all_resources(body, username):
     body_json = prepare_jsonld(body)
     prefixes, triples = get_insert_query(body_json)
