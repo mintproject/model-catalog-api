@@ -34,12 +34,13 @@ def get_resource(**kwargs):
 
     if "custom_query_name" in kwargs:
         query_type = kwargs["custom_query_name"]
-        return get_resource_custom(request_args=request_args, query_type=query_type, kwargs=kwargs)
+        return get_resource_custom(request_args=request_args, query_type=query_type, **kwargs)
     else:
-        return get_resource_not_custom(request_args=request_args, query_type=None, kwargs=kwargs)
+        return get_resource_not_custom(request_args=request_args, query_type=None, **kwargs)
 
 
 def get_resource_custom(query_type, request_args, **kwargs):
+    kwargs["kls"]
     if "id" in kwargs:
         return get_one_resource(request_args=request_args, query_type=query_type, **kwargs)
     else:
@@ -71,7 +72,7 @@ def get_one_resource(request_args, query_type="get_one_user", **kwargs):
     :return:
     :rtype:
     """
-    kls, owl_class_name, resource_type_uri, username = set_up(kwargs)
+    kls, owl_class_name, resource_type_uri, username = set_up(**kwargs)
     request_args["resource"] = build_instance_uri(kwargs["id"])
     request_args["g"] = generate_graph(username)
     return request_one(kls, owl_class_name, request_args, resource_type_uri, query_type)
@@ -104,7 +105,7 @@ def get_all_resource(request_args, query_type="get_all_user", **kwargs):
     :return:
     :rtype:
     """
-    kls, owl_class_name, resource_type_uri, username = set_up(kwargs)
+    kls, owl_class_name, resource_type_uri, username = set_up(**kwargs)
     request_args["type"] = resource_type_uri
     request_args["g"] = generate_graph(username)
     return request_all(kls, owl_class_name, request_args, resource_type_uri, query_type)

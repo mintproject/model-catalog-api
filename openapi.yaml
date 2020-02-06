@@ -6274,6 +6274,13 @@ paths:
     get:
       description: Gets the details of a single instance of a Model
       parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_model_index
+          type: string
       - description: Username to query
         in: query
         name: username
@@ -6300,6 +6307,13 @@ paths:
     get:
       description: Gets the details of a single instance of a Model
       parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_model_intervetion
+          type: string
       - description: Username to query
         in: query
         name: username
@@ -6326,6 +6340,13 @@ paths:
     get:
       description: Gets the details of a single instance of a Model
       parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_model_region
+          type: string
       - description: Username to query
         in: query
         name: username

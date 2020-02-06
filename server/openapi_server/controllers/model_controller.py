@@ -6,13 +6,15 @@ from openapi_server.utils.vars import MODEL_TYPE_NAME, MODEL_TYPE_URI
 from openapi_server.models.model import Model  # noqa: E501
 from openapi_server import util
 
-def custom_model_index_get(label, username=None):  # noqa: E501
+def custom_model_index_get(label, custom_query_name=None, username=None):  # noqa: E501
     """Get a Model
 
     Gets the details of a single instance of a Model # noqa: E501
 
     :param label: Label of NumericalIndex
     :type label: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
     :param username: Username to query
     :type username: str
 
@@ -21,19 +23,22 @@ def custom_model_index_get(label, username=None):  # noqa: E501
 
 
     return get_resource(
+        custom_query_name=custom_query_name,
         username=username,
         label=label,
         rdf_type_uri=MODEL_TYPE_URI,
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
 
-def custom_model_intervention_get(label, username=None):  # noqa: E501
+def custom_model_intervention_get(label, custom_query_name=None, username=None):  # noqa: E501
     """Get a Model
 
     Gets the details of a single instance of a Model # noqa: E501
 
     :param label: Label of intervation
     :type label: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
     :param username: Username to query
     :type username: str
 
@@ -42,19 +47,22 @@ def custom_model_intervention_get(label, username=None):  # noqa: E501
 
 
     return get_resource(
+        custom_query_name=custom_query_name,
         username=username,
         label=label,
         rdf_type_uri=MODEL_TYPE_URI,
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
 
-def custom_model_region_get(label_region, username=None):  # noqa: E501
+def custom_model_region_get(label_region, custom_query_name=None, username=None):  # noqa: E501
     """Get a Model
 
     Gets the details of a single instance of a Model # noqa: E501
 
     :param label_region: region to search
     :type label_region: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
     :param username: Username to query
     :type username: str
 
@@ -63,6 +71,7 @@ def custom_model_region_get(label_region, username=None):  # noqa: E501
 
 
     return get_resource(
+        custom_query_name=custom_query_name,
         username=username,
         label_region=label_region,
         rdf_type_uri=MODEL_TYPE_URI,
