@@ -6270,6 +6270,85 @@ paths:
       summary: Update a Visualization
       tags:
       - Visualization
+  /custom/model/index:
+    get:
+      description: Gets the details of a single instance of a Model
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Label of NumericalIndex
+        in: query
+        name: label
+        required: true
+        schema:
+            type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Gets the details of a single instance of Model
+      summary: Get a Model
+      tags:
+      - Model
+  /custom/model/intervention:
+    get:
+      description: Gets the details of a single instance of a Model
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Label of intervation
+        in: query
+        name: label
+        required: true
+        schema:
+            type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Gets the details of a single instance of Model
+      summary: Get a Model
+      tags:
+      - Model
+  /custom/model/region:
+    get:
+      description: Gets the details of a single instance of a Model
+      parameters:
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: region to search
+        in: query
+        name: labelRegion
+        required: true
+        schema:
+            type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Gets the details of a single instance of Model
+      summary: Get a Model
+      tags:
+      - Model
+    x-oba-custom: true
   /custom/configurationsetups/{id}:
     get:
       description: Gets the details of a single instance of a ModelConfigurationSetup
