@@ -13,9 +13,9 @@ WHERE {
         {
             SELECT DISTINCT ?model where {
                 ?model sd:hasVersion ?model_version .
-    			?model_version sd:hasConfiguration ?model_c .
-                ?model_c a sdm:ModelConfiguration.
-                ?model_c sd:hasParameter ?param .
+                ?model_version sd:hasConfiguration ?model_c .
+        		?model_c sd:hasSetup ?setup .
+                ?setup sd:hasParameter ?param .
                 ?param sdm:relevantForIntervention ?interv .
                 ?interv a sdm:Intervention .
                 ?interv rdfs:label ?intervLabel .
