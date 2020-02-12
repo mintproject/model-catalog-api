@@ -13,15 +13,18 @@ CONSTRUCT {
 WHERE {
     GRAPH ?_g_iri {
         {
-      		SELECT DISTINCT ?model ?model_c ?region {
+      		SELECT DISTINCT ?model {
                 ?model sd:hasVersion ?model_version .
                 ?model_version sd:hasConfiguration ?model_c .
-        		?model_c sd:hasSetup ?setup .
-        		?setup sdm:hasRegion ?region .
+	            ?model_c sd:hasSetup ?setup .
+        		{	?model_c sdm:hasRegion ?region }
+        		union {
+              		?setup sdm:hasRegion ?region .
+      			}
                 ?region rdfs:label ?regionLabel .
                 FILTER REGEX(?regionLabel, ?_label, "i")
-		    }
-        }
+      		}
+    	}
         ?model ?predicate ?prop
         OPTIONAL {
          ?prop a ?type

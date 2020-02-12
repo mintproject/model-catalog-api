@@ -1,5 +1,5 @@
 PREFIX sd: <https://w3id.org/okn/o/sd#>
-PREFIX sdm: <https://w3id.org/okn/o/sdm#>=
+PREFIX sdm: <https://w3id.org/okn/o/sdm#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 
