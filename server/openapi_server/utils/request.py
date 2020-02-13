@@ -72,7 +72,7 @@ def get_resource_not_custom(request_args, **kwargs):
         query_type = "get_all_user"
         if "label" in kwargs and kwargs["label"] is not None:
             query_text = kwargs["label"]
-            query_type = "get_all_search"
+            query_type = "get_all_search_user"
             request_args["text"] = query_text
         return get_all_resource(request_args=request_args, query_type=query_type, **kwargs)
 
