@@ -18,7 +18,7 @@ def custom_model_index_get(label, custom_query_name=None, username=None):  # noq
     :param username: Username to query
     :type username: str
 
-    :rtype: Model
+    :rtype: List[Model]
     """
 
 
@@ -42,7 +42,7 @@ def custom_model_intervention_get(label, custom_query_name=None, username=None):
     :param username: Username to query
     :type username: str
 
-    :rtype: Model
+    :rtype: List[Model]
     """
 
 
@@ -66,7 +66,7 @@ def custom_model_region_get(label, custom_query_name=None, username=None):  # no
     :param username: Username to query
     :type username: str
 
-    :rtype: Model
+    :rtype: List[Model]
     """
 
 
