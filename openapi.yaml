@@ -6297,7 +6297,7 @@ paths:
         200:
           content:
             application/json:
-              schema:
+              items:
                 $ref: '#/components/schemas/Model'
           description: Gets the details of a single instance of Model
       summary: Get a Model
@@ -6330,7 +6330,7 @@ paths:
         200:
           content:
             application/json:
-              schema:
+              items:
                 $ref: '#/components/schemas/Model'
           description: Gets the details of a single instance of Model
       summary: Get a Model
@@ -6404,6 +6404,40 @@ paths:
       tags:
       - ConfigurationSetup
     x-oba-custom: true
+    /custom/modelconfigurationsetups/{id}:
+      get:
+        description: Gets the details of a single instance of a ModelConfigurationSetup
+        parameters:
+        - description: Username to query
+          in: query
+          name: username
+          required: false
+          schema:
+            type: string
+        - description: The ID of the resource
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+        - description: Name of the custom query
+          in: query
+          name: custom_query_name
+          required: false
+          schema:
+            default: custom_modelconfigurationsetups
+            type: string
+        responses:
+          200:
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ModelConfigurationSetup'
+            description: Gets the details of a single instance of  ModelConfigurationSetup
+        summary: Get a ModelConfigurationSetup
+        tags:
+        - ModelConfigurationSetup
+      x-oba-custom: true
   /custom/modelconfigurations/{id}:
     get:
       description: Gets the details of a single instance of a ModelConfiguration
@@ -6431,7 +6465,7 @@ paths:
         200:
           content:
             application/json:
-              schema:
+              items:
                 $ref: '#/components/schemas/ModelConfiguration'
           description: Gets the details of a single instance of ModelConfiguration
       summary: Get a ModelConfiguration
