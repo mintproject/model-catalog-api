@@ -1,4 +1,5 @@
 import json
+import typing
 from typing import Dict
 import uuid
 import validators
@@ -8,9 +9,12 @@ from openapi_server import query_manager
 from openapi_server.settings import ENDPOINT, PREFIX, GRAPH_BASE, UPDATE_ENDPOINT
 from openapi_server import logger
 
+primitives = typing.Union[int, str, bool, float]
+
 
 def generate_graph(username):
     return "{}{}".format(GRAPH_BASE, username)
+
 
 def set_up(**kwargs):
     username = kwargs["username"]
@@ -29,7 +33,7 @@ def get_resource(**kwargs):
     :rtype:
     """
 
-    #args
+    # args
     request_args: Dict[str, str] = {}
 
     if "custom_query_name" in kwargs:
@@ -153,7 +157,7 @@ def put_resource(**kwargs):
         logger.error("Missing username", exc_info=True)
         return "Bad request: missing username", 400, {}
 
-    #DELETE QUERY
+    # DELETE QUERY
     request_args_delete: Dict[str, str] = {
         "resource": resource_uri,
         "g": generate_graph(username),
@@ -166,7 +170,7 @@ def put_resource(**kwargs):
         logger.error("Exception occurred", exc_info=True)
         return "Error deleting query", 407, {}
 
-    #INSERT QUERY
+    # INSERT QUERY
     body_json = prepare_jsonld(body)
     prefixes, triples = get_insert_query(body_json)
     prefixes = '\n'.join(prefixes)
@@ -228,8 +232,7 @@ def post_resource(**kwargs):
     except Exception as e:
         logger.error("Missing username", exc_info=True)
         return "Bad request: missing username", 400, {}
-    traverse_obj(body,username)
-  
+    traverse_obj(body, username)
 
     print(body)
     insert_response = insert_all_resources(body, username)
@@ -238,37 +241,42 @@ def post_resource(**kwargs):
         return body, 201, {}
     else:
         return "Error inserting query", 407, {}
-def traverse_obj(body,username):
+
+
+def traverse_obj(body, username):
     for key, value in body.__dict__.items():
         if key != "openapi_types" and key != "attribute_map":
             if isinstance(value, list):
-                #print(type(value[0]))
+                # print(type(value[0]))
                 for inner_values in value:
-                    if not isinstance(inner_values, str) and not isinstance(inner_values, dict) :
-                        list_of_obj=get_all_complex_objects(inner_values,username)
-                        if len(list_of_obj)==0:
-                            inner_values.id=generate_new_uri()
+                    if not (isinstance(inner_values, primitives.__args__) or isinstance(inner_values, dict)):
+                        list_of_obj = get_all_complex_objects(inner_values, username)
+                        if len(list_of_obj) == 0:
+                            inner_values.id = generate_new_uri()
                             insert_response = insert_all_resources(inner_values, username)
                         else:
                             traverse_obj(inner_values)
 
-                        #print(inner_values)
+                        # print(inner_values)
             elif isinstance(value, dict):
                 pass
 
-def get_all_complex_objects(body,username):
-    l=[]
+
+def get_all_complex_objects(body, username):
+    l = []
     for key, value in body.__dict__.items():
         if key != "openapi_types" and key != "attribute_map":
             if isinstance(value, list):
-                #print(type(value[0]))
+                # print(type(value[0]))
                 for inner_values in value:
-                    if not isinstance(inner_values, str) and not isinstance(inner_values, dict) :
+                    if not isinstance(inner_values, str) and not isinstance(inner_values, dict):
                         l.append(inner_values)
-                        #print(inner_values)
+                        # print(inner_values)
             elif isinstance(value, dict):
                 pass
     return l
+
+
 def insert_all_resources(body, username):
     body_json = prepare_jsonld(body)
     prefixes, triples = get_insert_query(body_json)
@@ -302,8 +310,10 @@ def build_instance_uri(uri):
         return uri
     return "{}{}".format(PREFIX, uri)
 
+
 def generate_new_uri():
     return str(uuid.uuid4())
+
 
 def prepare_jsonld(resource):
     resource_dict = resource.to_dict()
