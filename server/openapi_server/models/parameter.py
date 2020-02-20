@@ -15,17 +15,17 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, description=None, has_data_type=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
         :type has_default_value: List[object]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.  # noqa: E501
         :type has_maximum_accepted_value: List[object]
-        :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
-        :type has_data_type: List[str]
         :param description: The description of this Parameter.  # noqa: E501
         :type description: List[str]
+        :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
+        :type has_data_type: List[str]
         :param has_fixed_value: The has_fixed_value of this Parameter.  # noqa: E501
         :type has_fixed_value: List[object]
         :param has_presentation: The has_presentation of this Parameter.  # noqa: E501
@@ -39,43 +39,47 @@ class Parameter(Model):
         :param has_accepted_values: The has_accepted_values of this Parameter.  # noqa: E501
         :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this Parameter.  # noqa: E501
-        :type adjusts_variable: List[object]
+        :type adjusts_variable: List[Variable]
         :param position: The position of this Parameter.  # noqa: E501
         :type position: List[int]
         :param id: The id of this Parameter.  # noqa: E501
         :type id: str
         :param uses_unit: The uses_unit of this Parameter.  # noqa: E501
-        :type uses_unit: List[object]
+        :type uses_unit: List[Unit]
         :param has_step_size: The has_step_size of this Parameter.  # noqa: E501
         :type has_step_size: List[float]
         """
+        from openapi_server.models.unit import Unit
+        from openapi_server.models.variable import Variable
         from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
             'has_default_value': List[object],
             'has_maximum_accepted_value': List[object],
-            'has_data_type': List[str],
             'description': List[str],
+            'has_data_type': List[str],
             'has_fixed_value': List[object],
             'has_presentation': List[VariablePresentation],
             'label': List[str],
             'type': List[str],
             'has_minimum_accepted_value': List[object],
             'has_accepted_values': List[str],
-            'adjusts_variable': List[object],
+            'adjusts_variable': List[Variable],
             'position': List[int],
             'id': str,
-            'uses_unit': List[object],
+            'uses_unit': List[Unit],
             'has_step_size': List[float]
         }
 
         self.attribute_map = {
             'has_default_value': 'hasDefaultValue',
             'has_maximum_accepted_value': 'hasMaximumAcceptedValue',
-            'has_data_type': 'hasDataType',
             'description': 'description',
+            'has_data_type': 'hasDataType',
             'has_fixed_value': 'hasFixedValue',
             'has_presentation': 'hasPresentation',
             'label': 'label',
@@ -91,8 +95,8 @@ class Parameter(Model):
 
         self._has_default_value = has_default_value
         self._has_maximum_accepted_value = has_maximum_accepted_value
-        self._has_data_type = has_data_type
         self._description = description
+        self._has_data_type = has_data_type
         self._has_fixed_value = has_fixed_value
         self._has_presentation = has_presentation
         self._label = label
@@ -159,27 +163,6 @@ class Parameter(Model):
         self._has_maximum_accepted_value = has_maximum_accepted_value
 
     @property
-    def has_data_type(self):
-        """Gets the has_data_type of this Parameter.
-
-
-        :return: The has_data_type of this Parameter.
-        :rtype: List[str]
-        """
-        return self._has_data_type
-
-    @has_data_type.setter
-    def has_data_type(self, has_data_type):
-        """Sets the has_data_type of this Parameter.
-
-
-        :param has_data_type: The has_data_type of this Parameter.
-        :type has_data_type: List[str]
-        """
-
-        self._has_data_type = has_data_type
-
-    @property
     def description(self):
         """Gets the description of this Parameter.
 
@@ -199,6 +182,27 @@ class Parameter(Model):
         """
 
         self._description = description
+
+    @property
+    def has_data_type(self):
+        """Gets the has_data_type of this Parameter.
+
+
+        :return: The has_data_type of this Parameter.
+        :rtype: List[str]
+        """
+        return self._has_data_type
+
+    @has_data_type.setter
+    def has_data_type(self, has_data_type):
+        """Sets the has_data_type of this Parameter.
+
+
+        :param has_data_type: The has_data_type of this Parameter.
+        :type has_data_type: List[str]
+        """
+
+        self._has_data_type = has_data_type
 
     @property
     def has_fixed_value(self):
@@ -332,7 +336,7 @@ class Parameter(Model):
 
 
         :return: The adjusts_variable of this Parameter.
-        :rtype: List[object]
+        :rtype: List[Variable]
         """
         return self._adjusts_variable
 
@@ -342,7 +346,7 @@ class Parameter(Model):
 
 
         :param adjusts_variable: The adjusts_variable of this Parameter.
-        :type adjusts_variable: List[object]
+        :type adjusts_variable: List[Variable]
         """
 
         self._adjusts_variable = adjusts_variable
@@ -395,7 +399,7 @@ class Parameter(Model):
 
 
         :return: The uses_unit of this Parameter.
-        :rtype: List[object]
+        :rtype: List[Unit]
         """
         return self._uses_unit
 
@@ -405,7 +409,7 @@ class Parameter(Model):
 
 
         :param uses_unit: The uses_unit of this Parameter.
-        :type uses_unit: List[object]
+        :type uses_unit: List[Unit]
         """
 
         self._uses_unit = uses_unit

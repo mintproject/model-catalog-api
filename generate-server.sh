@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 dir=${PWD}
 SERVER_DIR=server
 docker run -ti --rm -v ${PWD}:/local openapitools/openapi-generator-cli:v4.1.2 \

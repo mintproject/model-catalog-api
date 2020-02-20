@@ -43,11 +43,13 @@ class VariablePresentation(Model):
         :param part_of_dataset: The part_of_dataset of this VariablePresentation.  # noqa: E501
         :type part_of_dataset: List[DatasetSpecification]
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
-        :type uses_unit: List[object]
+        :type uses_unit: List[Unit]
         """
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.standard_variable import StandardVariable
+        from openapi_server.models.unit import Unit
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
 
@@ -64,7 +66,7 @@ class VariablePresentation(Model):
             'has_minimum_accepted_value': List[object],
             'id': str,
             'part_of_dataset': List[DatasetSpecification],
-            'uses_unit': List[object]
+            'uses_unit': List[Unit]
         }
 
         self.attribute_map = {
@@ -366,7 +368,7 @@ class VariablePresentation(Model):
 
 
         :return: The uses_unit of this VariablePresentation.
-        :rtype: List[object]
+        :rtype: List[Unit]
         """
         return self._uses_unit
 
@@ -376,7 +378,7 @@ class VariablePresentation(Model):
 
 
         :param uses_unit: The uses_unit of this VariablePresentation.
-        :type uses_unit: List[object]
+        :type uses_unit: List[Unit]
         """
 
         self._uses_unit = uses_unit

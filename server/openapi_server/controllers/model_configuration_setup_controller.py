@@ -6,6 +6,29 @@ from openapi_server.utils.vars import MODELCONFIGURATIONSETUP_TYPE_NAME, MODELCO
 from openapi_server.models.model_configuration_setup import ModelConfigurationSetup  # noqa: E501
 from openapi_server import util
 
+def custom_modelconfigurationsetups_id_get(id, username=None, custom_query_name=None):  # noqa: E501
+    """Get a ModelConfigurationSetup
+
+    Gets the details of a single instance of a ModelConfigurationSetup # noqa: E501
+
+    :param id: The ID of the resource
+    :type id: str
+    :param username: Username to query
+    :type username: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
+
+    :rtype: ModelConfigurationSetup
+    """
+
+
+    return get_resource(id=id,
+        username=username,
+        custom_query_name=custom_query_name,
+        rdf_type_uri=MODELCONFIGURATIONSETUP_TYPE_URI,
+        rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 
+        kls=ModelConfigurationSetup)
+
 def modelconfigurationsetups_get(username=None, label=None):  # noqa: E501
     """List all ModelConfigurationSetup entities
 
