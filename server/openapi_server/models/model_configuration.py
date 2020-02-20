@@ -15,19 +15,19 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, has_input=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_implementation_script_location=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
-        :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
-        :type has_documentation: List[str]
         :param keywords: The keywords of this ModelConfiguration.  # noqa: E501
         :type keywords: List[str]
+        :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_grid: The has_grid of this ModelConfiguration.  # noqa: E501
         :type has_grid: List[Grid]
-        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
-        :type has_implementation_script_location: List[str]
         :param software_requirements: The software_requirements of this ModelConfiguration.  # noqa: E501
         :type software_requirements: List[str]
+        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.  # noqa: E501
+        :type has_implementation_script_location: List[str]
         :param has_download_url: The has_download_url of this ModelConfiguration.  # noqa: E501
         :type has_download_url: List[str]
         :param type: The type of this ModelConfiguration.  # noqa: E501
@@ -35,13 +35,13 @@ class ModelConfiguration(Model):
         :param has_installation_instructions: The has_installation_instructions of this ModelConfiguration.  # noqa: E501
         :type has_installation_instructions: List[str]
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfiguration.  # noqa: E501
-        :type compatible_visualization_software: List[object]
+        :type compatible_visualization_software: List[Software]
         :param has_region: The has_region of this ModelConfiguration.  # noqa: E501
         :type has_region: List[Region]
         :param has_faq: The has_faq of this ModelConfiguration.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this ModelConfiguration.  # noqa: E501
-        :type logo: List[object]
+        :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this ModelConfiguration.  # noqa: E501
         :type has_contact_person: List[object]
         :param id: The id of this ModelConfiguration.  # noqa: E501
@@ -49,9 +49,9 @@ class ModelConfiguration(Model):
         :param identifier: The identifier of this ModelConfiguration.  # noqa: E501
         :type identifier: List[str]
         :param has_sample_execution: The has_sample_execution of this ModelConfiguration.  # noqa: E501
-        :type has_sample_execution: List[object]
+        :type has_sample_execution: List[SampleExecution]
         :param has_sample_result: The has_sample_result of this ModelConfiguration.  # noqa: E501
-        :type has_sample_result: List[object]
+        :type has_sample_result: List[SampleResource]
         :param author: The author of this ModelConfiguration.  # noqa: E501
         :type author: List[object]
         :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
@@ -65,21 +65,21 @@ class ModelConfiguration(Model):
         :param license: The license of this ModelConfiguration.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ModelConfiguration.  # noqa: E501
-        :type has_source_code: List[object]
+        :type has_source_code: List[SourceCode]
         :param has_setup: The has_setup of this ModelConfiguration.  # noqa: E501
-        :type has_setup: List[object]
+        :type has_setup: List[ConfigurationSetup]
         :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.  # noqa: E501
-        :type has_explanation_diagram: List[object]
+        :type has_explanation_diagram: List[Image]
         :param has_example: The has_example of this ModelConfiguration.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this ModelConfiguration.  # noqa: E501
         :type publisher: List[object]
         :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
-        :type has_output: List[object]
+        :type has_output: List[DatasetSpecification]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
         :param has_funding: The has_funding of this ModelConfiguration.  # noqa: E501
-        :type has_funding: List[object]
+        :type has_funding: List[FundingInformation]
         :param has_component_location: The has_component_location of this ModelConfiguration.  # noqa: E501
         :type has_component_location: List[str]
         :param has_process: The has_process of this ModelConfiguration.  # noqa: E501
@@ -87,7 +87,7 @@ class ModelConfiguration(Model):
         :param support_details: The support_details of this ModelConfiguration.  # noqa: E501
         :type support_details: List[str]
         :param has_version: The has_version of this ModelConfiguration.  # noqa: E501
-        :type has_version: List[object]
+        :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this ModelConfiguration.  # noqa: E501
         :type has_typical_data_source: List[str]
         :param description: The description of this ModelConfiguration.  # noqa: E501
@@ -95,23 +95,23 @@ class ModelConfiguration(Model):
         :param reference_publication: The reference_publication of this ModelConfiguration.  # noqa: E501
         :type reference_publication: List[str]
         :param screenshot: The screenshot of this ModelConfiguration.  # noqa: E501
-        :type screenshot: List[object]
+        :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
         :type has_model_category: List[str]
         :param had_primary_source: The had_primary_source of this ModelConfiguration.  # noqa: E501
         :type had_primary_source: List[object]
         :param has_software_image: The has_software_image of this ModelConfiguration.  # noqa: E501
-        :type has_software_image: List[object]
+        :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ModelConfiguration.  # noqa: E501
         :type date_created: List[str]
         :param contributor: The contributor of this ModelConfiguration.  # noqa: E501
-        :type contributor: List[object]
+        :type contributor: List[Person]
         :param has_model_result_table: The has_model_result_table of this ModelConfiguration.  # noqa: E501
         :type has_model_result_table: List[str]
         :param has_purpose: The has_purpose of this ModelConfiguration.  # noqa: E501
         :type has_purpose: List[str]
         :param has_sample_visualization: The has_sample_visualization of this ModelConfiguration.  # noqa: E501
-        :type has_sample_visualization: List[object]
+        :type has_sample_visualization: List[Visualization]
         :param has_causal_diagram: The has_causal_diagram of this ModelConfiguration.  # noqa: E501
         :type has_causal_diagram: List[CausalDiagram]
         :param memory_requirements: The memory_requirements of this ModelConfiguration.  # noqa: E501
@@ -131,24 +131,50 @@ class ModelConfiguration(Model):
         :param has_assumption: The has_assumption of this ModelConfiguration.  # noqa: E501
         :type has_assumption: List[str]
         :param has_parameter: The has_parameter of this ModelConfiguration.  # noqa: E501
-        :type has_parameter: List[object]
+        :type has_parameter: List[Parameter]
         :param operating_systems: The operating_systems of this ModelConfiguration.  # noqa: E501
         :type operating_systems: List[str]
         :param has_equation: The has_equation of this ModelConfiguration.  # noqa: E501
         :type has_equation: List[Equation]
-        :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
-        :type has_input: List[object]
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfiguration.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
+        :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
+        :type has_input: List[DatasetSpecification]
         """
         from openapi_server.models.causal_diagram import CausalDiagram
+        from openapi_server.models.configuration_setup import ConfigurationSetup
+        from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.equation import Equation
+        from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
+        from openapi_server.models.image import Image
         from openapi_server.models.numerical_index import NumericalIndex
+        from openapi_server.models.parameter import Parameter
+        from openapi_server.models.person import Person
         from openapi_server.models.process import Process
         from openapi_server.models.region import Region
+        from openapi_server.models.sample_execution import SampleExecution
+        from openapi_server.models.sample_resource import SampleResource
+        from openapi_server.models.software import Software
+        from openapi_server.models.software_image import SoftwareImage
+        from openapi_server.models.software_version import SoftwareVersion
+        from openapi_server.models.source_code import SourceCode
         from openapi_server.models.time_interval import TimeInterval
+        from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -158,53 +184,53 @@ class ModelConfiguration(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_documentation': List[str],
             'keywords': List[str],
+            'has_documentation': List[str],
             'has_grid': List[Grid],
-            'has_implementation_script_location': List[str],
             'software_requirements': List[str],
+            'has_implementation_script_location': List[str],
             'has_download_url': List[str],
             'type': List[str],
             'has_installation_instructions': List[str],
-            'compatible_visualization_software': List[object],
+            'compatible_visualization_software': List[Software],
             'has_region': List[Region],
             'has_faq': List[str],
-            'logo': List[object],
+            'logo': List[Image],
             'has_contact_person': List[object],
             'id': str,
             'identifier': List[str],
-            'has_sample_execution': List[object],
-            'has_sample_result': List[object],
+            'has_sample_execution': List[SampleExecution],
+            'has_sample_result': List[SampleResource],
             'author': List[object],
             'has_constraint': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
             'date_published': List[str],
             'license': List[str],
-            'has_source_code': List[object],
-            'has_setup': List[object],
-            'has_explanation_diagram': List[object],
+            'has_source_code': List[SourceCode],
+            'has_setup': List[ConfigurationSetup],
+            'has_explanation_diagram': List[Image],
             'has_example': List[str],
             'publisher': List[object],
-            'has_output': List[object],
+            'has_output': List[DatasetSpecification],
             'has_output_time_interval': List[TimeInterval],
-            'has_funding': List[object],
+            'has_funding': List[FundingInformation],
             'has_component_location': List[str],
             'has_process': List[Process],
             'support_details': List[str],
-            'has_version': List[object],
+            'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
             'description': List[str],
             'reference_publication': List[str],
-            'screenshot': List[object],
+            'screenshot': List[Image],
             'has_model_category': List[str],
             'had_primary_source': List[object],
-            'has_software_image': List[object],
+            'has_software_image': List[SoftwareImage],
             'date_created': List[str],
-            'contributor': List[object],
+            'contributor': List[Person],
             'has_model_result_table': List[str],
             'has_purpose': List[str],
-            'has_sample_visualization': List[object],
+            'has_sample_visualization': List[Visualization],
             'has_causal_diagram': List[CausalDiagram],
             'memory_requirements': List[str],
             'website': List[str],
@@ -214,19 +240,19 @@ class ModelConfiguration(Model):
             'has_support_script_location': List[str],
             'label': List[str],
             'has_assumption': List[str],
-            'has_parameter': List[object],
+            'has_parameter': List[Parameter],
             'operating_systems': List[str],
             'has_equation': List[Equation],
-            'has_input': List[object],
-            'useful_for_calculating_index': List[NumericalIndex]
+            'useful_for_calculating_index': List[NumericalIndex],
+            'has_input': List[DatasetSpecification]
         }
 
         self.attribute_map = {
-            'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
-            'has_implementation_script_location': 'hasImplementationScriptLocation',
             'software_requirements': 'softwareRequirements',
+            'has_implementation_script_location': 'hasImplementationScriptLocation',
             'has_download_url': 'hasDownloadURL',
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
@@ -281,15 +307,15 @@ class ModelConfiguration(Model):
             'has_parameter': 'hasParameter',
             'operating_systems': 'operatingSystems',
             'has_equation': 'hasEquation',
-            'has_input': 'hasInput',
-            'useful_for_calculating_index': 'usefulForCalculatingIndex'
+            'useful_for_calculating_index': 'usefulForCalculatingIndex',
+            'has_input': 'hasInput'
         }
 
-        self._has_documentation = has_documentation
         self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_grid = has_grid
-        self._has_implementation_script_location = has_implementation_script_location
         self._software_requirements = software_requirements
+        self._has_implementation_script_location = has_implementation_script_location
         self._has_download_url = has_download_url
         self._type = type
         self._has_installation_instructions = has_installation_instructions
@@ -344,8 +370,8 @@ class ModelConfiguration(Model):
         self._has_parameter = has_parameter
         self._operating_systems = operating_systems
         self._has_equation = has_equation
-        self._has_input = has_input
         self._useful_for_calculating_index = useful_for_calculating_index
+        self._has_input = has_input
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelConfiguration':
@@ -357,27 +383,6 @@ class ModelConfiguration(Model):
         :rtype: ModelConfiguration
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def has_documentation(self):
-        """Gets the has_documentation of this ModelConfiguration.
-
-
-        :return: The has_documentation of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this ModelConfiguration.
-
-
-        :param has_documentation: The has_documentation of this ModelConfiguration.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
 
     @property
     def keywords(self):
@@ -401,6 +406,27 @@ class ModelConfiguration(Model):
         self._keywords = keywords
 
     @property
+    def has_documentation(self):
+        """Gets the has_documentation of this ModelConfiguration.
+
+
+        :return: The has_documentation of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_documentation
+
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this ModelConfiguration.
+
+
+        :param has_documentation: The has_documentation of this ModelConfiguration.
+        :type has_documentation: List[str]
+        """
+
+        self._has_documentation = has_documentation
+
+    @property
     def has_grid(self):
         """Gets the has_grid of this ModelConfiguration.
 
@@ -422,27 +448,6 @@ class ModelConfiguration(Model):
         self._has_grid = has_grid
 
     @property
-    def has_implementation_script_location(self):
-        """Gets the has_implementation_script_location of this ModelConfiguration.
-
-
-        :return: The has_implementation_script_location of this ModelConfiguration.
-        :rtype: List[str]
-        """
-        return self._has_implementation_script_location
-
-    @has_implementation_script_location.setter
-    def has_implementation_script_location(self, has_implementation_script_location):
-        """Sets the has_implementation_script_location of this ModelConfiguration.
-
-
-        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.
-        :type has_implementation_script_location: List[str]
-        """
-
-        self._has_implementation_script_location = has_implementation_script_location
-
-    @property
     def software_requirements(self):
         """Gets the software_requirements of this ModelConfiguration.
 
@@ -462,6 +467,27 @@ class ModelConfiguration(Model):
         """
 
         self._software_requirements = software_requirements
+
+    @property
+    def has_implementation_script_location(self):
+        """Gets the has_implementation_script_location of this ModelConfiguration.
+
+
+        :return: The has_implementation_script_location of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._has_implementation_script_location
+
+    @has_implementation_script_location.setter
+    def has_implementation_script_location(self, has_implementation_script_location):
+        """Sets the has_implementation_script_location of this ModelConfiguration.
+
+
+        :param has_implementation_script_location: The has_implementation_script_location of this ModelConfiguration.
+        :type has_implementation_script_location: List[str]
+        """
+
+        self._has_implementation_script_location = has_implementation_script_location
 
     @property
     def has_download_url(self):
@@ -532,7 +558,7 @@ class ModelConfiguration(Model):
 
 
         :return: The compatible_visualization_software of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Software]
         """
         return self._compatible_visualization_software
 
@@ -542,7 +568,7 @@ class ModelConfiguration(Model):
 
 
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfiguration.
-        :type compatible_visualization_software: List[object]
+        :type compatible_visualization_software: List[Software]
         """
 
         self._compatible_visualization_software = compatible_visualization_software
@@ -595,7 +621,7 @@ class ModelConfiguration(Model):
 
 
         :return: The logo of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Image]
         """
         return self._logo
 
@@ -605,7 +631,7 @@ class ModelConfiguration(Model):
 
 
         :param logo: The logo of this ModelConfiguration.
-        :type logo: List[object]
+        :type logo: List[Image]
         """
 
         self._logo = logo
@@ -679,7 +705,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_sample_execution of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[SampleExecution]
         """
         return self._has_sample_execution
 
@@ -689,7 +715,7 @@ class ModelConfiguration(Model):
 
 
         :param has_sample_execution: The has_sample_execution of this ModelConfiguration.
-        :type has_sample_execution: List[object]
+        :type has_sample_execution: List[SampleExecution]
         """
 
         self._has_sample_execution = has_sample_execution
@@ -700,7 +726,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_sample_result of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[SampleResource]
         """
         return self._has_sample_result
 
@@ -710,7 +736,7 @@ class ModelConfiguration(Model):
 
 
         :param has_sample_result: The has_sample_result of this ModelConfiguration.
-        :type has_sample_result: List[object]
+        :type has_sample_result: List[SampleResource]
         """
 
         self._has_sample_result = has_sample_result
@@ -847,7 +873,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_source_code of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[SourceCode]
         """
         return self._has_source_code
 
@@ -857,7 +883,7 @@ class ModelConfiguration(Model):
 
 
         :param has_source_code: The has_source_code of this ModelConfiguration.
-        :type has_source_code: List[object]
+        :type has_source_code: List[SourceCode]
         """
 
         self._has_source_code = has_source_code
@@ -868,7 +894,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_setup of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[ConfigurationSetup]
         """
         return self._has_setup
 
@@ -878,7 +904,7 @@ class ModelConfiguration(Model):
 
 
         :param has_setup: The has_setup of this ModelConfiguration.
-        :type has_setup: List[object]
+        :type has_setup: List[ConfigurationSetup]
         """
 
         self._has_setup = has_setup
@@ -889,7 +915,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_explanation_diagram of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Image]
         """
         return self._has_explanation_diagram
 
@@ -899,7 +925,7 @@ class ModelConfiguration(Model):
 
 
         :param has_explanation_diagram: The has_explanation_diagram of this ModelConfiguration.
-        :type has_explanation_diagram: List[object]
+        :type has_explanation_diagram: List[Image]
         """
 
         self._has_explanation_diagram = has_explanation_diagram
@@ -952,7 +978,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_output of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[DatasetSpecification]
         """
         return self._has_output
 
@@ -962,7 +988,7 @@ class ModelConfiguration(Model):
 
 
         :param has_output: The has_output of this ModelConfiguration.
-        :type has_output: List[object]
+        :type has_output: List[DatasetSpecification]
         """
 
         self._has_output = has_output
@@ -994,7 +1020,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_funding of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[FundingInformation]
         """
         return self._has_funding
 
@@ -1004,7 +1030,7 @@ class ModelConfiguration(Model):
 
 
         :param has_funding: The has_funding of this ModelConfiguration.
-        :type has_funding: List[object]
+        :type has_funding: List[FundingInformation]
         """
 
         self._has_funding = has_funding
@@ -1078,7 +1104,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_version of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[SoftwareVersion]
         """
         return self._has_version
 
@@ -1088,7 +1114,7 @@ class ModelConfiguration(Model):
 
 
         :param has_version: The has_version of this ModelConfiguration.
-        :type has_version: List[object]
+        :type has_version: List[SoftwareVersion]
         """
 
         self._has_version = has_version
@@ -1162,7 +1188,7 @@ class ModelConfiguration(Model):
 
 
         :return: The screenshot of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Image]
         """
         return self._screenshot
 
@@ -1172,7 +1198,7 @@ class ModelConfiguration(Model):
 
 
         :param screenshot: The screenshot of this ModelConfiguration.
-        :type screenshot: List[object]
+        :type screenshot: List[Image]
         """
 
         self._screenshot = screenshot
@@ -1225,7 +1251,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_software_image of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[SoftwareImage]
         """
         return self._has_software_image
 
@@ -1235,7 +1261,7 @@ class ModelConfiguration(Model):
 
 
         :param has_software_image: The has_software_image of this ModelConfiguration.
-        :type has_software_image: List[object]
+        :type has_software_image: List[SoftwareImage]
         """
 
         self._has_software_image = has_software_image
@@ -1267,7 +1293,7 @@ class ModelConfiguration(Model):
 
 
         :return: The contributor of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Person]
         """
         return self._contributor
 
@@ -1277,7 +1303,7 @@ class ModelConfiguration(Model):
 
 
         :param contributor: The contributor of this ModelConfiguration.
-        :type contributor: List[object]
+        :type contributor: List[Person]
         """
 
         self._contributor = contributor
@@ -1330,7 +1356,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_sample_visualization of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Visualization]
         """
         return self._has_sample_visualization
 
@@ -1340,7 +1366,7 @@ class ModelConfiguration(Model):
 
 
         :param has_sample_visualization: The has_sample_visualization of this ModelConfiguration.
-        :type has_sample_visualization: List[object]
+        :type has_sample_visualization: List[Visualization]
         """
 
         self._has_sample_visualization = has_sample_visualization
@@ -1540,7 +1566,7 @@ class ModelConfiguration(Model):
 
 
         :return: The has_parameter of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[Parameter]
         """
         return self._has_parameter
 
@@ -1550,7 +1576,7 @@ class ModelConfiguration(Model):
 
 
         :param has_parameter: The has_parameter of this ModelConfiguration.
-        :type has_parameter: List[object]
+        :type has_parameter: List[Parameter]
         """
 
         self._has_parameter = has_parameter
@@ -1598,27 +1624,6 @@ class ModelConfiguration(Model):
         self._has_equation = has_equation
 
     @property
-    def has_input(self):
-        """Gets the has_input of this ModelConfiguration.
-
-
-        :return: The has_input of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._has_input
-
-    @has_input.setter
-    def has_input(self, has_input):
-        """Sets the has_input of this ModelConfiguration.
-
-
-        :param has_input: The has_input of this ModelConfiguration.
-        :type has_input: List[object]
-        """
-
-        self._has_input = has_input
-
-    @property
     def useful_for_calculating_index(self):
         """Gets the useful_for_calculating_index of this ModelConfiguration.
 
@@ -1638,3 +1643,24 @@ class ModelConfiguration(Model):
         """
 
         self._useful_for_calculating_index = useful_for_calculating_index
+
+    @property
+    def has_input(self):
+        """Gets the has_input of this ModelConfiguration.
+
+
+        :return: The has_input of this ModelConfiguration.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._has_input
+
+    @has_input.setter
+    def has_input(self, has_input):
+        """Sets the has_input of this ModelConfiguration.
+
+
+        :param has_input: The has_input of this ModelConfiguration.
+        :type has_input: List[DatasetSpecification]
+        """
+
+        self._has_input = has_input
