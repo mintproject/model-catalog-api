@@ -234,7 +234,6 @@ def post_resource(**kwargs):
         return "Bad request: missing username", 400, {}
     traverse_obj(body, username)
 
-    print(body)
     insert_response = insert_all_resources(body, username)
 
     if insert_response:
