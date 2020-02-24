@@ -1,5 +1,5 @@
 {
-  "noauthor": [
+  "author": [
     {
       "id": "https://w3id.org/okn/i/mint/silva_rafael",
       "label": [
@@ -32,7 +32,7 @@
     }
   ],
   "hasComponentLocation": [
-    "https://github.com/mintproject/MINT-WorkflowDomain/blob/18cf8de2b117fad2a4ede6eb1a439b76ff241486/WINGSWorkflowComponents/cycles-0.9.4-alpha/cycles-0.9.4-alpha.zip?raw=true"
+    "https://github.com/mintproject/MINT-WorkflowDomain/blob/master/WINGSWorkflowComponents/cycles-0.9.4-alpha/cycles-0.9.4-alpha.zip?raw=true"
   ],
   "hasGrid": [
     {
@@ -365,120 +365,110 @@
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-ethiopia",
       "label": [
-        "Cycles model (v0.9.4) set up for the Gambella region (Ethiopia) with adjustable parameters"
+        "Cycles model setup (v0.9.4) for the Gambella region (Ethiopia) with adjustable parameters"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-ethiopia-weather",
       "label": [
-        "Cycles model (v0.9.4) set up for a single point in the Gambella region, with fixed planting dates and an adjustable weather file"
+        "Cycles model setup (v0.9.4) for a single point in the Gambella region, with fixed planting dates and an adjustable weather file"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-pongo-weather",
       "label": [
-        "Cycles configured model (v0.9.4) for the Pongo region with planting dates. Weather file (single point) can be selected"
+        "Cycles model setup (v0.9.4) for the Pongo region with planting dates. Weather file (single point) can be selected"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-ethiopia-multiple-points",
       "label": [
-        "Cycles model (v0.9.4) set up for the full Gambella region (Ethiopia) with adjustable planting dates"
+        "Cycles model setup (v0.9.4)for the full Gambella region (Ethiopia) with adjustable planting dates"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-simple-texas",
       "label": [
-        "Cycles model (v0.9.4) set up for a single point (weather file) in Texas"
+        "Cycles model setup (v0.9.4) for a single point (weather file) in Texas"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-pongo",
       "label": [
-        "Cycles configured model (v0.9.4) for the Pongo region (single point per weather file) with adjustable planting dates"
+        "Cycles model setup (v0.9.4) for the Pongo region (single point per weather file) with adjustable planting dates"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-pongo-multple-points",
       "label": [
-        "Cycles model (v0.9.4) set up for the Pongo region (South Sudan) with adjustable planting dates and for multiple points for weather (pre-selected)"
+        "Cycles model setup (v0.9.4) set up for the Pongo region (South Sudan) with adjustable planting dates and for multiple points for weather (pre-selected)"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-texas-weather",
       "label": [
-        "Cycles model (v0.9.4) set up for a single point in Texas, with fixed planting dates and adjustable weather file (single point)"
+        "Cycles model setup (v0.9.4) for a single point in Texas, with fixed planting dates and adjustable weather file (single point)"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-advanced-texas",
       "label": [
-        "Cycles model (v0.9.4) set up for a single point (weather file) in Texas with adjustable parameters"
+        "Cycles model setup (v0.9.4) for a single point (weather file) in Texas with adjustable parameters"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     },
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha-simple-pongo",
       "label": [
-        "Cycles configured model (v0.9.4) for the Pongo region-no file selection"
+        "Cycles model setup (v0.9.4) for the Pongo region-no file selection"
       ],
       "type": [
         "ConfigurationSetup",
         "ModelConfigurationSetup",
-        "ModelConfiguration",
         "Theory-GuidedModel"
       ]
     }
@@ -501,7 +491,6 @@
       "type": "SourceCode"
     }
   ],
-  "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha",
   "keywords": [
     "agriculture; cycles; crop growth; weather;soil;crop management"
   ],
