@@ -443,7 +443,7 @@
       "label": [
         "mintproject/cycles:0.9.4-alpha"
       ],
-      "type": "SoftwareImage"
+      "type": ["SoftwareImage"]
     }
   ],
   "hasSourceCode": [
@@ -451,7 +451,7 @@
       "label": [
         "Cycles configuration component (v2)"
       ],
-      "type": "SourceCode"
+      "type": ["SourceCode"]
     }
   ],
   "keywords": [

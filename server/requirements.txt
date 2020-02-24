@@ -1,13 +1,13 @@
-certifi==2019.9.11
 pythonql3==0.9.61
+certifi==2019.9.11
 chardet==3.0.4
 Click==7.0
 clickclick==1.2.2
-connexion==2.3.0
+connexion==2.6.0
 decorator==4.4.0
 Deprecated==1.2.6
 ecdsa==0.13.2
-Flask==1.0.2
+Flask==1.1.1
 Flask-Cors==3.0.6
 future==0.17.1
 gevent==1.4.0
@@ -35,7 +35,7 @@ PyLD==1.0.5
 pyparsing==2.0.7
 python-dateutil==2.8.0
 python-jose==3.0.1
-PyYAML==4.2b1
+PyYAML==5.3
 rdflib==4.2.2
 rdflib-jsonld==0.4.0
 requests==2.20.0
@@ -45,6 +45,7 @@ six==1.12.0
 SPARQLTransformer==1.6.10
 SPARQLWrapper==1.8.2
 swagger-ui-bundle==0.0.5
+typing==3.7.4.1
 urllib3==1.24.3
 validators==0.14.0
 webencodings==0.5.1
