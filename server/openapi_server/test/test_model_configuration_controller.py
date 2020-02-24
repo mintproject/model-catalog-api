@@ -63,6 +63,33 @@ class TestModelConfigurationController(BaseTestCase):
             content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
+
+    def test_modelconfigurations_full_post(self):
+        """Test case for modelconfigurations_post
+
+        Create a ModelConfiguration
+        """
+
+        path = INPUT_TESTS_DIRECTORY / 'model_configuration_full_with_id.json'
+        with open(path) as json_file:
+            data = json.load(json_file)
+
+        login_response = self.login()
+
+        token = login_response.json['access_token']
+        headers = {
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer {}".format(token)
+        }
+
+        response = self.client.open(
+            '/v1.4.0/modelconfigurations'.format(user=USERNAME),
+            method='POST',
+            headers=headers,
+            data=json.dumps(data),
+            content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+
     def login(self):
         query_string = [('username', USERNAME),
                         ('password', PASSWORD)]
