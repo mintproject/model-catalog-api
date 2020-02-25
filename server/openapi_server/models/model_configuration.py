@@ -15,7 +15,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_documentation=None, keywords=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, has_input=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_documentation=None, keywords=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param has_documentation: The has_documentation of this ModelConfiguration.  # noqa: E501
@@ -44,6 +44,8 @@ class ModelConfiguration(Model):
         :type logo: List[object]
         :param has_contact_person: The has_contact_person of this ModelConfiguration.  # noqa: E501
         :type has_contact_person: List[object]
+        :param tag: The tag of this ModelConfiguration.  # noqa: E501
+        :type tag: List[str]
         :param id: The id of this ModelConfiguration.  # noqa: E501
         :type id: str
         :param identifier: The identifier of this ModelConfiguration.  # noqa: E501
@@ -136,10 +138,10 @@ class ModelConfiguration(Model):
         :type operating_systems: List[str]
         :param has_equation: The has_equation of this ModelConfiguration.  # noqa: E501
         :type has_equation: List[Equation]
-        :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
-        :type has_input: List[object]
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfiguration.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
+        :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
+        :type has_input: List[object]
         """
         from openapi_server.models.causal_diagram import CausalDiagram
         from openapi_server.models.equation import Equation
@@ -171,6 +173,7 @@ class ModelConfiguration(Model):
             'has_faq': List[str],
             'logo': List[object],
             'has_contact_person': List[object],
+            'tag': List[str],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[object],
@@ -217,8 +220,8 @@ class ModelConfiguration(Model):
             'has_parameter': List[object],
             'operating_systems': List[str],
             'has_equation': List[Equation],
-            'has_input': List[object],
-            'useful_for_calculating_index': List[NumericalIndex]
+            'useful_for_calculating_index': List[NumericalIndex],
+            'has_input': List[object]
         }
 
         self.attribute_map = {
@@ -235,6 +238,7 @@ class ModelConfiguration(Model):
             'has_faq': 'hasFAQ',
             'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
+            'tag': 'tag',
             'id': 'id',
             'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
@@ -281,8 +285,8 @@ class ModelConfiguration(Model):
             'has_parameter': 'hasParameter',
             'operating_systems': 'operatingSystems',
             'has_equation': 'hasEquation',
-            'has_input': 'hasInput',
-            'useful_for_calculating_index': 'usefulForCalculatingIndex'
+            'useful_for_calculating_index': 'usefulForCalculatingIndex',
+            'has_input': 'hasInput'
         }
 
         self._has_documentation = has_documentation
@@ -298,6 +302,7 @@ class ModelConfiguration(Model):
         self._has_faq = has_faq
         self._logo = logo
         self._has_contact_person = has_contact_person
+        self._tag = tag
         self._id = id
         self._identifier = identifier
         self._has_sample_execution = has_sample_execution
@@ -344,8 +349,8 @@ class ModelConfiguration(Model):
         self._has_parameter = has_parameter
         self._operating_systems = operating_systems
         self._has_equation = has_equation
-        self._has_input = has_input
         self._useful_for_calculating_index = useful_for_calculating_index
+        self._has_input = has_input
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelConfiguration':
@@ -630,6 +635,27 @@ class ModelConfiguration(Model):
         """
 
         self._has_contact_person = has_contact_person
+
+    @property
+    def tag(self):
+        """Gets the tag of this ModelConfiguration.
+
+
+        :return: The tag of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ModelConfiguration.
+
+
+        :param tag: The tag of this ModelConfiguration.
+        :type tag: List[str]
+        """
+
+        self._tag = tag
 
     @property
     def id(self):
@@ -1598,27 +1624,6 @@ class ModelConfiguration(Model):
         self._has_equation = has_equation
 
     @property
-    def has_input(self):
-        """Gets the has_input of this ModelConfiguration.
-
-
-        :return: The has_input of this ModelConfiguration.
-        :rtype: List[object]
-        """
-        return self._has_input
-
-    @has_input.setter
-    def has_input(self, has_input):
-        """Sets the has_input of this ModelConfiguration.
-
-
-        :param has_input: The has_input of this ModelConfiguration.
-        :type has_input: List[object]
-        """
-
-        self._has_input = has_input
-
-    @property
     def useful_for_calculating_index(self):
         """Gets the useful_for_calculating_index of this ModelConfiguration.
 
@@ -1638,3 +1643,24 @@ class ModelConfiguration(Model):
         """
 
         self._useful_for_calculating_index = useful_for_calculating_index
+
+    @property
+    def has_input(self):
+        """Gets the has_input of this ModelConfiguration.
+
+
+        :return: The has_input of this ModelConfiguration.
+        :rtype: List[object]
+        """
+        return self._has_input
+
+    @has_input.setter
+    def has_input(self, has_input):
+        """Sets the has_input of this ModelConfiguration.
+
+
+        :param has_input: The has_input of this ModelConfiguration.
+        :type has_input: List[object]
+        """
+
+        self._has_input = has_input

@@ -15,7 +15,7 @@ class TheoryGuidedModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, software_requirements=None, support_details=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, has_grid=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, has_model_category=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_explanation_diagram=None, has_example=None, has_equation=None, publisher=None, useful_for_calculating_index=None):  # noqa: E501
         """TheoryGuidedModel - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this TheoryGuidedModel.  # noqa: E501
@@ -26,10 +26,10 @@ class TheoryGuidedModel(Model):
         :type keywords: List[str]
         :param has_grid: The has_grid of this TheoryGuidedModel.  # noqa: E501
         :type has_grid: List[Grid]
-        :param software_requirements: The software_requirements of this TheoryGuidedModel.  # noqa: E501
-        :type software_requirements: List[str]
         :param support_details: The support_details of this TheoryGuidedModel.  # noqa: E501
         :type support_details: List[str]
+        :param software_requirements: The software_requirements of this TheoryGuidedModel.  # noqa: E501
+        :type software_requirements: List[str]
         :param has_version: The has_version of this TheoryGuidedModel.  # noqa: E501
         :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this TheoryGuidedModel.  # noqa: E501
@@ -120,8 +120,8 @@ class TheoryGuidedModel(Model):
             'has_documentation': List[str],
             'keywords': List[str],
             'has_grid': List[Grid],
-            'software_requirements': List[str],
             'support_details': List[str],
+            'software_requirements': List[str],
             'has_version': List[object],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
@@ -167,8 +167,8 @@ class TheoryGuidedModel(Model):
             'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
             'has_grid': 'hasGrid',
-            'software_requirements': 'softwareRequirements',
             'support_details': 'supportDetails',
+            'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
@@ -213,8 +213,8 @@ class TheoryGuidedModel(Model):
         self._has_documentation = has_documentation
         self._keywords = keywords
         self._has_grid = has_grid
-        self._software_requirements = software_requirements
         self._support_details = support_details
+        self._software_requirements = software_requirements
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
@@ -350,27 +350,6 @@ class TheoryGuidedModel(Model):
         self._has_grid = has_grid
 
     @property
-    def software_requirements(self):
-        """Gets the software_requirements of this TheoryGuidedModel.
-
-
-        :return: The software_requirements of this TheoryGuidedModel.
-        :rtype: List[str]
-        """
-        return self._software_requirements
-
-    @software_requirements.setter
-    def software_requirements(self, software_requirements):
-        """Sets the software_requirements of this TheoryGuidedModel.
-
-
-        :param software_requirements: The software_requirements of this TheoryGuidedModel.
-        :type software_requirements: List[str]
-        """
-
-        self._software_requirements = software_requirements
-
-    @property
     def support_details(self):
         """Gets the support_details of this TheoryGuidedModel.
 
@@ -390,6 +369,27 @@ class TheoryGuidedModel(Model):
         """
 
         self._support_details = support_details
+
+    @property
+    def software_requirements(self):
+        """Gets the software_requirements of this TheoryGuidedModel.
+
+
+        :return: The software_requirements of this TheoryGuidedModel.
+        :rtype: List[str]
+        """
+        return self._software_requirements
+
+    @software_requirements.setter
+    def software_requirements(self, software_requirements):
+        """Sets the software_requirements of this TheoryGuidedModel.
+
+
+        :param software_requirements: The software_requirements of this TheoryGuidedModel.
+        :type software_requirements: List[str]
+        """
+
+        self._software_requirements = software_requirements
 
     @property
     def has_version(self):

@@ -15,7 +15,7 @@ class SoftwareImage(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, has_documentation=None, keywords=None, software_requirements=None, support_details=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_example=None, publisher=None):  # noqa: E501
+    def __init__(self, has_funding=None, has_documentation=None, keywords=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, compatible_visualization_software=None, contributor=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, memory_requirements=None, identifier=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_execution_command=None, has_assumption=None, date_published=None, license=None, operating_systems=None, has_source_code=None, has_example=None, publisher=None):  # noqa: E501
         """SoftwareImage - a model defined in OpenAPI
 
         :param has_funding: The has_funding of this SoftwareImage.  # noqa: E501
@@ -24,10 +24,10 @@ class SoftwareImage(Model):
         :type has_documentation: List[str]
         :param keywords: The keywords of this SoftwareImage.  # noqa: E501
         :type keywords: List[str]
-        :param software_requirements: The software_requirements of this SoftwareImage.  # noqa: E501
-        :type software_requirements: List[str]
         :param support_details: The support_details of this SoftwareImage.  # noqa: E501
         :type support_details: List[str]
+        :param software_requirements: The software_requirements of this SoftwareImage.  # noqa: E501
+        :type software_requirements: List[str]
         :param has_version: The has_version of this SoftwareImage.  # noqa: E501
         :type has_version: List[SoftwareVersion]
         :param has_typical_data_source: The has_typical_data_source of this SoftwareImage.  # noqa: E501
@@ -119,8 +119,8 @@ class SoftwareImage(Model):
             'has_funding': List[FundingInformation],
             'has_documentation': List[str],
             'keywords': List[str],
-            'software_requirements': List[str],
             'support_details': List[str],
+            'software_requirements': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
             'has_download_url': List[str],
@@ -162,8 +162,8 @@ class SoftwareImage(Model):
             'has_funding': 'hasFunding',
             'has_documentation': 'hasDocumentation',
             'keywords': 'keywords',
-            'software_requirements': 'softwareRequirements',
             'support_details': 'supportDetails',
+            'software_requirements': 'softwareRequirements',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
             'has_download_url': 'hasDownloadURL',
@@ -204,8 +204,8 @@ class SoftwareImage(Model):
         self._has_funding = has_funding
         self._has_documentation = has_documentation
         self._keywords = keywords
-        self._software_requirements = software_requirements
         self._support_details = support_details
+        self._software_requirements = software_requirements
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
         self._has_download_url = has_download_url
@@ -317,27 +317,6 @@ class SoftwareImage(Model):
         self._keywords = keywords
 
     @property
-    def software_requirements(self):
-        """Gets the software_requirements of this SoftwareImage.
-
-
-        :return: The software_requirements of this SoftwareImage.
-        :rtype: List[str]
-        """
-        return self._software_requirements
-
-    @software_requirements.setter
-    def software_requirements(self, software_requirements):
-        """Sets the software_requirements of this SoftwareImage.
-
-
-        :param software_requirements: The software_requirements of this SoftwareImage.
-        :type software_requirements: List[str]
-        """
-
-        self._software_requirements = software_requirements
-
-    @property
     def support_details(self):
         """Gets the support_details of this SoftwareImage.
 
@@ -357,6 +336,27 @@ class SoftwareImage(Model):
         """
 
         self._support_details = support_details
+
+    @property
+    def software_requirements(self):
+        """Gets the software_requirements of this SoftwareImage.
+
+
+        :return: The software_requirements of this SoftwareImage.
+        :rtype: List[str]
+        """
+        return self._software_requirements
+
+    @software_requirements.setter
+    def software_requirements(self, software_requirements):
+        """Sets the software_requirements of this SoftwareImage.
+
+
+        :param software_requirements: The software_requirements of this SoftwareImage.
+        :type software_requirements: List[str]
+        """
+
+        self._software_requirements = software_requirements
 
     @property
     def has_version(self):
