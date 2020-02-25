@@ -238,11 +238,6 @@
       "@id": "https://w3id.org/okn/o/sd#copyrightYear",
       "@type": "@id"
     },
-    "country": {
-      "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#country",
-      "@type": "@id"
-    },
     "created": {
       "@container": "@set",
       "@id": "http://purl.org/dc/elements/1.1/created"
@@ -652,6 +647,11 @@
       "@id": "https://w3id.org/okn/o/sdm#parameterAssignmentMethod",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
+    "partOf": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#partOf",
+      "@type": "@id"
+    },
     "partOfDataset": {
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#partOfDataset",
@@ -688,6 +688,11 @@
       "@id": "https://w3id.org/okn/o/sd#publisher",
       "@type": "@id"
     },
+    "recommendedIncrement": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#recommendedIncrement",
+      "@type": "http://www.w3.org/2001/XMLSchema#float"
+    },
     "referencePublication": {
       "@container": "@set",
       "@id": "https://codemeta.github.io/terms/referencePublication"
@@ -714,6 +719,11 @@
     "supportDetails": {
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#supportDetails",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "tag": {
+      "@container": "@set",
+      "@id": "https://w3id.org/okn/o/sdm#tag",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "title": {
