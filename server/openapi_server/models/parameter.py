@@ -15,17 +15,17 @@ class Parameter(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, description=None, has_data_type=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, has_data_type=None, description=None, has_fixed_value=None, has_presentation=None, label=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
         :type has_default_value: List[object]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.  # noqa: E501
         :type has_maximum_accepted_value: List[object]
-        :param description: The description of this Parameter.  # noqa: E501
-        :type description: List[str]
         :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
         :type has_data_type: List[str]
+        :param description: The description of this Parameter.  # noqa: E501
+        :type description: List[str]
         :param has_fixed_value: The has_fixed_value of this Parameter.  # noqa: E501
         :type has_fixed_value: List[object]
         :param has_presentation: The has_presentation of this Parameter.  # noqa: E501
@@ -56,8 +56,8 @@ class Parameter(Model):
         self.openapi_types = {
             'has_default_value': List[object],
             'has_maximum_accepted_value': List[object],
-            'description': List[str],
             'has_data_type': List[str],
+            'description': List[str],
             'has_fixed_value': List[object],
             'has_presentation': List[VariablePresentation],
             'label': List[str],
@@ -74,8 +74,8 @@ class Parameter(Model):
         self.attribute_map = {
             'has_default_value': 'hasDefaultValue',
             'has_maximum_accepted_value': 'hasMaximumAcceptedValue',
-            'description': 'description',
             'has_data_type': 'hasDataType',
+            'description': 'description',
             'has_fixed_value': 'hasFixedValue',
             'has_presentation': 'hasPresentation',
             'label': 'label',
@@ -91,8 +91,8 @@ class Parameter(Model):
 
         self._has_default_value = has_default_value
         self._has_maximum_accepted_value = has_maximum_accepted_value
-        self._description = description
         self._has_data_type = has_data_type
+        self._description = description
         self._has_fixed_value = has_fixed_value
         self._has_presentation = has_presentation
         self._label = label
@@ -159,27 +159,6 @@ class Parameter(Model):
         self._has_maximum_accepted_value = has_maximum_accepted_value
 
     @property
-    def description(self):
-        """Gets the description of this Parameter.
-
-
-        :return: The description of this Parameter.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Parameter.
-
-
-        :param description: The description of this Parameter.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def has_data_type(self):
         """Gets the has_data_type of this Parameter.
 
@@ -199,6 +178,27 @@ class Parameter(Model):
         """
 
         self._has_data_type = has_data_type
+
+    @property
+    def description(self):
+        """Gets the description of this Parameter.
+
+
+        :return: The description of this Parameter.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Parameter.
+
+
+        :param description: The description of this Parameter.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def has_fixed_value(self):
