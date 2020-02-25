@@ -6640,12 +6640,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -6692,12 +6692,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -6960,12 +6960,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -7247,12 +7247,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -7409,6 +7409,11 @@ components:
         hasContactPerson:
           items:
             type: object
+          nullable: true
+          type: array
+        tag:
+          items:
+            type: string
           nullable: true
           type: array
         id:
@@ -7664,14 +7669,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        hasInput:
-          items:
-            type: object
-          nullable: true
-          type: array
         usefulForCalculatingIndex:
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasInput:
+          items:
+            type: object
           nullable: true
           type: array
       type: object
@@ -7697,12 +7702,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -7939,12 +7944,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -8150,7 +8155,7 @@ components:
             type: string
           nullable: true
           type: array
-        country:
+        partOf:
           items:
             $ref: '#/components/schemas/Region'
           nullable: true
@@ -8191,12 +8196,12 @@ components:
             $ref: '#/components/schemas/Grid'
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -8457,6 +8462,11 @@ components:
             type: object
           nullable: true
           type: array
+        tag:
+          items:
+            type: string
+          nullable: true
+          type: array
         id:
           nullable: false
           type: string
@@ -8685,14 +8695,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        hasInput:
-          items:
-            type: object
-          nullable: true
-          type: array
         usefulForCalculatingIndex:
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasInput:
+          items:
+            type: object
           nullable: true
           type: array
       type: object
@@ -8737,12 +8747,12 @@ components:
             type: object
           nullable: true
           type: array
-        hasSpatialResolution:
+        hasCoordinateSystem:
           items:
             type: string
           nullable: true
           type: array
-        hasCoordinateSystem:
+        hasSpatialResolution:
           items:
             type: string
           nullable: true
@@ -9716,12 +9726,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9922,12 +9932,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -10116,12 +10126,12 @@ components:
           items: {}
           nullable: true
           type: array
-        hasDataType:
+        description:
           items:
             type: string
           nullable: true
           type: array
-        description:
+        hasDataType:
           items:
             type: string
           nullable: true
@@ -10226,12 +10236,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
