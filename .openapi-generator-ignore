@@ -1,9 +1,8 @@
 server/requirements.txt
 server/Dockerfile
 server/openapi_server/__main__.py
-server/docker-compose.yml 
+server/docker-compose.yml
 server/requirements.txt
 server/.gitignore
-server/openapi_server/
 server/openapi_server/test/
 server/openapi_server/test/*
