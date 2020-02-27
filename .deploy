@@ -5,7 +5,7 @@ docker tag model-catalog-api mintproject/model-catalog-api:$TRAVIS_TAG
 docker push -f mintproject/model-catalog-api:$TRAVIS_TAG
 
 last_tag=$(git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`)
-git diff --quiet $last_tag HEAD -- model-catalog.yaml --exit-code;
+git diff --quiet $last_tag HEAD -- openapi.yaml --exit-code;
 
 if [ $? -eq 0 ]
 then
