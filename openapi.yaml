@@ -6373,6 +6373,77 @@ paths:
       tags:
       - Model
     x-oba-custom: true
+  /custom/models/variable:
+    get:
+      description: Get models by variable name
+      parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_models_variable
+          type: string
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: variable to search
+        in: query
+        name: label
+        required: true
+        schema:
+            type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Model'
+          description: Gets a list of instance of Model
+      summary: Get a list of Model
+      tags:
+      - Model
+    x-oba-custom: true
+  /custom/modelconfigurationsetups/variable:
+    get:
+      description: Get model configurations by variable name
+      parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_modelconfigurationsetups_variable
+          type: string
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: variable to search
+        in: query
+        name: label
+        required: true
+        schema:
+            type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelConfigurationSetup'
+          description: Gets a list of instance of ModelConfigurationSetup
+      summary: Get a list  Model
+      tags:
+      - ModelConfigurationSetup
+    x-oba-custom: true
+
   /custom/configurationsetups/{id}:
     get:
       description: Gets the details of a single instance of a ModelConfigurationSetup
