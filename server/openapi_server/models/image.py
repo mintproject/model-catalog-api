@@ -25,7 +25,7 @@ class Image(Model):
         :param had_primary_source: The had_primary_source of this Image.  # noqa: E501
         :type had_primary_source: List[object]
         :param has_file_structure: The has_file_structure of this Image.  # noqa: E501
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         :param description: The description of this Image.  # noqa: E501
         :type description: List[str]
         :param has_presentation: The has_presentation of this Image.  # noqa: E501
@@ -53,7 +53,7 @@ class Image(Model):
             'has_dimensionality': List[int],
             'has_format': List[str],
             'had_primary_source': List[object],
-            'has_file_structure': object,
+            'has_file_structure': List[object],
             'description': List[str],
             'has_presentation': List[VariablePresentation],
             'position': List[int],
@@ -172,7 +172,7 @@ class Image(Model):
 
 
         :return: The has_file_structure of this Image.
-        :rtype: object
+        :rtype: List[object]
         """
         return self._has_file_structure
 
@@ -182,7 +182,7 @@ class Image(Model):
 
 
         :param has_file_structure: The has_file_structure of this Image.
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         """
 
         self._has_file_structure = has_file_structure

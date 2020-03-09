@@ -23,17 +23,17 @@ class SpatiallyDistributedGrid(Model):
         :param has_format: The has_format of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this SpatiallyDistributedGrid.  # noqa: E501
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         :param description: The description of this SpatiallyDistributedGrid.  # noqa: E501
         :type description: List[str]
         :param has_presentation: The has_presentation of this SpatiallyDistributedGrid.  # noqa: E501
-        :type has_presentation: List[object]
+        :type has_presentation: List[VariablePresentation]
         :param label: The label of this SpatiallyDistributedGrid.  # noqa: E501
         :type label: List[str]
         :param type: The type of this SpatiallyDistributedGrid.  # noqa: E501
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this SpatiallyDistributedGrid.  # noqa: E501
-        :type has_fixed_resource: List[object]
+        :type has_fixed_resource: List[SampleResource]
         :param has_spatial_resolution: The has_spatial_resolution of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_spatial_resolution: List[str]
         :param has_coordinate_system: The has_coordinate_system of this SpatiallyDistributedGrid.  # noqa: E501
@@ -47,17 +47,21 @@ class SpatiallyDistributedGrid(Model):
         :param id: The id of this SpatiallyDistributedGrid.  # noqa: E501
         :type id: str
         """
+        from openapi_server.models.sample_resource import SampleResource
+        from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
-            'has_file_structure': object,
+            'has_file_structure': List[object],
             'description': List[str],
-            'has_presentation': List[object],
+            'has_presentation': List[VariablePresentation],
             'label': List[str],
             'type': List[str],
-            'has_fixed_resource': List[object],
+            'has_fixed_resource': List[SampleResource],
             'has_spatial_resolution': List[str],
             'has_coordinate_system': List[str],
             'has_shape': List[str],
@@ -157,7 +161,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :return: The has_file_structure of this SpatiallyDistributedGrid.
-        :rtype: object
+        :rtype: List[object]
         """
         return self._has_file_structure
 
@@ -167,7 +171,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :param has_file_structure: The has_file_structure of this SpatiallyDistributedGrid.
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         """
 
         self._has_file_structure = has_file_structure
@@ -199,7 +203,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :return: The has_presentation of this SpatiallyDistributedGrid.
-        :rtype: List[object]
+        :rtype: List[VariablePresentation]
         """
         return self._has_presentation
 
@@ -209,7 +213,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :param has_presentation: The has_presentation of this SpatiallyDistributedGrid.
-        :type has_presentation: List[object]
+        :type has_presentation: List[VariablePresentation]
         """
 
         self._has_presentation = has_presentation
@@ -262,7 +266,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :return: The has_fixed_resource of this SpatiallyDistributedGrid.
-        :rtype: List[object]
+        :rtype: List[SampleResource]
         """
         return self._has_fixed_resource
 
@@ -272,7 +276,7 @@ class SpatiallyDistributedGrid(Model):
 
 
         :param has_fixed_resource: The has_fixed_resource of this SpatiallyDistributedGrid.
-        :type has_fixed_resource: List[object]
+        :type has_fixed_resource: List[SampleResource]
         """
 
         self._has_fixed_resource = has_fixed_resource

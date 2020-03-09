@@ -23,7 +23,7 @@ class DatasetSpecification(Model):
         :param has_format: The has_format of this DatasetSpecification.  # noqa: E501
         :type has_format: List[str]
         :param has_file_structure: The has_file_structure of this DatasetSpecification.  # noqa: E501
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         :param description: The description of this DatasetSpecification.  # noqa: E501
         :type description: List[str]
         :param has_presentation: The has_presentation of this DatasetSpecification.  # noqa: E501
@@ -48,7 +48,7 @@ class DatasetSpecification(Model):
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
-            'has_file_structure': object,
+            'has_file_structure': List[object],
             'description': List[str],
             'has_presentation': List[VariablePresentation],
             'position': List[int],
@@ -141,7 +141,7 @@ class DatasetSpecification(Model):
 
 
         :return: The has_file_structure of this DatasetSpecification.
-        :rtype: object
+        :rtype: List[object]
         """
         return self._has_file_structure
 
@@ -151,7 +151,7 @@ class DatasetSpecification(Model):
 
 
         :param has_file_structure: The has_file_structure of this DatasetSpecification.
-        :type has_file_structure: object
+        :type has_file_structure: List[object]
         """
 
         self._has_file_structure = has_file_structure

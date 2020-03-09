@@ -29,9 +29,11 @@ class TimeInterval(Model):
         :param interval_value: The interval_value of this TimeInterval.  # noqa: E501
         :type interval_value: List[object]
         :param interval_unit: The interval_unit of this TimeInterval.  # noqa: E501
-        :type interval_unit: List[object]
+        :type interval_unit: List[Unit]
         """
+        from openapi_server.models.unit import Unit
 
+          # noqa: E501
 
         self.openapi_types = {
             'description': List[str],
@@ -39,7 +41,7 @@ class TimeInterval(Model):
             'label': List[str],
             'type': List[str],
             'interval_value': List[object],
-            'interval_unit': List[object]
+            'interval_unit': List[Unit]
         }
 
         self.attribute_map = {
@@ -180,7 +182,7 @@ class TimeInterval(Model):
 
 
         :return: The interval_unit of this TimeInterval.
-        :rtype: List[object]
+        :rtype: List[Unit]
         """
         return self._interval_unit
 
@@ -190,7 +192,7 @@ class TimeInterval(Model):
 
 
         :param interval_unit: The interval_unit of this TimeInterval.
-        :type interval_unit: List[object]
+        :type interval_unit: List[Unit]
         """
 
         self._interval_unit = interval_unit

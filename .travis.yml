@@ -21,6 +21,10 @@ before_install:
 - docker tag model-catalog-api mintproject/model-catalog-api:latest
 - docker push mintproject/model-catalog-api:latest
 - popd
+
+install: pip install tox-travis
+script: cd server; tox
+
 deploy:
   provider: script
   script: bash .deploy
