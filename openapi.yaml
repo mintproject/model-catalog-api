@@ -7154,7 +7154,7 @@ components:
           type: array
         type:
           items:
-            type: string
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
       type: object
@@ -7162,7 +7162,7 @@ components:
       properties:
         keywords:
           items:
-            type: string
+            type: object
           nullable: true
           type: array
         hasDocumentation:
@@ -7177,12 +7177,12 @@ components:
           type: array
         softwareRequirements:
           items:
-            type: string
+            $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         hasImplementationScriptLocation:
           items:
-            type: string
+            type: object
           nullable: true
           type: array
         hasDownloadURL:
@@ -7212,7 +7212,7 @@ components:
           type: array
         calibrationMethod:
           items:
-            type: string
+            $ref: '#/components/schemas/SourceCode'
           nullable: true
           type: array
         hasRegion:
@@ -7240,7 +7240,7 @@ components:
           type: string
         identifier:
           items:
-            type: string
+            $ref: '#/components/schemas/TimeInterval'
           nullable: true
           type: array
         hasSampleExecution:
@@ -7260,7 +7260,7 @@ components:
           type: array
         hasConstraint:
           items:
-            type: string
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         shortDescription:
@@ -7305,7 +7305,7 @@ components:
           type: array
         calibrationInterval:
           items:
-            type: string
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         publisher:
@@ -7355,7 +7355,7 @@ components:
           type: array
         hasTypicalDataSource:
           items:
-            type: string
+            $ref: '#/components/schemas/CausalDiagram'
           nullable: true
           type: array
         description:
@@ -7440,7 +7440,7 @@ components:
           type: array
         processorRequirements:
           items:
-            type: string
+            $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
         adjustableParameter:
@@ -7553,7 +7553,7 @@ components:
           type: array
         referencePublication:
           items:
-            type: string
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         screenshot:
