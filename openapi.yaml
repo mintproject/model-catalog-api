@@ -6894,14 +6894,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -7591,14 +7591,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -7812,14 +7812,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -8755,14 +8755,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -9560,14 +9560,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -9771,14 +9771,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -10003,14 +10003,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
@@ -10204,7 +10204,7 @@ components:
           type: array
         recommendedIncrement:
           items:
-            type: string
+            type: number
           nullable: true
           type: array
         type:
@@ -10228,7 +10228,7 @@ components:
           type: array
         relevantForIntervention:
           items:
-            type: object
+            $ref: '#/components/schemas/Intervention'
           nullable: true
           type: array
         position:
@@ -10358,14 +10358,14 @@ components:
             type: string
           nullable: true
           type: array
-        compatibleVisualizationSoftware:
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
         contributor:
           items:
             $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          items:
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         hasFAQ:
