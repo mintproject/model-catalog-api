@@ -15,6 +15,7 @@ MINT_USERNAME = "mint@isi.edu"
 
 class TestModel(BaseTestCase):
     """Model integration test stubs"""
+    logger = logging.getLogger("TestModel")
 
     def test_model_custom_index_get(self):
         """Test case for model_get
@@ -31,7 +32,7 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-
+        self.logger.info("Response length {}".format(len(response.json)))
         for item in response.json:
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
@@ -52,7 +53,7 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-
+        self.logger.info("Response length {}".format(len(response.json)))
         for item in response.json:
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
@@ -73,7 +74,7 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-
+        self.logger.info("Response length {}".format(len(response.json)))
         for item in response.json:
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
@@ -94,7 +95,7 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-
+        self.logger.info("Response length {}".format(len(response.json)))
         for item in response.json:
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
@@ -116,6 +117,7 @@ class TestModel(BaseTestCase):
             headers=headers,
             query_string=query_string)
 
+        self.logger.info("Response length {}".format(len(response.json)))
         for item in response.json:
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,

@@ -1,6 +1,8 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+
+import logging
 import unittest
 
 from flask import json
@@ -13,6 +15,7 @@ MINT_USERNAME = "mint@isi.edu"
 
 class TestModelConfigurationSetupController(BaseTestCase):
     """ModelConfigurationSetupController integration test stubs"""
+    logger = logging.getLogger("TestModelConfigurationSetupController")
 
     def test_modelconfigurationsetups_get(self):
         """Test case for modelconfigurationsetups_get
@@ -29,6 +32,8 @@ class TestModelConfigurationSetupController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+        self.assertTrue(response.json)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -46,6 +51,8 @@ class TestModelConfigurationSetupController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+        self.assertTrue(response.json)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -63,6 +70,13 @@ class TestModelConfigurationSetupController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+        self.assertTrue(response.json)
+        resource = ModelConfigurationSetup.from_dict(response.json)
+        self.assertTrue(resource.has_input)
+        self.assertTrue(resource.has_output)
+        self.assertTrue(resource.has_parameter)
+        self.assertTrue(resource.has_input[0].has_fixed_resource)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -72,7 +86,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
         Get a ModelConfigurationSetup
         """
         query_string = [('username', MINT_USERNAME),
-                        ('label', 'flooding')]
+                        ('label', 'flood')]
         headers = {
             'Accept': 'application/json',
         }
@@ -81,6 +95,8 @@ class TestModelConfigurationSetupController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+        self.assertTrue(response.json)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

@@ -20,6 +20,7 @@ PASSWORD = "Cs0WgIQPWJ"
 
 
 class TestModelConfigurationController(BaseTestCase):
+    logger = logging.getLogger("TestModelConfigurationController")
     """ModelConfigurationController integration test stubs"""
     def test_modelconfigurations_get(self):
         """Test case for modelconfigurations_get
@@ -36,6 +37,7 @@ class TestModelConfigurationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -52,6 +54,7 @@ class TestModelConfigurationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -67,6 +70,8 @@ class TestModelConfigurationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
         return response
