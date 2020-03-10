@@ -11,48 +11,6 @@ servers:
 - url: https://dev.api.models.mint.isi.edu/v1.4.0
 - url: http://localhost:8080/v1.4.0
 paths:
-  /user/login:
-    get:
-      description: Login the user
-      operationId: user_login_get
-      parameters:
-      - description: The user name for login
-        in: query
-        name: username
-        required: true
-        schema:
-          type: string
-      - description: The password for login in clear text
-        in: query
-        name: password
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                type: string
-          description: successful operation
-          headers:
-            X-Rate-Limit:
-              description: calls per hour allowed by the user
-              schema:
-                format: int32
-                type: integer
-            X-Expires-After:
-              description: date in UTC when token expires
-              schema:
-                format: date-time
-                type: string
-        400:
-          content:
-            application/json:
-              schema:
-                type: string
-          description: unsuccessful operation
-      x-openapi-router-controller: openapi_server.controllers.user_controller
   /causaldiagrams:
     get:
       description: Gets a list of all CausalDiagram entities
@@ -3161,6 +3119,48 @@ paths:
       summary: Update a TimeInterval
       tags:
       - TimeInterval
+  /user/login:
+    get:
+      description: Login the user
+      operationId: user_login_get
+      parameters:
+      - description: The user name for login
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+      - description: The password for login in clear text
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                format: int32
+                type: integer
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                format: date-time
+                type: string
+        400:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: unsuccessful operation
+      x-openapi-router-controller: openapi_server.controllers.user_controller
   /configurationsetups:
     get:
       description: Gets a list of all ConfigurationSetup entities
@@ -6894,14 +6894,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -6909,14 +6909,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -6987,12 +6987,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7225,14 +7225,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         tag:
@@ -7493,14 +7493,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        usefulForCalculatingIndex:
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
         hasInput:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -7591,14 +7591,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7606,14 +7606,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -7684,12 +7684,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -7812,14 +7812,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7827,14 +7827,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -7905,12 +7905,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -8003,14 +8003,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         tag:
@@ -8246,14 +8246,14 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
-        usefulForCalculatingIndex:
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
         hasInput:
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
       type: object
@@ -8398,12 +8398,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        hasImplementationScriptLocation:
           items:
             type: string
           nullable: true
           type: array
-        hasImplementationScriptLocation:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -8433,14 +8433,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         id:
@@ -8755,14 +8755,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -8770,14 +8770,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -8848,12 +8848,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -9088,12 +9088,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        hasImplementationScriptLocation:
           items:
             type: string
           nullable: true
           type: array
-        hasImplementationScriptLocation:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9123,14 +9123,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         id:
@@ -9500,12 +9500,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9560,14 +9560,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -9575,14 +9575,19 @@ components:
             type: string
           nullable: true
           type: array
+        logo:
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
         hasContactPerson:
           items:
             type: object
           nullable: true
           type: array
-        logo:
+        tag:
           items:
-            $ref: '#/components/schemas/Image'
+            type: string
           nullable: true
           type: array
         hasPurpose:
@@ -9598,12 +9603,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -9706,12 +9711,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -9766,14 +9771,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -9781,14 +9786,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -9804,12 +9809,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
@@ -9998,14 +10003,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -10013,14 +10018,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -10091,12 +10096,12 @@ components:
             type: string
           nullable: true
           type: array
-        license:
+        operatingSystems:
           items:
             type: string
           nullable: true
           type: array
-        operatingSystems:
+        license:
           items:
             type: string
           nullable: true
@@ -10197,6 +10202,11 @@ components:
             type: string
           nullable: true
           type: array
+        recommendedIncrement:
+          items:
+            type: string
+          nullable: true
+          type: array
         type:
           items:
             type: string
@@ -10214,6 +10224,11 @@ components:
         adjustsVariable:
           items:
             $ref: '#/components/schemas/Variable'
+          nullable: true
+          type: array
+        relevantForIntervention:
+          items:
+            type: object
           nullable: true
           type: array
         position:
@@ -10283,12 +10298,12 @@ components:
             type: string
           nullable: true
           type: array
-        softwareRequirements:
+        supportDetails:
           items:
             type: string
           nullable: true
           type: array
-        supportDetails:
+        softwareRequirements:
           items:
             type: string
           nullable: true
@@ -10343,14 +10358,14 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -10358,14 +10373,14 @@ components:
             type: string
           nullable: true
           type: array
-        hasContactPerson:
-          items:
-            type: object
-          nullable: true
-          type: array
         logo:
           items:
             $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          items:
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -10381,12 +10396,12 @@ components:
             $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
-        memoryRequirements:
+        identifier:
           items:
             type: string
           nullable: true
           type: array
-        identifier:
+        memoryRequirements:
           items:
             type: string
           nullable: true
