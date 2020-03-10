@@ -16,6 +16,8 @@ install:
     - cd server
     - pip install  pythonql3==0.9.61
     - pip install -r requirements.txt
+script:
+    - tox
 deploy:
   provider: script
   script: bash .deploy
