@@ -1,4 +1,4 @@
-language: generic
+language: python
 env:
   matrix:
   - DOCKER_COMPOSE_VERSION=1.23.2
@@ -11,8 +11,7 @@ before_install:
 - sudo apt-get install nodejs
 - npm install --global release-it
 
-install: pip install tox-travis --user
-script: cd server; tox
+before_script: cd server
 
 deploy:
   provider: script
