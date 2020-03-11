@@ -17,6 +17,8 @@ install:
     - pip install tox
 script:
     - tox
+before_deploy:
+    - cd $TRAVIS_BUILD_DIR
 deploy:
   provider: script
   script: bash .deploy
