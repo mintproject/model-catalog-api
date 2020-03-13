@@ -32,8 +32,6 @@ class TestModel(BaseTestCase):
             query_string=query_string)
         self.logger.info("Response length {}".format(len(response.json)))
         self.assertIsInstance(Model.from_dict(response.json), Model)
-        for author in Model.author:
-            self.logger.info(author)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
