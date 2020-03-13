@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import logging
+from pathlib import Path
 
 import connexion
 import yaml
@@ -18,18 +19,20 @@ query_manager = QueryManager(queries_dir=QUERY_DIRECTORY,
 
 import logging.config
 
-with open('logging.yaml', 'r') as f:
-    config = yaml.safe_load(f.read())
-    logging.config.dictConfig(config)
-class BaseTestCase(TestCase):
-    logger = logging.getLogger(__name__)
 
+class BaseTestCase(TestCase):
+    logging_file = Path(__file__).parent.parent / "settings" / "logging.ini"
+    try:
+        logging.config.fileConfig(logging_file)
+    except:
+        logging.error("Logging config file does not exist {}".format(logging_file))
+        exit(0)
+    logger = logging.getLogger(__name__)
 
     def setup(self):
         self.get_username = "mint@isi.edu"
 
     def create_app(self):
-        logger = logging.getLogger(__name__)
         Specification.from_file = CachedSpecification.from_file
 
         app = connexion.App(__name__, specification_dir='../openapi/')
