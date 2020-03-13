@@ -36,5 +36,6 @@ class BaseTestCase(TestCase):
         app.app.json_encoder = JSONEncoder
         app.add_api('openapi.yaml',
                     arguments={'title': 'Model Catalog'},
-                    pythonic_params=False)
+                    pythonic_params=False,
+                    validate_responses=True)
         return app.app

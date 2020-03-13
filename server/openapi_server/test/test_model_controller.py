@@ -16,6 +16,27 @@ MINT_USERNAME = "mint@isi.edu"
 class TestModel(BaseTestCase):
     """Model integration test stubs"""
     logger = logging.getLogger("TestModel")
+    def test_model_get_id(self):
+        """Test case for model_get
+
+        List all Models entities
+        """
+        query_string = [('username', MINT_USERNAME)]
+        headers = {
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.4.0/models/{}'.format("CYCLES"),
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
+        self.assertIsInstance(Model.from_dict(response.json), Model)
+        for author in Model.author:
+            self.logger.info(author)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
 
     def test_model_custom_index_get(self):
         """Test case for model_get

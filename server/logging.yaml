@@ -9,7 +9,7 @@ handlers:
     formatter: simple
 loggers:
   grlc:
-    level: WARNING
+    level: DEBUG
     handlers: [console]
     propagate: no
   openapi_server:
