@@ -28,9 +28,25 @@ class BaseTestCase(TestCase):
         logging.error("Logging config file does not exist {}".format(logging_file))
         exit(0)
     logger = logging.getLogger(__name__)
+    get_username = "mint@isi.edu"
+    post_username = "mosorio@isi.edu"
+    post_password = "Cs0WgIQPWJ"
 
-    def setup(self):
-        self.get_username = "mint@isi.edu"
+    def login(self):
+        query_string = [('username', self.post_username),
+                        ('password', self.post_password)]
+        headers = {
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.4.0/user/login',
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+        return response.json
+
 
     def create_app(self):
         Specification.from_file = CachedSpecification.from_file
