@@ -3141,7 +3141,7 @@ paths:
           content:
             application/json:
               schema:
-                type: string
+                type: object
           description: successful operation
           headers:
             X-Rate-Limit:
