@@ -12,6 +12,8 @@ python -m openapi_server
 ### Testing
 
 ```bash
+pip install tox
+cd server
 tox
 ```
 
