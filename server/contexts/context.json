@@ -784,6 +784,9 @@
       "@container": "@set",
       "@id": "https://w3id.org/okn/o/sd#website",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
-    }
+    },
+    "sd": "https://w3id.org/okn/o/sd#",
+    "sdm": "https://w3id.org/okn/o/sdm#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   }
 }
