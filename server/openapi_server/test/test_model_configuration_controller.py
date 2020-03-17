@@ -76,17 +76,47 @@ class TestModelConfigurationController(BaseTestCase):
         model_request = ModelConfiguration.from_dict(data)
         model_request.id = response.json['id']
 
-        # ##### Verify if the request and response are equals
-        # verification_query_string = [('username', "mosorio@isi.edu")]
-        # verification_response = self.client.open(
-        #     '/v1.4.0/modelconfigurations/{id}'.format(id=model_request.id),
-        #     method='GET',
-        #     headers=headers,
-        #     query_string=verification_query_string)
-        # model_response = ModelConfiguration.from_dict(verification_response.json)
-        # self.logger.warning(model_response)
-        # self.assertEqual(model_request, model_response)
 
+
+        ##### Verify if the request and response are equals
+        verification_query_string = [('username', "mosorio@isi.edu")]
+        verification_response = self.client.open(
+            '/v1.4.0/modelconfigurations/{id}'.format(id=model_request.id),
+            method='GET',
+            headers=headers,
+            query_string=verification_query_string)
+        model_response = ModelConfiguration.from_dict(verification_response.json)
+        self.assertEqual(model_request.has_grid[0].id, model_response.has_grid[0].id)
+
+    # def test_post_grid_no_equal(self):
+    #     input_file_path = self.input_test_directory / "model_configuration_without_id_grid_not_equal.json"
+    #     token_ = self.login()["access_token"]
+    #     data = read_json_file(input_file_path)
+    #     headers = {
+    #         'Content-Type': 'application/json',
+    #         'Authorization': "Bearer {}".format(token_),
+    #     }
+    #     response = self.client.open(
+    #         '/v1.4.0/modelconfigurations',
+    #         method='POST',
+    #         headers=headers,
+    #         data=json.dumps(data),
+    #         content_type='application/json')
+    #
+    #     self.assertEqual(response.status_code, 201)
+    #     model_request = ModelConfiguration.from_dict(data)
+    #     model_request.id = response.json['id']
+    #
+    #     ##### Verify if the request and response are equals
+    #     verification_query_string = [('username', "mosorio@isi.edu")]
+    #     verification_response = self.client.open(
+    #         '/v1.4.0/modelconfigurations/{id}'.format(id=model_request.id),
+    #         method='GET',
+    #         headers=headers,
+    #         query_string=verification_query_string)
+    #     self.logger.warning(model_request.id)
+    #     model_response = ModelConfiguration.from_dict(verification_response.json)
+    #     self.assertNotEqual(model_request.has_grid[0].id, model_response.has_grid[0].id)
 
 if __name__ == '__main__':
     unittest.main()
