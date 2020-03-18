@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 # Comparing the JSON objects (with nested levels ignoring the order)
-from deepdiff import deepdiff
+from deepdiff import DeepDiff
 import json
 
 from flask import json
