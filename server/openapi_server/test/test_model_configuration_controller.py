@@ -126,7 +126,7 @@ class TestModelConfigurationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=verification_query_string)
-        self.logger.warning(model_request.id)
+        self.logger.info(model_request.id)
         model_response = ModelConfiguration.from_dict(verification_response.json)
         self.assertNotEqual(model_request.has_causal_diagram[0].id, model_response.has_causal_diagram[0].id)
         self.assertNotEqual(model_request.has_causal_diagram[1].id, model_response.has_causal_diagram[1].id)
