@@ -5,6 +5,7 @@ Click==7.0
 clickclick==1.2.2
 connexion==2.6.0
 decorator==4.4.0
+deepdiff==4.3.1
 Deprecated==1.2.6
 ecdsa==0.13.2
 Flask==1.1.1
@@ -25,6 +26,7 @@ keepalive==0.5
 MarkupSafe==0.23
 obasparql==2.1.2
 openapi-spec-validator==0.2.8
+ordered-set==3.1.1
 pathlib==1.0.1
 ply==3.11
 pyaml==18.11.0
