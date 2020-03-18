@@ -253,7 +253,9 @@ def traverse_obj(body, username):
                         list_of_obj = get_all_complex_objects(inner_values, username)
                         if len(list_of_obj) != 0:
                             traverse_obj(inner_values, username)
-                        insert_response = insert_all_resources(inner_values, username)
+                        if inner_values.id==None:
+                            inner_values.id=generate_new_uri()
+                            insert_response = insert_all_resources(inner_values, username)
             elif isinstance(value, dict):
                 pass
 
