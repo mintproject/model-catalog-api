@@ -10,19 +10,39 @@ CONSTRUCT {
     ?prop a ?type
 }
 WHERE {
-    GRAPH ?_g_iri {
-        {
-            SELECT DISTINCT ?model where {
-                ?model a ?type.
-                ?model sdm:usefulForCalculatingIndex ?index .
-                ?index rdfs:label ?indexLabel
-                FILTER REGEX(?indexLabel, ?_label, "i")
-                VALUES ?type {sdm:Model sdm:ModelConfiguration sdm:ModelConfigurationSetup}
+    {
+        GRAPH ?_g_iri {
+            {
+                SELECT DISTINCT ?model where {
+                    ?model a ?type.
+                    ?model sdm:usefulForCalculatingIndex ?index .
+                    ?index rdfs:label ?indexLabel
+                    FILTER REGEX(?indexLabel, ?_label, "i")
+                    VALUES ?type {sdm:Model sdm:ModelConfiguration sdm:ModelConfigurationSetup}
+                }
+            }
+            ?model ?predicate ?prop
+            OPTIONAL {
+             ?prop a ?type
             }
         }
-        ?model ?predicate ?prop
-        OPTIONAL {
-         ?prop a ?type
+    }
+    UNION
+    {
+        GRAPH <http://ontosoft.isi.edu:3030/modelcatalog-1.3.0/data/mint@isi.edu> {
+            {
+                SELECT DISTINCT ?model where {
+                    ?model a ?type.
+                    ?model sdm:usefulForCalculatingIndex ?index .
+                    ?index rdfs:label ?indexLabel
+                    FILTER REGEX(?indexLabel, ?_label, "i")
+                    VALUES ?type {sdm:Model sdm:ModelConfiguration sdm:ModelConfigurationSetup}
+                }
+            }
+            ?model ?predicate ?prop
+            OPTIONAL {
+             ?prop a ?type
+            }
         }
     }
 }
