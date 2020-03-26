@@ -101,5 +101,27 @@ class TestModelConfigurationSetupController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
+    def test_modelconfigurationsetups_custom_variable_texas(self):
+        """Test case for modelconfigurationsetups_id_get
+
+        Get a ModelConfigurationSetup
+        """
+        query_string = [('username', "texas@isi.edu"),
+                        ('label', 'flooding_contour')]
+        headers = {
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.4.0/custom/modelconfigurationsetups/variable',
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.logger.info("Response length texas@isi.edu {}".format(len(response.json)))
+        self.assertTrue(response.json)
+        self.assertEquals(len(response.json), 22)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+
 if __name__ == '__main__':
     unittest.main()
