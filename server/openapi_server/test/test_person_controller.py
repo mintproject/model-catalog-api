@@ -15,6 +15,7 @@ from openapi_server.test import BaseTestCase
 class TestPersonController(BaseTestCase):
     """PersonController integration test stubs"""
     logger = logging.getLogger("testing")
+    
     def test_persons_get(self):
         """Test case for persons_get
 
@@ -53,7 +54,6 @@ class TestPersonController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-
     def test_persons_get_id_texas(self):
         """Test case for persons_get
 
@@ -72,7 +72,6 @@ class TestPersonController(BaseTestCase):
         self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-
 
     def test_persons_get_id_mint_not_found(self):
         """Test case for persons_get
