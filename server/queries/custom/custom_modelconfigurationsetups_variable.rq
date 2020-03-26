@@ -15,9 +15,16 @@ WHERE {
             {
                 SELECT DISTINCT ?setup {
                   ?setup a sdm:ModelConfigurationSetup .
-                  ?setup sd:hasOutput ?output.
-                  ?output sd:hasPresentation ?vp.
-                  ?vp sd:hasStandardVariable ?sv.
+                  {
+                    ?setup sd:hasOutput ?output.
+                    ?output sd:hasPresentation ?vp.
+                    ?vp sd:hasStandardVariable ?sv.
+                  } UNION {
+                    ?model sd:hasVersion ?version.
+                    ?version sd:hasConfiguration ?configuration.
+                    ?configuration sd:hasSetup ?setup .
+                    ?model sdm:usefulForCalculatingIndex ?sv.
+                  }
                   ?sv rdfs:label ?variableLabel .
                   FILTER REGEX(?variableLabel, ?_label, "i")
                 }
@@ -34,9 +41,16 @@ WHERE {
             {
                 SELECT DISTINCT ?setup {
                   ?setup a sdm:ModelConfigurationSetup .
-                  ?setup sd:hasOutput ?output.
-                  ?output sd:hasPresentation ?vp.
-                  ?vp sd:hasStandardVariable ?sv.
+                  {
+                    ?setup sd:hasOutput ?output.
+                    ?output sd:hasPresentation ?vp.
+                    ?vp sd:hasStandardVariable ?sv.
+                  } UNION {
+                    ?model sd:hasVersion ?version.
+                    ?version sd:hasConfiguration ?configuration.
+                    ?configuration sd:hasSetup ?setup .
+                    ?model sdm:usefulForCalculatingIndex ?sv.
+                  }
                   ?sv rdfs:label ?variableLabel .
                   FILTER REGEX(?variableLabel, ?_label, "i")
                 }
