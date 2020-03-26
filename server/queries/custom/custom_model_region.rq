@@ -34,7 +34,7 @@ WHERE {
     }
     UNION
     {
-        GRAPH <http://ontosoft.isi.edu:3030/modelcatalog-1.3.0/data/mint@isi.edu> {
+        GRAPH <http://ontosoft.isi.edu:3030/modelCatalog-1.3.0/data/mint@isi.edu> {
             {
                 SELECT DISTINCT ?model {
                     ?model sd:hasVersion ?model_version .
