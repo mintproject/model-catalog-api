@@ -4,15 +4,30 @@ CONSTRUCT {
 ?prop a ?type
 }
 WHERE {
-GRAPH ?_g_iri {
-{
- SELECT DISTINCT ?item where {
-   ?item a ?_type_iri .
- }
-}
-?item ?predicate ?prop
-OPTIONAL {
- ?prop a ?type
-}
-}
+    {
+        GRAPH <http://ontosoft.isi.edu:3030/modelCatalog-1.3.0/data/mint@isi.edu> {
+            {
+                SELECT DISTINCT ?item where {
+                    ?item a ?_type_iri .
+                }
+            }
+            ?item ?predicate ?prop
+            OPTIONAL {
+             ?prop a ?type
+            }
+        }
+    }
+    UNION {
+        GRAPH ?_g_iri {
+            {
+                SELECT DISTINCT ?item where {
+                    ?item a ?_type_iri .
+                }
+            }
+            ?item ?predicate ?prop
+            OPTIONAL {
+             ?prop a ?type
+            }
+        }
+    }
 }
