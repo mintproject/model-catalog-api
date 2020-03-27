@@ -13,7 +13,10 @@ CONSTRUCT {
 ?grid ?grid_p ?grid_o .
 ?process ?process_p ?process_p .
 ?variable_presentation ?variable_presentation_o ?variable_presentation_p .
-?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output
+?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output .
+?variable_presentation_p ?variable_o ?variable_p .
+?variable_presentation_p_output ?variable_o_output ?variable_p_output
+
 }
 WHERE {
     GRAPH ?_g_iri {
@@ -33,7 +36,8 @@ WHERE {
             }
             OPTIONAL {
                ?input sd:hasPresentation ?variable_presentation .
-               ?variable_presentation ?variable_presentation_o ?variable_presentation_p
+               ?variable_presentation ?variable_presentation_o ?variable_presentation_p .
+               ?variable_presentation_p ?variable_o ?variable_p
             }
 
         }
@@ -42,7 +46,9 @@ WHERE {
             ?output_resource ?output_resource_p ?output_resource_o
             OPTIONAL {
                ?output_resource sd:hasPresentation ?variable_presentation_output .
-               ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output
+               ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output .
+               ?variable_presentation_p_output ?variable_o_output ?variable_p_output
+
             }
         }
         UNION {
