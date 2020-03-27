@@ -26,11 +26,13 @@ WHERE {
             }
         }
         UNION {
-            ?_resource_iri  sd:hasInput ?input .
-            ?input sd:hasFixedResource ?input_resource  .
-            ?input_resource ?input_resource_p ?input_resource_o .
-            ?input sd:hasPresentation ?variable_presentation
+            ?_resource_iri  sd:hasInput ?input
             OPTIONAL {
+               ?input sd:hasFixedResource ?input_resource  .
+               ?input_resource ?input_resource_p ?input_resource_o
+            }
+            OPTIONAL {
+               ?input sd:hasPresentation ?variable_presentation .
                ?variable_presentation ?variable_presentation_o ?variable_presentation_p
             }
 
