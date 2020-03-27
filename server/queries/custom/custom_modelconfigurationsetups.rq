@@ -11,7 +11,9 @@ CONSTRUCT {
 ?region ?region_p ?region_o .
 ?region_o a ?sub_region .
 ?grid ?grid_p ?grid_o .
-?process ?process_p ?process_p
+?process ?process_p ?process_p .
+?variable_presentation ?variable_presentation_o ?variable_presentation_p
+
 }
 WHERE {
     GRAPH ?_g_iri {
@@ -25,8 +27,13 @@ WHERE {
         }
         UNION {
             ?_resource_iri  sd:hasInput ?input .
+            ?input sd:hasPresentation ?variable_presentation
+            OPTIONAL {
+               ?variable_presentation ?variable_presentation_o ?variable_presentation_p
+            }
             ?input sd:hasFixedResource ?input_resource  .
             ?input_resource ?input_resource_p ?input_resource_o
+
         }
         UNION {
             ?_resource_iri  sd:hasOutput ?output .
@@ -44,6 +51,22 @@ WHERE {
                 ?region_o a ?sub_region
             }
             FILTER (?region_p != <https://w3id.org/okn/o/sdm#geo>)
-        }
+       }
+        UNION {
+            ?_resource_iri sdm:hasRegion ?region .
+            ?region ?region_p ?region_o .
+            OPTIONAL {
+                ?region_o a ?sub_region
+            }
+            FILTER (?region_p != <https://w3id.org/okn/o/sdm#geo>)
+       }
+       UNION {
+            ?_resource_iri sdm:hasGrid ?grid .
+            ?grid ?grid_p ?grid_o .
+       }
+       UNION {
+            ?_resource_iri sdm:hasProcess ?process .
+            ?process ?process_p ?process_o .
+       }
     }
 }
