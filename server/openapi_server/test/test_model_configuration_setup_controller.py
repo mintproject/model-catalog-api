@@ -66,7 +66,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.4.0/custom/modelconfigurationsetups/{id}'.format(id='hand_v2_travis'),
+            '/v1.4.0/custom/modelconfigurationsetups/{id}'.format(id='cycles-0.10.2-alpha-collection-oromia-single-point'),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -76,6 +76,9 @@ class TestModelConfigurationSetupController(BaseTestCase):
         self.assertTrue(resource.has_input)
         self.assertTrue(resource.has_output)
         self.assertTrue(resource.has_parameter)
+        self.assertTrue(resource.has_region)
+        self.assertTrue(resource.has_grid)
+        self.assertTrue(resource.has_process)
         self.assertTrue(resource.has_input[0].has_fixed_resource)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
