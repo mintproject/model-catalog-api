@@ -10,41 +10,20 @@ CONSTRUCT {
     ?prop a ?type
 }
 WHERE {
-    {
-        GRAPH ?_g_iri {
-            {
-                SELECT DISTINCT ?setup {
-                  ?setup a sdm:ModelConfigurationSetup .
-                  ?setup sd:hasOutput ?output.
-                  ?output sd:hasPresentation ?vp.
-                  ?vp sd:hasStandardVariable ?sv.
-                  ?sv rdfs:label ?variableLabel .
-                  FILTER REGEX(?variableLabel, ?_label, "i")
-                }
-            }
-            ?setup ?predicate ?prop
-            OPTIONAL {
-             ?prop a ?type
-            }
-        }
-    }
-    UNION
-    {
-        GRAPH <http://ontosoft.isi.edu:3030/modelCatalog-1.3.0/data/mint@isi.edu> {
-            {
-                SELECT DISTINCT ?setup {
-                  ?setup a sdm:ModelConfigurationSetup .
-                  ?setup sd:hasOutput ?output.
-                  ?output sd:hasPresentation ?vp.
-                  ?vp sd:hasStandardVariable ?sv.
-                  ?sv rdfs:label ?variableLabel .
-                  FILTER REGEX(?variableLabel, ?_label, "i")
-                }
-            }
-            ?setup ?predicate ?prop
-            OPTIONAL {
-             ?prop a ?type
-            }
+    GRAPH ?_g_iri {
+        {
+      		SELECT DISTINCT ?setup {
+              ?setup a sdm:ModelConfigurationSetup .
+              ?setup sd:hasOutput ?output.
+              ?output sd:hasPresentation ?vp.
+              ?vp sd:hasStandardVariable ?sv.
+              ?sv rdfs:label ?variableLabel .
+              FILTER REGEX(?variableLabel, ?_label, "i")
+      		}
+    	}
+        ?setup ?predicate ?prop
+        OPTIONAL {
+         ?prop a ?type
         }
     }
 }

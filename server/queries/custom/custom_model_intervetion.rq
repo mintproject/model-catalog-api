@@ -9,45 +9,22 @@ CONSTRUCT {
     ?prop a ?type
 }
 WHERE {
-    {
-        GRAPH ?_g_iri {
-            {
-                SELECT DISTINCT ?model where {
-                    ?model sd:hasVersion ?model_version .
-                    ?model_version sd:hasConfiguration ?model_c .
-                    ?model_c sd:hasSetup ?setup .
-                    ?setup sd:hasParameter ?param .
-                    ?param sdm:relevantForIntervention ?interv .
-                    ?interv a sdm:Intervention .
-                    ?interv rdfs:label ?intervLabel .
-                    FILTER REGEX(?intervLabel, ?_label, "i")
-                }
-            }
-            ?model ?predicate ?prop
-            OPTIONAL {
-             ?prop a ?type
+    GRAPH ?_g_iri {
+        {
+            SELECT DISTINCT ?model where {
+                ?model sd:hasVersion ?model_version .
+                ?model_version sd:hasConfiguration ?model_c .
+        		?model_c sd:hasSetup ?setup .
+                ?setup sd:hasParameter ?param .
+                ?param sdm:relevantForIntervention ?interv .
+                ?interv a sdm:Intervention .
+                ?interv rdfs:label ?intervLabel .
+                FILTER REGEX(?intervLabel, ?_label, "i")
             }
         }
-    }
-    UNION
-    {
-        GRAPH <http://ontosoft.isi.edu:3030/modelCatalog-1.3.0/data/mint@isi.edu> {
-            {
-                SELECT DISTINCT ?model where {
-                    ?model sd:hasVersion ?model_version .
-                    ?model_version sd:hasConfiguration ?model_c .
-                    ?model_c sd:hasSetup ?setup .
-                    ?setup sd:hasParameter ?param .
-                    ?param sdm:relevantForIntervention ?interv .
-                    ?interv a sdm:Intervention .
-                    ?interv rdfs:label ?intervLabel .
-                    FILTER REGEX(?intervLabel, ?_label, "i")
-                }
-            }
-            ?model ?predicate ?prop
-            OPTIONAL {
-             ?prop a ?type
-            }
+        ?model ?predicate ?prop
+        OPTIONAL {
+         ?prop a ?type
         }
     }
 }
