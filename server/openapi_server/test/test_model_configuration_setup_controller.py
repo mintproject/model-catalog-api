@@ -110,7 +110,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
         Get a ModelConfigurationSetup
         """
         query_string = [('username', "texas@isi.edu"),
-                        ('label', 'flooding_contour')]
+                        ('label', 'evaporation_volume_flux_index')]
         headers = {
             'Accept': 'application/json',
         }
@@ -121,7 +121,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             query_string=query_string)
         self.logger.info("Response length texas@isi.edu {}".format(len(response.json)))
         self.assertTrue(response.json)
-        self.assertEquals(len(response.json), 22)
+        self.assertEquals(len(response.json), 2)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
