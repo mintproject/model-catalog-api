@@ -12,8 +12,8 @@ CONSTRUCT {
 ?region_o a ?sub_region .
 ?grid ?grid_p ?grid_o .
 ?process ?process_p ?process_p .
-?variable_presentation ?variable_presentation_o ?variable_presentation_p
-
+?variable_presentation ?variable_presentation_o ?variable_presentation_p .
+?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output
 }
 WHERE {
     GRAPH ?_g_iri {
@@ -27,18 +27,21 @@ WHERE {
         }
         UNION {
             ?_resource_iri  sd:hasInput ?input .
+            ?input sd:hasFixedResource ?input_resource  .
+            ?input_resource ?input_resource_p ?input_resource_o .
             ?input sd:hasPresentation ?variable_presentation
             OPTIONAL {
                ?variable_presentation ?variable_presentation_o ?variable_presentation_p
             }
-            ?input sd:hasFixedResource ?input_resource  .
-            ?input_resource ?input_resource_p ?input_resource_o
 
         }
         UNION {
-            ?_resource_iri  sd:hasOutput ?output .
-            ?output sd:hasFixedResource ?output_resource  .
+            ?_resource_iri  sd:hasOutput ?output_resource .
             ?output_resource ?output_resource_p ?output_resource_o
+            OPTIONAL {
+               ?output_resource sd:hasPresentation ?variable_presentation_output .
+               ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output
+            }
         }
         UNION {
             ?_resource_iri  sd:hasParameter ?parameter .
