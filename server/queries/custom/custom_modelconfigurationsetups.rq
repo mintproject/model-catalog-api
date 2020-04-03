@@ -11,7 +11,7 @@ CONSTRUCT {
 ?region ?region_p ?region_o .
 ?region_o a ?sub_region .
 ?grid ?grid_p ?grid_o .
-?process ?process_p ?process_p .
+?process ?process_p ?process_o .
 ?variable_presentation ?variable_presentation_o ?variable_presentation_p .
 ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output .
 ?variable_presentation_p ?variable_o ?variable_p .
@@ -78,6 +78,7 @@ WHERE {
        UNION {
             ?_resource_iri sdm:hasProcess ?process .
             ?process ?process_p ?process_o .
+            FILTER (?process_p != <https://w3id.org/okn/o/sdm#influences>)
        }
     }
 }
