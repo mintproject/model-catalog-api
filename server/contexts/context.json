@@ -262,8 +262,7 @@
     },
     "description": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#description",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://w3id.org/okn/o/sd#description"
     },
     "elevation": {
       "@container": "@set",
@@ -349,8 +348,7 @@
     },
     "hasDimension": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sdm#hasDimension",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@id": "https://w3id.org/okn/o/sdm#hasDimension"
     },
     "hasDimensionality": {
       "@container": "@set",

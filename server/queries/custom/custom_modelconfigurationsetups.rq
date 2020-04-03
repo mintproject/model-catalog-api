@@ -15,8 +15,8 @@ CONSTRUCT {
 ?variable_presentation ?variable_presentation_o ?variable_presentation_p .
 ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output .
 ?variable_presentation_p ?variable_o ?variable_p .
-?variable_presentation_p_output ?variable_o_output ?variable_p_output
-
+?variable_presentation_p_output ?variable_o_output ?variable_p_output .
+?unit ?unit_p ?unit_o
 }
 WHERE {
     GRAPH ?_g_iri {
@@ -40,6 +40,13 @@ WHERE {
                ?variable_presentation_p ?variable_o ?variable_p
             }
 
+        }
+        UNION {
+            ?_resource_iri  sdm:hasOutputTimeInterval ?output_time_interval_resource .
+            ?output_time_interval_resource sdm:intervalUnit ?unit .
+            OPTIONAL {
+                ?unit ?unit_p ?unit_o
+            }
         }
         UNION {
             ?_resource_iri  sd:hasOutput ?output_resource .
