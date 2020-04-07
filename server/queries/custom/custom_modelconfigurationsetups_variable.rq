@@ -7,7 +7,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
     ?setup ?predicate ?prop .
-    ?prop a ?type
+    ?prop a ?type .
+    ?output_resource ?output_resource_p ?output_resource_o .
+    ?variable_presentation_p_output ?variable_o_output ?variable_p_output
 }
 WHERE {
         GRAPH ?_g_iri {
@@ -28,9 +30,22 @@ WHERE {
                   FILTER REGEX(?variableLabel, ?_label, "i")
                 }
             }
-            ?setup ?predicate ?prop
-            OPTIONAL {
-             ?prop a ?type
+            {
+                ?setup ?predicate ?prop
+                OPTIONAL {
+                 ?prop a ?type
+                }
             }
+            UNION {
+                ?setup  sd:hasOutput ?output_resource .
+                ?output_resource ?output_resource_p ?output_resource_o
+                OPTIONAL {
+                   ?output_resource sd:hasPresentation ?variable_presentation_output .
+                   ?variable_presentation_output ?variable_presentation_o_output ?variable_presentation_p_output .
+                   ?variable_presentation_p_output ?variable_o_output ?variable_p_output
+
+                }
+            }
+
       }
 }
