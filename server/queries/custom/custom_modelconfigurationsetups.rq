@@ -9,7 +9,7 @@ CONSTRUCT {
 ?output_resource ?output_resource_p ?output_resource_o .
 ?parameter ?parameter_p ?parameter_o .
 ?region ?region_p ?region_o .
-?region_o a ?sub_region .
+?region_o ?sub_region_p ?sub_region_o .
 ?grid ?grid_p ?grid_o .
 ?process ?process_p ?process_o .
 ?variable_presentation ?variable_presentation_o ?variable_presentation_p .
@@ -66,15 +66,7 @@ WHERE {
             ?_resource_iri sdm:hasRegion ?region .
             ?region ?region_p ?region_o .
             OPTIONAL {
-                ?region_o a ?sub_region
-            }
-            FILTER (?region_p != <https://w3id.org/okn/o/sdm#geo>)
-       }
-        UNION {
-            ?_resource_iri sdm:hasRegion ?region .
-            ?region ?region_p ?region_o .
-            OPTIONAL {
-                ?region_o a ?sub_region
+                ?region_o ?sub_region_p ?sub_region_o
             }
             FILTER (?region_p != <https://w3id.org/okn/o/sdm#geo>)
        }
