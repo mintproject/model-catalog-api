@@ -658,8 +658,7 @@
     },
     "position": {
       "@container": "@set",
-      "@id": "https://w3id.org/okn/o/sd#position",
-      "@type": "http://www.w3.org/2001/XMLSchema#int"
+      "@id": "https://w3id.org/okn/o/sd#position"
     },
     "preferredNamespacePrefix": {
       "@container": "@set",
