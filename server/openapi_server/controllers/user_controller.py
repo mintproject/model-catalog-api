@@ -41,7 +41,7 @@ def auth_with_password(email, password):
 
     return response.ok
 
-def user_login_get():  # noqa: E501
+def user_login_post():  # noqa: E501
     """Logs user into the system
 
      # noqa: E501
