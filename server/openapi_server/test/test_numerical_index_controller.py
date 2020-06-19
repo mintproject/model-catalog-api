@@ -16,19 +16,124 @@ class TestNumericalIndexController(BaseTestCase):
     def test_numericalindexs_get(self):
         """Test case for numericalindexs_get
 
-        List all NumericalIndex entities
+        List all instances of NumericalIndex
         """
-        query_string = [('username', 'mint@isi.edu')]
-                        
+        query_string = [('username', 'username_example'),
+                        ('label', 'label_example'),
+                        ('page', 1),
+                        ('per_page', 100)]
         headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.4.0/numericalindexs',
+            '/v1.5.0/numericalindexs',
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_numericalindexs_id_delete(self):
+        """Test case for numericalindexs_id_delete
+
+        Delete an existing NumericalIndex
+        """
+        headers = { 
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/numericalindexs/{id}'.format(id='id_example', user='user_example'),
+            method='DELETE',
+            headers=headers)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_numericalindexs_id_get(self):
+        """Test case for numericalindexs_id_get
+
+        Get a single NumericalIndex by its id
+        """
+        query_string = [('username', 'username_example')]
+        headers = { 
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.5.0/numericalindexs/{id}'.format(id='id_example'),
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_numericalindexs_id_put(self):
+        """Test case for numericalindexs_id_put
+
+        Update an existing NumericalIndex
+        """
+        numerical_index = {
+  "hasStandardVariable" : [ {
+    "description" : [ "description", "description" ],
+    "id" : "id",
+    "label" : [ "label", "label" ],
+    "type" : [ "type", "type" ]
+  }, {
+    "description" : [ "description", "description" ],
+    "id" : "id",
+    "label" : [ "label", "label" ],
+    "type" : [ "type", "type" ]
+  } ],
+  "description" : [ "description", "description" ],
+  "id" : "id",
+  "label" : [ "label", "label" ],
+  "type" : [ "type", "type" ]
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/numericalindexs/{id}'.format(id='id_example', user='user_example'),
+            method='PUT',
+            headers=headers,
+            data=json.dumps(numerical_index),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_numericalindexs_post(self):
+        """Test case for numericalindexs_post
+
+        Create one NumericalIndex
+        """
+        numerical_index = {
+  "hasStandardVariable" : [ {
+    "description" : [ "description", "description" ],
+    "id" : "id",
+    "label" : [ "label", "label" ],
+    "type" : [ "type", "type" ]
+  }, {
+    "description" : [ "description", "description" ],
+    "id" : "id",
+    "label" : [ "label", "label" ],
+    "type" : [ "type", "type" ]
+  } ],
+  "description" : [ "description", "description" ],
+  "id" : "id",
+  "label" : [ "label", "label" ],
+  "type" : [ "type", "type" ]
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/numericalindexs'.format(user='user_example'),
+            method='POST',
+            headers=headers,
+            data=json.dumps(numerical_index),
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
