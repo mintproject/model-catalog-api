@@ -9,4 +9,4 @@ CLASS=$1
 ID=$2
 echo "Get one resources $ID $CLASS"
 
-curl -X GET "$SERVER/$CLASS/$ID?username=mint@isi.edu" -H "accept: application/json" | jq -r "." | tee resources/$ID.json
+curl -X GET "$SERVER/$CLASS/$ID?username=$USERNAME" -H "accept: application/json" | jq -r "." | tee resources/$ID.json
