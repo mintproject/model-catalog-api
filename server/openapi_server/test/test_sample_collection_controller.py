@@ -16,12 +16,10 @@ class TestSampleCollectionController(BaseTestCase):
     def test_samplecollections_get(self):
         """Test case for samplecollections_get
 
-        List all instances of SampleCollection
+        List all SampleCollection entities
         """
-        query_string = [('username', 'username_example'),
-                        ('label', 'label_example'),
-                        ('page', 1),
-                        ('per_page', 100)]
+        query_string = [('username', 'mint@isi.edu')]
+                        
         headers = { 
             'Accept': 'application/json',
         }
@@ -30,122 +28,7 @@ class TestSampleCollectionController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_samplecollections_id_delete(self):
-        """Test case for samplecollections_id_delete
-
-        Delete an existing SampleCollection
-        """
-        headers = { 
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/samplecollections/{id}'.format(id='id_example', user='user_example'),
-            method='DELETE',
-            headers=headers)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_samplecollections_id_get(self):
-        """Test case for samplecollections_id_get
-
-        Get a single SampleCollection by its id
-        """
-        query_string = [('username', 'username_example')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/samplecollections/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_samplecollections_id_put(self):
-        """Test case for samplecollections_id_put
-
-        Update an existing SampleCollection
-        """
-        sample_collection = {
-  "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-  "hasPart" : [ {
-    "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ],
-    "value" : [ "", "" ]
-  }, {
-    "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ],
-    "value" : [ "", "" ]
-  } ],
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "value" : [ "", "" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/samplecollections/{id}'.format(id='id_example', user='user_example'),
-            method='PUT',
-            headers=headers,
-            data=json.dumps(sample_collection),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_samplecollections_post(self):
-        """Test case for samplecollections_post
-
-        Create one SampleCollection
-        """
-        sample_collection = {
-  "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-  "hasPart" : [ {
-    "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ],
-    "value" : [ "", "" ]
-  }, {
-    "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ],
-    "value" : [ "", "" ]
-  } ],
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "value" : [ "", "" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/samplecollections'.format(user='user_example'),
-            method='POST',
-            headers=headers,
-            data=json.dumps(sample_collection),
-            content_type='application/json')
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

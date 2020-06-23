@@ -16,12 +16,10 @@ class TestFundingInformationController(BaseTestCase):
     def test_fundinginformations_get(self):
         """Test case for fundinginformations_get
 
-        List all instances of FundingInformation
+        List all FundingInformation entities
         """
-        query_string = [('username', 'username_example'),
-                        ('label', 'label_example'),
-                        ('page', 1),
-                        ('per_page', 100)]
+        query_string = [('username', 'mint@isi.edu')]
+                        
         headers = { 
             'Accept': 'application/json',
         }
@@ -30,120 +28,7 @@ class TestFundingInformationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_fundinginformations_id_delete(self):
-        """Test case for fundinginformations_id_delete
-
-        Delete an existing FundingInformation
-        """
-        headers = { 
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/fundinginformations/{id}'.format(id='id_example', user='user_example'),
-            method='DELETE',
-            headers=headers)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_fundinginformations_id_get(self):
-        """Test case for fundinginformations_id_get
-
-        Get a single FundingInformation by its id
-        """
-        query_string = [('username', 'username_example')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/fundinginformations/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_fundinginformations_id_put(self):
-        """Test case for fundinginformations_id_put
-
-        Update an existing FundingInformation
-        """
-        funding_information = {
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "fundingSource" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ]
-  } ],
-  "fundingGrant" : [ "fundingGrant", "fundingGrant" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/fundinginformations/{id}'.format(id='id_example', user='user_example'),
-            method='PUT',
-            headers=headers,
-            data=json.dumps(funding_information),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_fundinginformations_post(self):
-        """Test case for fundinginformations_post
-
-        Create one FundingInformation
-        """
-        funding_information = {
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "fundingSource" : [ {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ]
-  }, {
-    "identifier" : [ "identifier", "identifier" ],
-    "website" : [ "website", "website" ],
-    "description" : [ "description", "description" ],
-    "id" : "id",
-    "label" : [ "label", "label" ],
-    "type" : [ "type", "type" ]
-  } ],
-  "fundingGrant" : [ "fundingGrant", "fundingGrant" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/fundinginformations'.format(user='user_example'),
-            method='POST',
-            headers=headers,
-            data=json.dumps(funding_information),
-            content_type='application/json')
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

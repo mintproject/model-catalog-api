@@ -16,12 +16,10 @@ class TestSampleResourceController(BaseTestCase):
     def test_sampleresources_get(self):
         """Test case for sampleresources_get
 
-        List all instances of SampleResource
+        List all SampleResource entities
         """
-        query_string = [('username', 'username_example'),
-                        ('label', 'label_example'),
-                        ('page', 1),
-                        ('per_page', 100)]
+        query_string = [('username', 'mint@isi.edu')]
+                        
         headers = { 
             'Accept': 'application/json',
         }
@@ -30,92 +28,7 @@ class TestSampleResourceController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_sampleresources_id_delete(self):
-        """Test case for sampleresources_id_delete
-
-        Delete an existing SampleResource
-        """
-        headers = { 
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/sampleresources/{id}'.format(id='id_example', user='user_example'),
-            method='DELETE',
-            headers=headers)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_sampleresources_id_get(self):
-        """Test case for sampleresources_id_get
-
-        Get a single SampleResource by its id
-        """
-        query_string = [('username', 'username_example')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/sampleresources/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_sampleresources_id_put(self):
-        """Test case for sampleresources_id_put
-
-        Update an existing SampleResource
-        """
-        sample_resource = {
-  "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "value" : [ "", "" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/sampleresources/{id}'.format(id='id_example', user='user_example'),
-            method='PUT',
-            headers=headers,
-            data=json.dumps(sample_resource),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_sampleresources_post(self):
-        """Test case for sampleresources_post
-
-        Create one SampleResource
-        """
-        sample_resource = {
-  "dataCatalogIdentifier" : [ "dataCatalogIdentifier", "dataCatalogIdentifier" ],
-  "description" : [ "description", "description" ],
-  "id" : "id",
-  "label" : [ "label", "label" ],
-  "type" : [ "type", "type" ],
-  "value" : [ "", "" ]
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/sampleresources'.format(user='user_example'),
-            method='POST',
-            headers=headers,
-            data=json.dumps(sample_resource),
-            content_type='application/json')
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
