@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import json
 import logging
 from pathlib import Path
 
@@ -41,16 +41,17 @@ class BaseTestCase(TestCase):
     post_password = "jz2KNTg5XgFacX4"
 
     def login(self):
-        query_string = [('username', self.post_username),
-                        ('password', self.post_password)]
+        data = {'username': self.post_username, 'password': self.post_password}
         headers = {
             'Accept': 'application/json',
         }
         response = self.client.open(
             '/v1.5.0/user/login',
-            method='GET',
+            method='POST',
             headers=headers,
-            query_string=query_string)
+            data=json.dumps(data),
+            content_type='application/json'
+        )
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
         return response.json

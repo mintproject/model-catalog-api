@@ -31,7 +31,6 @@ class TestFarmingPracticesController(BaseTestCase):
         self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-        self.assertTrue(response.json)
 
 
 if __name__ == '__main__':

@@ -32,7 +32,6 @@ class TestUnitController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-        self.assertTrue(response.json)
 
 if __name__ == '__main__':
     unittest.main()
