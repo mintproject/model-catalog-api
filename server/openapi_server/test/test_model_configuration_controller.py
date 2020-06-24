@@ -64,7 +64,8 @@ class TestModelConfigurationController(BaseTestCase):
 
     def test_modelconfigurations_without_id_post(self):
         input_file_path = self.input_test_directory / "model_configuration_without_id.json"
-        token_ = self.login()["access_token"]
+        login = self.login()
+        token_ = login["access_token"]
         data = read_json_file(input_file_path)
         headers = {
             'Content-Type': 'application/json',

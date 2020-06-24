@@ -49,11 +49,9 @@ class BaseTestCase(TestCase):
             '/v1.5.0/user/login',
             method='POST',
             headers=headers,
-            data=json.dumps(data),
+            data=data,
             content_type='application/json'
         )
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
         return response.json
 
 
