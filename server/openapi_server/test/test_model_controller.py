@@ -34,6 +34,7 @@ class TestModel(BaseTestCase):
         self.assertIsInstance(Model.from_dict(response.json), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+        self.assertTrue(response.json)
 
 
     def test_model_custom_index_get(self):

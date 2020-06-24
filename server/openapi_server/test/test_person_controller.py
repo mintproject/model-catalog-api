@@ -34,6 +34,7 @@ class TestPersonController(BaseTestCase):
         self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+        self.assertTrue(response.json)
 
     def test_persons_get_id_mint(self):
         """Test case for persons_get
