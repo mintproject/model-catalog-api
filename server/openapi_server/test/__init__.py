@@ -41,15 +41,16 @@ class BaseTestCase(TestCase):
     post_password = "jz2KNTg5XgFacX4"
 
     def login(self):
-        data = {'username': self.post_username, 'password': self.post_password}
+        data = {"username": self.post_username, "password": self.post_password}
         headers = {
             'Accept': 'application/json',
+            'Content-Type': 'application/json'
         }
         response = self.client.open(
             '/v1.5.0/user/login',
             method='POST',
             headers=headers,
-            data=data,
+            data=json.dumps(data),
             content_type='application/json'
         )
         return response.json
