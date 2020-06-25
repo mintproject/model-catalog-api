@@ -64,5 +64,5 @@ class BaseTestCase(TestCase):
         app.add_api('openapi.yaml',
                     arguments={'title': 'Model Catalog'},
                     pythonic_params=False,
-                    validate_responses=True)
+                    validate_responses=False)
         return app.app
