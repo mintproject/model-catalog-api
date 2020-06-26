@@ -10,3 +10,4 @@ JSON_STRING=$( jq -n \
 echo ${JSON_STRING} > credentials.txt
 
 TOKEN=$(curl -s  -H "Content-Type: application/json" -X POST "$SERVER/user/login" -H "accept: application/json" -d @credentials.txt | jq -r '.access_token')
+

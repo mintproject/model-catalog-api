@@ -7,6 +7,4 @@ if [ "$#" -ne 1 ] ; then
     exit 1
 fi
 CLASS=$1
-echo "Get all resources $CLASS"
-
-curl -X GET "$SERVER/$CLASS?username=mint@isi.edu" -H "accept: application/json" | jq -r "."
+curl -s -X GET "$SERVER/$CLASS?username=$USERNAME" -H "accept: application/json" | jq -r ".[].id"

@@ -9,4 +9,4 @@ fi
 CLASS=$1
 ID=$2
 echo "Deleting $CLASS $ID"
-curl -X DELETE "$SERVER/$CLASS/$ID" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json"
+curl -X DELETE "$SERVER/$CLASS/$ID?username=$USERNAME" -H "Authorization: Bearer $TOKEN" -H "accept: */*" -H "Content-Type: application/json"
