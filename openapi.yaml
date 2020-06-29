@@ -8031,7 +8031,7 @@ components:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
-            $ref: '#/components/schemas/Software'
+            type: object
           nullable: true
           type: array
         hasFAQ:
@@ -8074,13 +8074,13 @@ components:
         hasSampleExecution:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SampleExecution'
+            type: object
           nullable: true
           type: array
         hasSampleResult:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SampleResource'
+            type: object
           nullable: true
           type: array
         author:
@@ -8127,14 +8127,14 @@ components:
         hasSourceCode:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SourceCode'
+            type: object
           nullable: true
           type: array
         hasSetup:
           description: Property used to define configurations with some fixed resources
             and values. The rationale of this property is to allow predefined configurations
           items:
-            $ref: '#/components/schemas/ConfigurationSetup'
+            type: object
           nullable: true
           type: array
         hasExample:
@@ -8160,7 +8160,7 @@ components:
         hasFunding:
           description: Property that links a software project to its funding information
           items:
-            $ref: '#/components/schemas/FundingInformation'
+            type: object
           nullable: true
           type: array
         hasComponentLocation:
@@ -8181,7 +8181,7 @@ components:
         hasVersion:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SoftwareVersion'
+            type: object
           nullable: true
           type: array
         hasTypicalDataSource:
@@ -8218,7 +8218,7 @@ components:
         hasSoftwareImage:
           description: Function to link a function with its corresponding container
           items:
-            $ref: '#/components/schemas/SoftwareImage'
+            type: object
           nullable: true
           type: array
         dateCreated:
@@ -8230,7 +8230,7 @@ components:
         contributor:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -8243,7 +8243,7 @@ components:
         hasSampleVisualization:
           description: A typical sample visualization of the softwware outputs
           items:
-            $ref: '#/components/schemas/Visualization'
+            type: object
           nullable: true
           type: array
         memoryRequirements:
@@ -8273,7 +8273,7 @@ components:
         adjustableParameter:
           description: Parameter that can be adjusted in a configuration setup
           items:
-            $ref: '#/components/schemas/Parameter'
+            type: object
           nullable: true
           type: array
         hasUsageNotes:
@@ -8309,7 +8309,7 @@ components:
         hasParameter:
           description: Property that indicates the parameters of a model configuration
           items:
-            $ref: '#/components/schemas/Parameter'
+            type: object
           nullable: true
           type: array
         operatingSystems:
@@ -8324,7 +8324,7 @@ components:
             for this property is that indices are usually calculated by applying post-processing
             steps to the outputs of a software component.
           items:
-            $ref: '#/components/schemas/NumericalIndex'
+            type: object
           nullable: true
           type: array
         hasInput:
@@ -11942,7 +11942,7 @@ components:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
-            $ref: '#/components/schemas/Software'
+            type: object
           nullable: true
           type: array
         hasFAQ:
@@ -11985,13 +11985,13 @@ components:
         hasSampleExecution:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SampleExecution'
+            type: object
           nullable: true
           type: array
         hasSampleResult:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SampleResource'
+            type: object
           nullable: true
           type: array
         author:
@@ -12038,14 +12038,14 @@ components:
         hasSourceCode:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SourceCode'
+            type: object
           nullable: true
           type: array
         hasSetup:
           description: Property used to define configurations with some fixed resources
             and values. The rationale of this property is to allow predefined configurations
           items:
-            $ref: '#/components/schemas/ConfigurationSetup'
+            type: object
           nullable: true
           type: array
         hasExample:
@@ -12071,7 +12071,7 @@ components:
         hasFunding:
           description: Property that links a software project to its funding information
           items:
-            $ref: '#/components/schemas/FundingInformation'
+            type: object
           nullable: true
           type: array
         hasComponentLocation:
@@ -12092,7 +12092,7 @@ components:
         hasVersion:
           description: Description not available
           items:
-            $ref: '#/components/schemas/SoftwareVersion'
+            type: object
           nullable: true
           type: array
         hasTypicalDataSource:
@@ -12129,7 +12129,7 @@ components:
         hasSoftwareImage:
           description: Function to link a function with its corresponding container
           items:
-            $ref: '#/components/schemas/SoftwareImage'
+            type: object
           nullable: true
           type: array
         dateCreated:
@@ -12141,7 +12141,7 @@ components:
         contributor:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Person'
+            type: object
           nullable: true
           type: array
         hasPurpose:
@@ -12154,7 +12154,7 @@ components:
         hasSampleVisualization:
           description: A typical sample visualization of the softwware outputs
           items:
-            $ref: '#/components/schemas/Visualization'
+            type: object
           nullable: true
           type: array
         memoryRequirements:
@@ -12214,7 +12214,7 @@ components:
         hasParameter:
           description: Property that indicates the parameters of a model configuration
           items:
-            $ref: '#/components/schemas/Parameter'
+            type: object
           nullable: true
           type: array
         operatingSystems:
@@ -12229,7 +12229,7 @@ components:
             for this property is that indices are usually calculated by applying post-processing
             steps to the outputs of a software component.
           items:
-            $ref: '#/components/schemas/NumericalIndex'
+            type: object
           nullable: true
           type: array
         hasInput:
