@@ -1,0 +1,13 @@
+Software
+SampleExecution
+SampleResource
+SourceCode
+ConfigurationSetup
+FundingInformation
+SoftwareVersion
+SoftwareImage
+Person
+Visualization
+Parameter
+Parameter
+NumericalIndex

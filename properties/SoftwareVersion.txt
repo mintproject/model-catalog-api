@@ -1,0 +1,10 @@
+FundingInformation
+SoftwareVersion
+Image
+Software
+Person
+Image
+Visualization
+SoftwareConfiguration
+SourceCode
+NumericalIndex
