@@ -12065,7 +12065,7 @@ components:
         hasOutput:
           description: Property that expresses what are the outputs of a model
           items:
-            $ref: '#/components/schemas/DatasetSpecification'
+            type: object
           nullable: true
           type: array
         hasFunding:
@@ -12236,7 +12236,7 @@ components:
           description: Property that links a model configuration to the input types
             expected by it.
           items:
-            $ref: '#/components/schemas/DatasetSpecification'
+            type: object
           nullable: true
           type: array
       type: object
