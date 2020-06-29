@@ -7201,7 +7201,7 @@ components:
         wasDerivedFromSoftware:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Software'
+            type: object
           nullable: true
           type: array
         description:
