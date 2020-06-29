@@ -174,334 +174,6 @@ paths:
       summary: Update an existing ConfigurationSetup
       tags:
       - ConfigurationSetup
-  /datatransformations:
-    get:
-      description: Gets a list of all instances of DataTransformation (more information
-        in https://w3id.org/okn/o/sd#DataTransformation)
-      parameters:
-      - description: Name of the user graph to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: Filter by label
-        in: query
-        name: label
-        required: false
-        schema:
-          type: string
-      - description: Page number
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          format: int32
-          type: integer
-      - description: Items per page
-        in: query
-        name: per_page
-        required: false
-        schema:
-          default: 100
-          format: int32
-          maximum: 200
-          minimum: 1
-          type: integer
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/DataTransformation'
-                type: array
-          description: Successful response - returns an array with the instances of
-            DataTransformation.
-      summary: List all instances of DataTransformation
-      tags:
-      - DataTransformation
-    post:
-      description: Create a new instance of DataTransformation (more information in
-        https://w3id.org/okn/o/sd#DataTransformation)
-      parameters:
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataTransformation'
-        description: Information about the DataTransformationto be created
-      responses:
-        201:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformation'
-          description: Created
-      security:
-      - BearerAuth: []
-      summary: Create one DataTransformation
-      tags:
-      - DataTransformation
-  /datatransformations/{id}:
-    delete:
-      description: Delete an existing DataTransformation (more information in https://w3id.org/okn/o/sd#DataTransformation)
-      parameters:
-      - description: The ID of the DataTransformation to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      responses:
-        202:
-          description: Deleted
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Delete an existing DataTransformation
-      tags:
-      - DataTransformation
-    get:
-      description: Gets the details of a given DataTransformation (more information
-        in https://w3id.org/okn/o/sd#DataTransformation)
-      parameters:
-      - description: Name of the user graph to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: The ID of the DataTransformation to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformation'
-          description: Gets the details of a given DataTransformation
-      summary: Get a single DataTransformation by its id
-      tags:
-      - DataTransformation
-    put:
-      description: Updates an existing DataTransformation (more information in https://w3id.org/okn/o/sd#DataTransformation)
-      parameters:
-      - description: The ID of the DataTransformation to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataTransformation'
-        description: An old DataTransformationto be updated
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformation'
-          description: Updated
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Update an existing DataTransformation
-      tags:
-      - DataTransformation
-  /datatransformationsetups:
-    get:
-      description: Gets a list of all instances of DataTransformationSetup (more information
-        in https://w3id.org/okn/o/sd#DataTransformationSetup)
-      parameters:
-      - description: Name of the user graph to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: Filter by label
-        in: query
-        name: label
-        required: false
-        schema:
-          type: string
-      - description: Page number
-        in: query
-        name: page
-        required: false
-        schema:
-          default: 1
-          format: int32
-          type: integer
-      - description: Items per page
-        in: query
-        name: per_page
-        required: false
-        schema:
-          default: 100
-          format: int32
-          maximum: 200
-          minimum: 1
-          type: integer
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/DataTransformationSetup'
-                type: array
-          description: Successful response - returns an array with the instances of
-            DataTransformationSetup.
-      summary: List all instances of DataTransformationSetup
-      tags:
-      - DataTransformationSetup
-    post:
-      description: Create a new instance of DataTransformationSetup (more information
-        in https://w3id.org/okn/o/sd#DataTransformationSetup)
-      parameters:
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataTransformationSetup'
-        description: Information about the DataTransformationSetupto be created
-      responses:
-        201:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformationSetup'
-          description: Created
-      security:
-      - BearerAuth: []
-      summary: Create one DataTransformationSetup
-      tags:
-      - DataTransformationSetup
-  /datatransformationsetups/{id}:
-    delete:
-      description: Delete an existing DataTransformationSetup (more information in
-        https://w3id.org/okn/o/sd#DataTransformationSetup)
-      parameters:
-      - description: The ID of the DataTransformationSetup to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      responses:
-        202:
-          description: Deleted
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Delete an existing DataTransformationSetup
-      tags:
-      - DataTransformationSetup
-    get:
-      description: Gets the details of a given DataTransformationSetup (more information
-        in https://w3id.org/okn/o/sd#DataTransformationSetup)
-      parameters:
-      - description: Name of the user graph to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: The ID of the DataTransformationSetup to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformationSetup'
-          description: Gets the details of a given DataTransformationSetup
-      summary: Get a single DataTransformationSetup by its id
-      tags:
-      - DataTransformationSetup
-    put:
-      description: Updates an existing DataTransformationSetup (more information in
-        https://w3id.org/okn/o/sd#DataTransformationSetup)
-      parameters:
-      - description: The ID of the DataTransformationSetup to be retrieved
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      - description: Username
-        in: query
-        name: user
-        required: false
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/DataTransformationSetup'
-        description: An old DataTransformationSetupto be updated
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataTransformationSetup'
-          description: Updated
-        404:
-          description: Not Found
-      security:
-      - BearerAuth: []
-      summary: Update an existing DataTransformationSetup
-      tags:
-      - DataTransformationSetup
   /datasetspecifications:
     get:
       description: Gets a list of all instances of DatasetSpecification (more information
@@ -828,6 +500,168 @@ paths:
       summary: Update an existing FundingInformation
       tags:
       - FundingInformation
+  /icasavariables:
+    get:
+      description: Gets a list of all instances of ICASAVariable (more information
+        in https://w3id.org/okn/o/sd#ICASAVariable)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ICASAVariable'
+                type: array
+          description: Successful response - returns an array with the instances of
+            ICASAVariable.
+      summary: List all instances of ICASAVariable
+      tags:
+      - ICASAVariable
+    post:
+      description: Create a new instance of ICASAVariable (more information in https://w3id.org/okn/o/sd#ICASAVariable)
+      parameters:
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ICASAVariable'
+        description: Information about the ICASAVariableto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ICASAVariable'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one ICASAVariable
+      tags:
+      - ICASAVariable
+  /icasavariables/{id}:
+    delete:
+      description: Delete an existing ICASAVariable (more information in https://w3id.org/okn/o/sd#ICASAVariable)
+      parameters:
+      - description: The ID of the ICASAVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing ICASAVariable
+      tags:
+      - ICASAVariable
+    get:
+      description: Gets the details of a given ICASAVariable (more information in
+        https://w3id.org/okn/o/sd#ICASAVariable)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the ICASAVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ICASAVariable'
+          description: Gets the details of a given ICASAVariable
+      summary: Get a single ICASAVariable by its id
+      tags:
+      - ICASAVariable
+    put:
+      description: Updates an existing ICASAVariable (more information in https://w3id.org/okn/o/sd#ICASAVariable)
+      parameters:
+      - description: The ID of the ICASAVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ICASAVariable'
+        description: An old ICASAVariableto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ICASAVariable'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing ICASAVariable
+      tags:
+      - ICASAVariable
   /images:
     get:
       description: Gets a list of all instances of Image (more information in https://w3id.org/okn/o/sd#Image)
@@ -1632,6 +1466,167 @@ paths:
       summary: Update an existing Person
       tags:
       - Person
+  /svovariables:
+    get:
+      description: Gets a list of all instances of SVOVariable (more information in
+        https://w3id.org/okn/o/sd#SVOVariable)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/SVOVariable'
+                type: array
+          description: Successful response - returns an array with the instances of
+            SVOVariable.
+      summary: List all instances of SVOVariable
+      tags:
+      - SVOVariable
+    post:
+      description: Create a new instance of SVOVariable (more information in https://w3id.org/okn/o/sd#SVOVariable)
+      parameters:
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SVOVariable'
+        description: Information about the SVOVariableto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SVOVariable'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one SVOVariable
+      tags:
+      - SVOVariable
+  /svovariables/{id}:
+    delete:
+      description: Delete an existing SVOVariable (more information in https://w3id.org/okn/o/sd#SVOVariable)
+      parameters:
+      - description: The ID of the SVOVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing SVOVariable
+      tags:
+      - SVOVariable
+    get:
+      description: Gets the details of a given SVOVariable (more information in https://w3id.org/okn/o/sd#SVOVariable)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the SVOVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SVOVariable'
+          description: Gets the details of a given SVOVariable
+      summary: Get a single SVOVariable by its id
+      tags:
+      - SVOVariable
+    put:
+      description: Updates an existing SVOVariable (more information in https://w3id.org/okn/o/sd#SVOVariable)
+      parameters:
+      - description: The ID of the SVOVariable to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SVOVariable'
+        description: An old SVOVariableto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SVOVariable'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing SVOVariable
+      tags:
+      - SVOVariable
   /samplecollections:
     get:
       description: Gets a list of all instances of SampleCollection (more information
@@ -4380,6 +4375,169 @@ paths:
       summary: Update an existing Equation
       tags:
       - Equation
+  /farmingpracticess:
+    get:
+      description: Gets a list of all instances of FarmingPractices (more information
+        in https://w3id.org/okn/o/sdm#FarmingPractices)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/FarmingPractices'
+                type: array
+          description: Successful response - returns an array with the instances of
+            FarmingPractices.
+      summary: List all instances of FarmingPractices
+      tags:
+      - FarmingPractices
+    post:
+      description: Create a new instance of FarmingPractices (more information in
+        https://w3id.org/okn/o/sdm#FarmingPractices)
+      parameters:
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmingPractices'
+        description: Information about the FarmingPracticesto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmingPractices'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one FarmingPractices
+      tags:
+      - FarmingPractices
+  /farmingpracticess/{id}:
+    delete:
+      description: Delete an existing FarmingPractices (more information in https://w3id.org/okn/o/sdm#FarmingPractices)
+      parameters:
+      - description: The ID of the FarmingPractices to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing FarmingPractices
+      tags:
+      - FarmingPractices
+    get:
+      description: Gets the details of a given FarmingPractices (more information
+        in https://w3id.org/okn/o/sdm#FarmingPractices)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the FarmingPractices to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmingPractices'
+          description: Gets the details of a given FarmingPractices
+      summary: Get a single FarmingPractices by its id
+      tags:
+      - FarmingPractices
+    put:
+      description: Updates an existing FarmingPractices (more information in https://w3id.org/okn/o/sdm#FarmingPractices)
+      parameters:
+      - description: The ID of the FarmingPractices to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FarmingPractices'
+        description: An old FarmingPracticesto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FarmingPractices'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing FarmingPractices
+      tags:
+      - FarmingPractices
   /geocoordinatess:
     get:
       description: Gets a list of all instances of GeoCoordinates (more information
@@ -6482,6 +6640,166 @@ paths:
       summary: Update an existing SpatiallyDistributedGrid
       tags:
       - SpatiallyDistributedGrid
+  /subsidys:
+    get:
+      description: Gets a list of all instances of Subsidy (more information in https://w3id.org/okn/o/sdm#Subsidy)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Subsidy'
+                type: array
+          description: Successful response - returns an array with the instances of
+            Subsidy.
+      summary: List all instances of Subsidy
+      tags:
+      - Subsidy
+    post:
+      description: Create a new instance of Subsidy (more information in https://w3id.org/okn/o/sdm#Subsidy)
+      parameters:
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subsidy'
+        description: Information about the Subsidyto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subsidy'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one Subsidy
+      tags:
+      - Subsidy
+  /subsidys/{id}:
+    delete:
+      description: Delete an existing Subsidy (more information in https://w3id.org/okn/o/sdm#Subsidy)
+      parameters:
+      - description: The ID of the Subsidy to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing Subsidy
+      tags:
+      - Subsidy
+    get:
+      description: Gets the details of a given Subsidy (more information in https://w3id.org/okn/o/sdm#Subsidy)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the Subsidy to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subsidy'
+          description: Gets the details of a given Subsidy
+      summary: Get a single Subsidy by its id
+      tags:
+      - Subsidy
+    put:
+      description: Updates an existing Subsidy (more information in https://w3id.org/okn/o/sdm#Subsidy)
+      parameters:
+      - description: The ID of the Subsidy to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subsidy'
+        description: An old Subsidyto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subsidy'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing Subsidy
+      tags:
+      - Subsidy
   /theory-guidedmodels:
     get:
       description: Gets a list of all instances of Theory-GuidedModel (more information
@@ -7192,9 +7510,13 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -7398,6 +7720,32 @@ components:
           nullable: true
           type: array
       type: object
+    FarmingPractices:
+      description: Any interventions that affects farming practices
+      properties:
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
     Grid:
       description: Description not available
       properties:
@@ -7426,13 +7774,6 @@ components:
           description: small description
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformation:
-          description: Property that associates an input/output with their corresponding
-            data transformation.
-          items:
-            $ref: '#/components/schemas/DataTransformation'
           nullable: true
           type: array
         hasPresentation:
@@ -7486,13 +7827,6 @@ components:
           description: Description not available
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformationSetup:
-          description: Property to link an input/output dataset to the specific data
-            transformation (with URLs
-          items:
-            $ref: '#/components/schemas/DataTransformationSetup'
           nullable: true
           type: array
         position:
@@ -7638,13 +7972,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -7847,6 +8177,17 @@ components:
             type: string
           nullable: true
           type: array
+        hadPrimarySource:
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
+          items:
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
+            type: object
+          nullable: true
+          type: array
         hasFileStructure:
           description: Relates a dataset specification to the data structure definition
           items:
@@ -7860,53 +8201,12 @@ components:
             type: string
           nullable: true
           type: array
-        hasDataTransformation:
-          description: Property that associates an input/output with their corresponding
-            data transformation.
-          items:
-            $ref: '#/components/schemas/DataTransformation'
-          nullable: true
-          type: array
         hasPresentation:
           description: Property that links an instance of a dataset (or a dataset
             specification) to the presentation of a variable contained (or expected
             to be contained) on it.
           items:
             $ref: '#/components/schemas/VariablePresentation'
-          nullable: true
-          type: array
-        label:
-          description: short description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasFixedResource:
-          description: Property that links a parameter or an input to a fixed value.
-            For example, in a given configuration a parameter with the planting date
-            for a model could be fixed to avoid the user changing it for that region.
-          items:
-            $ref: '#/components/schemas/SampleResource'
-          nullable: true
-          type: array
-        hadPrimarySource:
-          description: had primary source
-          items:
-            description: had primary source
-            type: object
-          nullable: true
-          type: array
-        hasDataTransformationSetup:
-          description: Property to link an input/output dataset to the specific data
-            transformation (with URLs
-          items:
-            $ref: '#/components/schemas/DataTransformationSetup'
           nullable: true
           type: array
         position:
@@ -7922,9 +8222,29 @@ components:
           description: identifier
           nullable: false
           type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
         value:
           description: Value associated to the described entity
           items: {}
+          nullable: true
+          type: array
+        hasFixedResource:
+          description: Property that links a parameter or an input to a fixed value.
+            For example, in a given configuration a parameter with the planting date
+            for a model could be fixed to avoid the user changing it for that region.
+          items:
+            $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
       type: object
@@ -7957,8 +8277,7 @@ components:
       type: object
     StandardVariable:
       description: A standard variable, necessary to refer to all the variable using
-        the same nomenclature in a domain ontology. For example, a standard variable
-        may be a SVO variable (http://www.geoscienceontology.org/geo-upper#Variable)
+        the same nomenclature in a domain ontology
       properties:
         description:
           description: small description
@@ -7980,362 +8299,6 @@ components:
           description: type of the resource
           items:
             type: string
-          nullable: true
-          type: array
-      type: object
-    DataTransformationSetup:
-      description: Special type of data transformation where the inputs and parameters
-        have some pre-selected values. For example, they may point to a particular
-        dataset URL to be used in the transformation
-      properties:
-        keywords:
-          description: Keywords associated with a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDocumentation:
-          description: Pointer to the documentation of the model
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasImplementationScriptLocation:
-          description: Property that points to the main runnable script for the current
-            function
-          items:
-            type: string
-          nullable: true
-          type: array
-        softwareRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDownloadURL:
-          description: Download URL where to obtain the source/executable of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasInstallationInstructions:
-          description: Instructions requires to install this particular piece of software.
-          items:
-            type: string
-          nullable: true
-          type: array
-        compatibleVisualizationSoftware:
-          description: Property that links a software component to other useful software
-            that canbe used to visualize its outputs
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        hasFAQ:
-          description: Frequently asked questions about a software
-          items:
-            type: string
-          nullable: true
-          type: array
-        logo:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        hasContactPerson:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        tag:
-          description: 'Tag used to annotate a version or a software configuration.
-            This annotation is useful to show which version is the latest, or which
-            version is deprecated. Supported tags are: "latest", "deprecated"'
-          items:
-            type: string
-          nullable: true
-          type: array
-        id:
-          description: identifier
-          nullable: false
-          type: string
-        identifier:
-          description: Identifier of the resource being described
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSampleExecution:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SampleExecution'
-          nullable: true
-          type: array
-        hasSampleResult:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SampleResource'
-          nullable: true
-          type: array
-        author:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
-            For example: "This model accepts only monthly data", or "all inputs of
-            this model configuration must share the same location". More structured
-            restrictions, such as Jena rules or SWRL rules may also be captured with
-            this property'
-          items:
-            type: string
-          nullable: true
-          type: array
-        shortDescription:
-          description: A summarized description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasExecutionCommand:
-          description: Execution instructions on how to run the image
-          items:
-            type: string
-          nullable: true
-          type: array
-        datePublished:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        license:
-          description: License of a software component or its source code
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSourceCode:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SourceCode'
-          nullable: true
-          type: array
-        hasSetup:
-          description: Property used to define configurations with some fixed resources
-            and values. The rationale of this property is to allow predefined configurations
-          items:
-            $ref: '#/components/schemas/ConfigurationSetup'
-          nullable: true
-          type: array
-        hasExample:
-          description: An example explaining a scenario where the model was used in
-            plain language.
-          items:
-            type: string
-          nullable: true
-          type: array
-        publisher:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasOutput:
-          description: Property that expresses what are the outputs of a model
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
-          nullable: true
-          type: array
-        hasFunding:
-          description: Property that links a software project to its funding information
-          items:
-            $ref: '#/components/schemas/FundingInformation'
-          nullable: true
-          type: array
-        hasComponentLocation:
-          description: Location of the aggregation of all the files needed to execute
-            the component. Usually a zip file including the run script and support
-            scripts, including specification files
-          items:
-            type: string
-          nullable: true
-          type: array
-        supportDetails:
-          description: Property to link details, such as mailing lists in case a contact
-            person is not provided
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasVersion:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SoftwareVersion'
-          nullable: true
-          type: array
-        hasTypicalDataSource:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        description:
-          description: small description
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
-          description: Main publication to cite in this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        screenshot:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        hadPrimarySource:
-          description: had primary source
-          items:
-            description: had primary source
-            type: object
-          nullable: true
-          type: array
-        hasSoftwareImage:
-          description: Function to link a function with its corresponding container
-          items:
-            $ref: '#/components/schemas/SoftwareImage'
-          nullable: true
-          type: array
-        dateCreated:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        contributor:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
-        hasPurpose:
-          description: Objective or main functionality that can be achieved by running
-            this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSampleVisualization:
-          description: A typical sample visualization of the softwware outputs
-          items:
-            $ref: '#/components/schemas/Visualization'
-          nullable: true
-          type: array
-        memoryRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        website:
-          description: Website of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        citation:
-          description: How to cite this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        processorRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        adjustableParameter:
-          description: Parameter that can be adjusted in a configuration setup
-          items:
-            $ref: '#/components/schemas/Parameter'
-          nullable: true
-          type: array
-        hasUsageNotes:
-          description: Property that describes the usage considerations of a particular
-            software. These notes capture the rationale of for that software configuration,
-            along with an explanation for sample inputs, things to consider when running
-            the model with data, etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSupportScriptLocation:
-          description: Property that links to the location of scripts that may be
-            used from the main runnable script.
-          items:
-            type: string
-          nullable: true
-          type: array
-        label:
-          description: short description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasAssumption:
-          description: Assumptions of a software, e.g. the solver being used for a
-            particular model, the source of the data (e.g., all data must have a given
-            resolution), etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasParameter:
-          description: Property that indicates the parameters of a model configuration
-          items:
-            $ref: '#/components/schemas/Parameter'
-          nullable: true
-          type: array
-        operatingSystems:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        usefulForCalculatingIndex:
-          description: Property that indicates that a software component (or any of
-            its outputs) can be used to calculate a particular index. The rationale
-            for this property is that indices are usually calculated by applying post-processing
-            steps to the outputs of a software component.
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -8633,13 +8596,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -8780,6 +8739,13 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
+        hasInput:
+          description: Property that links a model configuration to the input types
+            expected by it.
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           description: Property that indicates that a software component (or any of
             its outputs) can be used to calculate a particular index. The rationale
@@ -8787,13 +8753,6 @@ components:
             steps to the outputs of a software component.
           items:
             $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -8893,13 +8852,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -9179,13 +9134,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -9637,13 +9588,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -9762,6 +9709,13 @@ components:
             $ref: '#/components/schemas/Equation'
           nullable: true
           type: array
+        hasInput:
+          description: Property that links a model configuration to the input types
+            expected by it.
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           description: Property that indicates that a software component (or any of
             its outputs) can be used to calculate a particular index. The rationale
@@ -9769,13 +9723,6 @@ components:
             steps to the outputs of a software component.
           items:
             $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -9807,13 +9754,6 @@ components:
           description: small description
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformation:
-          description: Property that associates an input/output with their corresponding
-            data transformation.
-          items:
-            $ref: '#/components/schemas/DataTransformation'
           nullable: true
           type: array
         hasPresentation:
@@ -9867,13 +9807,6 @@ components:
           description: Description not available
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformationSetup:
-          description: Property to link an input/output dataset to the specific data
-            transformation (with URLs
-          items:
-            $ref: '#/components/schemas/DataTransformationSetup'
           nullable: true
           type: array
         position:
@@ -10191,13 +10124,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -10304,6 +10233,13 @@ components:
             type: string
           nullable: true
           type: array
+        hasInput:
+          description: Property that links a model configuration to the input types
+            expected by it.
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           description: Property that indicates that a software component (or any of
             its outputs) can be used to calculate a particular index. The rationale
@@ -10313,11 +10249,30 @@ components:
             $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
+      type: object
+    SVOVariable:
+      description: 'Variable that follows the Scientific Variables Ontology: http://geoscienceontology.org/'
+      properties:
+        description:
+          description: small description
           items:
-            $ref: '#/components/schemas/DatasetSpecification'
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
           nullable: true
           type: array
       type: object
@@ -10341,13 +10296,6 @@ components:
             type: string
           nullable: true
           type: array
-        hasDataTransformationSetup:
-          description: Property to link an input/output dataset to the specific data
-            transformation (with URLs
-          items:
-            $ref: '#/components/schemas/DataTransformationSetup'
-          nullable: true
-          type: array
         hasFileStructure:
           description: Relates a dataset specification to the data structure definition
           items:
@@ -10359,13 +10307,6 @@ components:
           description: small description
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformation:
-          description: Property that associates an input/output with their corresponding
-            data transformation.
-          items:
-            $ref: '#/components/schemas/DataTransformation'
           nullable: true
           type: array
         hasPresentation:
@@ -10543,13 +10484,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -10736,6 +10673,32 @@ components:
       type: object
     Equation:
       description: Description not available
+      properties:
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
+    ICASAVariable:
+      description: 'Variable that follows the ICASA standard for agriculture: https://dssat.net/data/standards_v2'
       properties:
         description:
           description: small description
@@ -11026,9 +10989,13 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -11129,6 +11096,13 @@ components:
             type: string
           nullable: true
           type: array
+        hasInput:
+          description: Property that links a model configuration to the input types
+            expected by it.
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         usefulForCalculatingIndex:
           description: Property that indicates that a software component (or any of
             its outputs) can be used to calculate a particular index. The rationale
@@ -11136,13 +11110,6 @@ components:
             steps to the outputs of a software component.
           items:
             $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -11192,6 +11159,32 @@ components:
           nullable: true
           type: array
       type: object
+    Subsidy:
+      description: Interventions that affect the subsidy of a resource (e.g., fertilizer)
+      properties:
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
     PointBasedGrid:
       description: Description not available
       properties:
@@ -11220,13 +11213,6 @@ components:
           description: small description
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformation:
-          description: Property that associates an input/output with their corresponding
-            data transformation.
-          items:
-            $ref: '#/components/schemas/DataTransformation'
           nullable: true
           type: array
         hasPresentation:
@@ -11280,13 +11266,6 @@ components:
           description: Description not available
           items:
             type: string
-          nullable: true
-          type: array
-        hasDataTransformationSetup:
-          description: Property to link an input/output dataset to the specific data
-            transformation (with URLs
-          items:
-            $ref: '#/components/schemas/DataTransformationSetup'
           nullable: true
           type: array
         position:
@@ -11458,9 +11437,13 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -11739,9 +11722,13 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -11917,354 +11904,6 @@ components:
             steps to the outputs of a software component.
           items:
             $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-      type: object
-    DataTransformation:
-      description: Class that represents a software for performing data transformation.
-      properties:
-        keywords:
-          description: Keywords associated with a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDocumentation:
-          description: Pointer to the documentation of the model
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasImplementationScriptLocation:
-          description: Property that points to the main runnable script for the current
-            function
-          items:
-            type: string
-          nullable: true
-          type: array
-        softwareRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDownloadURL:
-          description: Download URL where to obtain the source/executable of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasInstallationInstructions:
-          description: Instructions requires to install this particular piece of software.
-          items:
-            type: string
-          nullable: true
-          type: array
-        compatibleVisualizationSoftware:
-          description: Property that links a software component to other useful software
-            that canbe used to visualize its outputs
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        hasFAQ:
-          description: Frequently asked questions about a software
-          items:
-            type: string
-          nullable: true
-          type: array
-        logo:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        hasContactPerson:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        tag:
-          description: 'Tag used to annotate a version or a software configuration.
-            This annotation is useful to show which version is the latest, or which
-            version is deprecated. Supported tags are: "latest", "deprecated"'
-          items:
-            type: string
-          nullable: true
-          type: array
-        id:
-          description: identifier
-          nullable: false
-          type: string
-        identifier:
-          description: Identifier of the resource being described
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSampleExecution:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SampleExecution'
-          nullable: true
-          type: array
-        hasSampleResult:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SampleResource'
-          nullable: true
-          type: array
-        author:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
-            For example: "This model accepts only monthly data", or "all inputs of
-            this model configuration must share the same location". More structured
-            restrictions, such as Jena rules or SWRL rules may also be captured with
-            this property'
-          items:
-            type: string
-          nullable: true
-          type: array
-        shortDescription:
-          description: A summarized description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasExecutionCommand:
-          description: Execution instructions on how to run the image
-          items:
-            type: string
-          nullable: true
-          type: array
-        datePublished:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        license:
-          description: License of a software component or its source code
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSourceCode:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SourceCode'
-          nullable: true
-          type: array
-        hasSetup:
-          description: Property used to define configurations with some fixed resources
-            and values. The rationale of this property is to allow predefined configurations
-          items:
-            $ref: '#/components/schemas/ConfigurationSetup'
-          nullable: true
-          type: array
-        hasExample:
-          description: An example explaining a scenario where the model was used in
-            plain language.
-          items:
-            type: string
-          nullable: true
-          type: array
-        publisher:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasOutput:
-          description: Property that expresses what are the outputs of a model
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
-          nullable: true
-          type: array
-        hasFunding:
-          description: Property that links a software project to its funding information
-          items:
-            $ref: '#/components/schemas/FundingInformation'
-          nullable: true
-          type: array
-        hasComponentLocation:
-          description: Location of the aggregation of all the files needed to execute
-            the component. Usually a zip file including the run script and support
-            scripts, including specification files
-          items:
-            type: string
-          nullable: true
-          type: array
-        supportDetails:
-          description: Property to link details, such as mailing lists in case a contact
-            person is not provided
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasVersion:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SoftwareVersion'
-          nullable: true
-          type: array
-        hasTypicalDataSource:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        description:
-          description: small description
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
-          description: Main publication to cite in this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        screenshot:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        hadPrimarySource:
-          description: had primary source
-          items:
-            description: had primary source
-            type: object
-          nullable: true
-          type: array
-        hasSoftwareImage:
-          description: Function to link a function with its corresponding container
-          items:
-            $ref: '#/components/schemas/SoftwareImage'
-          nullable: true
-          type: array
-        dateCreated:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        contributor:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
-        hasPurpose:
-          description: Objective or main functionality that can be achieved by running
-            this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSampleVisualization:
-          description: A typical sample visualization of the softwware outputs
-          items:
-            $ref: '#/components/schemas/Visualization'
-          nullable: true
-          type: array
-        memoryRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        website:
-          description: Website of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        citation:
-          description: How to cite this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        processorRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasUsageNotes:
-          description: Property that describes the usage considerations of a particular
-            software. These notes capture the rationale of for that software configuration,
-            along with an explanation for sample inputs, things to consider when running
-            the model with data, etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSupportScriptLocation:
-          description: Property that links to the location of scripts that may be
-            used from the main runnable script.
-          items:
-            type: string
-          nullable: true
-          type: array
-        label:
-          description: short description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasAssumption:
-          description: Assumptions of a software, e.g. the solver being used for a
-            particular model, the source of the data (e.g., all data must have a given
-            resolution), etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasParameter:
-          description: Property that indicates the parameters of a model configuration
-          items:
-            $ref: '#/components/schemas/Parameter'
-          nullable: true
-          type: array
-        operatingSystems:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        usefulForCalculatingIndex:
-          description: Property that indicates that a software component (or any of
-            its outputs) can be used to calculate a particular index. The rationale
-            for this property is that indices are usually calculated by applying post-processing
-            steps to the outputs of a software component.
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        hasInput:
-          description: Property that links a model configuration to the input types
-            expected by it.
-          items:
-            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -12397,13 +12036,9 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: Property to identify the original source of the information
-            of the annotated resource. It could be a web page, an organization, a
-            person, some experiment notes, etc.
+          description: had primary source
           items:
-            description: Property to identify the original source of the information
-              of the annotated resource. It could be a web page, an organization,
-              a person, some experiment notes, etc.
+            description: had primary source
             type: object
           nullable: true
           type: array
@@ -12868,9 +12503,13 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
