@@ -8043,7 +8043,7 @@ components:
         logo:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Image'
+            type: object
           nullable: true
           type: array
         hasContactPerson:
@@ -8205,7 +8205,7 @@ components:
         screenshot:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Image'
+            type: object
           nullable: true
           type: array
         hadPrimarySource:
@@ -11954,7 +11954,7 @@ components:
         logo:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Image'
+            type: object
           nullable: true
           type: array
         hasContactPerson:
@@ -12116,7 +12116,7 @@ components:
         screenshot:
           description: Description not available
           items:
-            $ref: '#/components/schemas/Image'
+            type: object
           nullable: true
           type: array
         hadPrimarySource:
