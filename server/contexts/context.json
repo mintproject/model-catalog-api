@@ -281,7 +281,6 @@
     },
     "SoftwareConfiguration": {"@id": "https://w3id.org/okn/o/sd#SoftwareConfiguration"},
     "SampleCollection": {"@id": "https://w3id.org/okn/o/sd#SampleCollection"},
-    "Subsidy": {"@id": "https://w3id.org/okn/o/sdm#Subsidy"},
     "dataCatalogIdentifier": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#dataCatalogIdentifier",
@@ -292,6 +291,7 @@
         "@id": "https://w3id.org/okn/o/sd#operatingSystems",
         "@container": "@set"
     },
+    "DataTransformation": {"@id": "https://w3id.org/okn/o/sd#DataTransformation"},
     "Model": {"@id": "https://w3id.org/okn/o/sdm#Model"},
     "Parameter": {"@id": "https://w3id.org/okn/o/sd#Parameter"},
     "validUntil": {
@@ -320,7 +320,6 @@
         "@container": "@set"
     },
     "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
-    "FarmingPractices": {"@id": "https://w3id.org/okn/o/sdm#FarmingPractices"},
     "softwareRequirements": {
         "@id": "http://schema.org/softwareRequirements",
         "@container": "@set"
@@ -328,6 +327,11 @@
     "intervalUnit": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#intervalUnit",
+        "@container": "@set"
+    },
+    "hasDataTransformation": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasDataTransformation",
         "@container": "@set"
     },
     "wasDerivedFrom": {
@@ -367,6 +371,11 @@
     "compatibleVisualizationSoftware": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#compatibleVisualizationSoftware",
+        "@container": "@set"
+    },
+    "hasDataTransformationSetup": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasDataTransformationSetup",
         "@container": "@set"
     },
     "copyrightHolder": {
@@ -417,7 +426,6 @@
         "@id": "http://schema.org/author",
         "@container": "@set"
     },
-    "SVOVariable": {"@id": "https://w3id.org/okn/o/sd#SVOVariable"},
     "DatasetSpecification": {"@id": "https://w3id.org/okn/o/sd#DatasetSpecification"},
     "hasConstraint": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -554,6 +562,7 @@
         "@container": "@set"
     },
     "SoftwareSourceCode": {"@id": "http://schema.org/SoftwareSourceCode"},
+    "DataTransformationSetup": {"@id": "https://w3id.org/okn/o/sd#DataTransformationSetup"},
     "dateCreated": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@id": "https://w3id.org/okn/o/sd#dateCreated",
@@ -634,7 +643,6 @@
         "@id": "https://w3id.org/okn/o/sd#hasSupportScriptLocation",
         "@container": "@set"
     },
-    "ICASAVariable": {"@id": "https://w3id.org/okn/o/sd#ICASAVariable"},
     "label": {
         "@id": "http://www.w3.org/2000/01/rdf-schema#label",
         "@container": "@set"
