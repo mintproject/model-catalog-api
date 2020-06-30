@@ -1,3 +1,4 @@
+import logging
 from configparser import ConfigParser
 import os
 from pathlib import Path
@@ -28,10 +29,10 @@ config.read(config_filename)
 
 # Default endpoint, if none specified elsewhere
 ENDPOINT = config.get('defaults', 'endpoint')
-ENDPOINT_USER = config.get('defaults', 'user')
+ENDPOINT_USERNAME = config.get('defaults', 'user')
 ENDPOINT_PASSWORD = config.get('defaults', 'password')
-PREFIX = config.get('defaults', 'prefix')
-GRAPH_BASE = config.get('defaults', 'graph_base')
+ENDPOINT_RESOURCE_PREFIX = config.get('defaults', 'prefix')
+ENDPOINT_GRAPH_BASE = config.get('defaults', 'graph_base')
 FIREBASE_KEY = config.get('defaults', 'firebase_key')
 
 QUERY_DIRECTORY = path/config.get('defaults', 'queries_dir')
@@ -49,4 +50,4 @@ QUERY_ENDPOINT = f'{ENDPOINT}/query'
 
 QUERIES_TYPES = ["get_all", "get_all_related", "get_all_related_user", "get_all_user", "get_one", "get_one_user"]
 
-
+logging_file = Path(__file__).parent / "logging.ini"
