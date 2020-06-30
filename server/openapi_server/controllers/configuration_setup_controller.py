@@ -34,7 +34,7 @@ def configurationsetups_get(username=None, label=None, page=None, per_page=None)
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
         kls=ConfigurationSetup)
 
-def configurationsetups_id_delete(id, user):  # noqa: E501
+def configurationsetups_id_delete(id, user=None):  # noqa: E501
     """Delete an existing ConfigurationSetup
 
     Delete an existing ConfigurationSetup (more information in https://w3id.org/okn/o/sd#ConfigurationSetup) # noqa: E501
@@ -48,7 +48,8 @@ def configurationsetups_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=CONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
         kls=ConfigurationSetup)
@@ -73,7 +74,7 @@ def configurationsetups_id_get(id, username=None):  # noqa: E501
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
         kls=ConfigurationSetup)
 
-def configurationsetups_id_put(id, user, configuration_setup=None):  # noqa: E501
+def configurationsetups_id_put(id, user=None, configuration_setup=None):  # noqa: E501
     """Update an existing ConfigurationSetup
 
     Updates an existing ConfigurationSetup (more information in https://w3id.org/okn/o/sd#ConfigurationSetup) # noqa: E501
@@ -91,13 +92,14 @@ def configurationsetups_id_put(id, user, configuration_setup=None):  # noqa: E50
     if connexion.request.is_json:
         configuration_setup = ConfigurationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=configuration_setup,
         rdf_type_uri=CONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 
         kls=ConfigurationSetup)
 
-def configurationsetups_post(user, configuration_setup=None):  # noqa: E501
+def configurationsetups_post(user=None, configuration_setup=None):  # noqa: E501
     """Create one ConfigurationSetup
 
     Create a new instance of ConfigurationSetup (more information in https://w3id.org/okn/o/sd#ConfigurationSetup) # noqa: E501
@@ -113,7 +115,8 @@ def configurationsetups_post(user, configuration_setup=None):  # noqa: E501
     if connexion.request.is_json:
         configuration_setup = ConfigurationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=configuration_setup,
         rdf_type_uri=CONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=CONFIGURATIONSETUP_TYPE_NAME, 

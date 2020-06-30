@@ -33,7 +33,7 @@ def spatialresolutions_get(username=None, label=None, page=None, per_page=None):
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 
         kls=SpatialResolution)
 
-def spatialresolutions_id_delete(id, user):  # noqa: E501
+def spatialresolutions_id_delete(id, user=None):  # noqa: E501
     """Delete an existing SpatialResolution
 
     Delete an existing SpatialResolution (more information in https://w3id.org/okn/o/sdm#SpatialResolution) # noqa: E501
@@ -47,7 +47,8 @@ def spatialresolutions_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=SPATIALRESOLUTION_TYPE_URI,
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 
         kls=SpatialResolution)
@@ -72,7 +73,7 @@ def spatialresolutions_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 
         kls=SpatialResolution)
 
-def spatialresolutions_id_put(id, user, spatial_resolution=None):  # noqa: E501
+def spatialresolutions_id_put(id, user=None, spatial_resolution=None):  # noqa: E501
     """Update an existing SpatialResolution
 
     Updates an existing SpatialResolution (more information in https://w3id.org/okn/o/sdm#SpatialResolution) # noqa: E501
@@ -90,13 +91,14 @@ def spatialresolutions_id_put(id, user, spatial_resolution=None):  # noqa: E501
     if connexion.request.is_json:
         spatial_resolution = SpatialResolution.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=spatial_resolution,
         rdf_type_uri=SPATIALRESOLUTION_TYPE_URI,
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 
         kls=SpatialResolution)
 
-def spatialresolutions_post(user, spatial_resolution=None):  # noqa: E501
+def spatialresolutions_post(user=None, spatial_resolution=None):  # noqa: E501
     """Create one SpatialResolution
 
     Create a new instance of SpatialResolution (more information in https://w3id.org/okn/o/sdm#SpatialResolution) # noqa: E501
@@ -112,7 +114,8 @@ def spatialresolutions_post(user, spatial_resolution=None):  # noqa: E501
     if connexion.request.is_json:
         spatial_resolution = SpatialResolution.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=spatial_resolution,
         rdf_type_uri=SPATIALRESOLUTION_TYPE_URI,
         rdf_type_name=SPATIALRESOLUTION_TYPE_NAME, 

@@ -33,7 +33,7 @@ def datasetspecifications_get(username=None, label=None, page=None, per_page=Non
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 
         kls=DatasetSpecification)
 
-def datasetspecifications_id_delete(id, user):  # noqa: E501
+def datasetspecifications_id_delete(id, user=None):  # noqa: E501
     """Delete an existing DatasetSpecification
 
     Delete an existing DatasetSpecification (more information in https://w3id.org/okn/o/sd#DatasetSpecification) # noqa: E501
@@ -47,7 +47,8 @@ def datasetspecifications_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=DATASETSPECIFICATION_TYPE_URI,
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 
         kls=DatasetSpecification)
@@ -72,7 +73,7 @@ def datasetspecifications_id_get(id, username=None):  # noqa: E501
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 
         kls=DatasetSpecification)
 
-def datasetspecifications_id_put(id, user, dataset_specification=None):  # noqa: E501
+def datasetspecifications_id_put(id, user=None, dataset_specification=None):  # noqa: E501
     """Update an existing DatasetSpecification
 
     Updates an existing DatasetSpecification (more information in https://w3id.org/okn/o/sd#DatasetSpecification) # noqa: E501
@@ -90,13 +91,14 @@ def datasetspecifications_id_put(id, user, dataset_specification=None):  # noqa:
     if connexion.request.is_json:
         dataset_specification = DatasetSpecification.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=dataset_specification,
         rdf_type_uri=DATASETSPECIFICATION_TYPE_URI,
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 
         kls=DatasetSpecification)
 
-def datasetspecifications_post(user, dataset_specification=None):  # noqa: E501
+def datasetspecifications_post(user=None, dataset_specification=None):  # noqa: E501
     """Create one DatasetSpecification
 
     Create a new instance of DatasetSpecification (more information in https://w3id.org/okn/o/sd#DatasetSpecification) # noqa: E501
@@ -112,7 +114,8 @@ def datasetspecifications_post(user, dataset_specification=None):  # noqa: E501
     if connexion.request.is_json:
         dataset_specification = DatasetSpecification.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=dataset_specification,
         rdf_type_uri=DATASETSPECIFICATION_TYPE_URI,
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 

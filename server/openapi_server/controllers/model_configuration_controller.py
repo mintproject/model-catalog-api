@@ -56,7 +56,7 @@ def modelconfigurations_get(username=None, label=None, page=None, per_page=None)
         rdf_type_name=MODELCONFIGURATION_TYPE_NAME, 
         kls=ModelConfiguration)
 
-def modelconfigurations_id_delete(id, user):  # noqa: E501
+def modelconfigurations_id_delete(id, user=None):  # noqa: E501
     """Delete an existing ModelConfiguration
 
     Delete an existing ModelConfiguration (more information in https://w3id.org/okn/o/sdm#ModelConfiguration) # noqa: E501
@@ -70,7 +70,8 @@ def modelconfigurations_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=MODELCONFIGURATION_TYPE_URI,
         rdf_type_name=MODELCONFIGURATION_TYPE_NAME, 
         kls=ModelConfiguration)
@@ -95,7 +96,7 @@ def modelconfigurations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=MODELCONFIGURATION_TYPE_NAME, 
         kls=ModelConfiguration)
 
-def modelconfigurations_id_put(id, user, model_configuration=None):  # noqa: E501
+def modelconfigurations_id_put(id, user=None, model_configuration=None):  # noqa: E501
     """Update an existing ModelConfiguration
 
     Updates an existing ModelConfiguration (more information in https://w3id.org/okn/o/sdm#ModelConfiguration) # noqa: E501
@@ -113,13 +114,14 @@ def modelconfigurations_id_put(id, user, model_configuration=None):  # noqa: E50
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=model_configuration,
         rdf_type_uri=MODELCONFIGURATION_TYPE_URI,
         rdf_type_name=MODELCONFIGURATION_TYPE_NAME, 
         kls=ModelConfiguration)
 
-def modelconfigurations_post(user, model_configuration=None):  # noqa: E501
+def modelconfigurations_post(user=None, model_configuration=None):  # noqa: E501
     """Create one ModelConfiguration
 
     Create a new instance of ModelConfiguration (more information in https://w3id.org/okn/o/sdm#ModelConfiguration) # noqa: E501
@@ -135,7 +137,8 @@ def modelconfigurations_post(user, model_configuration=None):  # noqa: E501
     if connexion.request.is_json:
         model_configuration = ModelConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=model_configuration,
         rdf_type_uri=MODELCONFIGURATION_TYPE_URI,
         rdf_type_name=MODELCONFIGURATION_TYPE_NAME, 

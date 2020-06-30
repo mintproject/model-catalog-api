@@ -33,7 +33,7 @@ def timeintervals_get(username=None, label=None, page=None, per_page=None):  # n
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 
         kls=TimeInterval)
 
-def timeintervals_id_delete(id, user):  # noqa: E501
+def timeintervals_id_delete(id, user=None):  # noqa: E501
     """Delete an existing TimeInterval
 
     Delete an existing TimeInterval (more information in https://w3id.org/okn/o/sdm#TimeInterval) # noqa: E501
@@ -47,7 +47,8 @@ def timeintervals_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=TIMEINTERVAL_TYPE_URI,
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 
         kls=TimeInterval)
@@ -72,7 +73,7 @@ def timeintervals_id_get(id, username=None):  # noqa: E501
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 
         kls=TimeInterval)
 
-def timeintervals_id_put(id, user, time_interval=None):  # noqa: E501
+def timeintervals_id_put(id, user=None, time_interval=None):  # noqa: E501
     """Update an existing TimeInterval
 
     Updates an existing TimeInterval (more information in https://w3id.org/okn/o/sdm#TimeInterval) # noqa: E501
@@ -90,13 +91,14 @@ def timeintervals_id_put(id, user, time_interval=None):  # noqa: E501
     if connexion.request.is_json:
         time_interval = TimeInterval.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=time_interval,
         rdf_type_uri=TIMEINTERVAL_TYPE_URI,
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 
         kls=TimeInterval)
 
-def timeintervals_post(user, time_interval=None):  # noqa: E501
+def timeintervals_post(user=None, time_interval=None):  # noqa: E501
     """Create one TimeInterval
 
     Create a new instance of TimeInterval (more information in https://w3id.org/okn/o/sdm#TimeInterval) # noqa: E501
@@ -112,7 +114,8 @@ def timeintervals_post(user, time_interval=None):  # noqa: E501
     if connexion.request.is_json:
         time_interval = TimeInterval.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=time_interval,
         rdf_type_uri=TIMEINTERVAL_TYPE_URI,
         rdf_type_name=TIMEINTERVAL_TYPE_NAME, 

@@ -33,7 +33,7 @@ def standardvariables_get(username=None, label=None, page=None, per_page=None): 
         rdf_type_name=STANDARDVARIABLE_TYPE_NAME, 
         kls=StandardVariable)
 
-def standardvariables_id_delete(id, user):  # noqa: E501
+def standardvariables_id_delete(id, user=None):  # noqa: E501
     """Delete an existing StandardVariable
 
     Delete an existing StandardVariable (more information in https://w3id.org/okn/o/sd#StandardVariable) # noqa: E501
@@ -47,7 +47,8 @@ def standardvariables_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=STANDARDVARIABLE_TYPE_URI,
         rdf_type_name=STANDARDVARIABLE_TYPE_NAME, 
         kls=StandardVariable)
@@ -72,7 +73,7 @@ def standardvariables_id_get(id, username=None):  # noqa: E501
         rdf_type_name=STANDARDVARIABLE_TYPE_NAME, 
         kls=StandardVariable)
 
-def standardvariables_id_put(id, user, standard_variable=None):  # noqa: E501
+def standardvariables_id_put(id, user=None, standard_variable=None):  # noqa: E501
     """Update an existing StandardVariable
 
     Updates an existing StandardVariable (more information in https://w3id.org/okn/o/sd#StandardVariable) # noqa: E501
@@ -90,13 +91,14 @@ def standardvariables_id_put(id, user, standard_variable=None):  # noqa: E501
     if connexion.request.is_json:
         standard_variable = StandardVariable.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=standard_variable,
         rdf_type_uri=STANDARDVARIABLE_TYPE_URI,
         rdf_type_name=STANDARDVARIABLE_TYPE_NAME, 
         kls=StandardVariable)
 
-def standardvariables_post(user, standard_variable=None):  # noqa: E501
+def standardvariables_post(user=None, standard_variable=None):  # noqa: E501
     """Create one StandardVariable
 
     Create a new instance of StandardVariable (more information in https://w3id.org/okn/o/sd#StandardVariable) # noqa: E501
@@ -112,7 +114,8 @@ def standardvariables_post(user, standard_variable=None):  # noqa: E501
     if connexion.request.is_json:
         standard_variable = StandardVariable.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=standard_variable,
         rdf_type_uri=STANDARDVARIABLE_TYPE_URI,
         rdf_type_name=STANDARDVARIABLE_TYPE_NAME, 

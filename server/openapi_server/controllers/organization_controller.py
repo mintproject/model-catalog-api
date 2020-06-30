@@ -33,7 +33,7 @@ def organizations_get(username=None, label=None, page=None, per_page=None):  # n
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
         kls=Organization)
 
-def organizations_id_delete(id, user):  # noqa: E501
+def organizations_id_delete(id, user=None):  # noqa: E501
     """Delete an existing Organization
 
     Delete an existing Organization (more information in https://w3id.org/okn/o/sd#Organization) # noqa: E501
@@ -47,7 +47,8 @@ def organizations_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=ORGANIZATION_TYPE_URI,
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
         kls=Organization)
@@ -72,7 +73,7 @@ def organizations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
         kls=Organization)
 
-def organizations_id_put(id, user, organization=None):  # noqa: E501
+def organizations_id_put(id, user=None, organization=None):  # noqa: E501
     """Update an existing Organization
 
     Updates an existing Organization (more information in https://w3id.org/okn/o/sd#Organization) # noqa: E501
@@ -90,13 +91,14 @@ def organizations_id_put(id, user, organization=None):  # noqa: E501
     if connexion.request.is_json:
         organization = Organization.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=organization,
         rdf_type_uri=ORGANIZATION_TYPE_URI,
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
         kls=Organization)
 
-def organizations_post(user, organization=None):  # noqa: E501
+def organizations_post(user=None, organization=None):  # noqa: E501
     """Create one Organization
 
     Create a new instance of Organization (more information in https://w3id.org/okn/o/sd#Organization) # noqa: E501
@@ -112,7 +114,8 @@ def organizations_post(user, organization=None):  # noqa: E501
     if connexion.request.is_json:
         organization = Organization.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=organization,
         rdf_type_uri=ORGANIZATION_TYPE_URI,
         rdf_type_name=ORGANIZATION_TYPE_NAME, 
