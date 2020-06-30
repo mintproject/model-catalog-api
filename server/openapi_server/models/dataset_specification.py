@@ -15,17 +15,21 @@ class DatasetSpecification(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, has_data_transformation_setup=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
         """DatasetSpecification - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.  # noqa: E501
         :type has_dimensionality: List[int]
         :param has_format: The has_format of this DatasetSpecification.  # noqa: E501
         :type has_format: List[str]
+        :param has_data_transformation_setup: The has_data_transformation_setup of this DatasetSpecification.  # noqa: E501
+        :type has_data_transformation_setup: List[DataTransformationSetup]
         :param has_file_structure: The has_file_structure of this DatasetSpecification.  # noqa: E501
         :type has_file_structure: List[object]
         :param description: The description of this DatasetSpecification.  # noqa: E501
         :type description: List[str]
+        :param has_data_transformation: The has_data_transformation of this DatasetSpecification.  # noqa: E501
+        :type has_data_transformation: List[DataTransformation]
         :param has_presentation: The has_presentation of this DatasetSpecification.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param position: The position of this DatasetSpecification.  # noqa: E501
@@ -39,17 +43,23 @@ class DatasetSpecification(Model):
         :param has_fixed_resource: The has_fixed_resource of this DatasetSpecification.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
         """
+        from openapi_server.models.data_transformation import DataTransformation
+        from openapi_server.models.data_transformation_setup import DataTransformationSetup
         from openapi_server.models.sample_resource import SampleResource
         from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
+            'has_data_transformation_setup': List[DataTransformationSetup],
             'has_file_structure': List[object],
             'description': List[str],
+            'has_data_transformation': List[DataTransformation],
             'has_presentation': List[VariablePresentation],
             'position': List[int],
             'id': str,
@@ -61,8 +71,10 @@ class DatasetSpecification(Model):
         self.attribute_map = {
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
+            'has_data_transformation_setup': 'hasDataTransformationSetup',
             'has_file_structure': 'hasFileStructure',
             'description': 'description',
+            'has_data_transformation': 'hasDataTransformation',
             'has_presentation': 'hasPresentation',
             'position': 'position',
             'id': 'id',
@@ -73,8 +85,10 @@ class DatasetSpecification(Model):
 
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
+        self._has_data_transformation_setup = has_data_transformation_setup
         self._has_file_structure = has_file_structure
         self._description = description
+        self._has_data_transformation = has_data_transformation
         self._has_presentation = has_presentation
         self._position = position
         self._id = id
@@ -140,6 +154,29 @@ class DatasetSpecification(Model):
         self._has_format = has_format
 
     @property
+    def has_data_transformation_setup(self):
+        """Gets the has_data_transformation_setup of this DatasetSpecification.
+
+        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+
+        :return: The has_data_transformation_setup of this DatasetSpecification.
+        :rtype: List[DataTransformationSetup]
+        """
+        return self._has_data_transformation_setup
+
+    @has_data_transformation_setup.setter
+    def has_data_transformation_setup(self, has_data_transformation_setup):
+        """Sets the has_data_transformation_setup of this DatasetSpecification.
+
+        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+
+        :param has_data_transformation_setup: The has_data_transformation_setup of this DatasetSpecification.
+        :type has_data_transformation_setup: List[DataTransformationSetup]
+        """
+
+        self._has_data_transformation_setup = has_data_transformation_setup
+
+    @property
     def has_file_structure(self):
         """Gets the has_file_structure of this DatasetSpecification.
 
@@ -184,6 +221,29 @@ class DatasetSpecification(Model):
         """
 
         self._description = description
+
+    @property
+    def has_data_transformation(self):
+        """Gets the has_data_transformation of this DatasetSpecification.
+
+        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+
+        :return: The has_data_transformation of this DatasetSpecification.
+        :rtype: List[DataTransformation]
+        """
+        return self._has_data_transformation
+
+    @has_data_transformation.setter
+    def has_data_transformation(self, has_data_transformation):
+        """Sets the has_data_transformation of this DatasetSpecification.
+
+        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+
+        :param has_data_transformation: The has_data_transformation of this DatasetSpecification.
+        :type has_data_transformation: List[DataTransformation]
+        """
+
+        self._has_data_transformation = has_data_transformation
 
     @property
     def has_presentation(self):
