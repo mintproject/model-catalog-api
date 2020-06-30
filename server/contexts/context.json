@@ -1,5 +1,9 @@
 {"@context": {
-    "Entity": {"@id": "http://www.w3.org/ns/prov#Entity"},
+    "hasDownloadInstructions": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasDownloadInstructions",
+        "@container": "@set"
+    },
     "hasDocumentation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasDocumentation",
@@ -15,7 +19,6 @@
         "@id": "https://w3id.org/okn/o/sd#hasDownloadURL",
         "@container": "@set"
     },
-    "Activity": {"@id": "http://www.w3.org/ns/prov#Activity"},
     "type": "@type",
     "Image": {"@id": "https://w3id.org/okn/o/sd#Image"},
     "hasInstallationInstructions": {
@@ -43,14 +46,14 @@
         "@id": "https://w3id.org/okn/o/sdm#calibrationMethod",
         "@container": "@set"
     },
-    "hasAcceptedValues": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasAcceptedValues",
-        "@container": "@set"
-    },
     "hasRegion": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasRegion",
+        "@container": "@set"
+    },
+    "hasAcceptedValues": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasAcceptedValues",
         "@container": "@set"
     },
     "hasFAQ": {
@@ -67,7 +70,8 @@
         "@container": "@set"
     },
     "identifier": {
-        "@id": "http://schema.org/identifier",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#identifier",
         "@container": "@set"
     },
     "hasSampleExecution": {
@@ -85,16 +89,22 @@
         "@id": "https://w3id.org/okn/o/sd#hasPart",
         "@container": "@set"
     },
+    "hasBuildFile": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#hasBuildFile",
+        "@container": "@set"
+    },
     "hasCoordinateSystem": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#hasCoordinateSystem",
         "@container": "@set"
     },
     "datePublished": {
-        "@id": "http://schema.org/datePublished",
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@id": "https://w3id.org/okn/o/sd#datePublished",
         "@container": "@set"
     },
-    "GeoCoordinates": {"@id": "http://schema.org/GeoCoordinates"},
+    "GeoCoordinates": {"@id": "https://w3id.org/okn/o/sdm#GeoCoordinates"},
     "SpatialResolution": {"@id": "https://w3id.org/okn/o/sdm#SpatialResolution"},
     "hasSourceCode": {
         "@type": "@id",
@@ -113,14 +123,14 @@
         "@container": "@set"
     },
     "SampleResource": {"@id": "https://w3id.org/okn/o/sd#SampleResource"},
-    "hasOutput": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasOutput",
-        "@container": "@set"
-    },
     "relevantForIntervention": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#relevantForIntervention",
+        "@container": "@set"
+    },
+    "hasOutput": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasOutput",
         "@container": "@set"
     },
     "partOfDataset": {
@@ -133,7 +143,12 @@
         "@id": "https://w3id.org/okn/o/sdm#hasOutputTimeInterval",
         "@container": "@set"
     },
-    "Person": {"@id": "http://schema.org/Person"},
+    "Person": {"@id": "https://w3id.org/okn/o/sd#Person"},
+    "doi": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#doi",
+        "@container": "@set"
+    },
     "hasComponentLocation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
@@ -141,7 +156,7 @@
     },
     "Visualization": {"@id": "https://w3id.org/okn/o/sd#Visualization"},
     "SourceCode": {"@id": "https://w3id.org/okn/o/sd#SourceCode"},
-    "Organization": {"@id": "http://schema.org/Organization"},
+    "Organization": {"@id": "https://w3id.org/okn/o/sd#Organization"},
     "topObjectProperty": {
         "@type": "@id",
         "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
@@ -158,6 +173,11 @@
         "@id": "https://w3id.org/okn/o/sd#hasTypicalDataSource",
         "@container": "@set"
     },
+    "hasDiagramPart": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasDiagramPart",
+        "@container": "@set"
+    },
     "hasDataType": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasDataType",
@@ -166,7 +186,7 @@
     "Emulator": {"@id": "https://w3id.org/okn/o/sdm#Emulator"},
     "screenshot": {
         "@type": "@id",
-        "@id": "http://schema.org/screenshot",
+        "@id": "https://w3id.org/okn/o/sd#screenshot",
         "@container": "@set"
     },
     "hasLongName": {
@@ -184,14 +204,14 @@
         "@id": "https://w3id.org/okn/o/sdm#geo",
         "@container": "@set"
     },
-    "wasGeneratedBy": {
-        "@type": "@id",
-        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy",
-        "@container": "@set"
-    },
     "hasSoftwareImage": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasSoftwareImage",
+        "@container": "@set"
+    },
+    "issueTracker": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#issueTracker",
         "@container": "@set"
     },
     "wasDerivedFromSoftware": {
@@ -205,7 +225,6 @@
         "@container": "@set"
     },
     "copyrightYear": {
-        "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#copyrightYear",
         "@container": "@set"
     },
@@ -220,14 +239,19 @@
         "@id": "https://w3id.org/okn/o/sd#codeRepository",
         "@container": "@set"
     },
+    "usesUnit": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#usesUnit",
+        "@container": "@set"
+    },
     "hasSampleVisualization": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasSampleVisualization",
         "@container": "@set"
     },
-    "usesUnit": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#usesUnit",
+    "hasExecutableInstructions": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasExecutableInstructions",
         "@container": "@set"
     },
     "email": {
@@ -254,17 +278,18 @@
         "@id": "https://w3id.org/okn/o/sd#hasFormat",
         "@container": "@set"
     },
+    "creator": {
+        "@id": "http://purl.org/dc/elements/1.1/creator",
+        "@container": "@set"
+    },
     "website": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#website",
         "@container": "@set"
     },
-    "creator": {
-        "@id": "http://purl.org/dc/elements/1.1/creator",
-        "@container": "@set"
-    },
-    "funding": {
-        "@id": "https://codemeta.github.io/terms/funding",
+    "pathLocation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#pathLocation",
         "@container": "@set"
     },
     "ConfigurationSetup": {"@id": "https://w3id.org/okn/o/sd#ConfigurationSetup"},
@@ -291,6 +316,11 @@
         "@id": "https://w3id.org/okn/o/sd#operatingSystems",
         "@container": "@set"
     },
+    "hasExecutableNotebook": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#hasExecutableNotebook",
+        "@container": "@set"
+    },
     "DataTransformation": {"@id": "https://w3id.org/okn/o/sd#DataTransformation"},
     "Model": {"@id": "https://w3id.org/okn/o/sdm#Model"},
     "Parameter": {"@id": "https://w3id.org/okn/o/sd#Parameter"},
@@ -304,7 +334,6 @@
         "@id": "https://w3id.org/okn/o/sd#hasInput",
         "@container": "@set"
     },
-    "Place": {"@id": "http://schema.org/Place"},
     "partOf": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#partOf",
@@ -316,12 +345,14 @@
         "@container": "@set"
     },
     "keywords": {
-        "@id": "http://schema.org/keywords",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#keywords",
         "@container": "@set"
     },
     "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
     "softwareRequirements": {
-        "@id": "http://schema.org/softwareRequirements",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#softwareRequirements",
         "@container": "@set"
     },
     "intervalUnit": {
@@ -334,28 +365,18 @@
         "@id": "https://w3id.org/okn/o/sd#hasDataTransformation",
         "@container": "@set"
     },
-    "wasDerivedFrom": {
-        "@type": "@id",
-        "@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
-        "@container": "@set"
-    },
+    "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
     "hasPresentation": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasPresentation",
         "@container": "@set"
     },
-    "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
     "contentLocation": {
         "@type": "@id",
         "@id": "http://schema.org/contentLocation",
         "@container": "@set"
     },
-    "used": {
-        "@type": "@id",
-        "@id": "http://www.w3.org/ns/prov#used",
-        "@container": "@set"
-    },
-    "Unit": {"@id": "http://qudt.org/schema/qudt/Unit"},
+    "Unit": {"@id": "https://w3id.org/okn/o/sd#Unit"},
     "calibratedVariable": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#calibratedVariable",
@@ -404,7 +425,8 @@
         "@container": "@set"
     },
     "longitude": {
-        "@id": "http://schema.org/longitude",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#longitude",
         "@container": "@set"
     },
     "hasConfiguration": {
@@ -423,7 +445,7 @@
     },
     "author": {
         "@type": "@id",
-        "@id": "http://schema.org/author",
+        "@id": "https://w3id.org/okn/o/sd#author",
         "@container": "@set"
     },
     "DatasetSpecification": {"@id": "https://w3id.org/okn/o/sd#DatasetSpecification"},
@@ -447,7 +469,8 @@
         "@container": "@set"
     },
     "license": {
-        "@id": "http://schema.org/license",
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#license",
         "@container": "@set"
     },
     "SoftwareVersion": {"@id": "https://w3id.org/okn/o/sd#SoftwareVersion"},
@@ -466,17 +489,17 @@
         "@id": "https://w3id.org/okn/o/sd#name",
         "@container": "@set"
     },
-    "publisher": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#publisher",
-        "@container": "@set"
-    },
     "calibrationInterval": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#calibrationInterval",
         "@container": "@set"
     },
     "Region": {"@id": "https://w3id.org/okn/o/sdm#Region"},
+    "publisher": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#publisher",
+        "@container": "@set"
+    },
     "Software": {"@id": "https://w3id.org/okn/o/sd#Software"},
     "VariablePresentation": {"@id": "https://w3id.org/okn/o/sd#VariablePresentation"},
     "position": {
@@ -494,18 +517,13 @@
         "@id": "https://w3id.org/okn/o/sdm#parameterAssignmentMethod",
         "@container": "@set"
     },
+    "Intervention": {"@id": "https://w3id.org/okn/o/sdm#Intervention"},
     "hasFunding": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasFunding",
         "@container": "@set"
     },
-    "Intervention": {"@id": "https://w3id.org/okn/o/sdm#Intervention"},
-    "SoftwareApplication": {"@id": "http://schema.org/SoftwareApplication"},
-    "isDefinedBy": {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
-        "@container": "@set"
-    },
-    "Variable": {"@id": "http://www.geoscienceontology.org/geo-upper#Variable"},
+    "Variable": {"@id": "https://w3id.org/okn/o/sd#Variable"},
     "hasProcess": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasProcess",
@@ -522,11 +540,13 @@
         "@container": "@set"
     },
     "programmingLanguage": {
-        "@id": "http://schema.org/programmingLanguage",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#programmingLanguage",
         "@container": "@set"
     },
     "referencePublication": {
-        "@id": "https://codemeta.github.io/terms/referencePublication",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#referencePublication",
         "@container": "@set"
     },
     "description": {
@@ -534,22 +554,22 @@
         "@id": "https://w3id.org/okn/o/sd#description",
         "@container": "@set"
     },
-    "hasFixedValue": {
-        "@id": "https://w3id.org/okn/o/sd#hasFixedValue",
-        "@container": "@set"
-    },
     "box": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#box",
         "@container": "@set"
     },
-    "recommendedIncrement": {
-        "@type": "http://www.w3.org/2001/XMLSchema#float",
-        "@id": "https://w3id.org/okn/o/sd#recommendedIncrement",
+    "hasFixedValue": {
+        "@id": "https://w3id.org/okn/o/sd#hasFixedValue",
         "@container": "@set"
     },
     "title": {
         "@id": "http://purl.org/dc/elements/1.1/title",
+        "@container": "@set"
+    },
+    "recommendedIncrement": {
+        "@type": "http://www.w3.org/2001/XMLSchema#float",
+        "@id": "https://w3id.org/okn/o/sd#recommendedIncrement",
         "@container": "@set"
     },
     "intervalValue": {
@@ -558,19 +578,18 @@
     },
     "hadPrimarySource": {
         "@type": "@id",
-        "@id": "http://www.w3.org/ns/prov#hadPrimarySource",
-        "@container": "@set"
-    },
-    "SoftwareSourceCode": {"@id": "http://schema.org/SoftwareSourceCode"},
-    "DataTransformationSetup": {"@id": "https://w3id.org/okn/o/sd#DataTransformationSetup"},
-    "dateCreated": {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@id": "https://w3id.org/okn/o/sd#dateCreated",
+        "@id": "https://w3id.org/okn/o/sd#hadPrimarySource",
         "@container": "@set"
     },
     "contributor": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#contributor",
+        "@container": "@set"
+    },
+    "DataTransformationSetup": {"@id": "https://w3id.org/okn/o/sd#DataTransformationSetup"},
+    "dateCreated": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@id": "https://w3id.org/okn/o/sd#dateCreated",
         "@container": "@set"
     },
     "influences": {
@@ -589,7 +608,7 @@
         "@container": "@set"
     },
     "value": {
-        "@id": "http://www.w3.org/ns/prov#value",
+        "@id": "https://w3id.org/okn/o/sd#value",
         "@container": "@set"
     },
     "fundingGrant": {
@@ -603,7 +622,8 @@
         "@container": "@set"
     },
     "elevation": {
-        "@id": "http://schema.org/elevation",
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#elevation",
         "@container": "@set"
     },
     "hasDefaultValue": {
@@ -631,12 +651,12 @@
         "@id": "https://w3id.org/okn/o/sd#adjustableParameter",
         "@container": "@set"
     },
+    "Equation": {"@id": "https://w3id.org/okn/o/sdm#Equation"},
     "hasUsageNotes": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasUsageNotes",
         "@container": "@set"
     },
-    "Equation": {"@id": "https://w3id.org/okn/o/sdm#Equation"},
     "CausalDiagram": {"@id": "https://w3id.org/okn/o/sdm#CausalDiagram"},
     "hasSupportScriptLocation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -645,6 +665,11 @@
     },
     "label": {
         "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+        "@container": "@set"
+    },
+    "readme": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#readme",
         "@container": "@set"
     },
     "PointBasedGrid": {"@id": "https://w3id.org/okn/o/sdm#PointBasedGrid"},
@@ -658,7 +683,6 @@
         "@id": "https://w3id.org/okn/o/sd#hasAssumption",
         "@container": "@set"
     },
-    "DataStructureDefinition": {"@id": "http://purl.org/linked-data/cube#DataStructureDefinition"},
     "hasShortName": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasShortName",
