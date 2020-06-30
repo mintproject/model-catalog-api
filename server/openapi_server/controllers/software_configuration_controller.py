@@ -1,6 +1,6 @@
 import connexion
 import six
-from openapi_server import query_manager
+from openapi_server.utils.request import get_resource, get_all_resource, put_resource, post_resource, delete_resource
 from openapi_server.utils.vars import SOFTWARECONFIGURATION_TYPE_NAME, SOFTWARECONFIGURATION_TYPE_URI
 
 from openapi_server.models.software_configuration import SoftwareConfiguration  # noqa: E501
@@ -24,7 +24,7 @@ def softwareconfigurations_get(username=None, label=None, page=None, per_page=No
     """
 
 
-    return query_manager.get_resource(
+    return get_resource(
         username=username,
         label=label,
         page=page,
@@ -47,7 +47,7 @@ def softwareconfigurations_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return delete_resource(id=id,user=user,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
         kls=SoftwareConfiguration)
@@ -66,7 +66,7 @@ def softwareconfigurations_id_get(id, username=None):  # noqa: E501
     """
 
 
-    return query_manager.get_resource(id=id,
+    return get_resource(id=id,
         username=username,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
@@ -90,7 +90,7 @@ def softwareconfigurations_id_put(id, user, software_configuration=None):  # noq
     if connexion.request.is_json:
         software_configuration = SoftwareConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return put_resource(id=id,user=user,
         body=software_configuration,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
@@ -112,7 +112,7 @@ def softwareconfigurations_post(user, software_configuration=None):  # noqa: E50
     if connexion.request.is_json:
         software_configuration = SoftwareConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return post_resource(user=user,
         body=software_configuration,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
