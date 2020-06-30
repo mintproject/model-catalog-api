@@ -15,13 +15,15 @@ class Image(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, had_primary_source=None, has_data_transformation_setup=None, position=None, id=None, value=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, had_primary_source=None, has_data_transformation_setup=None, position=None, id=None, value=None):  # noqa: E501
         """Image - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this Image.  # noqa: E501
         :type has_dimensionality: List[int]
         :param has_format: The has_format of this Image.  # noqa: E501
         :type has_format: List[str]
+        :param path_location: The path_location of this Image.  # noqa: E501
+        :type path_location: List[str]
         :param has_file_structure: The has_file_structure of this Image.  # noqa: E501
         :type has_file_structure: List[object]
         :param description: The description of this Image.  # noqa: E501
@@ -60,6 +62,7 @@ class Image(Model):
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
+            'path_location': List[str],
             'has_file_structure': List[object],
             'description': List[str],
             'has_data_transformation': List[DataTransformation],
@@ -77,6 +80,7 @@ class Image(Model):
         self.attribute_map = {
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
+            'path_location': 'pathLocation',
             'has_file_structure': 'hasFileStructure',
             'description': 'description',
             'has_data_transformation': 'hasDataTransformation',
@@ -93,6 +97,7 @@ class Image(Model):
 
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
+        self._path_location = path_location
         self._has_file_structure = has_file_structure
         self._description = description
         self._has_data_transformation = has_data_transformation
@@ -162,6 +167,29 @@ class Image(Model):
         """
 
         self._has_format = has_format
+
+    @property
+    def path_location(self):
+        """Gets the path_location of this Image.
+
+        Property that indicates the relative path of an input or output with respect to the folder structure of the executable.   For example, let's assume we have an input that has to exist in the folder `/datasets` or the executable will not work. This property ensures that this knowledge is captured for a given software component execution.  In this case the property would capture this as follows:  ``` :input_prep a sd:DatasetSpecification . :input_prep rdfs:label \"precipitation file\" . :input_precip sd:pathLocation \"/datasets/\". ```  # noqa: E501
+
+        :return: The path_location of this Image.
+        :rtype: List[str]
+        """
+        return self._path_location
+
+    @path_location.setter
+    def path_location(self, path_location):
+        """Sets the path_location of this Image.
+
+        Property that indicates the relative path of an input or output with respect to the folder structure of the executable.   For example, let's assume we have an input that has to exist in the folder `/datasets` or the executable will not work. This property ensures that this knowledge is captured for a given software component execution.  In this case the property would capture this as follows:  ``` :input_prep a sd:DatasetSpecification . :input_prep rdfs:label \"precipitation file\" . :input_precip sd:pathLocation \"/datasets/\". ```  # noqa: E501
+
+        :param path_location: The path_location of this Image.
+        :type path_location: List[str]
+        """
+
+        self._path_location = path_location
 
     @property
     def has_file_structure(self):

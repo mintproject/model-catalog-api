@@ -80,7 +80,7 @@ def modelconfigurationsetups_get(username=None, label=None, page=None, per_page=
         rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 
         kls=ModelConfigurationSetup)
 
-def modelconfigurationsetups_id_delete(id, user=None):  # noqa: E501
+def modelconfigurationsetups_id_delete(id, user):  # noqa: E501
     """Delete an existing ModelConfigurationSetup
 
     Delete an existing ModelConfigurationSetup (more information in https://w3id.org/okn/o/sdm#ModelConfigurationSetup) # noqa: E501
@@ -94,8 +94,7 @@ def modelconfigurationsetups_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=MODELCONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 
         kls=ModelConfigurationSetup)
@@ -120,7 +119,7 @@ def modelconfigurationsetups_id_get(id, username=None):  # noqa: E501
         rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 
         kls=ModelConfigurationSetup)
 
-def modelconfigurationsetups_id_put(id, user=None, model_configuration_setup=None):  # noqa: E501
+def modelconfigurationsetups_id_put(id, user, model_configuration_setup=None):  # noqa: E501
     """Update an existing ModelConfigurationSetup
 
     Updates an existing ModelConfigurationSetup (more information in https://w3id.org/okn/o/sdm#ModelConfigurationSetup) # noqa: E501
@@ -138,14 +137,13 @@ def modelconfigurationsetups_id_put(id, user=None, model_configuration_setup=Non
     if connexion.request.is_json:
         model_configuration_setup = ModelConfigurationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=model_configuration_setup,
         rdf_type_uri=MODELCONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 
         kls=ModelConfigurationSetup)
 
-def modelconfigurationsetups_post(user=None, model_configuration_setup=None):  # noqa: E501
+def modelconfigurationsetups_post(user, model_configuration_setup=None):  # noqa: E501
     """Create one ModelConfigurationSetup
 
     Create a new instance of ModelConfigurationSetup (more information in https://w3id.org/okn/o/sdm#ModelConfigurationSetup) # noqa: E501
@@ -161,8 +159,7 @@ def modelconfigurationsetups_post(user=None, model_configuration_setup=None):  #
     if connexion.request.is_json:
         model_configuration_setup = ModelConfigurationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=model_configuration_setup,
         rdf_type_uri=MODELCONFIGURATIONSETUP_TYPE_URI,
         rdf_type_name=MODELCONFIGURATIONSETUP_TYPE_NAME, 

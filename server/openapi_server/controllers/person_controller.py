@@ -33,7 +33,7 @@ def persons_get(username=None, label=None, page=None, per_page=None):  # noqa: E
         rdf_type_name=PERSON_TYPE_NAME, 
         kls=Person)
 
-def persons_id_delete(id, user=None):  # noqa: E501
+def persons_id_delete(id, user):  # noqa: E501
     """Delete an existing Person
 
     Delete an existing Person (more information in https://w3id.org/okn/o/sd#Person) # noqa: E501
@@ -47,8 +47,7 @@ def persons_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=PERSON_TYPE_URI,
         rdf_type_name=PERSON_TYPE_NAME, 
         kls=Person)
@@ -73,7 +72,7 @@ def persons_id_get(id, username=None):  # noqa: E501
         rdf_type_name=PERSON_TYPE_NAME, 
         kls=Person)
 
-def persons_id_put(id, user=None, person=None):  # noqa: E501
+def persons_id_put(id, user, person=None):  # noqa: E501
     """Update an existing Person
 
     Updates an existing Person (more information in https://w3id.org/okn/o/sd#Person) # noqa: E501
@@ -91,14 +90,13 @@ def persons_id_put(id, user=None, person=None):  # noqa: E501
     if connexion.request.is_json:
         person = Person.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=person,
         rdf_type_uri=PERSON_TYPE_URI,
         rdf_type_name=PERSON_TYPE_NAME, 
         kls=Person)
 
-def persons_post(user=None, person=None):  # noqa: E501
+def persons_post(user, person=None):  # noqa: E501
     """Create one Person
 
     Create a new instance of Person (more information in https://w3id.org/okn/o/sd#Person) # noqa: E501
@@ -114,8 +112,7 @@ def persons_post(user=None, person=None):  # noqa: E501
     if connexion.request.is_json:
         person = Person.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=person,
         rdf_type_uri=PERSON_TYPE_URI,
         rdf_type_name=PERSON_TYPE_NAME, 

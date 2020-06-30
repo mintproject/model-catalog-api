@@ -33,7 +33,7 @@ def spatiallydistributedgrids_get(username=None, label=None, page=None, per_page
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 
         kls=SpatiallyDistributedGrid)
 
-def spatiallydistributedgrids_id_delete(id, user=None):  # noqa: E501
+def spatiallydistributedgrids_id_delete(id, user):  # noqa: E501
     """Delete an existing SpatiallyDistributedGrid
 
     Delete an existing SpatiallyDistributedGrid (more information in https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid) # noqa: E501
@@ -47,8 +47,7 @@ def spatiallydistributedgrids_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SPATIALLYDISTRIBUTEDGRID_TYPE_URI,
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 
         kls=SpatiallyDistributedGrid)
@@ -73,7 +72,7 @@ def spatiallydistributedgrids_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 
         kls=SpatiallyDistributedGrid)
 
-def spatiallydistributedgrids_id_put(id, user=None, spatially_distributed_grid=None):  # noqa: E501
+def spatiallydistributedgrids_id_put(id, user, spatially_distributed_grid=None):  # noqa: E501
     """Update an existing SpatiallyDistributedGrid
 
     Updates an existing SpatiallyDistributedGrid (more information in https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid) # noqa: E501
@@ -91,14 +90,13 @@ def spatiallydistributedgrids_id_put(id, user=None, spatially_distributed_grid=N
     if connexion.request.is_json:
         spatially_distributed_grid = SpatiallyDistributedGrid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=spatially_distributed_grid,
         rdf_type_uri=SPATIALLYDISTRIBUTEDGRID_TYPE_URI,
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 
         kls=SpatiallyDistributedGrid)
 
-def spatiallydistributedgrids_post(user=None, spatially_distributed_grid=None):  # noqa: E501
+def spatiallydistributedgrids_post(user, spatially_distributed_grid=None):  # noqa: E501
     """Create one SpatiallyDistributedGrid
 
     Create a new instance of SpatiallyDistributedGrid (more information in https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid) # noqa: E501
@@ -114,8 +112,7 @@ def spatiallydistributedgrids_post(user=None, spatially_distributed_grid=None): 
     if connexion.request.is_json:
         spatially_distributed_grid = SpatiallyDistributedGrid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=spatially_distributed_grid,
         rdf_type_uri=SPATIALLYDISTRIBUTEDGRID_TYPE_URI,
         rdf_type_name=SPATIALLYDISTRIBUTEDGRID_TYPE_NAME, 

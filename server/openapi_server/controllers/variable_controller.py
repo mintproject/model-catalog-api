@@ -33,7 +33,7 @@ def variables_get(username=None, label=None, page=None, per_page=None):  # noqa:
         rdf_type_name=VARIABLE_TYPE_NAME, 
         kls=Variable)
 
-def variables_id_delete(id, user=None):  # noqa: E501
+def variables_id_delete(id, user):  # noqa: E501
     """Delete an existing Variable
 
     Delete an existing Variable (more information in https://w3id.org/okn/o/sd#Variable) # noqa: E501
@@ -47,8 +47,7 @@ def variables_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=VARIABLE_TYPE_URI,
         rdf_type_name=VARIABLE_TYPE_NAME, 
         kls=Variable)
@@ -73,7 +72,7 @@ def variables_id_get(id, username=None):  # noqa: E501
         rdf_type_name=VARIABLE_TYPE_NAME, 
         kls=Variable)
 
-def variables_id_put(id, user=None, variable=None):  # noqa: E501
+def variables_id_put(id, user, variable=None):  # noqa: E501
     """Update an existing Variable
 
     Updates an existing Variable (more information in https://w3id.org/okn/o/sd#Variable) # noqa: E501
@@ -91,14 +90,13 @@ def variables_id_put(id, user=None, variable=None):  # noqa: E501
     if connexion.request.is_json:
         variable = Variable.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=variable,
         rdf_type_uri=VARIABLE_TYPE_URI,
         rdf_type_name=VARIABLE_TYPE_NAME, 
         kls=Variable)
 
-def variables_post(user=None, variable=None):  # noqa: E501
+def variables_post(user, variable=None):  # noqa: E501
     """Create one Variable
 
     Create a new instance of Variable (more information in https://w3id.org/okn/o/sd#Variable) # noqa: E501
@@ -114,8 +112,7 @@ def variables_post(user=None, variable=None):  # noqa: E501
     if connexion.request.is_json:
         variable = Variable.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=variable,
         rdf_type_uri=VARIABLE_TYPE_URI,
         rdf_type_name=VARIABLE_TYPE_NAME, 

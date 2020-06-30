@@ -33,7 +33,7 @@ def pointbasedgrids_get(username=None, label=None, page=None, per_page=None):  #
         rdf_type_name=POINTBASEDGRID_TYPE_NAME, 
         kls=PointBasedGrid)
 
-def pointbasedgrids_id_delete(id, user=None):  # noqa: E501
+def pointbasedgrids_id_delete(id, user):  # noqa: E501
     """Delete an existing PointBasedGrid
 
     Delete an existing PointBasedGrid (more information in https://w3id.org/okn/o/sdm#PointBasedGrid) # noqa: E501
@@ -47,8 +47,7 @@ def pointbasedgrids_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=POINTBASEDGRID_TYPE_URI,
         rdf_type_name=POINTBASEDGRID_TYPE_NAME, 
         kls=PointBasedGrid)
@@ -73,7 +72,7 @@ def pointbasedgrids_id_get(id, username=None):  # noqa: E501
         rdf_type_name=POINTBASEDGRID_TYPE_NAME, 
         kls=PointBasedGrid)
 
-def pointbasedgrids_id_put(id, user=None, point_based_grid=None):  # noqa: E501
+def pointbasedgrids_id_put(id, user, point_based_grid=None):  # noqa: E501
     """Update an existing PointBasedGrid
 
     Updates an existing PointBasedGrid (more information in https://w3id.org/okn/o/sdm#PointBasedGrid) # noqa: E501
@@ -91,14 +90,13 @@ def pointbasedgrids_id_put(id, user=None, point_based_grid=None):  # noqa: E501
     if connexion.request.is_json:
         point_based_grid = PointBasedGrid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=point_based_grid,
         rdf_type_uri=POINTBASEDGRID_TYPE_URI,
         rdf_type_name=POINTBASEDGRID_TYPE_NAME, 
         kls=PointBasedGrid)
 
-def pointbasedgrids_post(user=None, point_based_grid=None):  # noqa: E501
+def pointbasedgrids_post(user, point_based_grid=None):  # noqa: E501
     """Create one PointBasedGrid
 
     Create a new instance of PointBasedGrid (more information in https://w3id.org/okn/o/sdm#PointBasedGrid) # noqa: E501
@@ -114,8 +112,7 @@ def pointbasedgrids_post(user=None, point_based_grid=None):  # noqa: E501
     if connexion.request.is_json:
         point_based_grid = PointBasedGrid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=point_based_grid,
         rdf_type_uri=POINTBASEDGRID_TYPE_URI,
         rdf_type_name=POINTBASEDGRID_TYPE_NAME, 

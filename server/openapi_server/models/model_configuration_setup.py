@@ -15,9 +15,11 @@ class ModelConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, doi=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfigurationSetup - a model defined in OpenAPI
 
+        :param has_download_instructions: The has_download_instructions of this ModelConfigurationSetup.  # noqa: E501
+        :type has_download_instructions: List[str]
         :param keywords: The keywords of this ModelConfigurationSetup.  # noqa: E501
         :type keywords: List[str]
         :param has_documentation: The has_documentation of this ModelConfigurationSetup.  # noqa: E501
@@ -38,6 +40,8 @@ class ModelConfigurationSetup(Model):
         :type has_installation_instructions: List[str]
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfigurationSetup.  # noqa: E501
         :type compatible_visualization_software: List[Software]
+        :param copyright_holder: The copyright_holder of this ModelConfigurationSetup.  # noqa: E501
+        :type copyright_holder: List[object]
         :param calibration_method: The calibration_method of this ModelConfigurationSetup.  # noqa: E501
         :type calibration_method: List[str]
         :param has_region: The has_region of this ModelConfigurationSetup.  # noqa: E501
@@ -62,6 +66,8 @@ class ModelConfigurationSetup(Model):
         :type author: List[object]
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.  # noqa: E501
         :type has_constraint: List[str]
+        :param has_build_file: The has_build_file of this ModelConfigurationSetup.  # noqa: E501
+        :type has_build_file: List[str]
         :param short_description: The short_description of this ModelConfigurationSetup.  # noqa: E501
         :type short_description: List[str]
         :param has_execution_command: The has_execution_command of this ModelConfigurationSetup.  # noqa: E501
@@ -86,6 +92,8 @@ class ModelConfigurationSetup(Model):
         :type has_output: List[DatasetSpecification]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfigurationSetup.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
+        :param doi: The doi of this ModelConfigurationSetup.  # noqa: E501
+        :type doi: List[str]
         :param parameter_assignment_method: The parameter_assignment_method of this ModelConfigurationSetup.  # noqa: E501
         :type parameter_assignment_method: List[str]
         :param has_funding: The has_funding of this ModelConfigurationSetup.  # noqa: E501
@@ -110,6 +118,8 @@ class ModelConfigurationSetup(Model):
         :type has_model_category: List[str]
         :param had_primary_source: The had_primary_source of this ModelConfigurationSetup.  # noqa: E501
         :type had_primary_source: List[object]
+        :param issue_tracker: The issue_tracker of this ModelConfigurationSetup.  # noqa: E501
+        :type issue_tracker: List[str]
         :param has_software_image: The has_software_image of this ModelConfigurationSetup.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ModelConfigurationSetup.  # noqa: E501
@@ -122,6 +132,8 @@ class ModelConfigurationSetup(Model):
         :type calibration_target_variable: List[VariablePresentation]
         :param has_purpose: The has_purpose of this ModelConfigurationSetup.  # noqa: E501
         :type has_purpose: List[str]
+        :param has_executable_instructions: The has_executable_instructions of this ModelConfigurationSetup.  # noqa: E501
+        :type has_executable_instructions: List[str]
         :param has_sample_visualization: The has_sample_visualization of this ModelConfigurationSetup.  # noqa: E501
         :type has_sample_visualization: List[Visualization]
         :param has_causal_diagram: The has_causal_diagram of this ModelConfigurationSetup.  # noqa: E501
@@ -140,6 +152,8 @@ class ModelConfigurationSetup(Model):
         :type has_usage_notes: List[str]
         :param has_support_script_location: The has_support_script_location of this ModelConfigurationSetup.  # noqa: E501
         :type has_support_script_location: List[str]
+        :param readme: The readme of this ModelConfigurationSetup.  # noqa: E501
+        :type readme: List[str]
         :param label: The label of this ModelConfigurationSetup.  # noqa: E501
         :type label: List[str]
         :param has_assumption: The has_assumption of this ModelConfigurationSetup.  # noqa: E501
@@ -148,6 +162,8 @@ class ModelConfigurationSetup(Model):
         :type has_parameter: List[Parameter]
         :param operating_systems: The operating_systems of this ModelConfigurationSetup.  # noqa: E501
         :type operating_systems: List[str]
+        :param has_executable_notebook: The has_executable_notebook of this ModelConfigurationSetup.  # noqa: E501
+        :type has_executable_notebook: List[str]
         :param valid_until: The valid_until of this ModelConfigurationSetup.  # noqa: E501
         :type valid_until: List[str]
         :param has_equation: The has_equation of this ModelConfigurationSetup.  # noqa: E501
@@ -202,6 +218,7 @@ class ModelConfigurationSetup(Model):
           # noqa: E501
 
         self.openapi_types = {
+            'has_download_instructions': List[str],
             'keywords': List[str],
             'has_documentation': List[str],
             'has_grid': List[Grid],
@@ -212,6 +229,7 @@ class ModelConfigurationSetup(Model):
             'calibrated_variable': List[VariablePresentation],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
+            'copyright_holder': List[object],
             'calibration_method': List[str],
             'has_region': List[Region],
             'has_faq': List[str],
@@ -224,6 +242,7 @@ class ModelConfigurationSetup(Model):
             'has_sample_result': List[SampleResource],
             'author': List[object],
             'has_constraint': List[str],
+            'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
             'date_published': List[str],
@@ -236,6 +255,7 @@ class ModelConfigurationSetup(Model):
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
             'has_output_time_interval': List[TimeInterval],
+            'doi': List[str],
             'parameter_assignment_method': List[str],
             'has_funding': List[FundingInformation],
             'has_component_location': List[str],
@@ -248,12 +268,14 @@ class ModelConfigurationSetup(Model):
             'screenshot': List[Image],
             'has_model_category': List[str],
             'had_primary_source': List[object],
+            'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
             'contributor': List[Person],
             'has_model_result_table': List[str],
             'calibration_target_variable': List[VariablePresentation],
             'has_purpose': List[str],
+            'has_executable_instructions': List[str],
             'has_sample_visualization': List[Visualization],
             'has_causal_diagram': List[CausalDiagram],
             'memory_requirements': List[str],
@@ -263,10 +285,12 @@ class ModelConfigurationSetup(Model):
             'adjustable_parameter': List[Parameter],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
+            'readme': List[str],
             'label': List[str],
             'has_assumption': List[str],
             'has_parameter': List[Parameter],
             'operating_systems': List[str],
+            'has_executable_notebook': List[str],
             'valid_until': List[str],
             'has_equation': List[Equation],
             'useful_for_calculating_index': List[NumericalIndex],
@@ -274,6 +298,7 @@ class ModelConfigurationSetup(Model):
         }
 
         self.attribute_map = {
+            'has_download_instructions': 'hasDownloadInstructions',
             'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
             'has_grid': 'hasGrid',
@@ -284,6 +309,7 @@ class ModelConfigurationSetup(Model):
             'calibrated_variable': 'calibratedVariable',
             'has_installation_instructions': 'hasInstallationInstructions',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'copyright_holder': 'copyrightHolder',
             'calibration_method': 'calibrationMethod',
             'has_region': 'hasRegion',
             'has_faq': 'hasFAQ',
@@ -296,6 +322,7 @@ class ModelConfigurationSetup(Model):
             'has_sample_result': 'hasSampleResult',
             'author': 'author',
             'has_constraint': 'hasConstraint',
+            'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
             'has_execution_command': 'hasExecutionCommand',
             'date_published': 'datePublished',
@@ -308,6 +335,7 @@ class ModelConfigurationSetup(Model):
             'publisher': 'publisher',
             'has_output': 'hasOutput',
             'has_output_time_interval': 'hasOutputTimeInterval',
+            'doi': 'doi',
             'parameter_assignment_method': 'parameterAssignmentMethod',
             'has_funding': 'hasFunding',
             'has_component_location': 'hasComponentLocation',
@@ -320,12 +348,14 @@ class ModelConfigurationSetup(Model):
             'screenshot': 'screenshot',
             'has_model_category': 'hasModelCategory',
             'had_primary_source': 'hadPrimarySource',
+            'issue_tracker': 'issueTracker',
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
             'has_model_result_table': 'hasModelResultTable',
             'calibration_target_variable': 'calibrationTargetVariable',
             'has_purpose': 'hasPurpose',
+            'has_executable_instructions': 'hasExecutableInstructions',
             'has_sample_visualization': 'hasSampleVisualization',
             'has_causal_diagram': 'hasCausalDiagram',
             'memory_requirements': 'memoryRequirements',
@@ -335,16 +365,19 @@ class ModelConfigurationSetup(Model):
             'adjustable_parameter': 'adjustableParameter',
             'has_usage_notes': 'hasUsageNotes',
             'has_support_script_location': 'hasSupportScriptLocation',
+            'readme': 'readme',
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'has_parameter': 'hasParameter',
             'operating_systems': 'operatingSystems',
+            'has_executable_notebook': 'hasExecutableNotebook',
             'valid_until': 'validUntil',
             'has_equation': 'hasEquation',
             'useful_for_calculating_index': 'usefulForCalculatingIndex',
             'has_input': 'hasInput'
         }
 
+        self._has_download_instructions = has_download_instructions
         self._keywords = keywords
         self._has_documentation = has_documentation
         self._has_grid = has_grid
@@ -355,6 +388,7 @@ class ModelConfigurationSetup(Model):
         self._calibrated_variable = calibrated_variable
         self._has_installation_instructions = has_installation_instructions
         self._compatible_visualization_software = compatible_visualization_software
+        self._copyright_holder = copyright_holder
         self._calibration_method = calibration_method
         self._has_region = has_region
         self._has_faq = has_faq
@@ -367,6 +401,7 @@ class ModelConfigurationSetup(Model):
         self._has_sample_result = has_sample_result
         self._author = author
         self._has_constraint = has_constraint
+        self._has_build_file = has_build_file
         self._short_description = short_description
         self._has_execution_command = has_execution_command
         self._date_published = date_published
@@ -379,6 +414,7 @@ class ModelConfigurationSetup(Model):
         self._publisher = publisher
         self._has_output = has_output
         self._has_output_time_interval = has_output_time_interval
+        self._doi = doi
         self._parameter_assignment_method = parameter_assignment_method
         self._has_funding = has_funding
         self._has_component_location = has_component_location
@@ -391,12 +427,14 @@ class ModelConfigurationSetup(Model):
         self._screenshot = screenshot
         self._has_model_category = has_model_category
         self._had_primary_source = had_primary_source
+        self._issue_tracker = issue_tracker
         self._has_software_image = has_software_image
         self._date_created = date_created
         self._contributor = contributor
         self._has_model_result_table = has_model_result_table
         self._calibration_target_variable = calibration_target_variable
         self._has_purpose = has_purpose
+        self._has_executable_instructions = has_executable_instructions
         self._has_sample_visualization = has_sample_visualization
         self._has_causal_diagram = has_causal_diagram
         self._memory_requirements = memory_requirements
@@ -406,10 +444,12 @@ class ModelConfigurationSetup(Model):
         self._adjustable_parameter = adjustable_parameter
         self._has_usage_notes = has_usage_notes
         self._has_support_script_location = has_support_script_location
+        self._readme = readme
         self._label = label
         self._has_assumption = has_assumption
         self._has_parameter = has_parameter
         self._operating_systems = operating_systems
+        self._has_executable_notebook = has_executable_notebook
         self._valid_until = valid_until
         self._has_equation = has_equation
         self._useful_for_calculating_index = useful_for_calculating_index
@@ -427,10 +467,33 @@ class ModelConfigurationSetup(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
+    def has_download_instructions(self):
+        """Gets the has_download_instructions of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The has_download_instructions of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_download_instructions
+
+    @has_download_instructions.setter
+    def has_download_instructions(self, has_download_instructions):
+        """Sets the has_download_instructions of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param has_download_instructions: The has_download_instructions of this ModelConfigurationSetup.
+        :type has_download_instructions: List[str]
+        """
+
+        self._has_download_instructions = has_download_instructions
+
+    @property
     def keywords(self):
         """Gets the keywords of this ModelConfigurationSetup.
 
-        Keywords associated with a software component  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The keywords of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -441,7 +504,7 @@ class ModelConfigurationSetup(Model):
     def keywords(self, keywords):
         """Sets the keywords of this ModelConfigurationSetup.
 
-        Keywords associated with a software component  # noqa: E501
+        Description not available  # noqa: E501
 
         :param keywords: The keywords of this ModelConfigurationSetup.
         :type keywords: List[str]
@@ -453,7 +516,7 @@ class ModelConfigurationSetup(Model):
     def has_documentation(self):
         """Gets the has_documentation of this ModelConfigurationSetup.
 
-        Pointer to the documentation of the model  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_documentation of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -464,7 +527,7 @@ class ModelConfigurationSetup(Model):
     def has_documentation(self, has_documentation):
         """Sets the has_documentation of this ModelConfigurationSetup.
 
-        Pointer to the documentation of the model  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_documentation: The has_documentation of this ModelConfigurationSetup.
         :type has_documentation: List[str]
@@ -499,7 +562,7 @@ class ModelConfigurationSetup(Model):
     def has_implementation_script_location(self):
         """Gets the has_implementation_script_location of this ModelConfigurationSetup.
 
-        Property that points to the main runnable script for the current function  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_implementation_script_location of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -510,7 +573,7 @@ class ModelConfigurationSetup(Model):
     def has_implementation_script_location(self, has_implementation_script_location):
         """Sets the has_implementation_script_location of this ModelConfigurationSetup.
 
-        Property that points to the main runnable script for the current function  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_implementation_script_location: The has_implementation_script_location of this ModelConfigurationSetup.
         :type has_implementation_script_location: List[str]
@@ -545,7 +608,7 @@ class ModelConfigurationSetup(Model):
     def has_download_url(self):
         """Gets the has_download_url of this ModelConfigurationSetup.
 
-        Download URL where to obtain the source/executable of the software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_download_url of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -556,7 +619,7 @@ class ModelConfigurationSetup(Model):
     def has_download_url(self, has_download_url):
         """Sets the has_download_url of this ModelConfigurationSetup.
 
-        Download URL where to obtain the source/executable of the software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_download_url: The has_download_url of this ModelConfigurationSetup.
         :type has_download_url: List[str]
@@ -614,7 +677,7 @@ class ModelConfigurationSetup(Model):
     def has_installation_instructions(self):
         """Gets the has_installation_instructions of this ModelConfigurationSetup.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_installation_instructions of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -625,7 +688,7 @@ class ModelConfigurationSetup(Model):
     def has_installation_instructions(self, has_installation_instructions):
         """Sets the has_installation_instructions of this ModelConfigurationSetup.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_installation_instructions: The has_installation_instructions of this ModelConfigurationSetup.
         :type has_installation_instructions: List[str]
@@ -637,7 +700,7 @@ class ModelConfigurationSetup(Model):
     def compatible_visualization_software(self):
         """Gets the compatible_visualization_software of this ModelConfigurationSetup.
 
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The compatible_visualization_software of this ModelConfigurationSetup.
         :rtype: List[Software]
@@ -648,13 +711,36 @@ class ModelConfigurationSetup(Model):
     def compatible_visualization_software(self, compatible_visualization_software):
         """Sets the compatible_visualization_software of this ModelConfigurationSetup.
 
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+        Description not available  # noqa: E501
 
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfigurationSetup.
         :type compatible_visualization_software: List[Software]
         """
 
         self._compatible_visualization_software = compatible_visualization_software
+
+    @property
+    def copyright_holder(self):
+        """Gets the copyright_holder of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The copyright_holder of this ModelConfigurationSetup.
+        :rtype: List[object]
+        """
+        return self._copyright_holder
+
+    @copyright_holder.setter
+    def copyright_holder(self, copyright_holder):
+        """Sets the copyright_holder of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param copyright_holder: The copyright_holder of this ModelConfigurationSetup.
+        :type copyright_holder: List[object]
+        """
+
+        self._copyright_holder = copyright_holder
 
     @property
     def calibration_method(self):
@@ -706,7 +792,7 @@ class ModelConfigurationSetup(Model):
     def has_faq(self):
         """Gets the has_faq of this ModelConfigurationSetup.
 
-        Frequently asked questions about a software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_faq of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -717,7 +803,7 @@ class ModelConfigurationSetup(Model):
     def has_faq(self, has_faq):
         """Sets the has_faq of this ModelConfigurationSetup.
 
-        Frequently asked questions about a software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_faq: The has_faq of this ModelConfigurationSetup.
         :type has_faq: List[str]
@@ -775,7 +861,7 @@ class ModelConfigurationSetup(Model):
     def tag(self):
         """Gets the tag of this ModelConfigurationSetup.
 
-        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The tag of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -786,7 +872,7 @@ class ModelConfigurationSetup(Model):
     def tag(self, tag):
         """Sets the tag of this ModelConfigurationSetup.
 
-        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
+        Description not available  # noqa: E501
 
         :param tag: The tag of this ModelConfigurationSetup.
         :type tag: List[str]
@@ -821,7 +907,7 @@ class ModelConfigurationSetup(Model):
     def identifier(self):
         """Gets the identifier of this ModelConfigurationSetup.
 
-        Identifier of the resource being described  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The identifier of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -832,7 +918,7 @@ class ModelConfigurationSetup(Model):
     def identifier(self, identifier):
         """Sets the identifier of this ModelConfigurationSetup.
 
-        Identifier of the resource being described  # noqa: E501
+        Description not available  # noqa: E501
 
         :param identifier: The identifier of this ModelConfigurationSetup.
         :type identifier: List[str]
@@ -913,7 +999,7 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfigurationSetup.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_constraint of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -924,7 +1010,7 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this ModelConfigurationSetup.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.
         :type has_constraint: List[str]
@@ -933,10 +1019,33 @@ class ModelConfigurationSetup(Model):
         self._has_constraint = has_constraint
 
     @property
+    def has_build_file(self):
+        """Gets the has_build_file of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The has_build_file of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_build_file
+
+    @has_build_file.setter
+    def has_build_file(self, has_build_file):
+        """Sets the has_build_file of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param has_build_file: The has_build_file of this ModelConfigurationSetup.
+        :type has_build_file: List[str]
+        """
+
+        self._has_build_file = has_build_file
+
+    @property
     def short_description(self):
         """Gets the short_description of this ModelConfigurationSetup.
 
-        A summarized description of the resource  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The short_description of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -947,7 +1056,7 @@ class ModelConfigurationSetup(Model):
     def short_description(self, short_description):
         """Sets the short_description of this ModelConfigurationSetup.
 
-        A summarized description of the resource  # noqa: E501
+        Description not available  # noqa: E501
 
         :param short_description: The short_description of this ModelConfigurationSetup.
         :type short_description: List[str]
@@ -959,7 +1068,7 @@ class ModelConfigurationSetup(Model):
     def has_execution_command(self):
         """Gets the has_execution_command of this ModelConfigurationSetup.
 
-        Execution instructions on how to run the image  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_execution_command of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -970,7 +1079,7 @@ class ModelConfigurationSetup(Model):
     def has_execution_command(self, has_execution_command):
         """Sets the has_execution_command of this ModelConfigurationSetup.
 
-        Execution instructions on how to run the image  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_execution_command: The has_execution_command of this ModelConfigurationSetup.
         :type has_execution_command: List[str]
@@ -1005,7 +1114,7 @@ class ModelConfigurationSetup(Model):
     def license(self):
         """Gets the license of this ModelConfigurationSetup.
 
-        License of a software component or its source code  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The license of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1016,7 +1125,7 @@ class ModelConfigurationSetup(Model):
     def license(self, license):
         """Sets the license of this ModelConfigurationSetup.
 
-        License of a software component or its source code  # noqa: E501
+        Description not available  # noqa: E501
 
         :param license: The license of this ModelConfigurationSetup.
         :type license: List[str]
@@ -1051,7 +1160,7 @@ class ModelConfigurationSetup(Model):
     def has_setup(self):
         """Gets the has_setup of this ModelConfigurationSetup.
 
-        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_setup of this ModelConfigurationSetup.
         :rtype: List[ConfigurationSetup]
@@ -1062,7 +1171,7 @@ class ModelConfigurationSetup(Model):
     def has_setup(self, has_setup):
         """Sets the has_setup of this ModelConfigurationSetup.
 
-        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_setup: The has_setup of this ModelConfigurationSetup.
         :type has_setup: List[ConfigurationSetup]
@@ -1097,7 +1206,7 @@ class ModelConfigurationSetup(Model):
     def has_example(self):
         """Gets the has_example of this ModelConfigurationSetup.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_example of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1108,7 +1217,7 @@ class ModelConfigurationSetup(Model):
     def has_example(self, has_example):
         """Sets the has_example of this ModelConfigurationSetup.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_example: The has_example of this ModelConfigurationSetup.
         :type has_example: List[str]
@@ -1166,7 +1275,7 @@ class ModelConfigurationSetup(Model):
     def has_output(self):
         """Gets the has_output of this ModelConfigurationSetup.
 
-        Property that expresses what are the outputs of a model  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_output of this ModelConfigurationSetup.
         :rtype: List[DatasetSpecification]
@@ -1177,7 +1286,7 @@ class ModelConfigurationSetup(Model):
     def has_output(self, has_output):
         """Sets the has_output of this ModelConfigurationSetup.
 
-        Property that expresses what are the outputs of a model  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_output: The has_output of this ModelConfigurationSetup.
         :type has_output: List[DatasetSpecification]
@@ -1189,7 +1298,7 @@ class ModelConfigurationSetup(Model):
     def has_output_time_interval(self):
         """Gets the has_output_time_interval of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Time interval used in the model configuration  # noqa: E501
 
         :return: The has_output_time_interval of this ModelConfigurationSetup.
         :rtype: List[TimeInterval]
@@ -1200,7 +1309,7 @@ class ModelConfigurationSetup(Model):
     def has_output_time_interval(self, has_output_time_interval):
         """Sets the has_output_time_interval of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Time interval used in the model configuration  # noqa: E501
 
         :param has_output_time_interval: The has_output_time_interval of this ModelConfigurationSetup.
         :type has_output_time_interval: List[TimeInterval]
@@ -1209,10 +1318,33 @@ class ModelConfigurationSetup(Model):
         self._has_output_time_interval = has_output_time_interval
 
     @property
+    def doi(self):
+        """Gets the doi of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The doi of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._doi
+
+    @doi.setter
+    def doi(self, doi):
+        """Sets the doi of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param doi: The doi of this ModelConfigurationSetup.
+        :type doi: List[str]
+        """
+
+        self._doi = doi
+
+    @property
     def parameter_assignment_method(self):
         """Gets the parameter_assignment_method of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Property that indicates how have the parameters assigned in a model configuration (e.g., using an expert guess, by using calibration, etc.)  # noqa: E501
 
         :return: The parameter_assignment_method of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1223,7 +1355,7 @@ class ModelConfigurationSetup(Model):
     def parameter_assignment_method(self, parameter_assignment_method):
         """Sets the parameter_assignment_method of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Property that indicates how have the parameters assigned in a model configuration (e.g., using an expert guess, by using calibration, etc.)  # noqa: E501
 
         :param parameter_assignment_method: The parameter_assignment_method of this ModelConfigurationSetup.
         :type parameter_assignment_method: List[str]
@@ -1235,7 +1367,7 @@ class ModelConfigurationSetup(Model):
     def has_funding(self):
         """Gets the has_funding of this ModelConfigurationSetup.
 
-        Property that links a software project to its funding information  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_funding of this ModelConfigurationSetup.
         :rtype: List[FundingInformation]
@@ -1246,7 +1378,7 @@ class ModelConfigurationSetup(Model):
     def has_funding(self, has_funding):
         """Sets the has_funding of this ModelConfigurationSetup.
 
-        Property that links a software project to its funding information  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_funding: The has_funding of this ModelConfigurationSetup.
         :type has_funding: List[FundingInformation]
@@ -1258,7 +1390,7 @@ class ModelConfigurationSetup(Model):
     def has_component_location(self):
         """Gets the has_component_location of this ModelConfigurationSetup.
 
-        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_component_location of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1269,7 +1401,7 @@ class ModelConfigurationSetup(Model):
     def has_component_location(self, has_component_location):
         """Sets the has_component_location of this ModelConfigurationSetup.
 
-        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_component_location: The has_component_location of this ModelConfigurationSetup.
         :type has_component_location: List[str]
@@ -1281,7 +1413,7 @@ class ModelConfigurationSetup(Model):
     def has_process(self):
         """Gets the has_process of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Property that indicates which physical processes (if any) are associated with a model configuration  # noqa: E501
 
         :return: The has_process of this ModelConfigurationSetup.
         :rtype: List[Process]
@@ -1292,7 +1424,7 @@ class ModelConfigurationSetup(Model):
     def has_process(self, has_process):
         """Sets the has_process of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Property that indicates which physical processes (if any) are associated with a model configuration  # noqa: E501
 
         :param has_process: The has_process of this ModelConfigurationSetup.
         :type has_process: List[Process]
@@ -1304,7 +1436,7 @@ class ModelConfigurationSetup(Model):
     def support_details(self):
         """Gets the support_details of this ModelConfigurationSetup.
 
-        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The support_details of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1315,7 +1447,7 @@ class ModelConfigurationSetup(Model):
     def support_details(self, support_details):
         """Sets the support_details of this ModelConfigurationSetup.
 
-        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+        Description not available  # noqa: E501
 
         :param support_details: The support_details of this ModelConfigurationSetup.
         :type support_details: List[str]
@@ -1396,7 +1528,7 @@ class ModelConfigurationSetup(Model):
     def reference_publication(self):
         """Gets the reference_publication of this ModelConfigurationSetup.
 
-        Main publication to cite in this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The reference_publication of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1407,7 +1539,7 @@ class ModelConfigurationSetup(Model):
     def reference_publication(self, reference_publication):
         """Sets the reference_publication of this ModelConfigurationSetup.
 
-        Main publication to cite in this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param reference_publication: The reference_publication of this ModelConfigurationSetup.
         :type reference_publication: List[str]
@@ -1442,7 +1574,7 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self):
         """Gets the has_model_category of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Category associated with a model (e.g., Hydrology)  # noqa: E501
 
         :return: The has_model_category of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1453,7 +1585,7 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Category associated with a model (e.g., Hydrology)  # noqa: E501
 
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.
         :type has_model_category: List[str]
@@ -1465,7 +1597,7 @@ class ModelConfigurationSetup(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this ModelConfigurationSetup.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The had_primary_source of this ModelConfigurationSetup.
         :rtype: List[object]
@@ -1476,7 +1608,7 @@ class ModelConfigurationSetup(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this ModelConfigurationSetup.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this ModelConfigurationSetup.
         :type had_primary_source: List[object]
@@ -1485,10 +1617,33 @@ class ModelConfigurationSetup(Model):
         self._had_primary_source = had_primary_source
 
     @property
+    def issue_tracker(self):
+        """Gets the issue_tracker of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The issue_tracker of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._issue_tracker
+
+    @issue_tracker.setter
+    def issue_tracker(self, issue_tracker):
+        """Sets the issue_tracker of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param issue_tracker: The issue_tracker of this ModelConfigurationSetup.
+        :type issue_tracker: List[str]
+        """
+
+        self._issue_tracker = issue_tracker
+
+    @property
     def has_software_image(self):
         """Gets the has_software_image of this ModelConfigurationSetup.
 
-        Function to link a function with its corresponding container  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_software_image of this ModelConfigurationSetup.
         :rtype: List[SoftwareImage]
@@ -1499,7 +1654,7 @@ class ModelConfigurationSetup(Model):
     def has_software_image(self, has_software_image):
         """Sets the has_software_image of this ModelConfigurationSetup.
 
-        Function to link a function with its corresponding container  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_software_image: The has_software_image of this ModelConfigurationSetup.
         :type has_software_image: List[SoftwareImage]
@@ -1557,7 +1712,7 @@ class ModelConfigurationSetup(Model):
     def has_model_result_table(self):
         """Gets the has_model_result_table of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Sample result table associated with a model configuration  # noqa: E501
 
         :return: The has_model_result_table of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1568,7 +1723,7 @@ class ModelConfigurationSetup(Model):
     def has_model_result_table(self, has_model_result_table):
         """Sets the has_model_result_table of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Sample result table associated with a model configuration  # noqa: E501
 
         :param has_model_result_table: The has_model_result_table of this ModelConfigurationSetup.
         :type has_model_result_table: List[str]
@@ -1603,7 +1758,7 @@ class ModelConfigurationSetup(Model):
     def has_purpose(self):
         """Gets the has_purpose of this ModelConfigurationSetup.
 
-        Objective or main functionality that can be achieved by running this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_purpose of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1614,7 +1769,7 @@ class ModelConfigurationSetup(Model):
     def has_purpose(self, has_purpose):
         """Sets the has_purpose of this ModelConfigurationSetup.
 
-        Objective or main functionality that can be achieved by running this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_purpose: The has_purpose of this ModelConfigurationSetup.
         :type has_purpose: List[str]
@@ -1623,10 +1778,33 @@ class ModelConfigurationSetup(Model):
         self._has_purpose = has_purpose
 
     @property
+    def has_executable_instructions(self):
+        """Gets the has_executable_instructions of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The has_executable_instructions of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_executable_instructions
+
+    @has_executable_instructions.setter
+    def has_executable_instructions(self, has_executable_instructions):
+        """Sets the has_executable_instructions of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param has_executable_instructions: The has_executable_instructions of this ModelConfigurationSetup.
+        :type has_executable_instructions: List[str]
+        """
+
+        self._has_executable_instructions = has_executable_instructions
+
+    @property
     def has_sample_visualization(self):
         """Gets the has_sample_visualization of this ModelConfigurationSetup.
 
-        A typical sample visualization of the softwware outputs  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_sample_visualization of this ModelConfigurationSetup.
         :rtype: List[Visualization]
@@ -1637,7 +1815,7 @@ class ModelConfigurationSetup(Model):
     def has_sample_visualization(self, has_sample_visualization):
         """Sets the has_sample_visualization of this ModelConfigurationSetup.
 
-        A typical sample visualization of the softwware outputs  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_sample_visualization: The has_sample_visualization of this ModelConfigurationSetup.
         :type has_sample_visualization: List[Visualization]
@@ -1695,7 +1873,7 @@ class ModelConfigurationSetup(Model):
     def website(self):
         """Gets the website of this ModelConfigurationSetup.
 
-        Website of the software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The website of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1706,7 +1884,7 @@ class ModelConfigurationSetup(Model):
     def website(self, website):
         """Sets the website of this ModelConfigurationSetup.
 
-        Website of the software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param website: The website of this ModelConfigurationSetup.
         :type website: List[str]
@@ -1718,7 +1896,7 @@ class ModelConfigurationSetup(Model):
     def citation(self):
         """Gets the citation of this ModelConfigurationSetup.
 
-        How to cite this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The citation of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1729,7 +1907,7 @@ class ModelConfigurationSetup(Model):
     def citation(self, citation):
         """Sets the citation of this ModelConfigurationSetup.
 
-        How to cite this software  # noqa: E501
+        Description not available  # noqa: E501
 
         :param citation: The citation of this ModelConfigurationSetup.
         :type citation: List[str]
@@ -1764,7 +1942,7 @@ class ModelConfigurationSetup(Model):
     def adjustable_parameter(self):
         """Gets the adjustable_parameter of this ModelConfigurationSetup.
 
-        Parameter that can be adjusted in a configuration setup  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The adjustable_parameter of this ModelConfigurationSetup.
         :rtype: List[Parameter]
@@ -1775,7 +1953,7 @@ class ModelConfigurationSetup(Model):
     def adjustable_parameter(self, adjustable_parameter):
         """Sets the adjustable_parameter of this ModelConfigurationSetup.
 
-        Parameter that can be adjusted in a configuration setup  # noqa: E501
+        Description not available  # noqa: E501
 
         :param adjustable_parameter: The adjustable_parameter of this ModelConfigurationSetup.
         :type adjustable_parameter: List[Parameter]
@@ -1787,7 +1965,7 @@ class ModelConfigurationSetup(Model):
     def has_usage_notes(self):
         """Gets the has_usage_notes of this ModelConfigurationSetup.
 
-        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_usage_notes of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1798,7 +1976,7 @@ class ModelConfigurationSetup(Model):
     def has_usage_notes(self, has_usage_notes):
         """Sets the has_usage_notes of this ModelConfigurationSetup.
 
-        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_usage_notes: The has_usage_notes of this ModelConfigurationSetup.
         :type has_usage_notes: List[str]
@@ -1810,7 +1988,7 @@ class ModelConfigurationSetup(Model):
     def has_support_script_location(self):
         """Gets the has_support_script_location of this ModelConfigurationSetup.
 
-        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_support_script_location of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1821,13 +1999,36 @@ class ModelConfigurationSetup(Model):
     def has_support_script_location(self, has_support_script_location):
         """Sets the has_support_script_location of this ModelConfigurationSetup.
 
-        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_support_script_location: The has_support_script_location of this ModelConfigurationSetup.
         :type has_support_script_location: List[str]
         """
 
         self._has_support_script_location = has_support_script_location
+
+    @property
+    def readme(self):
+        """Gets the readme of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The readme of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._readme
+
+    @readme.setter
+    def readme(self, readme):
+        """Sets the readme of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param readme: The readme of this ModelConfigurationSetup.
+        :type readme: List[str]
+        """
+
+        self._readme = readme
 
     @property
     def label(self):
@@ -1856,7 +2057,7 @@ class ModelConfigurationSetup(Model):
     def has_assumption(self):
         """Gets the has_assumption of this ModelConfigurationSetup.
 
-        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_assumption of this ModelConfigurationSetup.
         :rtype: List[str]
@@ -1867,7 +2068,7 @@ class ModelConfigurationSetup(Model):
     def has_assumption(self, has_assumption):
         """Sets the has_assumption of this ModelConfigurationSetup.
 
-        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_assumption: The has_assumption of this ModelConfigurationSetup.
         :type has_assumption: List[str]
@@ -1879,7 +2080,7 @@ class ModelConfigurationSetup(Model):
     def has_parameter(self):
         """Gets the has_parameter of this ModelConfigurationSetup.
 
-        Property that indicates the parameters of a model configuration  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_parameter of this ModelConfigurationSetup.
         :rtype: List[Parameter]
@@ -1890,7 +2091,7 @@ class ModelConfigurationSetup(Model):
     def has_parameter(self, has_parameter):
         """Sets the has_parameter of this ModelConfigurationSetup.
 
-        Property that indicates the parameters of a model configuration  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_parameter: The has_parameter of this ModelConfigurationSetup.
         :type has_parameter: List[Parameter]
@@ -1920,6 +2121,29 @@ class ModelConfigurationSetup(Model):
         """
 
         self._operating_systems = operating_systems
+
+    @property
+    def has_executable_notebook(self):
+        """Gets the has_executable_notebook of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The has_executable_notebook of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_executable_notebook
+
+    @has_executable_notebook.setter
+    def has_executable_notebook(self, has_executable_notebook):
+        """Sets the has_executable_notebook of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param has_executable_notebook: The has_executable_notebook of this ModelConfigurationSetup.
+        :type has_executable_notebook: List[str]
+        """
+
+        self._has_executable_notebook = has_executable_notebook
 
     @property
     def valid_until(self):
@@ -1971,7 +2195,7 @@ class ModelConfigurationSetup(Model):
     def useful_for_calculating_index(self):
         """Gets the useful_for_calculating_index of this ModelConfigurationSetup.
 
-        Property that indicates that a software component (or any of its outputs) can be used to calculate a particular index. The rationale for this property is that indices are usually calculated by applying post-processing steps to the outputs of a software component.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The useful_for_calculating_index of this ModelConfigurationSetup.
         :rtype: List[NumericalIndex]
@@ -1982,7 +2206,7 @@ class ModelConfigurationSetup(Model):
     def useful_for_calculating_index(self, useful_for_calculating_index):
         """Sets the useful_for_calculating_index of this ModelConfigurationSetup.
 
-        Property that indicates that a software component (or any of its outputs) can be used to calculate a particular index. The rationale for this property is that indices are usually calculated by applying post-processing steps to the outputs of a software component.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfigurationSetup.
         :type useful_for_calculating_index: List[NumericalIndex]
@@ -1994,7 +2218,7 @@ class ModelConfigurationSetup(Model):
     def has_input(self):
         """Gets the has_input of this ModelConfigurationSetup.
 
-        Property that links a model configuration to the input types expected by it.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_input of this ModelConfigurationSetup.
         :rtype: List[DatasetSpecification]
@@ -2005,7 +2229,7 @@ class ModelConfigurationSetup(Model):
     def has_input(self, has_input):
         """Sets the has_input of this ModelConfigurationSetup.
 
-        Property that links a model configuration to the input types expected by it.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_input: The has_input of this ModelConfigurationSetup.
         :type has_input: List[DatasetSpecification]

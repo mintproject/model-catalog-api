@@ -33,7 +33,7 @@ def softwares_get(username=None, label=None, page=None, per_page=None):  # noqa:
         rdf_type_name=SOFTWARE_TYPE_NAME, 
         kls=Software)
 
-def softwares_id_delete(id, user=None):  # noqa: E501
+def softwares_id_delete(id, user):  # noqa: E501
     """Delete an existing Software
 
     Delete an existing Software (more information in https://w3id.org/okn/o/sd#Software) # noqa: E501
@@ -47,8 +47,7 @@ def softwares_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SOFTWARE_TYPE_URI,
         rdf_type_name=SOFTWARE_TYPE_NAME, 
         kls=Software)
@@ -73,7 +72,7 @@ def softwares_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SOFTWARE_TYPE_NAME, 
         kls=Software)
 
-def softwares_id_put(id, user=None, software=None):  # noqa: E501
+def softwares_id_put(id, user, software=None):  # noqa: E501
     """Update an existing Software
 
     Updates an existing Software (more information in https://w3id.org/okn/o/sd#Software) # noqa: E501
@@ -91,14 +90,13 @@ def softwares_id_put(id, user=None, software=None):  # noqa: E501
     if connexion.request.is_json:
         software = Software.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=software,
         rdf_type_uri=SOFTWARE_TYPE_URI,
         rdf_type_name=SOFTWARE_TYPE_NAME, 
         kls=Software)
 
-def softwares_post(user=None, software=None):  # noqa: E501
+def softwares_post(user, software=None):  # noqa: E501
     """Create one Software
 
     Create a new instance of Software (more information in https://w3id.org/okn/o/sd#Software) # noqa: E501
@@ -114,8 +112,7 @@ def softwares_post(user=None, software=None):  # noqa: E501
     if connexion.request.is_json:
         software = Software.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=software,
         rdf_type_uri=SOFTWARE_TYPE_URI,
         rdf_type_name=SOFTWARE_TYPE_NAME, 

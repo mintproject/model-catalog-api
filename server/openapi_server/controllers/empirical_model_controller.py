@@ -33,7 +33,7 @@ def empiricalmodels_get(username=None, label=None, page=None, per_page=None):  #
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 
         kls=EmpiricalModel)
 
-def empiricalmodels_id_delete(id, user=None):  # noqa: E501
+def empiricalmodels_id_delete(id, user):  # noqa: E501
     """Delete an existing EmpiricalModel
 
     Delete an existing EmpiricalModel (more information in https://w3id.org/okn/o/sdm#EmpiricalModel) # noqa: E501
@@ -47,8 +47,7 @@ def empiricalmodels_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=EMPIRICALMODEL_TYPE_URI,
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 
         kls=EmpiricalModel)
@@ -73,7 +72,7 @@ def empiricalmodels_id_get(id, username=None):  # noqa: E501
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 
         kls=EmpiricalModel)
 
-def empiricalmodels_id_put(id, user=None, empirical_model=None):  # noqa: E501
+def empiricalmodels_id_put(id, user, empirical_model=None):  # noqa: E501
     """Update an existing EmpiricalModel
 
     Updates an existing EmpiricalModel (more information in https://w3id.org/okn/o/sdm#EmpiricalModel) # noqa: E501
@@ -91,14 +90,13 @@ def empiricalmodels_id_put(id, user=None, empirical_model=None):  # noqa: E501
     if connexion.request.is_json:
         empirical_model = EmpiricalModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=empirical_model,
         rdf_type_uri=EMPIRICALMODEL_TYPE_URI,
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 
         kls=EmpiricalModel)
 
-def empiricalmodels_post(user=None, empirical_model=None):  # noqa: E501
+def empiricalmodels_post(user, empirical_model=None):  # noqa: E501
     """Create one EmpiricalModel
 
     Create a new instance of EmpiricalModel (more information in https://w3id.org/okn/o/sdm#EmpiricalModel) # noqa: E501
@@ -114,8 +112,7 @@ def empiricalmodels_post(user=None, empirical_model=None):  # noqa: E501
     if connexion.request.is_json:
         empirical_model = EmpiricalModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=empirical_model,
         rdf_type_uri=EMPIRICALMODEL_TYPE_URI,
         rdf_type_name=EMPIRICALMODEL_TYPE_NAME, 

@@ -33,7 +33,7 @@ def sourcecodes_get(username=None, label=None, page=None, per_page=None):  # noq
         rdf_type_name=SOURCECODE_TYPE_NAME, 
         kls=SourceCode)
 
-def sourcecodes_id_delete(id, user=None):  # noqa: E501
+def sourcecodes_id_delete(id, user):  # noqa: E501
     """Delete an existing SourceCode
 
     Delete an existing SourceCode (more information in https://w3id.org/okn/o/sd#SourceCode) # noqa: E501
@@ -47,8 +47,7 @@ def sourcecodes_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SOURCECODE_TYPE_URI,
         rdf_type_name=SOURCECODE_TYPE_NAME, 
         kls=SourceCode)
@@ -73,7 +72,7 @@ def sourcecodes_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SOURCECODE_TYPE_NAME, 
         kls=SourceCode)
 
-def sourcecodes_id_put(id, user=None, source_code=None):  # noqa: E501
+def sourcecodes_id_put(id, user, source_code=None):  # noqa: E501
     """Update an existing SourceCode
 
     Updates an existing SourceCode (more information in https://w3id.org/okn/o/sd#SourceCode) # noqa: E501
@@ -91,14 +90,13 @@ def sourcecodes_id_put(id, user=None, source_code=None):  # noqa: E501
     if connexion.request.is_json:
         source_code = SourceCode.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=source_code,
         rdf_type_uri=SOURCECODE_TYPE_URI,
         rdf_type_name=SOURCECODE_TYPE_NAME, 
         kls=SourceCode)
 
-def sourcecodes_post(user=None, source_code=None):  # noqa: E501
+def sourcecodes_post(user, source_code=None):  # noqa: E501
     """Create one SourceCode
 
     Create a new instance of SourceCode (more information in https://w3id.org/okn/o/sd#SourceCode) # noqa: E501
@@ -114,8 +112,7 @@ def sourcecodes_post(user=None, source_code=None):  # noqa: E501
     if connexion.request.is_json:
         source_code = SourceCode.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=source_code,
         rdf_type_uri=SOURCECODE_TYPE_URI,
         rdf_type_name=SOURCECODE_TYPE_NAME, 

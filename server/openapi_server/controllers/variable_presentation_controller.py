@@ -33,7 +33,7 @@ def variablepresentations_get(username=None, label=None, page=None, per_page=Non
         rdf_type_name=VARIABLEPRESENTATION_TYPE_NAME, 
         kls=VariablePresentation)
 
-def variablepresentations_id_delete(id, user=None):  # noqa: E501
+def variablepresentations_id_delete(id, user):  # noqa: E501
     """Delete an existing VariablePresentation
 
     Delete an existing VariablePresentation (more information in https://w3id.org/okn/o/sd#VariablePresentation) # noqa: E501
@@ -47,8 +47,7 @@ def variablepresentations_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=VARIABLEPRESENTATION_TYPE_URI,
         rdf_type_name=VARIABLEPRESENTATION_TYPE_NAME, 
         kls=VariablePresentation)
@@ -73,7 +72,7 @@ def variablepresentations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=VARIABLEPRESENTATION_TYPE_NAME, 
         kls=VariablePresentation)
 
-def variablepresentations_id_put(id, user=None, variable_presentation=None):  # noqa: E501
+def variablepresentations_id_put(id, user, variable_presentation=None):  # noqa: E501
     """Update an existing VariablePresentation
 
     Updates an existing VariablePresentation (more information in https://w3id.org/okn/o/sd#VariablePresentation) # noqa: E501
@@ -91,14 +90,13 @@ def variablepresentations_id_put(id, user=None, variable_presentation=None):  # 
     if connexion.request.is_json:
         variable_presentation = VariablePresentation.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=variable_presentation,
         rdf_type_uri=VARIABLEPRESENTATION_TYPE_URI,
         rdf_type_name=VARIABLEPRESENTATION_TYPE_NAME, 
         kls=VariablePresentation)
 
-def variablepresentations_post(user=None, variable_presentation=None):  # noqa: E501
+def variablepresentations_post(user, variable_presentation=None):  # noqa: E501
     """Create one VariablePresentation
 
     Create a new instance of VariablePresentation (more information in https://w3id.org/okn/o/sd#VariablePresentation) # noqa: E501
@@ -114,8 +112,7 @@ def variablepresentations_post(user=None, variable_presentation=None):  # noqa: 
     if connexion.request.is_json:
         variable_presentation = VariablePresentation.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=variable_presentation,
         rdf_type_uri=VARIABLEPRESENTATION_TYPE_URI,
         rdf_type_name=VARIABLEPRESENTATION_TYPE_NAME, 

@@ -73,7 +73,7 @@ class Region(Model):
     def geo(self):
         """Gets the geo of this Region.
 
-        Description not available  # noqa: E501
+        Specific coordinates or shape associated with a region  # noqa: E501
 
         :return: The geo of this Region.
         :rtype: List[object]
@@ -84,7 +84,7 @@ class Region(Model):
     def geo(self, geo):
         """Sets the geo of this Region.
 
-        Description not available  # noqa: E501
+        Specific coordinates or shape associated with a region  # noqa: E501
 
         :param geo: The geo of this Region.
         :type geo: List[object]

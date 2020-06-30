@@ -33,7 +33,7 @@ def geocoordinatess_get(username=None, label=None, page=None, per_page=None):  #
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 
         kls=GeoCoordinates)
 
-def geocoordinatess_id_delete(id, user=None):  # noqa: E501
+def geocoordinatess_id_delete(id, user):  # noqa: E501
     """Delete an existing GeoCoordinates
 
     Delete an existing GeoCoordinates (more information in https://w3id.org/okn/o/sdm#GeoCoordinates) # noqa: E501
@@ -47,8 +47,7 @@ def geocoordinatess_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=GEOCOORDINATES_TYPE_URI,
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 
         kls=GeoCoordinates)
@@ -73,7 +72,7 @@ def geocoordinatess_id_get(id, username=None):  # noqa: E501
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 
         kls=GeoCoordinates)
 
-def geocoordinatess_id_put(id, user=None, geo_coordinates=None):  # noqa: E501
+def geocoordinatess_id_put(id, user, geo_coordinates=None):  # noqa: E501
     """Update an existing GeoCoordinates
 
     Updates an existing GeoCoordinates (more information in https://w3id.org/okn/o/sdm#GeoCoordinates) # noqa: E501
@@ -91,14 +90,13 @@ def geocoordinatess_id_put(id, user=None, geo_coordinates=None):  # noqa: E501
     if connexion.request.is_json:
         geo_coordinates = GeoCoordinates.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=geo_coordinates,
         rdf_type_uri=GEOCOORDINATES_TYPE_URI,
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 
         kls=GeoCoordinates)
 
-def geocoordinatess_post(user=None, geo_coordinates=None):  # noqa: E501
+def geocoordinatess_post(user, geo_coordinates=None):  # noqa: E501
     """Create one GeoCoordinates
 
     Create a new instance of GeoCoordinates (more information in https://w3id.org/okn/o/sdm#GeoCoordinates) # noqa: E501
@@ -114,8 +112,7 @@ def geocoordinatess_post(user=None, geo_coordinates=None):  # noqa: E501
     if connexion.request.is_json:
         geo_coordinates = GeoCoordinates.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=geo_coordinates,
         rdf_type_uri=GEOCOORDINATES_TYPE_URI,
         rdf_type_name=GEOCOORDINATES_TYPE_NAME, 

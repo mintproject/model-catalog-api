@@ -33,7 +33,7 @@ def emulators_get(username=None, label=None, page=None, per_page=None):  # noqa:
         rdf_type_name=EMULATOR_TYPE_NAME, 
         kls=Emulator)
 
-def emulators_id_delete(id, user=None):  # noqa: E501
+def emulators_id_delete(id, user):  # noqa: E501
     """Delete an existing Emulator
 
     Delete an existing Emulator (more information in https://w3id.org/okn/o/sdm#Emulator) # noqa: E501
@@ -47,8 +47,7 @@ def emulators_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=EMULATOR_TYPE_URI,
         rdf_type_name=EMULATOR_TYPE_NAME, 
         kls=Emulator)
@@ -73,7 +72,7 @@ def emulators_id_get(id, username=None):  # noqa: E501
         rdf_type_name=EMULATOR_TYPE_NAME, 
         kls=Emulator)
 
-def emulators_id_put(id, user=None, emulator=None):  # noqa: E501
+def emulators_id_put(id, user, emulator=None):  # noqa: E501
     """Update an existing Emulator
 
     Updates an existing Emulator (more information in https://w3id.org/okn/o/sdm#Emulator) # noqa: E501
@@ -91,14 +90,13 @@ def emulators_id_put(id, user=None, emulator=None):  # noqa: E501
     if connexion.request.is_json:
         emulator = Emulator.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=emulator,
         rdf_type_uri=EMULATOR_TYPE_URI,
         rdf_type_name=EMULATOR_TYPE_NAME, 
         kls=Emulator)
 
-def emulators_post(user=None, emulator=None):  # noqa: E501
+def emulators_post(user, emulator=None):  # noqa: E501
     """Create one Emulator
 
     Create a new instance of Emulator (more information in https://w3id.org/okn/o/sdm#Emulator) # noqa: E501
@@ -114,8 +112,7 @@ def emulators_post(user=None, emulator=None):  # noqa: E501
     if connexion.request.is_json:
         emulator = Emulator.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=emulator,
         rdf_type_uri=EMULATOR_TYPE_URI,
         rdf_type_name=EMULATOR_TYPE_NAME, 

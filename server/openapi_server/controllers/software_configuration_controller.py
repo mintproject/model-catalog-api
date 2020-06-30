@@ -33,7 +33,7 @@ def softwareconfigurations_get(username=None, label=None, page=None, per_page=No
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
         kls=SoftwareConfiguration)
 
-def softwareconfigurations_id_delete(id, user=None):  # noqa: E501
+def softwareconfigurations_id_delete(id, user):  # noqa: E501
     """Delete an existing SoftwareConfiguration
 
     Delete an existing SoftwareConfiguration (more information in https://w3id.org/okn/o/sd#SoftwareConfiguration) # noqa: E501
@@ -47,8 +47,7 @@ def softwareconfigurations_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
         kls=SoftwareConfiguration)
@@ -73,7 +72,7 @@ def softwareconfigurations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
         kls=SoftwareConfiguration)
 
-def softwareconfigurations_id_put(id, user=None, software_configuration=None):  # noqa: E501
+def softwareconfigurations_id_put(id, user, software_configuration=None):  # noqa: E501
     """Update an existing SoftwareConfiguration
 
     Updates an existing SoftwareConfiguration (more information in https://w3id.org/okn/o/sd#SoftwareConfiguration) # noqa: E501
@@ -91,14 +90,13 @@ def softwareconfigurations_id_put(id, user=None, software_configuration=None):  
     if connexion.request.is_json:
         software_configuration = SoftwareConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=software_configuration,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 
         kls=SoftwareConfiguration)
 
-def softwareconfigurations_post(user=None, software_configuration=None):  # noqa: E501
+def softwareconfigurations_post(user, software_configuration=None):  # noqa: E501
     """Create one SoftwareConfiguration
 
     Create a new instance of SoftwareConfiguration (more information in https://w3id.org/okn/o/sd#SoftwareConfiguration) # noqa: E501
@@ -114,8 +112,7 @@ def softwareconfigurations_post(user=None, software_configuration=None):  # noqa
     if connexion.request.is_json:
         software_configuration = SoftwareConfiguration.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=software_configuration,
         rdf_type_uri=SOFTWARECONFIGURATION_TYPE_URI,
         rdf_type_name=SOFTWARECONFIGURATION_TYPE_NAME, 

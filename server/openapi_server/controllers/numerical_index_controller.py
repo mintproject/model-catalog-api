@@ -33,7 +33,7 @@ def numericalindexs_get(username=None, label=None, page=None, per_page=None):  #
         rdf_type_name=NUMERICALINDEX_TYPE_NAME, 
         kls=NumericalIndex)
 
-def numericalindexs_id_delete(id, user=None):  # noqa: E501
+def numericalindexs_id_delete(id, user):  # noqa: E501
     """Delete an existing NumericalIndex
 
     Delete an existing NumericalIndex (more information in https://w3id.org/okn/o/sd#NumericalIndex) # noqa: E501
@@ -47,8 +47,7 @@ def numericalindexs_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=NUMERICALINDEX_TYPE_URI,
         rdf_type_name=NUMERICALINDEX_TYPE_NAME, 
         kls=NumericalIndex)
@@ -73,7 +72,7 @@ def numericalindexs_id_get(id, username=None):  # noqa: E501
         rdf_type_name=NUMERICALINDEX_TYPE_NAME, 
         kls=NumericalIndex)
 
-def numericalindexs_id_put(id, user=None, numerical_index=None):  # noqa: E501
+def numericalindexs_id_put(id, user, numerical_index=None):  # noqa: E501
     """Update an existing NumericalIndex
 
     Updates an existing NumericalIndex (more information in https://w3id.org/okn/o/sd#NumericalIndex) # noqa: E501
@@ -91,14 +90,13 @@ def numericalindexs_id_put(id, user=None, numerical_index=None):  # noqa: E501
     if connexion.request.is_json:
         numerical_index = NumericalIndex.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=numerical_index,
         rdf_type_uri=NUMERICALINDEX_TYPE_URI,
         rdf_type_name=NUMERICALINDEX_TYPE_NAME, 
         kls=NumericalIndex)
 
-def numericalindexs_post(user=None, numerical_index=None):  # noqa: E501
+def numericalindexs_post(user, numerical_index=None):  # noqa: E501
     """Create one NumericalIndex
 
     Create a new instance of NumericalIndex (more information in https://w3id.org/okn/o/sd#NumericalIndex) # noqa: E501
@@ -114,8 +112,7 @@ def numericalindexs_post(user=None, numerical_index=None):  # noqa: E501
     if connexion.request.is_json:
         numerical_index = NumericalIndex.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=numerical_index,
         rdf_type_uri=NUMERICALINDEX_TYPE_URI,
         rdf_type_name=NUMERICALINDEX_TYPE_NAME, 

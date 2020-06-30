@@ -33,7 +33,7 @@ def visualizations_get(username=None, label=None, page=None, per_page=None):  # 
         rdf_type_name=VISUALIZATION_TYPE_NAME, 
         kls=Visualization)
 
-def visualizations_id_delete(id, user=None):  # noqa: E501
+def visualizations_id_delete(id, user):  # noqa: E501
     """Delete an existing Visualization
 
     Delete an existing Visualization (more information in https://w3id.org/okn/o/sd#Visualization) # noqa: E501
@@ -47,8 +47,7 @@ def visualizations_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=VISUALIZATION_TYPE_URI,
         rdf_type_name=VISUALIZATION_TYPE_NAME, 
         kls=Visualization)
@@ -73,7 +72,7 @@ def visualizations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=VISUALIZATION_TYPE_NAME, 
         kls=Visualization)
 
-def visualizations_id_put(id, user=None, visualization=None):  # noqa: E501
+def visualizations_id_put(id, user, visualization=None):  # noqa: E501
     """Update an existing Visualization
 
     Updates an existing Visualization (more information in https://w3id.org/okn/o/sd#Visualization) # noqa: E501
@@ -91,14 +90,13 @@ def visualizations_id_put(id, user=None, visualization=None):  # noqa: E501
     if connexion.request.is_json:
         visualization = Visualization.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=visualization,
         rdf_type_uri=VISUALIZATION_TYPE_URI,
         rdf_type_name=VISUALIZATION_TYPE_NAME, 
         kls=Visualization)
 
-def visualizations_post(user=None, visualization=None):  # noqa: E501
+def visualizations_post(user, visualization=None):  # noqa: E501
     """Create one Visualization
 
     Create a new instance of Visualization (more information in https://w3id.org/okn/o/sd#Visualization) # noqa: E501
@@ -114,8 +112,7 @@ def visualizations_post(user=None, visualization=None):  # noqa: E501
     if connexion.request.is_json:
         visualization = Visualization.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=visualization,
         rdf_type_uri=VISUALIZATION_TYPE_URI,
         rdf_type_name=VISUALIZATION_TYPE_NAME, 

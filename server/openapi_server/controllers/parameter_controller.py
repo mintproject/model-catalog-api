@@ -33,7 +33,7 @@ def parameters_get(username=None, label=None, page=None, per_page=None):  # noqa
         rdf_type_name=PARAMETER_TYPE_NAME, 
         kls=Parameter)
 
-def parameters_id_delete(id, user=None):  # noqa: E501
+def parameters_id_delete(id, user):  # noqa: E501
     """Delete an existing Parameter
 
     Delete an existing Parameter (more information in https://w3id.org/okn/o/sd#Parameter) # noqa: E501
@@ -47,8 +47,7 @@ def parameters_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=PARAMETER_TYPE_URI,
         rdf_type_name=PARAMETER_TYPE_NAME, 
         kls=Parameter)
@@ -73,7 +72,7 @@ def parameters_id_get(id, username=None):  # noqa: E501
         rdf_type_name=PARAMETER_TYPE_NAME, 
         kls=Parameter)
 
-def parameters_id_put(id, user=None, parameter=None):  # noqa: E501
+def parameters_id_put(id, user, parameter=None):  # noqa: E501
     """Update an existing Parameter
 
     Updates an existing Parameter (more information in https://w3id.org/okn/o/sd#Parameter) # noqa: E501
@@ -91,14 +90,13 @@ def parameters_id_put(id, user=None, parameter=None):  # noqa: E501
     if connexion.request.is_json:
         parameter = Parameter.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=parameter,
         rdf_type_uri=PARAMETER_TYPE_URI,
         rdf_type_name=PARAMETER_TYPE_NAME, 
         kls=Parameter)
 
-def parameters_post(user=None, parameter=None):  # noqa: E501
+def parameters_post(user, parameter=None):  # noqa: E501
     """Create one Parameter
 
     Create a new instance of Parameter (more information in https://w3id.org/okn/o/sd#Parameter) # noqa: E501
@@ -114,8 +112,7 @@ def parameters_post(user=None, parameter=None):  # noqa: E501
     if connexion.request.is_json:
         parameter = Parameter.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=parameter,
         rdf_type_uri=PARAMETER_TYPE_URI,
         rdf_type_name=PARAMETER_TYPE_NAME, 

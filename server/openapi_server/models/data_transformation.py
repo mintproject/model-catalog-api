@@ -15,9 +15,11 @@ class DataTransformation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, doi=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """DataTransformation - a model defined in OpenAPI
 
+        :param has_download_instructions: The has_download_instructions of this DataTransformation.  # noqa: E501
+        :type has_download_instructions: List[str]
         :param keywords: The keywords of this DataTransformation.  # noqa: E501
         :type keywords: List[str]
         :param has_documentation: The has_documentation of this DataTransformation.  # noqa: E501
@@ -34,6 +36,8 @@ class DataTransformation(Model):
         :type has_installation_instructions: List[str]
         :param compatible_visualization_software: The compatible_visualization_software of this DataTransformation.  # noqa: E501
         :type compatible_visualization_software: List[Software]
+        :param copyright_holder: The copyright_holder of this DataTransformation.  # noqa: E501
+        :type copyright_holder: List[object]
         :param has_faq: The has_faq of this DataTransformation.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this DataTransformation.  # noqa: E501
@@ -54,6 +58,8 @@ class DataTransformation(Model):
         :type author: List[object]
         :param has_constraint: The has_constraint of this DataTransformation.  # noqa: E501
         :type has_constraint: List[str]
+        :param has_build_file: The has_build_file of this DataTransformation.  # noqa: E501
+        :type has_build_file: List[str]
         :param short_description: The short_description of this DataTransformation.  # noqa: E501
         :type short_description: List[str]
         :param has_execution_command: The has_execution_command of this DataTransformation.  # noqa: E501
@@ -72,6 +78,8 @@ class DataTransformation(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this DataTransformation.  # noqa: E501
         :type has_output: List[DatasetSpecification]
+        :param doi: The doi of this DataTransformation.  # noqa: E501
+        :type doi: List[str]
         :param has_funding: The has_funding of this DataTransformation.  # noqa: E501
         :type has_funding: List[FundingInformation]
         :param has_component_location: The has_component_location of this DataTransformation.  # noqa: E501
@@ -90,6 +98,8 @@ class DataTransformation(Model):
         :type screenshot: List[Image]
         :param had_primary_source: The had_primary_source of this DataTransformation.  # noqa: E501
         :type had_primary_source: List[object]
+        :param issue_tracker: The issue_tracker of this DataTransformation.  # noqa: E501
+        :type issue_tracker: List[str]
         :param has_software_image: The has_software_image of this DataTransformation.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this DataTransformation.  # noqa: E501
@@ -98,6 +108,8 @@ class DataTransformation(Model):
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this DataTransformation.  # noqa: E501
         :type has_purpose: List[str]
+        :param has_executable_instructions: The has_executable_instructions of this DataTransformation.  # noqa: E501
+        :type has_executable_instructions: List[str]
         :param has_sample_visualization: The has_sample_visualization of this DataTransformation.  # noqa: E501
         :type has_sample_visualization: List[Visualization]
         :param memory_requirements: The memory_requirements of this DataTransformation.  # noqa: E501
@@ -112,6 +124,8 @@ class DataTransformation(Model):
         :type has_usage_notes: List[str]
         :param has_support_script_location: The has_support_script_location of this DataTransformation.  # noqa: E501
         :type has_support_script_location: List[str]
+        :param readme: The readme of this DataTransformation.  # noqa: E501
+        :type readme: List[str]
         :param label: The label of this DataTransformation.  # noqa: E501
         :type label: List[str]
         :param has_assumption: The has_assumption of this DataTransformation.  # noqa: E501
@@ -120,6 +134,8 @@ class DataTransformation(Model):
         :type has_parameter: List[Parameter]
         :param operating_systems: The operating_systems of this DataTransformation.  # noqa: E501
         :type operating_systems: List[str]
+        :param has_executable_notebook: The has_executable_notebook of this DataTransformation.  # noqa: E501
+        :type has_executable_notebook: List[str]
         :param useful_for_calculating_index: The useful_for_calculating_index of this DataTransformation.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
         :param has_input: The has_input of this DataTransformation.  # noqa: E501
@@ -156,6 +172,7 @@ class DataTransformation(Model):
           # noqa: E501
 
         self.openapi_types = {
+            'has_download_instructions': List[str],
             'keywords': List[str],
             'has_documentation': List[str],
             'has_implementation_script_location': List[str],
@@ -164,6 +181,7 @@ class DataTransformation(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
+            'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
             'has_contact_person': List[object],
@@ -174,6 +192,7 @@ class DataTransformation(Model):
             'has_sample_result': List[SampleResource],
             'author': List[object],
             'has_constraint': List[str],
+            'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
             'date_published': List[str],
@@ -183,6 +202,7 @@ class DataTransformation(Model):
             'has_example': List[str],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
+            'doi': List[str],
             'has_funding': List[FundingInformation],
             'has_component_location': List[str],
             'support_details': List[str],
@@ -192,10 +212,12 @@ class DataTransformation(Model):
             'reference_publication': List[str],
             'screenshot': List[Image],
             'had_primary_source': List[object],
+            'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
             'contributor': List[Person],
             'has_purpose': List[str],
+            'has_executable_instructions': List[str],
             'has_sample_visualization': List[Visualization],
             'memory_requirements': List[str],
             'website': List[str],
@@ -203,15 +225,18 @@ class DataTransformation(Model):
             'processor_requirements': List[str],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
+            'readme': List[str],
             'label': List[str],
             'has_assumption': List[str],
             'has_parameter': List[Parameter],
             'operating_systems': List[str],
+            'has_executable_notebook': List[str],
             'useful_for_calculating_index': List[NumericalIndex],
             'has_input': List[DatasetSpecification]
         }
 
         self.attribute_map = {
+            'has_download_instructions': 'hasDownloadInstructions',
             'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
@@ -220,6 +245,7 @@ class DataTransformation(Model):
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'copyright_holder': 'copyrightHolder',
             'has_faq': 'hasFAQ',
             'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
@@ -230,6 +256,7 @@ class DataTransformation(Model):
             'has_sample_result': 'hasSampleResult',
             'author': 'author',
             'has_constraint': 'hasConstraint',
+            'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
             'has_execution_command': 'hasExecutionCommand',
             'date_published': 'datePublished',
@@ -239,6 +266,7 @@ class DataTransformation(Model):
             'has_example': 'hasExample',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
+            'doi': 'doi',
             'has_funding': 'hasFunding',
             'has_component_location': 'hasComponentLocation',
             'support_details': 'supportDetails',
@@ -248,10 +276,12 @@ class DataTransformation(Model):
             'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
             'had_primary_source': 'hadPrimarySource',
+            'issue_tracker': 'issueTracker',
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
             'has_purpose': 'hasPurpose',
+            'has_executable_instructions': 'hasExecutableInstructions',
             'has_sample_visualization': 'hasSampleVisualization',
             'memory_requirements': 'memoryRequirements',
             'website': 'website',
@@ -259,14 +289,17 @@ class DataTransformation(Model):
             'processor_requirements': 'processorRequirements',
             'has_usage_notes': 'hasUsageNotes',
             'has_support_script_location': 'hasSupportScriptLocation',
+            'readme': 'readme',
             'label': 'label',
             'has_assumption': 'hasAssumption',
             'has_parameter': 'hasParameter',
             'operating_systems': 'operatingSystems',
+            'has_executable_notebook': 'hasExecutableNotebook',
             'useful_for_calculating_index': 'usefulForCalculatingIndex',
             'has_input': 'hasInput'
         }
 
+        self._has_download_instructions = has_download_instructions
         self._keywords = keywords
         self._has_documentation = has_documentation
         self._has_implementation_script_location = has_implementation_script_location
@@ -275,6 +308,7 @@ class DataTransformation(Model):
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._compatible_visualization_software = compatible_visualization_software
+        self._copyright_holder = copyright_holder
         self._has_faq = has_faq
         self._logo = logo
         self._has_contact_person = has_contact_person
@@ -285,6 +319,7 @@ class DataTransformation(Model):
         self._has_sample_result = has_sample_result
         self._author = author
         self._has_constraint = has_constraint
+        self._has_build_file = has_build_file
         self._short_description = short_description
         self._has_execution_command = has_execution_command
         self._date_published = date_published
@@ -294,6 +329,7 @@ class DataTransformation(Model):
         self._has_example = has_example
         self._publisher = publisher
         self._has_output = has_output
+        self._doi = doi
         self._has_funding = has_funding
         self._has_component_location = has_component_location
         self._support_details = support_details
@@ -303,10 +339,12 @@ class DataTransformation(Model):
         self._reference_publication = reference_publication
         self._screenshot = screenshot
         self._had_primary_source = had_primary_source
+        self._issue_tracker = issue_tracker
         self._has_software_image = has_software_image
         self._date_created = date_created
         self._contributor = contributor
         self._has_purpose = has_purpose
+        self._has_executable_instructions = has_executable_instructions
         self._has_sample_visualization = has_sample_visualization
         self._memory_requirements = memory_requirements
         self._website = website
@@ -314,10 +352,12 @@ class DataTransformation(Model):
         self._processor_requirements = processor_requirements
         self._has_usage_notes = has_usage_notes
         self._has_support_script_location = has_support_script_location
+        self._readme = readme
         self._label = label
         self._has_assumption = has_assumption
         self._has_parameter = has_parameter
         self._operating_systems = operating_systems
+        self._has_executable_notebook = has_executable_notebook
         self._useful_for_calculating_index = useful_for_calculating_index
         self._has_input = has_input
 
@@ -331,6 +371,29 @@ class DataTransformation(Model):
         :rtype: DataTransformation
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_download_instructions(self):
+        """Gets the has_download_instructions of this DataTransformation.
+
+        Instructions needed to download a software component. The difference with `hasDownloadURL` is that this property captures the human readable instructions required to download software. For example, sometimes an authentication is needed, users need to fill in a form, etc.  # noqa: E501
+
+        :return: The has_download_instructions of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._has_download_instructions
+
+    @has_download_instructions.setter
+    def has_download_instructions(self, has_download_instructions):
+        """Sets the has_download_instructions of this DataTransformation.
+
+        Instructions needed to download a software component. The difference with `hasDownloadURL` is that this property captures the human readable instructions required to download software. For example, sometimes an authentication is needed, users need to fill in a form, etc.  # noqa: E501
+
+        :param has_download_instructions: The has_download_instructions of this DataTransformation.
+        :type has_download_instructions: List[str]
+        """
+
+        self._has_download_instructions = has_download_instructions
 
     @property
     def keywords(self):
@@ -474,7 +537,7 @@ class DataTransformation(Model):
     def has_installation_instructions(self):
         """Gets the has_installation_instructions of this DataTransformation.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Instructions required to install this particular piece of software. Installation instructions usually are available in a human-readable manner.  # noqa: E501
 
         :return: The has_installation_instructions of this DataTransformation.
         :rtype: List[str]
@@ -485,7 +548,7 @@ class DataTransformation(Model):
     def has_installation_instructions(self, has_installation_instructions):
         """Sets the has_installation_instructions of this DataTransformation.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Instructions required to install this particular piece of software. Installation instructions usually are available in a human-readable manner.  # noqa: E501
 
         :param has_installation_instructions: The has_installation_instructions of this DataTransformation.
         :type has_installation_instructions: List[str]
@@ -515,6 +578,29 @@ class DataTransformation(Model):
         """
 
         self._compatible_visualization_software = compatible_visualization_software
+
+    @property
+    def copyright_holder(self):
+        """Gets the copyright_holder of this DataTransformation.
+
+        Description not available  # noqa: E501
+
+        :return: The copyright_holder of this DataTransformation.
+        :rtype: List[object]
+        """
+        return self._copyright_holder
+
+    @copyright_holder.setter
+    def copyright_holder(self, copyright_holder):
+        """Sets the copyright_holder of this DataTransformation.
+
+        Description not available  # noqa: E501
+
+        :param copyright_holder: The copyright_holder of this DataTransformation.
+        :type copyright_holder: List[object]
+        """
+
+        self._copyright_holder = copyright_holder
 
     @property
     def has_faq(self):
@@ -747,6 +833,29 @@ class DataTransformation(Model):
         self._has_constraint = has_constraint
 
     @property
+    def has_build_file(self):
+        """Gets the has_build_file of this DataTransformation.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :return: The has_build_file of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._has_build_file
+
+    @has_build_file.setter
+    def has_build_file(self, has_build_file):
+        """Sets the has_build_file of this DataTransformation.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :param has_build_file: The has_build_file of this DataTransformation.
+        :type has_build_file: List[str]
+        """
+
+        self._has_build_file = has_build_file
+
+    @property
     def short_description(self):
         """Gets the short_description of this DataTransformation.
 
@@ -888,7 +997,7 @@ class DataTransformation(Model):
     def has_example(self):
         """Gets the has_example of this DataTransformation.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
         :return: The has_example of this DataTransformation.
         :rtype: List[str]
@@ -899,7 +1008,7 @@ class DataTransformation(Model):
     def has_example(self, has_example):
         """Sets the has_example of this DataTransformation.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
         :param has_example: The has_example of this DataTransformation.
         :type has_example: List[str]
@@ -952,6 +1061,29 @@ class DataTransformation(Model):
         """
 
         self._has_output = has_output
+
+    @property
+    def doi(self):
+        """Gets the doi of this DataTransformation.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :return: The doi of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._doi
+
+    @doi.setter
+    def doi(self, doi):
+        """Sets the doi of this DataTransformation.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :param doi: The doi of this DataTransformation.
+        :type doi: List[str]
+        """
+
+        self._doi = doi
 
     @property
     def has_funding(self):
@@ -1095,7 +1227,7 @@ class DataTransformation(Model):
     def reference_publication(self):
         """Gets the reference_publication of this DataTransformation.
 
-        Main publication to cite in this software  # noqa: E501
+        Main publication to cite for this software component  # noqa: E501
 
         :return: The reference_publication of this DataTransformation.
         :rtype: List[str]
@@ -1106,7 +1238,7 @@ class DataTransformation(Model):
     def reference_publication(self, reference_publication):
         """Sets the reference_publication of this DataTransformation.
 
-        Main publication to cite in this software  # noqa: E501
+        Main publication to cite for this software component  # noqa: E501
 
         :param reference_publication: The reference_publication of this DataTransformation.
         :type reference_publication: List[str]
@@ -1159,6 +1291,29 @@ class DataTransformation(Model):
         """
 
         self._had_primary_source = had_primary_source
+
+    @property
+    def issue_tracker(self):
+        """Gets the issue_tracker of this DataTransformation.
+
+        Pointer to the issue tracker of a software component  # noqa: E501
+
+        :return: The issue_tracker of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._issue_tracker
+
+    @issue_tracker.setter
+    def issue_tracker(self, issue_tracker):
+        """Sets the issue_tracker of this DataTransformation.
+
+        Pointer to the issue tracker of a software component  # noqa: E501
+
+        :param issue_tracker: The issue_tracker of this DataTransformation.
+        :type issue_tracker: List[str]
+        """
+
+        self._issue_tracker = issue_tracker
 
     @property
     def has_software_image(self):
@@ -1251,6 +1406,29 @@ class DataTransformation(Model):
         """
 
         self._has_purpose = has_purpose
+
+    @property
+    def has_executable_instructions(self):
+        """Gets the has_executable_instructions of this DataTransformation.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :return: The has_executable_instructions of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._has_executable_instructions
+
+    @has_executable_instructions.setter
+    def has_executable_instructions(self, has_executable_instructions):
+        """Sets the has_executable_instructions of this DataTransformation.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :param has_executable_instructions: The has_executable_instructions of this DataTransformation.
+        :type has_executable_instructions: List[str]
+        """
+
+        self._has_executable_instructions = has_executable_instructions
 
     @property
     def has_sample_visualization(self):
@@ -1414,6 +1592,29 @@ class DataTransformation(Model):
         self._has_support_script_location = has_support_script_location
 
     @property
+    def readme(self):
+        """Gets the readme of this DataTransformation.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :return: The readme of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._readme
+
+    @readme.setter
+    def readme(self, readme):
+        """Sets the readme of this DataTransformation.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :param readme: The readme of this DataTransformation.
+        :type readme: List[str]
+        """
+
+        self._readme = readme
+
+    @property
     def label(self):
         """Gets the label of this DataTransformation.
 
@@ -1504,6 +1705,29 @@ class DataTransformation(Model):
         """
 
         self._operating_systems = operating_systems
+
+    @property
+    def has_executable_notebook(self):
+        """Gets the has_executable_notebook of this DataTransformation.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :return: The has_executable_notebook of this DataTransformation.
+        :rtype: List[str]
+        """
+        return self._has_executable_notebook
+
+    @has_executable_notebook.setter
+    def has_executable_notebook(self, has_executable_notebook):
+        """Sets the has_executable_notebook of this DataTransformation.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :param has_executable_notebook: The has_executable_notebook of this DataTransformation.
+        :type has_executable_notebook: List[str]
+        """
+
+        self._has_executable_notebook = has_executable_notebook
 
     @property
     def useful_for_calculating_index(self):

@@ -153,7 +153,7 @@ def models_get(username=None, label=None, page=None, per_page=None):  # noqa: E5
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
 
-def models_id_delete(id, user=None):  # noqa: E501
+def models_id_delete(id, user):  # noqa: E501
     """Delete an existing Model
 
     Delete an existing Model (more information in https://w3id.org/okn/o/sdm#Model) # noqa: E501
@@ -167,8 +167,7 @@ def models_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=MODEL_TYPE_URI,
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
@@ -193,7 +192,7 @@ def models_id_get(id, username=None):  # noqa: E501
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
 
-def models_id_put(id, user=None, model=None):  # noqa: E501
+def models_id_put(id, user, model=None):  # noqa: E501
     """Update an existing Model
 
     Updates an existing Model (more information in https://w3id.org/okn/o/sdm#Model) # noqa: E501
@@ -211,14 +210,13 @@ def models_id_put(id, user=None, model=None):  # noqa: E501
     if connexion.request.is_json:
         model = Model.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=model,
         rdf_type_uri=MODEL_TYPE_URI,
         rdf_type_name=MODEL_TYPE_NAME, 
         kls=Model)
 
-def models_post(user=None, model=None):  # noqa: E501
+def models_post(user, model=None):  # noqa: E501
     """Create one Model
 
     Create a new instance of Model (more information in https://w3id.org/okn/o/sdm#Model) # noqa: E501
@@ -234,8 +232,7 @@ def models_post(user=None, model=None):  # noqa: E501
     if connexion.request.is_json:
         model = Model.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=model,
         rdf_type_uri=MODEL_TYPE_URI,
         rdf_type_name=MODEL_TYPE_NAME, 

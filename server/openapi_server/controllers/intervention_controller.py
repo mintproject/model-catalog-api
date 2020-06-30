@@ -33,7 +33,7 @@ def interventions_get(username=None, label=None, page=None, per_page=None):  # n
         rdf_type_name=INTERVENTION_TYPE_NAME, 
         kls=Intervention)
 
-def interventions_id_delete(id, user=None):  # noqa: E501
+def interventions_id_delete(id, user):  # noqa: E501
     """Delete an existing Intervention
 
     Delete an existing Intervention (more information in https://w3id.org/okn/o/sdm#Intervention) # noqa: E501
@@ -47,8 +47,7 @@ def interventions_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=INTERVENTION_TYPE_URI,
         rdf_type_name=INTERVENTION_TYPE_NAME, 
         kls=Intervention)
@@ -73,7 +72,7 @@ def interventions_id_get(id, username=None):  # noqa: E501
         rdf_type_name=INTERVENTION_TYPE_NAME, 
         kls=Intervention)
 
-def interventions_id_put(id, user=None, intervention=None):  # noqa: E501
+def interventions_id_put(id, user, intervention=None):  # noqa: E501
     """Update an existing Intervention
 
     Updates an existing Intervention (more information in https://w3id.org/okn/o/sdm#Intervention) # noqa: E501
@@ -91,14 +90,13 @@ def interventions_id_put(id, user=None, intervention=None):  # noqa: E501
     if connexion.request.is_json:
         intervention = Intervention.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=intervention,
         rdf_type_uri=INTERVENTION_TYPE_URI,
         rdf_type_name=INTERVENTION_TYPE_NAME, 
         kls=Intervention)
 
-def interventions_post(user=None, intervention=None):  # noqa: E501
+def interventions_post(user, intervention=None):  # noqa: E501
     """Create one Intervention
 
     Create a new instance of Intervention (more information in https://w3id.org/okn/o/sdm#Intervention) # noqa: E501
@@ -114,8 +112,7 @@ def interventions_post(user=None, intervention=None):  # noqa: E501
     if connexion.request.is_json:
         intervention = Intervention.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=intervention,
         rdf_type_uri=INTERVENTION_TYPE_URI,
         rdf_type_name=INTERVENTION_TYPE_NAME, 

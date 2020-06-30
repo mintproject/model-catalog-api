@@ -15,9 +15,11 @@ class CausalDiagram(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, label=None, type=None, has_part=None):  # noqa: E501
+    def __init__(self, has_diagram_part=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """CausalDiagram - a model defined in OpenAPI
 
+        :param has_diagram_part: The has_diagram_part of this CausalDiagram.  # noqa: E501
+        :type has_diagram_part: List[object]
         :param description: The description of this CausalDiagram.  # noqa: E501
         :type description: List[str]
         :param id: The id of this CausalDiagram.  # noqa: E501
@@ -26,32 +28,30 @@ class CausalDiagram(Model):
         :type label: List[str]
         :param type: The type of this CausalDiagram.  # noqa: E501
         :type type: List[str]
-        :param has_part: The has_part of this CausalDiagram.  # noqa: E501
-        :type has_part: List[object]
         """
 
 
         self.openapi_types = {
+            'has_diagram_part': List[object],
             'description': List[str],
             'id': str,
             'label': List[str],
-            'type': List[str],
-            'has_part': List[object]
+            'type': List[str]
         }
 
         self.attribute_map = {
+            'has_diagram_part': 'hasDiagramPart',
             'description': 'description',
             'id': 'id',
             'label': 'label',
-            'type': 'type',
-            'has_part': 'hasPart'
+            'type': 'type'
         }
 
+        self._has_diagram_part = has_diagram_part
         self._description = description
         self._id = id
         self._label = label
         self._type = type
-        self._has_part = has_part
 
     @classmethod
     def from_dict(cls, dikt) -> 'CausalDiagram':
@@ -63,6 +63,29 @@ class CausalDiagram(Model):
         :rtype: CausalDiagram
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_diagram_part(self):
+        """Gets the has_diagram_part of this CausalDiagram.
+
+        Property that links a causal diagram with its constituent nodes  # noqa: E501
+
+        :return: The has_diagram_part of this CausalDiagram.
+        :rtype: List[object]
+        """
+        return self._has_diagram_part
+
+    @has_diagram_part.setter
+    def has_diagram_part(self, has_diagram_part):
+        """Sets the has_diagram_part of this CausalDiagram.
+
+        Property that links a causal diagram with its constituent nodes  # noqa: E501
+
+        :param has_diagram_part: The has_diagram_part of this CausalDiagram.
+        :type has_diagram_part: List[object]
+        """
+
+        self._has_diagram_part = has_diagram_part
 
     @property
     def description(self):
@@ -155,26 +178,3 @@ class CausalDiagram(Model):
         """
 
         self._type = type
-
-    @property
-    def has_part(self):
-        """Gets the has_part of this CausalDiagram.
-
-        Description not available  # noqa: E501
-
-        :return: The has_part of this CausalDiagram.
-        :rtype: List[object]
-        """
-        return self._has_part
-
-    @has_part.setter
-    def has_part(self, has_part):
-        """Sets the has_part of this CausalDiagram.
-
-        Description not available  # noqa: E501
-
-        :param has_part: The has_part of this CausalDiagram.
-        :type has_part: List[object]
-        """
-
-        self._has_part = has_part

@@ -33,7 +33,7 @@ def softwareversions_get(username=None, label=None, page=None, per_page=None):  
         rdf_type_name=SOFTWAREVERSION_TYPE_NAME, 
         kls=SoftwareVersion)
 
-def softwareversions_id_delete(id, user=None):  # noqa: E501
+def softwareversions_id_delete(id, user):  # noqa: E501
     """Delete an existing SoftwareVersion
 
     Delete an existing SoftwareVersion (more information in https://w3id.org/okn/o/sd#SoftwareVersion) # noqa: E501
@@ -47,8 +47,7 @@ def softwareversions_id_delete(id, user=None):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,
-        user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SOFTWAREVERSION_TYPE_URI,
         rdf_type_name=SOFTWAREVERSION_TYPE_NAME, 
         kls=SoftwareVersion)
@@ -73,7 +72,7 @@ def softwareversions_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SOFTWAREVERSION_TYPE_NAME, 
         kls=SoftwareVersion)
 
-def softwareversions_id_put(id, user=None, software_version=None):  # noqa: E501
+def softwareversions_id_put(id, user, software_version=None):  # noqa: E501
     """Update an existing SoftwareVersion
 
     Updates an existing SoftwareVersion (more information in https://w3id.org/okn/o/sd#SoftwareVersion) # noqa: E501
@@ -91,14 +90,13 @@ def softwareversions_id_put(id, user=None, software_version=None):  # noqa: E501
     if connexion.request.is_json:
         software_version = SoftwareVersion.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,
-        user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=software_version,
         rdf_type_uri=SOFTWAREVERSION_TYPE_URI,
         rdf_type_name=SOFTWAREVERSION_TYPE_NAME, 
         kls=SoftwareVersion)
 
-def softwareversions_post(user=None, software_version=None):  # noqa: E501
+def softwareversions_post(user, software_version=None):  # noqa: E501
     """Create one SoftwareVersion
 
     Create a new instance of SoftwareVersion (more information in https://w3id.org/okn/o/sd#SoftwareVersion) # noqa: E501
@@ -114,8 +112,7 @@ def softwareversions_post(user=None, software_version=None):  # noqa: E501
     if connexion.request.is_json:
         software_version = SoftwareVersion.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(
-        user=user,
+    return query_manager.post_resource(user=user,
         body=software_version,
         rdf_type_uri=SOFTWAREVERSION_TYPE_URI,
         rdf_type_name=SOFTWAREVERSION_TYPE_NAME, 

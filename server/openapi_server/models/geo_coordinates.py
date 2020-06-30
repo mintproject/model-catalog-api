@@ -78,7 +78,7 @@ class GeoCoordinates(Model):
     def elevation(self):
         """Gets the elevation of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Elevation of a location (WGS84)  # noqa: E501
 
         :return: The elevation of this GeoCoordinates.
         :rtype: List[str]
@@ -89,7 +89,7 @@ class GeoCoordinates(Model):
     def elevation(self, elevation):
         """Sets the elevation of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Elevation of a location (WGS84)  # noqa: E501
 
         :param elevation: The elevation of this GeoCoordinates.
         :type elevation: List[str]
@@ -101,7 +101,7 @@ class GeoCoordinates(Model):
     def latitude(self):
         """Gets the latitude of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Latitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :return: The latitude of this GeoCoordinates.
         :rtype: List[str]
@@ -112,7 +112,7 @@ class GeoCoordinates(Model):
     def latitude(self, latitude):
         """Sets the latitude of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Latitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :param latitude: The latitude of this GeoCoordinates.
         :type latitude: List[str]
@@ -216,7 +216,7 @@ class GeoCoordinates(Model):
     def longitude(self):
         """Gets the longitude of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Longitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :return: The longitude of this GeoCoordinates.
         :rtype: List[str]
@@ -227,7 +227,7 @@ class GeoCoordinates(Model):
     def longitude(self, longitude):
         """Sets the longitude of this GeoCoordinates.
 
-        Description not available  # noqa: E501
+        Longitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :param longitude: The longitude of this GeoCoordinates.
         :type longitude: List[str]

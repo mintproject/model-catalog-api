@@ -15,13 +15,15 @@ class PointBasedGrid(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_coordinate_system=None, has_spatial_resolution=None, has_shape=None, has_dimension=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_coordinate_system=None, has_spatial_resolution=None, has_shape=None, has_dimension=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
         """PointBasedGrid - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this PointBasedGrid.  # noqa: E501
         :type has_dimensionality: List[int]
         :param has_format: The has_format of this PointBasedGrid.  # noqa: E501
         :type has_format: List[str]
+        :param path_location: The path_location of this PointBasedGrid.  # noqa: E501
+        :type path_location: List[str]
         :param has_file_structure: The has_file_structure of this PointBasedGrid.  # noqa: E501
         :type has_file_structure: List[object]
         :param description: The description of this PointBasedGrid.  # noqa: E501
@@ -64,6 +66,7 @@ class PointBasedGrid(Model):
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
+            'path_location': List[str],
             'has_file_structure': List[object],
             'description': List[str],
             'has_data_transformation': List[DataTransformation],
@@ -83,6 +86,7 @@ class PointBasedGrid(Model):
         self.attribute_map = {
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
+            'path_location': 'pathLocation',
             'has_file_structure': 'hasFileStructure',
             'description': 'description',
             'has_data_transformation': 'hasDataTransformation',
@@ -101,6 +105,7 @@ class PointBasedGrid(Model):
 
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
+        self._path_location = path_location
         self._has_file_structure = has_file_structure
         self._description = description
         self._has_data_transformation = has_data_transformation
@@ -131,7 +136,7 @@ class PointBasedGrid(Model):
     def has_dimensionality(self):
         """Gets the has_dimensionality of this PointBasedGrid.
 
-        Property to indicate dimensionality of the input or output of a dataset specification  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_dimensionality of this PointBasedGrid.
         :rtype: List[int]
@@ -142,7 +147,7 @@ class PointBasedGrid(Model):
     def has_dimensionality(self, has_dimensionality):
         """Sets the has_dimensionality of this PointBasedGrid.
 
-        Property to indicate dimensionality of the input or output of a dataset specification  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_dimensionality: The has_dimensionality of this PointBasedGrid.
         :type has_dimensionality: List[int]
@@ -154,7 +159,7 @@ class PointBasedGrid(Model):
     def has_format(self):
         """Gets the has_format of this PointBasedGrid.
 
-        Format followed by a file. For example, txt, nc, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_format of this PointBasedGrid.
         :rtype: List[str]
@@ -165,7 +170,7 @@ class PointBasedGrid(Model):
     def has_format(self, has_format):
         """Sets the has_format of this PointBasedGrid.
 
-        Format followed by a file. For example, txt, nc, etc.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_format: The has_format of this PointBasedGrid.
         :type has_format: List[str]
@@ -174,10 +179,33 @@ class PointBasedGrid(Model):
         self._has_format = has_format
 
     @property
+    def path_location(self):
+        """Gets the path_location of this PointBasedGrid.
+
+        Description not available  # noqa: E501
+
+        :return: The path_location of this PointBasedGrid.
+        :rtype: List[str]
+        """
+        return self._path_location
+
+    @path_location.setter
+    def path_location(self, path_location):
+        """Sets the path_location of this PointBasedGrid.
+
+        Description not available  # noqa: E501
+
+        :param path_location: The path_location of this PointBasedGrid.
+        :type path_location: List[str]
+        """
+
+        self._path_location = path_location
+
+    @property
     def has_file_structure(self):
         """Gets the has_file_structure of this PointBasedGrid.
 
-        Relates a dataset specification to the data structure definition  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_file_structure of this PointBasedGrid.
         :rtype: List[object]
@@ -188,7 +216,7 @@ class PointBasedGrid(Model):
     def has_file_structure(self, has_file_structure):
         """Sets the has_file_structure of this PointBasedGrid.
 
-        Relates a dataset specification to the data structure definition  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_file_structure: The has_file_structure of this PointBasedGrid.
         :type has_file_structure: List[object]
@@ -223,7 +251,7 @@ class PointBasedGrid(Model):
     def has_data_transformation(self):
         """Gets the has_data_transformation of this PointBasedGrid.
 
-        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_data_transformation of this PointBasedGrid.
         :rtype: List[DataTransformation]
@@ -234,7 +262,7 @@ class PointBasedGrid(Model):
     def has_data_transformation(self, has_data_transformation):
         """Sets the has_data_transformation of this PointBasedGrid.
 
-        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_data_transformation: The has_data_transformation of this PointBasedGrid.
         :type has_data_transformation: List[DataTransformation]
@@ -246,7 +274,7 @@ class PointBasedGrid(Model):
     def has_presentation(self):
         """Gets the has_presentation of this PointBasedGrid.
 
-        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_presentation of this PointBasedGrid.
         :rtype: List[VariablePresentation]
@@ -257,7 +285,7 @@ class PointBasedGrid(Model):
     def has_presentation(self, has_presentation):
         """Sets the has_presentation of this PointBasedGrid.
 
-        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_presentation: The has_presentation of this PointBasedGrid.
         :type has_presentation: List[VariablePresentation]
@@ -315,7 +343,7 @@ class PointBasedGrid(Model):
     def has_fixed_resource(self):
         """Gets the has_fixed_resource of this PointBasedGrid.
 
-        Property that links a parameter or an input to a fixed value. For example, in a given configuration a parameter with the planting date for a model could be fixed to avoid the user changing it for that region.  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_fixed_resource of this PointBasedGrid.
         :rtype: List[SampleResource]
@@ -326,7 +354,7 @@ class PointBasedGrid(Model):
     def has_fixed_resource(self, has_fixed_resource):
         """Sets the has_fixed_resource of this PointBasedGrid.
 
-        Property that links a parameter or an input to a fixed value. For example, in a given configuration a parameter with the planting date for a model could be fixed to avoid the user changing it for that region.  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_fixed_resource: The has_fixed_resource of this PointBasedGrid.
         :type has_fixed_resource: List[SampleResource]
@@ -361,7 +389,7 @@ class PointBasedGrid(Model):
     def has_spatial_resolution(self):
         """Gets the has_spatial_resolution of this PointBasedGrid.
 
-        Description not available  # noqa: E501
+        Spatial resolution of a grid (e.g., 50m)  # noqa: E501
 
         :return: The has_spatial_resolution of this PointBasedGrid.
         :rtype: List[str]
@@ -372,7 +400,7 @@ class PointBasedGrid(Model):
     def has_spatial_resolution(self, has_spatial_resolution):
         """Sets the has_spatial_resolution of this PointBasedGrid.
 
-        Description not available  # noqa: E501
+        Spatial resolution of a grid (e.g., 50m)  # noqa: E501
 
         :param has_spatial_resolution: The has_spatial_resolution of this PointBasedGrid.
         :type has_spatial_resolution: List[str]
@@ -407,7 +435,7 @@ class PointBasedGrid(Model):
     def has_dimension(self):
         """Gets the has_dimension of this PointBasedGrid.
 
-        Description not available  # noqa: E501
+        Dimension of the grid (2D, 3D)  # noqa: E501
 
         :return: The has_dimension of this PointBasedGrid.
         :rtype: List[str]
@@ -418,7 +446,7 @@ class PointBasedGrid(Model):
     def has_dimension(self, has_dimension):
         """Sets the has_dimension of this PointBasedGrid.
 
-        Description not available  # noqa: E501
+        Dimension of the grid (2D, 3D)  # noqa: E501
 
         :param has_dimension: The has_dimension of this PointBasedGrid.
         :type has_dimension: List[str]
@@ -430,7 +458,7 @@ class PointBasedGrid(Model):
     def has_data_transformation_setup(self):
         """Gets the has_data_transformation_setup of this PointBasedGrid.
 
-        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_data_transformation_setup of this PointBasedGrid.
         :rtype: List[DataTransformationSetup]
@@ -441,7 +469,7 @@ class PointBasedGrid(Model):
     def has_data_transformation_setup(self, has_data_transformation_setup):
         """Sets the has_data_transformation_setup of this PointBasedGrid.
 
-        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_data_transformation_setup: The has_data_transformation_setup of this PointBasedGrid.
         :type has_data_transformation_setup: List[DataTransformationSetup]
@@ -453,7 +481,7 @@ class PointBasedGrid(Model):
     def position(self):
         """Gets the position of this PointBasedGrid.
 
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The position of this PointBasedGrid.
         :rtype: List[int]
@@ -464,7 +492,7 @@ class PointBasedGrid(Model):
     def position(self, position):
         """Sets the position of this PointBasedGrid.
 
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+        Description not available  # noqa: E501
 
         :param position: The position of this PointBasedGrid.
         :type position: List[int]
