@@ -1,6 +1,6 @@
 import connexion
 import six
-from openapi_server.utils.request import get_resource, get_all_resource, put_resource, post_resource, delete_resource
+from openapi_server import query_manager
 from openapi_server.utils.vars import SOFTWAREIMAGE_TYPE_NAME, SOFTWAREIMAGE_TYPE_URI
 
 from openapi_server.models.software_image import SoftwareImage  # noqa: E501
@@ -24,7 +24,7 @@ def softwareimages_get(username=None, label=None, page=None, per_page=None):  # 
     """
 
 
-    return get_resource(
+    return query_manager.get_resource(
         username=username,
         label=label,
         page=page,
@@ -47,7 +47,7 @@ def softwareimages_id_delete(id, user):  # noqa: E501
     """
 
 
-    return delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
         kls=SoftwareImage)
@@ -66,7 +66,7 @@ def softwareimages_id_get(id, username=None):  # noqa: E501
     """
 
 
-    return get_resource(id=id,
+    return query_manager.get_resource(id=id,
         username=username,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
@@ -90,7 +90,7 @@ def softwareimages_id_put(id, user, software_image=None):  # noqa: E501
     if connexion.request.is_json:
         software_image = SoftwareImage.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=software_image,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
@@ -112,7 +112,7 @@ def softwareimages_post(user, software_image=None):  # noqa: E501
     if connexion.request.is_json:
         software_image = SoftwareImage.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return post_resource(user=user,
+    return query_manager.post_resource(user=user,
         body=software_image,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 

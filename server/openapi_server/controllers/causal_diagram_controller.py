@@ -1,6 +1,6 @@
 import connexion
 import six
-from openapi_server.utils.request import get_resource, get_all_resource, put_resource, post_resource, delete_resource
+from openapi_server import query_manager
 from openapi_server.utils.vars import CAUSALDIAGRAM_TYPE_NAME, CAUSALDIAGRAM_TYPE_URI
 
 from openapi_server.models.causal_diagram import CausalDiagram  # noqa: E501
@@ -24,7 +24,7 @@ def causaldiagrams_get(username=None, label=None, page=None, per_page=None):  # 
     """
 
 
-    return get_resource(
+    return query_manager.get_resource(
         username=username,
         label=label,
         page=page,
@@ -47,7 +47,7 @@ def causaldiagrams_id_delete(id, user):  # noqa: E501
     """
 
 
-    return delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,user=user,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)
@@ -66,7 +66,7 @@ def causaldiagrams_id_get(id, username=None):  # noqa: E501
     """
 
 
-    return get_resource(id=id,
+    return query_manager.get_resource(id=id,
         username=username,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
@@ -90,7 +90,7 @@ def causaldiagrams_id_put(id, user, causal_diagram=None):  # noqa: E501
     if connexion.request.is_json:
         causal_diagram = CausalDiagram.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,user=user,
         body=causal_diagram,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
@@ -112,7 +112,7 @@ def causaldiagrams_post(user, causal_diagram=None):  # noqa: E501
     if connexion.request.is_json:
         causal_diagram = CausalDiagram.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return post_resource(user=user,
+    return query_manager.post_resource(user=user,
         body=causal_diagram,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
