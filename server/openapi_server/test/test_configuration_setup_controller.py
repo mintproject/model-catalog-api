@@ -17,13 +17,10 @@ class TestConfigurationSetupController(BaseTestCase):
     def test_configurationsetups_get(self):
         """Test case for configurationsetups_get
 
-        List all instances of ConfigurationSetup
+        List all ConfigurationSetup entities
         """
-        query_string = [('username', 'username_example'),
-                        ('label', 'label_example'),
-                        ('page', 1),
-                        ('per_page', 100)]
-        headers = { 
+        query_string = [('username', 'mint@isi.edu')]
+        headers = {
             'Accept': 'application/json',
         }
         response = self.client.open(
@@ -31,107 +28,10 @@ class TestConfigurationSetupController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_configurationsetups_id_delete(self):
-        """Test case for configurationsetups_id_delete
-
-        Delete an existing ConfigurationSetup
-        """
-        headers = { 
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/configurationsetups/{id}'.format(id='id_example', user='user_example'),
-            method='DELETE',
-            headers=headers)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_configurationsetups_id_get(self):
-        """Test case for configurationsetups_id_get
-
-        Get a single ConfigurationSetup by its id
-        """
-        query_string = [('username', 'username_example')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/configurationsetups/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_configurationsetups_id_put(self):
-        """Test case for configurationsetups_id_put
-
-        Update an existing ConfigurationSetup
-        """
-        configuration_setup = {
-  "value" : {
-    "id" : "some_id"
-  }
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/configurationsetups/{id}'.format(id='id_example', user='user_example'),
-            method='PUT',
-            headers=headers,
-            data=json.dumps(configuration_setup),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_configurationsetups_post(self):
-        """Test case for configurationsetups_post
-
-        Create one ConfigurationSetup
-        """
-        configuration_setup = {
-  "value" : {
-    "id" : "some_id"
-  }
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/configurationsetups'.format(user='user_example'),
-            method='POST',
-            headers=headers,
-            data=json.dumps(configuration_setup),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_custom_configurationsetups_id_get(self):
-        """Test case for custom_configurationsetups_id_get
-
-        Get a ModelConfigurationSetup
-        """
-        query_string = [('username', 'username_example'),
-                        ('custom_query_name', 'custom_configurationsetups')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/custom/configurationsetups/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
+        self.assertTrue(response.json)
 
 if __name__ == '__main__':
     unittest.main()

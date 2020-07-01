@@ -16,12 +16,10 @@ class TestSoftwareConfigurationController(BaseTestCase):
     def test_softwareconfigurations_get(self):
         """Test case for softwareconfigurations_get
 
-        List all instances of SoftwareConfiguration
+        List all SoftwareConfiguration entities
         """
-        query_string = [('username', 'username_example'),
-                        ('label', 'label_example'),
-                        ('page', 1),
-                        ('per_page', 100)]
+        query_string = [('username', 'mint@isi.edu')]
+                        
         headers = { 
             'Accept': 'application/json',
         }
@@ -30,89 +28,9 @@ class TestSoftwareConfigurationController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
+        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_softwareconfigurations_id_delete(self):
-        """Test case for softwareconfigurations_id_delete
-
-        Delete an existing SoftwareConfiguration
-        """
-        headers = { 
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/softwareconfigurations/{id}'.format(id='id_example', user='user_example'),
-            method='DELETE',
-            headers=headers)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_softwareconfigurations_id_get(self):
-        """Test case for softwareconfigurations_id_get
-
-        Get a single SoftwareConfiguration by its id
-        """
-        query_string = [('username', 'username_example')]
-        headers = { 
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/softwareconfigurations/{id}'.format(id='id_example'),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_softwareconfigurations_id_put(self):
-        """Test case for softwareconfigurations_id_put
-
-        Update an existing SoftwareConfiguration
-        """
-        software_configuration = {
-  "value" : {
-    "id" : "some_id"
-  }
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/softwareconfigurations/{id}'.format(id='id_example', user='user_example'),
-            method='PUT',
-            headers=headers,
-            data=json.dumps(software_configuration),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_softwareconfigurations_post(self):
-        """Test case for softwareconfigurations_post
-
-        Create one SoftwareConfiguration
-        """
-        software_configuration = {
-  "value" : {
-    "id" : "some_id"
-  }
-}
-        headers = { 
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer special-key',
-        }
-        response = self.client.open(
-            '/v1.5.0/softwareconfigurations'.format(user='user_example'),
-            method='POST',
-            headers=headers,
-            data=json.dumps(software_configuration),
-            content_type='application/json')
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
 
 if __name__ == '__main__':
     unittest.main()
