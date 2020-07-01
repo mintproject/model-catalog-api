@@ -9,3 +9,13 @@ services:
       - ${PORT}:8080
     volumes:
       - ./openapi_server/openapi/:/usr/src/app/openapi_server/openapi/
+
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "${SWAGGER_PORT}:8080"
+    volumes:
+      - "./:/tmp/"
+    environment:
+      SWAGGER_JSON: "/tmp/openapi.json"
+
