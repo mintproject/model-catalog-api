@@ -35,13 +35,13 @@ class DataTransformationSetup(Model):
         :param has_installation_instructions: The has_installation_instructions of this DataTransformationSetup.  # noqa: E501
         :type has_installation_instructions: List[str]
         :param compatible_visualization_software: The compatible_visualization_software of this DataTransformationSetup.  # noqa: E501
-        :type compatible_visualization_software: List[Software]
+        :type compatible_visualization_software: List[object]
         :param copyright_holder: The copyright_holder of this DataTransformationSetup.  # noqa: E501
         :type copyright_holder: List[object]
         :param has_faq: The has_faq of this DataTransformationSetup.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this DataTransformationSetup.  # noqa: E501
-        :type logo: List[Image]
+        :type logo: List[object]
         :param has_contact_person: The has_contact_person of this DataTransformationSetup.  # noqa: E501
         :type has_contact_person: List[object]
         :param tag: The tag of this DataTransformationSetup.  # noqa: E501
@@ -51,9 +51,9 @@ class DataTransformationSetup(Model):
         :param identifier: The identifier of this DataTransformationSetup.  # noqa: E501
         :type identifier: List[str]
         :param has_sample_execution: The has_sample_execution of this DataTransformationSetup.  # noqa: E501
-        :type has_sample_execution: List[SampleExecution]
+        :type has_sample_execution: List[object]
         :param has_sample_result: The has_sample_result of this DataTransformationSetup.  # noqa: E501
-        :type has_sample_result: List[SampleResource]
+        :type has_sample_result: List[object]
         :param author: The author of this DataTransformationSetup.  # noqa: E501
         :type author: List[object]
         :param has_constraint: The has_constraint of this DataTransformationSetup.  # noqa: E501
@@ -69,25 +69,25 @@ class DataTransformationSetup(Model):
         :param license: The license of this DataTransformationSetup.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this DataTransformationSetup.  # noqa: E501
-        :type has_source_code: List[SourceCode]
+        :type has_source_code: List[object]
         :param has_setup: The has_setup of this DataTransformationSetup.  # noqa: E501
-        :type has_setup: List[ConfigurationSetup]
+        :type has_setup: List[object]
         :param has_example: The has_example of this DataTransformationSetup.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this DataTransformationSetup.  # noqa: E501
         :type publisher: List[object]
         :param has_output: The has_output of this DataTransformationSetup.  # noqa: E501
-        :type has_output: List[DatasetSpecification]
+        :type has_output: List[object]
         :param doi: The doi of this DataTransformationSetup.  # noqa: E501
         :type doi: List[str]
         :param has_funding: The has_funding of this DataTransformationSetup.  # noqa: E501
-        :type has_funding: List[FundingInformation]
+        :type has_funding: List[object]
         :param has_component_location: The has_component_location of this DataTransformationSetup.  # noqa: E501
         :type has_component_location: List[str]
         :param support_details: The support_details of this DataTransformationSetup.  # noqa: E501
         :type support_details: List[str]
         :param has_version: The has_version of this DataTransformationSetup.  # noqa: E501
-        :type has_version: List[SoftwareVersion]
+        :type has_version: List[object]
         :param has_typical_data_source: The has_typical_data_source of this DataTransformationSetup.  # noqa: E501
         :type has_typical_data_source: List[str]
         :param description: The description of this DataTransformationSetup.  # noqa: E501
@@ -95,23 +95,23 @@ class DataTransformationSetup(Model):
         :param reference_publication: The reference_publication of this DataTransformationSetup.  # noqa: E501
         :type reference_publication: List[str]
         :param screenshot: The screenshot of this DataTransformationSetup.  # noqa: E501
-        :type screenshot: List[Image]
+        :type screenshot: List[object]
         :param had_primary_source: The had_primary_source of this DataTransformationSetup.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this DataTransformationSetup.  # noqa: E501
         :type issue_tracker: List[str]
         :param has_software_image: The has_software_image of this DataTransformationSetup.  # noqa: E501
-        :type has_software_image: List[SoftwareImage]
+        :type has_software_image: List[object]
         :param date_created: The date_created of this DataTransformationSetup.  # noqa: E501
         :type date_created: List[str]
         :param contributor: The contributor of this DataTransformationSetup.  # noqa: E501
-        :type contributor: List[Person]
+        :type contributor: List[object]
         :param has_purpose: The has_purpose of this DataTransformationSetup.  # noqa: E501
         :type has_purpose: List[str]
         :param has_executable_instructions: The has_executable_instructions of this DataTransformationSetup.  # noqa: E501
         :type has_executable_instructions: List[str]
         :param has_sample_visualization: The has_sample_visualization of this DataTransformationSetup.  # noqa: E501
-        :type has_sample_visualization: List[Visualization]
+        :type has_sample_visualization: List[object]
         :param memory_requirements: The memory_requirements of this DataTransformationSetup.  # noqa: E501
         :type memory_requirements: List[str]
         :param website: The website of this DataTransformationSetup.  # noqa: E501
@@ -121,7 +121,7 @@ class DataTransformationSetup(Model):
         :param processor_requirements: The processor_requirements of this DataTransformationSetup.  # noqa: E501
         :type processor_requirements: List[str]
         :param adjustable_parameter: The adjustable_parameter of this DataTransformationSetup.  # noqa: E501
-        :type adjustable_parameter: List[Parameter]
+        :type adjustable_parameter: List[object]
         :param has_usage_notes: The has_usage_notes of this DataTransformationSetup.  # noqa: E501
         :type has_usage_notes: List[str]
         :param has_support_script_location: The has_support_script_location of this DataTransformationSetup.  # noqa: E501
@@ -133,45 +133,17 @@ class DataTransformationSetup(Model):
         :param has_assumption: The has_assumption of this DataTransformationSetup.  # noqa: E501
         :type has_assumption: List[str]
         :param has_parameter: The has_parameter of this DataTransformationSetup.  # noqa: E501
-        :type has_parameter: List[Parameter]
+        :type has_parameter: List[object]
         :param operating_systems: The operating_systems of this DataTransformationSetup.  # noqa: E501
         :type operating_systems: List[str]
         :param has_executable_notebook: The has_executable_notebook of this DataTransformationSetup.  # noqa: E501
         :type has_executable_notebook: List[str]
         :param useful_for_calculating_index: The useful_for_calculating_index of this DataTransformationSetup.  # noqa: E501
-        :type useful_for_calculating_index: List[NumericalIndex]
+        :type useful_for_calculating_index: List[object]
         :param has_input: The has_input of this DataTransformationSetup.  # noqa: E501
-        :type has_input: List[DatasetSpecification]
+        :type has_input: List[object]
         """
-        from openapi_server.models.configuration_setup import ConfigurationSetup
-        from openapi_server.models.dataset_specification import DatasetSpecification
-        from openapi_server.models.funding_information import FundingInformation
-        from openapi_server.models.image import Image
-        from openapi_server.models.numerical_index import NumericalIndex
-        from openapi_server.models.parameter import Parameter
-        from openapi_server.models.person import Person
-        from openapi_server.models.sample_execution import SampleExecution
-        from openapi_server.models.sample_resource import SampleResource
-        from openapi_server.models.software import Software
-        from openapi_server.models.software_image import SoftwareImage
-        from openapi_server.models.software_version import SoftwareVersion
-        from openapi_server.models.source_code import SourceCode
-        from openapi_server.models.visualization import Visualization
 
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
-          # noqa: E501
 
         self.openapi_types = {
             'has_download_instructions': List[str],
@@ -182,16 +154,16 @@ class DataTransformationSetup(Model):
             'has_download_url': List[str],
             'type': List[str],
             'has_installation_instructions': List[str],
-            'compatible_visualization_software': List[Software],
+            'compatible_visualization_software': List[object],
             'copyright_holder': List[object],
             'has_faq': List[str],
-            'logo': List[Image],
+            'logo': List[object],
             'has_contact_person': List[object],
             'tag': List[str],
             'id': str,
             'identifier': List[str],
-            'has_sample_execution': List[SampleExecution],
-            'has_sample_result': List[SampleResource],
+            'has_sample_execution': List[object],
+            'has_sample_result': List[object],
             'author': List[object],
             'has_constraint': List[str],
             'has_build_file': List[str],
@@ -199,43 +171,43 @@ class DataTransformationSetup(Model):
             'has_execution_command': List[str],
             'date_published': List[str],
             'license': List[str],
-            'has_source_code': List[SourceCode],
-            'has_setup': List[ConfigurationSetup],
+            'has_source_code': List[object],
+            'has_setup': List[object],
             'has_example': List[str],
             'publisher': List[object],
-            'has_output': List[DatasetSpecification],
+            'has_output': List[object],
             'doi': List[str],
-            'has_funding': List[FundingInformation],
+            'has_funding': List[object],
             'has_component_location': List[str],
             'support_details': List[str],
-            'has_version': List[SoftwareVersion],
+            'has_version': List[object],
             'has_typical_data_source': List[str],
             'description': List[str],
             'reference_publication': List[str],
-            'screenshot': List[Image],
+            'screenshot': List[object],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
-            'has_software_image': List[SoftwareImage],
+            'has_software_image': List[object],
             'date_created': List[str],
-            'contributor': List[Person],
+            'contributor': List[object],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
-            'has_sample_visualization': List[Visualization],
+            'has_sample_visualization': List[object],
             'memory_requirements': List[str],
             'website': List[str],
             'citation': List[str],
             'processor_requirements': List[str],
-            'adjustable_parameter': List[Parameter],
+            'adjustable_parameter': List[object],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
             'readme': List[str],
             'label': List[str],
             'has_assumption': List[str],
-            'has_parameter': List[Parameter],
+            'has_parameter': List[object],
             'operating_systems': List[str],
             'has_executable_notebook': List[str],
-            'useful_for_calculating_index': List[NumericalIndex],
-            'has_input': List[DatasetSpecification]
+            'useful_for_calculating_index': List[object],
+            'has_input': List[object]
         }
 
         self.attribute_map = {
@@ -568,7 +540,7 @@ class DataTransformationSetup(Model):
         Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
 
         :return: The compatible_visualization_software of this DataTransformationSetup.
-        :rtype: List[Software]
+        :rtype: List[object]
         """
         return self._compatible_visualization_software
 
@@ -579,7 +551,7 @@ class DataTransformationSetup(Model):
         Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
 
         :param compatible_visualization_software: The compatible_visualization_software of this DataTransformationSetup.
-        :type compatible_visualization_software: List[Software]
+        :type compatible_visualization_software: List[object]
         """
 
         self._compatible_visualization_software = compatible_visualization_software
@@ -637,7 +609,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The logo of this DataTransformationSetup.
-        :rtype: List[Image]
+        :rtype: List[object]
         """
         return self._logo
 
@@ -648,7 +620,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param logo: The logo of this DataTransformationSetup.
-        :type logo: List[Image]
+        :type logo: List[object]
         """
 
         self._logo = logo
@@ -752,7 +724,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The has_sample_execution of this DataTransformationSetup.
-        :rtype: List[SampleExecution]
+        :rtype: List[object]
         """
         return self._has_sample_execution
 
@@ -763,7 +735,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param has_sample_execution: The has_sample_execution of this DataTransformationSetup.
-        :type has_sample_execution: List[SampleExecution]
+        :type has_sample_execution: List[object]
         """
 
         self._has_sample_execution = has_sample_execution
@@ -775,7 +747,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The has_sample_result of this DataTransformationSetup.
-        :rtype: List[SampleResource]
+        :rtype: List[object]
         """
         return self._has_sample_result
 
@@ -786,7 +758,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param has_sample_result: The has_sample_result of this DataTransformationSetup.
-        :type has_sample_result: List[SampleResource]
+        :type has_sample_result: List[object]
         """
 
         self._has_sample_result = has_sample_result
@@ -959,7 +931,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The has_source_code of this DataTransformationSetup.
-        :rtype: List[SourceCode]
+        :rtype: List[object]
         """
         return self._has_source_code
 
@@ -970,7 +942,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param has_source_code: The has_source_code of this DataTransformationSetup.
-        :type has_source_code: List[SourceCode]
+        :type has_source_code: List[object]
         """
 
         self._has_source_code = has_source_code
@@ -982,7 +954,7 @@ class DataTransformationSetup(Model):
         Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
 
         :return: The has_setup of this DataTransformationSetup.
-        :rtype: List[ConfigurationSetup]
+        :rtype: List[object]
         """
         return self._has_setup
 
@@ -993,7 +965,7 @@ class DataTransformationSetup(Model):
         Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
 
         :param has_setup: The has_setup of this DataTransformationSetup.
-        :type has_setup: List[ConfigurationSetup]
+        :type has_setup: List[object]
         """
 
         self._has_setup = has_setup
@@ -1051,7 +1023,7 @@ class DataTransformationSetup(Model):
         Property that expresses what are the outputs of a model  # noqa: E501
 
         :return: The has_output of this DataTransformationSetup.
-        :rtype: List[DatasetSpecification]
+        :rtype: List[object]
         """
         return self._has_output
 
@@ -1062,7 +1034,7 @@ class DataTransformationSetup(Model):
         Property that expresses what are the outputs of a model  # noqa: E501
 
         :param has_output: The has_output of this DataTransformationSetup.
-        :type has_output: List[DatasetSpecification]
+        :type has_output: List[object]
         """
 
         self._has_output = has_output
@@ -1097,7 +1069,7 @@ class DataTransformationSetup(Model):
         Property that links a software project to its funding information  # noqa: E501
 
         :return: The has_funding of this DataTransformationSetup.
-        :rtype: List[FundingInformation]
+        :rtype: List[object]
         """
         return self._has_funding
 
@@ -1108,7 +1080,7 @@ class DataTransformationSetup(Model):
         Property that links a software project to its funding information  # noqa: E501
 
         :param has_funding: The has_funding of this DataTransformationSetup.
-        :type has_funding: List[FundingInformation]
+        :type has_funding: List[object]
         """
 
         self._has_funding = has_funding
@@ -1166,7 +1138,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The has_version of this DataTransformationSetup.
-        :rtype: List[SoftwareVersion]
+        :rtype: List[object]
         """
         return self._has_version
 
@@ -1177,7 +1149,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param has_version: The has_version of this DataTransformationSetup.
-        :type has_version: List[SoftwareVersion]
+        :type has_version: List[object]
         """
 
         self._has_version = has_version
@@ -1258,7 +1230,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The screenshot of this DataTransformationSetup.
-        :rtype: List[Image]
+        :rtype: List[object]
         """
         return self._screenshot
 
@@ -1269,7 +1241,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param screenshot: The screenshot of this DataTransformationSetup.
-        :type screenshot: List[Image]
+        :type screenshot: List[object]
         """
 
         self._screenshot = screenshot
@@ -1327,7 +1299,7 @@ class DataTransformationSetup(Model):
         Function to link a function with its corresponding container  # noqa: E501
 
         :return: The has_software_image of this DataTransformationSetup.
-        :rtype: List[SoftwareImage]
+        :rtype: List[object]
         """
         return self._has_software_image
 
@@ -1338,7 +1310,7 @@ class DataTransformationSetup(Model):
         Function to link a function with its corresponding container  # noqa: E501
 
         :param has_software_image: The has_software_image of this DataTransformationSetup.
-        :type has_software_image: List[SoftwareImage]
+        :type has_software_image: List[object]
         """
 
         self._has_software_image = has_software_image
@@ -1373,7 +1345,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The contributor of this DataTransformationSetup.
-        :rtype: List[Person]
+        :rtype: List[object]
         """
         return self._contributor
 
@@ -1384,7 +1356,7 @@ class DataTransformationSetup(Model):
         Description not available  # noqa: E501
 
         :param contributor: The contributor of this DataTransformationSetup.
-        :type contributor: List[Person]
+        :type contributor: List[object]
         """
 
         self._contributor = contributor
@@ -1442,7 +1414,7 @@ class DataTransformationSetup(Model):
         A typical sample visualization of the softwware outputs  # noqa: E501
 
         :return: The has_sample_visualization of this DataTransformationSetup.
-        :rtype: List[Visualization]
+        :rtype: List[object]
         """
         return self._has_sample_visualization
 
@@ -1453,7 +1425,7 @@ class DataTransformationSetup(Model):
         A typical sample visualization of the softwware outputs  # noqa: E501
 
         :param has_sample_visualization: The has_sample_visualization of this DataTransformationSetup.
-        :type has_sample_visualization: List[Visualization]
+        :type has_sample_visualization: List[object]
         """
 
         self._has_sample_visualization = has_sample_visualization
@@ -1557,7 +1529,7 @@ class DataTransformationSetup(Model):
         Parameter that can be adjusted in a configuration setup  # noqa: E501
 
         :return: The adjustable_parameter of this DataTransformationSetup.
-        :rtype: List[Parameter]
+        :rtype: List[object]
         """
         return self._adjustable_parameter
 
@@ -1568,7 +1540,7 @@ class DataTransformationSetup(Model):
         Parameter that can be adjusted in a configuration setup  # noqa: E501
 
         :param adjustable_parameter: The adjustable_parameter of this DataTransformationSetup.
-        :type adjustable_parameter: List[Parameter]
+        :type adjustable_parameter: List[object]
         """
 
         self._adjustable_parameter = adjustable_parameter
@@ -1695,7 +1667,7 @@ class DataTransformationSetup(Model):
         Property that indicates the parameters of a model configuration  # noqa: E501
 
         :return: The has_parameter of this DataTransformationSetup.
-        :rtype: List[Parameter]
+        :rtype: List[object]
         """
         return self._has_parameter
 
@@ -1706,7 +1678,7 @@ class DataTransformationSetup(Model):
         Property that indicates the parameters of a model configuration  # noqa: E501
 
         :param has_parameter: The has_parameter of this DataTransformationSetup.
-        :type has_parameter: List[Parameter]
+        :type has_parameter: List[object]
         """
 
         self._has_parameter = has_parameter
@@ -1764,7 +1736,7 @@ class DataTransformationSetup(Model):
         Property that indicates that a software component (or any of its outputs) can be used to calculate a particular index. The rationale for this property is that indices are usually calculated by applying post-processing steps to the outputs of a software component.  # noqa: E501
 
         :return: The useful_for_calculating_index of this DataTransformationSetup.
-        :rtype: List[NumericalIndex]
+        :rtype: List[object]
         """
         return self._useful_for_calculating_index
 
@@ -1775,7 +1747,7 @@ class DataTransformationSetup(Model):
         Property that indicates that a software component (or any of its outputs) can be used to calculate a particular index. The rationale for this property is that indices are usually calculated by applying post-processing steps to the outputs of a software component.  # noqa: E501
 
         :param useful_for_calculating_index: The useful_for_calculating_index of this DataTransformationSetup.
-        :type useful_for_calculating_index: List[NumericalIndex]
+        :type useful_for_calculating_index: List[object]
         """
 
         self._useful_for_calculating_index = useful_for_calculating_index
@@ -1787,7 +1759,7 @@ class DataTransformationSetup(Model):
         Property that links a model configuration to the input types expected by it.  # noqa: E501
 
         :return: The has_input of this DataTransformationSetup.
-        :rtype: List[DatasetSpecification]
+        :rtype: List[object]
         """
         return self._has_input
 
@@ -1798,7 +1770,7 @@ class DataTransformationSetup(Model):
         Property that links a model configuration to the input types expected by it.  # noqa: E501
 
         :param has_input: The has_input of this DataTransformationSetup.
-        :type has_input: List[DatasetSpecification]
+        :type has_input: List[object]
         """
 
         self._has_input = has_input
