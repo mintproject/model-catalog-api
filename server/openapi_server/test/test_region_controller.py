@@ -16,10 +16,12 @@ class TestRegionController(BaseTestCase):
     def test_regions_get(self):
         """Test case for regions_get
 
-        List all Region entities
+        List all instances of Region
         """
-        query_string = [('username', 'mint@isi.edu')]
-                        
+        query_string = [('username', 'username_example'),
+                        ('label', 'label_example'),
+                        ('page', 1),
+                        ('per_page', 100)]
         headers = { 
             'Accept': 'application/json',
         }
@@ -28,31 +30,89 @@ class TestRegionController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-        self.assertTrue(response.json)
 
-    def test_id_get_circular(self):
-        """Test case for test_id_get_circular
-        Get a Region
+    def test_regions_id_delete(self):
+        """Test case for regions_id_delete
+
+        Delete an existing Region
         """
+        headers = { 
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/regions/{id}'.format(id='id_example', user='user_example'),
+            method='DELETE',
+            headers=headers)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
 
-        resource_name = "Travis"
-        resource_uri = "https://w3id.org/okn/i/mint/Travis"
-        query_string = [('username', self.get_username)]
-        headers = {
+    def test_regions_id_get(self):
+        """Test case for regions_id_get
+
+        Get a single Region by its id
+        """
+        query_string = [('username', 'username_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/regions/{id}'.format(id=resource_name),
+            '/v1.5.0/regions/{id}'.format(id='id_example'),
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        self.assertEqual(Region.from_dict(response.json).id, resource_uri)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_regions_id_put(self):
+        """Test case for regions_id_put
+
+        Update an existing Region
+        """
+        region = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/regions/{id}'.format(id='id_example', user='user_example'),
+            method='PUT',
+            headers=headers,
+            data=json.dumps(region),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_regions_post(self):
+        """Test case for regions_post
+
+        Create one Region
+        """
+        region = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/regions'.format(user='user_example'),
+            method='POST',
+            headers=headers,
+            data=json.dumps(region),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
 
 if __name__ == '__main__':
     unittest.main()

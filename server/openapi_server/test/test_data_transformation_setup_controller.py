@@ -38,15 +38,13 @@ class TestDataTransformationSetupController(BaseTestCase):
 
         Delete an existing DataTransformationSetup
         """
-        query_string = [('user', 'user_example')]
         headers = { 
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example'),
+            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example', user='user_example'),
             method='DELETE',
-            headers=headers,
-            query_string=query_string)
+            headers=headers)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -77,19 +75,17 @@ class TestDataTransformationSetupController(BaseTestCase):
     "id" : "some_id"
   }
 }
-        query_string = [('user', 'user_example')]
         headers = { 
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example'),
+            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example', user='user_example'),
             method='PUT',
             headers=headers,
             data=json.dumps(data_transformation_setup),
-            content_type='application/json',
-            query_string=query_string)
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
@@ -103,19 +99,17 @@ class TestDataTransformationSetupController(BaseTestCase):
     "id" : "some_id"
   }
 }
-        query_string = [('user', 'user_example')]
         headers = { 
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/datatransformationsetups',
+            '/v1.5.0/datatransformationsetups'.format(user='user_example'),
             method='POST',
             headers=headers,
             data=json.dumps(data_transformation_setup),
-            content_type='application/json',
-            query_string=query_string)
+            content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 

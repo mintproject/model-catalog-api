@@ -16,10 +16,12 @@ class TestSoftwareVersionController(BaseTestCase):
     def test_softwareversions_get(self):
         """Test case for softwareversions_get
 
-        List all SoftwareVersion entities
+        List all instances of SoftwareVersion
         """
-        query_string = [('username', 'mint@isi.edu')]
-                        
+        query_string = [('username', 'username_example'),
+                        ('label', 'label_example'),
+                        ('page', 1),
+                        ('per_page', 100)]
         headers = { 
             'Accept': 'application/json',
         }
@@ -28,10 +30,88 @@ class TestSoftwareVersionController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
-        self.assertTrue(response.json)
+
+    def test_softwareversions_id_delete(self):
+        """Test case for softwareversions_id_delete
+
+        Delete an existing SoftwareVersion
+        """
+        headers = { 
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/softwareversions/{id}'.format(id='id_example', user='user_example'),
+            method='DELETE',
+            headers=headers)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_softwareversions_id_get(self):
+        """Test case for softwareversions_id_get
+
+        Get a single SoftwareVersion by its id
+        """
+        query_string = [('username', 'username_example')]
+        headers = { 
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.5.0/softwareversions/{id}'.format(id='id_example'),
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_softwareversions_id_put(self):
+        """Test case for softwareversions_id_put
+
+        Update an existing SoftwareVersion
+        """
+        software_version = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/softwareversions/{id}'.format(id='id_example', user='user_example'),
+            method='PUT',
+            headers=headers,
+            data=json.dumps(software_version),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_softwareversions_post(self):
+        """Test case for softwareversions_post
+
+        Create one SoftwareVersion
+        """
+        software_version = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/softwareversions'.format(user='user_example'),
+            method='POST',
+            headers=headers,
+            data=json.dumps(software_version),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
 
 
 if __name__ == '__main__':
