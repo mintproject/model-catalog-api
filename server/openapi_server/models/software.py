@@ -15,9 +15,11 @@ class Software(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, date_created=None, contributor=None, compatible_visualization_software=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_example=None, publisher=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, issue_tracker=None, date_created=None, compatible_visualization_software=None, contributor=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_executable_instructions=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, readme=None, has_build_file=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_executable_notebook=None, has_example=None, publisher=None, useful_for_calculating_index=None, doi=None):  # noqa: E501
         """Software - a model defined in OpenAPI
 
+        :param has_download_instructions: The has_download_instructions of this Software.  # noqa: E501
+        :type has_download_instructions: List[str]
         :param has_funding: The has_funding of this Software.  # noqa: E501
         :type has_funding: List[FundingInformation]
         :param keywords: The keywords of this Software.  # noqa: E501
@@ -46,12 +48,16 @@ class Software(Model):
         :type has_installation_instructions: List[str]
         :param had_primary_source: The had_primary_source of this Software.  # noqa: E501
         :type had_primary_source: List[object]
+        :param issue_tracker: The issue_tracker of this Software.  # noqa: E501
+        :type issue_tracker: List[str]
         :param date_created: The date_created of this Software.  # noqa: E501
         :type date_created: List[str]
-        :param contributor: The contributor of this Software.  # noqa: E501
-        :type contributor: List[Person]
         :param compatible_visualization_software: The compatible_visualization_software of this Software.  # noqa: E501
         :type compatible_visualization_software: List[Software]
+        :param contributor: The contributor of this Software.  # noqa: E501
+        :type contributor: List[Person]
+        :param copyright_holder: The copyright_holder of this Software.  # noqa: E501
+        :type copyright_holder: List[object]
         :param has_faq: The has_faq of this Software.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this Software.  # noqa: E501
@@ -62,6 +68,8 @@ class Software(Model):
         :type has_purpose: List[str]
         :param id: The id of this Software.  # noqa: E501
         :type id: str
+        :param has_executable_instructions: The has_executable_instructions of this Software.  # noqa: E501
+        :type has_executable_instructions: List[str]
         :param has_sample_visualization: The has_sample_visualization of this Software.  # noqa: E501
         :type has_sample_visualization: List[Visualization]
         :param identifier: The identifier of this Software.  # noqa: E501
@@ -78,6 +86,10 @@ class Software(Model):
         :type processor_requirements: List[str]
         :param has_usage_notes: The has_usage_notes of this Software.  # noqa: E501
         :type has_usage_notes: List[str]
+        :param readme: The readme of this Software.  # noqa: E501
+        :type readme: List[str]
+        :param has_build_file: The has_build_file of this Software.  # noqa: E501
+        :type has_build_file: List[str]
         :param short_description: The short_description of this Software.  # noqa: E501
         :type short_description: List[str]
         :param label: The label of this Software.  # noqa: E501
@@ -92,12 +104,16 @@ class Software(Model):
         :type license: List[str]
         :param has_source_code: The has_source_code of this Software.  # noqa: E501
         :type has_source_code: List[SourceCode]
+        :param has_executable_notebook: The has_executable_notebook of this Software.  # noqa: E501
+        :type has_executable_notebook: List[str]
         :param has_example: The has_example of this Software.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this Software.  # noqa: E501
         :type publisher: List[object]
         :param useful_for_calculating_index: The useful_for_calculating_index of this Software.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
+        :param doi: The doi of this Software.  # noqa: E501
+        :type doi: List[str]
         """
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
@@ -116,6 +132,7 @@ class Software(Model):
           # noqa: E501
 
         self.openapi_types = {
+            'has_download_instructions': List[str],
             'has_funding': List[FundingInformation],
             'keywords': List[str],
             'has_documentation': List[str],
@@ -130,14 +147,17 @@ class Software(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'had_primary_source': List[object],
+            'issue_tracker': List[str],
             'date_created': List[str],
-            'contributor': List[Person],
             'compatible_visualization_software': List[Software],
+            'contributor': List[Person],
+            'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
             'has_contact_person': List[object],
             'has_purpose': List[str],
             'id': str,
+            'has_executable_instructions': List[str],
             'has_sample_visualization': List[Visualization],
             'identifier': List[str],
             'memory_requirements': List[str],
@@ -146,6 +166,8 @@ class Software(Model):
             'author': List[object],
             'processor_requirements': List[str],
             'has_usage_notes': List[str],
+            'readme': List[str],
+            'has_build_file': List[str],
             'short_description': List[str],
             'label': List[str],
             'has_assumption': List[str],
@@ -153,12 +175,15 @@ class Software(Model):
             'operating_systems': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
+            'has_executable_notebook': List[str],
             'has_example': List[str],
             'publisher': List[object],
-            'useful_for_calculating_index': List[NumericalIndex]
+            'useful_for_calculating_index': List[NumericalIndex],
+            'doi': List[str]
         }
 
         self.attribute_map = {
+            'has_download_instructions': 'hasDownloadInstructions',
             'has_funding': 'hasFunding',
             'keywords': 'keywords',
             'has_documentation': 'hasDocumentation',
@@ -173,14 +198,17 @@ class Software(Model):
             'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
             'had_primary_source': 'hadPrimarySource',
+            'issue_tracker': 'issueTracker',
             'date_created': 'dateCreated',
-            'contributor': 'contributor',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'contributor': 'contributor',
+            'copyright_holder': 'copyrightHolder',
             'has_faq': 'hasFAQ',
             'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
             'has_purpose': 'hasPurpose',
             'id': 'id',
+            'has_executable_instructions': 'hasExecutableInstructions',
             'has_sample_visualization': 'hasSampleVisualization',
             'identifier': 'identifier',
             'memory_requirements': 'memoryRequirements',
@@ -189,6 +217,8 @@ class Software(Model):
             'author': 'author',
             'processor_requirements': 'processorRequirements',
             'has_usage_notes': 'hasUsageNotes',
+            'readme': 'readme',
+            'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
             'label': 'label',
             'has_assumption': 'hasAssumption',
@@ -196,11 +226,14 @@ class Software(Model):
             'operating_systems': 'operatingSystems',
             'license': 'license',
             'has_source_code': 'hasSourceCode',
+            'has_executable_notebook': 'hasExecutableNotebook',
             'has_example': 'hasExample',
             'publisher': 'publisher',
-            'useful_for_calculating_index': 'usefulForCalculatingIndex'
+            'useful_for_calculating_index': 'usefulForCalculatingIndex',
+            'doi': 'doi'
         }
 
+        self._has_download_instructions = has_download_instructions
         self._has_funding = has_funding
         self._keywords = keywords
         self._has_documentation = has_documentation
@@ -215,14 +248,17 @@ class Software(Model):
         self._type = type
         self._has_installation_instructions = has_installation_instructions
         self._had_primary_source = had_primary_source
+        self._issue_tracker = issue_tracker
         self._date_created = date_created
-        self._contributor = contributor
         self._compatible_visualization_software = compatible_visualization_software
+        self._contributor = contributor
+        self._copyright_holder = copyright_holder
         self._has_faq = has_faq
         self._logo = logo
         self._has_contact_person = has_contact_person
         self._has_purpose = has_purpose
         self._id = id
+        self._has_executable_instructions = has_executable_instructions
         self._has_sample_visualization = has_sample_visualization
         self._identifier = identifier
         self._memory_requirements = memory_requirements
@@ -231,6 +267,8 @@ class Software(Model):
         self._author = author
         self._processor_requirements = processor_requirements
         self._has_usage_notes = has_usage_notes
+        self._readme = readme
+        self._has_build_file = has_build_file
         self._short_description = short_description
         self._label = label
         self._has_assumption = has_assumption
@@ -238,9 +276,11 @@ class Software(Model):
         self._operating_systems = operating_systems
         self._license = license
         self._has_source_code = has_source_code
+        self._has_executable_notebook = has_executable_notebook
         self._has_example = has_example
         self._publisher = publisher
         self._useful_for_calculating_index = useful_for_calculating_index
+        self._doi = doi
 
     @classmethod
     def from_dict(cls, dikt) -> 'Software':
@@ -252,6 +292,29 @@ class Software(Model):
         :rtype: Software
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_download_instructions(self):
+        """Gets the has_download_instructions of this Software.
+
+        Instructions needed to download a software component. The difference with `hasDownloadURL` is that this property captures the human readable instructions required to download software. For example, sometimes an authentication is needed, users need to fill in a form, etc.  # noqa: E501
+
+        :return: The has_download_instructions of this Software.
+        :rtype: List[str]
+        """
+        return self._has_download_instructions
+
+    @has_download_instructions.setter
+    def has_download_instructions(self, has_download_instructions):
+        """Sets the has_download_instructions of this Software.
+
+        Instructions needed to download a software component. The difference with `hasDownloadURL` is that this property captures the human readable instructions required to download software. For example, sometimes an authentication is needed, users need to fill in a form, etc.  # noqa: E501
+
+        :param has_download_instructions: The has_download_instructions of this Software.
+        :type has_download_instructions: List[str]
+        """
+
+        self._has_download_instructions = has_download_instructions
 
     @property
     def has_funding(self):
@@ -464,7 +527,7 @@ class Software(Model):
     def reference_publication(self):
         """Gets the reference_publication of this Software.
 
-        Main publication to cite in this software  # noqa: E501
+        Main publication to cite for this software component  # noqa: E501
 
         :return: The reference_publication of this Software.
         :rtype: List[str]
@@ -475,7 +538,7 @@ class Software(Model):
     def reference_publication(self, reference_publication):
         """Sets the reference_publication of this Software.
 
-        Main publication to cite in this software  # noqa: E501
+        Main publication to cite for this software component  # noqa: E501
 
         :param reference_publication: The reference_publication of this Software.
         :type reference_publication: List[str]
@@ -533,7 +596,7 @@ class Software(Model):
     def has_installation_instructions(self):
         """Gets the has_installation_instructions of this Software.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Instructions required to install this particular piece of software. Installation instructions usually are available in a human-readable manner.  # noqa: E501
 
         :return: The has_installation_instructions of this Software.
         :rtype: List[str]
@@ -544,7 +607,7 @@ class Software(Model):
     def has_installation_instructions(self, has_installation_instructions):
         """Sets the has_installation_instructions of this Software.
 
-        Instructions requires to install this particular piece of software.  # noqa: E501
+        Instructions required to install this particular piece of software. Installation instructions usually are available in a human-readable manner.  # noqa: E501
 
         :param has_installation_instructions: The has_installation_instructions of this Software.
         :type has_installation_instructions: List[str]
@@ -576,6 +639,29 @@ class Software(Model):
         self._had_primary_source = had_primary_source
 
     @property
+    def issue_tracker(self):
+        """Gets the issue_tracker of this Software.
+
+        Pointer to the issue tracker of a software component  # noqa: E501
+
+        :return: The issue_tracker of this Software.
+        :rtype: List[str]
+        """
+        return self._issue_tracker
+
+    @issue_tracker.setter
+    def issue_tracker(self, issue_tracker):
+        """Sets the issue_tracker of this Software.
+
+        Pointer to the issue tracker of a software component  # noqa: E501
+
+        :param issue_tracker: The issue_tracker of this Software.
+        :type issue_tracker: List[str]
+        """
+
+        self._issue_tracker = issue_tracker
+
+    @property
     def date_created(self):
         """Gets the date_created of this Software.
 
@@ -597,6 +683,29 @@ class Software(Model):
         """
 
         self._date_created = date_created
+
+    @property
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this Software.
+
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+
+        :return: The compatible_visualization_software of this Software.
+        :rtype: List[Software]
+        """
+        return self._compatible_visualization_software
+
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this Software.
+
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+
+        :param compatible_visualization_software: The compatible_visualization_software of this Software.
+        :type compatible_visualization_software: List[Software]
+        """
+
+        self._compatible_visualization_software = compatible_visualization_software
 
     @property
     def contributor(self):
@@ -622,27 +731,27 @@ class Software(Model):
         self._contributor = contributor
 
     @property
-    def compatible_visualization_software(self):
-        """Gets the compatible_visualization_software of this Software.
+    def copyright_holder(self):
+        """Gets the copyright_holder of this Software.
 
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+        Description not available  # noqa: E501
 
-        :return: The compatible_visualization_software of this Software.
-        :rtype: List[Software]
+        :return: The copyright_holder of this Software.
+        :rtype: List[object]
         """
-        return self._compatible_visualization_software
+        return self._copyright_holder
 
-    @compatible_visualization_software.setter
-    def compatible_visualization_software(self, compatible_visualization_software):
-        """Sets the compatible_visualization_software of this Software.
+    @copyright_holder.setter
+    def copyright_holder(self, copyright_holder):
+        """Sets the copyright_holder of this Software.
 
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+        Description not available  # noqa: E501
 
-        :param compatible_visualization_software: The compatible_visualization_software of this Software.
-        :type compatible_visualization_software: List[Software]
+        :param copyright_holder: The copyright_holder of this Software.
+        :type copyright_holder: List[object]
         """
 
-        self._compatible_visualization_software = compatible_visualization_software
+        self._copyright_holder = copyright_holder
 
     @property
     def has_faq(self):
@@ -758,6 +867,29 @@ class Software(Model):
         """
 
         self._id = id
+
+    @property
+    def has_executable_instructions(self):
+        """Gets the has_executable_instructions of this Software.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :return: The has_executable_instructions of this Software.
+        :rtype: List[str]
+        """
+        return self._has_executable_instructions
+
+    @has_executable_instructions.setter
+    def has_executable_instructions(self, has_executable_instructions):
+        """Sets the has_executable_instructions of this Software.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :param has_executable_instructions: The has_executable_instructions of this Software.
+        :type has_executable_instructions: List[str]
+        """
+
+        self._has_executable_instructions = has_executable_instructions
 
     @property
     def has_sample_visualization(self):
@@ -944,6 +1076,52 @@ class Software(Model):
         self._has_usage_notes = has_usage_notes
 
     @property
+    def readme(self):
+        """Gets the readme of this Software.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :return: The readme of this Software.
+        :rtype: List[str]
+        """
+        return self._readme
+
+    @readme.setter
+    def readme(self, readme):
+        """Sets the readme of this Software.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :param readme: The readme of this Software.
+        :type readme: List[str]
+        """
+
+        self._readme = readme
+
+    @property
+    def has_build_file(self):
+        """Gets the has_build_file of this Software.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :return: The has_build_file of this Software.
+        :rtype: List[str]
+        """
+        return self._has_build_file
+
+    @has_build_file.setter
+    def has_build_file(self, has_build_file):
+        """Sets the has_build_file of this Software.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :param has_build_file: The has_build_file of this Software.
+        :type has_build_file: List[str]
+        """
+
+        self._has_build_file = has_build_file
+
+    @property
     def short_description(self):
         """Gets the short_description of this Software.
 
@@ -1105,10 +1283,33 @@ class Software(Model):
         self._has_source_code = has_source_code
 
     @property
+    def has_executable_notebook(self):
+        """Gets the has_executable_notebook of this Software.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :return: The has_executable_notebook of this Software.
+        :rtype: List[str]
+        """
+        return self._has_executable_notebook
+
+    @has_executable_notebook.setter
+    def has_executable_notebook(self, has_executable_notebook):
+        """Sets the has_executable_notebook of this Software.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :param has_executable_notebook: The has_executable_notebook of this Software.
+        :type has_executable_notebook: List[str]
+        """
+
+        self._has_executable_notebook = has_executable_notebook
+
+    @property
     def has_example(self):
         """Gets the has_example of this Software.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
         :return: The has_example of this Software.
         :rtype: List[str]
@@ -1119,7 +1320,7 @@ class Software(Model):
     def has_example(self, has_example):
         """Sets the has_example of this Software.
 
-        An example explaining a scenario where the model was used in plain language.  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
         :param has_example: The has_example of this Software.
         :type has_example: List[str]
@@ -1172,3 +1373,26 @@ class Software(Model):
         """
 
         self._useful_for_calculating_index = useful_for_calculating_index
+
+    @property
+    def doi(self):
+        """Gets the doi of this Software.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :return: The doi of this Software.
+        :rtype: List[str]
+        """
+        return self._doi
+
+    @doi.setter
+    def doi(self, doi):
+        """Sets the doi of this Software.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :param doi: The doi of this Software.
+        :type doi: List[str]
+        """
+
+        self._doi = doi

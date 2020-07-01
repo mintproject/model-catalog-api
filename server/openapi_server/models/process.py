@@ -160,7 +160,7 @@ class Process(Model):
     def influences(self):
         """Gets the influences of this Process.
 
-        Description not available  # noqa: E501
+        Property that captures if a physical process influences another process  # noqa: E501
 
         :return: The influences of this Process.
         :rtype: List[Process]
@@ -171,7 +171,7 @@ class Process(Model):
     def influences(self, influences):
         """Sets the influences of this Process.
 
-        Description not available  # noqa: E501
+        Property that captures if a physical process influences another process  # noqa: E501
 
         :param influences: The influences of this Process.
         :type influences: List[Process]

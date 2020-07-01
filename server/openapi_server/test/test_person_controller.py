@@ -1,8 +1,6 @@
 # coding: utf-8
 
 from __future__ import absolute_import
-
-import logging
 import unittest
 
 from flask import json
@@ -14,15 +12,16 @@ from openapi_server.test import BaseTestCase
 
 class TestPersonController(BaseTestCase):
     """PersonController integration test stubs"""
-    logger = logging.getLogger("testing")
-    
+
     def test_persons_get(self):
         """Test case for persons_get
 
-        List all Person entities
+        List all instances of Person
         """
-        query_string = [('username', 'mint@isi.edu')]
-                        
+        query_string = [('username', 'username_example'),
+                        ('label', 'label_example'),
+                        ('page', 1),
+                        ('per_page', 100)]
         headers = { 
             'Accept': 'application/json',
         }
@@ -31,67 +30,89 @@ class TestPersonController(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-        self.assertTrue(response.json)
-
-    def test_persons_get_id_mint(self):
-        """Test case for persons_get
-
-        List all Person entities
-        """
-        query_string = [('username', 'mint@isi.edu')]
-
-        headers = {
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/persons/{}'.format("khider_deborah"),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_persons_get_id_texas(self):
-        """Test case for persons_get
+    def test_persons_id_delete(self):
+        """Test case for persons_id_delete
 
-        List all Person entities
+        Delete an existing Person
         """
-        query_string = [('username', 'texas@isi.edu')]
-
-        headers = {
-            'Accept': 'application/json',
+        headers = { 
+            'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/persons/{}'.format("khider_deborah"),
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
+            '/v1.5.0/persons/{id}'.format(id='id_example', user='user_example'),
+            method='DELETE',
+            headers=headers)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_persons_get_id_mint_not_found(self):
-        """Test case for persons_get
+    def test_persons_id_get(self):
+        """Test case for persons_id_get
 
-        List all Person entities
+        Get a single Person by its id
         """
-        query_string = [('username', 'mint@isi.edu')]
-
-        headers = {
+        query_string = [('username', 'username_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/persons/{}'.format("b0b454fc-d77d-4778-9d37-6e327c00b0c2"),
+            '/v1.5.0/persons/{id}'.format(id='id_example'),
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        self.assert404(response,
+        self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_persons_id_put(self):
+        """Test case for persons_id_put
+
+        Update an existing Person
+        """
+        person = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/persons/{id}'.format(id='id_example', user='user_example'),
+            method='PUT',
+            headers=headers,
+            data=json.dumps(person),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_persons_post(self):
+        """Test case for persons_post
+
+        Create one Person
+        """
+        person = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/persons'.format(user='user_example'),
+            method='POST',
+            headers=headers,
+            data=json.dumps(person),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
 
 if __name__ == '__main__':
     unittest.main()

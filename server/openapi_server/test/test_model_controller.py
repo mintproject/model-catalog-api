@@ -1,71 +1,46 @@
 # coding: utf-8
 
 from __future__ import absolute_import
-
-import logging
 import unittest
 
 from flask import json
 from six import BytesIO
 
-from openapi_server.models import Model
+from openapi_server.models.model import Model  # noqa: E501
 from openapi_server.test import BaseTestCase
 
-MINT_USERNAME = "mint@isi.edu"
 
-class TestModel(BaseTestCase):
-    """Model integration test stubs"""
-    logger = logging.getLogger("TestModel")
-    def test_model_get_id(self):
-        """Test case for model_get
+class TestModelController(BaseTestCase):
+    """ModelController integration test stubs"""
 
-        List all Models entities
+    def test_custom_model_index_get(self):
+        """Test case for custom_model_index_get
+
+        Get a Model
         """
-        query_string = [('username', MINT_USERNAME)]
-        headers = {
+        query_string = [('custom_query_name', 'custom_model_index'),
+                        ('username', 'username_example'),
+                        ('label', 'label_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/models/{}'.format("CYCLES"),
+            '/v1.5.0/custom/model/index',
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        self.assertIsInstance(Model.from_dict(response.json), Model)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-        self.assertTrue(response.json)
-
-
-    def test_model_custom_index_get(self):
-        """Test case for model_get
-
-        List all Models entities
-        """
-        query_string = [('username', MINT_USERNAME),
-                        ('label', 'flooding')]
-        headers = {
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/custom/models/variable',
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        for item in response.json:
-            self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_model_custom_intervention_get(self):
-        """Test case for model_get
+    def test_custom_model_intervention_get(self):
+        """Test case for custom_model_intervention_get
 
-        List all Models entities
+        Get a Model
         """
-        query_string = [('username', MINT_USERNAME),
-                        ('label', 'Fertilizer')]
-        headers = {
+        query_string = [('custom_query_name', 'custom_model_intervetion'),
+                        ('username', 'username_example'),
+                        ('label', 'label_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
@@ -73,20 +48,18 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        for item in response.json:
-            self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_model_custom_region_get(self):
-        """Test case for model_get
+    def test_custom_model_region_get(self):
+        """Test case for custom_model_region_get
 
-        List all Models entities
+        Get a Model
         """
-        query_string = [('username', MINT_USERNAME),
-                        ('label', 'baro')]
-        headers = {
+        query_string = [('custom_query_name', 'custom_model_region'),
+                        ('username', 'username_example'),
+                        ('label', 'label_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
@@ -94,41 +67,18 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        for item in response.json:
-            self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_model_custom_variable_get(self):
-        """Test case for model_get
+    def test_custom_models_standard_variable_get(self):
+        """Test case for custom_models_standard_variable_get
 
-        List all Models entities
+        Get a list of models
         """
-        query_string = [('username', MINT_USERNAME),
-                        ('label', 'crop')]
-        headers = {
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/custom/models/variable',
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.logger.info("Response length {}".format(len(response.json)))
-        for item in response.json:
-            self.assertIsInstance(Model.from_dict(item), Model)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
-
-    def test_model_custom_standard_variable_get(self):
-        """Test case for model_get
-
-        List all Models entities
-        """
-        query_string = [('username', MINT_USERNAME),
-                        ('label', 'crop')]
-        headers = {
+        query_string = [('custom_query_name', 'custom_model_standard_variable'),
+                        ('username', 'username_example'),
+                        ('label', 'label_example')]
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
@@ -136,12 +86,128 @@ class TestModel(BaseTestCase):
             method='GET',
             headers=headers,
             query_string=query_string)
-
-        self.logger.info("Response length {}".format(len(response.json)))
-        for item in response.json:
-            self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_custom_models_variable_get(self):
+        """Test case for custom_models_variable_get
+
+        Get a list of Model
+        """
+        query_string = [('custom_query_name', 'custom_models_variable'),
+                        ('username', 'username_example'),
+                        ('label', 'label_example')]
+        headers = { 
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.5.0/custom/models/variable',
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_models_get(self):
+        """Test case for models_get
+
+        List all instances of Model
+        """
+        query_string = [('username', 'username_example'),
+                        ('label', 'label_example'),
+                        ('page', 1),
+                        ('per_page', 100)]
+        headers = { 
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.5.0/models',
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_models_id_delete(self):
+        """Test case for models_id_delete
+
+        Delete an existing Model
+        """
+        headers = { 
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/models/{id}'.format(id='id_example', user='user_example'),
+            method='DELETE',
+            headers=headers)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_models_id_get(self):
+        """Test case for models_id_get
+
+        Get a single Model by its id
+        """
+        query_string = [('username', 'username_example')]
+        headers = { 
+            'Accept': 'application/json',
+        }
+        response = self.client.open(
+            '/v1.5.0/models/{id}'.format(id='id_example'),
+            method='GET',
+            headers=headers,
+            query_string=query_string)
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_models_id_put(self):
+        """Test case for models_id_put
+
+        Update an existing Model
+        """
+        model = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/models/{id}'.format(id='id_example', user='user_example'),
+            method='PUT',
+            headers=headers,
+            data=json.dumps(model),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
+    def test_models_post(self):
+        """Test case for models_post
+
+        Create one Model
+        """
+        model = {
+  "value" : {
+    "id" : "some_id"
+  }
+}
+        headers = { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer special-key',
+        }
+        response = self.client.open(
+            '/v1.5.0/models'.format(user='user_example'),
+            method='POST',
+            headers=headers,
+            data=json.dumps(model),
+            content_type='application/json')
+        self.assert200(response,
+                       'Response body is : ' + response.data.decode('utf-8'))
+
 
 if __name__ == '__main__':
     unittest.main()

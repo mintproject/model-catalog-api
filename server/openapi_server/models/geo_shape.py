@@ -83,7 +83,7 @@ class GeoShape(Model):
     def elevation(self):
         """Gets the elevation of this GeoShape.
 
-        Description not available  # noqa: E501
+        Elevation of a location (WGS84)  # noqa: E501
 
         :return: The elevation of this GeoShape.
         :rtype: List[str]
@@ -94,7 +94,7 @@ class GeoShape(Model):
     def elevation(self, elevation):
         """Sets the elevation of this GeoShape.
 
-        Description not available  # noqa: E501
+        Elevation of a location (WGS84)  # noqa: E501
 
         :param elevation: The elevation of this GeoShape.
         :type elevation: List[str]
@@ -106,7 +106,7 @@ class GeoShape(Model):
     def latitude(self):
         """Gets the latitude of this GeoShape.
 
-        Description not available  # noqa: E501
+        Latitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :return: The latitude of this GeoShape.
         :rtype: List[str]
@@ -117,7 +117,7 @@ class GeoShape(Model):
     def latitude(self, latitude):
         """Sets the latitude of this GeoShape.
 
-        Description not available  # noqa: E501
+        Latitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :param latitude: The latitude of this GeoShape.
         :type latitude: List[str]
@@ -244,7 +244,7 @@ class GeoShape(Model):
     def longitude(self):
         """Gets the longitude of this GeoShape.
 
-        Description not available  # noqa: E501
+        Longitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :return: The longitude of this GeoShape.
         :rtype: List[str]
@@ -255,7 +255,7 @@ class GeoShape(Model):
     def longitude(self, longitude):
         """Sets the longitude of this GeoShape.
 
-        Description not available  # noqa: E501
+        Longitude (coordinates) of a location (WGS84)  # noqa: E501
 
         :param longitude: The longitude of this GeoShape.
         :type longitude: List[str]

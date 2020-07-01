@@ -15,72 +15,91 @@ class DatasetSpecification(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, has_file_structure=None, description=None, has_presentation=None, position=None, id=None, label=None, type=None, has_fixed_resource=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
         """DatasetSpecification - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.  # noqa: E501
         :type has_dimensionality: List[int]
         :param has_format: The has_format of this DatasetSpecification.  # noqa: E501
         :type has_format: List[str]
+        :param path_location: The path_location of this DatasetSpecification.  # noqa: E501
+        :type path_location: List[str]
         :param has_file_structure: The has_file_structure of this DatasetSpecification.  # noqa: E501
         :type has_file_structure: List[object]
         :param description: The description of this DatasetSpecification.  # noqa: E501
         :type description: List[str]
+        :param has_data_transformation: The has_data_transformation of this DatasetSpecification.  # noqa: E501
+        :type has_data_transformation: List[DataTransformation]
         :param has_presentation: The has_presentation of this DatasetSpecification.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
-        :param position: The position of this DatasetSpecification.  # noqa: E501
-        :type position: List[int]
-        :param id: The id of this DatasetSpecification.  # noqa: E501
-        :type id: str
         :param label: The label of this DatasetSpecification.  # noqa: E501
         :type label: List[str]
         :param type: The type of this DatasetSpecification.  # noqa: E501
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this DatasetSpecification.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
+        :param has_data_transformation_setup: The has_data_transformation_setup of this DatasetSpecification.  # noqa: E501
+        :type has_data_transformation_setup: List[DataTransformationSetup]
+        :param position: The position of this DatasetSpecification.  # noqa: E501
+        :type position: List[int]
+        :param id: The id of this DatasetSpecification.  # noqa: E501
+        :type id: str
         """
+        from openapi_server.models.data_transformation import DataTransformation
+        from openapi_server.models.data_transformation_setup import DataTransformationSetup
         from openapi_server.models.sample_resource import SampleResource
         from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
             'has_dimensionality': List[int],
             'has_format': List[str],
+            'path_location': List[str],
             'has_file_structure': List[object],
             'description': List[str],
+            'has_data_transformation': List[DataTransformation],
             'has_presentation': List[VariablePresentation],
-            'position': List[int],
-            'id': str,
             'label': List[str],
             'type': List[str],
-            'has_fixed_resource': List[SampleResource]
+            'has_fixed_resource': List[SampleResource],
+            'has_data_transformation_setup': List[DataTransformationSetup],
+            'position': List[int],
+            'id': str
         }
 
         self.attribute_map = {
             'has_dimensionality': 'hasDimensionality',
             'has_format': 'hasFormat',
+            'path_location': 'pathLocation',
             'has_file_structure': 'hasFileStructure',
             'description': 'description',
+            'has_data_transformation': 'hasDataTransformation',
             'has_presentation': 'hasPresentation',
-            'position': 'position',
-            'id': 'id',
             'label': 'label',
             'type': 'type',
-            'has_fixed_resource': 'hasFixedResource'
+            'has_fixed_resource': 'hasFixedResource',
+            'has_data_transformation_setup': 'hasDataTransformationSetup',
+            'position': 'position',
+            'id': 'id'
         }
 
         self._has_dimensionality = has_dimensionality
         self._has_format = has_format
+        self._path_location = path_location
         self._has_file_structure = has_file_structure
         self._description = description
+        self._has_data_transformation = has_data_transformation
         self._has_presentation = has_presentation
-        self._position = position
-        self._id = id
         self._label = label
         self._type = type
         self._has_fixed_resource = has_fixed_resource
+        self._has_data_transformation_setup = has_data_transformation_setup
+        self._position = position
+        self._id = id
 
     @classmethod
     def from_dict(cls, dikt) -> 'DatasetSpecification':
@@ -140,6 +159,29 @@ class DatasetSpecification(Model):
         self._has_format = has_format
 
     @property
+    def path_location(self):
+        """Gets the path_location of this DatasetSpecification.
+
+        Property that indicates the relative path of an input or output with respect to the folder structure of the executable.   For example, let's assume we have an input that has to exist in the folder `/datasets` or the executable will not work. This property ensures that this knowledge is captured for a given software component execution.  In this case the property would capture this as follows:  ``` :input_prep a sd:DatasetSpecification . :input_prep rdfs:label \"precipitation file\" . :input_precip sd:pathLocation \"/datasets/\". ```  # noqa: E501
+
+        :return: The path_location of this DatasetSpecification.
+        :rtype: List[str]
+        """
+        return self._path_location
+
+    @path_location.setter
+    def path_location(self, path_location):
+        """Sets the path_location of this DatasetSpecification.
+
+        Property that indicates the relative path of an input or output with respect to the folder structure of the executable.   For example, let's assume we have an input that has to exist in the folder `/datasets` or the executable will not work. This property ensures that this knowledge is captured for a given software component execution.  In this case the property would capture this as follows:  ``` :input_prep a sd:DatasetSpecification . :input_prep rdfs:label \"precipitation file\" . :input_precip sd:pathLocation \"/datasets/\". ```  # noqa: E501
+
+        :param path_location: The path_location of this DatasetSpecification.
+        :type path_location: List[str]
+        """
+
+        self._path_location = path_location
+
+    @property
     def has_file_structure(self):
         """Gets the has_file_structure of this DatasetSpecification.
 
@@ -186,6 +228,29 @@ class DatasetSpecification(Model):
         self._description = description
 
     @property
+    def has_data_transformation(self):
+        """Gets the has_data_transformation of this DatasetSpecification.
+
+        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+
+        :return: The has_data_transformation of this DatasetSpecification.
+        :rtype: List[DataTransformation]
+        """
+        return self._has_data_transformation
+
+    @has_data_transformation.setter
+    def has_data_transformation(self, has_data_transformation):
+        """Sets the has_data_transformation of this DatasetSpecification.
+
+        Property that associates an input/output with their corresponding data transformation.  # noqa: E501
+
+        :param has_data_transformation: The has_data_transformation of this DatasetSpecification.
+        :type has_data_transformation: List[DataTransformation]
+        """
+
+        self._has_data_transformation = has_data_transformation
+
+    @property
     def has_presentation(self):
         """Gets the has_presentation of this DatasetSpecification.
 
@@ -207,52 +272,6 @@ class DatasetSpecification(Model):
         """
 
         self._has_presentation = has_presentation
-
-    @property
-    def position(self):
-        """Gets the position of this DatasetSpecification.
-
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
-
-        :return: The position of this DatasetSpecification.
-        :rtype: List[int]
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this DatasetSpecification.
-
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
-
-        :param position: The position of this DatasetSpecification.
-        :type position: List[int]
-        """
-
-        self._position = position
-
-    @property
-    def id(self):
-        """Gets the id of this DatasetSpecification.
-
-        identifier  # noqa: E501
-
-        :return: The id of this DatasetSpecification.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this DatasetSpecification.
-
-        identifier  # noqa: E501
-
-        :param id: The id of this DatasetSpecification.
-        :type id: str
-        """
-
-        self._id = id
 
     @property
     def label(self):
@@ -322,3 +341,72 @@ class DatasetSpecification(Model):
         """
 
         self._has_fixed_resource = has_fixed_resource
+
+    @property
+    def has_data_transformation_setup(self):
+        """Gets the has_data_transformation_setup of this DatasetSpecification.
+
+        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+
+        :return: The has_data_transformation_setup of this DatasetSpecification.
+        :rtype: List[DataTransformationSetup]
+        """
+        return self._has_data_transformation_setup
+
+    @has_data_transformation_setup.setter
+    def has_data_transformation_setup(self, has_data_transformation_setup):
+        """Sets the has_data_transformation_setup of this DatasetSpecification.
+
+        Property to link an input/output dataset to the specific data transformation (with URLs  # noqa: E501
+
+        :param has_data_transformation_setup: The has_data_transformation_setup of this DatasetSpecification.
+        :type has_data_transformation_setup: List[DataTransformationSetup]
+        """
+
+        self._has_data_transformation_setup = has_data_transformation_setup
+
+    @property
+    def position(self):
+        """Gets the position of this DatasetSpecification.
+
+        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+
+        :return: The position of this DatasetSpecification.
+        :rtype: List[int]
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this DatasetSpecification.
+
+        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+
+        :param position: The position of this DatasetSpecification.
+        :type position: List[int]
+        """
+
+        self._position = position
+
+    @property
+    def id(self):
+        """Gets the id of this DatasetSpecification.
+
+        identifier  # noqa: E501
+
+        :return: The id of this DatasetSpecification.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DatasetSpecification.
+
+        identifier  # noqa: E501
+
+        :param id: The id of this DatasetSpecification.
+        :type id: str
+        """
+
+        self._id = id

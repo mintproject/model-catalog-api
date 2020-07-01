@@ -6,17 +6,17 @@ import unittest
 from flask import json
 from six import BytesIO
 
-from openapi_server.models.point_based_grid import PointBasedGrid  # noqa: E501
+from openapi_server.models.data_transformation_setup import DataTransformationSetup  # noqa: E501
 from openapi_server.test import BaseTestCase
 
 
-class TestPointBasedGridController(BaseTestCase):
-    """PointBasedGridController integration test stubs"""
+class TestDataTransformationSetupController(BaseTestCase):
+    """DataTransformationSetupController integration test stubs"""
 
-    def test_pointbasedgrids_get(self):
-        """Test case for pointbasedgrids_get
+    def test_datatransformationsetups_get(self):
+        """Test case for datatransformationsetups_get
 
-        List all instances of PointBasedGrid
+        List all instances of DataTransformationSetup
         """
         query_string = [('username', 'username_example'),
                         ('label', 'label_example'),
@@ -26,51 +26,51 @@ class TestPointBasedGridController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids',
+            '/v1.5.0/datatransformationsetups',
             method='GET',
             headers=headers,
             query_string=query_string)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_pointbasedgrids_id_delete(self):
-        """Test case for pointbasedgrids_id_delete
+    def test_datatransformationsetups_id_delete(self):
+        """Test case for datatransformationsetups_id_delete
 
-        Delete an existing PointBasedGrid
+        Delete an existing DataTransformationSetup
         """
         headers = { 
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids/{id}'.format(id='id_example', user='user_example'),
+            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example', user='user_example'),
             method='DELETE',
             headers=headers)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_pointbasedgrids_id_get(self):
-        """Test case for pointbasedgrids_id_get
+    def test_datatransformationsetups_id_get(self):
+        """Test case for datatransformationsetups_id_get
 
-        Get a single PointBasedGrid by its id
+        Get a single DataTransformationSetup by its id
         """
         query_string = [('username', 'username_example')]
         headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids/{id}'.format(id='id_example'),
+            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example'),
             method='GET',
             headers=headers,
             query_string=query_string)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_pointbasedgrids_id_put(self):
-        """Test case for pointbasedgrids_id_put
+    def test_datatransformationsetups_id_put(self):
+        """Test case for datatransformationsetups_id_put
 
-        Update an existing PointBasedGrid
+        Update an existing DataTransformationSetup
         """
-        point_based_grid = {
+        data_transformation_setup = {
   "value" : {
     "id" : "some_id"
   }
@@ -81,20 +81,20 @@ class TestPointBasedGridController(BaseTestCase):
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids/{id}'.format(id='id_example', user='user_example'),
+            '/v1.5.0/datatransformationsetups/{id}'.format(id='id_example', user='user_example'),
             method='PUT',
             headers=headers,
-            data=json.dumps(point_based_grid),
+            data=json.dumps(data_transformation_setup),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_pointbasedgrids_post(self):
-        """Test case for pointbasedgrids_post
+    def test_datatransformationsetups_post(self):
+        """Test case for datatransformationsetups_post
 
-        Create one PointBasedGrid
+        Create one DataTransformationSetup
         """
-        point_based_grid = {
+        data_transformation_setup = {
   "value" : {
     "id" : "some_id"
   }
@@ -105,10 +105,10 @@ class TestPointBasedGridController(BaseTestCase):
             'Authorization': 'Bearer special-key',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids'.format(user='user_example'),
+            '/v1.5.0/datatransformationsetups'.format(user='user_example'),
             method='POST',
             headers=headers,
-            data=json.dumps(point_based_grid),
+            data=json.dumps(data_transformation_setup),
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
