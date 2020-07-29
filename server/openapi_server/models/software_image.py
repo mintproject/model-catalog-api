@@ -1017,7 +1017,7 @@ class SoftwareImage(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this SoftwareImage.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :return: The had_primary_source of this SoftwareImage.
         :rtype: List[object]
@@ -1028,7 +1028,7 @@ class SoftwareImage(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this SoftwareImage.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this SoftwareImage.
         :type had_primary_source: List[object]

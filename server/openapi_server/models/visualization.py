@@ -33,12 +33,10 @@ class Visualization(Model):
         :param type: The type of this Visualization.  # noqa: E501
         :type type: List[str]
         :param value: The value of this Visualization.  # noqa: E501
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
-        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.software import Software
 
-          # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
@@ -49,7 +47,7 @@ class Visualization(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[AnyOfURIbooleanDateTimefloatintegerstring]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -110,7 +108,7 @@ class Visualization(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this Visualization.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :return: The had_primary_source of this Visualization.
         :rtype: List[object]
@@ -121,7 +119,7 @@ class Visualization(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Visualization.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Visualization.
         :type had_primary_source: List[object]
@@ -251,7 +249,7 @@ class Visualization(Model):
         Value associated to the described entity  # noqa: E501
 
         :return: The value of this Visualization.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._value
 
@@ -262,7 +260,7 @@ class Visualization(Model):
         Value associated to the described entity  # noqa: E501
 
         :param value: The value of this Visualization.
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
 
         self._value = value

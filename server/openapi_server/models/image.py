@@ -47,15 +47,13 @@ class Image(Model):
         :param id: The id of this Image.  # noqa: E501
         :type id: str
         :param value: The value of this Image.  # noqa: E501
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
-        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.data_transformation import DataTransformation
         from openapi_server.models.data_transformation_setup import DataTransformationSetup
         from openapi_server.models.sample_resource import SampleResource
         from openapi_server.models.variable_presentation import VariablePresentation
 
-          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -76,7 +74,7 @@ class Image(Model):
             'has_data_transformation_setup': List[DataTransformationSetup],
             'position': List[int],
             'id': str,
-            'value': List[AnyOfURIbooleanDateTimefloatintegerstring]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -358,7 +356,7 @@ class Image(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this Image.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :return: The had_primary_source of this Image.
         :rtype: List[object]
@@ -369,7 +367,7 @@ class Image(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Image.
 
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
+        had primary source  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Image.
         :type had_primary_source: List[object]
@@ -453,7 +451,7 @@ class Image(Model):
         Value associated to the described entity  # noqa: E501
 
         :return: The value of this Image.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._value
 
@@ -464,7 +462,7 @@ class Image(Model):
         Value associated to the described entity  # noqa: E501
 
         :param value: The value of this Image.
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
 
         self._value = value
