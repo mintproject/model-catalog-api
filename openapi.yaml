@@ -7152,6 +7152,41 @@ paths:
       tags:
       - Model
     x-oba-custom: true
+  /custom/dataspecifications/{id}/datatransformations:
+    get:
+      description: Gets a list of data transformations related a dataset
+      parameters:
+      - description: Name of the custom query
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_datatransformations
+          type: string
+      - description: Username to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the dataspecification
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataTransformation'
+          description: Gets a list of data transformations filter related a dataset
+      summary: Gets a list of data transformations related a dataset
+      tags:
+      - DataTransformation
+    x-oba-custom: true
 components:
   schemas:
     Intervention:
@@ -7537,6 +7572,13 @@ components:
         value:
           id: some_id
       properties:
+        influences:
+          description: Property that captures if a physical process influences another
+            process
+          items:
+            $ref: '#/components/schemas/Process'
+          nullable: true
+          type: array
         description:
           description: small description
           items:
@@ -7557,13 +7599,6 @@ components:
           description: type of the resource
           items:
             type: string
-          nullable: true
-          type: array
-        influences:
-          description: Property that captures if a physical process influences another
-            process
-          items:
-            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
       type: object
@@ -7687,6 +7722,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -7792,6 +7828,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -8132,7 +8169,7 @@ components:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
-            type: object
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         copyrightHolder:
@@ -8151,7 +8188,7 @@ components:
         logo:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
@@ -8182,13 +8219,13 @@ components:
         hasSampleExecution:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
@@ -8230,6 +8267,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -8242,7 +8280,7 @@ components:
         hasSourceCode:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SourceCode'
           maxItems: 1
           nullable: true
           type: array
@@ -8250,7 +8288,7 @@ components:
           description: Property used to define configurations with some fixed resources
             and values. The rationale of this property is to allow predefined configurations
           items:
-            type: object
+            $ref: '#/components/schemas/ConfigurationSetup'
           nullable: true
           type: array
         hasExample:
@@ -8270,7 +8308,7 @@ components:
         hasOutput:
           description: Property that expresses what are the outputs of a model
           items:
-            type: object
+            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
         doi:
@@ -8282,7 +8320,7 @@ components:
         hasFunding:
           description: Property that links a software project to its funding information
           items:
-            type: object
+            $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
         hasComponentLocation:
@@ -8303,7 +8341,7 @@ components:
         hasVersion:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
@@ -8327,7 +8365,7 @@ components:
         screenshot:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
@@ -8346,20 +8384,21 @@ components:
         hasSoftwareImage:
           description: Function to link a function with its corresponding container
           items:
-            type: object
+            $ref: '#/components/schemas/SoftwareImage'
           maxItems: 1
           nullable: true
           type: array
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
         contributor:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasPurpose:
@@ -8381,7 +8420,7 @@ components:
         hasSampleVisualization:
           description: A typical sample visualization of the softwware outputs
           items:
-            type: object
+            $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
         memoryRequirements:
@@ -8411,7 +8450,7 @@ components:
         adjustableParameter:
           description: Parameter that can be adjusted in a configuration setup
           items:
-            type: object
+            $ref: '#/components/schemas/Parameter'
           nullable: true
           type: array
         hasUsageNotes:
@@ -8453,7 +8492,7 @@ components:
         hasParameter:
           description: Property that indicates the parameters of a model configuration
           items:
-            type: object
+            $ref: '#/components/schemas/Parameter'
           nullable: true
           type: array
         operatingSystems:
@@ -8476,14 +8515,14 @@ components:
             for this property is that indices are usually calculated by applying post-processing
             steps to the outputs of a software component.
           items:
-            type: object
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
         hasInput:
           description: Property that links a model configuration to the input types
             expected by it.
           items:
-            type: object
+            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -8664,6 +8703,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -8822,6 +8862,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -8952,6 +8993,7 @@ components:
             a trained model with data from 2005-2010 may only be valid for predictions
             until 2015.
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9093,6 +9135,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9198,6 +9241,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9416,6 +9460,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9521,6 +9566,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9784,6 +9830,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -9927,6 +9974,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -10213,6 +10261,12 @@ components:
         value:
           id: some_id
       properties:
+        intervalUnit:
+          description: Unit used in an interval (e.g., month)
+          items:
+            $ref: '#/components/schemas/Unit'
+          nullable: true
+          type: array
         description:
           description: small description
           items:
@@ -10239,12 +10293,6 @@ components:
           description: Value used in the time interval of a model (e.g., 1 month,
             5 days, 'harvest cycle')
           items: {}
-          nullable: true
-          type: array
-        intervalUnit:
-          description: Unit used in an interval (e.g., month)
-          items:
-            $ref: '#/components/schemas/Unit'
           nullable: true
           type: array
       type: object
@@ -10409,6 +10457,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -10532,6 +10581,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -10791,16 +10841,16 @@ components:
             type: string
           nullable: true
           type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
         fundingSource:
           description: Description not available
           items:
             $ref: '#/components/schemas/Organization'
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
           nullable: true
           type: array
         fundingGrant:
@@ -10928,6 +10978,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -11033,6 +11084,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -11362,6 +11414,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -11485,6 +11538,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -11989,6 +12043,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12084,6 +12139,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12323,6 +12379,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12418,6 +12475,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12589,7 +12647,7 @@ components:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
-            type: object
+            $ref: '#/components/schemas/Software'
           nullable: true
           type: array
         copyrightHolder:
@@ -12608,7 +12666,7 @@ components:
         logo:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
@@ -12639,13 +12697,13 @@ components:
         hasSampleExecution:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
@@ -12687,6 +12745,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12699,7 +12758,7 @@ components:
         hasSourceCode:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SourceCode'
           maxItems: 1
           nullable: true
           type: array
@@ -12707,7 +12766,7 @@ components:
           description: Property used to define configurations with some fixed resources
             and values. The rationale of this property is to allow predefined configurations
           items:
-            type: object
+            $ref: '#/components/schemas/ConfigurationSetup'
           nullable: true
           type: array
         hasExample:
@@ -12727,7 +12786,7 @@ components:
         hasOutput:
           description: Property that expresses what are the outputs of a model
           items:
-            type: object
+            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
         doi:
@@ -12739,7 +12798,7 @@ components:
         hasFunding:
           description: Property that links a software project to its funding information
           items:
-            type: object
+            $ref: '#/components/schemas/FundingInformation'
           nullable: true
           type: array
         hasComponentLocation:
@@ -12760,7 +12819,7 @@ components:
         hasVersion:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
@@ -12784,7 +12843,7 @@ components:
         screenshot:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
@@ -12803,20 +12862,21 @@ components:
         hasSoftwareImage:
           description: Function to link a function with its corresponding container
           items:
-            type: object
+            $ref: '#/components/schemas/SoftwareImage'
           maxItems: 1
           nullable: true
           type: array
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
         contributor:
           description: Description not available
           items:
-            type: object
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasPurpose:
@@ -12838,7 +12898,7 @@ components:
         hasSampleVisualization:
           description: A typical sample visualization of the softwware outputs
           items:
-            type: object
+            $ref: '#/components/schemas/Visualization'
           nullable: true
           type: array
         memoryRequirements:
@@ -12904,7 +12964,7 @@ components:
         hasParameter:
           description: Property that indicates the parameters of a model configuration
           items:
-            type: object
+            $ref: '#/components/schemas/Parameter'
           nullable: true
           type: array
         operatingSystems:
@@ -12927,14 +12987,14 @@ components:
             for this property is that indices are usually calculated by applying post-processing
             steps to the outputs of a software component.
           items:
-            type: object
+            $ref: '#/components/schemas/NumericalIndex'
           nullable: true
           type: array
         hasInput:
           description: Property that links a model configuration to the input types
             expected by it.
           items:
-            type: object
+            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
       type: object
@@ -12945,6 +13005,13 @@ components:
         value:
           id: some_id
       properties:
+        hasStandardVariable:
+          description: the standard name of a variable
+          items:
+            $ref: '#/components/schemas/StandardVariable'
+          maxItems: 1
+          nullable: true
+          type: array
         description:
           description: small description
           items:
@@ -12965,13 +13032,6 @@ components:
           description: type of the resource
           items:
             type: string
-          nullable: true
-          type: array
-        hasStandardVariable:
-          description: the standard name of a variable
-          items:
-            $ref: '#/components/schemas/StandardVariable'
-          maxItems: 1
           nullable: true
           type: array
       type: object
@@ -13094,6 +13154,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -13199,6 +13260,7 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -13479,16 +13541,16 @@ components:
             type: object
           nullable: true
           type: array
-        description:
-          description: small description
-          items:
-            type: string
-          nullable: true
-          type: array
         partOf:
           description: Indicates whether a region is part of another region
           items:
             $ref: '#/components/schemas/Region'
+          nullable: true
+          type: array
+        description:
+          description: small description
+          items:
+            type: string
           nullable: true
           type: array
         id:
@@ -13619,7 +13681,14 @@ components:
         dateCreated:
           description: Description not available
           items:
+            format: date-time
             type: string
+          nullable: true
+          type: array
+        contributor:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         compatibleVisualizationSoftware:
@@ -13627,12 +13696,6 @@ components:
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        contributor:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:
@@ -13769,6 +13832,7 @@ components:
         datePublished:
           description: Description not available
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -13900,10 +13964,6 @@ components:
           items: {}
           nullable: true
           type: array
-        id:
-          description: identifier
-          nullable: false
-          type: string
         partOfDataset:
           description: Associates a presentation with a dataset where the presentation
             occurs
@@ -13911,6 +13971,10 @@ components:
             $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
         usesUnit:
           description: Property used to link a variable presentation or time interval
             to the unit they are represented in

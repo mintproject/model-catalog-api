@@ -15,9 +15,11 @@ class Process(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, label=None, type=None, influences=None):  # noqa: E501
+    def __init__(self, influences=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """Process - a model defined in OpenAPI
 
+        :param influences: The influences of this Process.  # noqa: E501
+        :type influences: List[Process]
         :param description: The description of this Process.  # noqa: E501
         :type description: List[str]
         :param id: The id of this Process.  # noqa: E501
@@ -26,32 +28,30 @@ class Process(Model):
         :type label: List[str]
         :param type: The type of this Process.  # noqa: E501
         :type type: List[str]
-        :param influences: The influences of this Process.  # noqa: E501
-        :type influences: List[Process]
         """
 
 
         self.openapi_types = {
+            'influences': List[Process],
             'description': List[str],
             'id': str,
             'label': List[str],
-            'type': List[str],
-            'influences': List[Process]
+            'type': List[str]
         }
 
         self.attribute_map = {
+            'influences': 'influences',
             'description': 'description',
             'id': 'id',
             'label': 'label',
-            'type': 'type',
-            'influences': 'influences'
+            'type': 'type'
         }
 
+        self._influences = influences
         self._description = description
         self._id = id
         self._label = label
         self._type = type
-        self._influences = influences
 
     @classmethod
     def from_dict(cls, dikt) -> 'Process':
@@ -63,6 +63,29 @@ class Process(Model):
         :rtype: Process
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def influences(self):
+        """Gets the influences of this Process.
+
+        Property that captures if a physical process influences another process  # noqa: E501
+
+        :return: The influences of this Process.
+        :rtype: List[Process]
+        """
+        return self._influences
+
+    @influences.setter
+    def influences(self, influences):
+        """Sets the influences of this Process.
+
+        Property that captures if a physical process influences another process  # noqa: E501
+
+        :param influences: The influences of this Process.
+        :type influences: List[Process]
+        """
+
+        self._influences = influences
 
     @property
     def description(self):
@@ -155,26 +178,3 @@ class Process(Model):
         """
 
         self._type = type
-
-    @property
-    def influences(self):
-        """Gets the influences of this Process.
-
-        Property that captures if a physical process influences another process  # noqa: E501
-
-        :return: The influences of this Process.
-        :rtype: List[Process]
-        """
-        return self._influences
-
-    @influences.setter
-    def influences(self, influences):
-        """Sets the influences of this Process.
-
-        Property that captures if a physical process influences another process  # noqa: E501
-
-        :param influences: The influences of this Process.
-        :type influences: List[Process]
-        """
-
-        self._influences = influences

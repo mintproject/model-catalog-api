@@ -73,7 +73,7 @@ class ModelConfigurationSetup(Model):
         :param has_execution_command: The has_execution_command of this ModelConfigurationSetup.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this ModelConfigurationSetup.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param license: The license of this ModelConfigurationSetup.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ModelConfigurationSetup.  # noqa: E501
@@ -123,7 +123,7 @@ class ModelConfigurationSetup(Model):
         :param has_software_image: The has_software_image of this ModelConfigurationSetup.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ModelConfigurationSetup.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this ModelConfigurationSetup.  # noqa: E501
         :type contributor: List[Person]
         :param has_model_result_table: The has_model_result_table of this ModelConfigurationSetup.  # noqa: E501
@@ -165,7 +165,7 @@ class ModelConfigurationSetup(Model):
         :param has_executable_notebook: The has_executable_notebook of this ModelConfigurationSetup.  # noqa: E501
         :type has_executable_notebook: List[str]
         :param valid_until: The valid_until of this ModelConfigurationSetup.  # noqa: E501
-        :type valid_until: List[str]
+        :type valid_until: List[datetime]
         :param has_equation: The has_equation of this ModelConfigurationSetup.  # noqa: E501
         :type has_equation: List[Equation]
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfigurationSetup.  # noqa: E501
@@ -245,7 +245,7 @@ class ModelConfigurationSetup(Model):
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -270,7 +270,7 @@ class ModelConfigurationSetup(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'contributor': List[Person],
             'has_model_result_table': List[str],
             'calibration_target_variable': List[VariablePresentation],
@@ -291,7 +291,7 @@ class ModelConfigurationSetup(Model):
             'has_parameter': List[Parameter],
             'operating_systems': List[str],
             'has_executable_notebook': List[str],
-            'valid_until': List[str],
+            'valid_until': List[datetime],
             'has_equation': List[Equation],
             'useful_for_calculating_index': List[NumericalIndex],
             'has_input': List[DatasetSpecification]
@@ -1094,7 +1094,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -1105,7 +1105,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this ModelConfigurationSetup.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published
@@ -1669,7 +1669,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -1680,7 +1680,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this ModelConfigurationSetup.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created
@@ -2152,7 +2152,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :return: The valid_until of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._valid_until
 
@@ -2163,7 +2163,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :param valid_until: The valid_until of this ModelConfigurationSetup.
-        :type valid_until: List[str]
+        :type valid_until: List[datetime]
         """
 
         self._valid_until = valid_until

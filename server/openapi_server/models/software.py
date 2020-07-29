@@ -15,7 +15,7 @@ class Software(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, issue_tracker=None, date_created=None, compatible_visualization_software=None, contributor=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_executable_instructions=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, readme=None, has_build_file=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_executable_notebook=None, has_example=None, publisher=None, useful_for_calculating_index=None, doi=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_executable_instructions=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, readme=None, has_build_file=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_executable_notebook=None, has_example=None, publisher=None, useful_for_calculating_index=None, doi=None):  # noqa: E501
         """Software - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this Software.  # noqa: E501
@@ -51,11 +51,11 @@ class Software(Model):
         :param issue_tracker: The issue_tracker of this Software.  # noqa: E501
         :type issue_tracker: List[str]
         :param date_created: The date_created of this Software.  # noqa: E501
-        :type date_created: List[str]
-        :param compatible_visualization_software: The compatible_visualization_software of this Software.  # noqa: E501
-        :type compatible_visualization_software: List[Software]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this Software.  # noqa: E501
         :type contributor: List[Person]
+        :param compatible_visualization_software: The compatible_visualization_software of this Software.  # noqa: E501
+        :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this Software.  # noqa: E501
         :type copyright_holder: List[object]
         :param has_faq: The has_faq of this Software.  # noqa: E501
@@ -97,7 +97,7 @@ class Software(Model):
         :param has_assumption: The has_assumption of this Software.  # noqa: E501
         :type has_assumption: List[str]
         :param date_published: The date_published of this Software.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param operating_systems: The operating_systems of this Software.  # noqa: E501
         :type operating_systems: List[str]
         :param license: The license of this Software.  # noqa: E501
@@ -148,9 +148,9 @@ class Software(Model):
             'has_installation_instructions': List[str],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
-            'date_created': List[str],
-            'compatible_visualization_software': List[Software],
+            'date_created': List[datetime],
             'contributor': List[Person],
+            'compatible_visualization_software': List[Software],
             'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
@@ -171,7 +171,7 @@ class Software(Model):
             'short_description': List[str],
             'label': List[str],
             'has_assumption': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'operating_systems': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
@@ -200,8 +200,8 @@ class Software(Model):
             'had_primary_source': 'hadPrimarySource',
             'issue_tracker': 'issueTracker',
             'date_created': 'dateCreated',
-            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'contributor': 'contributor',
+            'compatible_visualization_software': 'compatibleVisualizationSoftware',
             'copyright_holder': 'copyrightHolder',
             'has_faq': 'hasFAQ',
             'logo': 'logo',
@@ -250,8 +250,8 @@ class Software(Model):
         self._had_primary_source = had_primary_source
         self._issue_tracker = issue_tracker
         self._date_created = date_created
-        self._compatible_visualization_software = compatible_visualization_software
         self._contributor = contributor
+        self._compatible_visualization_software = compatible_visualization_software
         self._copyright_holder = copyright_holder
         self._has_faq = has_faq
         self._logo = logo
@@ -668,7 +668,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this Software.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -679,33 +679,10 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this Software.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created
-
-    @property
-    def compatible_visualization_software(self):
-        """Gets the compatible_visualization_software of this Software.
-
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
-
-        :return: The compatible_visualization_software of this Software.
-        :rtype: List[Software]
-        """
-        return self._compatible_visualization_software
-
-    @compatible_visualization_software.setter
-    def compatible_visualization_software(self, compatible_visualization_software):
-        """Sets the compatible_visualization_software of this Software.
-
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
-
-        :param compatible_visualization_software: The compatible_visualization_software of this Software.
-        :type compatible_visualization_software: List[Software]
-        """
-
-        self._compatible_visualization_software = compatible_visualization_software
 
     @property
     def contributor(self):
@@ -729,6 +706,29 @@ class Software(Model):
         """
 
         self._contributor = contributor
+
+    @property
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this Software.
+
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+
+        :return: The compatible_visualization_software of this Software.
+        :rtype: List[Software]
+        """
+        return self._compatible_visualization_software
+
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this Software.
+
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
+
+        :param compatible_visualization_software: The compatible_visualization_software of this Software.
+        :type compatible_visualization_software: List[Software]
+        """
+
+        self._compatible_visualization_software = compatible_visualization_software
 
     @property
     def copyright_holder(self):
@@ -1197,7 +1197,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this Software.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -1208,7 +1208,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this Software.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published

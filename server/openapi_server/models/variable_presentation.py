@@ -15,7 +15,7 @@ class VariablePresentation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_standard_variable=None, has_maximum_accepted_value=None, has_constraint=None, description=None, label=None, type=None, has_long_name=None, has_short_name=None, has_minimum_accepted_value=None, id=None, part_of_dataset=None, uses_unit=None):  # noqa: E501
+    def __init__(self, has_default_value=None, has_standard_variable=None, has_maximum_accepted_value=None, has_constraint=None, description=None, label=None, type=None, has_long_name=None, has_short_name=None, has_minimum_accepted_value=None, part_of_dataset=None, id=None, uses_unit=None):  # noqa: E501
         """VariablePresentation - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this VariablePresentation.  # noqa: E501
@@ -38,10 +38,10 @@ class VariablePresentation(Model):
         :type has_short_name: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.  # noqa: E501
         :type has_minimum_accepted_value: List[object]
-        :param id: The id of this VariablePresentation.  # noqa: E501
-        :type id: str
         :param part_of_dataset: The part_of_dataset of this VariablePresentation.  # noqa: E501
         :type part_of_dataset: List[DatasetSpecification]
+        :param id: The id of this VariablePresentation.  # noqa: E501
+        :type id: str
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
         :type uses_unit: List[Unit]
         """
@@ -64,8 +64,8 @@ class VariablePresentation(Model):
             'has_long_name': List[str],
             'has_short_name': List[str],
             'has_minimum_accepted_value': List[object],
-            'id': str,
             'part_of_dataset': List[DatasetSpecification],
+            'id': str,
             'uses_unit': List[Unit]
         }
 
@@ -80,8 +80,8 @@ class VariablePresentation(Model):
             'has_long_name': 'hasLongName',
             'has_short_name': 'hasShortName',
             'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
-            'id': 'id',
             'part_of_dataset': 'partOfDataset',
+            'id': 'id',
             'uses_unit': 'usesUnit'
         }
 
@@ -95,8 +95,8 @@ class VariablePresentation(Model):
         self._has_long_name = has_long_name
         self._has_short_name = has_short_name
         self._has_minimum_accepted_value = has_minimum_accepted_value
-        self._id = id
         self._part_of_dataset = part_of_dataset
+        self._id = id
         self._uses_unit = uses_unit
 
     @classmethod
@@ -341,29 +341,6 @@ class VariablePresentation(Model):
         self._has_minimum_accepted_value = has_minimum_accepted_value
 
     @property
-    def id(self):
-        """Gets the id of this VariablePresentation.
-
-        identifier  # noqa: E501
-
-        :return: The id of this VariablePresentation.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this VariablePresentation.
-
-        identifier  # noqa: E501
-
-        :param id: The id of this VariablePresentation.
-        :type id: str
-        """
-
-        self._id = id
-
-    @property
     def part_of_dataset(self):
         """Gets the part_of_dataset of this VariablePresentation.
 
@@ -385,6 +362,29 @@ class VariablePresentation(Model):
         """
 
         self._part_of_dataset = part_of_dataset
+
+    @property
+    def id(self):
+        """Gets the id of this VariablePresentation.
+
+        identifier  # noqa: E501
+
+        :return: The id of this VariablePresentation.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this VariablePresentation.
+
+        identifier  # noqa: E501
+
+        :param id: The id of this VariablePresentation.
+        :type id: str
+        """
+
+        self._id = id
 
     @property
     def uses_unit(self):

@@ -69,7 +69,7 @@ class ModelConfiguration(Model):
         :param has_execution_command: The has_execution_command of this ModelConfiguration.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this ModelConfiguration.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param license: The license of this ModelConfiguration.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ModelConfiguration.  # noqa: E501
@@ -115,7 +115,7 @@ class ModelConfiguration(Model):
         :param has_software_image: The has_software_image of this ModelConfiguration.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ModelConfiguration.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this ModelConfiguration.  # noqa: E501
         :type contributor: List[Person]
         :param has_model_result_table: The has_model_result_table of this ModelConfiguration.  # noqa: E501
@@ -227,7 +227,7 @@ class ModelConfiguration(Model):
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -250,7 +250,7 @@ class ModelConfiguration(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'contributor': List[Person],
             'has_model_result_table': List[str],
             'has_purpose': List[str],
@@ -1011,7 +1011,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this ModelConfiguration.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -1022,7 +1022,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this ModelConfiguration.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published
@@ -1540,7 +1540,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this ModelConfiguration.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -1551,7 +1551,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this ModelConfiguration.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created

@@ -15,9 +15,11 @@ class TimeInterval(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, label=None, type=None, interval_value=None, interval_unit=None):  # noqa: E501
+    def __init__(self, interval_unit=None, description=None, id=None, label=None, type=None, interval_value=None):  # noqa: E501
         """TimeInterval - a model defined in OpenAPI
 
+        :param interval_unit: The interval_unit of this TimeInterval.  # noqa: E501
+        :type interval_unit: List[Unit]
         :param description: The description of this TimeInterval.  # noqa: E501
         :type description: List[str]
         :param id: The id of this TimeInterval.  # noqa: E501
@@ -28,37 +30,35 @@ class TimeInterval(Model):
         :type type: List[str]
         :param interval_value: The interval_value of this TimeInterval.  # noqa: E501
         :type interval_value: List[object]
-        :param interval_unit: The interval_unit of this TimeInterval.  # noqa: E501
-        :type interval_unit: List[Unit]
         """
         from openapi_server.models.unit import Unit
 
           # noqa: E501
 
         self.openapi_types = {
+            'interval_unit': List[Unit],
             'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
-            'interval_value': List[object],
-            'interval_unit': List[Unit]
+            'interval_value': List[object]
         }
 
         self.attribute_map = {
+            'interval_unit': 'intervalUnit',
             'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
-            'interval_value': 'intervalValue',
-            'interval_unit': 'intervalUnit'
+            'interval_value': 'intervalValue'
         }
 
+        self._interval_unit = interval_unit
         self._description = description
         self._id = id
         self._label = label
         self._type = type
         self._interval_value = interval_value
-        self._interval_unit = interval_unit
 
     @classmethod
     def from_dict(cls, dikt) -> 'TimeInterval':
@@ -70,6 +70,29 @@ class TimeInterval(Model):
         :rtype: TimeInterval
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def interval_unit(self):
+        """Gets the interval_unit of this TimeInterval.
+
+        Unit used in an interval (e.g., month)  # noqa: E501
+
+        :return: The interval_unit of this TimeInterval.
+        :rtype: List[Unit]
+        """
+        return self._interval_unit
+
+    @interval_unit.setter
+    def interval_unit(self, interval_unit):
+        """Sets the interval_unit of this TimeInterval.
+
+        Unit used in an interval (e.g., month)  # noqa: E501
+
+        :param interval_unit: The interval_unit of this TimeInterval.
+        :type interval_unit: List[Unit]
+        """
+
+        self._interval_unit = interval_unit
 
     @property
     def description(self):
@@ -185,26 +208,3 @@ class TimeInterval(Model):
         """
 
         self._interval_value = interval_value
-
-    @property
-    def interval_unit(self):
-        """Gets the interval_unit of this TimeInterval.
-
-        Unit used in an interval (e.g., month)  # noqa: E501
-
-        :return: The interval_unit of this TimeInterval.
-        :rtype: List[Unit]
-        """
-        return self._interval_unit
-
-    @interval_unit.setter
-    def interval_unit(self, interval_unit):
-        """Sets the interval_unit of this TimeInterval.
-
-        Unit used in an interval (e.g., month)  # noqa: E501
-
-        :param interval_unit: The interval_unit of this TimeInterval.
-        :type interval_unit: List[Unit]
-        """
-
-        self._interval_unit = interval_unit

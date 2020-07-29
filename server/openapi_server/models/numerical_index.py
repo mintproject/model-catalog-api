@@ -15,9 +15,11 @@ class NumericalIndex(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, label=None, type=None, has_standard_variable=None):  # noqa: E501
+    def __init__(self, has_standard_variable=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """NumericalIndex - a model defined in OpenAPI
 
+        :param has_standard_variable: The has_standard_variable of this NumericalIndex.  # noqa: E501
+        :type has_standard_variable: List[StandardVariable]
         :param description: The description of this NumericalIndex.  # noqa: E501
         :type description: List[str]
         :param id: The id of this NumericalIndex.  # noqa: E501
@@ -26,34 +28,32 @@ class NumericalIndex(Model):
         :type label: List[str]
         :param type: The type of this NumericalIndex.  # noqa: E501
         :type type: List[str]
-        :param has_standard_variable: The has_standard_variable of this NumericalIndex.  # noqa: E501
-        :type has_standard_variable: List[StandardVariable]
         """
         from openapi_server.models.standard_variable import StandardVariable
 
           # noqa: E501
 
         self.openapi_types = {
+            'has_standard_variable': List[StandardVariable],
             'description': List[str],
             'id': str,
             'label': List[str],
-            'type': List[str],
-            'has_standard_variable': List[StandardVariable]
+            'type': List[str]
         }
 
         self.attribute_map = {
+            'has_standard_variable': 'hasStandardVariable',
             'description': 'description',
             'id': 'id',
             'label': 'label',
-            'type': 'type',
-            'has_standard_variable': 'hasStandardVariable'
+            'type': 'type'
         }
 
+        self._has_standard_variable = has_standard_variable
         self._description = description
         self._id = id
         self._label = label
         self._type = type
-        self._has_standard_variable = has_standard_variable
 
     @classmethod
     def from_dict(cls, dikt) -> 'NumericalIndex':
@@ -65,6 +65,29 @@ class NumericalIndex(Model):
         :rtype: NumericalIndex
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def has_standard_variable(self):
+        """Gets the has_standard_variable of this NumericalIndex.
+
+        the standard name of a variable  # noqa: E501
+
+        :return: The has_standard_variable of this NumericalIndex.
+        :rtype: List[StandardVariable]
+        """
+        return self._has_standard_variable
+
+    @has_standard_variable.setter
+    def has_standard_variable(self, has_standard_variable):
+        """Sets the has_standard_variable of this NumericalIndex.
+
+        the standard name of a variable  # noqa: E501
+
+        :param has_standard_variable: The has_standard_variable of this NumericalIndex.
+        :type has_standard_variable: List[StandardVariable]
+        """
+
+        self._has_standard_variable = has_standard_variable
 
     @property
     def description(self):
@@ -157,26 +180,3 @@ class NumericalIndex(Model):
         """
 
         self._type = type
-
-    @property
-    def has_standard_variable(self):
-        """Gets the has_standard_variable of this NumericalIndex.
-
-        the standard name of a variable  # noqa: E501
-
-        :return: The has_standard_variable of this NumericalIndex.
-        :rtype: List[StandardVariable]
-        """
-        return self._has_standard_variable
-
-    @has_standard_variable.setter
-    def has_standard_variable(self, has_standard_variable):
-        """Sets the has_standard_variable of this NumericalIndex.
-
-        the standard name of a variable  # noqa: E501
-
-        :param has_standard_variable: The has_standard_variable of this NumericalIndex.
-        :type has_standard_variable: List[StandardVariable]
-        """
-
-        self._has_standard_variable = has_standard_variable

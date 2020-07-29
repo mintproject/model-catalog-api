@@ -55,7 +55,7 @@ class Emulator(Model):
         :param short_description: The short_description of this Emulator.  # noqa: E501
         :type short_description: List[str]
         :param date_published: The date_published of this Emulator.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param license: The license of this Emulator.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this Emulator.  # noqa: E501
@@ -89,7 +89,7 @@ class Emulator(Model):
         :param issue_tracker: The issue_tracker of this Emulator.  # noqa: E501
         :type issue_tracker: List[str]
         :param date_created: The date_created of this Emulator.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this Emulator.  # noqa: E501
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this Emulator.  # noqa: E501
@@ -164,7 +164,7 @@ class Emulator(Model):
             'author': List[object],
             'has_build_file': List[str],
             'short_description': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_explanation_diagram': List[Image],
@@ -181,7 +181,7 @@ class Emulator(Model):
             'has_model_category': List[str],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'contributor': List[Person],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -740,7 +740,7 @@ class Emulator(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this Emulator.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -751,7 +751,7 @@ class Emulator(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this Emulator.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published
@@ -1131,7 +1131,7 @@ class Emulator(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this Emulator.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -1142,7 +1142,7 @@ class Emulator(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this Emulator.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created

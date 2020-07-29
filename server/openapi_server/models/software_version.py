@@ -57,7 +57,7 @@ class SoftwareVersion(Model):
         :param short_description: The short_description of this SoftwareVersion.  # noqa: E501
         :type short_description: List[str]
         :param date_published: The date_published of this SoftwareVersion.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param license: The license of this SoftwareVersion.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this SoftwareVersion.  # noqa: E501
@@ -87,7 +87,7 @@ class SoftwareVersion(Model):
         :param issue_tracker: The issue_tracker of this SoftwareVersion.  # noqa: E501
         :type issue_tracker: List[str]
         :param date_created: The date_created of this SoftwareVersion.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this SoftwareVersion.  # noqa: E501
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this SoftwareVersion.  # noqa: E501
@@ -159,7 +159,7 @@ class SoftwareVersion(Model):
             'author': List[object],
             'has_build_file': List[str],
             'short_description': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_example': List[str],
@@ -174,7 +174,7 @@ class SoftwareVersion(Model):
             'screenshot': List[Image],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'contributor': List[Person],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -754,7 +754,7 @@ class SoftwareVersion(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this SoftwareVersion.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -765,7 +765,7 @@ class SoftwareVersion(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this SoftwareVersion.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published
@@ -1099,7 +1099,7 @@ class SoftwareVersion(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this SoftwareVersion.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -1110,7 +1110,7 @@ class SoftwareVersion(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this SoftwareVersion.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created
