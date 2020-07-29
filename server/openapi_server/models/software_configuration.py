@@ -65,7 +65,7 @@ class SoftwareConfiguration(Model):
         :param has_execution_command: The has_execution_command of this SoftwareConfiguration.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this SoftwareConfiguration.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param license: The license of this SoftwareConfiguration.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this SoftwareConfiguration.  # noqa: E501
@@ -103,7 +103,7 @@ class SoftwareConfiguration(Model):
         :param has_software_image: The has_software_image of this SoftwareConfiguration.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this SoftwareConfiguration.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param contributor: The contributor of this SoftwareConfiguration.  # noqa: E501
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this SoftwareConfiguration.  # noqa: E501
@@ -195,7 +195,7 @@ class SoftwareConfiguration(Model):
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -214,7 +214,7 @@ class SoftwareConfiguration(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'contributor': List[Person],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -908,7 +908,7 @@ class SoftwareConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this SoftwareConfiguration.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -919,7 +919,7 @@ class SoftwareConfiguration(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this SoftwareConfiguration.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published
@@ -1273,7 +1273,7 @@ class SoftwareConfiguration(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this SoftwareConfiguration.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this SoftwareConfiguration.
         :rtype: List[object]
@@ -1284,7 +1284,7 @@ class SoftwareConfiguration(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this SoftwareConfiguration.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this SoftwareConfiguration.
         :type had_primary_source: List[object]
@@ -1345,7 +1345,7 @@ class SoftwareConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this SoftwareConfiguration.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -1356,7 +1356,7 @@ class SoftwareConfiguration(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this SoftwareConfiguration.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created

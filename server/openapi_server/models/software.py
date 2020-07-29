@@ -51,7 +51,7 @@ class Software(Model):
         :param issue_tracker: The issue_tracker of this Software.  # noqa: E501
         :type issue_tracker: List[str]
         :param date_created: The date_created of this Software.  # noqa: E501
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         :param compatible_visualization_software: The compatible_visualization_software of this Software.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param contributor: The contributor of this Software.  # noqa: E501
@@ -97,7 +97,7 @@ class Software(Model):
         :param has_assumption: The has_assumption of this Software.  # noqa: E501
         :type has_assumption: List[str]
         :param date_published: The date_published of this Software.  # noqa: E501
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         :param operating_systems: The operating_systems of this Software.  # noqa: E501
         :type operating_systems: List[str]
         :param license: The license of this Software.  # noqa: E501
@@ -148,7 +148,7 @@ class Software(Model):
             'has_installation_instructions': List[str],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
-            'date_created': List[str],
+            'date_created': List[datetime],
             'compatible_visualization_software': List[Software],
             'contributor': List[Person],
             'copyright_holder': List[object],
@@ -171,7 +171,7 @@ class Software(Model):
             'short_description': List[str],
             'label': List[str],
             'has_assumption': List[str],
-            'date_published': List[str],
+            'date_published': List[datetime],
             'operating_systems': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
@@ -619,7 +619,7 @@ class Software(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this Software.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this Software.
         :rtype: List[object]
@@ -630,7 +630,7 @@ class Software(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Software.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Software.
         :type had_primary_source: List[object]
@@ -668,7 +668,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this Software.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_created
 
@@ -679,7 +679,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this Software.
-        :type date_created: List[str]
+        :type date_created: List[datetime]
         """
 
         self._date_created = date_created
@@ -1197,7 +1197,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this Software.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._date_published
 
@@ -1208,7 +1208,7 @@ class Software(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this Software.
-        :type date_published: List[str]
+        :type date_published: List[datetime]
         """
 
         self._date_published = date_published

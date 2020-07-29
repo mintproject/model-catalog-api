@@ -19,15 +19,15 @@ class Parameter(Model):
         """Parameter - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this Parameter.  # noqa: E501
-        :type has_default_value: List[object]
+        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.  # noqa: E501
-        :type has_maximum_accepted_value: List[object]
+        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
         :param description: The description of this Parameter.  # noqa: E501
         :type description: List[str]
         :param has_data_type: The has_data_type of this Parameter.  # noqa: E501
         :type has_data_type: List[str]
         :param has_fixed_value: The has_fixed_value of this Parameter.  # noqa: E501
-        :type has_fixed_value: List[object]
+        :type has_fixed_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         :param has_presentation: The has_presentation of this Parameter.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param label: The label of this Parameter.  # noqa: E501
@@ -37,7 +37,7 @@ class Parameter(Model):
         :param type: The type of this Parameter.  # noqa: E501
         :type type: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this Parameter.  # noqa: E501
-        :type has_minimum_accepted_value: List[object]
+        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
         :param has_accepted_values: The has_accepted_values of this Parameter.  # noqa: E501
         :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this Parameter.  # noqa: E501
@@ -53,6 +53,8 @@ class Parameter(Model):
         :param has_step_size: The has_step_size of this Parameter.  # noqa: E501
         :type has_step_size: List[float]
         """
+        from openapi_server.models.any_of_date_timefloatinteger import AnyOfDateTimefloatinteger
+        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.intervention import Intervention
         from openapi_server.models.unit import Unit
         from openapi_server.models.variable import Variable
@@ -62,18 +64,20 @@ class Parameter(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
-            'has_default_value': List[object],
-            'has_maximum_accepted_value': List[object],
+            'has_default_value': List[AnyOfURIbooleanDateTimefloatintegerstring],
+            'has_maximum_accepted_value': List[AnyOfDateTimefloatinteger],
             'description': List[str],
             'has_data_type': List[str],
-            'has_fixed_value': List[object],
+            'has_fixed_value': List[AnyOfURIbooleanDateTimefloatintegerstring],
             'has_presentation': List[VariablePresentation],
             'label': List[str],
             'recommended_increment': List[float],
             'type': List[str],
-            'has_minimum_accepted_value': List[object],
+            'has_minimum_accepted_value': List[AnyOfDateTimefloatinteger],
             'has_accepted_values': List[str],
             'adjusts_variable': List[Variable],
             'relevant_for_intervention': List[Intervention],
@@ -139,7 +143,7 @@ class Parameter(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_default_value of this Parameter.
-        :rtype: List[object]
+        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
         return self._has_default_value
 
@@ -150,7 +154,7 @@ class Parameter(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_default_value: The has_default_value of this Parameter.
-        :type has_default_value: List[object]
+        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
 
         self._has_default_value = has_default_value
@@ -162,7 +166,7 @@ class Parameter(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_maximum_accepted_value of this Parameter.
-        :rtype: List[object]
+        :rtype: List[AnyOfDateTimefloatinteger]
         """
         return self._has_maximum_accepted_value
 
@@ -173,7 +177,7 @@ class Parameter(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this Parameter.
-        :type has_maximum_accepted_value: List[object]
+        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
         """
 
         self._has_maximum_accepted_value = has_maximum_accepted_value
@@ -231,7 +235,7 @@ class Parameter(Model):
         Value of a parameter in a software setup.  # noqa: E501
 
         :return: The has_fixed_value of this Parameter.
-        :rtype: List[object]
+        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
         return self._has_fixed_value
 
@@ -242,7 +246,7 @@ class Parameter(Model):
         Value of a parameter in a software setup.  # noqa: E501
 
         :param has_fixed_value: The has_fixed_value of this Parameter.
-        :type has_fixed_value: List[object]
+        :type has_fixed_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
 
         self._has_fixed_value = has_fixed_value
@@ -346,7 +350,7 @@ class Parameter(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_minimum_accepted_value of this Parameter.
-        :rtype: List[object]
+        :rtype: List[AnyOfDateTimefloatinteger]
         """
         return self._has_minimum_accepted_value
 
@@ -357,7 +361,7 @@ class Parameter(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this Parameter.
-        :type has_minimum_accepted_value: List[object]
+        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value
