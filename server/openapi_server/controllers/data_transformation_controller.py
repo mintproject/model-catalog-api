@@ -22,13 +22,15 @@ def custom_dataspecifications_id_datatransformations_get(id, custom_query_name=N
     """
 
 
-    return query_manager.get_resource(id=id,
+    items = query_manager.get_resource(id=id,
                                       custom_query_name=custom_query_name,
                                       username=username,
                                       rdf_type_uri=DATATRANSFORMATION_TYPE_URI,
                                       rdf_type_name=DATATRANSFORMATION_TYPE_NAME,
                                       kls=DataTransformation,
                                       skip_id_framing=True)
+    return items if isinstance(items, list) else [items]
+
 
 def datatransformations_get(username=None, label=None, page=None, per_page=None):  # noqa: E501
     """List all instances of DataTransformation
