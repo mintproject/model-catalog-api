@@ -9,12 +9,18 @@ CONSTRUCT {
 
 WHERE {
     GRAPH ?_g_iri {
-    	?_resource_iri rdfs:label ?label .
-    	?setup sd:hasInput ?_resource_iri .
-    	?mc sd:hasSetup ?setup .
- 	   	?mc sd:hasInput ?input .
-    	?input rdfs:label ?label .
-		?input sd:hasDataTransformation ?dt .
+        {
+           	?_resource_iri sd:hasDataTransformation ?dt .
+        }
+        UNION {
+            ?_resource_iri rdfs:label ?label .
+            ?setup sd:hasInput ?_resource_iri .
+            ?mc sd:hasSetup ?setup .
+            ?mc sd:hasInput ?input .
+            ?input rdfs:label ?label .
+            ?input sd:hasDataTransformation ?dt .
+
+        }
         ?dt ?dt_p ?dt_o
         OPTIONAL {
             ?dt_o ?p ?o
