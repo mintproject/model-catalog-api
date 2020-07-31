@@ -10,16 +10,19 @@
         "@container": "@set"
     },
     "hasImplementationScriptLocation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasImplementationScriptLocation",
         "@container": "@set"
     },
     "hasDownloadURL": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasDownloadURL",
         "@container": "@set"
     },
     "type": "@type",
     "Image": {"@id": "https://w3id.org/okn/o/sd#Image"},
     "hasInstallationInstructions": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasInstallationInstructions",
         "@container": "@set"
     },
@@ -147,6 +150,7 @@
         "@container": "@set"
     },
     "hasComponentLocation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
         "@container": "@set"
     },
