@@ -17,6 +17,9 @@ WHERE {
                 SELECT DISTINCT ?setup {
                   ?setup a sdm:ModelConfigurationSetup .
                   {
+                    ?setup sd:usefulForCalculatingIndex ?index .
+                    ?index sd:hasStandardVariable ?sv .
+                  } UNION {
                     ?setup sd:hasOutput ?output.
                     ?output sd:hasPresentation ?vp.
                     ?vp sd:hasStandardVariable ?sv.
