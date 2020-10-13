@@ -50,4 +50,4 @@ docker run -p 8080:8080 openapi_server
 
 ## Configure
 
-To configure the endpoint and the rdf graph, please modify the file {config.ini](server/openapi_server/settings/config.ini)
+To configure the endpoint and the rdf graph, please modify the file [config.ini](server/openapi_server/settings/config.ini)
