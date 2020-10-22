@@ -16,7 +16,7 @@ WHERE {
                 ?model_version sd:hasConfiguration ?model_c .
         		?model_c sd:hasSetup ?setup .
                 ?setup sd:hasParameter ?param .
-                ?param sd:relevantForIntervention ?interv .
+                ?param sdm:relevantForIntervention ?interv .
                 ?interv a sdm:Intervention .
                 ?interv rdfs:label ?intervLabel .
                 FILTER REGEX(?intervLabel, ?_label, "i")

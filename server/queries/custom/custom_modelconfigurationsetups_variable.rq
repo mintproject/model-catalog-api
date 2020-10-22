@@ -17,9 +17,6 @@ WHERE {
                 SELECT DISTINCT ?setup {
                   ?setup a sdm:ModelConfigurationSetup .
                   {
-                    ?setup sd:usefulForCalculatingIndex ?index .
-                    ?index sd:hasStandardVariable ?sv .
-                  } UNION {
                     ?setup sd:hasOutput ?output.
                     ?output sd:hasPresentation ?vp.
                     ?vp sd:hasStandardVariable ?sv.
@@ -27,8 +24,7 @@ WHERE {
                     ?model sd:hasVersion ?version.
                     ?version sd:hasConfiguration ?configuration.
                     ?configuration sd:hasSetup ?setup .
-                    ?model sd:usefulForCalculatingIndex ?index .
-                    ?index sd:hasStandardVariable ?sv .
+                    ?model sdm:usefulForCalculatingIndex ?sv.
                   }
                   ?sv rdfs:label ?variableLabel .
                   FILTER REGEX(?variableLabel, ?_label, "i")

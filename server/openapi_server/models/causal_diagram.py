@@ -19,7 +19,7 @@ class CausalDiagram(Model):
         """CausalDiagram - a model defined in OpenAPI
 
         :param has_diagram_part: The has_diagram_part of this CausalDiagram.  # noqa: E501
-        :type has_diagram_part: List[object]
+        :type has_diagram_part: List[AnyOfVariablePresentationProcess]
         :param description: The description of this CausalDiagram.  # noqa: E501
         :type description: List[str]
         :param id: The id of this CausalDiagram.  # noqa: E501
@@ -29,10 +29,12 @@ class CausalDiagram(Model):
         :param type: The type of this CausalDiagram.  # noqa: E501
         :type type: List[str]
         """
+        from openapi_server.models.any_of_variable_presentation_process import AnyOfVariablePresentationProcess
 
+          # noqa: E501
 
         self.openapi_types = {
-            'has_diagram_part': List[object],
+            'has_diagram_part': List[AnyOfVariablePresentationProcess],
             'description': List[str],
             'id': str,
             'label': List[str],
@@ -71,7 +73,7 @@ class CausalDiagram(Model):
         Property that links a causal diagram with its constituent nodes  # noqa: E501
 
         :return: The has_diagram_part of this CausalDiagram.
-        :rtype: List[object]
+        :rtype: List[AnyOfVariablePresentationProcess]
         """
         return self._has_diagram_part
 
@@ -82,7 +84,7 @@ class CausalDiagram(Model):
         Property that links a causal diagram with its constituent nodes  # noqa: E501
 
         :param has_diagram_part: The has_diagram_part of this CausalDiagram.
-        :type has_diagram_part: List[object]
+        :type has_diagram_part: List[AnyOfVariablePresentationProcess]
         """
 
         self._has_diagram_part = has_diagram_part

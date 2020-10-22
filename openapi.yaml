@@ -2,15 +2,178 @@ openapi: 3.0.1
 info:
   description: This is the API of the Software Description Ontology at [https://w3id.org/okn/o/sdm](https://w3id.org/okn/o/sdm)
   title: Model Catalog
-  version: v1.5.0
+  version: v1.6.0
 externalDocs:
   description: Model Catalog
   url: https://w3id.org/okn/o/sdm
 servers:
-- url: https://api.models.mint.isi.edu/v1.5.0
-- url: https://dev.api.models.mint.isi.edu/v1.5.0
-- url: http://localhost:8080/v1.5.0
+- url: https://api.models.mint.isi.edu/v1.6.0
+- url: https://dev.api.models.mint.isi.edu/v1.6.0
+- url: http://localhost:8080/v1.6.0
 paths:
+  /catalogidentifiers:
+    get:
+      description: Gets a list of all instances of CatalogIdentifier (more information
+        in https://w3id.org/okn/o/sd#CatalogIdentifier)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CatalogIdentifier'
+                type: array
+          description: Successful response - returns an array with the instances of
+            CatalogIdentifier.
+      summary: List all instances of CatalogIdentifier
+      tags:
+      - CatalogIdentifier
+    post:
+      description: Create a new instance of CatalogIdentifier (more information in
+        https://w3id.org/okn/o/sd#CatalogIdentifier)
+      parameters:
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogIdentifier'
+        description: Information about the CatalogIdentifierto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogIdentifier'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one CatalogIdentifier
+      tags:
+      - CatalogIdentifier
+  /catalogidentifiers/{id}:
+    delete:
+      description: Delete an existing CatalogIdentifier (more information in https://w3id.org/okn/o/sd#CatalogIdentifier)
+      parameters:
+      - description: The ID of the CatalogIdentifier to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing CatalogIdentifier
+      tags:
+      - CatalogIdentifier
+    get:
+      description: Gets the details of a given CatalogIdentifier (more information
+        in https://w3id.org/okn/o/sd#CatalogIdentifier)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the CatalogIdentifier to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogIdentifier'
+          description: Gets the details of a given CatalogIdentifier
+      summary: Get a single CatalogIdentifier by its id
+      tags:
+      - CatalogIdentifier
+    put:
+      description: Updates an existing CatalogIdentifier (more information in https://w3id.org/okn/o/sd#CatalogIdentifier)
+      parameters:
+      - description: The ID of the CatalogIdentifier to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CatalogIdentifier'
+        description: An old CatalogIdentifierto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogIdentifier'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing CatalogIdentifier
+      tags:
+      - CatalogIdentifier
   /configurationsetups:
     get:
       description: Gets a list of all instances of ConfigurationSetup (more information
@@ -3898,6 +4061,167 @@ paths:
       summary: Update an existing CausalDiagram
       tags:
       - CausalDiagram
+  /coupledmodels:
+    get:
+      description: Gets a list of all instances of CoupledModel (more information
+        in https://w3id.org/okn/o/sdm#CoupledModel)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CoupledModel'
+                type: array
+          description: Successful response - returns an array with the instances of
+            CoupledModel.
+      summary: List all instances of CoupledModel
+      tags:
+      - CoupledModel
+    post:
+      description: Create a new instance of CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)
+      parameters:
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoupledModel'
+        description: Information about the CoupledModelto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoupledModel'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one CoupledModel
+      tags:
+      - CoupledModel
+  /coupledmodels/{id}:
+    delete:
+      description: Delete an existing CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)
+      parameters:
+      - description: The ID of the CoupledModel to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing CoupledModel
+      tags:
+      - CoupledModel
+    get:
+      description: Gets the details of a given CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the CoupledModel to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoupledModel'
+          description: Gets the details of a given CoupledModel
+      summary: Get a single CoupledModel by its id
+      tags:
+      - CoupledModel
+    put:
+      description: Updates an existing CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)
+      parameters:
+      - description: The ID of the CoupledModel to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoupledModel'
+        description: An old CoupledModelto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CoupledModel'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing CoupledModel
+      tags:
+      - CoupledModel
   /empiricalmodels:
     get:
       description: Gets a list of all instances of EmpiricalModel (more information
@@ -5344,6 +5668,168 @@ paths:
       summary: Update an existing Model
       tags:
       - Model
+  /modelcategorys:
+    get:
+      description: Gets a list of all instances of ModelCategory (more information
+        in https://w3id.org/okn/o/sdm#ModelCategory)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: Filter by label
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+      - description: Page number
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+      - description: Items per page
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ModelCategory'
+                type: array
+          description: Successful response - returns an array with the instances of
+            ModelCategory.
+      summary: List all instances of ModelCategory
+      tags:
+      - ModelCategory
+    post:
+      description: Create a new instance of ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory)
+      parameters:
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelCategory'
+        description: Information about the ModelCategoryto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelCategory'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one ModelCategory
+      tags:
+      - ModelCategory
+  /modelcategorys/{id}:
+    delete:
+      description: Delete an existing ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory)
+      parameters:
+      - description: The ID of the ModelCategory to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing ModelCategory
+      tags:
+      - ModelCategory
+    get:
+      description: Gets the details of a given ModelCategory (more information in
+        https://w3id.org/okn/o/sdm#ModelCategory)
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      - description: The ID of the ModelCategory to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelCategory'
+          description: Gets the details of a given ModelCategory
+      summary: Get a single ModelCategory by its id
+      tags:
+      - ModelCategory
+    put:
+      description: Updates an existing ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory)
+      parameters:
+      - description: The ID of the ModelCategory to be retrieved
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      - description: Username
+        in: path
+        name: user
+        required: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelCategory'
+        description: An old ModelCategoryto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelCategory'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing ModelCategory
+      tags:
+      - ModelCategory
   /modelconfigurations:
     get:
       description: Gets a list of all instances of ModelConfiguration (more information
@@ -7152,41 +7638,6 @@ paths:
       tags:
       - Model
     x-oba-custom: true
-  /custom/dataspecifications/{id}/datatransformations:
-    get:
-      description: Gets a list of data transformations related a dataset
-      parameters:
-      - description: Name of the custom query
-        in: query
-        name: custom_query_name
-        required: false
-        schema:
-          default: custom_datatransformations
-          type: string
-      - description: Username to query
-        in: query
-        name: username
-        required: false
-        schema:
-          type: string
-      - description: The ID of the dataspecification
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/DataTransformation'
-          description: Gets a list of data transformations filter related a dataset
-      summary: Gets a list of data transformations related a dataset
-      tags:
-      - DataTransformation
-    x-oba-custom: true
 components:
   schemas:
     Intervention:
@@ -7233,14 +7684,18 @@ components:
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
         wasDerivedFromSoftware:
-          description: Description not available
+          description: Property that identifies the software used to create a visualization
           items:
             $ref: '#/components/schemas/Software'
           nullable: true
@@ -7269,7 +7724,18 @@ components:
           type: array
         value:
           description: Value associated to the described entity
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
       type: object
@@ -7287,7 +7753,7 @@ components:
           nullable: true
           type: array
         programmingLanguage:
-          description: Description not available
+          description: Language used to code a software component
           items:
             type: string
           nullable: true
@@ -7321,24 +7787,12 @@ components:
           nullable: true
           type: array
       type: object
-    Organization:
-      description: An organized ody of people with a particular purpose
+    Variable:
+      description: A symbol that represents a quanity in a dataset or dataset specification
       example:
         value:
           id: some_id
       properties:
-        identifier:
-          description: Identifier of the resource being described
-          items:
-            type: string
-          nullable: true
-          type: array
-        website:
-          description: Website of the software
-          items:
-            type: string
-          nullable: true
-          type: array
         description:
           description: small description
           items:
@@ -7362,12 +7816,24 @@ components:
           nullable: true
           type: array
       type: object
-    Variable:
-      description: A symbol that represents a quanity in a dataset or dataset specification
+    Organization:
+      description: An organized body of people with a particular purpose
       example:
         value:
           id: some_id
       properties:
+        identifier:
+          description: Identifier of the resource being described
+          items:
+            type: string
+          nullable: true
+          type: array
+        website:
+          description: Website of the software
+          items:
+            type: string
+          nullable: true
+          type: array
         description:
           description: small description
           items:
@@ -7534,6 +8000,12 @@ components:
             type: string
           nullable: true
           type: array
+        isTransformedFrom:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         hasShape:
           description: 'Grids may be: rectangular, triangular, hexagonal, hybrid,
             unstructured, block structure, etc.'
@@ -7667,8 +8139,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -7686,8 +8159,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -7703,8 +8177,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -7754,8 +8229,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -7807,9 +8283,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -8011,10 +8487,23 @@ components:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
-        hadPrimarySource:
-          description: had primary source
+        isTransformedFrom:
+          description: Property that links a dataset specification from a model configuration
+            or setup to the output from a target data transformation. This occurs
+            when a data transformation produces several outputs, but only one of them
+            is the one needed for a model
           items:
-            description: had primary source
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        hadPrimarySource:
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
+          items:
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -8040,7 +8529,18 @@ components:
           type: string
         value:
           description: Value associated to the described entity
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
       type: object
@@ -8141,7 +8641,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -8173,10 +8673,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -8186,16 +8687,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -8217,22 +8720,31 @@ components:
           nullable: true
           type: array
         hasSampleExecution:
-          description: Description not available
+          description: Property pointing to a sample execution of a software configuration
           items:
             $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
-          description: Description not available
+          description: Property designed to link a software configuration to a sample
+            resource resulting from its execution
           items:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        wasDerivedFromSetup:
+          description: Property that links a setup to a previous version of that setup.
+            This property is needed (for example) when creating snapshots of setups.
+          items:
+            $ref: '#/components/schemas/ConfigurationSetup'
           nullable: true
           type: array
         hasConstraint:
@@ -8265,7 +8777,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -8278,7 +8790,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -8299,16 +8812,27 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
           description: Property that expresses what are the outputs of a model
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        status:
+          description: Data property to indicate the status of a configuration setups.
+            For example, to indicate that a setup has been executed in a platform,
+            that the setup should notbe shown to users (it's an auxiliary setup),
+            etc.
+          items:
+            type: string
           nullable: true
           type: array
         doi:
@@ -8339,13 +8863,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -8363,15 +8888,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -8389,14 +8918,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -8424,7 +8953,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -8442,7 +8971,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -8496,7 +9025,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -8603,8 +9132,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         calibrationMethod:
@@ -8637,8 +9167,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -8672,8 +9203,15 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        wasDerivedFromSetup:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/ConfigurationSetup'
           nullable: true
           type: array
         hasConstraint:
@@ -8748,8 +9286,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
@@ -8762,6 +9301,12 @@ components:
           description: Time interval used in the model configuration
           items:
             $ref: '#/components/schemas/TimeInterval'
+          nullable: true
+          type: array
+        status:
+          description: Description not available
+          items:
+            type: string
           nullable: true
           type: array
         doi:
@@ -8834,9 +9379,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -9080,8 +9625,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -9099,8 +9645,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -9116,8 +9663,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -9167,8 +9715,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -9220,9 +9769,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -9342,6 +9891,505 @@ components:
           nullable: true
           type: array
       type: object
+    CoupledModel:
+      description: Model that incorporates the coupling of two or more existing models
+      example:
+        value:
+          id: some_id
+      properties:
+        hasDownloadInstructions:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        keywords:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDocumentation:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasGrid:
+          description: Grid information about the model
+          items:
+            $ref: '#/components/schemas/Grid'
+          nullable: true
+          type: array
+        softwareRequirements:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDownloadURL:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasInstallationInstructions:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        copyrightHolder:
+          description: Description not available
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        hasFAQ:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        logo:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          description: Description not available
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        identifier:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        author:
+          description: Description not available
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        hasBuildFile:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        shortDescription:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        datePublished:
+          description: Description not available
+          items:
+            format: date-time
+            type: string
+          nullable: true
+          type: array
+        license:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSourceCode:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/SourceCode'
+          maxItems: 1
+          nullable: true
+          type: array
+        hasExplanationDiagram:
+          description: Diagram used to explain the behavior of the model
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasExample:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        publisher:
+          description: Description not available
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        doi:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasFunding:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        supportDetails:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasVersion:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/SoftwareVersion'
+          nullable: true
+          type: array
+        hasTypicalDataSource:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        referencePublication:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        screenshot:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        usesModel:
+          description: Property that describes which models are used by a coupled
+            model
+          items:
+            $ref: '#/components/schemas/Model'
+          nullable: true
+          type: array
+        hasModelCategory:
+          description: Category associated with a model (e.g., Hydrology, etc.)
+          items:
+            $ref: '#/components/schemas/ModelCategory'
+          nullable: true
+          type: array
+        hadPrimarySource:
+          description: Description not available
+          items:
+            description: Description not available
+            type: object
+          nullable: true
+          type: array
+        issueTracker:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        dateCreated:
+          description: Description not available
+          items:
+            format: date-time
+            type: string
+          nullable: true
+          type: array
+        contributor:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        hasPurpose:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasExecutableInstructions:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSampleVisualization:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Visualization'
+          nullable: true
+          type: array
+        memoryRequirements:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        website:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        citation:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        processorRequirements:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasUsageNotes:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        readme:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasAssumption:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        operatingSystems:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasExecutableNotebook:
+          description: Description not available
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasEquation:
+          description: Equations used in the model
+          items:
+            $ref: '#/components/schemas/Equation'
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+      type: object
+    CatalogIdentifier:
+      description: Class to identify that a parameter is a catalog identifier. The
+        rationale for this type of parameter is that in some cases datasets may be
+        downloaded in the software component itself, rather than exposed as an input
+      example:
+        value:
+          id: some_id
+      properties:
+        hasDefaultValue:
+          description: Default accepted value of a variable presentation (or a parameter)
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
+          nullable: true
+          type: array
+        hasMaximumAcceptedValue:
+          description: Maximum accepted value of a variable presentation (or a parameter)
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+          nullable: true
+          type: array
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDataType:
+          description: Property that indicates the data type of a parameter
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasFixedValue:
+          description: Value of a parameter in a software setup.
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
+          nullable: true
+          type: array
+        hasPresentation:
+          description: Property that links an instance of a dataset (or a dataset
+            specification) to the presentation of a variable contained (or expected
+            to be contained) on it.
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        recommendedIncrement:
+          description: Value that represents how a parameter should be incremented
+            on each iteration of a software component execution. This value is important
+            when preparing execution ensembles automatically, e.g., simulating crop
+            production varying the parameter "fertilizer amount" in increments of
+            10%.
+          items:
+            type: number
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasMinimumAcceptedValue:
+          description: Minimum accepted value of a variable presentation (or a parameter)
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+          nullable: true
+          type: array
+        hasAcceptedValues:
+          description: Property that constraints which values are accepted for a parameter.
+            For example, the name of a crop can only be "Maize" or "Sorghum"
+          items:
+            type: string
+          nullable: true
+          type: array
+        adjustsVariable:
+          description: Property that links parameter with the variable they adjust.
+            This property can be used when parameters quantify variables without directly
+            representing them. For example, a "fertilizer percentage adjustment" parameter
+            can quantify a "fertilizer price" variable
+          items:
+            $ref: '#/components/schemas/Variable'
+          maxItems: 1
+          nullable: true
+          type: array
+        relevantForIntervention:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/Intervention'
+          nullable: true
+          type: array
+        position:
+          description: Position of the parameter or input/output in the model configuration.
+            This property is needed to know how to organize the I/O of the component
+            on execution
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        usesUnit:
+          description: Property used to link a variable presentation or time interval
+            to the unit they are represented in
+          items:
+            $ref: '#/components/schemas/Unit'
+          maxItems: 1
+          nullable: true
+          type: array
+        hasStepSize:
+          description: 'Property that determines what are the increments (step size)
+            that are commonly used to vary a parameter. This is commonly used for
+            automatically setting up software tests. For example, if I want to set
+            up a model and try 30 reasonable values on a parameter, I may use the
+            default value and the step size to create the appropriate increments.
+            If the step size is 0.1 and the default value is 0, then I will will be
+            able to create setups: 0, 0.1, 0.2...2.9,3'
+          items:
+            type: number
+          nullable: true
+          type: array
+      type: object
     EmpiricalModel:
       description: Model based on observations.
       example:
@@ -9405,8 +10453,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -9424,8 +10473,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -9441,8 +10491,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -9492,8 +10543,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -9545,9 +10597,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -9737,8 +10789,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasRegion:
@@ -9764,8 +10817,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -9799,8 +10853,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasConstraint:
@@ -9868,8 +10923,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
@@ -9946,9 +11002,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -10187,6 +11243,12 @@ components:
             type: string
           nullable: true
           type: array
+        isTransformedFrom:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         hasShape:
           description: 'Grids may be: rectangular, triangular, hexagonal, hybrid,
             unstructured, block structure, etc.'
@@ -10218,6 +11280,36 @@ components:
           description: identifier
           nullable: false
           type: string
+      type: object
+    ModelCategory:
+      description: Class used to represent a category of a model (e.g., Hydrology,
+        Agriculture, etc.)
+      example:
+        value:
+          id: some_id
+      properties:
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
       type: object
     SampleExecution:
       description: A sample execution of a given software
@@ -10292,7 +11384,11 @@ components:
         intervalValue:
           description: Value used in the time interval of a model (e.g., 1 month,
             5 days, 'harvest cycle')
-          items: {}
+          items:
+            anyOf:
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
       type: object
@@ -10331,7 +11427,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -10363,10 +11459,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -10376,16 +11473,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -10407,22 +11506,31 @@ components:
           nullable: true
           type: array
         hasSampleExecution:
-          description: Description not available
+          description: Property pointing to a sample execution of a software configuration
           items:
             $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
-          description: Description not available
+          description: Property designed to link a software configuration to a sample
+            resource resulting from its execution
           items:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        wasDerivedFromSetup:
+          description: Property that links a setup to a previous version of that setup.
+            This property is needed (for example) when creating snapshots of setups.
+          items:
+            $ref: '#/components/schemas/ConfigurationSetup'
           nullable: true
           type: array
         hasConstraint:
@@ -10455,7 +11563,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -10468,7 +11576,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -10489,16 +11598,27 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
           description: Property that expresses what are the outputs of a model
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        status:
+          description: Data property to indicate the status of a configuration setups.
+            For example, to indicate that a setup has been executed in a platform,
+            that the setup should notbe shown to users (it's an auxiliary setup),
+            etc.
+          items:
+            type: string
           nullable: true
           type: array
         doi:
@@ -10529,13 +11649,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -10553,15 +11674,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -10579,14 +11704,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -10614,7 +11739,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -10632,7 +11757,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -10686,7 +11811,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -10798,6 +11923,15 @@ components:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
+        isTransformedFrom:
+          description: Property that links a dataset specification from a model configuration
+            or setup to the output from a target data transformation. This occurs
+            when a data transformation produces several outputs, but only one of them
+            is the one needed for a model
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
         hasDataTransformationSetup:
           description: Property to link an input/output dataset to the specific data
             transformation (with URLs
@@ -10842,7 +11976,7 @@ components:
           nullable: true
           type: array
         fundingSource:
-          description: Description not available
+          description: Link to the organization funding a software component
           items:
             $ref: '#/components/schemas/Organization'
           nullable: true
@@ -10923,8 +12057,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -10942,8 +12077,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -10959,8 +12095,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -11010,8 +12147,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -11063,9 +12201,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -11225,9 +12363,9 @@ components:
         hasDiagramPart:
           description: Property that links a causal diagram with its constituent nodes
           items:
-            description: Property that links a causal diagram with its constituent
-              nodes
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/VariablePresentation'
+            - $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         description:
@@ -11288,7 +12426,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -11320,10 +12458,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -11333,16 +12472,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -11364,22 +12505,24 @@ components:
           nullable: true
           type: array
         hasSampleExecution:
-          description: Description not available
+          description: Property pointing to a sample execution of a software configuration
           items:
             $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
-          description: Description not available
+          description: Property designed to link a software configuration to a sample
+            resource resulting from its execution
           items:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasConstraint:
@@ -11412,7 +12555,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -11425,7 +12568,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -11446,10 +12590,12 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
@@ -11486,13 +12632,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -11510,15 +12657,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -11536,14 +12687,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -11571,7 +12722,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -11589,7 +12740,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -11637,7 +12788,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -11712,7 +12863,18 @@ components:
           type: array
         value:
           description: Value associated to the described entity
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
       type: object
@@ -11797,6 +12959,12 @@ components:
           description: Spatial resolution of a grid (e.g., 50m)
           items:
             type: string
+          nullable: true
+          type: array
+        isTransformedFrom:
+          description: Description not available
+          items:
+            $ref: '#/components/schemas/DatasetSpecification'
           nullable: true
           type: array
         hasShape:
@@ -11937,7 +13105,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -11969,10 +13137,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -11982,16 +13151,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -12021,10 +13192,11 @@ components:
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -12041,7 +13213,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -12054,7 +13226,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -12068,10 +13241,12 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -12094,13 +13269,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -12118,15 +13294,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -12137,14 +13317,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -12172,7 +13352,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -12190,7 +13370,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -12225,7 +13405,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -12283,7 +13463,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -12315,10 +13495,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -12328,16 +13509,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -12351,10 +13534,11 @@ components:
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -12377,7 +13561,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -12390,7 +13574,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -12404,10 +13589,12 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -12430,13 +13617,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -12454,15 +13642,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -12473,14 +13665,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -12508,7 +13700,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -12526,7 +13718,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -12561,7 +13753,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -12619,7 +13811,7 @@ components:
           nullable: true
           type: array
         softwareRequirements:
-          description: Description not available
+          description: Software requirements needed to install a software component
           items:
             type: string
           nullable: true
@@ -12651,10 +13843,11 @@ components:
           nullable: true
           type: array
         copyrightHolder:
-          description: Description not available
+          description: Copyright holder for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -12664,16 +13857,18 @@ components:
           nullable: true
           type: array
         logo:
-          description: Description not available
+          description: Property that links to the image used as logo for a software
+            component
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hasContactPerson:
-          description: Description not available
+          description: Contact person responsible for a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         tag:
@@ -12695,22 +13890,24 @@ components:
           nullable: true
           type: array
         hasSampleExecution:
-          description: Description not available
+          description: Property pointing to a sample execution of a software configuration
           items:
             $ref: '#/components/schemas/SampleExecution'
           nullable: true
           type: array
         hasSampleResult:
-          description: Description not available
+          description: Property designed to link a software configuration to a sample
+            resource resulting from its execution
           items:
             $ref: '#/components/schemas/SampleResource'
           nullable: true
           type: array
         author:
-          description: Description not available
+          description: The creator of a software component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasConstraint:
@@ -12743,7 +13940,7 @@ components:
           nullable: true
           type: array
         datePublished:
-          description: Description not available
+          description: Date when a software component was published
           items:
             format: date-time
             type: string
@@ -12756,7 +13953,8 @@ components:
           nullable: true
           type: array
         hasSourceCode:
-          description: Description not available
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
           items:
             $ref: '#/components/schemas/SourceCode'
           maxItems: 1
@@ -12777,10 +13975,12 @@ components:
           nullable: true
           type: array
         publisher:
-          description: Description not available
+          description: Publisher organization or person responsible for a software
+            component
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasOutput:
@@ -12817,13 +14017,14 @@ components:
           nullable: true
           type: array
         hasVersion:
-          description: Description not available
+          description: Property designed to link a software component with its corresponding
+            versions
           items:
             $ref: '#/components/schemas/SoftwareVersion'
           nullable: true
           type: array
         hasTypicalDataSource:
-          description: Description not available
+          description: Typical data sources that are used by a software component
           items:
             type: string
           nullable: true
@@ -12841,15 +14042,19 @@ components:
           nullable: true
           type: array
         screenshot:
-          description: Description not available
+          description: Image illustrating a snapshot of the target software
           items:
             $ref: '#/components/schemas/Image'
           nullable: true
           type: array
         hadPrimarySource:
-          description: had primary source
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
           items:
-            description: had primary source
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
             type: object
           nullable: true
           type: array
@@ -12867,14 +14072,14 @@ components:
           nullable: true
           type: array
         dateCreated:
-          description: Description not available
+          description: Date when a software component was created
           items:
             format: date-time
             type: string
           nullable: true
           type: array
         contributor:
-          description: Description not available
+          description: Contributor to a software component
           items:
             $ref: '#/components/schemas/Person'
           nullable: true
@@ -12902,7 +14107,7 @@ components:
           nullable: true
           type: array
         memoryRequirements:
-          description: Description not available
+          description: Memory requirements of a software
           items:
             type: string
           nullable: true
@@ -12920,7 +14125,7 @@ components:
           nullable: true
           type: array
         processorRequirements:
-          description: Description not available
+          description: Processor requirements of a software component
           items:
             type: string
           nullable: true
@@ -12968,7 +14173,7 @@ components:
           nullable: true
           type: array
         operatingSystems:
-          description: Description not available
+          description: Operating systems under which a software component can operate
           items:
             type: string
           nullable: true
@@ -13099,8 +14304,9 @@ components:
         copyrightHolder:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasFAQ:
@@ -13118,8 +14324,9 @@ components:
         hasContactPerson:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         id:
@@ -13135,8 +14342,9 @@ components:
         author:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         hasBuildFile:
@@ -13186,8 +14394,9 @@ components:
         publisher:
           description: Description not available
           items:
-            description: Description not available
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         doi:
@@ -13239,9 +14448,9 @@ components:
           nullable: true
           type: array
         hasModelCategory:
-          description: Category associated with a model (e.g., Hydrology)
+          description: Category associated with a model (e.g., Hydrology, etc.)
           items:
-            type: string
+            $ref: '#/components/schemas/ModelCategory'
           nullable: true
           type: array
         hadPrimarySource:
@@ -13398,7 +14607,18 @@ components:
           type: array
         value:
           description: Value associated to the described entity
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
       type: object
@@ -13410,12 +14630,30 @@ components:
       properties:
         hasDefaultValue:
           description: Default accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
         hasMaximumAcceptedValue:
           description: Maximum accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
           nullable: true
           type: array
         description:
@@ -13432,7 +14670,18 @@ components:
           type: array
         hasFixedValue:
           description: Value of a parameter in a software setup.
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
         hasPresentation:
@@ -13467,7 +14716,14 @@ components:
           type: array
         hasMinimumAcceptedValue:
           description: Minimum accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
           nullable: true
           type: array
         hasAcceptedValues:
@@ -13537,8 +14793,9 @@ components:
         geo:
           description: Specific coordinates or shape associated with a region
           items:
-            description: Specific coordinates or shape associated with a region
-            type: object
+            anyOf:
+            - $ref: '#/components/schemas/GeoCoordinates'
+            - $ref: '#/components/schemas/GeoShape'
           nullable: true
           type: array
         partOf:
@@ -13570,329 +14827,6 @@ components:
           nullable: true
           type: array
       type: object
-    Software:
-      description: Description not available
-      example:
-        value:
-          id: some_id
-      properties:
-        hasDownloadInstructions:
-          description: Instructions needed to download a software component. The difference
-            with `hasDownloadURL` is that this property captures the human readable
-            instructions required to download software. For example, sometimes an
-            authentication is needed, users need to fill in a form, etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasFunding:
-          description: Property that links a software project to its funding information
-          items:
-            $ref: '#/components/schemas/FundingInformation'
-          nullable: true
-          type: array
-        keywords:
-          description: Keywords associated with a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDocumentation:
-          description: Pointer to the documentation of the model
-          items:
-            type: string
-          nullable: true
-          type: array
-        supportDetails:
-          description: Property to link details, such as mailing lists in case a contact
-            person is not provided
-          items:
-            type: string
-          nullable: true
-          type: array
-        softwareRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasVersion:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SoftwareVersion'
-          nullable: true
-          type: array
-        hasTypicalDataSource:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasDownloadURL:
-          description: Download URL where to obtain the source/executable of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        description:
-          description: small description
-          items:
-            type: string
-          nullable: true
-          type: array
-        referencePublication:
-          description: Main publication to cite for this software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        screenshot:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasInstallationInstructions:
-          description: Instructions required to install this particular piece of software.
-            Installation instructions usually are available in a human-readable manner.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hadPrimarySource:
-          description: had primary source
-          items:
-            description: had primary source
-            type: object
-          nullable: true
-          type: array
-        issueTracker:
-          description: Pointer to the issue tracker of a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        dateCreated:
-          description: Description not available
-          items:
-            format: date-time
-            type: string
-          nullable: true
-          type: array
-        contributor:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
-        compatibleVisualizationSoftware:
-          description: Property that links a software component to other useful software
-            that canbe used to visualize its outputs
-          items:
-            $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        copyrightHolder:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasFAQ:
-          description: Frequently asked questions about a software
-          items:
-            type: string
-          nullable: true
-          type: array
-        logo:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/Image'
-          nullable: true
-          type: array
-        hasContactPerson:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        hasPurpose:
-          description: Objective or main functionality that can be achieved by running
-            this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        id:
-          description: identifier
-          nullable: false
-          type: string
-        hasExecutableInstructions:
-          description: Instructions that indicate how a software component should
-            be executed. The difference with `hasExecutionCommand` is that the execution
-            instructions aim to be human-readable, and have explanations between the
-            different commands and instructions
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSampleVisualization:
-          description: A typical sample visualization of the softwware outputs
-          items:
-            $ref: '#/components/schemas/Visualization'
-          nullable: true
-          type: array
-        identifier:
-          description: Identifier of the resource being described
-          items:
-            type: string
-          nullable: true
-          type: array
-        memoryRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        website:
-          description: Website of the software
-          items:
-            type: string
-          nullable: true
-          type: array
-        citation:
-          description: How to cite this software
-          items:
-            type: string
-          nullable: true
-          type: array
-        author:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        processorRequirements:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasUsageNotes:
-          description: Property that describes the usage considerations of a particular
-            software. These notes capture the rationale of for that software configuration,
-            along with an explanation for sample inputs, things to consider when running
-            the model with data, etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        readme:
-          description: URl to the readme file of a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasBuildFile:
-          description: A file (e.g., Dockerfile) with executable instructions indicating
-            how a Software Image or a Software component is built
-          items:
-            type: string
-          nullable: true
-          type: array
-        shortDescription:
-          description: A summarized description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        label:
-          description: short description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasAssumption:
-          description: Assumptions of a software, e.g. the solver being used for a
-            particular model, the source of the data (e.g., all data must have a given
-            resolution), etc.
-          items:
-            type: string
-          nullable: true
-          type: array
-        datePublished:
-          description: Description not available
-          items:
-            format: date-time
-            type: string
-          nullable: true
-          type: array
-        operatingSystems:
-          description: Description not available
-          items:
-            type: string
-          nullable: true
-          type: array
-        license:
-          description: License of a software component or its source code
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasSourceCode:
-          description: Description not available
-          items:
-            $ref: '#/components/schemas/SourceCode'
-          maxItems: 1
-          nullable: true
-          type: array
-        hasExecutableNotebook:
-          description: Property that links a software component with an executable
-            notebook (e.g., Jupyter notebook) that illustrates how to use it in an
-            executable manner.
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasExample:
-          description: An example explaining a scenario where the software component
-            was used in plain language.
-          items:
-            type: string
-          nullable: true
-          type: array
-        publisher:
-          description: Description not available
-          items:
-            description: Description not available
-            type: object
-          nullable: true
-          type: array
-        usefulForCalculatingIndex:
-          description: Property that indicates that a software component (or any of
-            its outputs) can be used to calculate a particular index. The rationale
-            for this property is that indices are usually calculated by applying post-processing
-            steps to the outputs of a software component.
-          items:
-            $ref: '#/components/schemas/NumericalIndex'
-          nullable: true
-          type: array
-        doi:
-          description: Digital Object Identifier associated with a software component
-          items:
-            type: string
-          nullable: true
-          type: array
-      type: object
     VariablePresentation:
       description: Description not available
       example:
@@ -13901,7 +14835,18 @@ components:
       properties:
         hasDefaultValue:
           description: Default accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: uri
+              type: string
+            - type: boolean
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+            - type: string
           nullable: true
           type: array
         hasStandardVariable:
@@ -13913,7 +14858,14 @@ components:
           type: array
         hasMaximumAcceptedValue:
           description: Maximum accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
           nullable: true
           type: array
         hasConstraint:
@@ -13961,7 +14913,14 @@ components:
           type: array
         hasMinimumAcceptedValue:
           description: Minimum accepted value of a variable presentation (or a parameter)
-          items: {}
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
           nullable: true
           type: array
         partOfDataset:
@@ -13981,6 +14940,341 @@ components:
           items:
             $ref: '#/components/schemas/Unit'
           maxItems: 1
+          nullable: true
+          type: array
+      type: object
+    Software:
+      description: Description not available
+      example:
+        value:
+          id: some_id
+      properties:
+        hasDownloadInstructions:
+          description: Instructions needed to download a software component. The difference
+            with `hasDownloadURL` is that this property captures the human readable
+            instructions required to download software. For example, sometimes an
+            authentication is needed, users need to fill in a form, etc.
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasFunding:
+          description: Property that links a software project to its funding information
+          items:
+            $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        keywords:
+          description: Keywords associated with a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDocumentation:
+          description: Pointer to the documentation of the model
+          items:
+            type: string
+          nullable: true
+          type: array
+        supportDetails:
+          description: Property to link details, such as mailing lists in case a contact
+            person is not provided
+          items:
+            type: string
+          nullable: true
+          type: array
+        softwareRequirements:
+          description: Software requirements needed to install a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasVersion:
+          description: Property designed to link a software component with its corresponding
+            versions
+          items:
+            $ref: '#/components/schemas/SoftwareVersion'
+          nullable: true
+          type: array
+        hasTypicalDataSource:
+          description: Typical data sources that are used by a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasDownloadURL:
+          description: Download URL where to obtain the source/executable of the software
+          items:
+            type: string
+          nullable: true
+          type: array
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        referencePublication:
+          description: Main publication to cite for this software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        screenshot:
+          description: Image illustrating a snapshot of the target software
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasInstallationInstructions:
+          description: Instructions required to install this particular piece of software.
+            Installation instructions usually are available in a human-readable manner.
+          items:
+            type: string
+          nullable: true
+          type: array
+        hadPrimarySource:
+          description: Property to identify the original source of the information
+            of the annotated resource. It could be a web page, an organization, a
+            person, some experiment notes, etc.
+          items:
+            description: Property to identify the original source of the information
+              of the annotated resource. It could be a web page, an organization,
+              a person, some experiment notes, etc.
+            type: object
+          nullable: true
+          type: array
+        issueTracker:
+          description: Pointer to the issue tracker of a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        dateCreated:
+          description: Date when a software component was created
+          items:
+            format: date-time
+            type: string
+          nullable: true
+          type: array
+        compatibleVisualizationSoftware:
+          description: Property that links a software component to other useful software
+            that canbe used to visualize its outputs
+          items:
+            $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        copyrightHolder:
+          description: Copyright holder for a software component
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        hasFAQ:
+          description: Frequently asked questions about a software
+          items:
+            type: string
+          nullable: true
+          type: array
+        logo:
+          description: Property that links to the image used as logo for a software
+            component
+          items:
+            $ref: '#/components/schemas/Image'
+          nullable: true
+          type: array
+        hasContactPerson:
+          description: Contact person responsible for a software component
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        hasPurpose:
+          description: Objective or main functionality that can be achieved by running
+            this software
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        hasExecutableInstructions:
+          description: Instructions that indicate how a software component should
+            be executed. The difference with `hasExecutionCommand` is that the execution
+            instructions aim to be human-readable, and have explanations between the
+            different commands and instructions
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSampleVisualization:
+          description: A typical sample visualization of the softwware outputs
+          items:
+            $ref: '#/components/schemas/Visualization'
+          nullable: true
+          type: array
+        identifier:
+          description: Identifier of the resource being described
+          items:
+            type: string
+          nullable: true
+          type: array
+        memoryRequirements:
+          description: Memory requirements of a software
+          items:
+            type: string
+          nullable: true
+          type: array
+        website:
+          description: Website of the software
+          items:
+            type: string
+          nullable: true
+          type: array
+        citation:
+          description: How to cite this software
+          items:
+            type: string
+          nullable: true
+          type: array
+        author:
+          description: The creator of a software component
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        processorRequirements:
+          description: Processor requirements of a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasUsageNotes:
+          description: Property that describes the usage considerations of a particular
+            software. These notes capture the rationale of for that software configuration,
+            along with an explanation for sample inputs, things to consider when running
+            the model with data, etc.
+          items:
+            type: string
+          nullable: true
+          type: array
+        readme:
+          description: URl to the readme file of a software component
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasBuildFile:
+          description: A file (e.g., Dockerfile) with executable instructions indicating
+            how a Software Image or a Software component is built
+          items:
+            type: string
+          nullable: true
+          type: array
+        shortDescription:
+          description: A summarized description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasAssumption:
+          description: Assumptions of a software, e.g. the solver being used for a
+            particular model, the source of the data (e.g., all data must have a given
+            resolution), etc.
+          items:
+            type: string
+          nullable: true
+          type: array
+        datePublished:
+          description: Date when a software component was published
+          items:
+            format: date-time
+            type: string
+          nullable: true
+          type: array
+        operatingSystems:
+          description: Operating systems under which a software component can operate
+          items:
+            type: string
+          nullable: true
+          type: array
+        license:
+          description: License of a software component or its source code
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasSourceCode:
+          description: Property designed to link a software with its software source
+            code (which may reside in a code repository such as GitHub)
+          items:
+            $ref: '#/components/schemas/SourceCode'
+          maxItems: 1
+          nullable: true
+          type: array
+        hasExecutableNotebook:
+          description: Property that links a software component with an executable
+            notebook (e.g., Jupyter notebook) that illustrates how to use it in an
+            executable manner.
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasExample:
+          description: An example explaining a scenario where the software component
+            was used in plain language.
+          items:
+            type: string
+          nullable: true
+          type: array
+        publisher:
+          description: Publisher organization or person responsible for a software
+            component
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/Organization'
+            - $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
+        usefulForCalculatingIndex:
+          description: Property that indicates that a software component (or any of
+            its outputs) can be used to calculate a particular index. The rationale
+            for this property is that indices are usually calculated by applying post-processing
+            steps to the outputs of a software component.
+          items:
+            $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        doi:
+          description: Digital Object Identifier associated with a software component
+          items:
+            type: string
           nullable: true
           type: array
       type: object
@@ -14025,7 +15319,7 @@ components:
           nullable: true
           type: array
         email:
-          description: Description not available
+          description: Email of a person
           items:
             type: string
           nullable: true

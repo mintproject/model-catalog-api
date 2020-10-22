@@ -15,7 +15,7 @@ class Software(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_executable_instructions=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, readme=None, has_build_file=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_executable_notebook=None, has_example=None, publisher=None, useful_for_calculating_index=None, doi=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, has_funding=None, keywords=None, has_documentation=None, support_details=None, software_requirements=None, has_version=None, has_typical_data_source=None, has_download_url=None, description=None, reference_publication=None, screenshot=None, type=None, has_installation_instructions=None, had_primary_source=None, issue_tracker=None, date_created=None, compatible_visualization_software=None, contributor=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, has_purpose=None, id=None, has_executable_instructions=None, has_sample_visualization=None, identifier=None, memory_requirements=None, website=None, citation=None, author=None, processor_requirements=None, has_usage_notes=None, readme=None, has_build_file=None, short_description=None, label=None, has_assumption=None, date_published=None, operating_systems=None, license=None, has_source_code=None, has_executable_notebook=None, has_example=None, publisher=None, useful_for_calculating_index=None, doi=None):  # noqa: E501
         """Software - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this Software.  # noqa: E501
@@ -52,18 +52,18 @@ class Software(Model):
         :type issue_tracker: List[str]
         :param date_created: The date_created of this Software.  # noqa: E501
         :type date_created: List[datetime]
-        :param contributor: The contributor of this Software.  # noqa: E501
-        :type contributor: List[Person]
         :param compatible_visualization_software: The compatible_visualization_software of this Software.  # noqa: E501
         :type compatible_visualization_software: List[Software]
+        :param contributor: The contributor of this Software.  # noqa: E501
+        :type contributor: List[Person]
         :param copyright_holder: The copyright_holder of this Software.  # noqa: E501
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         :param has_faq: The has_faq of this Software.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this Software.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this Software.  # noqa: E501
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         :param has_purpose: The has_purpose of this Software.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this Software.  # noqa: E501
@@ -81,7 +81,7 @@ class Software(Model):
         :param citation: The citation of this Software.  # noqa: E501
         :type citation: List[str]
         :param author: The author of this Software.  # noqa: E501
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         :param processor_requirements: The processor_requirements of this Software.  # noqa: E501
         :type processor_requirements: List[str]
         :param has_usage_notes: The has_usage_notes of this Software.  # noqa: E501
@@ -109,12 +109,13 @@ class Software(Model):
         :param has_example: The has_example of this Software.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this Software.  # noqa: E501
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         :param useful_for_calculating_index: The useful_for_calculating_index of this Software.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
         :param doi: The doi of this Software.  # noqa: E501
         :type doi: List[str]
         """
+        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
         from openapi_server.models.numerical_index import NumericalIndex
@@ -123,6 +124,7 @@ class Software(Model):
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -149,12 +151,12 @@ class Software(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'date_created': List[datetime],
-            'contributor': List[Person],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[object],
+            'contributor': List[Person],
+            'copyright_holder': List[AnyOfOrganizationPerson],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[object],
+            'has_contact_person': List[AnyOfOrganizationPerson],
             'has_purpose': List[str],
             'id': str,
             'has_executable_instructions': List[str],
@@ -163,7 +165,7 @@ class Software(Model):
             'memory_requirements': List[str],
             'website': List[str],
             'citation': List[str],
-            'author': List[object],
+            'author': List[AnyOfOrganizationPerson],
             'processor_requirements': List[str],
             'has_usage_notes': List[str],
             'readme': List[str],
@@ -177,7 +179,7 @@ class Software(Model):
             'has_source_code': List[SourceCode],
             'has_executable_notebook': List[str],
             'has_example': List[str],
-            'publisher': List[object],
+            'publisher': List[AnyOfOrganizationPerson],
             'useful_for_calculating_index': List[NumericalIndex],
             'doi': List[str]
         }
@@ -200,8 +202,8 @@ class Software(Model):
             'had_primary_source': 'hadPrimarySource',
             'issue_tracker': 'issueTracker',
             'date_created': 'dateCreated',
-            'contributor': 'contributor',
             'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'contributor': 'contributor',
             'copyright_holder': 'copyrightHolder',
             'has_faq': 'hasFAQ',
             'logo': 'logo',
@@ -250,8 +252,8 @@ class Software(Model):
         self._had_primary_source = had_primary_source
         self._issue_tracker = issue_tracker
         self._date_created = date_created
-        self._contributor = contributor
         self._compatible_visualization_software = compatible_visualization_software
+        self._contributor = contributor
         self._copyright_holder = copyright_holder
         self._has_faq = has_faq
         self._logo = logo
@@ -412,7 +414,7 @@ class Software(Model):
     def software_requirements(self):
         """Gets the software_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :return: The software_requirements of this Software.
         :rtype: List[str]
@@ -423,7 +425,7 @@ class Software(Model):
     def software_requirements(self, software_requirements):
         """Sets the software_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :param software_requirements: The software_requirements of this Software.
         :type software_requirements: List[str]
@@ -435,7 +437,7 @@ class Software(Model):
     def has_version(self):
         """Gets the has_version of this Software.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :return: The has_version of this Software.
         :rtype: List[SoftwareVersion]
@@ -446,7 +448,7 @@ class Software(Model):
     def has_version(self, has_version):
         """Sets the has_version of this Software.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :param has_version: The has_version of this Software.
         :type has_version: List[SoftwareVersion]
@@ -458,7 +460,7 @@ class Software(Model):
     def has_typical_data_source(self):
         """Gets the has_typical_data_source of this Software.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :return: The has_typical_data_source of this Software.
         :rtype: List[str]
@@ -469,7 +471,7 @@ class Software(Model):
     def has_typical_data_source(self, has_typical_data_source):
         """Sets the has_typical_data_source of this Software.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :param has_typical_data_source: The has_typical_data_source of this Software.
         :type has_typical_data_source: List[str]
@@ -550,7 +552,7 @@ class Software(Model):
     def screenshot(self):
         """Gets the screenshot of this Software.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :return: The screenshot of this Software.
         :rtype: List[Image]
@@ -561,7 +563,7 @@ class Software(Model):
     def screenshot(self, screenshot):
         """Sets the screenshot of this Software.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :param screenshot: The screenshot of this Software.
         :type screenshot: List[Image]
@@ -619,7 +621,7 @@ class Software(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this Software.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this Software.
         :rtype: List[object]
@@ -630,7 +632,7 @@ class Software(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Software.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Software.
         :type had_primary_source: List[object]
@@ -665,7 +667,7 @@ class Software(Model):
     def date_created(self):
         """Gets the date_created of this Software.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :return: The date_created of this Software.
         :rtype: List[datetime]
@@ -676,36 +678,13 @@ class Software(Model):
     def date_created(self, date_created):
         """Sets the date_created of this Software.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :param date_created: The date_created of this Software.
         :type date_created: List[datetime]
         """
 
         self._date_created = date_created
-
-    @property
-    def contributor(self):
-        """Gets the contributor of this Software.
-
-        Description not available  # noqa: E501
-
-        :return: The contributor of this Software.
-        :rtype: List[Person]
-        """
-        return self._contributor
-
-    @contributor.setter
-    def contributor(self, contributor):
-        """Sets the contributor of this Software.
-
-        Description not available  # noqa: E501
-
-        :param contributor: The contributor of this Software.
-        :type contributor: List[Person]
-        """
-
-        self._contributor = contributor
 
     @property
     def compatible_visualization_software(self):
@@ -731,13 +710,36 @@ class Software(Model):
         self._compatible_visualization_software = compatible_visualization_software
 
     @property
+    def contributor(self):
+        """Gets the contributor of this Software.
+
+        Contributor to a software component  # noqa: E501
+
+        :return: The contributor of this Software.
+        :rtype: List[Person]
+        """
+        return self._contributor
+
+    @contributor.setter
+    def contributor(self, contributor):
+        """Sets the contributor of this Software.
+
+        Contributor to a software component  # noqa: E501
+
+        :param contributor: The contributor of this Software.
+        :type contributor: List[Person]
+        """
+
+        self._contributor = contributor
+
+    @property
     def copyright_holder(self):
         """Gets the copyright_holder of this Software.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this Software.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._copyright_holder
 
@@ -745,10 +747,10 @@ class Software(Model):
     def copyright_holder(self, copyright_holder):
         """Sets the copyright_holder of this Software.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this Software.
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         """
 
         self._copyright_holder = copyright_holder
@@ -780,7 +782,7 @@ class Software(Model):
     def logo(self):
         """Gets the logo of this Software.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :return: The logo of this Software.
         :rtype: List[Image]
@@ -791,7 +793,7 @@ class Software(Model):
     def logo(self, logo):
         """Sets the logo of this Software.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :param logo: The logo of this Software.
         :type logo: List[Image]
@@ -803,10 +805,10 @@ class Software(Model):
     def has_contact_person(self):
         """Gets the has_contact_person of this Software.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this Software.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._has_contact_person
 
@@ -814,10 +816,10 @@ class Software(Model):
     def has_contact_person(self, has_contact_person):
         """Sets the has_contact_person of this Software.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this Software.
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         """
 
         self._has_contact_person = has_contact_person
@@ -941,7 +943,7 @@ class Software(Model):
     def memory_requirements(self):
         """Gets the memory_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :return: The memory_requirements of this Software.
         :rtype: List[str]
@@ -952,7 +954,7 @@ class Software(Model):
     def memory_requirements(self, memory_requirements):
         """Sets the memory_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :param memory_requirements: The memory_requirements of this Software.
         :type memory_requirements: List[str]
@@ -1010,10 +1012,10 @@ class Software(Model):
     def author(self):
         """Gets the author of this Software.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :return: The author of this Software.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._author
 
@@ -1021,10 +1023,10 @@ class Software(Model):
     def author(self, author):
         """Sets the author of this Software.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :param author: The author of this Software.
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         """
 
         self._author = author
@@ -1033,7 +1035,7 @@ class Software(Model):
     def processor_requirements(self):
         """Gets the processor_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :return: The processor_requirements of this Software.
         :rtype: List[str]
@@ -1044,7 +1046,7 @@ class Software(Model):
     def processor_requirements(self, processor_requirements):
         """Sets the processor_requirements of this Software.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :param processor_requirements: The processor_requirements of this Software.
         :type processor_requirements: List[str]
@@ -1194,7 +1196,7 @@ class Software(Model):
     def date_published(self):
         """Gets the date_published of this Software.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :return: The date_published of this Software.
         :rtype: List[datetime]
@@ -1205,7 +1207,7 @@ class Software(Model):
     def date_published(self, date_published):
         """Sets the date_published of this Software.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :param date_published: The date_published of this Software.
         :type date_published: List[datetime]
@@ -1217,7 +1219,7 @@ class Software(Model):
     def operating_systems(self):
         """Gets the operating_systems of this Software.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :return: The operating_systems of this Software.
         :rtype: List[str]
@@ -1228,7 +1230,7 @@ class Software(Model):
     def operating_systems(self, operating_systems):
         """Sets the operating_systems of this Software.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :param operating_systems: The operating_systems of this Software.
         :type operating_systems: List[str]
@@ -1263,7 +1265,7 @@ class Software(Model):
     def has_source_code(self):
         """Gets the has_source_code of this Software.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :return: The has_source_code of this Software.
         :rtype: List[SourceCode]
@@ -1274,7 +1276,7 @@ class Software(Model):
     def has_source_code(self, has_source_code):
         """Sets the has_source_code of this Software.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :param has_source_code: The has_source_code of this Software.
         :type has_source_code: List[SourceCode]
@@ -1332,10 +1334,10 @@ class Software(Model):
     def publisher(self):
         """Gets the publisher of this Software.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this Software.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._publisher
 
@@ -1343,10 +1345,10 @@ class Software(Model):
     def publisher(self, publisher):
         """Sets the publisher of this Software.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this Software.
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         """
 
         self._publisher = publisher

@@ -37,13 +37,13 @@ class DataTransformation(Model):
         :param compatible_visualization_software: The compatible_visualization_software of this DataTransformation.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this DataTransformation.  # noqa: E501
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         :param has_faq: The has_faq of this DataTransformation.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this DataTransformation.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this DataTransformation.  # noqa: E501
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         :param tag: The tag of this DataTransformation.  # noqa: E501
         :type tag: List[str]
         :param id: The id of this DataTransformation.  # noqa: E501
@@ -55,7 +55,7 @@ class DataTransformation(Model):
         :param has_sample_result: The has_sample_result of this DataTransformation.  # noqa: E501
         :type has_sample_result: List[SampleResource]
         :param author: The author of this DataTransformation.  # noqa: E501
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         :param has_constraint: The has_constraint of this DataTransformation.  # noqa: E501
         :type has_constraint: List[str]
         :param has_build_file: The has_build_file of this DataTransformation.  # noqa: E501
@@ -75,7 +75,7 @@ class DataTransformation(Model):
         :param has_example: The has_example of this DataTransformation.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this DataTransformation.  # noqa: E501
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         :param has_output: The has_output of this DataTransformation.  # noqa: E501
         :type has_output: List[DatasetSpecification]
         :param doi: The doi of this DataTransformation.  # noqa: E501
@@ -141,6 +141,7 @@ class DataTransformation(Model):
         :param has_input: The has_input of this DataTransformation.  # noqa: E501
         :type has_input: List[DatasetSpecification]
         """
+        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.configuration_setup import ConfigurationSetup
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
@@ -170,6 +171,7 @@ class DataTransformation(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'has_download_instructions': List[str],
@@ -181,16 +183,16 @@ class DataTransformation(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[object],
+            'copyright_holder': List[AnyOfOrganizationPerson],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[object],
+            'has_contact_person': List[AnyOfOrganizationPerson],
             'tag': List[str],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
-            'author': List[object],
+            'author': List[AnyOfOrganizationPerson],
             'has_constraint': List[str],
             'has_build_file': List[str],
             'short_description': List[str],
@@ -200,7 +202,7 @@ class DataTransformation(Model):
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
             'has_example': List[str],
-            'publisher': List[object],
+            'publisher': List[AnyOfOrganizationPerson],
             'has_output': List[DatasetSpecification],
             'doi': List[str],
             'has_funding': List[FundingInformation],
@@ -468,7 +470,7 @@ class DataTransformation(Model):
     def software_requirements(self):
         """Gets the software_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :return: The software_requirements of this DataTransformation.
         :rtype: List[str]
@@ -479,7 +481,7 @@ class DataTransformation(Model):
     def software_requirements(self, software_requirements):
         """Sets the software_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :param software_requirements: The software_requirements of this DataTransformation.
         :type software_requirements: List[str]
@@ -583,10 +585,10 @@ class DataTransformation(Model):
     def copyright_holder(self):
         """Gets the copyright_holder of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this DataTransformation.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._copyright_holder
 
@@ -594,10 +596,10 @@ class DataTransformation(Model):
     def copyright_holder(self, copyright_holder):
         """Sets the copyright_holder of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this DataTransformation.
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         """
 
         self._copyright_holder = copyright_holder
@@ -629,7 +631,7 @@ class DataTransformation(Model):
     def logo(self):
         """Gets the logo of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :return: The logo of this DataTransformation.
         :rtype: List[Image]
@@ -640,7 +642,7 @@ class DataTransformation(Model):
     def logo(self, logo):
         """Sets the logo of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :param logo: The logo of this DataTransformation.
         :type logo: List[Image]
@@ -652,10 +654,10 @@ class DataTransformation(Model):
     def has_contact_person(self):
         """Gets the has_contact_person of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this DataTransformation.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._has_contact_person
 
@@ -663,10 +665,10 @@ class DataTransformation(Model):
     def has_contact_person(self, has_contact_person):
         """Sets the has_contact_person of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this DataTransformation.
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         """
 
         self._has_contact_person = has_contact_person
@@ -744,7 +746,7 @@ class DataTransformation(Model):
     def has_sample_execution(self):
         """Gets the has_sample_execution of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
         :return: The has_sample_execution of this DataTransformation.
         :rtype: List[SampleExecution]
@@ -755,7 +757,7 @@ class DataTransformation(Model):
     def has_sample_execution(self, has_sample_execution):
         """Sets the has_sample_execution of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
         :param has_sample_execution: The has_sample_execution of this DataTransformation.
         :type has_sample_execution: List[SampleExecution]
@@ -767,7 +769,7 @@ class DataTransformation(Model):
     def has_sample_result(self):
         """Gets the has_sample_result of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
         :return: The has_sample_result of this DataTransformation.
         :rtype: List[SampleResource]
@@ -778,7 +780,7 @@ class DataTransformation(Model):
     def has_sample_result(self, has_sample_result):
         """Sets the has_sample_result of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
         :param has_sample_result: The has_sample_result of this DataTransformation.
         :type has_sample_result: List[SampleResource]
@@ -790,10 +792,10 @@ class DataTransformation(Model):
     def author(self):
         """Gets the author of this DataTransformation.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :return: The author of this DataTransformation.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._author
 
@@ -801,10 +803,10 @@ class DataTransformation(Model):
     def author(self, author):
         """Sets the author of this DataTransformation.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :param author: The author of this DataTransformation.
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         """
 
         self._author = author
@@ -905,7 +907,7 @@ class DataTransformation(Model):
     def date_published(self):
         """Gets the date_published of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :return: The date_published of this DataTransformation.
         :rtype: List[datetime]
@@ -916,7 +918,7 @@ class DataTransformation(Model):
     def date_published(self, date_published):
         """Sets the date_published of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :param date_published: The date_published of this DataTransformation.
         :type date_published: List[datetime]
@@ -951,7 +953,7 @@ class DataTransformation(Model):
     def has_source_code(self):
         """Gets the has_source_code of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :return: The has_source_code of this DataTransformation.
         :rtype: List[SourceCode]
@@ -962,7 +964,7 @@ class DataTransformation(Model):
     def has_source_code(self, has_source_code):
         """Sets the has_source_code of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :param has_source_code: The has_source_code of this DataTransformation.
         :type has_source_code: List[SourceCode]
@@ -1020,10 +1022,10 @@ class DataTransformation(Model):
     def publisher(self):
         """Gets the publisher of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this DataTransformation.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._publisher
 
@@ -1031,10 +1033,10 @@ class DataTransformation(Model):
     def publisher(self, publisher):
         """Sets the publisher of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this DataTransformation.
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         """
 
         self._publisher = publisher
@@ -1158,7 +1160,7 @@ class DataTransformation(Model):
     def has_version(self):
         """Gets the has_version of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :return: The has_version of this DataTransformation.
         :rtype: List[SoftwareVersion]
@@ -1169,7 +1171,7 @@ class DataTransformation(Model):
     def has_version(self, has_version):
         """Sets the has_version of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :param has_version: The has_version of this DataTransformation.
         :type has_version: List[SoftwareVersion]
@@ -1181,7 +1183,7 @@ class DataTransformation(Model):
     def has_typical_data_source(self):
         """Gets the has_typical_data_source of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :return: The has_typical_data_source of this DataTransformation.
         :rtype: List[str]
@@ -1192,7 +1194,7 @@ class DataTransformation(Model):
     def has_typical_data_source(self, has_typical_data_source):
         """Sets the has_typical_data_source of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :param has_typical_data_source: The has_typical_data_source of this DataTransformation.
         :type has_typical_data_source: List[str]
@@ -1250,7 +1252,7 @@ class DataTransformation(Model):
     def screenshot(self):
         """Gets the screenshot of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :return: The screenshot of this DataTransformation.
         :rtype: List[Image]
@@ -1261,7 +1263,7 @@ class DataTransformation(Model):
     def screenshot(self, screenshot):
         """Sets the screenshot of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :param screenshot: The screenshot of this DataTransformation.
         :type screenshot: List[Image]
@@ -1273,7 +1275,7 @@ class DataTransformation(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this DataTransformation.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this DataTransformation.
         :rtype: List[object]
@@ -1284,7 +1286,7 @@ class DataTransformation(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this DataTransformation.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this DataTransformation.
         :type had_primary_source: List[object]
@@ -1342,7 +1344,7 @@ class DataTransformation(Model):
     def date_created(self):
         """Gets the date_created of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :return: The date_created of this DataTransformation.
         :rtype: List[datetime]
@@ -1353,7 +1355,7 @@ class DataTransformation(Model):
     def date_created(self, date_created):
         """Sets the date_created of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :param date_created: The date_created of this DataTransformation.
         :type date_created: List[datetime]
@@ -1365,7 +1367,7 @@ class DataTransformation(Model):
     def contributor(self):
         """Gets the contributor of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
         :return: The contributor of this DataTransformation.
         :rtype: List[Person]
@@ -1376,7 +1378,7 @@ class DataTransformation(Model):
     def contributor(self, contributor):
         """Sets the contributor of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
         :param contributor: The contributor of this DataTransformation.
         :type contributor: List[Person]
@@ -1457,7 +1459,7 @@ class DataTransformation(Model):
     def memory_requirements(self):
         """Gets the memory_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :return: The memory_requirements of this DataTransformation.
         :rtype: List[str]
@@ -1468,7 +1470,7 @@ class DataTransformation(Model):
     def memory_requirements(self, memory_requirements):
         """Sets the memory_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :param memory_requirements: The memory_requirements of this DataTransformation.
         :type memory_requirements: List[str]
@@ -1526,7 +1528,7 @@ class DataTransformation(Model):
     def processor_requirements(self):
         """Gets the processor_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :return: The processor_requirements of this DataTransformation.
         :rtype: List[str]
@@ -1537,7 +1539,7 @@ class DataTransformation(Model):
     def processor_requirements(self, processor_requirements):
         """Sets the processor_requirements of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :param processor_requirements: The processor_requirements of this DataTransformation.
         :type processor_requirements: List[str]
@@ -1687,7 +1689,7 @@ class DataTransformation(Model):
     def operating_systems(self):
         """Gets the operating_systems of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :return: The operating_systems of this DataTransformation.
         :rtype: List[str]
@@ -1698,7 +1700,7 @@ class DataTransformation(Model):
     def operating_systems(self, operating_systems):
         """Sets the operating_systems of this DataTransformation.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :param operating_systems: The operating_systems of this DataTransformation.
         :type operating_systems: List[str]

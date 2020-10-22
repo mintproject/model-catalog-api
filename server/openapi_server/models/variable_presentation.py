@@ -19,11 +19,11 @@ class VariablePresentation(Model):
         """VariablePresentation - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this VariablePresentation.  # noqa: E501
-        :type has_default_value: List[object]
+        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         :param has_standard_variable: The has_standard_variable of this VariablePresentation.  # noqa: E501
         :type has_standard_variable: List[StandardVariable]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.  # noqa: E501
-        :type has_maximum_accepted_value: List[object]
+        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
         :param has_constraint: The has_constraint of this VariablePresentation.  # noqa: E501
         :type has_constraint: List[str]
         :param description: The description of this VariablePresentation.  # noqa: E501
@@ -37,7 +37,7 @@ class VariablePresentation(Model):
         :param has_short_name: The has_short_name of this VariablePresentation.  # noqa: E501
         :type has_short_name: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.  # noqa: E501
-        :type has_minimum_accepted_value: List[object]
+        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
         :param part_of_dataset: The part_of_dataset of this VariablePresentation.  # noqa: E501
         :type part_of_dataset: List[DatasetSpecification]
         :param id: The id of this VariablePresentation.  # noqa: E501
@@ -45,6 +45,8 @@ class VariablePresentation(Model):
         :param uses_unit: The uses_unit of this VariablePresentation.  # noqa: E501
         :type uses_unit: List[Unit]
         """
+        from openapi_server.models.any_of_date_timefloatinteger import AnyOfDateTimefloatinteger
+        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.standard_variable import StandardVariable
         from openapi_server.models.unit import Unit
@@ -52,18 +54,20 @@ class VariablePresentation(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
-            'has_default_value': List[object],
+            'has_default_value': List[AnyOfURIbooleanDateTimefloatintegerstring],
             'has_standard_variable': List[StandardVariable],
-            'has_maximum_accepted_value': List[object],
+            'has_maximum_accepted_value': List[AnyOfDateTimefloatinteger],
             'has_constraint': List[str],
             'description': List[str],
             'label': List[str],
             'type': List[str],
             'has_long_name': List[str],
             'has_short_name': List[str],
-            'has_minimum_accepted_value': List[object],
+            'has_minimum_accepted_value': List[AnyOfDateTimefloatinteger],
             'part_of_dataset': List[DatasetSpecification],
             'id': str,
             'uses_unit': List[Unit]
@@ -117,7 +121,7 @@ class VariablePresentation(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_default_value of this VariablePresentation.
-        :rtype: List[object]
+        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
         return self._has_default_value
 
@@ -128,7 +132,7 @@ class VariablePresentation(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_default_value: The has_default_value of this VariablePresentation.
-        :type has_default_value: List[object]
+        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
 
         self._has_default_value = has_default_value
@@ -163,7 +167,7 @@ class VariablePresentation(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_maximum_accepted_value of this VariablePresentation.
-        :rtype: List[object]
+        :rtype: List[AnyOfDateTimefloatinteger]
         """
         return self._has_maximum_accepted_value
 
@@ -174,7 +178,7 @@ class VariablePresentation(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this VariablePresentation.
-        :type has_maximum_accepted_value: List[object]
+        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
         """
 
         self._has_maximum_accepted_value = has_maximum_accepted_value
@@ -324,7 +328,7 @@ class VariablePresentation(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_minimum_accepted_value of this VariablePresentation.
-        :rtype: List[object]
+        :rtype: List[AnyOfDateTimefloatinteger]
         """
         return self._has_minimum_accepted_value
 
@@ -335,7 +339,7 @@ class VariablePresentation(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this VariablePresentation.
-        :type has_minimum_accepted_value: List[object]
+        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value

@@ -3,8 +3,10 @@
 # flake8: noqa
 from __future__ import absolute_import
 # import models into model package
+from openapi_server.models.catalog_identifier import CatalogIdentifier
 from openapi_server.models.causal_diagram import CausalDiagram
 from openapi_server.models.configuration_setup import ConfigurationSetup
+from openapi_server.models.coupled_model import CoupledModel
 from openapi_server.models.data_transformation import DataTransformation
 from openapi_server.models.data_transformation_setup import DataTransformationSetup
 from openapi_server.models.dataset_specification import DatasetSpecification
@@ -19,6 +21,7 @@ from openapi_server.models.hybrid_model import HybridModel
 from openapi_server.models.image import Image
 from openapi_server.models.intervention import Intervention
 from openapi_server.models.model import Model
+from openapi_server.models.model_category import ModelCategory
 from openapi_server.models.model_configuration import ModelConfiguration
 from openapi_server.models.model_configuration_setup import ModelConfigurationSetup
 from openapi_server.models.numerical_index import NumericalIndex

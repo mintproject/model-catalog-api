@@ -37,19 +37,19 @@ class TheoryGuidedModel(Model):
         :param compatible_visualization_software: The compatible_visualization_software of this TheoryGuidedModel.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this TheoryGuidedModel.  # noqa: E501
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         :param has_faq: The has_faq of this TheoryGuidedModel.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this TheoryGuidedModel.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this TheoryGuidedModel.  # noqa: E501
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         :param id: The id of this TheoryGuidedModel.  # noqa: E501
         :type id: str
         :param identifier: The identifier of this TheoryGuidedModel.  # noqa: E501
         :type identifier: List[str]
         :param author: The author of this TheoryGuidedModel.  # noqa: E501
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         :param has_build_file: The has_build_file of this TheoryGuidedModel.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this TheoryGuidedModel.  # noqa: E501
@@ -65,7 +65,7 @@ class TheoryGuidedModel(Model):
         :param has_example: The has_example of this TheoryGuidedModel.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this TheoryGuidedModel.  # noqa: E501
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         :param doi: The doi of this TheoryGuidedModel.  # noqa: E501
         :type doi: List[str]
         :param has_funding: The has_funding of this TheoryGuidedModel.  # noqa: E501
@@ -83,7 +83,7 @@ class TheoryGuidedModel(Model):
         :param screenshot: The screenshot of this TheoryGuidedModel.  # noqa: E501
         :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this TheoryGuidedModel.  # noqa: E501
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         :param had_primary_source: The had_primary_source of this TheoryGuidedModel.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this TheoryGuidedModel.  # noqa: E501
@@ -123,10 +123,12 @@ class TheoryGuidedModel(Model):
         :param useful_for_calculating_index: The useful_for_calculating_index of this TheoryGuidedModel.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
         """
+        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.equation import Equation
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
         from openapi_server.models.image import Image
+        from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.person import Person
         from openapi_server.models.software import Software
@@ -134,6 +136,8 @@ class TheoryGuidedModel(Model):
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -155,13 +159,13 @@ class TheoryGuidedModel(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[object],
+            'copyright_holder': List[AnyOfOrganizationPerson],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[object],
+            'has_contact_person': List[AnyOfOrganizationPerson],
             'id': str,
             'identifier': List[str],
-            'author': List[object],
+            'author': List[AnyOfOrganizationPerson],
             'has_build_file': List[str],
             'short_description': List[str],
             'date_published': List[datetime],
@@ -169,7 +173,7 @@ class TheoryGuidedModel(Model):
             'has_source_code': List[SourceCode],
             'has_explanation_diagram': List[Image],
             'has_example': List[str],
-            'publisher': List[object],
+            'publisher': List[AnyOfOrganizationPerson],
             'doi': List[str],
             'has_funding': List[FundingInformation],
             'support_details': List[str],
@@ -178,7 +182,7 @@ class TheoryGuidedModel(Model):
             'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'has_model_category': List[str],
+            'has_model_category': List[ModelCategory],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'date_created': List[datetime],
@@ -533,7 +537,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :return: The copyright_holder of this TheoryGuidedModel.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._copyright_holder
 
@@ -544,7 +548,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this TheoryGuidedModel.
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         """
 
         self._copyright_holder = copyright_holder
@@ -602,7 +606,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :return: The has_contact_person of this TheoryGuidedModel.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._has_contact_person
 
@@ -613,7 +617,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this TheoryGuidedModel.
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         """
 
         self._has_contact_person = has_contact_person
@@ -671,7 +675,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :return: The author of this TheoryGuidedModel.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._author
 
@@ -682,7 +686,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :param author: The author of this TheoryGuidedModel.
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         """
 
         self._author = author
@@ -855,7 +859,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :return: The publisher of this TheoryGuidedModel.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._publisher
 
@@ -866,7 +870,7 @@ class TheoryGuidedModel(Model):
         Description not available  # noqa: E501
 
         :param publisher: The publisher of this TheoryGuidedModel.
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         """
 
         self._publisher = publisher
@@ -1059,10 +1063,10 @@ class TheoryGuidedModel(Model):
     def has_model_category(self):
         """Gets the has_model_category of this TheoryGuidedModel.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :return: The has_model_category of this TheoryGuidedModel.
-        :rtype: List[str]
+        :rtype: List[ModelCategory]
         """
         return self._has_model_category
 
@@ -1070,10 +1074,10 @@ class TheoryGuidedModel(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this TheoryGuidedModel.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :param has_model_category: The has_model_category of this TheoryGuidedModel.
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         """
 
         self._has_model_category = has_model_category

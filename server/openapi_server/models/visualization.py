@@ -33,10 +33,12 @@ class Visualization(Model):
         :param type: The type of this Visualization.  # noqa: E501
         :type type: List[str]
         :param value: The value of this Visualization.  # noqa: E501
-        :type value: List[object]
+        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
+        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.software import Software
 
+          # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
@@ -47,7 +49,7 @@ class Visualization(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[object]
+            'value': List[AnyOfURIbooleanDateTimefloatintegerstring]
         }
 
         self.attribute_map = {
@@ -108,7 +110,7 @@ class Visualization(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this Visualization.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this Visualization.
         :rtype: List[object]
@@ -119,7 +121,7 @@ class Visualization(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Visualization.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Visualization.
         :type had_primary_source: List[object]
@@ -131,7 +133,7 @@ class Visualization(Model):
     def was_derived_from_software(self):
         """Gets the was_derived_from_software of this Visualization.
 
-        Description not available  # noqa: E501
+        Property that identifies the software used to create a visualization  # noqa: E501
 
         :return: The was_derived_from_software of this Visualization.
         :rtype: List[Software]
@@ -142,7 +144,7 @@ class Visualization(Model):
     def was_derived_from_software(self, was_derived_from_software):
         """Sets the was_derived_from_software of this Visualization.
 
-        Description not available  # noqa: E501
+        Property that identifies the software used to create a visualization  # noqa: E501
 
         :param was_derived_from_software: The was_derived_from_software of this Visualization.
         :type was_derived_from_software: List[Software]
@@ -249,7 +251,7 @@ class Visualization(Model):
         Value associated to the described entity  # noqa: E501
 
         :return: The value of this Visualization.
-        :rtype: List[object]
+        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
         return self._value
 
@@ -260,7 +262,7 @@ class Visualization(Model):
         Value associated to the described entity  # noqa: E501
 
         :param value: The value of this Visualization.
-        :type value: List[object]
+        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
         """
 
         self._value = value

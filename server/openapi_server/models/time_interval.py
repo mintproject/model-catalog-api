@@ -29,10 +29,12 @@ class TimeInterval(Model):
         :param type: The type of this TimeInterval.  # noqa: E501
         :type type: List[str]
         :param interval_value: The interval_value of this TimeInterval.  # noqa: E501
-        :type interval_value: List[object]
+        :type interval_value: List[AnyOfintegerstring]
         """
+        from openapi_server.models.any_ofintegerstring import AnyOfintegerstring
         from openapi_server.models.unit import Unit
 
+          # noqa: E501
           # noqa: E501
 
         self.openapi_types = {
@@ -41,7 +43,7 @@ class TimeInterval(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'interval_value': List[object]
+            'interval_value': List[AnyOfintegerstring]
         }
 
         self.attribute_map = {
@@ -193,7 +195,7 @@ class TimeInterval(Model):
         Value used in the time interval of a model (e.g., 1 month, 5 days, 'harvest cycle')  # noqa: E501
 
         :return: The interval_value of this TimeInterval.
-        :rtype: List[object]
+        :rtype: List[AnyOfintegerstring]
         """
         return self._interval_value
 
@@ -204,7 +206,7 @@ class TimeInterval(Model):
         Value used in the time interval of a model (e.g., 1 month, 5 days, 'harvest cycle')  # noqa: E501
 
         :param interval_value: The interval_value of this TimeInterval.
-        :type interval_value: List[object]
+        :type interval_value: List[AnyOfintegerstring]
         """
 
         self._interval_value = interval_value

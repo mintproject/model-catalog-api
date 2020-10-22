@@ -8,9 +8,7 @@ CONSTRUCT {
 ?prop ?p ?o .
 ?input ?input_p ?input_o .
 ?output ?output_p ?output_o .
-?parameter ?parameter_p ?parameter_o .
-?input_o ?dt_input_p ?dt_input_o .
-?dt_output ?dt_output_p ?dt_output_o
+?parameter ?parameter_p ?parameter_o
 }
 WHERE {
     GRAPH ?_g_iri {
@@ -21,24 +19,12 @@ WHERE {
             }
         }
         UNION {
-            {
-                ?_resource_iri  sd:hasInput ?input .
-                ?input ?input_p ?input_o
-            }
-            UNION {
-                ?input_o a sd:DataTransformation .
-                ?input_o ?dt_input_p ?dt_input_o
-            }
+            ?_resource_iri  sd:hasInput ?input .
+            ?input ?input_p ?input_o
         }
         UNION {
-            {
-                ?_resource_iri  sd:hasOutput ?output .
-                ?output ?output_p ?output_o
-            }
-            UNION {
-                ?output_o a sd:DataTransformation .
-                ?output_o ?dt_output_p ?dt_output_o
-            }
+            ?_resource_iri  sd:hasOutput ?output .
+            ?output ?output_p ?output_o
         }
         UNION {
             ?_resource_iri  sd:hasParameter ?parameter .

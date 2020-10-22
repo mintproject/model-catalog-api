@@ -39,7 +39,7 @@ class ModelConfiguration(Model):
         :param compatible_visualization_software: The compatible_visualization_software of this ModelConfiguration.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this ModelConfiguration.  # noqa: E501
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         :param has_region: The has_region of this ModelConfiguration.  # noqa: E501
         :type has_region: List[Region]
         :param has_faq: The has_faq of this ModelConfiguration.  # noqa: E501
@@ -47,7 +47,7 @@ class ModelConfiguration(Model):
         :param logo: The logo of this ModelConfiguration.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this ModelConfiguration.  # noqa: E501
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         :param tag: The tag of this ModelConfiguration.  # noqa: E501
         :type tag: List[str]
         :param id: The id of this ModelConfiguration.  # noqa: E501
@@ -59,7 +59,7 @@ class ModelConfiguration(Model):
         :param has_sample_result: The has_sample_result of this ModelConfiguration.  # noqa: E501
         :type has_sample_result: List[SampleResource]
         :param author: The author of this ModelConfiguration.  # noqa: E501
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
         :type has_constraint: List[str]
         :param has_build_file: The has_build_file of this ModelConfiguration.  # noqa: E501
@@ -81,7 +81,7 @@ class ModelConfiguration(Model):
         :param has_example: The has_example of this ModelConfiguration.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this ModelConfiguration.  # noqa: E501
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
         :type has_output: List[DatasetSpecification]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
@@ -107,7 +107,7 @@ class ModelConfiguration(Model):
         :param screenshot: The screenshot of this ModelConfiguration.  # noqa: E501
         :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this ModelConfiguration.  # noqa: E501
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         :param had_primary_source: The had_primary_source of this ModelConfiguration.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this ModelConfiguration.  # noqa: E501
@@ -159,6 +159,7 @@ class ModelConfiguration(Model):
         :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
         :type has_input: List[DatasetSpecification]
         """
+        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.causal_diagram import CausalDiagram
         from openapi_server.models.configuration_setup import ConfigurationSetup
         from openapi_server.models.dataset_specification import DatasetSpecification
@@ -166,6 +167,7 @@ class ModelConfiguration(Model):
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
         from openapi_server.models.image import Image
+        from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.parameter import Parameter
         from openapi_server.models.person import Person
@@ -200,6 +202,8 @@ class ModelConfiguration(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'has_download_instructions': List[str],
@@ -212,17 +216,17 @@ class ModelConfiguration(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[object],
+            'copyright_holder': List[AnyOfOrganizationPerson],
             'has_region': List[Region],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[object],
+            'has_contact_person': List[AnyOfOrganizationPerson],
             'tag': List[str],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
-            'author': List[object],
+            'author': List[AnyOfOrganizationPerson],
             'has_constraint': List[str],
             'has_build_file': List[str],
             'short_description': List[str],
@@ -233,7 +237,7 @@ class ModelConfiguration(Model):
             'has_setup': List[ConfigurationSetup],
             'has_explanation_diagram': List[Image],
             'has_example': List[str],
-            'publisher': List[object],
+            'publisher': List[AnyOfOrganizationPerson],
             'has_output': List[DatasetSpecification],
             'has_output_time_interval': List[TimeInterval],
             'doi': List[str],
@@ -246,7 +250,7 @@ class ModelConfiguration(Model):
             'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'has_model_category': List[str],
+            'has_model_category': List[ModelCategory],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
@@ -666,7 +670,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The copyright_holder of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._copyright_holder
 
@@ -677,7 +681,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this ModelConfiguration.
-        :type copyright_holder: List[object]
+        :type copyright_holder: List[AnyOfOrganizationPerson]
         """
 
         self._copyright_holder = copyright_holder
@@ -758,7 +762,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The has_contact_person of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._has_contact_person
 
@@ -769,7 +773,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this ModelConfiguration.
-        :type has_contact_person: List[object]
+        :type has_contact_person: List[AnyOfOrganizationPerson]
         """
 
         self._has_contact_person = has_contact_person
@@ -896,7 +900,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The author of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._author
 
@@ -907,7 +911,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param author: The author of this ModelConfiguration.
-        :type author: List[object]
+        :type author: List[AnyOfOrganizationPerson]
         """
 
         self._author = author
@@ -1149,7 +1153,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :return: The publisher of this ModelConfiguration.
-        :rtype: List[object]
+        :rtype: List[AnyOfOrganizationPerson]
         """
         return self._publisher
 
@@ -1160,7 +1164,7 @@ class ModelConfiguration(Model):
         Description not available  # noqa: E501
 
         :param publisher: The publisher of this ModelConfiguration.
-        :type publisher: List[object]
+        :type publisher: List[AnyOfOrganizationPerson]
         """
 
         self._publisher = publisher
@@ -1445,10 +1449,10 @@ class ModelConfiguration(Model):
     def has_model_category(self):
         """Gets the has_model_category of this ModelConfiguration.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :return: The has_model_category of this ModelConfiguration.
-        :rtype: List[str]
+        :rtype: List[ModelCategory]
         """
         return self._has_model_category
 
@@ -1456,10 +1460,10 @@ class ModelConfiguration(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this ModelConfiguration.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :param has_model_category: The has_model_category of this ModelConfiguration.
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         """
 
         self._has_model_category = has_model_category
