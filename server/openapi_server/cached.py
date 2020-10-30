@@ -1,12 +1,13 @@
+import copy
 import hashlib
 from logging import getLogger
 import pathlib
 import pickle
 
 from connexion.spec import Specification
+from connexion.json_schema import resolve_refs
 
 logger = getLogger(__name__)
-
 
 class CachedSpecification(Specification):
     """Cache the built API specification.
@@ -15,6 +16,13 @@ class CachedSpecification(Specification):
     the result we can drastically reduce the reload time of the application.
     The cache is invalidated when the yaml file changes.
     """
+
+    def __init__(self, raw_spec):
+        # Disable validation
+        self._raw_spec = copy.deepcopy(raw_spec)
+        self._set_defaults(raw_spec)
+        #self._validate_spec(raw_spec)
+        self._spec = resolve_refs(raw_spec)
 
     @classmethod
     def from_file(cls, spec, arguments=None):
