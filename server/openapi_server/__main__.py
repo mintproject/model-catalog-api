@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
-import connexion
-from connexion.spec import Specification
 from openapi_server.cached import CachedSpecification
-from openapi_server import encoder
+from connexion.spec import Specification
 
+Specification.__init__ = CachedSpecification.__init__;
+Specification.from_file = CachedSpecification.from_file
+
+import connexion
+from openapi_server import encoder
 
 def main():
     app = connexion.App(__name__, specification_dir='./openapi/')
     app.app.json_encoder = encoder.JSONEncoder
-    Specification.from_file = CachedSpecification.from_file
     app.add_api('openapi.yaml',
                 arguments={'title': 'Model Catalog'},
                 pythonic_params=False)
