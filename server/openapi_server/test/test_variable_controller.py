@@ -24,7 +24,7 @@ class TestVariableController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/variables',
+            '/v1.6.0/variables',
             method='GET',
             headers=headers,
             query_string=query_string)

@@ -32,6 +32,7 @@ class Region(Model):
         :type type: List[str]
         """
 
+          # noqa: E501
 
         self.openapi_types = {
             'geo': List[object],

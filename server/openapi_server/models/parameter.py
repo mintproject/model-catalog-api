@@ -62,6 +62,8 @@ class Parameter(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'has_default_value': List[object],

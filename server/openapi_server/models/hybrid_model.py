@@ -83,7 +83,7 @@ class HybridModel(Model):
         :param screenshot: The screenshot of this HybridModel.  # noqa: E501
         :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this HybridModel.  # noqa: E501
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         :param had_primary_source: The had_primary_source of this HybridModel.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this HybridModel.  # noqa: E501
@@ -127,6 +127,7 @@ class HybridModel(Model):
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
         from openapi_server.models.image import Image
+        from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.person import Person
         from openapi_server.models.software import Software
@@ -134,6 +135,8 @@ class HybridModel(Model):
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -178,7 +181,7 @@ class HybridModel(Model):
             'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'has_model_category': List[str],
+            'has_model_category': List[ModelCategory],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'date_created': List[datetime],
@@ -1059,10 +1062,10 @@ class HybridModel(Model):
     def has_model_category(self):
         """Gets the has_model_category of this HybridModel.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :return: The has_model_category of this HybridModel.
-        :rtype: List[str]
+        :rtype: List[ModelCategory]
         """
         return self._has_model_category
 
@@ -1070,10 +1073,10 @@ class HybridModel(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this HybridModel.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :param has_model_category: The has_model_category of this HybridModel.
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         """
 
         self._has_model_category = has_model_category

@@ -216,7 +216,7 @@ class Person(Model):
     def email(self):
         """Gets the email of this Person.
 
-        Description not available  # noqa: E501
+        Email of a person  # noqa: E501
 
         :return: The email of this Person.
         :rtype: List[str]
@@ -227,7 +227,7 @@ class Person(Model):
     def email(self, email):
         """Sets the email of this Person.
 
-        Description not available  # noqa: E501
+        Email of a person  # noqa: E501
 
         :param email: The email of this Person.
         :type email: List[str]

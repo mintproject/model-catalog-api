@@ -34,6 +34,7 @@ class TimeInterval(Model):
         from openapi_server.models.unit import Unit
 
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'interval_unit': List[Unit],

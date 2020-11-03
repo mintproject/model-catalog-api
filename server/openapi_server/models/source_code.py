@@ -101,7 +101,7 @@ class SourceCode(Model):
     def programming_language(self):
         """Gets the programming_language of this SourceCode.
 
-        Description not available  # noqa: E501
+        Language used to code a software component  # noqa: E501
 
         :return: The programming_language of this SourceCode.
         :rtype: List[str]
@@ -112,7 +112,7 @@ class SourceCode(Model):
     def programming_language(self, programming_language):
         """Sets the programming_language of this SourceCode.
 
-        Description not available  # noqa: E501
+        Language used to code a software component  # noqa: E501
 
         :param programming_language: The programming_language of this SourceCode.
         :type programming_language: List[str]

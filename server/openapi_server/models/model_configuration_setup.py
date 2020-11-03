@@ -15,7 +15,7 @@ class ModelConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, doi=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, was_derived_from_setup=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, status=None, doi=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfigurationSetup - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this ModelConfigurationSetup.  # noqa: E501
@@ -64,6 +64,8 @@ class ModelConfigurationSetup(Model):
         :type has_sample_result: List[SampleResource]
         :param author: The author of this ModelConfigurationSetup.  # noqa: E501
         :type author: List[object]
+        :param was_derived_from_setup: The was_derived_from_setup of this ModelConfigurationSetup.  # noqa: E501
+        :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.  # noqa: E501
         :type has_constraint: List[str]
         :param has_build_file: The has_build_file of this ModelConfigurationSetup.  # noqa: E501
@@ -92,6 +94,8 @@ class ModelConfigurationSetup(Model):
         :type has_output: List[DatasetSpecification]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfigurationSetup.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
+        :param status: The status of this ModelConfigurationSetup.  # noqa: E501
+        :type status: List[str]
         :param doi: The doi of this ModelConfigurationSetup.  # noqa: E501
         :type doi: List[str]
         :param parameter_assignment_method: The parameter_assignment_method of this ModelConfigurationSetup.  # noqa: E501
@@ -115,7 +119,7 @@ class ModelConfigurationSetup(Model):
         :param screenshot: The screenshot of this ModelConfigurationSetup.  # noqa: E501
         :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.  # noqa: E501
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         :param had_primary_source: The had_primary_source of this ModelConfigurationSetup.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this ModelConfigurationSetup.  # noqa: E501
@@ -180,6 +184,7 @@ class ModelConfigurationSetup(Model):
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
         from openapi_server.models.image import Image
+        from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.parameter import Parameter
         from openapi_server.models.person import Person
@@ -195,6 +200,8 @@ class ModelConfigurationSetup(Model):
         from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -241,6 +248,7 @@ class ModelConfigurationSetup(Model):
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
             'author': List[object],
+            'was_derived_from_setup': List[ConfigurationSetup],
             'has_constraint': List[str],
             'has_build_file': List[str],
             'short_description': List[str],
@@ -255,6 +263,7 @@ class ModelConfigurationSetup(Model):
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
             'has_output_time_interval': List[TimeInterval],
+            'status': List[str],
             'doi': List[str],
             'parameter_assignment_method': List[str],
             'has_funding': List[FundingInformation],
@@ -266,7 +275,7 @@ class ModelConfigurationSetup(Model):
             'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'has_model_category': List[str],
+            'has_model_category': List[ModelCategory],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
@@ -321,6 +330,7 @@ class ModelConfigurationSetup(Model):
             'has_sample_execution': 'hasSampleExecution',
             'has_sample_result': 'hasSampleResult',
             'author': 'author',
+            'was_derived_from_setup': 'wasDerivedFromSetup',
             'has_constraint': 'hasConstraint',
             'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
@@ -335,6 +345,7 @@ class ModelConfigurationSetup(Model):
             'publisher': 'publisher',
             'has_output': 'hasOutput',
             'has_output_time_interval': 'hasOutputTimeInterval',
+            'status': 'status',
             'doi': 'doi',
             'parameter_assignment_method': 'parameterAssignmentMethod',
             'has_funding': 'hasFunding',
@@ -400,6 +411,7 @@ class ModelConfigurationSetup(Model):
         self._has_sample_execution = has_sample_execution
         self._has_sample_result = has_sample_result
         self._author = author
+        self._was_derived_from_setup = was_derived_from_setup
         self._has_constraint = has_constraint
         self._has_build_file = has_build_file
         self._short_description = short_description
@@ -414,6 +426,7 @@ class ModelConfigurationSetup(Model):
         self._publisher = publisher
         self._has_output = has_output
         self._has_output_time_interval = has_output_time_interval
+        self._status = status
         self._doi = doi
         self._parameter_assignment_method = parameter_assignment_method
         self._has_funding = has_funding
@@ -996,6 +1009,29 @@ class ModelConfigurationSetup(Model):
         self._author = author
 
     @property
+    def was_derived_from_setup(self):
+        """Gets the was_derived_from_setup of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The was_derived_from_setup of this ModelConfigurationSetup.
+        :rtype: List[ConfigurationSetup]
+        """
+        return self._was_derived_from_setup
+
+    @was_derived_from_setup.setter
+    def was_derived_from_setup(self, was_derived_from_setup):
+        """Sets the was_derived_from_setup of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param was_derived_from_setup: The was_derived_from_setup of this ModelConfigurationSetup.
+        :type was_derived_from_setup: List[ConfigurationSetup]
+        """
+
+        self._was_derived_from_setup = was_derived_from_setup
+
+    @property
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfigurationSetup.
 
@@ -1318,6 +1354,29 @@ class ModelConfigurationSetup(Model):
         self._has_output_time_interval = has_output_time_interval
 
     @property
+    def status(self):
+        """Gets the status of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The status of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param status: The status of this ModelConfigurationSetup.
+        :type status: List[str]
+        """
+
+        self._status = status
+
+    @property
     def doi(self):
         """Gets the doi of this ModelConfigurationSetup.
 
@@ -1574,10 +1633,10 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self):
         """Gets the has_model_category of this ModelConfigurationSetup.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :return: The has_model_category of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[ModelCategory]
         """
         return self._has_model_category
 
@@ -1585,10 +1644,10 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this ModelConfigurationSetup.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         """
 
         self._has_model_category = has_model_category

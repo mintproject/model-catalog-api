@@ -15,7 +15,7 @@ class DatasetSpecification(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, is_transformed_from=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
         """DatasetSpecification - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this DatasetSpecification.  # noqa: E501
@@ -38,6 +38,8 @@ class DatasetSpecification(Model):
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this DatasetSpecification.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
+        :param is_transformed_from: The is_transformed_from of this DatasetSpecification.  # noqa: E501
+        :type is_transformed_from: List[DatasetSpecification]
         :param has_data_transformation_setup: The has_data_transformation_setup of this DatasetSpecification.  # noqa: E501
         :type has_data_transformation_setup: List[DataTransformationSetup]
         :param position: The position of this DatasetSpecification.  # noqa: E501
@@ -66,6 +68,7 @@ class DatasetSpecification(Model):
             'label': List[str],
             'type': List[str],
             'has_fixed_resource': List[SampleResource],
+            'is_transformed_from': List[DatasetSpecification],
             'has_data_transformation_setup': List[DataTransformationSetup],
             'position': List[int],
             'id': str
@@ -82,6 +85,7 @@ class DatasetSpecification(Model):
             'label': 'label',
             'type': 'type',
             'has_fixed_resource': 'hasFixedResource',
+            'is_transformed_from': 'isTransformedFrom',
             'has_data_transformation_setup': 'hasDataTransformationSetup',
             'position': 'position',
             'id': 'id'
@@ -97,6 +101,7 @@ class DatasetSpecification(Model):
         self._label = label
         self._type = type
         self._has_fixed_resource = has_fixed_resource
+        self._is_transformed_from = is_transformed_from
         self._has_data_transformation_setup = has_data_transformation_setup
         self._position = position
         self._id = id
@@ -341,6 +346,29 @@ class DatasetSpecification(Model):
         """
 
         self._has_fixed_resource = has_fixed_resource
+
+    @property
+    def is_transformed_from(self):
+        """Gets the is_transformed_from of this DatasetSpecification.
+
+        Property that links a dataset specification from a model configuration or setup to the output from a target data transformation. This occurs when a data transformation produces several outputs, but only one of them is the one needed for a model  # noqa: E501
+
+        :return: The is_transformed_from of this DatasetSpecification.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._is_transformed_from
+
+    @is_transformed_from.setter
+    def is_transformed_from(self, is_transformed_from):
+        """Sets the is_transformed_from of this DatasetSpecification.
+
+        Property that links a dataset specification from a model configuration or setup to the output from a target data transformation. This occurs when a data transformation produces several outputs, but only one of them is the one needed for a model  # noqa: E501
+
+        :param is_transformed_from: The is_transformed_from of this DatasetSpecification.
+        :type is_transformed_from: List[DatasetSpecification]
+        """
+
+        self._is_transformed_from = is_transformed_from
 
     @property
     def has_data_transformation_setup(self):

@@ -24,7 +24,7 @@ class TestPointBasedGridController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/pointbasedgrids',
+            '/v1.6.0/pointbasedgrids',
             method='GET',
             headers=headers,
             query_string=query_string)

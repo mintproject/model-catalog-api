@@ -24,7 +24,7 @@ class TestTheoryGuidedModelController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/theory-guidedmodels',
+            '/v1.6.0/theory-guidedmodels',
             method='GET',
             headers=headers,
             query_string=query_string)

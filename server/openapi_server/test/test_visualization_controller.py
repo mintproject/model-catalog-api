@@ -24,7 +24,7 @@ class TestVisualizationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/visualizations',
+            '/v1.6.0/visualizations',
             method='GET',
             headers=headers,
             query_string=query_string)

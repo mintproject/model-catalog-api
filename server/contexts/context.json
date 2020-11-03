@@ -46,6 +46,7 @@
         "@id": "https://w3id.org/okn/o/sdm#calibrationMethod",
         "@container": "@set"
     },
+    "CoupledModel": {"@id": "https://w3id.org/okn/o/sdm#CoupledModel"},
     "hasRegion": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasRegion",
@@ -99,6 +100,11 @@
         "@id": "https://w3id.org/okn/o/sdm#hasCoordinateSystem",
         "@container": "@set"
     },
+    "isTransformedFrom": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#isTransformedFrom",
+        "@container": "@set"
+    },
     "datePublished": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@id": "https://w3id.org/okn/o/sd#datePublished",
@@ -149,6 +155,11 @@
         "@id": "https://w3id.org/okn/o/sd#doi",
         "@container": "@set"
     },
+    "status": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#status",
+        "@container": "@set"
+    },
     "hasComponentLocation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
@@ -189,13 +200,18 @@
         "@id": "https://w3id.org/okn/o/sd#screenshot",
         "@container": "@set"
     },
+    "usesModel": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#usesModel",
+        "@container": "@set"
+    },
     "hasLongName": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasLongName",
         "@container": "@set"
     },
     "hasModelCategory": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasModelCategory",
         "@container": "@set"
     },
@@ -228,6 +244,7 @@
         "@id": "https://w3id.org/okn/o/sd#copyrightYear",
         "@container": "@set"
     },
+    "CatalogIdentifier": {"@id": "https://w3id.org/okn/o/sd#CatalogIdentifier"},
     "hasModelResultTable": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#hasModelResultTable",
@@ -239,6 +256,7 @@
         "@id": "https://w3id.org/okn/o/sd#codeRepository",
         "@container": "@set"
     },
+    "ModelCategory": {"@id": "https://w3id.org/okn/o/sdm#ModelCategory"},
     "usesUnit": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#usesUnit",
@@ -446,6 +464,11 @@
     "author": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#author",
+        "@container": "@set"
+    },
+    "wasDerivedFromSetup": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#wasDerivedFromSetup",
         "@container": "@set"
     },
     "DatasetSpecification": {"@id": "https://w3id.org/okn/o/sd#DatasetSpecification"},
