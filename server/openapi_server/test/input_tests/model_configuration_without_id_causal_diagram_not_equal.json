@@ -79,9 +79,6 @@
       ]
     }
   ],
-  "hasModelCategory": [
-    "Agriculture"
-  ],
   "hasOutput": [
     {
       "id": "https://w3id.org/okn/i/mint/cycles-0.9.4-alpha_soilProfile",
