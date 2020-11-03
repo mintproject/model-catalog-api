@@ -57,13 +57,13 @@ class Software(Model):
         :param contributor: The contributor of this Software.  # noqa: E501
         :type contributor: List[Person]
         :param copyright_holder: The copyright_holder of this Software.  # noqa: E501
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         :param has_faq: The has_faq of this Software.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this Software.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this Software.  # noqa: E501
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         :param has_purpose: The has_purpose of this Software.  # noqa: E501
         :type has_purpose: List[str]
         :param id: The id of this Software.  # noqa: E501
@@ -81,7 +81,7 @@ class Software(Model):
         :param citation: The citation of this Software.  # noqa: E501
         :type citation: List[str]
         :param author: The author of this Software.  # noqa: E501
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         :param processor_requirements: The processor_requirements of this Software.  # noqa: E501
         :type processor_requirements: List[str]
         :param has_usage_notes: The has_usage_notes of this Software.  # noqa: E501
@@ -109,13 +109,12 @@ class Software(Model):
         :param has_example: The has_example of this Software.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this Software.  # noqa: E501
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         :param useful_for_calculating_index: The useful_for_calculating_index of this Software.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
         :param doi: The doi of this Software.  # noqa: E501
         :type doi: List[str]
         """
-        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
         from openapi_server.models.numerical_index import NumericalIndex
@@ -153,10 +152,10 @@ class Software(Model):
             'date_created': List[datetime],
             'compatible_visualization_software': List[Software],
             'contributor': List[Person],
-            'copyright_holder': List[AnyOfOrganizationPerson],
+            'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[AnyOfOrganizationPerson],
+            'has_contact_person': List[object],
             'has_purpose': List[str],
             'id': str,
             'has_executable_instructions': List[str],
@@ -165,7 +164,7 @@ class Software(Model):
             'memory_requirements': List[str],
             'website': List[str],
             'citation': List[str],
-            'author': List[AnyOfOrganizationPerson],
+            'author': List[object],
             'processor_requirements': List[str],
             'has_usage_notes': List[str],
             'readme': List[str],
@@ -179,7 +178,7 @@ class Software(Model):
             'has_source_code': List[SourceCode],
             'has_executable_notebook': List[str],
             'has_example': List[str],
-            'publisher': List[AnyOfOrganizationPerson],
+            'publisher': List[object],
             'useful_for_calculating_index': List[NumericalIndex],
             'doi': List[str]
         }
@@ -739,7 +738,7 @@ class Software(Model):
         Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this Software.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._copyright_holder
 
@@ -750,7 +749,7 @@ class Software(Model):
         Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this Software.
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         """
 
         self._copyright_holder = copyright_holder
@@ -808,7 +807,7 @@ class Software(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this Software.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._has_contact_person
 
@@ -819,7 +818,7 @@ class Software(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this Software.
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         """
 
         self._has_contact_person = has_contact_person
@@ -1015,7 +1014,7 @@ class Software(Model):
         The creator of a software component  # noqa: E501
 
         :return: The author of this Software.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._author
 
@@ -1026,7 +1025,7 @@ class Software(Model):
         The creator of a software component  # noqa: E501
 
         :param author: The author of this Software.
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         """
 
         self._author = author
@@ -1337,7 +1336,7 @@ class Software(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this Software.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._publisher
 
@@ -1348,7 +1347,7 @@ class Software(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this Software.
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         """
 
         self._publisher = publisher

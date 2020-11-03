@@ -24,7 +24,7 @@ class TestRegionController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/regions',
+            '/v1.6.0/regions',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -45,7 +45,7 @@ class TestRegionController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/regions/{id}'.format(id=resource_name),
+            '/v1.6.0/regions/{id}'.format(id=resource_name),
             method='GET',
             headers=headers,
             query_string=query_string)

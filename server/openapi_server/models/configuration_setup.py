@@ -37,13 +37,13 @@ class ConfigurationSetup(Model):
         :param compatible_visualization_software: The compatible_visualization_software of this ConfigurationSetup.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this ConfigurationSetup.  # noqa: E501
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         :param has_faq: The has_faq of this ConfigurationSetup.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this ConfigurationSetup.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this ConfigurationSetup.  # noqa: E501
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         :param tag: The tag of this ConfigurationSetup.  # noqa: E501
         :type tag: List[str]
         :param id: The id of this ConfigurationSetup.  # noqa: E501
@@ -55,7 +55,7 @@ class ConfigurationSetup(Model):
         :param has_sample_result: The has_sample_result of this ConfigurationSetup.  # noqa: E501
         :type has_sample_result: List[SampleResource]
         :param author: The author of this ConfigurationSetup.  # noqa: E501
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.  # noqa: E501
         :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this ConfigurationSetup.  # noqa: E501
@@ -77,7 +77,7 @@ class ConfigurationSetup(Model):
         :param has_example: The has_example of this ConfigurationSetup.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this ConfigurationSetup.  # noqa: E501
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         :param has_output: The has_output of this ConfigurationSetup.  # noqa: E501
         :type has_output: List[DatasetSpecification]
         :param status: The status of this ConfigurationSetup.  # noqa: E501
@@ -147,7 +147,6 @@ class ConfigurationSetup(Model):
         :param has_input: The has_input of this ConfigurationSetup.  # noqa: E501
         :type has_input: List[DatasetSpecification]
         """
-        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
@@ -187,16 +186,16 @@ class ConfigurationSetup(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[AnyOfOrganizationPerson],
+            'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[AnyOfOrganizationPerson],
+            'has_contact_person': List[object],
             'tag': List[str],
             'id': str,
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
-            'author': List[AnyOfOrganizationPerson],
+            'author': List[object],
             'was_derived_from_setup': List[ConfigurationSetup],
             'has_constraint': List[str],
             'has_build_file': List[str],
@@ -207,7 +206,7 @@ class ConfigurationSetup(Model):
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
             'has_example': List[str],
-            'publisher': List[AnyOfOrganizationPerson],
+            'publisher': List[object],
             'has_output': List[DatasetSpecification],
             'status': List[str],
             'doi': List[str],
@@ -601,7 +600,7 @@ class ConfigurationSetup(Model):
         Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this ConfigurationSetup.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._copyright_holder
 
@@ -612,7 +611,7 @@ class ConfigurationSetup(Model):
         Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this ConfigurationSetup.
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         """
 
         self._copyright_holder = copyright_holder
@@ -670,7 +669,7 @@ class ConfigurationSetup(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this ConfigurationSetup.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._has_contact_person
 
@@ -681,7 +680,7 @@ class ConfigurationSetup(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this ConfigurationSetup.
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         """
 
         self._has_contact_person = has_contact_person
@@ -808,7 +807,7 @@ class ConfigurationSetup(Model):
         The creator of a software component  # noqa: E501
 
         :return: The author of this ConfigurationSetup.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._author
 
@@ -819,7 +818,7 @@ class ConfigurationSetup(Model):
         The creator of a software component  # noqa: E501
 
         :param author: The author of this ConfigurationSetup.
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         """
 
         self._author = author
@@ -1061,7 +1060,7 @@ class ConfigurationSetup(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this ConfigurationSetup.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._publisher
 
@@ -1072,7 +1071,7 @@ class ConfigurationSetup(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this ConfigurationSetup.
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         """
 
         self._publisher = publisher

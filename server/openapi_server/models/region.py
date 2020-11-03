@@ -19,7 +19,7 @@ class Region(Model):
         """Region - a model defined in OpenAPI
 
         :param geo: The geo of this Region.  # noqa: E501
-        :type geo: List[AnyOfGeoCoordinatesGeoShape]
+        :type geo: List[object]
         :param part_of: The part_of of this Region.  # noqa: E501
         :type part_of: List[Region]
         :param description: The description of this Region.  # noqa: E501
@@ -31,12 +31,11 @@ class Region(Model):
         :param type: The type of this Region.  # noqa: E501
         :type type: List[str]
         """
-        from openapi_server.models.any_of_geo_coordinates_geo_shape import AnyOfGeoCoordinatesGeoShape
 
           # noqa: E501
 
         self.openapi_types = {
-            'geo': List[AnyOfGeoCoordinatesGeoShape],
+            'geo': List[object],
             'part_of': List[Region],
             'description': List[str],
             'id': str,
@@ -78,7 +77,7 @@ class Region(Model):
         Specific coordinates or shape associated with a region  # noqa: E501
 
         :return: The geo of this Region.
-        :rtype: List[AnyOfGeoCoordinatesGeoShape]
+        :rtype: List[object]
         """
         return self._geo
 
@@ -89,7 +88,7 @@ class Region(Model):
         Specific coordinates or shape associated with a region  # noqa: E501
 
         :param geo: The geo of this Region.
-        :type geo: List[AnyOfGeoCoordinatesGeoShape]
+        :type geo: List[object]
         """
 
         self._geo = geo

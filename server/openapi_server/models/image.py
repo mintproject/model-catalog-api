@@ -49,9 +49,8 @@ class Image(Model):
         :param id: The id of this Image.  # noqa: E501
         :type id: str
         :param value: The value of this Image.  # noqa: E501
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
-        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.data_transformation import DataTransformation
         from openapi_server.models.data_transformation_setup import DataTransformationSetup
         from openapi_server.models.dataset_specification import DatasetSpecification
@@ -81,7 +80,7 @@ class Image(Model):
             'has_data_transformation_setup': List[DataTransformationSetup],
             'position': List[int],
             'id': str,
-            'value': List[AnyOfURIbooleanDateTimefloatintegerstring]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -483,7 +482,7 @@ class Image(Model):
         Value associated to the described entity  # noqa: E501
 
         :return: The value of this Image.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._value
 
@@ -494,7 +493,7 @@ class Image(Model):
         Value associated to the described entity  # noqa: E501
 
         :param value: The value of this Image.
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
 
         self._value = value

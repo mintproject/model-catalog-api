@@ -31,9 +31,8 @@ class SampleCollection(Model):
         :param type: The type of this SampleCollection.  # noqa: E501
         :type type: List[str]
         :param value: The value of this SampleCollection.  # noqa: E501
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
-        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.sample_resource import SampleResource
 
           # noqa: E501
@@ -46,7 +45,7 @@ class SampleCollection(Model):
             'id': str,
             'label': List[str],
             'type': List[str],
-            'value': List[AnyOfURIbooleanDateTimefloatintegerstring]
+            'value': List[object]
         }
 
         self.attribute_map = {
@@ -223,7 +222,7 @@ class SampleCollection(Model):
         Value associated to the described entity  # noqa: E501
 
         :return: The value of this SampleCollection.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._value
 
@@ -234,7 +233,7 @@ class SampleCollection(Model):
         Value associated to the described entity  # noqa: E501
 
         :param value: The value of this SampleCollection.
-        :type value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type value: List[object]
         """
 
         self._value = value

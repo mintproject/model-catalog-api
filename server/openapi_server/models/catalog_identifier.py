@@ -19,15 +19,15 @@ class CatalogIdentifier(Model):
         """CatalogIdentifier - a model defined in OpenAPI
 
         :param has_default_value: The has_default_value of this CatalogIdentifier.  # noqa: E501
-        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type has_default_value: List[object]
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.  # noqa: E501
-        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
+        :type has_maximum_accepted_value: List[object]
         :param description: The description of this CatalogIdentifier.  # noqa: E501
         :type description: List[str]
         :param has_data_type: The has_data_type of this CatalogIdentifier.  # noqa: E501
         :type has_data_type: List[str]
         :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.  # noqa: E501
-        :type has_fixed_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type has_fixed_value: List[object]
         :param has_presentation: The has_presentation of this CatalogIdentifier.  # noqa: E501
         :type has_presentation: List[VariablePresentation]
         :param label: The label of this CatalogIdentifier.  # noqa: E501
@@ -37,7 +37,7 @@ class CatalogIdentifier(Model):
         :param type: The type of this CatalogIdentifier.  # noqa: E501
         :type type: List[str]
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.  # noqa: E501
-        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
+        :type has_minimum_accepted_value: List[object]
         :param has_accepted_values: The has_accepted_values of this CatalogIdentifier.  # noqa: E501
         :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this CatalogIdentifier.  # noqa: E501
@@ -53,8 +53,6 @@ class CatalogIdentifier(Model):
         :param has_step_size: The has_step_size of this CatalogIdentifier.  # noqa: E501
         :type has_step_size: List[float]
         """
-        from openapi_server.models.any_of_date_timefloatinteger import AnyOfDateTimefloatinteger
-        from openapi_server.models.any_of_ur_iboolean_date_timefloatintegerstring import AnyOfURIbooleanDateTimefloatintegerstring
         from openapi_server.models.intervention import Intervention
         from openapi_server.models.unit import Unit
         from openapi_server.models.variable import Variable
@@ -68,16 +66,16 @@ class CatalogIdentifier(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_default_value': List[AnyOfURIbooleanDateTimefloatintegerstring],
-            'has_maximum_accepted_value': List[AnyOfDateTimefloatinteger],
+            'has_default_value': List[object],
+            'has_maximum_accepted_value': List[object],
             'description': List[str],
             'has_data_type': List[str],
-            'has_fixed_value': List[AnyOfURIbooleanDateTimefloatintegerstring],
+            'has_fixed_value': List[object],
             'has_presentation': List[VariablePresentation],
             'label': List[str],
             'recommended_increment': List[float],
             'type': List[str],
-            'has_minimum_accepted_value': List[AnyOfDateTimefloatinteger],
+            'has_minimum_accepted_value': List[object],
             'has_accepted_values': List[str],
             'adjusts_variable': List[Variable],
             'relevant_for_intervention': List[Intervention],
@@ -143,7 +141,7 @@ class CatalogIdentifier(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_default_value of this CatalogIdentifier.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._has_default_value
 
@@ -154,7 +152,7 @@ class CatalogIdentifier(Model):
         Default accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_default_value: The has_default_value of this CatalogIdentifier.
-        :type has_default_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type has_default_value: List[object]
         """
 
         self._has_default_value = has_default_value
@@ -166,7 +164,7 @@ class CatalogIdentifier(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_maximum_accepted_value of this CatalogIdentifier.
-        :rtype: List[AnyOfDateTimefloatinteger]
+        :rtype: List[object]
         """
         return self._has_maximum_accepted_value
 
@@ -177,7 +175,7 @@ class CatalogIdentifier(Model):
         Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.
-        :type has_maximum_accepted_value: List[AnyOfDateTimefloatinteger]
+        :type has_maximum_accepted_value: List[object]
         """
 
         self._has_maximum_accepted_value = has_maximum_accepted_value
@@ -235,7 +233,7 @@ class CatalogIdentifier(Model):
         Value of a parameter in a software setup.  # noqa: E501
 
         :return: The has_fixed_value of this CatalogIdentifier.
-        :rtype: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :rtype: List[object]
         """
         return self._has_fixed_value
 
@@ -246,7 +244,7 @@ class CatalogIdentifier(Model):
         Value of a parameter in a software setup.  # noqa: E501
 
         :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.
-        :type has_fixed_value: List[AnyOfURIbooleanDateTimefloatintegerstring]
+        :type has_fixed_value: List[object]
         """
 
         self._has_fixed_value = has_fixed_value
@@ -350,7 +348,7 @@ class CatalogIdentifier(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :return: The has_minimum_accepted_value of this CatalogIdentifier.
-        :rtype: List[AnyOfDateTimefloatinteger]
+        :rtype: List[object]
         """
         return self._has_minimum_accepted_value
 
@@ -361,7 +359,7 @@ class CatalogIdentifier(Model):
         Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
 
         :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.
-        :type has_minimum_accepted_value: List[AnyOfDateTimefloatinteger]
+        :type has_minimum_accepted_value: List[object]
         """
 
         self._has_minimum_accepted_value = has_minimum_accepted_value

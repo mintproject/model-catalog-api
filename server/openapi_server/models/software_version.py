@@ -35,13 +35,13 @@ class SoftwareVersion(Model):
         :param compatible_visualization_software: The compatible_visualization_software of this SoftwareVersion.  # noqa: E501
         :type compatible_visualization_software: List[Software]
         :param copyright_holder: The copyright_holder of this SoftwareVersion.  # noqa: E501
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         :param has_faq: The has_faq of this SoftwareVersion.  # noqa: E501
         :type has_faq: List[str]
         :param logo: The logo of this SoftwareVersion.  # noqa: E501
         :type logo: List[Image]
         :param has_contact_person: The has_contact_person of this SoftwareVersion.  # noqa: E501
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         :param tag: The tag of this SoftwareVersion.  # noqa: E501
         :type tag: List[str]
         :param id: The id of this SoftwareVersion.  # noqa: E501
@@ -51,7 +51,7 @@ class SoftwareVersion(Model):
         :param has_configuration: The has_configuration of this SoftwareVersion.  # noqa: E501
         :type has_configuration: List[SoftwareConfiguration]
         :param author: The author of this SoftwareVersion.  # noqa: E501
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         :param has_build_file: The has_build_file of this SoftwareVersion.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this SoftwareVersion.  # noqa: E501
@@ -65,7 +65,7 @@ class SoftwareVersion(Model):
         :param has_example: The has_example of this SoftwareVersion.  # noqa: E501
         :type has_example: List[str]
         :param publisher: The publisher of this SoftwareVersion.  # noqa: E501
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         :param doi: The doi of this SoftwareVersion.  # noqa: E501
         :type doi: List[str]
         :param has_funding: The has_funding of this SoftwareVersion.  # noqa: E501
@@ -121,7 +121,6 @@ class SoftwareVersion(Model):
         :param has_version_id: The has_version_id of this SoftwareVersion.  # noqa: E501
         :type has_version_id: List[str]
         """
-        from openapi_server.models.any_of_organization_person import AnyOfOrganizationPerson
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
         from openapi_server.models.numerical_index import NumericalIndex
@@ -150,22 +149,22 @@ class SoftwareVersion(Model):
             'type': List[str],
             'has_installation_instructions': List[str],
             'compatible_visualization_software': List[Software],
-            'copyright_holder': List[AnyOfOrganizationPerson],
+            'copyright_holder': List[object],
             'has_faq': List[str],
             'logo': List[Image],
-            'has_contact_person': List[AnyOfOrganizationPerson],
+            'has_contact_person': List[object],
             'tag': List[str],
             'id': str,
             'identifier': List[str],
             'has_configuration': List[SoftwareConfiguration],
-            'author': List[AnyOfOrganizationPerson],
+            'author': List[object],
             'has_build_file': List[str],
             'short_description': List[str],
             'date_published': List[datetime],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_example': List[str],
-            'publisher': List[AnyOfOrganizationPerson],
+            'publisher': List[object],
             'doi': List[str],
             'has_funding': List[FundingInformation],
             'support_details': List[str],
@@ -503,7 +502,7 @@ class SoftwareVersion(Model):
         Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this SoftwareVersion.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._copyright_holder
 
@@ -514,7 +513,7 @@ class SoftwareVersion(Model):
         Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this SoftwareVersion.
-        :type copyright_holder: List[AnyOfOrganizationPerson]
+        :type copyright_holder: List[object]
         """
 
         self._copyright_holder = copyright_holder
@@ -572,7 +571,7 @@ class SoftwareVersion(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this SoftwareVersion.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._has_contact_person
 
@@ -583,7 +582,7 @@ class SoftwareVersion(Model):
         Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this SoftwareVersion.
-        :type has_contact_person: List[AnyOfOrganizationPerson]
+        :type has_contact_person: List[object]
         """
 
         self._has_contact_person = has_contact_person
@@ -687,7 +686,7 @@ class SoftwareVersion(Model):
         The creator of a software component  # noqa: E501
 
         :return: The author of this SoftwareVersion.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._author
 
@@ -698,7 +697,7 @@ class SoftwareVersion(Model):
         The creator of a software component  # noqa: E501
 
         :param author: The author of this SoftwareVersion.
-        :type author: List[AnyOfOrganizationPerson]
+        :type author: List[object]
         """
 
         self._author = author
@@ -848,7 +847,7 @@ class SoftwareVersion(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this SoftwareVersion.
-        :rtype: List[AnyOfOrganizationPerson]
+        :rtype: List[object]
         """
         return self._publisher
 
@@ -859,7 +858,7 @@ class SoftwareVersion(Model):
         Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this SoftwareVersion.
-        :type publisher: List[AnyOfOrganizationPerson]
+        :type publisher: List[object]
         """
 
         self._publisher = publisher
