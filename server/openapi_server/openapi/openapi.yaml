@@ -75,13 +75,13 @@ paths:
       operationId: catalogidentifiers_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -115,13 +115,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -178,13 +178,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -269,13 +269,13 @@ paths:
       operationId: causaldiagrams_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -309,13 +309,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -372,13 +372,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -464,13 +464,13 @@ paths:
       operationId: configurationsetups_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -504,13 +504,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -567,13 +567,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -658,13 +658,13 @@ paths:
       operationId: coupledmodels_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -698,13 +698,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -760,13 +760,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1242,13 +1242,13 @@ paths:
       operationId: datasetspecifications_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1282,13 +1282,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -1345,13 +1345,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1437,13 +1437,13 @@ paths:
       operationId: datatransformations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1477,13 +1477,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -1540,13 +1540,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1632,13 +1632,13 @@ paths:
       operationId: datatransformationsetups_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1673,13 +1673,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -1737,13 +1737,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1828,13 +1828,13 @@ paths:
       operationId: empiricalmodels_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -1868,13 +1868,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -1931,13 +1931,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2021,13 +2021,13 @@ paths:
       operationId: emulators_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2061,13 +2061,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -2123,13 +2123,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2213,13 +2213,13 @@ paths:
       operationId: equations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2253,13 +2253,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -2315,13 +2315,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2407,13 +2407,13 @@ paths:
       operationId: fundinginformations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2447,13 +2447,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -2510,13 +2510,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2601,13 +2601,13 @@ paths:
       operationId: geocoordinatess_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2641,13 +2641,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -2704,13 +2704,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2794,13 +2794,13 @@ paths:
       operationId: geoshapes_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2834,13 +2834,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -2896,13 +2896,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -2986,13 +2986,13 @@ paths:
       operationId: grids_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3026,13 +3026,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -3088,13 +3088,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3179,13 +3179,13 @@ paths:
       operationId: hybridmodels_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3219,13 +3219,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -3281,13 +3281,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3371,13 +3371,13 @@ paths:
       operationId: images_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3411,13 +3411,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -3473,13 +3473,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3564,13 +3564,13 @@ paths:
       operationId: interventions_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3604,13 +3604,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -3666,13 +3666,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3757,13 +3757,13 @@ paths:
       operationId: modelcategorys_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3797,13 +3797,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -3860,13 +3860,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3952,13 +3952,13 @@ paths:
       operationId: modelconfigurations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -3992,13 +3992,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -4055,13 +4055,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4147,13 +4147,13 @@ paths:
       operationId: modelconfigurationsetups_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4188,13 +4188,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -4252,13 +4252,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4342,13 +4342,13 @@ paths:
       operationId: models_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4382,13 +4382,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -4444,13 +4444,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4535,13 +4535,13 @@ paths:
       operationId: numericalindexs_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4575,13 +4575,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -4638,13 +4638,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4729,13 +4729,13 @@ paths:
       operationId: organizations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4769,13 +4769,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -4831,13 +4831,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4922,13 +4922,13 @@ paths:
       operationId: parameters_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -4962,13 +4962,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5024,13 +5024,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5114,13 +5114,13 @@ paths:
       operationId: persons_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5154,13 +5154,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5216,13 +5216,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5307,13 +5307,13 @@ paths:
       operationId: pointbasedgrids_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5347,13 +5347,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5410,13 +5410,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5500,13 +5500,13 @@ paths:
       operationId: processs_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5540,13 +5540,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5602,13 +5602,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5692,13 +5692,13 @@ paths:
       operationId: regions_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5732,13 +5732,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5794,13 +5794,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5886,13 +5886,13 @@ paths:
       operationId: samplecollections_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -5926,13 +5926,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -5989,13 +5989,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6080,13 +6080,13 @@ paths:
       operationId: sampleexecutions_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6120,13 +6120,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -6183,13 +6183,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6274,13 +6274,13 @@ paths:
       operationId: sampleresources_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6314,13 +6314,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -6377,13 +6377,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6469,13 +6469,13 @@ paths:
       operationId: softwareconfigurations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6509,13 +6509,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -6573,13 +6573,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6664,13 +6664,13 @@ paths:
       operationId: softwareimages_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6704,13 +6704,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -6767,13 +6767,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6857,13 +6857,13 @@ paths:
       operationId: softwares_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -6897,13 +6897,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -6959,13 +6959,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7050,13 +7050,13 @@ paths:
       operationId: softwareversions_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7090,13 +7090,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -7153,13 +7153,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7244,13 +7244,13 @@ paths:
       operationId: sourcecodes_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7284,13 +7284,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -7346,13 +7346,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7438,13 +7438,13 @@ paths:
       operationId: spatiallydistributedgrids_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7479,13 +7479,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -7543,13 +7543,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7635,13 +7635,13 @@ paths:
       operationId: spatialresolutions_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7675,13 +7675,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -7738,13 +7738,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7830,13 +7830,13 @@ paths:
       operationId: standardvariables_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -7870,13 +7870,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -7933,13 +7933,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8025,13 +8025,13 @@ paths:
       operationId: theory_guidedmodels_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8065,13 +8065,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -8128,13 +8128,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8219,13 +8219,13 @@ paths:
       operationId: timeintervals_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8259,13 +8259,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -8321,13 +8321,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8411,13 +8411,13 @@ paths:
       operationId: units_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8451,13 +8451,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -8513,13 +8513,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8644,13 +8644,13 @@ paths:
       operationId: variablepresentations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8684,13 +8684,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -8747,13 +8747,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8837,13 +8837,13 @@ paths:
       operationId: variables_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -8877,13 +8877,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -8939,13 +8939,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -9030,13 +9030,13 @@ paths:
       operationId: visualizations_post
       parameters:
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:
@@ -9070,13 +9070,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       responses:
         202:
           description: Deleted
@@ -9133,13 +9133,13 @@ paths:
           type: string
         style: simple
       - description: Username
-        explode: false
-        in: path
+        explode: true
+        in: query
         name: user
         required: false
         schema:
           type: string
-        style: simple
+        style: form
       requestBody:
         content:
           application/json:

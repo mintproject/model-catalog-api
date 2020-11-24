@@ -64,7 +64,7 @@ paths:
         https://w3id.org/okn/o/sd#CatalogIdentifier)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -98,7 +98,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -149,7 +149,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -227,7 +227,7 @@ paths:
         https://w3id.org/okn/o/sd#ConfigurationSetup)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -261,7 +261,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -312,7 +312,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -390,7 +390,7 @@ paths:
         https://w3id.org/okn/o/sd#DataTransformation)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -424,7 +424,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -475,7 +475,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -553,7 +553,7 @@ paths:
         in https://w3id.org/okn/o/sd#DataTransformationSetup)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -588,7 +588,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -640,7 +640,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -718,7 +718,7 @@ paths:
         in https://w3id.org/okn/o/sd#DatasetSpecification)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -752,7 +752,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -803,7 +803,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -881,7 +881,7 @@ paths:
         https://w3id.org/okn/o/sd#FundingInformation)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -915,7 +915,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -966,7 +966,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1042,7 +1042,7 @@ paths:
       description: Create a new instance of Image (more information in https://w3id.org/okn/o/sd#Image)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1076,7 +1076,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1126,7 +1126,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1203,7 +1203,7 @@ paths:
       description: Create a new instance of NumericalIndex (more information in https://w3id.org/okn/o/sd#NumericalIndex)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1237,7 +1237,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1288,7 +1288,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1365,7 +1365,7 @@ paths:
       description: Create a new instance of Organization (more information in https://w3id.org/okn/o/sd#Organization)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1399,7 +1399,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1449,7 +1449,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1526,7 +1526,7 @@ paths:
       description: Create a new instance of Parameter (more information in https://w3id.org/okn/o/sd#Parameter)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1560,7 +1560,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1610,7 +1610,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1686,7 +1686,7 @@ paths:
       description: Create a new instance of Person (more information in https://w3id.org/okn/o/sd#Person)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1720,7 +1720,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1770,7 +1770,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1848,7 +1848,7 @@ paths:
         https://w3id.org/okn/o/sd#SampleCollection)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1882,7 +1882,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -1933,7 +1933,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2010,7 +2010,7 @@ paths:
       description: Create a new instance of SampleExecution (more information in https://w3id.org/okn/o/sd#SampleExecution)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2044,7 +2044,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2095,7 +2095,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2172,7 +2172,7 @@ paths:
       description: Create a new instance of SampleResource (more information in https://w3id.org/okn/o/sd#SampleResource)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2206,7 +2206,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2257,7 +2257,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2333,7 +2333,7 @@ paths:
       description: Create a new instance of Software (more information in https://w3id.org/okn/o/sd#Software)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2367,7 +2367,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2417,7 +2417,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2495,7 +2495,7 @@ paths:
         in https://w3id.org/okn/o/sd#SoftwareConfiguration)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2529,7 +2529,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2581,7 +2581,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2658,7 +2658,7 @@ paths:
       description: Create a new instance of SoftwareImage (more information in https://w3id.org/okn/o/sd#SoftwareImage)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2692,7 +2692,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2743,7 +2743,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2820,7 +2820,7 @@ paths:
       description: Create a new instance of SoftwareVersion (more information in https://w3id.org/okn/o/sd#SoftwareVersion)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2854,7 +2854,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2905,7 +2905,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -2982,7 +2982,7 @@ paths:
       description: Create a new instance of SourceCode (more information in https://w3id.org/okn/o/sd#SourceCode)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3016,7 +3016,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3066,7 +3066,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3144,7 +3144,7 @@ paths:
         https://w3id.org/okn/o/sd#StandardVariable)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3178,7 +3178,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3229,7 +3229,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3305,7 +3305,7 @@ paths:
       description: Create a new instance of Unit (more information in https://w3id.org/okn/o/sd#Unit)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3339,7 +3339,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3389,7 +3389,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3465,7 +3465,7 @@ paths:
       description: Create a new instance of Variable (more information in https://w3id.org/okn/o/sd#Variable)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3499,7 +3499,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3549,7 +3549,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3627,7 +3627,7 @@ paths:
         in https://w3id.org/okn/o/sd#VariablePresentation)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3661,7 +3661,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3712,7 +3712,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3789,7 +3789,7 @@ paths:
       description: Create a new instance of Visualization (more information in https://w3id.org/okn/o/sd#Visualization)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3823,7 +3823,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3874,7 +3874,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3951,7 +3951,7 @@ paths:
       description: Create a new instance of CausalDiagram (more information in https://w3id.org/okn/o/sdm#CausalDiagram)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -3985,7 +3985,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4036,7 +4036,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4113,7 +4113,7 @@ paths:
       description: Create a new instance of CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4147,7 +4147,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4197,7 +4197,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4274,7 +4274,7 @@ paths:
       description: Create a new instance of EmpiricalModel (more information in https://w3id.org/okn/o/sdm#EmpiricalModel)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4308,7 +4308,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4359,7 +4359,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4435,7 +4435,7 @@ paths:
       description: Create a new instance of Emulator (more information in https://w3id.org/okn/o/sdm#Emulator)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4469,7 +4469,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4519,7 +4519,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4595,7 +4595,7 @@ paths:
       description: Create a new instance of Equation (more information in https://w3id.org/okn/o/sdm#Equation)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4629,7 +4629,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4679,7 +4679,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4756,7 +4756,7 @@ paths:
       description: Create a new instance of GeoCoordinates (more information in https://w3id.org/okn/o/sdm#GeoCoordinates)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4790,7 +4790,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4841,7 +4841,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4917,7 +4917,7 @@ paths:
       description: Create a new instance of GeoShape (more information in https://w3id.org/okn/o/sdm#GeoShape)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -4951,7 +4951,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5001,7 +5001,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5077,7 +5077,7 @@ paths:
       description: Create a new instance of Grid (more information in https://w3id.org/okn/o/sdm#Grid)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5111,7 +5111,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5161,7 +5161,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5238,7 +5238,7 @@ paths:
       description: Create a new instance of HybridModel (more information in https://w3id.org/okn/o/sdm#HybridModel)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5272,7 +5272,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5322,7 +5322,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5399,7 +5399,7 @@ paths:
       description: Create a new instance of Intervention (more information in https://w3id.org/okn/o/sdm#Intervention)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5433,7 +5433,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5483,7 +5483,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5559,7 +5559,7 @@ paths:
       description: Create a new instance of Model (more information in https://w3id.org/okn/o/sdm#Model)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5593,7 +5593,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5643,7 +5643,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5720,7 +5720,7 @@ paths:
       description: Create a new instance of ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5754,7 +5754,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5805,7 +5805,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5883,7 +5883,7 @@ paths:
         https://w3id.org/okn/o/sdm#ModelConfiguration)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5917,7 +5917,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -5968,7 +5968,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6046,7 +6046,7 @@ paths:
         in https://w3id.org/okn/o/sdm#ModelConfigurationSetup)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6081,7 +6081,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6133,7 +6133,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6210,7 +6210,7 @@ paths:
       description: Create a new instance of PointBasedGrid (more information in https://w3id.org/okn/o/sdm#PointBasedGrid)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6244,7 +6244,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6295,7 +6295,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6371,7 +6371,7 @@ paths:
       description: Create a new instance of Process (more information in https://w3id.org/okn/o/sdm#Process)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6405,7 +6405,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6455,7 +6455,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6531,7 +6531,7 @@ paths:
       description: Create a new instance of Region (more information in https://w3id.org/okn/o/sdm#Region)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6565,7 +6565,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6615,7 +6615,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6693,7 +6693,7 @@ paths:
         https://w3id.org/okn/o/sdm#SpatialResolution)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6727,7 +6727,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6778,7 +6778,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6856,7 +6856,7 @@ paths:
         in https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6891,7 +6891,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -6943,7 +6943,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7021,7 +7021,7 @@ paths:
         https://w3id.org/okn/o/sdm#Theory-GuidedModel)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7055,7 +7055,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7106,7 +7106,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7183,7 +7183,7 @@ paths:
       description: Create a new instance of TimeInterval (more information in https://w3id.org/okn/o/sdm#TimeInterval)
       parameters:
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7217,7 +7217,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:
@@ -7267,7 +7267,7 @@ paths:
         schema:
           type: string
       - description: Username
-        in: path
+        in: query
         name: user
         required: false
         schema:

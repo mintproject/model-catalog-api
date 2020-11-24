@@ -33,7 +33,7 @@ def fundinginformations_get(username=None, label=None, page=None, per_page=None)
         rdf_type_name=FUNDINGINFORMATION_TYPE_NAME, 
         kls=FundingInformation)
 
-def fundinginformations_id_delete(id, user):  # noqa: E501
+def fundinginformations_id_delete(id, user=None):  # noqa: E501
     """Delete an existing FundingInformation
 
     Delete an existing FundingInformation (more information in https://w3id.org/okn/o/sd#FundingInformation) # noqa: E501
@@ -47,7 +47,8 @@ def fundinginformations_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=FUNDINGINFORMATION_TYPE_URI,
         rdf_type_name=FUNDINGINFORMATION_TYPE_NAME, 
         kls=FundingInformation)
@@ -72,7 +73,7 @@ def fundinginformations_id_get(id, username=None):  # noqa: E501
         rdf_type_name=FUNDINGINFORMATION_TYPE_NAME, 
         kls=FundingInformation)
 
-def fundinginformations_id_put(id, user, funding_information=None):  # noqa: E501
+def fundinginformations_id_put(id, user=None, funding_information=None):  # noqa: E501
     """Update an existing FundingInformation
 
     Updates an existing FundingInformation (more information in https://w3id.org/okn/o/sd#FundingInformation) # noqa: E501
@@ -90,13 +91,14 @@ def fundinginformations_id_put(id, user, funding_information=None):  # noqa: E50
     if connexion.request.is_json:
         funding_information = FundingInformation.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=funding_information,
         rdf_type_uri=FUNDINGINFORMATION_TYPE_URI,
         rdf_type_name=FUNDINGINFORMATION_TYPE_NAME, 
         kls=FundingInformation)
 
-def fundinginformations_post(user, funding_information=None):  # noqa: E501
+def fundinginformations_post(user=None, funding_information=None):  # noqa: E501
     """Create one FundingInformation
 
     Create a new instance of FundingInformation (more information in https://w3id.org/okn/o/sd#FundingInformation) # noqa: E501
@@ -112,7 +114,8 @@ def fundinginformations_post(user, funding_information=None):  # noqa: E501
     if connexion.request.is_json:
         funding_information = FundingInformation.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=funding_information,
         rdf_type_uri=FUNDINGINFORMATION_TYPE_URI,
         rdf_type_name=FUNDINGINFORMATION_TYPE_NAME, 

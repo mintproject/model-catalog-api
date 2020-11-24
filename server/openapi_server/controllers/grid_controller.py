@@ -33,7 +33,7 @@ def grids_get(username=None, label=None, page=None, per_page=None):  # noqa: E50
         rdf_type_name=GRID_TYPE_NAME, 
         kls=Grid)
 
-def grids_id_delete(id, user):  # noqa: E501
+def grids_id_delete(id, user=None):  # noqa: E501
     """Delete an existing Grid
 
     Delete an existing Grid (more information in https://w3id.org/okn/o/sdm#Grid) # noqa: E501
@@ -47,7 +47,8 @@ def grids_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=GRID_TYPE_URI,
         rdf_type_name=GRID_TYPE_NAME, 
         kls=Grid)
@@ -72,7 +73,7 @@ def grids_id_get(id, username=None):  # noqa: E501
         rdf_type_name=GRID_TYPE_NAME, 
         kls=Grid)
 
-def grids_id_put(id, user, grid=None):  # noqa: E501
+def grids_id_put(id, user=None, grid=None):  # noqa: E501
     """Update an existing Grid
 
     Updates an existing Grid (more information in https://w3id.org/okn/o/sdm#Grid) # noqa: E501
@@ -90,13 +91,14 @@ def grids_id_put(id, user, grid=None):  # noqa: E501
     if connexion.request.is_json:
         grid = Grid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=grid,
         rdf_type_uri=GRID_TYPE_URI,
         rdf_type_name=GRID_TYPE_NAME, 
         kls=Grid)
 
-def grids_post(user, grid=None):  # noqa: E501
+def grids_post(user=None, grid=None):  # noqa: E501
     """Create one Grid
 
     Create a new instance of Grid (more information in https://w3id.org/okn/o/sdm#Grid) # noqa: E501
@@ -112,7 +114,8 @@ def grids_post(user, grid=None):  # noqa: E501
     if connexion.request.is_json:
         grid = Grid.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=grid,
         rdf_type_uri=GRID_TYPE_URI,
         rdf_type_name=GRID_TYPE_NAME, 

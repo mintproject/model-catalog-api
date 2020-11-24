@@ -70,7 +70,7 @@ def deserialize_date(string):
     try:
         from dateutil.parser import parse
         return parse(string).date()
-    except ImportError:
+    except:
         return string
 
 
@@ -87,7 +87,7 @@ def deserialize_datetime(string):
     try:
         from dateutil.parser import parse
         return parse(string)
-    except ImportError:
+    except:
         return string
 
 

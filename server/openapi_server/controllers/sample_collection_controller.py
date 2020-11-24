@@ -33,7 +33,7 @@ def samplecollections_get(username=None, label=None, page=None, per_page=None): 
         rdf_type_name=SAMPLECOLLECTION_TYPE_NAME, 
         kls=SampleCollection)
 
-def samplecollections_id_delete(id, user):  # noqa: E501
+def samplecollections_id_delete(id, user=None):  # noqa: E501
     """Delete an existing SampleCollection
 
     Delete an existing SampleCollection (more information in https://w3id.org/okn/o/sd#SampleCollection) # noqa: E501
@@ -47,7 +47,8 @@ def samplecollections_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=SAMPLECOLLECTION_TYPE_URI,
         rdf_type_name=SAMPLECOLLECTION_TYPE_NAME, 
         kls=SampleCollection)
@@ -72,7 +73,7 @@ def samplecollections_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SAMPLECOLLECTION_TYPE_NAME, 
         kls=SampleCollection)
 
-def samplecollections_id_put(id, user, sample_collection=None):  # noqa: E501
+def samplecollections_id_put(id, user=None, sample_collection=None):  # noqa: E501
     """Update an existing SampleCollection
 
     Updates an existing SampleCollection (more information in https://w3id.org/okn/o/sd#SampleCollection) # noqa: E501
@@ -90,13 +91,14 @@ def samplecollections_id_put(id, user, sample_collection=None):  # noqa: E501
     if connexion.request.is_json:
         sample_collection = SampleCollection.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=sample_collection,
         rdf_type_uri=SAMPLECOLLECTION_TYPE_URI,
         rdf_type_name=SAMPLECOLLECTION_TYPE_NAME, 
         kls=SampleCollection)
 
-def samplecollections_post(user, sample_collection=None):  # noqa: E501
+def samplecollections_post(user=None, sample_collection=None):  # noqa: E501
     """Create one SampleCollection
 
     Create a new instance of SampleCollection (more information in https://w3id.org/okn/o/sd#SampleCollection) # noqa: E501
@@ -112,7 +114,8 @@ def samplecollections_post(user, sample_collection=None):  # noqa: E501
     if connexion.request.is_json:
         sample_collection = SampleCollection.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=sample_collection,
         rdf_type_uri=SAMPLECOLLECTION_TYPE_URI,
         rdf_type_name=SAMPLECOLLECTION_TYPE_NAME, 

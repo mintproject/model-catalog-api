@@ -33,7 +33,7 @@ def hybridmodels_get(username=None, label=None, page=None, per_page=None):  # no
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
         kls=HybridModel)
 
-def hybridmodels_id_delete(id, user):  # noqa: E501
+def hybridmodels_id_delete(id, user=None):  # noqa: E501
     """Delete an existing HybridModel
 
     Delete an existing HybridModel (more information in https://w3id.org/okn/o/sdm#HybridModel) # noqa: E501
@@ -47,7 +47,8 @@ def hybridmodels_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=HYBRIDMODEL_TYPE_URI,
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
         kls=HybridModel)
@@ -72,7 +73,7 @@ def hybridmodels_id_get(id, username=None):  # noqa: E501
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
         kls=HybridModel)
 
-def hybridmodels_id_put(id, user, hybrid_model=None):  # noqa: E501
+def hybridmodels_id_put(id, user=None, hybrid_model=None):  # noqa: E501
     """Update an existing HybridModel
 
     Updates an existing HybridModel (more information in https://w3id.org/okn/o/sdm#HybridModel) # noqa: E501
@@ -90,13 +91,14 @@ def hybridmodels_id_put(id, user, hybrid_model=None):  # noqa: E501
     if connexion.request.is_json:
         hybrid_model = HybridModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=hybrid_model,
         rdf_type_uri=HYBRIDMODEL_TYPE_URI,
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
         kls=HybridModel)
 
-def hybridmodels_post(user, hybrid_model=None):  # noqa: E501
+def hybridmodels_post(user=None, hybrid_model=None):  # noqa: E501
     """Create one HybridModel
 
     Create a new instance of HybridModel (more information in https://w3id.org/okn/o/sdm#HybridModel) # noqa: E501
@@ -112,7 +114,8 @@ def hybridmodels_post(user, hybrid_model=None):  # noqa: E501
     if connexion.request.is_json:
         hybrid_model = HybridModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=hybrid_model,
         rdf_type_uri=HYBRIDMODEL_TYPE_URI,
         rdf_type_name=HYBRIDMODEL_TYPE_NAME, 
