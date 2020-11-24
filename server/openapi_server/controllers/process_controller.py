@@ -33,7 +33,7 @@ def processs_get(username=None, label=None, page=None, per_page=None):  # noqa: 
         rdf_type_name=PROCESS_TYPE_NAME, 
         kls=Process)
 
-def processs_id_delete(id, user):  # noqa: E501
+def processs_id_delete(id, user=None):  # noqa: E501
     """Delete an existing Process
 
     Delete an existing Process (more information in https://w3id.org/okn/o/sdm#Process) # noqa: E501
@@ -47,7 +47,8 @@ def processs_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=PROCESS_TYPE_URI,
         rdf_type_name=PROCESS_TYPE_NAME, 
         kls=Process)
@@ -72,7 +73,7 @@ def processs_id_get(id, username=None):  # noqa: E501
         rdf_type_name=PROCESS_TYPE_NAME, 
         kls=Process)
 
-def processs_id_put(id, user, process=None):  # noqa: E501
+def processs_id_put(id, user=None, process=None):  # noqa: E501
     """Update an existing Process
 
     Updates an existing Process (more information in https://w3id.org/okn/o/sdm#Process) # noqa: E501
@@ -90,13 +91,14 @@ def processs_id_put(id, user, process=None):  # noqa: E501
     if connexion.request.is_json:
         process = Process.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=process,
         rdf_type_uri=PROCESS_TYPE_URI,
         rdf_type_name=PROCESS_TYPE_NAME, 
         kls=Process)
 
-def processs_post(user, process=None):  # noqa: E501
+def processs_post(user=None, process=None):  # noqa: E501
     """Create one Process
 
     Create a new instance of Process (more information in https://w3id.org/okn/o/sdm#Process) # noqa: E501
@@ -112,7 +114,8 @@ def processs_post(user, process=None):  # noqa: E501
     if connexion.request.is_json:
         process = Process.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=process,
         rdf_type_uri=PROCESS_TYPE_URI,
         rdf_type_name=PROCESS_TYPE_NAME, 

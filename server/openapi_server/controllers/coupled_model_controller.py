@@ -33,7 +33,7 @@ def coupledmodels_get(username=None, label=None, page=None, per_page=None):  # n
         rdf_type_name=COUPLEDMODEL_TYPE_NAME, 
         kls=CoupledModel)
 
-def coupledmodels_id_delete(id, user):  # noqa: E501
+def coupledmodels_id_delete(id, user=None):  # noqa: E501
     """Delete an existing CoupledModel
 
     Delete an existing CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel) # noqa: E501
@@ -47,7 +47,8 @@ def coupledmodels_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=COUPLEDMODEL_TYPE_URI,
         rdf_type_name=COUPLEDMODEL_TYPE_NAME, 
         kls=CoupledModel)
@@ -72,7 +73,7 @@ def coupledmodels_id_get(id, username=None):  # noqa: E501
         rdf_type_name=COUPLEDMODEL_TYPE_NAME, 
         kls=CoupledModel)
 
-def coupledmodels_id_put(id, user, coupled_model=None):  # noqa: E501
+def coupledmodels_id_put(id, user=None, coupled_model=None):  # noqa: E501
     """Update an existing CoupledModel
 
     Updates an existing CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel) # noqa: E501
@@ -90,13 +91,14 @@ def coupledmodels_id_put(id, user, coupled_model=None):  # noqa: E501
     if connexion.request.is_json:
         coupled_model = CoupledModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=coupled_model,
         rdf_type_uri=COUPLEDMODEL_TYPE_URI,
         rdf_type_name=COUPLEDMODEL_TYPE_NAME, 
         kls=CoupledModel)
 
-def coupledmodels_post(user, coupled_model=None):  # noqa: E501
+def coupledmodels_post(user=None, coupled_model=None):  # noqa: E501
     """Create one CoupledModel
 
     Create a new instance of CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel) # noqa: E501
@@ -112,7 +114,8 @@ def coupledmodels_post(user, coupled_model=None):  # noqa: E501
     if connexion.request.is_json:
         coupled_model = CoupledModel.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=coupled_model,
         rdf_type_uri=COUPLEDMODEL_TYPE_URI,
         rdf_type_name=COUPLEDMODEL_TYPE_NAME, 

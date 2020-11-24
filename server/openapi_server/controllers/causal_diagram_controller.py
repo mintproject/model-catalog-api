@@ -33,7 +33,7 @@ def causaldiagrams_get(username=None, label=None, page=None, per_page=None):  # 
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)
 
-def causaldiagrams_id_delete(id, user):  # noqa: E501
+def causaldiagrams_id_delete(id, user=None):  # noqa: E501
     """Delete an existing CausalDiagram
 
     Delete an existing CausalDiagram (more information in https://w3id.org/okn/o/sdm#CausalDiagram) # noqa: E501
@@ -47,7 +47,8 @@ def causaldiagrams_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)
@@ -72,7 +73,7 @@ def causaldiagrams_id_get(id, username=None):  # noqa: E501
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)
 
-def causaldiagrams_id_put(id, user, causal_diagram=None):  # noqa: E501
+def causaldiagrams_id_put(id, user=None, causal_diagram=None):  # noqa: E501
     """Update an existing CausalDiagram
 
     Updates an existing CausalDiagram (more information in https://w3id.org/okn/o/sdm#CausalDiagram) # noqa: E501
@@ -90,13 +91,14 @@ def causaldiagrams_id_put(id, user, causal_diagram=None):  # noqa: E501
     if connexion.request.is_json:
         causal_diagram = CausalDiagram.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=causal_diagram,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 
         kls=CausalDiagram)
 
-def causaldiagrams_post(user, causal_diagram=None):  # noqa: E501
+def causaldiagrams_post(user=None, causal_diagram=None):  # noqa: E501
     """Create one CausalDiagram
 
     Create a new instance of CausalDiagram (more information in https://w3id.org/okn/o/sdm#CausalDiagram) # noqa: E501
@@ -112,7 +114,8 @@ def causaldiagrams_post(user, causal_diagram=None):  # noqa: E501
     if connexion.request.is_json:
         causal_diagram = CausalDiagram.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=causal_diagram,
         rdf_type_uri=CAUSALDIAGRAM_TYPE_URI,
         rdf_type_name=CAUSALDIAGRAM_TYPE_NAME, 

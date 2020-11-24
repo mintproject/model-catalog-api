@@ -33,7 +33,7 @@ def catalogidentifiers_get(username=None, label=None, page=None, per_page=None):
         rdf_type_name=CATALOGIDENTIFIER_TYPE_NAME, 
         kls=CatalogIdentifier)
 
-def catalogidentifiers_id_delete(id, user):  # noqa: E501
+def catalogidentifiers_id_delete(id, user=None):  # noqa: E501
     """Delete an existing CatalogIdentifier
 
     Delete an existing CatalogIdentifier (more information in https://w3id.org/okn/o/sd#CatalogIdentifier) # noqa: E501
@@ -47,7 +47,8 @@ def catalogidentifiers_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=CATALOGIDENTIFIER_TYPE_URI,
         rdf_type_name=CATALOGIDENTIFIER_TYPE_NAME, 
         kls=CatalogIdentifier)
@@ -72,7 +73,7 @@ def catalogidentifiers_id_get(id, username=None):  # noqa: E501
         rdf_type_name=CATALOGIDENTIFIER_TYPE_NAME, 
         kls=CatalogIdentifier)
 
-def catalogidentifiers_id_put(id, user, catalog_identifier=None):  # noqa: E501
+def catalogidentifiers_id_put(id, user=None, catalog_identifier=None):  # noqa: E501
     """Update an existing CatalogIdentifier
 
     Updates an existing CatalogIdentifier (more information in https://w3id.org/okn/o/sd#CatalogIdentifier) # noqa: E501
@@ -90,13 +91,14 @@ def catalogidentifiers_id_put(id, user, catalog_identifier=None):  # noqa: E501
     if connexion.request.is_json:
         catalog_identifier = CatalogIdentifier.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=catalog_identifier,
         rdf_type_uri=CATALOGIDENTIFIER_TYPE_URI,
         rdf_type_name=CATALOGIDENTIFIER_TYPE_NAME, 
         kls=CatalogIdentifier)
 
-def catalogidentifiers_post(user, catalog_identifier=None):  # noqa: E501
+def catalogidentifiers_post(user=None, catalog_identifier=None):  # noqa: E501
     """Create one CatalogIdentifier
 
     Create a new instance of CatalogIdentifier (more information in https://w3id.org/okn/o/sd#CatalogIdentifier) # noqa: E501
@@ -112,7 +114,8 @@ def catalogidentifiers_post(user, catalog_identifier=None):  # noqa: E501
     if connexion.request.is_json:
         catalog_identifier = CatalogIdentifier.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=catalog_identifier,
         rdf_type_uri=CATALOGIDENTIFIER_TYPE_URI,
         rdf_type_name=CATALOGIDENTIFIER_TYPE_NAME, 

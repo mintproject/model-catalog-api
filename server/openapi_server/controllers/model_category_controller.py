@@ -33,7 +33,7 @@ def modelcategorys_get(username=None, label=None, page=None, per_page=None):  # 
         rdf_type_name=MODELCATEGORY_TYPE_NAME, 
         kls=ModelCategory)
 
-def modelcategorys_id_delete(id, user):  # noqa: E501
+def modelcategorys_id_delete(id, user=None):  # noqa: E501
     """Delete an existing ModelCategory
 
     Delete an existing ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory) # noqa: E501
@@ -47,7 +47,8 @@ def modelcategorys_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=MODELCATEGORY_TYPE_URI,
         rdf_type_name=MODELCATEGORY_TYPE_NAME, 
         kls=ModelCategory)
@@ -72,7 +73,7 @@ def modelcategorys_id_get(id, username=None):  # noqa: E501
         rdf_type_name=MODELCATEGORY_TYPE_NAME, 
         kls=ModelCategory)
 
-def modelcategorys_id_put(id, user, model_category=None):  # noqa: E501
+def modelcategorys_id_put(id, user=None, model_category=None):  # noqa: E501
     """Update an existing ModelCategory
 
     Updates an existing ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory) # noqa: E501
@@ -90,13 +91,14 @@ def modelcategorys_id_put(id, user, model_category=None):  # noqa: E501
     if connexion.request.is_json:
         model_category = ModelCategory.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=model_category,
         rdf_type_uri=MODELCATEGORY_TYPE_URI,
         rdf_type_name=MODELCATEGORY_TYPE_NAME, 
         kls=ModelCategory)
 
-def modelcategorys_post(user, model_category=None):  # noqa: E501
+def modelcategorys_post(user=None, model_category=None):  # noqa: E501
     """Create one ModelCategory
 
     Create a new instance of ModelCategory (more information in https://w3id.org/okn/o/sdm#ModelCategory) # noqa: E501
@@ -112,7 +114,8 @@ def modelcategorys_post(user, model_category=None):  # noqa: E501
     if connexion.request.is_json:
         model_category = ModelCategory.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=model_category,
         rdf_type_uri=MODELCATEGORY_TYPE_URI,
         rdf_type_name=MODELCATEGORY_TYPE_NAME, 

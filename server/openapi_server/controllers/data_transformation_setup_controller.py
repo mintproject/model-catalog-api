@@ -33,7 +33,7 @@ def datatransformationsetups_get(username=None, label=None, page=None, per_page=
         rdf_type_name=DATATRANSFORMATIONSETUP_TYPE_NAME, 
         kls=DataTransformationSetup)
 
-def datatransformationsetups_id_delete(id, user):  # noqa: E501
+def datatransformationsetups_id_delete(id, user=None):  # noqa: E501
     """Delete an existing DataTransformationSetup
 
     Delete an existing DataTransformationSetup (more information in https://w3id.org/okn/o/sd#DataTransformationSetup) # noqa: E501
@@ -47,7 +47,8 @@ def datatransformationsetups_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=DATATRANSFORMATIONSETUP_TYPE_URI,
         rdf_type_name=DATATRANSFORMATIONSETUP_TYPE_NAME, 
         kls=DataTransformationSetup)
@@ -72,7 +73,7 @@ def datatransformationsetups_id_get(id, username=None):  # noqa: E501
         rdf_type_name=DATATRANSFORMATIONSETUP_TYPE_NAME, 
         kls=DataTransformationSetup)
 
-def datatransformationsetups_id_put(id, user, data_transformation_setup=None):  # noqa: E501
+def datatransformationsetups_id_put(id, user=None, data_transformation_setup=None):  # noqa: E501
     """Update an existing DataTransformationSetup
 
     Updates an existing DataTransformationSetup (more information in https://w3id.org/okn/o/sd#DataTransformationSetup) # noqa: E501
@@ -90,13 +91,14 @@ def datatransformationsetups_id_put(id, user, data_transformation_setup=None):  
     if connexion.request.is_json:
         data_transformation_setup = DataTransformationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=data_transformation_setup,
         rdf_type_uri=DATATRANSFORMATIONSETUP_TYPE_URI,
         rdf_type_name=DATATRANSFORMATIONSETUP_TYPE_NAME, 
         kls=DataTransformationSetup)
 
-def datatransformationsetups_post(user, data_transformation_setup=None):  # noqa: E501
+def datatransformationsetups_post(user=None, data_transformation_setup=None):  # noqa: E501
     """Create one DataTransformationSetup
 
     Create a new instance of DataTransformationSetup (more information in https://w3id.org/okn/o/sd#DataTransformationSetup) # noqa: E501
@@ -112,7 +114,8 @@ def datatransformationsetups_post(user, data_transformation_setup=None):  # noqa
     if connexion.request.is_json:
         data_transformation_setup = DataTransformationSetup.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=data_transformation_setup,
         rdf_type_uri=DATATRANSFORMATIONSETUP_TYPE_URI,
         rdf_type_name=DATATRANSFORMATIONSETUP_TYPE_NAME, 
