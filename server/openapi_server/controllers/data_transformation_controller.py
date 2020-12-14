@@ -6,27 +6,28 @@ from openapi_server.utils.vars import DATATRANSFORMATION_TYPE_NAME, DATATRANSFOR
 from openapi_server.models.data_transformation import DataTransformation  # noqa: E501
 from openapi_server import util
 
-def custom_dataspecifications_id_datatransformations_get(id, custom_query_name=None, username=None):  # noqa: E501
+def custom_datasetspecifications_id_datatransformations_get(id, custom_query_name=None, username=None):  # noqa: E501
     """Gets a list of data transformations related a dataset
+
     Gets a list of data transformations related a dataset # noqa: E501
+
     :param id: The ID of the dataspecification
     :type id: str
     :param custom_query_name: Name of the custom query
     :type custom_query_name: str
     :param username: Username to query
     :type username: str
+
     :rtype: List[DataTransformation]
     """
 
 
-    items = query_manager.get_resource(id=id,
-                                      custom_query_name=custom_query_name,
-                                      username=username,
-                                      rdf_type_uri=DATATRANSFORMATION_TYPE_URI,
-                                      rdf_type_name=DATATRANSFORMATION_TYPE_NAME,
-                                      kls=DataTransformation,
-                                      skip_id_framing=True)
-    return items if isinstance(items, list) else [items]
+    return query_manager.get_resource(id=id,
+        custom_query_name=custom_query_name,
+        username=username,
+        rdf_type_uri=DATATRANSFORMATION_TYPE_URI,
+        rdf_type_name=DATATRANSFORMATION_TYPE_NAME, 
+        kls=DataTransformation)
 
 def datatransformations_get(username=None, label=None, page=None, per_page=None):  # noqa: E501
     """List all instances of DataTransformation

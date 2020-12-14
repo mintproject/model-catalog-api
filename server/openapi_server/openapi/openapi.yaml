@@ -830,6 +830,50 @@ paths:
       - ConfigurationSetup
       x-openapi-router-controller: openapi_server.controllers.configuration_setup_controller
     x-oba-custom: true
+  /custom/datasetspecifications/{id}/datatransformations:
+    get:
+      description: Gets a list of data transformations related a dataset
+      operationId: custom_datasetspecifications_id_datatransformations_get
+      parameters:
+      - description: Name of the custom query
+        explode: true
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_datatransformations
+          type: string
+        style: form
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the dataspecification
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DataTransformation'
+                type: array
+          description: Gets a list of data transformations filter related a dataset.
+      summary: Gets a list of data transformations related a dataset
+      tags:
+      - DataTransformation
+      x-openapi-router-controller: openapi_server.controllers.data_transformation_controller
+    x-oba-custom: true
   /custom/model/index:
     get:
       description: Gets the details of a single instance of a Model
@@ -9723,7 +9767,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -9830,7 +9873,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -10060,8 +10102,6 @@ components:
             - format: uri
               type: string
             - type: boolean
-            - format: date-time
-              type: string
             - format: float
               type: number
             - format: int32
@@ -10305,7 +10345,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -10446,7 +10485,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -10767,7 +10805,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -10933,7 +10970,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -11064,7 +11100,6 @@ components:
             a trained model with data from 2005-2010 may only be valid for predictions
             until 2015.
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -11209,7 +11244,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -11316,7 +11350,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -11538,7 +11571,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -11652,7 +11684,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -12037,7 +12068,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -12144,7 +12174,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -12411,7 +12440,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -12556,7 +12584,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -13091,7 +13118,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -13232,7 +13258,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -13641,7 +13666,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -13748,7 +13772,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -14083,7 +14106,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -14215,7 +14237,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -14741,7 +14762,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -14845,7 +14865,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15089,7 +15108,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15193,7 +15211,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15468,7 +15485,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15600,7 +15616,6 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15888,7 +15903,6 @@ components:
         datePublished:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -15995,7 +16009,6 @@ components:
         dateCreated:
           description: Description not available
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
@@ -16585,8 +16598,13 @@ components:
         dateCreated:
           description: Date when a software component was created
           items:
-            format: date-time
             type: string
+          nullable: true
+          type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         compatibleVisualizationSoftware:
@@ -16594,12 +16612,6 @@ components:
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        contributor:
-          description: Contributor to a software component
-          items:
-            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:
@@ -16740,7 +16752,6 @@ components:
         datePublished:
           description: Date when a software component was published
           items:
-            format: date-time
             type: string
           nullable: true
           type: array
