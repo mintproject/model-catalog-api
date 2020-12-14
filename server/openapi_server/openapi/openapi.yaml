@@ -10102,6 +10102,8 @@ components:
             - format: uri
               type: string
             - type: boolean
+            - format: date-time
+              type: string
             - format: float
               type: number
             - format: int32
