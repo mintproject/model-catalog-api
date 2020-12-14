@@ -67,7 +67,7 @@ class ConfigurationSetup(Model):
         :param has_execution_command: The has_execution_command of this ConfigurationSetup.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this ConfigurationSetup.  # noqa: E501
-        :type date_published: List[datetime]
+        :type date_published: List[str]
         :param license: The license of this ConfigurationSetup.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ConfigurationSetup.  # noqa: E501
@@ -107,7 +107,7 @@ class ConfigurationSetup(Model):
         :param has_software_image: The has_software_image of this ConfigurationSetup.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ConfigurationSetup.  # noqa: E501
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         :param contributor: The contributor of this ConfigurationSetup.  # noqa: E501
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this ConfigurationSetup.  # noqa: E501
@@ -201,7 +201,7 @@ class ConfigurationSetup(Model):
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[datetime],
+            'date_published': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -221,7 +221,7 @@ class ConfigurationSetup(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[datetime],
+            'date_created': List[str],
             'contributor': List[Person],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -945,7 +945,7 @@ class ConfigurationSetup(Model):
         Date when a software component was published  # noqa: E501
 
         :return: The date_published of this ConfigurationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_published
 
@@ -956,7 +956,7 @@ class ConfigurationSetup(Model):
         Date when a software component was published  # noqa: E501
 
         :param date_published: The date_published of this ConfigurationSetup.
-        :type date_published: List[datetime]
+        :type date_published: List[str]
         """
 
         self._date_published = date_published
@@ -1405,7 +1405,7 @@ class ConfigurationSetup(Model):
         Date when a software component was created  # noqa: E501
 
         :return: The date_created of this ConfigurationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_created
 
@@ -1416,7 +1416,7 @@ class ConfigurationSetup(Model):
         Date when a software component was created  # noqa: E501
 
         :param date_created: The date_created of this ConfigurationSetup.
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         """
 
         self._date_created = date_created
