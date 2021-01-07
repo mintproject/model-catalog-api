@@ -24,7 +24,7 @@ class TestSampleResourceController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/sampleresources',
+            '/v1.7.0/sampleresources',
             method='GET',
             headers=headers,
             query_string=query_string)

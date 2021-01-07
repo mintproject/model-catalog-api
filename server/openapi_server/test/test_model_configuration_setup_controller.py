@@ -28,7 +28,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/modelconfigurationsetups',
+            '/v1.7.0/modelconfigurationsetups',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -47,7 +47,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/modelconfigurationsetups/{id}'.format(id='hand_v2_travis'),
+            '/v1.7.0/modelconfigurationsetups/{id}'.format(id='hand_v2_travis'),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -66,7 +66,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/custom/modelconfigurationsetups/{id}'.format(id='cycles-0.10.2-alpha-collection-oromia-single-point'),
+            '/v1.7.0/custom/modelconfigurationsetups/{id}'.format(id='cycles-0.10.2-alpha-collection-oromia-single-point'),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -94,7 +94,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/custom/modelconfigurationsetups/variable',
+            '/v1.7.0/custom/modelconfigurationsetups/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -115,7 +115,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
 #            'Accept': 'application/json',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/custom/modelconfigurationsetups/variable',
+#            '/v1.7.0/custom/modelconfigurationsetups/variable',
 #            method='GET',
 #            headers=headers,
 #            query_string=query_string)

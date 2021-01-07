@@ -52,7 +52,7 @@ class BaseTestCase(TestCase):
             'Content-Type': 'application/json'
         }
         response = self.client.open(
-            '/v1.6.0/user/login',
+            '/v1.7.0/user/login',
             method='POST',
             headers=headers,
             data=json.dumps(data),

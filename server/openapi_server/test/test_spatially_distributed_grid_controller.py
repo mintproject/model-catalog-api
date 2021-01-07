@@ -24,7 +24,7 @@ class TestSpatiallyDistributedGridController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/spatiallydistributedgrids',
+            '/v1.7.0/spatiallydistributedgrids',
             method='GET',
             headers=headers,
             query_string=query_string)

@@ -23,7 +23,7 @@ class TestModelCategoryController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/modelcategorys',
+            '/v1.7.0/modelcategorys',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -40,7 +40,7 @@ class TestModelCategoryController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelcategorys/{id}'.format(id='id_example', user='user_example'),
+#            '/v1.7.0/modelcategorys/{id}'.format(id='id_example', user='user_example'),
 #            method='DELETE',
 #            headers=headers)
 #        self.assert200(response,
@@ -56,7 +56,7 @@ class TestModelCategoryController(BaseTestCase):
 #            'Accept': 'application/json',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelcategorys/{id}'.format(id='id_example'),
+#            '/v1.7.0/modelcategorys/{id}'.format(id='id_example'),
 #            method='GET',
 #            headers=headers,
 #            query_string=query_string)
@@ -79,7 +79,7 @@ class TestModelCategoryController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelcategorys/{id}'.format(id='id_example', user='user_example'),
+#            '/v1.7.0/modelcategorys/{id}'.format(id='id_example', user='user_example'),
 #            method='PUT',
 #            headers=headers,
 #            data=json.dumps(model_category),
@@ -103,7 +103,7 @@ class TestModelCategoryController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelcategorys'.format(user='user_example'),
+#            '/v1.7.0/modelcategorys'.format(user='user_example'),
 #            method='POST',
 #            headers=headers,
 #            data=json.dumps(model_category),

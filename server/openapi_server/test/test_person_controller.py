@@ -27,7 +27,7 @@ class TestPersonController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/persons',
+            '/v1.7.0/persons',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -47,7 +47,7 @@ class TestPersonController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/persons/{}'.format("khider_deborah"),
+            '/v1.7.0/persons/{}'.format("khider_deborah"),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -66,7 +66,7 @@ class TestPersonController(BaseTestCase):
 #            'Accept': 'application/json',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/persons/{}'.format("b0b454fc-d77d-4778-9d37-6e327c00b0c2"),
+#            '/v1.7.0/persons/{}'.format("b0b454fc-d77d-4778-9d37-6e327c00b0c2"),
 #            method='GET',
 #            headers=headers,
 #            query_string=query_string)

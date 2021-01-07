@@ -1,5 +1,5 @@
 #SERVER=https://api.models.mint.isi.edu/v1.3.0
-SERVER=http://localhost:8080/v1.5.0
+SERVER=http://localhost:8080/v1.7.0
 USERNAME="mosorio@isi.edu"
 PASSWORD=jz2KNTg5XgFacX4
 

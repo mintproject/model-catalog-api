@@ -24,7 +24,7 @@ class TestGridController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/grids',
+            '/v1.7.0/grids',
             method='GET',
             headers=headers,
             query_string=query_string)

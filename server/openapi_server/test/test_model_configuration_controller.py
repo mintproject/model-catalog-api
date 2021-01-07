@@ -36,7 +36,7 @@ class TestModelConfigurationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/modelconfigurations',
+            '/v1.7.0/modelconfigurations',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -54,7 +54,7 @@ class TestModelConfigurationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/modelconfigurations/{id}'.format(id="hand_v2"),
+            '/v1.7.0/modelconfigurations/{id}'.format(id="hand_v2"),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -72,7 +72,7 @@ class TestModelConfigurationController(BaseTestCase):
 #            'Authorization': "Bearer {}".format(token_),
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelconfigurations',
+#            '/v1.7.0/modelconfigurations',
 #            method='POST',
 #            headers=headers,
 #            data=json.dumps(data),
@@ -85,7 +85,7 @@ class TestModelConfigurationController(BaseTestCase):
 #        ##### Verify if the request and response are equals
 #        verification_query_string = [('username', "mosorio@isi.edu")]
 #        verification_response = self.client.open(
-#            '/v1.6.0/modelconfigurations/{id}'.format(id=model_request['id']),
+#            '/v1.7.0/modelconfigurations/{id}'.format(id=model_request['id']),
 #            method='GET',
 #            headers=headers,
 #            query_string=verification_query_string)
@@ -111,7 +111,7 @@ class TestModelConfigurationController(BaseTestCase):
 #            'Authorization': "Bearer {}".format(token_),
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/modelconfigurations',
+#            '/v1.7.0/modelconfigurations',
 #            method='POST',
 #            headers=headers,
 #            data=json.dumps(data),
@@ -124,7 +124,7 @@ class TestModelConfigurationController(BaseTestCase):
 #        ##### Verify if the request and response are equals and id is generated for has_grid
 #        verification_query_string = [('username', "mosorio@isi.edu")]
 #        verification_response = self.client.open(
-#            '/v1.6.0/modelconfigurations/{id}'.format(id=model_request.id),
+#            '/v1.7.0/modelconfigurations/{id}'.format(id=model_request.id),
 #            method='GET',
 #            headers=headers,
 #            query_string=verification_query_string)

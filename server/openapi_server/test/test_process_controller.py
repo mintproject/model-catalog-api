@@ -24,7 +24,7 @@ class TestProcessController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/processs',
+            '/v1.7.0/processs',
             method='GET',
             headers=headers,
             query_string=query_string)

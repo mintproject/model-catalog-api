@@ -24,7 +24,7 @@ class TestEquationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/equations',
+            '/v1.7.0/equations',
             method='GET',
             headers=headers,
             query_string=query_string)

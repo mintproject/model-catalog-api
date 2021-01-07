@@ -24,7 +24,7 @@ class TestEmulatorController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/emulators',
+            '/v1.7.0/emulators',
             method='GET',
             headers=headers,
             query_string=query_string)

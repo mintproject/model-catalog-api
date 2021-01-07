@@ -23,7 +23,7 @@ class TestCatalogIdentifierController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/catalogidentifiers',
+            '/v1.7.0/catalogidentifiers',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -41,7 +41,7 @@ class TestCatalogIdentifierController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/catalogidentifiers/{id}'.format(id='id_example', user='user_example'),
+#            '/v1.7.0/catalogidentifiers/{id}'.format(id='id_example', user='user_example'),
 #            method='DELETE',
 #            headers=headers)
 #        self.assert200(response,
@@ -57,7 +57,7 @@ class TestCatalogIdentifierController(BaseTestCase):
 #            'Accept': 'application/json',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/catalogidentifiers/{id}'.format(id='id_example'),
+#            '/v1.7.0/catalogidentifiers/{id}'.format(id='id_example'),
 #            method='GET',
 #            headers=headers,
 #            query_string=query_string)
@@ -80,7 +80,7 @@ class TestCatalogIdentifierController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/catalogidentifiers/{id}'.format(id='id_example', user='user_example'),
+#            '/v1.7.0/catalogidentifiers/{id}'.format(id='id_example', user='user_example'),
 #            method='PUT',
 #            headers=headers,
 #            data=json.dumps(catalog_identifier),
@@ -104,7 +104,7 @@ class TestCatalogIdentifierController(BaseTestCase):
 #            'Authorization': 'Bearer special-key',
 #        }
 #        response = self.client.open(
-#            '/v1.6.0/catalogidentifiers'.format(user='user_example'),
+#            '/v1.7.0/catalogidentifiers'.format(user='user_example'),
 #            method='POST',
 #            headers=headers,
 #            data=json.dumps(catalog_identifier),

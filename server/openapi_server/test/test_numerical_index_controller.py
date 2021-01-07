@@ -24,7 +24,7 @@ class TestNumericalIndexController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.6.0/numericalindexs',
+            '/v1.7.0/numericalindexs',
             method='GET',
             headers=headers,
             query_string=query_string)
