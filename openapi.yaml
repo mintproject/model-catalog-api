@@ -13687,6 +13687,13 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        availableInRegistry:
+          description: Property that indicates in which registry the software image
+            being described can be found. For example, https://hub.docker.com
+          items:
+            type: string
+          nullable: true
+          type: array
         hasPurpose:
           description: Objective or main functionality that can be achieved by running
             this software

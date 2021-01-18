@@ -620,6 +620,11 @@
         "@id": "https://w3id.org/okn/o/sdm#influences",
         "@container": "@set"
     },
+    "availableInRegistry": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#availableInRegistry",
+        "@container": "@set"
+    },
     "calibrationTargetVariable": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#calibrationTargetVariable",

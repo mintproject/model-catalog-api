@@ -15,7 +15,7 @@ class SoftwareImage(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, author=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_example=None, publisher=None, doi=None, has_funding=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, author=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_example=None, publisher=None, doi=None, has_funding=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, available_in_registry=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None):  # noqa: E501
         """SoftwareImage - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this SoftwareImage.  # noqa: E501
@@ -88,6 +88,8 @@ class SoftwareImage(Model):
         :type date_created: List[str]
         :param contributor: The contributor of this SoftwareImage.  # noqa: E501
         :type contributor: List[Person]
+        :param available_in_registry: The available_in_registry of this SoftwareImage.  # noqa: E501
+        :type available_in_registry: List[str]
         :param has_purpose: The has_purpose of this SoftwareImage.  # noqa: E501
         :type has_purpose: List[str]
         :param has_executable_instructions: The has_executable_instructions of this SoftwareImage.  # noqa: E501
@@ -172,6 +174,7 @@ class SoftwareImage(Model):
             'issue_tracker': List[str],
             'date_created': List[str],
             'contributor': List[Person],
+            'available_in_registry': List[str],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
             'has_sample_visualization': List[Visualization],
@@ -224,6 +227,7 @@ class SoftwareImage(Model):
             'issue_tracker': 'issueTracker',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
+            'available_in_registry': 'availableInRegistry',
             'has_purpose': 'hasPurpose',
             'has_executable_instructions': 'hasExecutableInstructions',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -275,6 +279,7 @@ class SoftwareImage(Model):
         self._issue_tracker = issue_tracker
         self._date_created = date_created
         self._contributor = contributor
+        self._available_in_registry = available_in_registry
         self._has_purpose = has_purpose
         self._has_executable_instructions = has_executable_instructions
         self._has_sample_visualization = has_sample_visualization
@@ -1105,6 +1110,29 @@ class SoftwareImage(Model):
         """
 
         self._contributor = contributor
+
+    @property
+    def available_in_registry(self):
+        """Gets the available_in_registry of this SoftwareImage.
+
+        Property that indicates in which registry the software image being described can be found. For example, https://hub.docker.com  # noqa: E501
+
+        :return: The available_in_registry of this SoftwareImage.
+        :rtype: List[str]
+        """
+        return self._available_in_registry
+
+    @available_in_registry.setter
+    def available_in_registry(self, available_in_registry):
+        """Sets the available_in_registry of this SoftwareImage.
+
+        Property that indicates in which registry the software image being described can be found. For example, https://hub.docker.com  # noqa: E501
+
+        :param available_in_registry: The available_in_registry of this SoftwareImage.
+        :type available_in_registry: List[str]
+        """
+
+        self._available_in_registry = available_in_registry
 
     @property
     def has_purpose(self):
