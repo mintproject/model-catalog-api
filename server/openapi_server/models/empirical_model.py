@@ -15,7 +15,7 @@ class EmpiricalModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, identifier=None, author=None, has_build_file=None, short_description=None, date_published=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, doi=None, has_funding=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, limitations=None, identifier=None, author=None, has_build_file=None, short_description=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, runtime_estimation=None, doi=None, has_funding=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
         """EmpiricalModel - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this EmpiricalModel.  # noqa: E501
@@ -46,6 +46,8 @@ class EmpiricalModel(Model):
         :type has_contact_person: List[object]
         :param id: The id of this EmpiricalModel.  # noqa: E501
         :type id: str
+        :param limitations: The limitations of this EmpiricalModel.  # noqa: E501
+        :type limitations: List[str]
         :param identifier: The identifier of this EmpiricalModel.  # noqa: E501
         :type identifier: List[str]
         :param author: The author of this EmpiricalModel.  # noqa: E501
@@ -56,6 +58,8 @@ class EmpiricalModel(Model):
         :type short_description: List[str]
         :param date_published: The date_published of this EmpiricalModel.  # noqa: E501
         :type date_published: List[str]
+        :param theoretical_basis: The theoretical_basis of this EmpiricalModel.  # noqa: E501
+        :type theoretical_basis: List[str]
         :param license: The license of this EmpiricalModel.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this EmpiricalModel.  # noqa: E501
@@ -66,6 +70,8 @@ class EmpiricalModel(Model):
         :type has_example: List[str]
         :param publisher: The publisher of this EmpiricalModel.  # noqa: E501
         :type publisher: List[object]
+        :param runtime_estimation: The runtime_estimation of this EmpiricalModel.  # noqa: E501
+        :type runtime_estimation: List[str]
         :param doi: The doi of this EmpiricalModel.  # noqa: E501
         :type doi: List[str]
         :param has_funding: The has_funding of this EmpiricalModel.  # noqa: E501
@@ -106,6 +112,8 @@ class EmpiricalModel(Model):
         :type citation: List[str]
         :param processor_requirements: The processor_requirements of this EmpiricalModel.  # noqa: E501
         :type processor_requirements: List[str]
+        :param parameterization: The parameterization of this EmpiricalModel.  # noqa: E501
+        :type parameterization: List[str]
         :param has_usage_notes: The has_usage_notes of this EmpiricalModel.  # noqa: E501
         :type has_usage_notes: List[str]
         :param readme: The readme of this EmpiricalModel.  # noqa: E501
@@ -163,16 +171,19 @@ class EmpiricalModel(Model):
             'logo': List[Image],
             'has_contact_person': List[object],
             'id': str,
+            'limitations': List[str],
             'identifier': List[str],
             'author': List[object],
             'has_build_file': List[str],
             'short_description': List[str],
             'date_published': List[str],
+            'theoretical_basis': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_explanation_diagram': List[Image],
             'has_example': List[str],
             'publisher': List[object],
+            'runtime_estimation': List[str],
             'doi': List[str],
             'has_funding': List[FundingInformation],
             'support_details': List[str],
@@ -193,6 +204,7 @@ class EmpiricalModel(Model):
             'website': List[str],
             'citation': List[str],
             'processor_requirements': List[str],
+            'parameterization': List[str],
             'has_usage_notes': List[str],
             'readme': List[str],
             'label': List[str],
@@ -218,16 +230,19 @@ class EmpiricalModel(Model):
             'logo': 'logo',
             'has_contact_person': 'hasContactPerson',
             'id': 'id',
+            'limitations': 'limitations',
             'identifier': 'identifier',
             'author': 'author',
             'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
             'date_published': 'datePublished',
+            'theoretical_basis': 'theoreticalBasis',
             'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_explanation_diagram': 'hasExplanationDiagram',
             'has_example': 'hasExample',
             'publisher': 'publisher',
+            'runtime_estimation': 'runtimeEstimation',
             'doi': 'doi',
             'has_funding': 'hasFunding',
             'support_details': 'supportDetails',
@@ -248,6 +263,7 @@ class EmpiricalModel(Model):
             'website': 'website',
             'citation': 'citation',
             'processor_requirements': 'processorRequirements',
+            'parameterization': 'parameterization',
             'has_usage_notes': 'hasUsageNotes',
             'readme': 'readme',
             'label': 'label',
@@ -272,16 +288,19 @@ class EmpiricalModel(Model):
         self._logo = logo
         self._has_contact_person = has_contact_person
         self._id = id
+        self._limitations = limitations
         self._identifier = identifier
         self._author = author
         self._has_build_file = has_build_file
         self._short_description = short_description
         self._date_published = date_published
+        self._theoretical_basis = theoretical_basis
         self._license = license
         self._has_source_code = has_source_code
         self._has_explanation_diagram = has_explanation_diagram
         self._has_example = has_example
         self._publisher = publisher
+        self._runtime_estimation = runtime_estimation
         self._doi = doi
         self._has_funding = has_funding
         self._support_details = support_details
@@ -302,6 +321,7 @@ class EmpiricalModel(Model):
         self._website = website
         self._citation = citation
         self._processor_requirements = processor_requirements
+        self._parameterization = parameterization
         self._has_usage_notes = has_usage_notes
         self._readme = readme
         self._label = label
@@ -645,6 +665,27 @@ class EmpiricalModel(Model):
         self._id = id
 
     @property
+    def limitations(self):
+        """Gets the limitations of this EmpiricalModel.
+
+
+        :return: The limitations of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._limitations
+
+    @limitations.setter
+    def limitations(self, limitations):
+        """Sets the limitations of this EmpiricalModel.
+
+
+        :param limitations: The limitations of this EmpiricalModel.
+        :type limitations: List[str]
+        """
+
+        self._limitations = limitations
+
+    @property
     def identifier(self):
         """Gets the identifier of this EmpiricalModel.
 
@@ -760,6 +801,27 @@ class EmpiricalModel(Model):
         self._date_published = date_published
 
     @property
+    def theoretical_basis(self):
+        """Gets the theoretical_basis of this EmpiricalModel.
+
+
+        :return: The theoretical_basis of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._theoretical_basis
+
+    @theoretical_basis.setter
+    def theoretical_basis(self, theoretical_basis):
+        """Sets the theoretical_basis of this EmpiricalModel.
+
+
+        :param theoretical_basis: The theoretical_basis of this EmpiricalModel.
+        :type theoretical_basis: List[str]
+        """
+
+        self._theoretical_basis = theoretical_basis
+
+    @property
     def license(self):
         """Gets the license of this EmpiricalModel.
 
@@ -873,6 +935,29 @@ class EmpiricalModel(Model):
         """
 
         self._publisher = publisher
+
+    @property
+    def runtime_estimation(self):
+        """Gets the runtime_estimation of this EmpiricalModel.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :return: The runtime_estimation of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._runtime_estimation
+
+    @runtime_estimation.setter
+    def runtime_estimation(self, runtime_estimation):
+        """Sets the runtime_estimation of this EmpiricalModel.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :param runtime_estimation: The runtime_estimation of this EmpiricalModel.
+        :type runtime_estimation: List[str]
+        """
+
+        self._runtime_estimation = runtime_estimation
 
     @property
     def doi(self):
@@ -1333,6 +1418,27 @@ class EmpiricalModel(Model):
         """
 
         self._processor_requirements = processor_requirements
+
+    @property
+    def parameterization(self):
+        """Gets the parameterization of this EmpiricalModel.
+
+
+        :return: The parameterization of this EmpiricalModel.
+        :rtype: List[str]
+        """
+        return self._parameterization
+
+    @parameterization.setter
+    def parameterization(self, parameterization):
+        """Sets the parameterization of this EmpiricalModel.
+
+
+        :param parameterization: The parameterization of this EmpiricalModel.
+        :type parameterization: List[str]
+        """
+
+        self._parameterization = parameterization
 
     @property
     def has_usage_notes(self):

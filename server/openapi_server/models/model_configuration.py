@@ -15,7 +15,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, has_output_time_interval=None, doi=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, limitations=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, runtime_estimation=None, has_output_time_interval=None, doi=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this ModelConfiguration.  # noqa: E501
@@ -52,6 +52,8 @@ class ModelConfiguration(Model):
         :type tag: List[str]
         :param id: The id of this ModelConfiguration.  # noqa: E501
         :type id: str
+        :param limitations: The limitations of this ModelConfiguration.  # noqa: E501
+        :type limitations: List[str]
         :param identifier: The identifier of this ModelConfiguration.  # noqa: E501
         :type identifier: List[str]
         :param has_sample_execution: The has_sample_execution of this ModelConfiguration.  # noqa: E501
@@ -70,6 +72,8 @@ class ModelConfiguration(Model):
         :type has_execution_command: List[str]
         :param date_published: The date_published of this ModelConfiguration.  # noqa: E501
         :type date_published: List[str]
+        :param theoretical_basis: The theoretical_basis of this ModelConfiguration.  # noqa: E501
+        :type theoretical_basis: List[str]
         :param license: The license of this ModelConfiguration.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ModelConfiguration.  # noqa: E501
@@ -84,6 +88,8 @@ class ModelConfiguration(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this ModelConfiguration.  # noqa: E501
         :type has_output: List[DatasetSpecification]
+        :param runtime_estimation: The runtime_estimation of this ModelConfiguration.  # noqa: E501
+        :type runtime_estimation: List[str]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfiguration.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
         :param doi: The doi of this ModelConfiguration.  # noqa: E501
@@ -136,6 +142,8 @@ class ModelConfiguration(Model):
         :type citation: List[str]
         :param processor_requirements: The processor_requirements of this ModelConfiguration.  # noqa: E501
         :type processor_requirements: List[str]
+        :param parameterization: The parameterization of this ModelConfiguration.  # noqa: E501
+        :type parameterization: List[str]
         :param has_usage_notes: The has_usage_notes of this ModelConfiguration.  # noqa: E501
         :type has_usage_notes: List[str]
         :param has_support_script_location: The has_support_script_location of this ModelConfiguration.  # noqa: E501
@@ -222,6 +230,7 @@ class ModelConfiguration(Model):
             'has_contact_person': List[object],
             'tag': List[str],
             'id': str,
+            'limitations': List[str],
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
@@ -231,6 +240,7 @@ class ModelConfiguration(Model):
             'short_description': List[str],
             'has_execution_command': List[str],
             'date_published': List[str],
+            'theoretical_basis': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -238,6 +248,7 @@ class ModelConfiguration(Model):
             'has_example': List[str],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
+            'runtime_estimation': List[str],
             'has_output_time_interval': List[TimeInterval],
             'doi': List[str],
             'has_funding': List[FundingInformation],
@@ -264,6 +275,7 @@ class ModelConfiguration(Model):
             'website': List[str],
             'citation': List[str],
             'processor_requirements': List[str],
+            'parameterization': List[str],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
             'readme': List[str],
@@ -295,6 +307,7 @@ class ModelConfiguration(Model):
             'has_contact_person': 'hasContactPerson',
             'tag': 'tag',
             'id': 'id',
+            'limitations': 'limitations',
             'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
             'has_sample_result': 'hasSampleResult',
@@ -304,6 +317,7 @@ class ModelConfiguration(Model):
             'short_description': 'shortDescription',
             'has_execution_command': 'hasExecutionCommand',
             'date_published': 'datePublished',
+            'theoretical_basis': 'theoreticalBasis',
             'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_setup': 'hasSetup',
@@ -311,6 +325,7 @@ class ModelConfiguration(Model):
             'has_example': 'hasExample',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
+            'runtime_estimation': 'runtimeEstimation',
             'has_output_time_interval': 'hasOutputTimeInterval',
             'doi': 'doi',
             'has_funding': 'hasFunding',
@@ -337,6 +352,7 @@ class ModelConfiguration(Model):
             'website': 'website',
             'citation': 'citation',
             'processor_requirements': 'processorRequirements',
+            'parameterization': 'parameterization',
             'has_usage_notes': 'hasUsageNotes',
             'has_support_script_location': 'hasSupportScriptLocation',
             'readme': 'readme',
@@ -367,6 +383,7 @@ class ModelConfiguration(Model):
         self._has_contact_person = has_contact_person
         self._tag = tag
         self._id = id
+        self._limitations = limitations
         self._identifier = identifier
         self._has_sample_execution = has_sample_execution
         self._has_sample_result = has_sample_result
@@ -376,6 +393,7 @@ class ModelConfiguration(Model):
         self._short_description = short_description
         self._has_execution_command = has_execution_command
         self._date_published = date_published
+        self._theoretical_basis = theoretical_basis
         self._license = license
         self._has_source_code = has_source_code
         self._has_setup = has_setup
@@ -383,6 +401,7 @@ class ModelConfiguration(Model):
         self._has_example = has_example
         self._publisher = publisher
         self._has_output = has_output
+        self._runtime_estimation = runtime_estimation
         self._has_output_time_interval = has_output_time_interval
         self._doi = doi
         self._has_funding = has_funding
@@ -409,6 +428,7 @@ class ModelConfiguration(Model):
         self._website = website
         self._citation = citation
         self._processor_requirements = processor_requirements
+        self._parameterization = parameterization
         self._has_usage_notes = has_usage_notes
         self._has_support_script_location = has_support_script_location
         self._readme = readme
@@ -824,6 +844,27 @@ class ModelConfiguration(Model):
         self._id = id
 
     @property
+    def limitations(self):
+        """Gets the limitations of this ModelConfiguration.
+
+
+        :return: The limitations of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._limitations
+
+    @limitations.setter
+    def limitations(self, limitations):
+        """Sets the limitations of this ModelConfiguration.
+
+
+        :param limitations: The limitations of this ModelConfiguration.
+        :type limitations: List[str]
+        """
+
+        self._limitations = limitations
+
+    @property
     def identifier(self):
         """Gets the identifier of this ModelConfiguration.
 
@@ -1031,6 +1072,27 @@ class ModelConfiguration(Model):
         self._date_published = date_published
 
     @property
+    def theoretical_basis(self):
+        """Gets the theoretical_basis of this ModelConfiguration.
+
+
+        :return: The theoretical_basis of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._theoretical_basis
+
+    @theoretical_basis.setter
+    def theoretical_basis(self, theoretical_basis):
+        """Sets the theoretical_basis of this ModelConfiguration.
+
+
+        :param theoretical_basis: The theoretical_basis of this ModelConfiguration.
+        :type theoretical_basis: List[str]
+        """
+
+        self._theoretical_basis = theoretical_basis
+
+    @property
     def license(self):
         """Gets the license of this ModelConfiguration.
 
@@ -1190,6 +1252,29 @@ class ModelConfiguration(Model):
         """
 
         self._has_output = has_output
+
+    @property
+    def runtime_estimation(self):
+        """Gets the runtime_estimation of this ModelConfiguration.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :return: The runtime_estimation of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._runtime_estimation
+
+    @runtime_estimation.setter
+    def runtime_estimation(self, runtime_estimation):
+        """Sets the runtime_estimation of this ModelConfiguration.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :param runtime_estimation: The runtime_estimation of this ModelConfiguration.
+        :type runtime_estimation: List[str]
+        """
+
+        self._runtime_estimation = runtime_estimation
 
     @property
     def has_output_time_interval(self):
@@ -1788,6 +1873,27 @@ class ModelConfiguration(Model):
         """
 
         self._processor_requirements = processor_requirements
+
+    @property
+    def parameterization(self):
+        """Gets the parameterization of this ModelConfiguration.
+
+
+        :return: The parameterization of this ModelConfiguration.
+        :rtype: List[str]
+        """
+        return self._parameterization
+
+    @parameterization.setter
+    def parameterization(self, parameterization):
+        """Sets the parameterization of this ModelConfiguration.
+
+
+        :param parameterization: The parameterization of this ModelConfiguration.
+        :type parameterization: List[str]
+        """
+
+        self._parameterization = parameterization
 
     @property
     def has_usage_notes(self):
