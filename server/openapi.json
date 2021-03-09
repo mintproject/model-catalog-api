@@ -12623,6 +12623,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -12664,6 +12672,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -12714,6 +12730,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -12873,6 +12897,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -13912,6 +13944,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -13999,6 +14039,14 @@
             "nullable": true,
             "type": "array"
           },
+          "theoreticalBasis": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "license": {
             "description": "Description not available",
             "items": {
@@ -14067,6 +14115,14 @@
             "description": "Description not available",
             "items": {
               "$ref": "#/components/schemas/DatasetSpecification"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -14299,6 +14355,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -14543,6 +14607,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -14584,6 +14656,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -14634,6 +14714,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -14793,6 +14881,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -14997,6 +15093,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -15038,6 +15142,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -15088,6 +15200,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -15255,6 +15375,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -15678,6 +15806,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -15719,6 +15855,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -15769,6 +15913,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -15928,6 +16080,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -16156,6 +16316,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -16235,6 +16403,14 @@
             "nullable": true,
             "type": "array"
           },
+          "theoreticalBasis": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "license": {
             "description": "Description not available",
             "items": {
@@ -16295,6 +16471,14 @@
             "description": "Description not available",
             "items": {
               "$ref": "#/components/schemas/DatasetSpecification"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -16503,6 +16687,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -16770,6 +16962,14 @@
             "description": "small description",
             "items": {
               "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parentCategory": {
+            "description": "Indicates this subcategory parent category",
+            "items": {
+              "$ref": "#/components/schemas/ModelCategory"
             },
             "nullable": true,
             "type": "array"
@@ -17772,6 +17972,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -17813,6 +18021,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -17863,6 +18079,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -18022,6 +18246,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -20657,6 +20889,14 @@
             "nullable": false,
             "type": "string"
           },
+          "limitations": {
+            "description": "",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "identifier": {
             "description": "Description not available",
             "items": {
@@ -20698,6 +20938,14 @@
           },
           "datePublished": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "theoreticalBasis": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -20748,6 +20996,14 @@
                   "$ref": "#/components/schemas/Person"
                 }
               ]
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "runtimeEstimation": {
+            "description": "Property that indicates the estimated time it will take to run this model.",
+            "items": {
+              "type": "string"
             },
             "nullable": true,
             "type": "array"
@@ -20907,6 +21163,14 @@
           },
           "processorRequirements": {
             "description": "Description not available",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "parameterization": {
+            "description": "",
             "items": {
               "type": "string"
             },
@@ -21649,18 +21913,18 @@
             "nullable": true,
             "type": "array"
           },
-          "contributor": {
-            "description": "Contributor to a software component",
-            "items": {
-              "$ref": "#/components/schemas/Person"
-            },
-            "nullable": true,
-            "type": "array"
-          },
           "compatibleVisualizationSoftware": {
             "description": "Property that links a software component to other useful software that canbe used to visualize its outputs",
             "items": {
               "$ref": "#/components/schemas/Software"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "contributor": {
+            "description": "Contributor to a software component",
+            "items": {
+              "$ref": "#/components/schemas/Person"
             },
             "nullable": true,
             "type": "array"
