@@ -9,6 +9,7 @@ install:
   - pip install --upgrade setuptools wheel
 script:
   - cd server
+  - pip3 install pythonql3==0.9.61
   - pip3 install -r requirements.txt 
   - pip3 install -r test-requirements.txt 
   - tox
