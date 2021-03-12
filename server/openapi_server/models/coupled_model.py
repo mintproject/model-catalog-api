@@ -15,7 +15,7 @@ class CoupledModel(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, limitations=None, identifier=None, author=None, has_build_file=None, short_description=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, runtime_estimation=None, doi=None, has_funding=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, uses_model=None, has_model_category=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, id=None, limitations=None, identifier=None, author=None, has_build_file=None, short_description=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_explanation_diagram=None, has_example=None, publisher=None, runtime_estimation=None, doi=None, has_funding=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, uses_model=None, has_model_category=None, had_primary_source=None, issue_tracker=None, date_created=None, contributor=None, has_input_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, readme=None, label=None, has_assumption=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None, has_output_variable=None):  # noqa: E501
         """CoupledModel - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this CoupledModel.  # noqa: E501
@@ -76,6 +76,8 @@ class CoupledModel(Model):
         :type doi: List[str]
         :param has_funding: The has_funding of this CoupledModel.  # noqa: E501
         :type has_funding: List[FundingInformation]
+        :param has_process: The has_process of this CoupledModel.  # noqa: E501
+        :type has_process: List[Process]
         :param support_details: The support_details of this CoupledModel.  # noqa: E501
         :type support_details: List[str]
         :param has_version: The has_version of this CoupledModel.  # noqa: E501
@@ -100,6 +102,8 @@ class CoupledModel(Model):
         :type date_created: List[str]
         :param contributor: The contributor of this CoupledModel.  # noqa: E501
         :type contributor: List[Person]
+        :param has_input_variable: The has_input_variable of this CoupledModel.  # noqa: E501
+        :type has_input_variable: List[VariablePresentation]
         :param has_purpose: The has_purpose of this CoupledModel.  # noqa: E501
         :type has_purpose: List[str]
         :param has_executable_instructions: The has_executable_instructions of this CoupledModel.  # noqa: E501
@@ -132,6 +136,8 @@ class CoupledModel(Model):
         :type has_equation: List[Equation]
         :param useful_for_calculating_index: The useful_for_calculating_index of this CoupledModel.  # noqa: E501
         :type useful_for_calculating_index: List[NumericalIndex]
+        :param has_output_variable: The has_output_variable of this CoupledModel.  # noqa: E501
+        :type has_output_variable: List[VariablePresentation]
         """
         from openapi_server.models.equation import Equation
         from openapi_server.models.funding_information import FundingInformation
@@ -141,11 +147,15 @@ class CoupledModel(Model):
         from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.person import Person
+        from openapi_server.models.process import Process
         from openapi_server.models.software import Software
         from openapi_server.models.software_version import SoftwareVersion
         from openapi_server.models.source_code import SourceCode
+        from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -190,6 +200,7 @@ class CoupledModel(Model):
             'runtime_estimation': List[str],
             'doi': List[str],
             'has_funding': List[FundingInformation],
+            'has_process': List[Process],
             'support_details': List[str],
             'has_version': List[SoftwareVersion],
             'has_typical_data_source': List[str],
@@ -202,6 +213,7 @@ class CoupledModel(Model):
             'issue_tracker': List[str],
             'date_created': List[str],
             'contributor': List[Person],
+            'has_input_variable': List[VariablePresentation],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
             'has_sample_visualization': List[Visualization],
@@ -217,7 +229,8 @@ class CoupledModel(Model):
             'operating_systems': List[str],
             'has_executable_notebook': List[str],
             'has_equation': List[Equation],
-            'useful_for_calculating_index': List[NumericalIndex]
+            'useful_for_calculating_index': List[NumericalIndex],
+            'has_output_variable': List[VariablePresentation]
         }
 
         self.attribute_map = {
@@ -250,6 +263,7 @@ class CoupledModel(Model):
             'runtime_estimation': 'runtimeEstimation',
             'doi': 'doi',
             'has_funding': 'hasFunding',
+            'has_process': 'hasProcess',
             'support_details': 'supportDetails',
             'has_version': 'hasVersion',
             'has_typical_data_source': 'hasTypicalDataSource',
@@ -262,6 +276,7 @@ class CoupledModel(Model):
             'issue_tracker': 'issueTracker',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
+            'has_input_variable': 'hasInputVariable',
             'has_purpose': 'hasPurpose',
             'has_executable_instructions': 'hasExecutableInstructions',
             'has_sample_visualization': 'hasSampleVisualization',
@@ -277,7 +292,8 @@ class CoupledModel(Model):
             'operating_systems': 'operatingSystems',
             'has_executable_notebook': 'hasExecutableNotebook',
             'has_equation': 'hasEquation',
-            'useful_for_calculating_index': 'usefulForCalculatingIndex'
+            'useful_for_calculating_index': 'usefulForCalculatingIndex',
+            'has_output_variable': 'hasOutputVariable'
         }
 
         self._has_download_instructions = has_download_instructions
@@ -309,6 +325,7 @@ class CoupledModel(Model):
         self._runtime_estimation = runtime_estimation
         self._doi = doi
         self._has_funding = has_funding
+        self._has_process = has_process
         self._support_details = support_details
         self._has_version = has_version
         self._has_typical_data_source = has_typical_data_source
@@ -321,6 +338,7 @@ class CoupledModel(Model):
         self._issue_tracker = issue_tracker
         self._date_created = date_created
         self._contributor = contributor
+        self._has_input_variable = has_input_variable
         self._has_purpose = has_purpose
         self._has_executable_instructions = has_executable_instructions
         self._has_sample_visualization = has_sample_visualization
@@ -337,6 +355,7 @@ class CoupledModel(Model):
         self._has_executable_notebook = has_executable_notebook
         self._has_equation = has_equation
         self._useful_for_calculating_index = useful_for_calculating_index
+        self._has_output_variable = has_output_variable
 
     @classmethod
     def from_dict(cls, dikt) -> 'CoupledModel':
@@ -675,6 +694,7 @@ class CoupledModel(Model):
     def limitations(self):
         """Gets the limitations of this CoupledModel.
 
+        Known restrictions (i.e. cases where the model is known not to be reliable or shouldn't be used)  # noqa: E501
 
         :return: The limitations of this CoupledModel.
         :rtype: List[str]
@@ -685,6 +705,7 @@ class CoupledModel(Model):
     def limitations(self, limitations):
         """Sets the limitations of this CoupledModel.
 
+        Known restrictions (i.e. cases where the model is known not to be reliable or shouldn't be used)  # noqa: E501
 
         :param limitations: The limitations of this CoupledModel.
         :type limitations: List[str]
@@ -811,6 +832,7 @@ class CoupledModel(Model):
     def theoretical_basis(self):
         """Gets the theoretical_basis of this CoupledModel.
 
+        What is the theory behind the processes described in the model  # noqa: E501
 
         :return: The theoretical_basis of this CoupledModel.
         :rtype: List[str]
@@ -821,6 +843,7 @@ class CoupledModel(Model):
     def theoretical_basis(self, theoretical_basis):
         """Sets the theoretical_basis of this CoupledModel.
 
+        What is the theory behind the processes described in the model  # noqa: E501
 
         :param theoretical_basis: The theoretical_basis of this CoupledModel.
         :type theoretical_basis: List[str]
@@ -947,7 +970,7 @@ class CoupledModel(Model):
     def runtime_estimation(self):
         """Gets the runtime_estimation of this CoupledModel.
 
-        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+        An estimate of the time required to run example codes or other known configurations  # noqa: E501
 
         :return: The runtime_estimation of this CoupledModel.
         :rtype: List[str]
@@ -958,7 +981,7 @@ class CoupledModel(Model):
     def runtime_estimation(self, runtime_estimation):
         """Sets the runtime_estimation of this CoupledModel.
 
-        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+        An estimate of the time required to run example codes or other known configurations  # noqa: E501
 
         :param runtime_estimation: The runtime_estimation of this CoupledModel.
         :type runtime_estimation: List[str]
@@ -1011,6 +1034,29 @@ class CoupledModel(Model):
         """
 
         self._has_funding = has_funding
+
+    @property
+    def has_process(self):
+        """Gets the has_process of this CoupledModel.
+
+        Property that indicates which physical processes (if any) are associated with a model  # noqa: E501
+
+        :return: The has_process of this CoupledModel.
+        :rtype: List[Process]
+        """
+        return self._has_process
+
+    @has_process.setter
+    def has_process(self, has_process):
+        """Sets the has_process of this CoupledModel.
+
+        Property that indicates which physical processes (if any) are associated with a model  # noqa: E501
+
+        :param has_process: The has_process of this CoupledModel.
+        :type has_process: List[Process]
+        """
+
+        self._has_process = has_process
 
     @property
     def support_details(self):
@@ -1289,6 +1335,29 @@ class CoupledModel(Model):
         self._contributor = contributor
 
     @property
+    def has_input_variable(self):
+        """Gets the has_input_variable of this CoupledModel.
+
+        Variable that is used as input for this model  # noqa: E501
+
+        :return: The has_input_variable of this CoupledModel.
+        :rtype: List[VariablePresentation]
+        """
+        return self._has_input_variable
+
+    @has_input_variable.setter
+    def has_input_variable(self, has_input_variable):
+        """Sets the has_input_variable of this CoupledModel.
+
+        Variable that is used as input for this model  # noqa: E501
+
+        :param has_input_variable: The has_input_variable of this CoupledModel.
+        :type has_input_variable: List[VariablePresentation]
+        """
+
+        self._has_input_variable = has_input_variable
+
+    @property
     def has_purpose(self):
         """Gets the has_purpose of this CoupledModel.
 
@@ -1453,6 +1522,7 @@ class CoupledModel(Model):
     def parameterization(self):
         """Gets the parameterization of this CoupledModel.
 
+        Were there any simplifications made to processes to make the model more efficient  # noqa: E501
 
         :return: The parameterization of this CoupledModel.
         :rtype: List[str]
@@ -1463,6 +1533,7 @@ class CoupledModel(Model):
     def parameterization(self, parameterization):
         """Sets the parameterization of this CoupledModel.
 
+        Were there any simplifications made to processes to make the model more efficient  # noqa: E501
 
         :param parameterization: The parameterization of this CoupledModel.
         :type parameterization: List[str]
@@ -1653,3 +1724,26 @@ class CoupledModel(Model):
         """
 
         self._useful_for_calculating_index = useful_for_calculating_index
+
+    @property
+    def has_output_variable(self):
+        """Gets the has_output_variable of this CoupledModel.
+
+        Variable that is used as output for this model  # noqa: E501
+
+        :return: The has_output_variable of this CoupledModel.
+        :rtype: List[VariablePresentation]
+        """
+        return self._has_output_variable
+
+    @has_output_variable.setter
+    def has_output_variable(self, has_output_variable):
+        """Sets the has_output_variable of this CoupledModel.
+
+        Variable that is used as output for this model  # noqa: E501
+
+        :param has_output_variable: The has_output_variable of this CoupledModel.
+        :type has_output_variable: List[VariablePresentation]
+        """
+
+        self._has_output_variable = has_output_variable

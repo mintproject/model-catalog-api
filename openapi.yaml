@@ -8204,7 +8204,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -8242,7 +8243,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -8281,8 +8282,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -8297,6 +8298,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -8366,6 +8374,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -8409,7 +8423,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -8460,6 +8475,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -9239,7 +9260,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -9307,7 +9329,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -9365,8 +9387,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -9411,7 +9433,7 @@ components:
           type: array
         hasProcess:
           description: Property that indicates which physical processes (if any) are
-            associated with a model configuration
+            associated with a model
           items:
             $ref: '#/components/schemas/Process'
           nullable: true
@@ -9490,6 +9512,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasModelResultTable:
           description: Sample result table associated with a model configuration
           items:
@@ -9553,7 +9581,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -9636,6 +9665,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -9733,7 +9768,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -9771,7 +9807,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -9810,8 +9846,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -9826,6 +9862,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -9895,6 +9938,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -9938,7 +9987,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -9989,6 +10039,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -10085,7 +10141,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -10123,7 +10180,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -10162,8 +10219,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -10178,6 +10235,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -10254,6 +10318,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -10297,7 +10367,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -10348,6 +10419,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -10607,7 +10684,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -10645,7 +10723,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -10684,8 +10762,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -10700,6 +10778,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -10769,6 +10854,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -10812,7 +10903,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -10863,6 +10955,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -10980,7 +11078,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -11042,7 +11141,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -11093,8 +11192,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -11125,7 +11224,7 @@ components:
           type: array
         hasProcess:
           description: Property that indicates which physical processes (if any) are
-            associated with a model configuration
+            associated with a model
           items:
             $ref: '#/components/schemas/Process'
           nullable: true
@@ -11204,6 +11303,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasModelResultTable:
           description: Sample result table associated with a model configuration
           items:
@@ -11259,7 +11364,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -11328,6 +11434,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/DatasetSpecification'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -12261,7 +12373,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -12299,7 +12412,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -12338,8 +12451,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -12354,6 +12467,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -12423,6 +12543,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -12466,7 +12592,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -12517,6 +12644,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -14530,7 +14663,8 @@ components:
           nullable: false
           type: string
         limitations:
-          description: ""
+          description: Known restrictions (i.e. cases where the model is known not
+            to be reliable or shouldn't be used)
           items:
             type: string
           nullable: true
@@ -14568,7 +14702,7 @@ components:
           nullable: true
           type: array
         theoreticalBasis:
-          description: ""
+          description: What is the theory behind the processes described in the model
           items:
             type: string
           nullable: true
@@ -14607,8 +14741,8 @@ components:
           nullable: true
           type: array
         runtimeEstimation:
-          description: Property that indicates the estimated time it will take to
-            run this model.
+          description: An estimate of the time required to run example codes or other
+            known configurations
           items:
             type: string
           nullable: true
@@ -14623,6 +14757,13 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/FundingInformation'
+          nullable: true
+          type: array
+        hasProcess:
+          description: Property that indicates which physical processes (if any) are
+            associated with a model
+          items:
+            $ref: '#/components/schemas/Process'
           nullable: true
           type: array
         supportDetails:
@@ -14692,6 +14833,12 @@ components:
             $ref: '#/components/schemas/Person'
           nullable: true
           type: array
+        hasInputVariable:
+          description: Variable that is used as input for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
         hasPurpose:
           description: Description not available
           items:
@@ -14735,7 +14882,8 @@ components:
           nullable: true
           type: array
         parameterization:
-          description: ""
+          description: Were there any simplifications made to processes to make the
+            model more efficient
           items:
             type: string
           nullable: true
@@ -14786,6 +14934,12 @@ components:
           description: Description not available
           items:
             $ref: '#/components/schemas/NumericalIndex'
+          nullable: true
+          type: array
+        hasOutputVariable:
+          description: Variable that is used as output for this model
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
           nullable: true
           type: array
       type: object
@@ -15281,17 +15435,17 @@ components:
             type: string
           nullable: true
           type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
         compatibleVisualizationSoftware:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        contributor:
-          description: Contributor to a software component
-          items:
-            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:
