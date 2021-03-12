@@ -32,6 +32,7 @@ class SampleResource(Model):
         :type value: List[object]
         """
 
+          # noqa: E501
 
         self.openapi_types = {
             'data_catalog_identifier': List[str],

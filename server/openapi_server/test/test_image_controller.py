@@ -24,7 +24,7 @@ class TestImageController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/images',
+            '/v1.7.0/images',
             method='GET',
             headers=headers,
             query_string=query_string)

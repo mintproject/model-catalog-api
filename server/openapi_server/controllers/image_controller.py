@@ -33,7 +33,7 @@ def images_get(username=None, label=None, page=None, per_page=None):  # noqa: E5
         rdf_type_name=IMAGE_TYPE_NAME, 
         kls=Image)
 
-def images_id_delete(id, user):  # noqa: E501
+def images_id_delete(id, user=None):  # noqa: E501
     """Delete an existing Image
 
     Delete an existing Image (more information in https://w3id.org/okn/o/sd#Image) # noqa: E501
@@ -47,7 +47,8 @@ def images_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=IMAGE_TYPE_URI,
         rdf_type_name=IMAGE_TYPE_NAME, 
         kls=Image)
@@ -72,7 +73,7 @@ def images_id_get(id, username=None):  # noqa: E501
         rdf_type_name=IMAGE_TYPE_NAME, 
         kls=Image)
 
-def images_id_put(id, user, image=None):  # noqa: E501
+def images_id_put(id, user=None, image=None):  # noqa: E501
     """Update an existing Image
 
     Updates an existing Image (more information in https://w3id.org/okn/o/sd#Image) # noqa: E501
@@ -90,13 +91,14 @@ def images_id_put(id, user, image=None):  # noqa: E501
     if connexion.request.is_json:
         image = Image.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=image,
         rdf_type_uri=IMAGE_TYPE_URI,
         rdf_type_name=IMAGE_TYPE_NAME, 
         kls=Image)
 
-def images_post(user, image=None):  # noqa: E501
+def images_post(user=None, image=None):  # noqa: E501
     """Create one Image
 
     Create a new instance of Image (more information in https://w3id.org/okn/o/sd#Image) # noqa: E501
@@ -112,7 +114,8 @@ def images_post(user, image=None):  # noqa: E501
     if connexion.request.is_json:
         image = Image.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=image,
         rdf_type_uri=IMAGE_TYPE_URI,
         rdf_type_name=IMAGE_TYPE_NAME, 

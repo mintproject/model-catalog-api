@@ -35,7 +35,7 @@ class TestModelConfigurationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/datatransformationsetups',
+            '/v1.7.0/datatransformationsetups',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -53,7 +53,7 @@ class TestModelConfigurationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/datatransformationsetups/{id}'.format(id="hand_v2"),
+            '/v1.7.0/datatransformationsetups/{id}'.format(id="hand_v2"),
             method='GET',
             headers=headers,
             query_string=query_string)

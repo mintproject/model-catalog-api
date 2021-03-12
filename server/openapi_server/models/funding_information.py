@@ -144,7 +144,7 @@ class FundingInformation(Model):
     def funding_source(self):
         """Gets the funding_source of this FundingInformation.
 
-        Description not available  # noqa: E501
+        Link to the organization funding a software component  # noqa: E501
 
         :return: The funding_source of this FundingInformation.
         :rtype: List[Organization]
@@ -155,7 +155,7 @@ class FundingInformation(Model):
     def funding_source(self, funding_source):
         """Sets the funding_source of this FundingInformation.
 
-        Description not available  # noqa: E501
+        Link to the organization funding a software component  # noqa: E501
 
         :param funding_source: The funding_source of this FundingInformation.
         :type funding_source: List[Organization]

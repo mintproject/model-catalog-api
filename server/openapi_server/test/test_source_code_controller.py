@@ -24,7 +24,7 @@ class TestSourceCodeController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/sourcecodes',
+            '/v1.7.0/sourcecodes',
             method='GET',
             headers=headers,
             query_string=query_string)

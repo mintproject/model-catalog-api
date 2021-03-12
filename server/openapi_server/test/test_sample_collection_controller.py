@@ -24,7 +24,7 @@ class TestSampleCollectionController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/samplecollections',
+            '/v1.7.0/samplecollections',
             method='GET',
             headers=headers,
             query_string=query_string)

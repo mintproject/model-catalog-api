@@ -24,7 +24,7 @@ class TestFundingInformationController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/fundinginformations',
+            '/v1.7.0/fundinginformations',
             method='GET',
             headers=headers,
             query_string=query_string)

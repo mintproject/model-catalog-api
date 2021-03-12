@@ -3,15 +3,20 @@ import json
 import logging
 from pathlib import Path
 
-import connexion
-import yaml
 from connexion.spec import Specification
+from openapi_server.cached import CachedSpecification
+
+Specification.from_file = CachedSpecification.from_file
+Specification.__init__ = CachedSpecification.__init__
+
+import yaml
+import connexion
+
 from flask_testing import TestCase
 from obasparql import QueryManager
 from openapi_server.settings import *
 
 from openapi_server import QUERY_DIRECTORY, CONTEXT_DIRECTORY, QUERIES_TYPES
-from openapi_server.cached import CachedSpecification
 from openapi_server.encoder import JSONEncoder
 
 query_manager = QueryManager(queries_dir=QUERY_DIRECTORY,
@@ -37,8 +42,8 @@ class BaseTestCase(TestCase):
         exit(0)
     logger = logging.getLogger(__name__)
     get_username = "mint@isi.edu"
-    post_username = "mosorio@isi.edu"
-    post_password = "jz2KNTg5XgFacX4"
+    post_username = "test@isi.edu"
+    post_password = "test123"
 
     def login(self):
         data = {"username": self.post_username, "password": self.post_password}
@@ -47,17 +52,17 @@ class BaseTestCase(TestCase):
             'Content-Type': 'application/json'
         }
         response = self.client.open(
-            '/v1.5.0/user/login',
+            '/v1.7.0/user/login',
             method='POST',
             headers=headers,
             data=json.dumps(data),
             content_type='application/json'
         )
+        self.logger.info("Response length {}".format(response.json))
         return response.json
 
 
     def create_app(self):
-        Specification.from_file = CachedSpecification.from_file
 
         app = connexion.App(__name__, specification_dir='../openapi/')
         app.app.json_encoder = JSONEncoder

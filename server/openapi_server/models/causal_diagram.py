@@ -30,6 +30,7 @@ class CausalDiagram(Model):
         :type type: List[str]
         """
 
+          # noqa: E501
 
         self.openapi_types = {
             'has_diagram_part': List[object],

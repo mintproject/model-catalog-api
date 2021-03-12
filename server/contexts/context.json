@@ -1,9 +1,4 @@
 {"@context": {
-    "hasDownloadInstructions": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasDownloadInstructions",
-        "@container": "@set"
-    },
     "hasDocumentation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasDocumentation",
@@ -12,6 +7,332 @@
     "hasImplementationScriptLocation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasImplementationScriptLocation",
+        "@container": "@set"
+    },
+    "hasDimension": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#hasDimension",
+        "@container": "@set"
+    },
+    "CoupledModel": {"@id": "https://w3id.org/okn/o/sdm#CoupledModel"},
+    "ModelConfiguration": {"@id": "https://w3id.org/okn/o/sdm#ModelConfiguration"},
+    "Thing": {"@id": "http://www.w3.org/2002/07/owl#Thing"},
+    "limitations": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#limitations",
+        "@container": "@set"
+    },
+    "hasSampleExecution": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasSampleExecution",
+        "@container": "@set"
+    },
+    "hasPart": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasPart",
+        "@container": "@set"
+    },
+    "hasBuildFile": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#hasBuildFile",
+        "@container": "@set"
+    },
+    "isTransformedFrom": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#isTransformedFrom",
+        "@container": "@set"
+    },
+    "datePublished": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@id": "https://w3id.org/okn/o/sd#datePublished",
+        "@container": "@set"
+    },
+    "hasSourceCode": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasSourceCode",
+        "@container": "@set"
+    },
+    "adjustsVariable": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#adjustsVariable",
+        "@container": "@set"
+    },
+    "relevantForIntervention": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#relevantForIntervention",
+        "@container": "@set"
+    },
+    "hasOutputTimeInterval": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasOutputTimeInterval",
+        "@container": "@set"
+    },
+    "hasComponentLocation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
+        "@container": "@set"
+    },
+    "Visualization": {"@id": "https://w3id.org/okn/o/sd#Visualization"},
+    "SourceCode": {"@id": "https://w3id.org/okn/o/sd#SourceCode"},
+    "topObjectProperty": {
+        "@type": "@id",
+        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
+        "@container": "@set"
+    },
+    "latitude": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#latitude",
+        "@container": "@set"
+    },
+    "hasTypicalDataSource": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#hasTypicalDataSource",
+        "@container": "@set"
+    },
+    "Emulator": {"@id": "https://w3id.org/okn/o/sdm#Emulator"},
+    "screenshot": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#screenshot",
+        "@container": "@set"
+    },
+    "usesModel": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#usesModel",
+        "@container": "@set"
+    },
+    "hasLongName": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasLongName",
+        "@container": "@set"
+    },
+    "issueTracker": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#issueTracker",
+        "@container": "@set"
+    },
+    "hasModelResultTable": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#hasModelResultTable",
+        "@container": "@set"
+    },
+    "EmpiricalModel": {"@id": "https://w3id.org/okn/o/sdm#EmpiricalModel"},
+    "ModelCategory": {"@id": "https://w3id.org/okn/o/sdm#ModelCategory"},
+    "hasExecutableInstructions": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasExecutableInstructions",
+        "@container": "@set"
+    },
+    "email": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#email",
+        "@container": "@set"
+    },
+    "memoryRequirements": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#memoryRequirements",
+        "@container": "@set"
+    },
+    "hasFormat": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasFormat",
+        "@container": "@set"
+    },
+    "website": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#website",
+        "@container": "@set"
+    },
+    "pathLocation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#pathLocation",
+        "@container": "@set"
+    },
+    "ConfigurationSetup": {"@id": "https://w3id.org/okn/o/sd#ConfigurationSetup"},
+    "processorRequirements": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#processorRequirements",
+        "@container": "@set"
+    },
+    "dataCatalogIdentifier": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#dataCatalogIdentifier",
+        "@container": "@set"
+    },
+    "operatingSystems": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#operatingSystems",
+        "@container": "@set"
+    },
+    "Parameter": {"@id": "https://w3id.org/okn/o/sd#Parameter"},
+    "validUntil": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@id": "https://w3id.org/okn/o/sdm#validUntil",
+        "@container": "@set"
+    },
+    "hasInput": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasInput",
+        "@container": "@set"
+    },
+    "hasGrid": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasGrid",
+        "@container": "@set"
+    },
+    "keywords": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#keywords",
+        "@container": "@set"
+    },
+    "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
+    "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
+    "hasPresentation": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasPresentation",
+        "@container": "@set"
+    },
+    "contentLocation": {
+        "@type": "@id",
+        "@id": "http://schema.org/contentLocation",
+        "@container": "@set"
+    },
+    "hasShape": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#hasShape",
+        "@container": "@set"
+    },
+    "ModelConfigurationSetup": {"@id": "https://w3id.org/okn/o/sdm#ModelConfigurationSetup"},
+    "compatibleVisualizationSoftware": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#compatibleVisualizationSoftware",
+        "@container": "@set"
+    },
+    "hasDataTransformationSetup": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasDataTransformationSetup",
+        "@container": "@set"
+    },
+    "preferredNamespacePrefix": {
+        "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
+        "@container": "@set"
+    },
+    "SpatiallyDistributedGrid": {"@id": "https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid"},
+    "hasConfiguration": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasConfiguration",
+        "@container": "@set"
+    },
+    "wasDerivedFromSetup": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#wasDerivedFromSetup",
+        "@container": "@set"
+    },
+    "DatasetSpecification": {"@id": "https://w3id.org/okn/o/sd#DatasetSpecification"},
+    "versionInfo": {
+        "@id": "http://www.w3.org/2002/07/owl#versionInfo",
+        "@container": "@set"
+    },
+    "hasExecutionCommand": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasExecutionCommand",
+        "@container": "@set"
+    },
+    "theoreticalBasis": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#theoreticalBasis",
+        "@container": "@set"
+    },
+    "name": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#name",
+        "@container": "@set"
+    },
+    "calibrationInterval": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#calibrationInterval",
+        "@container": "@set"
+    },
+    "parentCategory": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#parentCategory",
+        "@container": "@set"
+    },
+    "Region": {"@id": "https://w3id.org/okn/o/sdm#Region"},
+    "VariablePresentation": {"@id": "https://w3id.org/okn/o/sd#VariablePresentation"},
+    "hasProcess": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasProcess",
+        "@container": "@set"
+    },
+    "hasVersion": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#hasVersion",
+        "@container": "@set"
+    },
+    "description": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#description",
+        "@container": "@set"
+    },
+    "hasFixedValue": {
+        "@id": "https://w3id.org/okn/o/sd#hasFixedValue",
+        "@container": "@set"
+    },
+    "title": {
+        "@id": "http://purl.org/dc/elements/1.1/title",
+        "@container": "@set"
+    },
+    "intervalValue": {
+        "@id": "https://w3id.org/okn/o/sdm#intervalValue",
+        "@container": "@set"
+    },
+    "hasPurpose": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasPurpose",
+        "@container": "@set"
+    },
+    "hasDefaultValue": {
+        "@id": "https://w3id.org/okn/o/sd#hasDefaultValue",
+        "@container": "@set"
+    },
+    "SampleExecution": {"@id": "https://w3id.org/okn/o/sd#SampleExecution"},
+    "TimeInterval": {"@id": "https://w3id.org/okn/o/sdm#TimeInterval"},
+    "citation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#citation",
+        "@container": "@set"
+    },
+    "hasMaximumAcceptedValue": {
+        "@id": "https://w3id.org/okn/o/sd#hasMaximumAcceptedValue",
+        "@container": "@set"
+    },
+    "hasUsageNotes": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasUsageNotes",
+        "@container": "@set"
+    },
+    "CausalDiagram": {"@id": "https://w3id.org/okn/o/sdm#CausalDiagram"},
+    "label": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+        "@container": "@set"
+    },
+    "PointBasedGrid": {"@id": "https://w3id.org/okn/o/sdm#PointBasedGrid"},
+    "comment": {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
+        "@container": "@set"
+    },
+    "preferredNamespaceUri": {
+        "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
+        "@container": "@set"
+    },
+    "usefulForCalculatingIndex": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sd#usefulForCalculatingIndex",
+        "@container": "@set"
+    },
+    "hasDownloadInstructions": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasDownloadInstructions",
         "@container": "@set"
     },
     "hasDownloadURL": {
@@ -36,11 +357,6 @@
         "@id": "https://w3id.org/okn/o/sdm#hasSpatialResolution",
         "@container": "@set"
     },
-    "hasDimension": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#hasDimension",
-        "@container": "@set"
-    },
     "calibrationMethod": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#calibrationMethod",
@@ -61,11 +377,9 @@
         "@id": "https://w3id.org/okn/o/sd#hasFAQ",
         "@container": "@set"
     },
-    "ModelConfiguration": {"@id": "https://w3id.org/okn/o/sdm#ModelConfiguration"},
     "id": "@id",
-    "Thing": {"@id": "http://www.w3.org/2002/07/owl#Thing"},
     "hasDimensionality": {
-        "@type": "http://www.w3.org/2001/XMLSchema#int",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@id": "https://w3id.org/okn/o/sd#hasDimensionality",
         "@container": "@set"
     },
@@ -74,24 +388,9 @@
         "@id": "https://w3id.org/okn/o/sd#identifier",
         "@container": "@set"
     },
-    "hasSampleExecution": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasSampleExecution",
-        "@container": "@set"
-    },
     "hasSampleResult": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasSampleResult",
-        "@container": "@set"
-    },
-    "hasPart": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasPart",
-        "@container": "@set"
-    },
-    "hasBuildFile": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@id": "https://w3id.org/okn/o/sd#hasBuildFile",
         "@container": "@set"
     },
     "hasCoordinateSystem": {
@@ -99,23 +398,8 @@
         "@id": "https://w3id.org/okn/o/sdm#hasCoordinateSystem",
         "@container": "@set"
     },
-    "datePublished": {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@id": "https://w3id.org/okn/o/sd#datePublished",
-        "@container": "@set"
-    },
     "GeoCoordinates": {"@id": "https://w3id.org/okn/o/sdm#GeoCoordinates"},
     "SpatialResolution": {"@id": "https://w3id.org/okn/o/sdm#SpatialResolution"},
-    "hasSourceCode": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasSourceCode",
-        "@container": "@set"
-    },
-    "adjustsVariable": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#adjustsVariable",
-        "@container": "@set"
-    },
     "NumericalIndex": {"@id": "https://w3id.org/okn/o/sd#NumericalIndex"},
     "hasExample": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -123,11 +407,6 @@
         "@container": "@set"
     },
     "SampleResource": {"@id": "https://w3id.org/okn/o/sd#SampleResource"},
-    "relevantForIntervention": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sdm#relevantForIntervention",
-        "@container": "@set"
-    },
     "hasOutput": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasOutput",
@@ -138,9 +417,9 @@
         "@id": "https://w3id.org/okn/o/sd#partOfDataset",
         "@container": "@set"
     },
-    "hasOutputTimeInterval": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sdm#hasOutputTimeInterval",
+    "runtimeEstimation": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#runtimeEstimation",
         "@container": "@set"
     },
     "Person": {"@id": "https://w3id.org/okn/o/sd#Person"},
@@ -149,30 +428,13 @@
         "@id": "https://w3id.org/okn/o/sd#doi",
         "@container": "@set"
     },
-    "hasComponentLocation": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
-        "@container": "@set"
-    },
-    "Visualization": {"@id": "https://w3id.org/okn/o/sd#Visualization"},
-    "SourceCode": {"@id": "https://w3id.org/okn/o/sd#SourceCode"},
-    "Organization": {"@id": "https://w3id.org/okn/o/sd#Organization"},
-    "topObjectProperty": {
-        "@type": "@id",
-        "@id": "http://www.w3.org/2002/07/owl#topObjectProperty",
-        "@container": "@set"
-    },
-    "Grid": {"@id": "https://w3id.org/okn/o/sdm#Grid"},
-    "latitude": {
+    "status": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#latitude",
+        "@id": "https://w3id.org/okn/o/sd#status",
         "@container": "@set"
     },
-    "hasTypicalDataSource": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@id": "https://w3id.org/okn/o/sd#hasTypicalDataSource",
-        "@container": "@set"
-    },
+    "Organization": {"@id": "https://w3id.org/okn/o/sd#Organization"},
+    "Grid": {"@id": "https://w3id.org/okn/o/sdm#Grid"},
     "hasDiagramPart": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasDiagramPart",
@@ -183,19 +445,8 @@
         "@id": "https://w3id.org/okn/o/sd#hasDataType",
         "@container": "@set"
     },
-    "Emulator": {"@id": "https://w3id.org/okn/o/sdm#Emulator"},
-    "screenshot": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#screenshot",
-        "@container": "@set"
-    },
-    "hasLongName": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasLongName",
-        "@container": "@set"
-    },
     "hasModelCategory": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasModelCategory",
         "@container": "@set"
     },
@@ -207,11 +458,6 @@
     "hasSoftwareImage": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasSoftwareImage",
-        "@container": "@set"
-    },
-    "issueTracker": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@id": "https://w3id.org/okn/o/sd#issueTracker",
         "@container": "@set"
     },
     "wasDerivedFromSoftware": {
@@ -228,12 +474,7 @@
         "@id": "https://w3id.org/okn/o/sd#copyrightYear",
         "@container": "@set"
     },
-    "hasModelResultTable": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#hasModelResultTable",
-        "@container": "@set"
-    },
-    "EmpiricalModel": {"@id": "https://w3id.org/okn/o/sdm#EmpiricalModel"},
+    "CatalogIdentifier": {"@id": "https://w3id.org/okn/o/sd#CatalogIdentifier"},
     "codeRepository": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#codeRepository",
@@ -249,16 +490,6 @@
         "@id": "https://w3id.org/okn/o/sd#hasSampleVisualization",
         "@container": "@set"
     },
-    "hasExecutableInstructions": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasExecutableInstructions",
-        "@container": "@set"
-    },
-    "email": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#email",
-        "@container": "@set"
-    },
     "hasCausalDiagram": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasCausalDiagram",
@@ -268,37 +499,16 @@
         "@id": "http://www.w3.org/2002/07/owl#priorVersion",
         "@container": "@set"
     },
-    "memoryRequirements": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#memoryRequirements",
-        "@container": "@set"
-    },
-    "hasFormat": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasFormat",
-        "@container": "@set"
-    },
     "creator": {
         "@id": "http://purl.org/dc/elements/1.1/creator",
         "@container": "@set"
     },
-    "website": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@id": "https://w3id.org/okn/o/sd#website",
-        "@container": "@set"
-    },
-    "pathLocation": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#pathLocation",
-        "@container": "@set"
-    },
-    "ConfigurationSetup": {"@id": "https://w3id.org/okn/o/sd#ConfigurationSetup"},
-    "processorRequirements": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#processorRequirements",
-        "@container": "@set"
-    },
     "HybridModel": {"@id": "https://w3id.org/okn/o/sdm#HybridModel"},
+    "parameterization": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#parameterization",
+        "@container": "@set"
+    },
     "FundingInformation": {"@id": "https://w3id.org/okn/o/sd#FundingInformation"},
     "abstract": {
         "@id": "http://purl.org/dc/elements/1.1/abstract",
@@ -306,16 +516,6 @@
     },
     "SoftwareConfiguration": {"@id": "https://w3id.org/okn/o/sd#SoftwareConfiguration"},
     "SampleCollection": {"@id": "https://w3id.org/okn/o/sd#SampleCollection"},
-    "dataCatalogIdentifier": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#dataCatalogIdentifier",
-        "@container": "@set"
-    },
-    "operatingSystems": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#operatingSystems",
-        "@container": "@set"
-    },
     "hasExecutableNotebook": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasExecutableNotebook",
@@ -323,33 +523,11 @@
     },
     "DataTransformation": {"@id": "https://w3id.org/okn/o/sd#DataTransformation"},
     "Model": {"@id": "https://w3id.org/okn/o/sdm#Model"},
-    "Parameter": {"@id": "https://w3id.org/okn/o/sd#Parameter"},
-    "validUntil": {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@id": "https://w3id.org/okn/o/sdm#validUntil",
-        "@container": "@set"
-    },
-    "hasInput": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasInput",
-        "@container": "@set"
-    },
     "partOf": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#partOf",
         "@container": "@set"
     },
-    "hasGrid": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sdm#hasGrid",
-        "@container": "@set"
-    },
-    "keywords": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#keywords",
-        "@container": "@set"
-    },
-    "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
     "softwareRequirements": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#softwareRequirements",
@@ -365,47 +543,16 @@
         "@id": "https://w3id.org/okn/o/sd#hasDataTransformation",
         "@container": "@set"
     },
-    "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
-    "hasPresentation": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasPresentation",
-        "@container": "@set"
-    },
-    "contentLocation": {
-        "@type": "@id",
-        "@id": "http://schema.org/contentLocation",
-        "@container": "@set"
-    },
     "Unit": {"@id": "https://w3id.org/okn/o/sd#Unit"},
     "calibratedVariable": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#calibratedVariable",
         "@container": "@set"
     },
-    "hasShape": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#hasShape",
-        "@container": "@set"
-    },
     "StandardVariable": {"@id": "https://w3id.org/okn/o/sd#StandardVariable"},
-    "ModelConfigurationSetup": {"@id": "https://w3id.org/okn/o/sdm#ModelConfigurationSetup"},
-    "compatibleVisualizationSoftware": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#compatibleVisualizationSoftware",
-        "@container": "@set"
-    },
-    "hasDataTransformationSetup": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasDataTransformationSetup",
-        "@container": "@set"
-    },
     "copyrightHolder": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#copyrightHolder",
-        "@container": "@set"
-    },
-    "preferredNamespacePrefix": {
-        "@id": "http://purl.org/vocab/vann/preferredNamespacePrefix",
         "@container": "@set"
     },
     "hasContactPerson": {
@@ -418,7 +565,6 @@
         "@id": "https://w3id.org/okn/o/sd#logo",
         "@container": "@set"
     },
-    "SpatiallyDistributedGrid": {"@id": "https://w3id.org/okn/o/sdm#SpatiallyDistributedGrid"},
     "tag": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#tag",
@@ -427,11 +573,6 @@
     "longitude": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#longitude",
-        "@container": "@set"
-    },
-    "hasConfiguration": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasConfiguration",
         "@container": "@set"
     },
     "hasStandardVariable": {
@@ -448,24 +589,14 @@
         "@id": "https://w3id.org/okn/o/sd#author",
         "@container": "@set"
     },
-    "DatasetSpecification": {"@id": "https://w3id.org/okn/o/sd#DatasetSpecification"},
     "hasConstraint": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasConstraint",
         "@container": "@set"
     },
-    "versionInfo": {
-        "@id": "http://www.w3.org/2002/07/owl#versionInfo",
-        "@container": "@set"
-    },
     "shortDescription": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#shortDescription",
-        "@container": "@set"
-    },
-    "hasExecutionCommand": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasExecutionCommand",
         "@container": "@set"
     },
     "license": {
@@ -484,26 +615,14 @@
         "@id": "https://w3id.org/okn/o/sdm#hasExplanationDiagram",
         "@container": "@set"
     },
-    "name": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#name",
-        "@container": "@set"
-    },
-    "calibrationInterval": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#calibrationInterval",
-        "@container": "@set"
-    },
-    "Region": {"@id": "https://w3id.org/okn/o/sdm#Region"},
     "publisher": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#publisher",
         "@container": "@set"
     },
     "Software": {"@id": "https://w3id.org/okn/o/sd#Software"},
-    "VariablePresentation": {"@id": "https://w3id.org/okn/o/sd#VariablePresentation"},
     "position": {
-        "@type": "http://www.w3.org/2001/XMLSchema#int",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@id": "https://w3id.org/okn/o/sd#position",
         "@container": "@set"
     },
@@ -524,16 +643,6 @@
         "@container": "@set"
     },
     "Variable": {"@id": "https://w3id.org/okn/o/sd#Variable"},
-    "hasProcess": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sdm#hasProcess",
-        "@container": "@set"
-    },
-    "hasVersion": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#hasVersion",
-        "@container": "@set"
-    },
     "supportDetails": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#supportDetails",
@@ -549,31 +658,14 @@
         "@id": "https://w3id.org/okn/o/sd#referencePublication",
         "@container": "@set"
     },
-    "description": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#description",
-        "@container": "@set"
-    },
     "box": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#box",
         "@container": "@set"
     },
-    "hasFixedValue": {
-        "@id": "https://w3id.org/okn/o/sd#hasFixedValue",
-        "@container": "@set"
-    },
-    "title": {
-        "@id": "http://purl.org/dc/elements/1.1/title",
-        "@container": "@set"
-    },
     "recommendedIncrement": {
         "@type": "http://www.w3.org/2001/XMLSchema#float",
         "@id": "https://w3id.org/okn/o/sd#recommendedIncrement",
-        "@container": "@set"
-    },
-    "intervalValue": {
-        "@id": "https://w3id.org/okn/o/sdm#intervalValue",
         "@container": "@set"
     },
     "hadPrimarySource": {
@@ -597,14 +689,14 @@
         "@id": "https://w3id.org/okn/o/sdm#influences",
         "@container": "@set"
     },
+    "availableInRegistry": {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@id": "https://w3id.org/okn/o/sd#availableInRegistry",
+        "@container": "@set"
+    },
     "calibrationTargetVariable": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#calibrationTargetVariable",
-        "@container": "@set"
-    },
-    "hasPurpose": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasPurpose",
         "@container": "@set"
     },
     "value": {
@@ -626,24 +718,9 @@
         "@id": "https://w3id.org/okn/o/sdm#elevation",
         "@container": "@set"
     },
-    "hasDefaultValue": {
-        "@id": "https://w3id.org/okn/o/sd#hasDefaultValue",
-        "@container": "@set"
-    },
-    "SampleExecution": {"@id": "https://w3id.org/okn/o/sd#SampleExecution"},
-    "TimeInterval": {"@id": "https://w3id.org/okn/o/sdm#TimeInterval"},
-    "citation": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#citation",
-        "@container": "@set"
-    },
     "hasFileStructure": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasFileStructure",
-        "@container": "@set"
-    },
-    "hasMaximumAcceptedValue": {
-        "@id": "https://w3id.org/okn/o/sd#hasMaximumAcceptedValue",
         "@container": "@set"
     },
     "adjustableParameter": {
@@ -652,19 +729,9 @@
         "@container": "@set"
     },
     "Equation": {"@id": "https://w3id.org/okn/o/sdm#Equation"},
-    "hasUsageNotes": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasUsageNotes",
-        "@container": "@set"
-    },
-    "CausalDiagram": {"@id": "https://w3id.org/okn/o/sdm#CausalDiagram"},
     "hasSupportScriptLocation": {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasSupportScriptLocation",
-        "@container": "@set"
-    },
-    "label": {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#label",
         "@container": "@set"
     },
     "readme": {
@@ -672,7 +739,6 @@
         "@id": "https://w3id.org/okn/o/sd#readme",
         "@container": "@set"
     },
-    "PointBasedGrid": {"@id": "https://w3id.org/okn/o/sdm#PointBasedGrid"},
     "hasParameter": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasParameter",
@@ -692,19 +758,6 @@
     "hasEquation": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#hasEquation",
-        "@container": "@set"
-    },
-    "comment": {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#comment",
-        "@container": "@set"
-    },
-    "preferredNamespaceUri": {
-        "@id": "http://purl.org/vocab/vann/preferredNamespaceUri",
-        "@container": "@set"
-    },
-    "usefulForCalculatingIndex": {
-        "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sd#usefulForCalculatingIndex",
         "@container": "@set"
     },
     "hasVersionId": {

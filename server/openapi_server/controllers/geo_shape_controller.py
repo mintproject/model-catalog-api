@@ -33,7 +33,7 @@ def geoshapes_get(username=None, label=None, page=None, per_page=None):  # noqa:
         rdf_type_name=GEOSHAPE_TYPE_NAME, 
         kls=GeoShape)
 
-def geoshapes_id_delete(id, user):  # noqa: E501
+def geoshapes_id_delete(id, user=None):  # noqa: E501
     """Delete an existing GeoShape
 
     Delete an existing GeoShape (more information in https://w3id.org/okn/o/sdm#GeoShape) # noqa: E501
@@ -47,7 +47,8 @@ def geoshapes_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=GEOSHAPE_TYPE_URI,
         rdf_type_name=GEOSHAPE_TYPE_NAME, 
         kls=GeoShape)
@@ -72,7 +73,7 @@ def geoshapes_id_get(id, username=None):  # noqa: E501
         rdf_type_name=GEOSHAPE_TYPE_NAME, 
         kls=GeoShape)
 
-def geoshapes_id_put(id, user, geo_shape=None):  # noqa: E501
+def geoshapes_id_put(id, user=None, geo_shape=None):  # noqa: E501
     """Update an existing GeoShape
 
     Updates an existing GeoShape (more information in https://w3id.org/okn/o/sdm#GeoShape) # noqa: E501
@@ -90,13 +91,14 @@ def geoshapes_id_put(id, user, geo_shape=None):  # noqa: E501
     if connexion.request.is_json:
         geo_shape = GeoShape.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=geo_shape,
         rdf_type_uri=GEOSHAPE_TYPE_URI,
         rdf_type_name=GEOSHAPE_TYPE_NAME, 
         kls=GeoShape)
 
-def geoshapes_post(user, geo_shape=None):  # noqa: E501
+def geoshapes_post(user=None, geo_shape=None):  # noqa: E501
     """Create one GeoShape
 
     Create a new instance of GeoShape (more information in https://w3id.org/okn/o/sdm#GeoShape) # noqa: E501
@@ -112,7 +114,8 @@ def geoshapes_post(user, geo_shape=None):  # noqa: E501
     if connexion.request.is_json:
         geo_shape = GeoShape.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=geo_shape,
         rdf_type_uri=GEOSHAPE_TYPE_URI,
         rdf_type_name=GEOSHAPE_TYPE_NAME, 

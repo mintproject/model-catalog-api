@@ -15,7 +15,7 @@ class DataTransformationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, doi=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, was_derived_from_setup=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, status=None, doi=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """DataTransformationSetup - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this DataTransformationSetup.  # noqa: E501
@@ -56,6 +56,8 @@ class DataTransformationSetup(Model):
         :type has_sample_result: List[SampleResource]
         :param author: The author of this DataTransformationSetup.  # noqa: E501
         :type author: List[object]
+        :param was_derived_from_setup: The was_derived_from_setup of this DataTransformationSetup.  # noqa: E501
+        :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this DataTransformationSetup.  # noqa: E501
         :type has_constraint: List[str]
         :param has_build_file: The has_build_file of this DataTransformationSetup.  # noqa: E501
@@ -65,7 +67,7 @@ class DataTransformationSetup(Model):
         :param has_execution_command: The has_execution_command of this DataTransformationSetup.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this DataTransformationSetup.  # noqa: E501
-        :type date_published: List[datetime]
+        :type date_published: List[str]
         :param license: The license of this DataTransformationSetup.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this DataTransformationSetup.  # noqa: E501
@@ -78,6 +80,8 @@ class DataTransformationSetup(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this DataTransformationSetup.  # noqa: E501
         :type has_output: List[DatasetSpecification]
+        :param status: The status of this DataTransformationSetup.  # noqa: E501
+        :type status: List[str]
         :param doi: The doi of this DataTransformationSetup.  # noqa: E501
         :type doi: List[str]
         :param has_funding: The has_funding of this DataTransformationSetup.  # noqa: E501
@@ -103,7 +107,7 @@ class DataTransformationSetup(Model):
         :param has_software_image: The has_software_image of this DataTransformationSetup.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this DataTransformationSetup.  # noqa: E501
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         :param contributor: The contributor of this DataTransformationSetup.  # noqa: E501
         :type contributor: List[Person]
         :param has_purpose: The has_purpose of this DataTransformationSetup.  # noqa: E501
@@ -172,6 +176,7 @@ class DataTransformationSetup(Model):
           # noqa: E501
           # noqa: E501
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'has_download_instructions': List[str],
@@ -193,17 +198,19 @@ class DataTransformationSetup(Model):
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
             'author': List[object],
+            'was_derived_from_setup': List[ConfigurationSetup],
             'has_constraint': List[str],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[datetime],
+            'date_published': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
             'has_example': List[str],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
+            'status': List[str],
             'doi': List[str],
             'has_funding': List[FundingInformation],
             'has_component_location': List[str],
@@ -216,7 +223,7 @@ class DataTransformationSetup(Model):
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[datetime],
+            'date_created': List[str],
             'contributor': List[Person],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -258,6 +265,7 @@ class DataTransformationSetup(Model):
             'has_sample_execution': 'hasSampleExecution',
             'has_sample_result': 'hasSampleResult',
             'author': 'author',
+            'was_derived_from_setup': 'wasDerivedFromSetup',
             'has_constraint': 'hasConstraint',
             'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
@@ -269,6 +277,7 @@ class DataTransformationSetup(Model):
             'has_example': 'hasExample',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
+            'status': 'status',
             'doi': 'doi',
             'has_funding': 'hasFunding',
             'has_component_location': 'hasComponentLocation',
@@ -322,6 +331,7 @@ class DataTransformationSetup(Model):
         self._has_sample_execution = has_sample_execution
         self._has_sample_result = has_sample_result
         self._author = author
+        self._was_derived_from_setup = was_derived_from_setup
         self._has_constraint = has_constraint
         self._has_build_file = has_build_file
         self._short_description = short_description
@@ -333,6 +343,7 @@ class DataTransformationSetup(Model):
         self._has_example = has_example
         self._publisher = publisher
         self._has_output = has_output
+        self._status = status
         self._doi = doi
         self._has_funding = has_funding
         self._has_component_location = has_component_location
@@ -473,7 +484,7 @@ class DataTransformationSetup(Model):
     def software_requirements(self):
         """Gets the software_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :return: The software_requirements of this DataTransformationSetup.
         :rtype: List[str]
@@ -484,7 +495,7 @@ class DataTransformationSetup(Model):
     def software_requirements(self, software_requirements):
         """Sets the software_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
         :param software_requirements: The software_requirements of this DataTransformationSetup.
         :type software_requirements: List[str]
@@ -588,7 +599,7 @@ class DataTransformationSetup(Model):
     def copyright_holder(self):
         """Gets the copyright_holder of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :return: The copyright_holder of this DataTransformationSetup.
         :rtype: List[object]
@@ -599,7 +610,7 @@ class DataTransformationSetup(Model):
     def copyright_holder(self, copyright_holder):
         """Sets the copyright_holder of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
         :param copyright_holder: The copyright_holder of this DataTransformationSetup.
         :type copyright_holder: List[object]
@@ -634,7 +645,7 @@ class DataTransformationSetup(Model):
     def logo(self):
         """Gets the logo of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :return: The logo of this DataTransformationSetup.
         :rtype: List[Image]
@@ -645,7 +656,7 @@ class DataTransformationSetup(Model):
     def logo(self, logo):
         """Sets the logo of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
         :param logo: The logo of this DataTransformationSetup.
         :type logo: List[Image]
@@ -657,7 +668,7 @@ class DataTransformationSetup(Model):
     def has_contact_person(self):
         """Gets the has_contact_person of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :return: The has_contact_person of this DataTransformationSetup.
         :rtype: List[object]
@@ -668,7 +679,7 @@ class DataTransformationSetup(Model):
     def has_contact_person(self, has_contact_person):
         """Sets the has_contact_person of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
         :param has_contact_person: The has_contact_person of this DataTransformationSetup.
         :type has_contact_person: List[object]
@@ -749,7 +760,7 @@ class DataTransformationSetup(Model):
     def has_sample_execution(self):
         """Gets the has_sample_execution of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
         :return: The has_sample_execution of this DataTransformationSetup.
         :rtype: List[SampleExecution]
@@ -760,7 +771,7 @@ class DataTransformationSetup(Model):
     def has_sample_execution(self, has_sample_execution):
         """Sets the has_sample_execution of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
         :param has_sample_execution: The has_sample_execution of this DataTransformationSetup.
         :type has_sample_execution: List[SampleExecution]
@@ -772,7 +783,7 @@ class DataTransformationSetup(Model):
     def has_sample_result(self):
         """Gets the has_sample_result of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
         :return: The has_sample_result of this DataTransformationSetup.
         :rtype: List[SampleResource]
@@ -783,7 +794,7 @@ class DataTransformationSetup(Model):
     def has_sample_result(self, has_sample_result):
         """Sets the has_sample_result of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
         :param has_sample_result: The has_sample_result of this DataTransformationSetup.
         :type has_sample_result: List[SampleResource]
@@ -795,7 +806,7 @@ class DataTransformationSetup(Model):
     def author(self):
         """Gets the author of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :return: The author of this DataTransformationSetup.
         :rtype: List[object]
@@ -806,13 +817,36 @@ class DataTransformationSetup(Model):
     def author(self, author):
         """Sets the author of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        The creator of a software component  # noqa: E501
 
         :param author: The author of this DataTransformationSetup.
         :type author: List[object]
         """
 
         self._author = author
+
+    @property
+    def was_derived_from_setup(self):
+        """Gets the was_derived_from_setup of this DataTransformationSetup.
+
+        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+
+        :return: The was_derived_from_setup of this DataTransformationSetup.
+        :rtype: List[ConfigurationSetup]
+        """
+        return self._was_derived_from_setup
+
+    @was_derived_from_setup.setter
+    def was_derived_from_setup(self, was_derived_from_setup):
+        """Sets the was_derived_from_setup of this DataTransformationSetup.
+
+        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+
+        :param was_derived_from_setup: The was_derived_from_setup of this DataTransformationSetup.
+        :type was_derived_from_setup: List[ConfigurationSetup]
+        """
+
+        self._was_derived_from_setup = was_derived_from_setup
 
     @property
     def has_constraint(self):
@@ -910,10 +944,10 @@ class DataTransformationSetup(Model):
     def date_published(self):
         """Gets the date_published of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :return: The date_published of this DataTransformationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_published
 
@@ -921,10 +955,10 @@ class DataTransformationSetup(Model):
     def date_published(self, date_published):
         """Sets the date_published of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Date when a software component was published  # noqa: E501
 
         :param date_published: The date_published of this DataTransformationSetup.
-        :type date_published: List[datetime]
+        :type date_published: List[str]
         """
 
         self._date_published = date_published
@@ -956,7 +990,7 @@ class DataTransformationSetup(Model):
     def has_source_code(self):
         """Gets the has_source_code of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :return: The has_source_code of this DataTransformationSetup.
         :rtype: List[SourceCode]
@@ -967,7 +1001,7 @@ class DataTransformationSetup(Model):
     def has_source_code(self, has_source_code):
         """Sets the has_source_code of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
         :param has_source_code: The has_source_code of this DataTransformationSetup.
         :type has_source_code: List[SourceCode]
@@ -1025,7 +1059,7 @@ class DataTransformationSetup(Model):
     def publisher(self):
         """Gets the publisher of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :return: The publisher of this DataTransformationSetup.
         :rtype: List[object]
@@ -1036,7 +1070,7 @@ class DataTransformationSetup(Model):
     def publisher(self, publisher):
         """Sets the publisher of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Publisher organization or person responsible for a software component  # noqa: E501
 
         :param publisher: The publisher of this DataTransformationSetup.
         :type publisher: List[object]
@@ -1066,6 +1100,29 @@ class DataTransformationSetup(Model):
         """
 
         self._has_output = has_output
+
+    @property
+    def status(self):
+        """Gets the status of this DataTransformationSetup.
+
+        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
+
+        :return: The status of this DataTransformationSetup.
+        :rtype: List[str]
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this DataTransformationSetup.
+
+        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
+
+        :param status: The status of this DataTransformationSetup.
+        :type status: List[str]
+        """
+
+        self._status = status
 
     @property
     def doi(self):
@@ -1163,7 +1220,7 @@ class DataTransformationSetup(Model):
     def has_version(self):
         """Gets the has_version of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :return: The has_version of this DataTransformationSetup.
         :rtype: List[SoftwareVersion]
@@ -1174,7 +1231,7 @@ class DataTransformationSetup(Model):
     def has_version(self, has_version):
         """Sets the has_version of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Property designed to link a software component with its corresponding versions  # noqa: E501
 
         :param has_version: The has_version of this DataTransformationSetup.
         :type has_version: List[SoftwareVersion]
@@ -1186,7 +1243,7 @@ class DataTransformationSetup(Model):
     def has_typical_data_source(self):
         """Gets the has_typical_data_source of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :return: The has_typical_data_source of this DataTransformationSetup.
         :rtype: List[str]
@@ -1197,7 +1254,7 @@ class DataTransformationSetup(Model):
     def has_typical_data_source(self, has_typical_data_source):
         """Sets the has_typical_data_source of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Typical data sources that are used by a software component  # noqa: E501
 
         :param has_typical_data_source: The has_typical_data_source of this DataTransformationSetup.
         :type has_typical_data_source: List[str]
@@ -1255,7 +1312,7 @@ class DataTransformationSetup(Model):
     def screenshot(self):
         """Gets the screenshot of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :return: The screenshot of this DataTransformationSetup.
         :rtype: List[Image]
@@ -1266,7 +1323,7 @@ class DataTransformationSetup(Model):
     def screenshot(self, screenshot):
         """Sets the screenshot of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Image illustrating a snapshot of the target software  # noqa: E501
 
         :param screenshot: The screenshot of this DataTransformationSetup.
         :type screenshot: List[Image]
@@ -1278,7 +1335,7 @@ class DataTransformationSetup(Model):
     def had_primary_source(self):
         """Gets the had_primary_source of this DataTransformationSetup.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this DataTransformationSetup.
         :rtype: List[object]
@@ -1289,7 +1346,7 @@ class DataTransformationSetup(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this DataTransformationSetup.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this DataTransformationSetup.
         :type had_primary_source: List[object]
@@ -1347,10 +1404,10 @@ class DataTransformationSetup(Model):
     def date_created(self):
         """Gets the date_created of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :return: The date_created of this DataTransformationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_created
 
@@ -1358,10 +1415,10 @@ class DataTransformationSetup(Model):
     def date_created(self, date_created):
         """Sets the date_created of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
         :param date_created: The date_created of this DataTransformationSetup.
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         """
 
         self._date_created = date_created
@@ -1370,7 +1427,7 @@ class DataTransformationSetup(Model):
     def contributor(self):
         """Gets the contributor of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
         :return: The contributor of this DataTransformationSetup.
         :rtype: List[Person]
@@ -1381,7 +1438,7 @@ class DataTransformationSetup(Model):
     def contributor(self, contributor):
         """Sets the contributor of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
         :param contributor: The contributor of this DataTransformationSetup.
         :type contributor: List[Person]
@@ -1462,7 +1519,7 @@ class DataTransformationSetup(Model):
     def memory_requirements(self):
         """Gets the memory_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :return: The memory_requirements of this DataTransformationSetup.
         :rtype: List[str]
@@ -1473,7 +1530,7 @@ class DataTransformationSetup(Model):
     def memory_requirements(self, memory_requirements):
         """Sets the memory_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Memory requirements of a software  # noqa: E501
 
         :param memory_requirements: The memory_requirements of this DataTransformationSetup.
         :type memory_requirements: List[str]
@@ -1531,7 +1588,7 @@ class DataTransformationSetup(Model):
     def processor_requirements(self):
         """Gets the processor_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :return: The processor_requirements of this DataTransformationSetup.
         :rtype: List[str]
@@ -1542,7 +1599,7 @@ class DataTransformationSetup(Model):
     def processor_requirements(self, processor_requirements):
         """Sets the processor_requirements of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Processor requirements of a software component  # noqa: E501
 
         :param processor_requirements: The processor_requirements of this DataTransformationSetup.
         :type processor_requirements: List[str]
@@ -1715,7 +1772,7 @@ class DataTransformationSetup(Model):
     def operating_systems(self):
         """Gets the operating_systems of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :return: The operating_systems of this DataTransformationSetup.
         :rtype: List[str]
@@ -1726,7 +1783,7 @@ class DataTransformationSetup(Model):
     def operating_systems(self, operating_systems):
         """Sets the operating_systems of this DataTransformationSetup.
 
-        Description not available  # noqa: E501
+        Operating systems under which a software component can operate  # noqa: E501
 
         :param operating_systems: The operating_systems of this DataTransformationSetup.
         :type operating_systems: List[str]

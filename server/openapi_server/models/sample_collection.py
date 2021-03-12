@@ -36,6 +36,7 @@ class SampleCollection(Model):
         from openapi_server.models.sample_resource import SampleResource
 
           # noqa: E501
+          # noqa: E501
 
         self.openapi_types = {
             'data_catalog_identifier': List[str],

@@ -33,7 +33,7 @@ def softwareimages_get(username=None, label=None, page=None, per_page=None):  # 
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
         kls=SoftwareImage)
 
-def softwareimages_id_delete(id, user):  # noqa: E501
+def softwareimages_id_delete(id, user=None):  # noqa: E501
     """Delete an existing SoftwareImage
 
     Delete an existing SoftwareImage (more information in https://w3id.org/okn/o/sd#SoftwareImage) # noqa: E501
@@ -47,7 +47,8 @@ def softwareimages_id_delete(id, user):  # noqa: E501
     """
 
 
-    return query_manager.delete_resource(id=id,user=user,
+    return query_manager.delete_resource(id=id,
+        user=user,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
         kls=SoftwareImage)
@@ -72,7 +73,7 @@ def softwareimages_id_get(id, username=None):  # noqa: E501
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
         kls=SoftwareImage)
 
-def softwareimages_id_put(id, user, software_image=None):  # noqa: E501
+def softwareimages_id_put(id, user=None, software_image=None):  # noqa: E501
     """Update an existing SoftwareImage
 
     Updates an existing SoftwareImage (more information in https://w3id.org/okn/o/sd#SoftwareImage) # noqa: E501
@@ -90,13 +91,14 @@ def softwareimages_id_put(id, user, software_image=None):  # noqa: E501
     if connexion.request.is_json:
         software_image = SoftwareImage.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.put_resource(id=id,user=user,
+    return query_manager.put_resource(id=id,
+        user=user,
         body=software_image,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 
         kls=SoftwareImage)
 
-def softwareimages_post(user, software_image=None):  # noqa: E501
+def softwareimages_post(user=None, software_image=None):  # noqa: E501
     """Create one SoftwareImage
 
     Create a new instance of SoftwareImage (more information in https://w3id.org/okn/o/sd#SoftwareImage) # noqa: E501
@@ -112,7 +114,8 @@ def softwareimages_post(user, software_image=None):  # noqa: E501
     if connexion.request.is_json:
         software_image = SoftwareImage.from_dict(connexion.request.get_json())  # noqa: E501
 
-    return query_manager.post_resource(user=user,
+    return query_manager.post_resource(
+        user=user,
         body=software_image,
         rdf_type_uri=SOFTWAREIMAGE_TYPE_URI,
         rdf_type_name=SOFTWAREIMAGE_TYPE_NAME, 

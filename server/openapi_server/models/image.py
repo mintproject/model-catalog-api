@@ -15,7 +15,7 @@ class Image(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, had_primary_source=None, has_data_transformation_setup=None, position=None, id=None, value=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, is_transformed_from=None, had_primary_source=None, has_data_transformation_setup=None, position=None, id=None, value=None):  # noqa: E501
         """Image - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this Image.  # noqa: E501
@@ -38,6 +38,8 @@ class Image(Model):
         :type type: List[str]
         :param has_fixed_resource: The has_fixed_resource of this Image.  # noqa: E501
         :type has_fixed_resource: List[SampleResource]
+        :param is_transformed_from: The is_transformed_from of this Image.  # noqa: E501
+        :type is_transformed_from: List[DatasetSpecification]
         :param had_primary_source: The had_primary_source of this Image.  # noqa: E501
         :type had_primary_source: List[object]
         :param has_data_transformation_setup: The has_data_transformation_setup of this Image.  # noqa: E501
@@ -51,9 +53,12 @@ class Image(Model):
         """
         from openapi_server.models.data_transformation import DataTransformation
         from openapi_server.models.data_transformation_setup import DataTransformationSetup
+        from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.sample_resource import SampleResource
         from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -70,6 +75,7 @@ class Image(Model):
             'label': List[str],
             'type': List[str],
             'has_fixed_resource': List[SampleResource],
+            'is_transformed_from': List[DatasetSpecification],
             'had_primary_source': List[object],
             'has_data_transformation_setup': List[DataTransformationSetup],
             'position': List[int],
@@ -88,6 +94,7 @@ class Image(Model):
             'label': 'label',
             'type': 'type',
             'has_fixed_resource': 'hasFixedResource',
+            'is_transformed_from': 'isTransformedFrom',
             'had_primary_source': 'hadPrimarySource',
             'has_data_transformation_setup': 'hasDataTransformationSetup',
             'position': 'position',
@@ -105,6 +112,7 @@ class Image(Model):
         self._label = label
         self._type = type
         self._has_fixed_resource = has_fixed_resource
+        self._is_transformed_from = is_transformed_from
         self._had_primary_source = had_primary_source
         self._has_data_transformation_setup = has_data_transformation_setup
         self._position = position
@@ -353,10 +361,33 @@ class Image(Model):
         self._has_fixed_resource = has_fixed_resource
 
     @property
+    def is_transformed_from(self):
+        """Gets the is_transformed_from of this Image.
+
+        Property that links a dataset specification from a model configuration or setup to the output from a target data transformation. This occurs when a data transformation produces several outputs, but only one of them is the one needed for a model  # noqa: E501
+
+        :return: The is_transformed_from of this Image.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._is_transformed_from
+
+    @is_transformed_from.setter
+    def is_transformed_from(self, is_transformed_from):
+        """Sets the is_transformed_from of this Image.
+
+        Property that links a dataset specification from a model configuration or setup to the output from a target data transformation. This occurs when a data transformation produces several outputs, but only one of them is the one needed for a model  # noqa: E501
+
+        :param is_transformed_from: The is_transformed_from of this Image.
+        :type is_transformed_from: List[DatasetSpecification]
+        """
+
+        self._is_transformed_from = is_transformed_from
+
+    @property
     def had_primary_source(self):
         """Gets the had_primary_source of this Image.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :return: The had_primary_source of this Image.
         :rtype: List[object]
@@ -367,7 +398,7 @@ class Image(Model):
     def had_primary_source(self, had_primary_source):
         """Sets the had_primary_source of this Image.
 
-        had primary source  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
         :param had_primary_source: The had_primary_source of this Image.
         :type had_primary_source: List[object]

@@ -15,7 +15,7 @@ class SpatiallyDistributedGrid(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_coordinate_system=None, has_spatial_resolution=None, has_shape=None, has_dimension=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
+    def __init__(self, has_dimensionality=None, has_format=None, path_location=None, has_file_structure=None, description=None, has_data_transformation=None, has_presentation=None, label=None, type=None, has_fixed_resource=None, has_coordinate_system=None, has_spatial_resolution=None, is_transformed_from=None, has_shape=None, has_dimension=None, has_data_transformation_setup=None, position=None, id=None):  # noqa: E501
         """SpatiallyDistributedGrid - a model defined in OpenAPI
 
         :param has_dimensionality: The has_dimensionality of this SpatiallyDistributedGrid.  # noqa: E501
@@ -42,6 +42,8 @@ class SpatiallyDistributedGrid(Model):
         :type has_coordinate_system: List[str]
         :param has_spatial_resolution: The has_spatial_resolution of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_spatial_resolution: List[str]
+        :param is_transformed_from: The is_transformed_from of this SpatiallyDistributedGrid.  # noqa: E501
+        :type is_transformed_from: List[DatasetSpecification]
         :param has_shape: The has_shape of this SpatiallyDistributedGrid.  # noqa: E501
         :type has_shape: List[str]
         :param has_dimension: The has_dimension of this SpatiallyDistributedGrid.  # noqa: E501
@@ -55,9 +57,11 @@ class SpatiallyDistributedGrid(Model):
         """
         from openapi_server.models.data_transformation import DataTransformation
         from openapi_server.models.data_transformation_setup import DataTransformationSetup
+        from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.sample_resource import SampleResource
         from openapi_server.models.variable_presentation import VariablePresentation
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -76,6 +80,7 @@ class SpatiallyDistributedGrid(Model):
             'has_fixed_resource': List[SampleResource],
             'has_coordinate_system': List[str],
             'has_spatial_resolution': List[str],
+            'is_transformed_from': List[DatasetSpecification],
             'has_shape': List[str],
             'has_dimension': List[str],
             'has_data_transformation_setup': List[DataTransformationSetup],
@@ -96,6 +101,7 @@ class SpatiallyDistributedGrid(Model):
             'has_fixed_resource': 'hasFixedResource',
             'has_coordinate_system': 'hasCoordinateSystem',
             'has_spatial_resolution': 'hasSpatialResolution',
+            'is_transformed_from': 'isTransformedFrom',
             'has_shape': 'hasShape',
             'has_dimension': 'hasDimension',
             'has_data_transformation_setup': 'hasDataTransformationSetup',
@@ -115,6 +121,7 @@ class SpatiallyDistributedGrid(Model):
         self._has_fixed_resource = has_fixed_resource
         self._has_coordinate_system = has_coordinate_system
         self._has_spatial_resolution = has_spatial_resolution
+        self._is_transformed_from = is_transformed_from
         self._has_shape = has_shape
         self._has_dimension = has_dimension
         self._has_data_transformation_setup = has_data_transformation_setup
@@ -407,6 +414,29 @@ class SpatiallyDistributedGrid(Model):
         """
 
         self._has_spatial_resolution = has_spatial_resolution
+
+    @property
+    def is_transformed_from(self):
+        """Gets the is_transformed_from of this SpatiallyDistributedGrid.
+
+        Description not available  # noqa: E501
+
+        :return: The is_transformed_from of this SpatiallyDistributedGrid.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._is_transformed_from
+
+    @is_transformed_from.setter
+    def is_transformed_from(self, is_transformed_from):
+        """Sets the is_transformed_from of this SpatiallyDistributedGrid.
+
+        Description not available  # noqa: E501
+
+        :param is_transformed_from: The is_transformed_from of this SpatiallyDistributedGrid.
+        :type is_transformed_from: List[DatasetSpecification]
+        """
+
+        self._is_transformed_from = is_transformed_from
 
     @property
     def has_shape(self):

@@ -28,7 +28,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/modelconfigurationsetups',
+            '/v1.7.0/modelconfigurationsetups',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -47,7 +47,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/modelconfigurationsetups/{id}'.format(id='hand_v2_travis'),
+            '/v1.7.0/modelconfigurationsetups/{id}'.format(id='hand_v2_travis'),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -66,7 +66,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/modelconfigurationsetups/{id}'.format(id='cycles-0.10.2-alpha-collection-oromia-single-point'),
+            '/v1.7.0/custom/modelconfigurationsetups/{id}'.format(id='cycles-0.10.2-alpha-collection-oromia-single-point'),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -89,12 +89,12 @@ class TestModelConfigurationSetupController(BaseTestCase):
         Get a ModelConfigurationSetup
         """
         query_string = [('username', MINT_USERNAME),
-                        ('label', 'flooding')]
+                        ('label', 'nitrogen')]
         headers = {
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/modelconfigurationsetups/variable',
+            '/v1.7.0/custom/modelconfigurationsetups/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -104,26 +104,26 @@ class TestModelConfigurationSetupController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
-    def test_modelconfigurationsetups_custom_variable_texas(self):
-        """Test case for modelconfigurationsetups_id_get
-
-        Get a ModelConfigurationSetup
-        """
-        query_string = [('username', "texas@isi.edu"),
-                        ('label', 'evaporation')]
-        headers = {
-            'Accept': 'application/json',
-        }
-        response = self.client.open(
-            '/v1.5.0/custom/modelconfigurationsetups/variable',
-            method='GET',
-            headers=headers,
-            query_string=query_string)
-        self.logger.info("Response length texas@isi.edu {}".format(len(response.json)))
-        self.assertTrue(response.json)
-        self.assertGreater(len(response.json), 2)
-        self.assert200(response,
-                       'Response body is : ' + response.data.decode('utf-8'))
+#    def test_modelconfigurationsetups_custom_variable_texas(self):
+#        """Test case for modelconfigurationsetups_id_get
+#
+#        Get a ModelConfigurationSetup
+#        """
+#        query_string = [('username', "texas@isi.edu"),
+#                        ('label', 'evaporation')]
+#        headers = {
+#            'Accept': 'application/json',
+#        }
+#        response = self.client.open(
+#            '/v1.7.0/custom/modelconfigurationsetups/variable',
+#            method='GET',
+#            headers=headers,
+#            query_string=query_string)
+#        self.logger.info("Response length texas@isi.edu {}".format(len(response.json)))
+#        self.assertTrue(response.json)
+#        self.assertGreater(len(response.json), 2)
+#        self.assert200(response,
+#                       'Response body is : ' + response.data.decode('utf-8'))
 
 
 if __name__ == '__main__':

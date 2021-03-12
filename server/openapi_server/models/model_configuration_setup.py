@@ -15,7 +15,7 @@ class ModelConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, has_output_time_interval=None, doi=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, calibrated_variable=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, calibration_method=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, limitations=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, was_derived_from_setup=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, calibration_interval=None, publisher=None, has_output=None, runtime_estimation=None, has_output_time_interval=None, status=None, doi=None, parameter_assignment_method=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, calibration_target_variable=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, valid_until=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ModelConfigurationSetup - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this ModelConfigurationSetup.  # noqa: E501
@@ -56,6 +56,8 @@ class ModelConfigurationSetup(Model):
         :type tag: List[str]
         :param id: The id of this ModelConfigurationSetup.  # noqa: E501
         :type id: str
+        :param limitations: The limitations of this ModelConfigurationSetup.  # noqa: E501
+        :type limitations: List[str]
         :param identifier: The identifier of this ModelConfigurationSetup.  # noqa: E501
         :type identifier: List[str]
         :param has_sample_execution: The has_sample_execution of this ModelConfigurationSetup.  # noqa: E501
@@ -64,6 +66,8 @@ class ModelConfigurationSetup(Model):
         :type has_sample_result: List[SampleResource]
         :param author: The author of this ModelConfigurationSetup.  # noqa: E501
         :type author: List[object]
+        :param was_derived_from_setup: The was_derived_from_setup of this ModelConfigurationSetup.  # noqa: E501
+        :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.  # noqa: E501
         :type has_constraint: List[str]
         :param has_build_file: The has_build_file of this ModelConfigurationSetup.  # noqa: E501
@@ -73,7 +77,9 @@ class ModelConfigurationSetup(Model):
         :param has_execution_command: The has_execution_command of this ModelConfigurationSetup.  # noqa: E501
         :type has_execution_command: List[str]
         :param date_published: The date_published of this ModelConfigurationSetup.  # noqa: E501
-        :type date_published: List[datetime]
+        :type date_published: List[str]
+        :param theoretical_basis: The theoretical_basis of this ModelConfigurationSetup.  # noqa: E501
+        :type theoretical_basis: List[str]
         :param license: The license of this ModelConfigurationSetup.  # noqa: E501
         :type license: List[str]
         :param has_source_code: The has_source_code of this ModelConfigurationSetup.  # noqa: E501
@@ -90,8 +96,12 @@ class ModelConfigurationSetup(Model):
         :type publisher: List[object]
         :param has_output: The has_output of this ModelConfigurationSetup.  # noqa: E501
         :type has_output: List[DatasetSpecification]
+        :param runtime_estimation: The runtime_estimation of this ModelConfigurationSetup.  # noqa: E501
+        :type runtime_estimation: List[str]
         :param has_output_time_interval: The has_output_time_interval of this ModelConfigurationSetup.  # noqa: E501
         :type has_output_time_interval: List[TimeInterval]
+        :param status: The status of this ModelConfigurationSetup.  # noqa: E501
+        :type status: List[str]
         :param doi: The doi of this ModelConfigurationSetup.  # noqa: E501
         :type doi: List[str]
         :param parameter_assignment_method: The parameter_assignment_method of this ModelConfigurationSetup.  # noqa: E501
@@ -115,7 +125,7 @@ class ModelConfigurationSetup(Model):
         :param screenshot: The screenshot of this ModelConfigurationSetup.  # noqa: E501
         :type screenshot: List[Image]
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.  # noqa: E501
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         :param had_primary_source: The had_primary_source of this ModelConfigurationSetup.  # noqa: E501
         :type had_primary_source: List[object]
         :param issue_tracker: The issue_tracker of this ModelConfigurationSetup.  # noqa: E501
@@ -123,7 +133,7 @@ class ModelConfigurationSetup(Model):
         :param has_software_image: The has_software_image of this ModelConfigurationSetup.  # noqa: E501
         :type has_software_image: List[SoftwareImage]
         :param date_created: The date_created of this ModelConfigurationSetup.  # noqa: E501
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         :param contributor: The contributor of this ModelConfigurationSetup.  # noqa: E501
         :type contributor: List[Person]
         :param has_model_result_table: The has_model_result_table of this ModelConfigurationSetup.  # noqa: E501
@@ -146,6 +156,8 @@ class ModelConfigurationSetup(Model):
         :type citation: List[str]
         :param processor_requirements: The processor_requirements of this ModelConfigurationSetup.  # noqa: E501
         :type processor_requirements: List[str]
+        :param parameterization: The parameterization of this ModelConfigurationSetup.  # noqa: E501
+        :type parameterization: List[str]
         :param adjustable_parameter: The adjustable_parameter of this ModelConfigurationSetup.  # noqa: E501
         :type adjustable_parameter: List[Parameter]
         :param has_usage_notes: The has_usage_notes of this ModelConfigurationSetup.  # noqa: E501
@@ -165,7 +177,7 @@ class ModelConfigurationSetup(Model):
         :param has_executable_notebook: The has_executable_notebook of this ModelConfigurationSetup.  # noqa: E501
         :type has_executable_notebook: List[str]
         :param valid_until: The valid_until of this ModelConfigurationSetup.  # noqa: E501
-        :type valid_until: List[datetime]
+        :type valid_until: List[str]
         :param has_equation: The has_equation of this ModelConfigurationSetup.  # noqa: E501
         :type has_equation: List[Equation]
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfigurationSetup.  # noqa: E501
@@ -180,6 +192,7 @@ class ModelConfigurationSetup(Model):
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.grid import Grid
         from openapi_server.models.image import Image
+        from openapi_server.models.model_category import ModelCategory
         from openapi_server.models.numerical_index import NumericalIndex
         from openapi_server.models.parameter import Parameter
         from openapi_server.models.person import Person
@@ -195,6 +208,8 @@ class ModelConfigurationSetup(Model):
         from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -237,15 +252,18 @@ class ModelConfigurationSetup(Model):
             'has_contact_person': List[object],
             'tag': List[str],
             'id': str,
+            'limitations': List[str],
             'identifier': List[str],
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
             'author': List[object],
+            'was_derived_from_setup': List[ConfigurationSetup],
             'has_constraint': List[str],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
-            'date_published': List[datetime],
+            'date_published': List[str],
+            'theoretical_basis': List[str],
             'license': List[str],
             'has_source_code': List[SourceCode],
             'has_setup': List[ConfigurationSetup],
@@ -254,7 +272,9 @@ class ModelConfigurationSetup(Model):
             'calibration_interval': List[str],
             'publisher': List[object],
             'has_output': List[DatasetSpecification],
+            'runtime_estimation': List[str],
             'has_output_time_interval': List[TimeInterval],
+            'status': List[str],
             'doi': List[str],
             'parameter_assignment_method': List[str],
             'has_funding': List[FundingInformation],
@@ -266,11 +286,11 @@ class ModelConfigurationSetup(Model):
             'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'has_model_category': List[str],
+            'has_model_category': List[ModelCategory],
             'had_primary_source': List[object],
             'issue_tracker': List[str],
             'has_software_image': List[SoftwareImage],
-            'date_created': List[datetime],
+            'date_created': List[str],
             'contributor': List[Person],
             'has_model_result_table': List[str],
             'calibration_target_variable': List[VariablePresentation],
@@ -282,6 +302,7 @@ class ModelConfigurationSetup(Model):
             'website': List[str],
             'citation': List[str],
             'processor_requirements': List[str],
+            'parameterization': List[str],
             'adjustable_parameter': List[Parameter],
             'has_usage_notes': List[str],
             'has_support_script_location': List[str],
@@ -291,7 +312,7 @@ class ModelConfigurationSetup(Model):
             'has_parameter': List[Parameter],
             'operating_systems': List[str],
             'has_executable_notebook': List[str],
-            'valid_until': List[datetime],
+            'valid_until': List[str],
             'has_equation': List[Equation],
             'useful_for_calculating_index': List[NumericalIndex],
             'has_input': List[DatasetSpecification]
@@ -317,15 +338,18 @@ class ModelConfigurationSetup(Model):
             'has_contact_person': 'hasContactPerson',
             'tag': 'tag',
             'id': 'id',
+            'limitations': 'limitations',
             'identifier': 'identifier',
             'has_sample_execution': 'hasSampleExecution',
             'has_sample_result': 'hasSampleResult',
             'author': 'author',
+            'was_derived_from_setup': 'wasDerivedFromSetup',
             'has_constraint': 'hasConstraint',
             'has_build_file': 'hasBuildFile',
             'short_description': 'shortDescription',
             'has_execution_command': 'hasExecutionCommand',
             'date_published': 'datePublished',
+            'theoretical_basis': 'theoreticalBasis',
             'license': 'license',
             'has_source_code': 'hasSourceCode',
             'has_setup': 'hasSetup',
@@ -334,7 +358,9 @@ class ModelConfigurationSetup(Model):
             'calibration_interval': 'calibrationInterval',
             'publisher': 'publisher',
             'has_output': 'hasOutput',
+            'runtime_estimation': 'runtimeEstimation',
             'has_output_time_interval': 'hasOutputTimeInterval',
+            'status': 'status',
             'doi': 'doi',
             'parameter_assignment_method': 'parameterAssignmentMethod',
             'has_funding': 'hasFunding',
@@ -362,6 +388,7 @@ class ModelConfigurationSetup(Model):
             'website': 'website',
             'citation': 'citation',
             'processor_requirements': 'processorRequirements',
+            'parameterization': 'parameterization',
             'adjustable_parameter': 'adjustableParameter',
             'has_usage_notes': 'hasUsageNotes',
             'has_support_script_location': 'hasSupportScriptLocation',
@@ -396,15 +423,18 @@ class ModelConfigurationSetup(Model):
         self._has_contact_person = has_contact_person
         self._tag = tag
         self._id = id
+        self._limitations = limitations
         self._identifier = identifier
         self._has_sample_execution = has_sample_execution
         self._has_sample_result = has_sample_result
         self._author = author
+        self._was_derived_from_setup = was_derived_from_setup
         self._has_constraint = has_constraint
         self._has_build_file = has_build_file
         self._short_description = short_description
         self._has_execution_command = has_execution_command
         self._date_published = date_published
+        self._theoretical_basis = theoretical_basis
         self._license = license
         self._has_source_code = has_source_code
         self._has_setup = has_setup
@@ -413,7 +443,9 @@ class ModelConfigurationSetup(Model):
         self._calibration_interval = calibration_interval
         self._publisher = publisher
         self._has_output = has_output
+        self._runtime_estimation = runtime_estimation
         self._has_output_time_interval = has_output_time_interval
+        self._status = status
         self._doi = doi
         self._parameter_assignment_method = parameter_assignment_method
         self._has_funding = has_funding
@@ -441,6 +473,7 @@ class ModelConfigurationSetup(Model):
         self._website = website
         self._citation = citation
         self._processor_requirements = processor_requirements
+        self._parameterization = parameterization
         self._adjustable_parameter = adjustable_parameter
         self._has_usage_notes = has_usage_notes
         self._has_support_script_location = has_support_script_location
@@ -904,6 +937,27 @@ class ModelConfigurationSetup(Model):
         self._id = id
 
     @property
+    def limitations(self):
+        """Gets the limitations of this ModelConfigurationSetup.
+
+
+        :return: The limitations of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._limitations
+
+    @limitations.setter
+    def limitations(self, limitations):
+        """Sets the limitations of this ModelConfigurationSetup.
+
+
+        :param limitations: The limitations of this ModelConfigurationSetup.
+        :type limitations: List[str]
+        """
+
+        self._limitations = limitations
+
+    @property
     def identifier(self):
         """Gets the identifier of this ModelConfigurationSetup.
 
@@ -994,6 +1048,29 @@ class ModelConfigurationSetup(Model):
         """
 
         self._author = author
+
+    @property
+    def was_derived_from_setup(self):
+        """Gets the was_derived_from_setup of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The was_derived_from_setup of this ModelConfigurationSetup.
+        :rtype: List[ConfigurationSetup]
+        """
+        return self._was_derived_from_setup
+
+    @was_derived_from_setup.setter
+    def was_derived_from_setup(self, was_derived_from_setup):
+        """Sets the was_derived_from_setup of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param was_derived_from_setup: The was_derived_from_setup of this ModelConfigurationSetup.
+        :type was_derived_from_setup: List[ConfigurationSetup]
+        """
+
+        self._was_derived_from_setup = was_derived_from_setup
 
     @property
     def has_constraint(self):
@@ -1094,7 +1171,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The date_published of this ModelConfigurationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_published
 
@@ -1105,10 +1182,31 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :param date_published: The date_published of this ModelConfigurationSetup.
-        :type date_published: List[datetime]
+        :type date_published: List[str]
         """
 
         self._date_published = date_published
+
+    @property
+    def theoretical_basis(self):
+        """Gets the theoretical_basis of this ModelConfigurationSetup.
+
+
+        :return: The theoretical_basis of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._theoretical_basis
+
+    @theoretical_basis.setter
+    def theoretical_basis(self, theoretical_basis):
+        """Sets the theoretical_basis of this ModelConfigurationSetup.
+
+
+        :param theoretical_basis: The theoretical_basis of this ModelConfigurationSetup.
+        :type theoretical_basis: List[str]
+        """
+
+        self._theoretical_basis = theoretical_basis
 
     @property
     def license(self):
@@ -1295,6 +1393,29 @@ class ModelConfigurationSetup(Model):
         self._has_output = has_output
 
     @property
+    def runtime_estimation(self):
+        """Gets the runtime_estimation of this ModelConfigurationSetup.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :return: The runtime_estimation of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._runtime_estimation
+
+    @runtime_estimation.setter
+    def runtime_estimation(self, runtime_estimation):
+        """Sets the runtime_estimation of this ModelConfigurationSetup.
+
+        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+
+        :param runtime_estimation: The runtime_estimation of this ModelConfigurationSetup.
+        :type runtime_estimation: List[str]
+        """
+
+        self._runtime_estimation = runtime_estimation
+
+    @property
     def has_output_time_interval(self):
         """Gets the has_output_time_interval of this ModelConfigurationSetup.
 
@@ -1316,6 +1437,29 @@ class ModelConfigurationSetup(Model):
         """
 
         self._has_output_time_interval = has_output_time_interval
+
+    @property
+    def status(self):
+        """Gets the status of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :return: The status of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ModelConfigurationSetup.
+
+        Description not available  # noqa: E501
+
+        :param status: The status of this ModelConfigurationSetup.
+        :type status: List[str]
+        """
+
+        self._status = status
 
     @property
     def doi(self):
@@ -1574,10 +1718,10 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self):
         """Gets the has_model_category of this ModelConfigurationSetup.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :return: The has_model_category of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[ModelCategory]
         """
         return self._has_model_category
 
@@ -1585,10 +1729,10 @@ class ModelConfigurationSetup(Model):
     def has_model_category(self, has_model_category):
         """Sets the has_model_category of this ModelConfigurationSetup.
 
-        Category associated with a model (e.g., Hydrology)  # noqa: E501
+        Category associated with a model (e.g., Hydrology, etc.)  # noqa: E501
 
         :param has_model_category: The has_model_category of this ModelConfigurationSetup.
-        :type has_model_category: List[str]
+        :type has_model_category: List[ModelCategory]
         """
 
         self._has_model_category = has_model_category
@@ -1669,7 +1813,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :return: The date_created of this ModelConfigurationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._date_created
 
@@ -1680,7 +1824,7 @@ class ModelConfigurationSetup(Model):
         Description not available  # noqa: E501
 
         :param date_created: The date_created of this ModelConfigurationSetup.
-        :type date_created: List[datetime]
+        :type date_created: List[str]
         """
 
         self._date_created = date_created
@@ -1939,6 +2083,27 @@ class ModelConfigurationSetup(Model):
         self._processor_requirements = processor_requirements
 
     @property
+    def parameterization(self):
+        """Gets the parameterization of this ModelConfigurationSetup.
+
+
+        :return: The parameterization of this ModelConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._parameterization
+
+    @parameterization.setter
+    def parameterization(self, parameterization):
+        """Sets the parameterization of this ModelConfigurationSetup.
+
+
+        :param parameterization: The parameterization of this ModelConfigurationSetup.
+        :type parameterization: List[str]
+        """
+
+        self._parameterization = parameterization
+
+    @property
     def adjustable_parameter(self):
         """Gets the adjustable_parameter of this ModelConfigurationSetup.
 
@@ -2152,7 +2317,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :return: The valid_until of this ModelConfigurationSetup.
-        :rtype: List[datetime]
+        :rtype: List[str]
         """
         return self._valid_until
 
@@ -2163,7 +2328,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :param valid_until: The valid_until of this ModelConfigurationSetup.
-        :type valid_until: List[datetime]
+        :type valid_until: List[str]
         """
 
         self._valid_until = valid_until

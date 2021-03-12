@@ -26,7 +26,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/models/{}'.format("CYCLES"),
+            '/v1.7.0/models/{}'.format("CYCLES"),
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -48,7 +48,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/models/variable',
+            '/v1.7.0/custom/models/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -69,7 +69,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/model/intervention',
+            '/v1.7.0/custom/model/intervention',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -90,7 +90,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/model/region',
+            '/v1.7.0/custom/model/region',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -111,7 +111,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/models/variable',
+            '/v1.7.0/custom/models/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -132,7 +132,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.5.0/custom/models/standard_variable',
+            '/v1.7.0/custom/models/standard_variable',
             method='GET',
             headers=headers,
             query_string=query_string)
