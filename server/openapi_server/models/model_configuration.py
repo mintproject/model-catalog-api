@@ -15,7 +15,7 @@ class ModelConfiguration(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, limitations=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, runtime_estimation=None, has_output_time_interval=None, doi=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_model_result_table=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_grid=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_region=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, limitations=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, theoretical_basis=None, license=None, has_source_code=None, has_setup=None, has_explanation_diagram=None, has_example=None, publisher=None, has_output=None, runtime_estimation=None, has_output_time_interval=None, doi=None, has_funding=None, has_component_location=None, has_process=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, has_model_category=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_input_variable=None, has_model_result_table=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, has_causal_diagram=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, parameterization=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, has_equation=None, useful_for_calculating_index=None, has_input=None, has_output_variable=None):  # noqa: E501
         """ModelConfiguration - a model defined in OpenAPI
 
         :param has_download_instructions: The has_download_instructions of this ModelConfiguration.  # noqa: E501
@@ -124,6 +124,8 @@ class ModelConfiguration(Model):
         :type date_created: List[str]
         :param contributor: The contributor of this ModelConfiguration.  # noqa: E501
         :type contributor: List[Person]
+        :param has_input_variable: The has_input_variable of this ModelConfiguration.  # noqa: E501
+        :type has_input_variable: List[VariablePresentation]
         :param has_model_result_table: The has_model_result_table of this ModelConfiguration.  # noqa: E501
         :type has_model_result_table: List[str]
         :param has_purpose: The has_purpose of this ModelConfiguration.  # noqa: E501
@@ -166,6 +168,8 @@ class ModelConfiguration(Model):
         :type useful_for_calculating_index: List[NumericalIndex]
         :param has_input: The has_input of this ModelConfiguration.  # noqa: E501
         :type has_input: List[DatasetSpecification]
+        :param has_output_variable: The has_output_variable of this ModelConfiguration.  # noqa: E501
+        :type has_output_variable: List[VariablePresentation]
         """
         from openapi_server.models.causal_diagram import CausalDiagram
         from openapi_server.models.configuration_setup import ConfigurationSetup
@@ -187,8 +191,10 @@ class ModelConfiguration(Model):
         from openapi_server.models.software_version import SoftwareVersion
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.time_interval import TimeInterval
+        from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -266,6 +272,7 @@ class ModelConfiguration(Model):
             'has_software_image': List[SoftwareImage],
             'date_created': List[str],
             'contributor': List[Person],
+            'has_input_variable': List[VariablePresentation],
             'has_model_result_table': List[str],
             'has_purpose': List[str],
             'has_executable_instructions': List[str],
@@ -286,7 +293,8 @@ class ModelConfiguration(Model):
             'has_executable_notebook': List[str],
             'has_equation': List[Equation],
             'useful_for_calculating_index': List[NumericalIndex],
-            'has_input': List[DatasetSpecification]
+            'has_input': List[DatasetSpecification],
+            'has_output_variable': List[VariablePresentation]
         }
 
         self.attribute_map = {
@@ -343,6 +351,7 @@ class ModelConfiguration(Model):
             'has_software_image': 'hasSoftwareImage',
             'date_created': 'dateCreated',
             'contributor': 'contributor',
+            'has_input_variable': 'hasInputVariable',
             'has_model_result_table': 'hasModelResultTable',
             'has_purpose': 'hasPurpose',
             'has_executable_instructions': 'hasExecutableInstructions',
@@ -363,7 +372,8 @@ class ModelConfiguration(Model):
             'has_executable_notebook': 'hasExecutableNotebook',
             'has_equation': 'hasEquation',
             'useful_for_calculating_index': 'usefulForCalculatingIndex',
-            'has_input': 'hasInput'
+            'has_input': 'hasInput',
+            'has_output_variable': 'hasOutputVariable'
         }
 
         self._has_download_instructions = has_download_instructions
@@ -419,6 +429,7 @@ class ModelConfiguration(Model):
         self._has_software_image = has_software_image
         self._date_created = date_created
         self._contributor = contributor
+        self._has_input_variable = has_input_variable
         self._has_model_result_table = has_model_result_table
         self._has_purpose = has_purpose
         self._has_executable_instructions = has_executable_instructions
@@ -440,6 +451,7 @@ class ModelConfiguration(Model):
         self._has_equation = has_equation
         self._useful_for_calculating_index = useful_for_calculating_index
         self._has_input = has_input
+        self._has_output_variable = has_output_variable
 
     @classmethod
     def from_dict(cls, dikt) -> 'ModelConfiguration':
@@ -847,6 +859,7 @@ class ModelConfiguration(Model):
     def limitations(self):
         """Gets the limitations of this ModelConfiguration.
 
+        Known restrictions (i.e. cases where the model is known not to be reliable or shouldn't be used)  # noqa: E501
 
         :return: The limitations of this ModelConfiguration.
         :rtype: List[str]
@@ -857,6 +870,7 @@ class ModelConfiguration(Model):
     def limitations(self, limitations):
         """Sets the limitations of this ModelConfiguration.
 
+        Known restrictions (i.e. cases where the model is known not to be reliable or shouldn't be used)  # noqa: E501
 
         :param limitations: The limitations of this ModelConfiguration.
         :type limitations: List[str]
@@ -1075,6 +1089,7 @@ class ModelConfiguration(Model):
     def theoretical_basis(self):
         """Gets the theoretical_basis of this ModelConfiguration.
 
+        What is the theory behind the processes described in the model  # noqa: E501
 
         :return: The theoretical_basis of this ModelConfiguration.
         :rtype: List[str]
@@ -1085,6 +1100,7 @@ class ModelConfiguration(Model):
     def theoretical_basis(self, theoretical_basis):
         """Sets the theoretical_basis of this ModelConfiguration.
 
+        What is the theory behind the processes described in the model  # noqa: E501
 
         :param theoretical_basis: The theoretical_basis of this ModelConfiguration.
         :type theoretical_basis: List[str]
@@ -1257,7 +1273,7 @@ class ModelConfiguration(Model):
     def runtime_estimation(self):
         """Gets the runtime_estimation of this ModelConfiguration.
 
-        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+        An estimate of the time required to run example codes or other known configurations  # noqa: E501
 
         :return: The runtime_estimation of this ModelConfiguration.
         :rtype: List[str]
@@ -1268,7 +1284,7 @@ class ModelConfiguration(Model):
     def runtime_estimation(self, runtime_estimation):
         """Sets the runtime_estimation of this ModelConfiguration.
 
-        Property that indicates the estimated time it will take to run this model.  # noqa: E501
+        An estimate of the time required to run example codes or other known configurations  # noqa: E501
 
         :param runtime_estimation: The runtime_estimation of this ModelConfiguration.
         :type runtime_estimation: List[str]
@@ -1372,7 +1388,7 @@ class ModelConfiguration(Model):
     def has_process(self):
         """Gets the has_process of this ModelConfiguration.
 
-        Property that indicates which physical processes (if any) are associated with a model configuration  # noqa: E501
+        Property that indicates which physical processes (if any) are associated with a model  # noqa: E501
 
         :return: The has_process of this ModelConfiguration.
         :rtype: List[Process]
@@ -1383,7 +1399,7 @@ class ModelConfiguration(Model):
     def has_process(self, has_process):
         """Sets the has_process of this ModelConfiguration.
 
-        Property that indicates which physical processes (if any) are associated with a model configuration  # noqa: E501
+        Property that indicates which physical processes (if any) are associated with a model  # noqa: E501
 
         :param has_process: The has_process of this ModelConfiguration.
         :type has_process: List[Process]
@@ -1668,6 +1684,29 @@ class ModelConfiguration(Model):
         self._contributor = contributor
 
     @property
+    def has_input_variable(self):
+        """Gets the has_input_variable of this ModelConfiguration.
+
+        Variable that is used as input for this model  # noqa: E501
+
+        :return: The has_input_variable of this ModelConfiguration.
+        :rtype: List[VariablePresentation]
+        """
+        return self._has_input_variable
+
+    @has_input_variable.setter
+    def has_input_variable(self, has_input_variable):
+        """Sets the has_input_variable of this ModelConfiguration.
+
+        Variable that is used as input for this model  # noqa: E501
+
+        :param has_input_variable: The has_input_variable of this ModelConfiguration.
+        :type has_input_variable: List[VariablePresentation]
+        """
+
+        self._has_input_variable = has_input_variable
+
+    @property
     def has_model_result_table(self):
         """Gets the has_model_result_table of this ModelConfiguration.
 
@@ -1878,6 +1917,7 @@ class ModelConfiguration(Model):
     def parameterization(self):
         """Gets the parameterization of this ModelConfiguration.
 
+        Were there any simplifications made to processes to make the model more efficient  # noqa: E501
 
         :return: The parameterization of this ModelConfiguration.
         :rtype: List[str]
@@ -1888,6 +1928,7 @@ class ModelConfiguration(Model):
     def parameterization(self, parameterization):
         """Sets the parameterization of this ModelConfiguration.
 
+        Were there any simplifications made to processes to make the model more efficient  # noqa: E501
 
         :param parameterization: The parameterization of this ModelConfiguration.
         :type parameterization: List[str]
@@ -2147,3 +2188,26 @@ class ModelConfiguration(Model):
         """
 
         self._has_input = has_input
+
+    @property
+    def has_output_variable(self):
+        """Gets the has_output_variable of this ModelConfiguration.
+
+        Variable that is used as output for this model  # noqa: E501
+
+        :return: The has_output_variable of this ModelConfiguration.
+        :rtype: List[VariablePresentation]
+        """
+        return self._has_output_variable
+
+    @has_output_variable.setter
+    def has_output_variable(self, has_output_variable):
+        """Sets the has_output_variable of this ModelConfiguration.
+
+        Variable that is used as output for this model  # noqa: E501
+
+        :param has_output_variable: The has_output_variable of this ModelConfiguration.
+        :type has_output_variable: List[VariablePresentation]
+        """
+
+        self._has_output_variable = has_output_variable

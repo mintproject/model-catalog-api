@@ -110,6 +110,11 @@
         "@id": "https://w3id.org/okn/o/sd#issueTracker",
         "@container": "@set"
     },
+    "hasInputVariable": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasInputVariable",
+        "@container": "@set"
+    },
     "hasModelResultTable": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#hasModelResultTable",
@@ -523,6 +528,11 @@
     },
     "DataTransformation": {"@id": "https://w3id.org/okn/o/sd#DataTransformation"},
     "Model": {"@id": "https://w3id.org/okn/o/sdm#Model"},
+    "hasOutputVariable": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasOutputVariable",
+        "@container": "@set"
+    },
     "partOf": {
         "@type": "@id",
         "@id": "https://w3id.org/okn/o/sdm#partOf",
