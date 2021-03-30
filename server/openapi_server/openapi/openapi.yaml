@@ -2,14 +2,14 @@ openapi: 3.0.1
 info:
   description: This is the API of the Software Description Ontology at [https://w3id.org/okn/o/sdm](https://w3id.org/okn/o/sdm)
   title: Model Catalog
-  version: v1.7.0
+  version: v1.7.2
 externalDocs:
   description: Model Catalog
   url: https://w3id.org/okn/o/sdm
 servers:
 - url: https://api.models.mint.isi.edu/v1.7.0
-- url: https://dev.api.models.mint.isi.edu/v1.7.0
 - url: http://localhost:8080/v1.7.0
+- url: https://api.models.wildfire.mint.isi.edu/v1.7.0
 paths:
   /catalogidentifiers:
     get:
@@ -1047,6 +1047,48 @@ paths:
       tags:
       - ModelConfiguration
       x-openapi-router-controller: openapi_server.controllers.model_configuration_controller
+    x-oba-custom: true
+  /custom/modelconfigurations/{id}/inputs:
+    get:
+      description: Gets all inputs of a configuration
+      operationId: custom_modelconfigurations_id_inputs_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the custom query
+        explode: true
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_allinputs
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetSpecification'
+          description: Gets all inputs of a configuration
+      summary: Gets all inputs of a configuration
+      tags:
+      - DatasetSpecification
+      x-openapi-router-controller: openapi_server.controllers.dataset_specification_controller
     x-oba-custom: true
   /custom/modelconfigurationsetups/variable:
     get:
@@ -16970,17 +17012,17 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          description: Contributor to a software component
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:
