@@ -15,43 +15,43 @@ class CatalogIdentifier(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, has_default_value=None, has_maximum_accepted_value=None, description=None, has_data_type=None, has_fixed_value=None, has_presentation=None, label=None, recommended_increment=None, type=None, has_minimum_accepted_value=None, has_accepted_values=None, adjusts_variable=None, relevant_for_intervention=None, position=None, id=None, uses_unit=None, has_step_size=None):  # noqa: E501
+    def __init__(self, adjusts_variable=None, description=None, has_accepted_values=None, has_data_type=None, has_default_value=None, has_fixed_value=None, has_maximum_accepted_value=None, has_minimum_accepted_value=None, has_presentation=None, has_step_size=None, id=None, label=None, position=None, recommended_increment=None, relevant_for_intervention=None, type=None, uses_unit=None):  # noqa: E501
         """CatalogIdentifier - a model defined in OpenAPI
 
-        :param has_default_value: The has_default_value of this CatalogIdentifier.  # noqa: E501
-        :type has_default_value: List[object]
-        :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.  # noqa: E501
-        :type has_maximum_accepted_value: List[object]
-        :param description: The description of this CatalogIdentifier.  # noqa: E501
-        :type description: List[str]
-        :param has_data_type: The has_data_type of this CatalogIdentifier.  # noqa: E501
-        :type has_data_type: List[str]
-        :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.  # noqa: E501
-        :type has_fixed_value: List[object]
-        :param has_presentation: The has_presentation of this CatalogIdentifier.  # noqa: E501
-        :type has_presentation: List[VariablePresentation]
-        :param label: The label of this CatalogIdentifier.  # noqa: E501
-        :type label: List[str]
-        :param recommended_increment: The recommended_increment of this CatalogIdentifier.  # noqa: E501
-        :type recommended_increment: List[float]
-        :param type: The type of this CatalogIdentifier.  # noqa: E501
-        :type type: List[str]
-        :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.  # noqa: E501
-        :type has_minimum_accepted_value: List[object]
-        :param has_accepted_values: The has_accepted_values of this CatalogIdentifier.  # noqa: E501
-        :type has_accepted_values: List[str]
         :param adjusts_variable: The adjusts_variable of this CatalogIdentifier.  # noqa: E501
         :type adjusts_variable: List[Variable]
-        :param relevant_for_intervention: The relevant_for_intervention of this CatalogIdentifier.  # noqa: E501
-        :type relevant_for_intervention: List[Intervention]
-        :param position: The position of this CatalogIdentifier.  # noqa: E501
-        :type position: List[int]
-        :param id: The id of this CatalogIdentifier.  # noqa: E501
-        :type id: str
-        :param uses_unit: The uses_unit of this CatalogIdentifier.  # noqa: E501
-        :type uses_unit: List[Unit]
+        :param description: The description of this CatalogIdentifier.  # noqa: E501
+        :type description: List[str]
+        :param has_accepted_values: The has_accepted_values of this CatalogIdentifier.  # noqa: E501
+        :type has_accepted_values: List[str]
+        :param has_data_type: The has_data_type of this CatalogIdentifier.  # noqa: E501
+        :type has_data_type: List[str]
+        :param has_default_value: The has_default_value of this CatalogIdentifier.  # noqa: E501
+        :type has_default_value: List[object]
+        :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.  # noqa: E501
+        :type has_fixed_value: List[object]
+        :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.  # noqa: E501
+        :type has_maximum_accepted_value: List[object]
+        :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.  # noqa: E501
+        :type has_minimum_accepted_value: List[object]
+        :param has_presentation: The has_presentation of this CatalogIdentifier.  # noqa: E501
+        :type has_presentation: List[VariablePresentation]
         :param has_step_size: The has_step_size of this CatalogIdentifier.  # noqa: E501
         :type has_step_size: List[float]
+        :param id: The id of this CatalogIdentifier.  # noqa: E501
+        :type id: str
+        :param label: The label of this CatalogIdentifier.  # noqa: E501
+        :type label: List[str]
+        :param position: The position of this CatalogIdentifier.  # noqa: E501
+        :type position: List[int]
+        :param recommended_increment: The recommended_increment of this CatalogIdentifier.  # noqa: E501
+        :type recommended_increment: List[float]
+        :param relevant_for_intervention: The relevant_for_intervention of this CatalogIdentifier.  # noqa: E501
+        :type relevant_for_intervention: List[Intervention]
+        :param type: The type of this CatalogIdentifier.  # noqa: E501
+        :type type: List[str]
+        :param uses_unit: The uses_unit of this CatalogIdentifier.  # noqa: E501
+        :type uses_unit: List[Unit]
         """
         from openapi_server.models.intervention import Intervention
         from openapi_server.models.unit import Unit
@@ -66,62 +66,62 @@ class CatalogIdentifier(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'has_default_value': List[object],
-            'has_maximum_accepted_value': List[object],
-            'description': List[str],
-            'has_data_type': List[str],
-            'has_fixed_value': List[object],
-            'has_presentation': List[VariablePresentation],
-            'label': List[str],
-            'recommended_increment': List[float],
-            'type': List[str],
-            'has_minimum_accepted_value': List[object],
-            'has_accepted_values': List[str],
             'adjusts_variable': List[Variable],
-            'relevant_for_intervention': List[Intervention],
-            'position': List[int],
+            'description': List[str],
+            'has_accepted_values': List[str],
+            'has_data_type': List[str],
+            'has_default_value': List[object],
+            'has_fixed_value': List[object],
+            'has_maximum_accepted_value': List[object],
+            'has_minimum_accepted_value': List[object],
+            'has_presentation': List[VariablePresentation],
+            'has_step_size': List[float],
             'id': str,
-            'uses_unit': List[Unit],
-            'has_step_size': List[float]
+            'label': List[str],
+            'position': List[int],
+            'recommended_increment': List[float],
+            'relevant_for_intervention': List[Intervention],
+            'type': List[str],
+            'uses_unit': List[Unit]
         }
 
         self.attribute_map = {
-            'has_default_value': 'hasDefaultValue',
-            'has_maximum_accepted_value': 'hasMaximumAcceptedValue',
-            'description': 'description',
-            'has_data_type': 'hasDataType',
-            'has_fixed_value': 'hasFixedValue',
-            'has_presentation': 'hasPresentation',
-            'label': 'label',
-            'recommended_increment': 'recommendedIncrement',
-            'type': 'type',
-            'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
-            'has_accepted_values': 'hasAcceptedValues',
             'adjusts_variable': 'adjustsVariable',
-            'relevant_for_intervention': 'relevantForIntervention',
-            'position': 'position',
+            'description': 'description',
+            'has_accepted_values': 'hasAcceptedValues',
+            'has_data_type': 'hasDataType',
+            'has_default_value': 'hasDefaultValue',
+            'has_fixed_value': 'hasFixedValue',
+            'has_maximum_accepted_value': 'hasMaximumAcceptedValue',
+            'has_minimum_accepted_value': 'hasMinimumAcceptedValue',
+            'has_presentation': 'hasPresentation',
+            'has_step_size': 'hasStepSize',
             'id': 'id',
-            'uses_unit': 'usesUnit',
-            'has_step_size': 'hasStepSize'
+            'label': 'label',
+            'position': 'position',
+            'recommended_increment': 'recommendedIncrement',
+            'relevant_for_intervention': 'relevantForIntervention',
+            'type': 'type',
+            'uses_unit': 'usesUnit'
         }
 
-        self._has_default_value = has_default_value
-        self._has_maximum_accepted_value = has_maximum_accepted_value
-        self._description = description
-        self._has_data_type = has_data_type
-        self._has_fixed_value = has_fixed_value
-        self._has_presentation = has_presentation
-        self._label = label
-        self._recommended_increment = recommended_increment
-        self._type = type
-        self._has_minimum_accepted_value = has_minimum_accepted_value
-        self._has_accepted_values = has_accepted_values
         self._adjusts_variable = adjusts_variable
-        self._relevant_for_intervention = relevant_for_intervention
-        self._position = position
-        self._id = id
-        self._uses_unit = uses_unit
+        self._description = description
+        self._has_accepted_values = has_accepted_values
+        self._has_data_type = has_data_type
+        self._has_default_value = has_default_value
+        self._has_fixed_value = has_fixed_value
+        self._has_maximum_accepted_value = has_maximum_accepted_value
+        self._has_minimum_accepted_value = has_minimum_accepted_value
+        self._has_presentation = has_presentation
         self._has_step_size = has_step_size
+        self._id = id
+        self._label = label
+        self._position = position
+        self._recommended_increment = recommended_increment
+        self._relevant_for_intervention = relevant_for_intervention
+        self._type = type
+        self._uses_unit = uses_unit
 
     @classmethod
     def from_dict(cls, dikt) -> 'CatalogIdentifier':
@@ -133,259 +133,6 @@ class CatalogIdentifier(Model):
         :rtype: CatalogIdentifier
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def has_default_value(self):
-        """Gets the has_default_value of this CatalogIdentifier.
-
-        Default accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :return: The has_default_value of this CatalogIdentifier.
-        :rtype: List[object]
-        """
-        return self._has_default_value
-
-    @has_default_value.setter
-    def has_default_value(self, has_default_value):
-        """Sets the has_default_value of this CatalogIdentifier.
-
-        Default accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :param has_default_value: The has_default_value of this CatalogIdentifier.
-        :type has_default_value: List[object]
-        """
-
-        self._has_default_value = has_default_value
-
-    @property
-    def has_maximum_accepted_value(self):
-        """Gets the has_maximum_accepted_value of this CatalogIdentifier.
-
-        Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :return: The has_maximum_accepted_value of this CatalogIdentifier.
-        :rtype: List[object]
-        """
-        return self._has_maximum_accepted_value
-
-    @has_maximum_accepted_value.setter
-    def has_maximum_accepted_value(self, has_maximum_accepted_value):
-        """Sets the has_maximum_accepted_value of this CatalogIdentifier.
-
-        Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.
-        :type has_maximum_accepted_value: List[object]
-        """
-
-        self._has_maximum_accepted_value = has_maximum_accepted_value
-
-    @property
-    def description(self):
-        """Gets the description of this CatalogIdentifier.
-
-        small description  # noqa: E501
-
-        :return: The description of this CatalogIdentifier.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this CatalogIdentifier.
-
-        small description  # noqa: E501
-
-        :param description: The description of this CatalogIdentifier.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
-    def has_data_type(self):
-        """Gets the has_data_type of this CatalogIdentifier.
-
-        Property that indicates the data type of a parameter  # noqa: E501
-
-        :return: The has_data_type of this CatalogIdentifier.
-        :rtype: List[str]
-        """
-        return self._has_data_type
-
-    @has_data_type.setter
-    def has_data_type(self, has_data_type):
-        """Sets the has_data_type of this CatalogIdentifier.
-
-        Property that indicates the data type of a parameter  # noqa: E501
-
-        :param has_data_type: The has_data_type of this CatalogIdentifier.
-        :type has_data_type: List[str]
-        """
-
-        self._has_data_type = has_data_type
-
-    @property
-    def has_fixed_value(self):
-        """Gets the has_fixed_value of this CatalogIdentifier.
-
-        Value of a parameter in a software setup.  # noqa: E501
-
-        :return: The has_fixed_value of this CatalogIdentifier.
-        :rtype: List[object]
-        """
-        return self._has_fixed_value
-
-    @has_fixed_value.setter
-    def has_fixed_value(self, has_fixed_value):
-        """Sets the has_fixed_value of this CatalogIdentifier.
-
-        Value of a parameter in a software setup.  # noqa: E501
-
-        :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.
-        :type has_fixed_value: List[object]
-        """
-
-        self._has_fixed_value = has_fixed_value
-
-    @property
-    def has_presentation(self):
-        """Gets the has_presentation of this CatalogIdentifier.
-
-        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
-
-        :return: The has_presentation of this CatalogIdentifier.
-        :rtype: List[VariablePresentation]
-        """
-        return self._has_presentation
-
-    @has_presentation.setter
-    def has_presentation(self, has_presentation):
-        """Sets the has_presentation of this CatalogIdentifier.
-
-        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
-
-        :param has_presentation: The has_presentation of this CatalogIdentifier.
-        :type has_presentation: List[VariablePresentation]
-        """
-
-        self._has_presentation = has_presentation
-
-    @property
-    def label(self):
-        """Gets the label of this CatalogIdentifier.
-
-        short description of the resource  # noqa: E501
-
-        :return: The label of this CatalogIdentifier.
-        :rtype: List[str]
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this CatalogIdentifier.
-
-        short description of the resource  # noqa: E501
-
-        :param label: The label of this CatalogIdentifier.
-        :type label: List[str]
-        """
-
-        self._label = label
-
-    @property
-    def recommended_increment(self):
-        """Gets the recommended_increment of this CatalogIdentifier.
-
-        Value that represents how a parameter should be incremented on each iteration of a software component execution. This value is important when preparing execution ensembles automatically, e.g., simulating crop production varying the parameter \"fertilizer amount\" in increments of 10%.  # noqa: E501
-
-        :return: The recommended_increment of this CatalogIdentifier.
-        :rtype: List[float]
-        """
-        return self._recommended_increment
-
-    @recommended_increment.setter
-    def recommended_increment(self, recommended_increment):
-        """Sets the recommended_increment of this CatalogIdentifier.
-
-        Value that represents how a parameter should be incremented on each iteration of a software component execution. This value is important when preparing execution ensembles automatically, e.g., simulating crop production varying the parameter \"fertilizer amount\" in increments of 10%.  # noqa: E501
-
-        :param recommended_increment: The recommended_increment of this CatalogIdentifier.
-        :type recommended_increment: List[float]
-        """
-
-        self._recommended_increment = recommended_increment
-
-    @property
-    def type(self):
-        """Gets the type of this CatalogIdentifier.
-
-        type of the resource  # noqa: E501
-
-        :return: The type of this CatalogIdentifier.
-        :rtype: List[str]
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this CatalogIdentifier.
-
-        type of the resource  # noqa: E501
-
-        :param type: The type of this CatalogIdentifier.
-        :type type: List[str]
-        """
-
-        self._type = type
-
-    @property
-    def has_minimum_accepted_value(self):
-        """Gets the has_minimum_accepted_value of this CatalogIdentifier.
-
-        Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :return: The has_minimum_accepted_value of this CatalogIdentifier.
-        :rtype: List[object]
-        """
-        return self._has_minimum_accepted_value
-
-    @has_minimum_accepted_value.setter
-    def has_minimum_accepted_value(self, has_minimum_accepted_value):
-        """Sets the has_minimum_accepted_value of this CatalogIdentifier.
-
-        Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
-
-        :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.
-        :type has_minimum_accepted_value: List[object]
-        """
-
-        self._has_minimum_accepted_value = has_minimum_accepted_value
-
-    @property
-    def has_accepted_values(self):
-        """Gets the has_accepted_values of this CatalogIdentifier.
-
-        Property that constraints which values are accepted for a parameter. For example, the name of a crop can only be \"Maize\" or \"Sorghum\"  # noqa: E501
-
-        :return: The has_accepted_values of this CatalogIdentifier.
-        :rtype: List[str]
-        """
-        return self._has_accepted_values
-
-    @has_accepted_values.setter
-    def has_accepted_values(self, has_accepted_values):
-        """Sets the has_accepted_values of this CatalogIdentifier.
-
-        Property that constraints which values are accepted for a parameter. For example, the name of a crop can only be \"Maize\" or \"Sorghum\"  # noqa: E501
-
-        :param has_accepted_values: The has_accepted_values of this CatalogIdentifier.
-        :type has_accepted_values: List[str]
-        """
-
-        self._has_accepted_values = has_accepted_values
 
     @property
     def adjusts_variable(self):
@@ -411,50 +158,211 @@ class CatalogIdentifier(Model):
         self._adjusts_variable = adjusts_variable
 
     @property
-    def relevant_for_intervention(self):
-        """Gets the relevant_for_intervention of this CatalogIdentifier.
+    def description(self):
+        """Gets the description of this CatalogIdentifier.
 
-        Description not available  # noqa: E501
+        small description  # noqa: E501
 
-        :return: The relevant_for_intervention of this CatalogIdentifier.
-        :rtype: List[Intervention]
+        :return: The description of this CatalogIdentifier.
+        :rtype: List[str]
         """
-        return self._relevant_for_intervention
+        return self._description
 
-    @relevant_for_intervention.setter
-    def relevant_for_intervention(self, relevant_for_intervention):
-        """Sets the relevant_for_intervention of this CatalogIdentifier.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CatalogIdentifier.
 
-        Description not available  # noqa: E501
+        small description  # noqa: E501
 
-        :param relevant_for_intervention: The relevant_for_intervention of this CatalogIdentifier.
-        :type relevant_for_intervention: List[Intervention]
+        :param description: The description of this CatalogIdentifier.
+        :type description: List[str]
         """
 
-        self._relevant_for_intervention = relevant_for_intervention
+        self._description = description
 
     @property
-    def position(self):
-        """Gets the position of this CatalogIdentifier.
+    def has_accepted_values(self):
+        """Gets the has_accepted_values of this CatalogIdentifier.
 
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+        Property that constraints which values are accepted for a parameter. For example, the name of a crop can only be \"Maize\" or \"Sorghum\"  # noqa: E501
 
-        :return: The position of this CatalogIdentifier.
-        :rtype: List[int]
+        :return: The has_accepted_values of this CatalogIdentifier.
+        :rtype: List[str]
         """
-        return self._position
+        return self._has_accepted_values
 
-    @position.setter
-    def position(self, position):
-        """Sets the position of this CatalogIdentifier.
+    @has_accepted_values.setter
+    def has_accepted_values(self, has_accepted_values):
+        """Sets the has_accepted_values of this CatalogIdentifier.
 
-        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+        Property that constraints which values are accepted for a parameter. For example, the name of a crop can only be \"Maize\" or \"Sorghum\"  # noqa: E501
 
-        :param position: The position of this CatalogIdentifier.
-        :type position: List[int]
+        :param has_accepted_values: The has_accepted_values of this CatalogIdentifier.
+        :type has_accepted_values: List[str]
         """
 
-        self._position = position
+        self._has_accepted_values = has_accepted_values
+
+    @property
+    def has_data_type(self):
+        """Gets the has_data_type of this CatalogIdentifier.
+
+        Property that indicates the data type of a parameter  # noqa: E501
+
+        :return: The has_data_type of this CatalogIdentifier.
+        :rtype: List[str]
+        """
+        return self._has_data_type
+
+    @has_data_type.setter
+    def has_data_type(self, has_data_type):
+        """Sets the has_data_type of this CatalogIdentifier.
+
+        Property that indicates the data type of a parameter  # noqa: E501
+
+        :param has_data_type: The has_data_type of this CatalogIdentifier.
+        :type has_data_type: List[str]
+        """
+
+        self._has_data_type = has_data_type
+
+    @property
+    def has_default_value(self):
+        """Gets the has_default_value of this CatalogIdentifier.
+
+        Default accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :return: The has_default_value of this CatalogIdentifier.
+        :rtype: List[object]
+        """
+        return self._has_default_value
+
+    @has_default_value.setter
+    def has_default_value(self, has_default_value):
+        """Sets the has_default_value of this CatalogIdentifier.
+
+        Default accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :param has_default_value: The has_default_value of this CatalogIdentifier.
+        :type has_default_value: List[object]
+        """
+
+        self._has_default_value = has_default_value
+
+    @property
+    def has_fixed_value(self):
+        """Gets the has_fixed_value of this CatalogIdentifier.
+
+        Value of a parameter in a software setup.  # noqa: E501
+
+        :return: The has_fixed_value of this CatalogIdentifier.
+        :rtype: List[object]
+        """
+        return self._has_fixed_value
+
+    @has_fixed_value.setter
+    def has_fixed_value(self, has_fixed_value):
+        """Sets the has_fixed_value of this CatalogIdentifier.
+
+        Value of a parameter in a software setup.  # noqa: E501
+
+        :param has_fixed_value: The has_fixed_value of this CatalogIdentifier.
+        :type has_fixed_value: List[object]
+        """
+
+        self._has_fixed_value = has_fixed_value
+
+    @property
+    def has_maximum_accepted_value(self):
+        """Gets the has_maximum_accepted_value of this CatalogIdentifier.
+
+        Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :return: The has_maximum_accepted_value of this CatalogIdentifier.
+        :rtype: List[object]
+        """
+        return self._has_maximum_accepted_value
+
+    @has_maximum_accepted_value.setter
+    def has_maximum_accepted_value(self, has_maximum_accepted_value):
+        """Sets the has_maximum_accepted_value of this CatalogIdentifier.
+
+        Maximum accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :param has_maximum_accepted_value: The has_maximum_accepted_value of this CatalogIdentifier.
+        :type has_maximum_accepted_value: List[object]
+        """
+
+        self._has_maximum_accepted_value = has_maximum_accepted_value
+
+    @property
+    def has_minimum_accepted_value(self):
+        """Gets the has_minimum_accepted_value of this CatalogIdentifier.
+
+        Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :return: The has_minimum_accepted_value of this CatalogIdentifier.
+        :rtype: List[object]
+        """
+        return self._has_minimum_accepted_value
+
+    @has_minimum_accepted_value.setter
+    def has_minimum_accepted_value(self, has_minimum_accepted_value):
+        """Sets the has_minimum_accepted_value of this CatalogIdentifier.
+
+        Minimum accepted value of a variable presentation (or a parameter)  # noqa: E501
+
+        :param has_minimum_accepted_value: The has_minimum_accepted_value of this CatalogIdentifier.
+        :type has_minimum_accepted_value: List[object]
+        """
+
+        self._has_minimum_accepted_value = has_minimum_accepted_value
+
+    @property
+    def has_presentation(self):
+        """Gets the has_presentation of this CatalogIdentifier.
+
+        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
+
+        :return: The has_presentation of this CatalogIdentifier.
+        :rtype: List[VariablePresentation]
+        """
+        return self._has_presentation
+
+    @has_presentation.setter
+    def has_presentation(self, has_presentation):
+        """Sets the has_presentation of this CatalogIdentifier.
+
+        Property that links an instance of a dataset (or a dataset specification) to the presentation of a variable contained (or expected to be contained) on it.  # noqa: E501
+
+        :param has_presentation: The has_presentation of this CatalogIdentifier.
+        :type has_presentation: List[VariablePresentation]
+        """
+
+        self._has_presentation = has_presentation
+
+    @property
+    def has_step_size(self):
+        """Gets the has_step_size of this CatalogIdentifier.
+
+        Property that determines what are the increments (step size) that are commonly used to vary a parameter. This is commonly used for automatically setting up software tests. For example, if I want to set up a model and try 30 reasonable values on a parameter, I may use the default value and the step size to create the appropriate increments. If the step size is 0.1 and the default value is 0, then I will will be able to create setups: 0, 0.1, 0.2...2.9,3  # noqa: E501
+
+        :return: The has_step_size of this CatalogIdentifier.
+        :rtype: List[float]
+        """
+        return self._has_step_size
+
+    @has_step_size.setter
+    def has_step_size(self, has_step_size):
+        """Sets the has_step_size of this CatalogIdentifier.
+
+        Property that determines what are the increments (step size) that are commonly used to vary a parameter. This is commonly used for automatically setting up software tests. For example, if I want to set up a model and try 30 reasonable values on a parameter, I may use the default value and the step size to create the appropriate increments. If the step size is 0.1 and the default value is 0, then I will will be able to create setups: 0, 0.1, 0.2...2.9,3  # noqa: E501
+
+        :param has_step_size: The has_step_size of this CatalogIdentifier.
+        :type has_step_size: List[float]
+        """
+
+        self._has_step_size = has_step_size
 
     @property
     def id(self):
@@ -480,6 +388,121 @@ class CatalogIdentifier(Model):
         self._id = id
 
     @property
+    def label(self):
+        """Gets the label of this CatalogIdentifier.
+
+        short description of the resource  # noqa: E501
+
+        :return: The label of this CatalogIdentifier.
+        :rtype: List[str]
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this CatalogIdentifier.
+
+        short description of the resource  # noqa: E501
+
+        :param label: The label of this CatalogIdentifier.
+        :type label: List[str]
+        """
+
+        self._label = label
+
+    @property
+    def position(self):
+        """Gets the position of this CatalogIdentifier.
+
+        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+
+        :return: The position of this CatalogIdentifier.
+        :rtype: List[int]
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this CatalogIdentifier.
+
+        Position of the parameter or input/output in the model configuration. This property is needed to know how to organize the I/O of the component on execution  # noqa: E501
+
+        :param position: The position of this CatalogIdentifier.
+        :type position: List[int]
+        """
+
+        self._position = position
+
+    @property
+    def recommended_increment(self):
+        """Gets the recommended_increment of this CatalogIdentifier.
+
+        Value that represents how a parameter should be incremented on each iteration of a software component execution. This value is important when preparing execution ensembles automatically, e.g., simulating crop production varying the parameter \"fertilizer amount\" in increments of 10%.  # noqa: E501
+
+        :return: The recommended_increment of this CatalogIdentifier.
+        :rtype: List[float]
+        """
+        return self._recommended_increment
+
+    @recommended_increment.setter
+    def recommended_increment(self, recommended_increment):
+        """Sets the recommended_increment of this CatalogIdentifier.
+
+        Value that represents how a parameter should be incremented on each iteration of a software component execution. This value is important when preparing execution ensembles automatically, e.g., simulating crop production varying the parameter \"fertilizer amount\" in increments of 10%.  # noqa: E501
+
+        :param recommended_increment: The recommended_increment of this CatalogIdentifier.
+        :type recommended_increment: List[float]
+        """
+
+        self._recommended_increment = recommended_increment
+
+    @property
+    def relevant_for_intervention(self):
+        """Gets the relevant_for_intervention of this CatalogIdentifier.
+
+        Description not available  # noqa: E501
+
+        :return: The relevant_for_intervention of this CatalogIdentifier.
+        :rtype: List[Intervention]
+        """
+        return self._relevant_for_intervention
+
+    @relevant_for_intervention.setter
+    def relevant_for_intervention(self, relevant_for_intervention):
+        """Sets the relevant_for_intervention of this CatalogIdentifier.
+
+        Description not available  # noqa: E501
+
+        :param relevant_for_intervention: The relevant_for_intervention of this CatalogIdentifier.
+        :type relevant_for_intervention: List[Intervention]
+        """
+
+        self._relevant_for_intervention = relevant_for_intervention
+
+    @property
+    def type(self):
+        """Gets the type of this CatalogIdentifier.
+
+        type of the resource  # noqa: E501
+
+        :return: The type of this CatalogIdentifier.
+        :rtype: List[str]
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this CatalogIdentifier.
+
+        type of the resource  # noqa: E501
+
+        :param type: The type of this CatalogIdentifier.
+        :type type: List[str]
+        """
+
+        self._type = type
+
+    @property
     def uses_unit(self):
         """Gets the uses_unit of this CatalogIdentifier.
 
@@ -501,26 +524,3 @@ class CatalogIdentifier(Model):
         """
 
         self._uses_unit = uses_unit
-
-    @property
-    def has_step_size(self):
-        """Gets the has_step_size of this CatalogIdentifier.
-
-        Property that determines what are the increments (step size) that are commonly used to vary a parameter. This is commonly used for automatically setting up software tests. For example, if I want to set up a model and try 30 reasonable values on a parameter, I may use the default value and the step size to create the appropriate increments. If the step size is 0.1 and the default value is 0, then I will will be able to create setups: 0, 0.1, 0.2...2.9,3  # noqa: E501
-
-        :return: The has_step_size of this CatalogIdentifier.
-        :rtype: List[float]
-        """
-        return self._has_step_size
-
-    @has_step_size.setter
-    def has_step_size(self, has_step_size):
-        """Sets the has_step_size of this CatalogIdentifier.
-
-        Property that determines what are the increments (step size) that are commonly used to vary a parameter. This is commonly used for automatically setting up software tests. For example, if I want to set up a model and try 30 reasonable values on a parameter, I may use the default value and the step size to create the appropriate increments. If the step size is 0.1 and the default value is 0, then I will will be able to create setups: 0, 0.1, 0.2...2.9,3  # noqa: E501
-
-        :param has_step_size: The has_step_size of this CatalogIdentifier.
-        :type has_step_size: List[float]
-        """
-
-        self._has_step_size = has_step_size

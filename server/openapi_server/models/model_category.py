@@ -15,17 +15,17 @@ class ModelCategory(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, parent_category=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, parent_category=None, type=None):  # noqa: E501
         """ModelCategory - a model defined in OpenAPI
 
         :param description: The description of this ModelCategory.  # noqa: E501
         :type description: List[str]
-        :param parent_category: The parent_category of this ModelCategory.  # noqa: E501
-        :type parent_category: List[ModelCategory]
         :param id: The id of this ModelCategory.  # noqa: E501
         :type id: str
         :param label: The label of this ModelCategory.  # noqa: E501
         :type label: List[str]
+        :param parent_category: The parent_category of this ModelCategory.  # noqa: E501
+        :type parent_category: List[ModelCategory]
         :param type: The type of this ModelCategory.  # noqa: E501
         :type type: List[str]
         """
@@ -33,24 +33,24 @@ class ModelCategory(Model):
 
         self.openapi_types = {
             'description': List[str],
-            'parent_category': List[ModelCategory],
             'id': str,
             'label': List[str],
+            'parent_category': List[ModelCategory],
             'type': List[str]
         }
 
         self.attribute_map = {
             'description': 'description',
-            'parent_category': 'parentCategory',
             'id': 'id',
             'label': 'label',
+            'parent_category': 'parentCategory',
             'type': 'type'
         }
 
         self._description = description
-        self._parent_category = parent_category
         self._id = id
         self._label = label
+        self._parent_category = parent_category
         self._type = type
 
     @classmethod
@@ -86,29 +86,6 @@ class ModelCategory(Model):
         """
 
         self._description = description
-
-    @property
-    def parent_category(self):
-        """Gets the parent_category of this ModelCategory.
-
-        Indicates this subcategory parent category  # noqa: E501
-
-        :return: The parent_category of this ModelCategory.
-        :rtype: List[ModelCategory]
-        """
-        return self._parent_category
-
-    @parent_category.setter
-    def parent_category(self, parent_category):
-        """Sets the parent_category of this ModelCategory.
-
-        Indicates this subcategory parent category  # noqa: E501
-
-        :param parent_category: The parent_category of this ModelCategory.
-        :type parent_category: List[ModelCategory]
-        """
-
-        self._parent_category = parent_category
 
     @property
     def id(self):
@@ -155,6 +132,29 @@ class ModelCategory(Model):
         """
 
         self._label = label
+
+    @property
+    def parent_category(self):
+        """Gets the parent_category of this ModelCategory.
+
+        Indicates this subcategory parent category  # noqa: E501
+
+        :return: The parent_category of this ModelCategory.
+        :rtype: List[ModelCategory]
+        """
+        return self._parent_category
+
+    @parent_category.setter
+    def parent_category(self, parent_category):
+        """Sets the parent_category of this ModelCategory.
+
+        Indicates this subcategory parent category  # noqa: E501
+
+        :param parent_category: The parent_category of this ModelCategory.
+        :type parent_category: List[ModelCategory]
+        """
+
+        self._parent_category = parent_category
 
     @property
     def type(self):

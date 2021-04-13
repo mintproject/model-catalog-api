@@ -6,7 +6,7 @@ from openapi_server.utils.vars import DATASETSPECIFICATION_TYPE_NAME, DATASETSPE
 from openapi_server.models.dataset_specification import DatasetSpecification  # noqa: E501
 from openapi_server import util
 
-def custom_modelconfigurations_id_inputs_get(id, username=None, custom_query_name=None):  # noqa: E501
+def custom_configuration_id_inputs_get(id, username=None, custom_query_name=None):  # noqa: E501
     """Gets all inputs of a configuration
 
     Gets all inputs of a configuration # noqa: E501
@@ -18,12 +18,36 @@ def custom_modelconfigurations_id_inputs_get(id, username=None, custom_query_nam
     :param custom_query_name: Name of the custom query
     :type custom_query_name: str
 
-    :rtype: DatasetSpecification
+    :rtype: List[DatasetSpecification]
     """
 
 
     return query_manager.get_resource(id=id,
         username=username,
+        custom_query_name=custom_query_name,
+        rdf_type_uri=DATASETSPECIFICATION_TYPE_URI,
+        rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 
+        kls=DatasetSpecification)
+
+def custom_datasetspecifications_get(configurationid, username=None, custom_query_name=None):  # noqa: E501
+    """Gets all inputs of a configuration
+
+    Gets all inputs of a configuration # noqa: E501
+
+    :param configurationid: The ID of the configuration
+    :type configurationid: str
+    :param username: Username to query
+    :type username: str
+    :param custom_query_name: Name of the custom query
+    :type custom_query_name: str
+
+    :rtype: List[DatasetSpecification]
+    """
+
+
+    return query_manager.get_resource(
+        username=username,
+        configurationid=configurationid,
         custom_query_name=custom_query_name,
         rdf_type_uri=DATASETSPECIFICATION_TYPE_URI,
         rdf_type_name=DATASETSPECIFICATION_TYPE_NAME, 

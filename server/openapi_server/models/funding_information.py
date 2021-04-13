@@ -15,21 +15,21 @@ class FundingInformation(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, label=None, funding_source=None, type=None, funding_grant=None):  # noqa: E501
+    def __init__(self, description=None, funding_grant=None, funding_source=None, id=None, label=None, type=None):  # noqa: E501
         """FundingInformation - a model defined in OpenAPI
 
         :param description: The description of this FundingInformation.  # noqa: E501
         :type description: List[str]
+        :param funding_grant: The funding_grant of this FundingInformation.  # noqa: E501
+        :type funding_grant: List[str]
+        :param funding_source: The funding_source of this FundingInformation.  # noqa: E501
+        :type funding_source: List[Organization]
         :param id: The id of this FundingInformation.  # noqa: E501
         :type id: str
         :param label: The label of this FundingInformation.  # noqa: E501
         :type label: List[str]
-        :param funding_source: The funding_source of this FundingInformation.  # noqa: E501
-        :type funding_source: List[Organization]
         :param type: The type of this FundingInformation.  # noqa: E501
         :type type: List[str]
-        :param funding_grant: The funding_grant of this FundingInformation.  # noqa: E501
-        :type funding_grant: List[str]
         """
         from openapi_server.models.organization import Organization
 
@@ -37,28 +37,28 @@ class FundingInformation(Model):
 
         self.openapi_types = {
             'description': List[str],
+            'funding_grant': List[str],
+            'funding_source': List[Organization],
             'id': str,
             'label': List[str],
-            'funding_source': List[Organization],
-            'type': List[str],
-            'funding_grant': List[str]
+            'type': List[str]
         }
 
         self.attribute_map = {
             'description': 'description',
+            'funding_grant': 'fundingGrant',
+            'funding_source': 'fundingSource',
             'id': 'id',
             'label': 'label',
-            'funding_source': 'fundingSource',
-            'type': 'type',
-            'funding_grant': 'fundingGrant'
+            'type': 'type'
         }
 
         self._description = description
+        self._funding_grant = funding_grant
+        self._funding_source = funding_source
         self._id = id
         self._label = label
-        self._funding_source = funding_source
         self._type = type
-        self._funding_grant = funding_grant
 
     @classmethod
     def from_dict(cls, dikt) -> 'FundingInformation':
@@ -93,6 +93,52 @@ class FundingInformation(Model):
         """
 
         self._description = description
+
+    @property
+    def funding_grant(self):
+        """Gets the funding_grant of this FundingInformation.
+
+        Grant number used for funding  # noqa: E501
+
+        :return: The funding_grant of this FundingInformation.
+        :rtype: List[str]
+        """
+        return self._funding_grant
+
+    @funding_grant.setter
+    def funding_grant(self, funding_grant):
+        """Sets the funding_grant of this FundingInformation.
+
+        Grant number used for funding  # noqa: E501
+
+        :param funding_grant: The funding_grant of this FundingInformation.
+        :type funding_grant: List[str]
+        """
+
+        self._funding_grant = funding_grant
+
+    @property
+    def funding_source(self):
+        """Gets the funding_source of this FundingInformation.
+
+        Link to the organization funding a software component  # noqa: E501
+
+        :return: The funding_source of this FundingInformation.
+        :rtype: List[Organization]
+        """
+        return self._funding_source
+
+    @funding_source.setter
+    def funding_source(self, funding_source):
+        """Sets the funding_source of this FundingInformation.
+
+        Link to the organization funding a software component  # noqa: E501
+
+        :param funding_source: The funding_source of this FundingInformation.
+        :type funding_source: List[Organization]
+        """
+
+        self._funding_source = funding_source
 
     @property
     def id(self):
@@ -141,29 +187,6 @@ class FundingInformation(Model):
         self._label = label
 
     @property
-    def funding_source(self):
-        """Gets the funding_source of this FundingInformation.
-
-        Link to the organization funding a software component  # noqa: E501
-
-        :return: The funding_source of this FundingInformation.
-        :rtype: List[Organization]
-        """
-        return self._funding_source
-
-    @funding_source.setter
-    def funding_source(self, funding_source):
-        """Sets the funding_source of this FundingInformation.
-
-        Link to the organization funding a software component  # noqa: E501
-
-        :param funding_source: The funding_source of this FundingInformation.
-        :type funding_source: List[Organization]
-        """
-
-        self._funding_source = funding_source
-
-    @property
     def type(self):
         """Gets the type of this FundingInformation.
 
@@ -185,26 +208,3 @@ class FundingInformation(Model):
         """
 
         self._type = type
-
-    @property
-    def funding_grant(self):
-        """Gets the funding_grant of this FundingInformation.
-
-        Grant number used for funding  # noqa: E501
-
-        :return: The funding_grant of this FundingInformation.
-        :rtype: List[str]
-        """
-        return self._funding_grant
-
-    @funding_grant.setter
-    def funding_grant(self, funding_grant):
-        """Sets the funding_grant of this FundingInformation.
-
-        Grant number used for funding  # noqa: E501
-
-        :param funding_grant: The funding_grant of this FundingInformation.
-        :type funding_grant: List[str]
-        """
-
-        self._funding_grant = funding_grant

@@ -8,11 +8,7 @@ CONSTRUCT {
 WHERE {
     GRAPH ?_g_iri {
         ?_resource_iri ?predicate ?prop
-        OPTIONAL {
-            ?prop  a ?type
-            OPTIONAL {
-                ?prop rdfs:label ?label
-            }
-        }
+        OPTIONAL { ?prop  a ?type }
+        OPTIONAL { ?prop rdfs:label ?label }
     }
 }
