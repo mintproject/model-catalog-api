@@ -15,137 +15,137 @@ class ConfigurationSetup(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, adjustable_parameter=None, author=None, citation=None, compatible_visualization_software=None, contributor=None, copyright_holder=None, date_created=None, date_published=None, description=None, doi=None, had_primary_source=None, has_assumption=None, has_build_file=None, has_component_location=None, has_constraint=None, has_contact_person=None, has_documentation=None, has_download_instructions=None, has_download_url=None, has_example=None, has_executable_instructions=None, has_executable_notebook=None, has_execution_command=None, has_faq=None, has_funding=None, has_implementation_script_location=None, has_input=None, has_installation_instructions=None, has_output=None, has_parameter=None, has_purpose=None, has_sample_execution=None, has_sample_result=None, has_sample_visualization=None, has_setup=None, has_software_image=None, has_source_code=None, has_support_script_location=None, has_typical_data_source=None, has_usage_notes=None, has_version=None, id=None, identifier=None, issue_tracker=None, keywords=None, label=None, license=None, logo=None, memory_requirements=None, operating_systems=None, processor_requirements=None, publisher=None, readme=None, reference_publication=None, screenshot=None, short_description=None, software_requirements=None, status=None, support_details=None, tag=None, type=None, useful_for_calculating_index=None, was_derived_from_setup=None, website=None):  # noqa: E501
+    def __init__(self, has_download_instructions=None, keywords=None, has_documentation=None, has_implementation_script_location=None, software_requirements=None, has_download_url=None, type=None, has_installation_instructions=None, compatible_visualization_software=None, copyright_holder=None, has_faq=None, logo=None, has_contact_person=None, tag=None, id=None, identifier=None, has_sample_execution=None, has_sample_result=None, author=None, was_derived_from_setup=None, has_constraint=None, has_build_file=None, short_description=None, has_execution_command=None, date_published=None, license=None, has_source_code=None, has_setup=None, has_example=None, publisher=None, has_output=None, status=None, doi=None, has_funding=None, has_component_location=None, support_details=None, has_version=None, has_typical_data_source=None, description=None, reference_publication=None, screenshot=None, had_primary_source=None, issue_tracker=None, has_software_image=None, date_created=None, contributor=None, has_purpose=None, has_executable_instructions=None, has_sample_visualization=None, memory_requirements=None, website=None, citation=None, processor_requirements=None, adjustable_parameter=None, has_usage_notes=None, has_support_script_location=None, readme=None, label=None, has_assumption=None, has_parameter=None, operating_systems=None, has_executable_notebook=None, useful_for_calculating_index=None, has_input=None):  # noqa: E501
         """ConfigurationSetup - a model defined in OpenAPI
 
-        :param adjustable_parameter: The adjustable_parameter of this ConfigurationSetup.  # noqa: E501
-        :type adjustable_parameter: List[Parameter]
-        :param author: The author of this ConfigurationSetup.  # noqa: E501
-        :type author: List[object]
-        :param citation: The citation of this ConfigurationSetup.  # noqa: E501
-        :type citation: List[str]
-        :param compatible_visualization_software: The compatible_visualization_software of this ConfigurationSetup.  # noqa: E501
-        :type compatible_visualization_software: List[Software]
-        :param contributor: The contributor of this ConfigurationSetup.  # noqa: E501
-        :type contributor: List[Person]
-        :param copyright_holder: The copyright_holder of this ConfigurationSetup.  # noqa: E501
-        :type copyright_holder: List[object]
-        :param date_created: The date_created of this ConfigurationSetup.  # noqa: E501
-        :type date_created: List[str]
-        :param date_published: The date_published of this ConfigurationSetup.  # noqa: E501
-        :type date_published: List[str]
-        :param description: The description of this ConfigurationSetup.  # noqa: E501
-        :type description: List[str]
-        :param doi: The doi of this ConfigurationSetup.  # noqa: E501
-        :type doi: List[str]
-        :param had_primary_source: The had_primary_source of this ConfigurationSetup.  # noqa: E501
-        :type had_primary_source: List[object]
-        :param has_assumption: The has_assumption of this ConfigurationSetup.  # noqa: E501
-        :type has_assumption: List[str]
-        :param has_build_file: The has_build_file of this ConfigurationSetup.  # noqa: E501
-        :type has_build_file: List[str]
-        :param has_component_location: The has_component_location of this ConfigurationSetup.  # noqa: E501
-        :type has_component_location: List[str]
-        :param has_constraint: The has_constraint of this ConfigurationSetup.  # noqa: E501
-        :type has_constraint: List[str]
-        :param has_contact_person: The has_contact_person of this ConfigurationSetup.  # noqa: E501
-        :type has_contact_person: List[object]
-        :param has_documentation: The has_documentation of this ConfigurationSetup.  # noqa: E501
-        :type has_documentation: List[str]
         :param has_download_instructions: The has_download_instructions of this ConfigurationSetup.  # noqa: E501
         :type has_download_instructions: List[str]
-        :param has_download_url: The has_download_url of this ConfigurationSetup.  # noqa: E501
-        :type has_download_url: List[str]
-        :param has_example: The has_example of this ConfigurationSetup.  # noqa: E501
-        :type has_example: List[str]
-        :param has_executable_instructions: The has_executable_instructions of this ConfigurationSetup.  # noqa: E501
-        :type has_executable_instructions: List[str]
-        :param has_executable_notebook: The has_executable_notebook of this ConfigurationSetup.  # noqa: E501
-        :type has_executable_notebook: List[str]
-        :param has_execution_command: The has_execution_command of this ConfigurationSetup.  # noqa: E501
-        :type has_execution_command: List[str]
-        :param has_faq: The has_faq of this ConfigurationSetup.  # noqa: E501
-        :type has_faq: List[str]
-        :param has_funding: The has_funding of this ConfigurationSetup.  # noqa: E501
-        :type has_funding: List[FundingInformation]
+        :param keywords: The keywords of this ConfigurationSetup.  # noqa: E501
+        :type keywords: List[str]
+        :param has_documentation: The has_documentation of this ConfigurationSetup.  # noqa: E501
+        :type has_documentation: List[str]
         :param has_implementation_script_location: The has_implementation_script_location of this ConfigurationSetup.  # noqa: E501
         :type has_implementation_script_location: List[str]
-        :param has_input: The has_input of this ConfigurationSetup.  # noqa: E501
-        :type has_input: List[DatasetSpecification]
+        :param software_requirements: The software_requirements of this ConfigurationSetup.  # noqa: E501
+        :type software_requirements: List[str]
+        :param has_download_url: The has_download_url of this ConfigurationSetup.  # noqa: E501
+        :type has_download_url: List[str]
+        :param type: The type of this ConfigurationSetup.  # noqa: E501
+        :type type: List[str]
         :param has_installation_instructions: The has_installation_instructions of this ConfigurationSetup.  # noqa: E501
         :type has_installation_instructions: List[str]
-        :param has_output: The has_output of this ConfigurationSetup.  # noqa: E501
-        :type has_output: List[DatasetSpecification]
-        :param has_parameter: The has_parameter of this ConfigurationSetup.  # noqa: E501
-        :type has_parameter: List[Parameter]
-        :param has_purpose: The has_purpose of this ConfigurationSetup.  # noqa: E501
-        :type has_purpose: List[str]
-        :param has_sample_execution: The has_sample_execution of this ConfigurationSetup.  # noqa: E501
-        :type has_sample_execution: List[SampleExecution]
-        :param has_sample_result: The has_sample_result of this ConfigurationSetup.  # noqa: E501
-        :type has_sample_result: List[SampleResource]
-        :param has_sample_visualization: The has_sample_visualization of this ConfigurationSetup.  # noqa: E501
-        :type has_sample_visualization: List[Visualization]
-        :param has_setup: The has_setup of this ConfigurationSetup.  # noqa: E501
-        :type has_setup: List[ConfigurationSetup]
-        :param has_software_image: The has_software_image of this ConfigurationSetup.  # noqa: E501
-        :type has_software_image: List[SoftwareImage]
-        :param has_source_code: The has_source_code of this ConfigurationSetup.  # noqa: E501
-        :type has_source_code: List[SourceCode]
-        :param has_support_script_location: The has_support_script_location of this ConfigurationSetup.  # noqa: E501
-        :type has_support_script_location: List[str]
-        :param has_typical_data_source: The has_typical_data_source of this ConfigurationSetup.  # noqa: E501
-        :type has_typical_data_source: List[str]
-        :param has_usage_notes: The has_usage_notes of this ConfigurationSetup.  # noqa: E501
-        :type has_usage_notes: List[str]
-        :param has_version: The has_version of this ConfigurationSetup.  # noqa: E501
-        :type has_version: List[SoftwareVersion]
+        :param compatible_visualization_software: The compatible_visualization_software of this ConfigurationSetup.  # noqa: E501
+        :type compatible_visualization_software: List[Software]
+        :param copyright_holder: The copyright_holder of this ConfigurationSetup.  # noqa: E501
+        :type copyright_holder: List[object]
+        :param has_faq: The has_faq of this ConfigurationSetup.  # noqa: E501
+        :type has_faq: List[str]
+        :param logo: The logo of this ConfigurationSetup.  # noqa: E501
+        :type logo: List[Image]
+        :param has_contact_person: The has_contact_person of this ConfigurationSetup.  # noqa: E501
+        :type has_contact_person: List[object]
+        :param tag: The tag of this ConfigurationSetup.  # noqa: E501
+        :type tag: List[str]
         :param id: The id of this ConfigurationSetup.  # noqa: E501
         :type id: str
         :param identifier: The identifier of this ConfigurationSetup.  # noqa: E501
         :type identifier: List[str]
-        :param issue_tracker: The issue_tracker of this ConfigurationSetup.  # noqa: E501
-        :type issue_tracker: List[str]
-        :param keywords: The keywords of this ConfigurationSetup.  # noqa: E501
-        :type keywords: List[str]
-        :param label: The label of this ConfigurationSetup.  # noqa: E501
-        :type label: List[str]
+        :param has_sample_execution: The has_sample_execution of this ConfigurationSetup.  # noqa: E501
+        :type has_sample_execution: List[SampleExecution]
+        :param has_sample_result: The has_sample_result of this ConfigurationSetup.  # noqa: E501
+        :type has_sample_result: List[SampleResource]
+        :param author: The author of this ConfigurationSetup.  # noqa: E501
+        :type author: List[object]
+        :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.  # noqa: E501
+        :type was_derived_from_setup: List[ConfigurationSetup]
+        :param has_constraint: The has_constraint of this ConfigurationSetup.  # noqa: E501
+        :type has_constraint: List[str]
+        :param has_build_file: The has_build_file of this ConfigurationSetup.  # noqa: E501
+        :type has_build_file: List[str]
+        :param short_description: The short_description of this ConfigurationSetup.  # noqa: E501
+        :type short_description: List[str]
+        :param has_execution_command: The has_execution_command of this ConfigurationSetup.  # noqa: E501
+        :type has_execution_command: List[str]
+        :param date_published: The date_published of this ConfigurationSetup.  # noqa: E501
+        :type date_published: List[str]
         :param license: The license of this ConfigurationSetup.  # noqa: E501
         :type license: List[str]
-        :param logo: The logo of this ConfigurationSetup.  # noqa: E501
-        :type logo: List[Image]
-        :param memory_requirements: The memory_requirements of this ConfigurationSetup.  # noqa: E501
-        :type memory_requirements: List[str]
-        :param operating_systems: The operating_systems of this ConfigurationSetup.  # noqa: E501
-        :type operating_systems: List[str]
-        :param processor_requirements: The processor_requirements of this ConfigurationSetup.  # noqa: E501
-        :type processor_requirements: List[str]
+        :param has_source_code: The has_source_code of this ConfigurationSetup.  # noqa: E501
+        :type has_source_code: List[SourceCode]
+        :param has_setup: The has_setup of this ConfigurationSetup.  # noqa: E501
+        :type has_setup: List[ConfigurationSetup]
+        :param has_example: The has_example of this ConfigurationSetup.  # noqa: E501
+        :type has_example: List[str]
         :param publisher: The publisher of this ConfigurationSetup.  # noqa: E501
         :type publisher: List[object]
-        :param readme: The readme of this ConfigurationSetup.  # noqa: E501
-        :type readme: List[str]
+        :param has_output: The has_output of this ConfigurationSetup.  # noqa: E501
+        :type has_output: List[DatasetSpecification]
+        :param status: The status of this ConfigurationSetup.  # noqa: E501
+        :type status: List[str]
+        :param doi: The doi of this ConfigurationSetup.  # noqa: E501
+        :type doi: List[str]
+        :param has_funding: The has_funding of this ConfigurationSetup.  # noqa: E501
+        :type has_funding: List[FundingInformation]
+        :param has_component_location: The has_component_location of this ConfigurationSetup.  # noqa: E501
+        :type has_component_location: List[str]
+        :param support_details: The support_details of this ConfigurationSetup.  # noqa: E501
+        :type support_details: List[str]
+        :param has_version: The has_version of this ConfigurationSetup.  # noqa: E501
+        :type has_version: List[SoftwareVersion]
+        :param has_typical_data_source: The has_typical_data_source of this ConfigurationSetup.  # noqa: E501
+        :type has_typical_data_source: List[str]
+        :param description: The description of this ConfigurationSetup.  # noqa: E501
+        :type description: List[str]
         :param reference_publication: The reference_publication of this ConfigurationSetup.  # noqa: E501
         :type reference_publication: List[str]
         :param screenshot: The screenshot of this ConfigurationSetup.  # noqa: E501
         :type screenshot: List[Image]
-        :param short_description: The short_description of this ConfigurationSetup.  # noqa: E501
-        :type short_description: List[str]
-        :param software_requirements: The software_requirements of this ConfigurationSetup.  # noqa: E501
-        :type software_requirements: List[str]
-        :param status: The status of this ConfigurationSetup.  # noqa: E501
-        :type status: List[str]
-        :param support_details: The support_details of this ConfigurationSetup.  # noqa: E501
-        :type support_details: List[str]
-        :param tag: The tag of this ConfigurationSetup.  # noqa: E501
-        :type tag: List[str]
-        :param type: The type of this ConfigurationSetup.  # noqa: E501
-        :type type: List[str]
-        :param useful_for_calculating_index: The useful_for_calculating_index of this ConfigurationSetup.  # noqa: E501
-        :type useful_for_calculating_index: List[NumericalIndex]
-        :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.  # noqa: E501
-        :type was_derived_from_setup: List[ConfigurationSetup]
+        :param had_primary_source: The had_primary_source of this ConfigurationSetup.  # noqa: E501
+        :type had_primary_source: List[object]
+        :param issue_tracker: The issue_tracker of this ConfigurationSetup.  # noqa: E501
+        :type issue_tracker: List[str]
+        :param has_software_image: The has_software_image of this ConfigurationSetup.  # noqa: E501
+        :type has_software_image: List[SoftwareImage]
+        :param date_created: The date_created of this ConfigurationSetup.  # noqa: E501
+        :type date_created: List[str]
+        :param contributor: The contributor of this ConfigurationSetup.  # noqa: E501
+        :type contributor: List[Person]
+        :param has_purpose: The has_purpose of this ConfigurationSetup.  # noqa: E501
+        :type has_purpose: List[str]
+        :param has_executable_instructions: The has_executable_instructions of this ConfigurationSetup.  # noqa: E501
+        :type has_executable_instructions: List[str]
+        :param has_sample_visualization: The has_sample_visualization of this ConfigurationSetup.  # noqa: E501
+        :type has_sample_visualization: List[Visualization]
+        :param memory_requirements: The memory_requirements of this ConfigurationSetup.  # noqa: E501
+        :type memory_requirements: List[str]
         :param website: The website of this ConfigurationSetup.  # noqa: E501
         :type website: List[str]
+        :param citation: The citation of this ConfigurationSetup.  # noqa: E501
+        :type citation: List[str]
+        :param processor_requirements: The processor_requirements of this ConfigurationSetup.  # noqa: E501
+        :type processor_requirements: List[str]
+        :param adjustable_parameter: The adjustable_parameter of this ConfigurationSetup.  # noqa: E501
+        :type adjustable_parameter: List[Parameter]
+        :param has_usage_notes: The has_usage_notes of this ConfigurationSetup.  # noqa: E501
+        :type has_usage_notes: List[str]
+        :param has_support_script_location: The has_support_script_location of this ConfigurationSetup.  # noqa: E501
+        :type has_support_script_location: List[str]
+        :param readme: The readme of this ConfigurationSetup.  # noqa: E501
+        :type readme: List[str]
+        :param label: The label of this ConfigurationSetup.  # noqa: E501
+        :type label: List[str]
+        :param has_assumption: The has_assumption of this ConfigurationSetup.  # noqa: E501
+        :type has_assumption: List[str]
+        :param has_parameter: The has_parameter of this ConfigurationSetup.  # noqa: E501
+        :type has_parameter: List[Parameter]
+        :param operating_systems: The operating_systems of this ConfigurationSetup.  # noqa: E501
+        :type operating_systems: List[str]
+        :param has_executable_notebook: The has_executable_notebook of this ConfigurationSetup.  # noqa: E501
+        :type has_executable_notebook: List[str]
+        :param useful_for_calculating_index: The useful_for_calculating_index of this ConfigurationSetup.  # noqa: E501
+        :type useful_for_calculating_index: List[NumericalIndex]
+        :param has_input: The has_input of this ConfigurationSetup.  # noqa: E501
+        :type has_input: List[DatasetSpecification]
         """
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
@@ -177,203 +177,203 @@ class ConfigurationSetup(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'adjustable_parameter': List[Parameter],
-            'author': List[object],
-            'citation': List[str],
-            'compatible_visualization_software': List[Software],
-            'contributor': List[Person],
-            'copyright_holder': List[object],
-            'date_created': List[str],
-            'date_published': List[str],
-            'description': List[str],
-            'doi': List[str],
-            'had_primary_source': List[object],
-            'has_assumption': List[str],
-            'has_build_file': List[str],
-            'has_component_location': List[str],
-            'has_constraint': List[str],
-            'has_contact_person': List[object],
-            'has_documentation': List[str],
             'has_download_instructions': List[str],
-            'has_download_url': List[str],
-            'has_example': List[str],
-            'has_executable_instructions': List[str],
-            'has_executable_notebook': List[str],
-            'has_execution_command': List[str],
-            'has_faq': List[str],
-            'has_funding': List[FundingInformation],
+            'keywords': List[str],
+            'has_documentation': List[str],
             'has_implementation_script_location': List[str],
-            'has_input': List[DatasetSpecification],
+            'software_requirements': List[str],
+            'has_download_url': List[str],
+            'type': List[str],
             'has_installation_instructions': List[str],
-            'has_output': List[DatasetSpecification],
-            'has_parameter': List[Parameter],
-            'has_purpose': List[str],
-            'has_sample_execution': List[SampleExecution],
-            'has_sample_result': List[SampleResource],
-            'has_sample_visualization': List[Visualization],
-            'has_setup': List[ConfigurationSetup],
-            'has_software_image': List[SoftwareImage],
-            'has_source_code': List[SourceCode],
-            'has_support_script_location': List[str],
-            'has_typical_data_source': List[str],
-            'has_usage_notes': List[str],
-            'has_version': List[SoftwareVersion],
+            'compatible_visualization_software': List[Software],
+            'copyright_holder': List[object],
+            'has_faq': List[str],
+            'logo': List[Image],
+            'has_contact_person': List[object],
+            'tag': List[str],
             'id': str,
             'identifier': List[str],
-            'issue_tracker': List[str],
-            'keywords': List[str],
-            'label': List[str],
+            'has_sample_execution': List[SampleExecution],
+            'has_sample_result': List[SampleResource],
+            'author': List[object],
+            'was_derived_from_setup': List[ConfigurationSetup],
+            'has_constraint': List[str],
+            'has_build_file': List[str],
+            'short_description': List[str],
+            'has_execution_command': List[str],
+            'date_published': List[str],
             'license': List[str],
-            'logo': List[Image],
-            'memory_requirements': List[str],
-            'operating_systems': List[str],
-            'processor_requirements': List[str],
+            'has_source_code': List[SourceCode],
+            'has_setup': List[ConfigurationSetup],
+            'has_example': List[str],
             'publisher': List[object],
-            'readme': List[str],
+            'has_output': List[DatasetSpecification],
+            'status': List[str],
+            'doi': List[str],
+            'has_funding': List[FundingInformation],
+            'has_component_location': List[str],
+            'support_details': List[str],
+            'has_version': List[SoftwareVersion],
+            'has_typical_data_source': List[str],
+            'description': List[str],
             'reference_publication': List[str],
             'screenshot': List[Image],
-            'short_description': List[str],
-            'software_requirements': List[str],
-            'status': List[str],
-            'support_details': List[str],
-            'tag': List[str],
-            'type': List[str],
+            'had_primary_source': List[object],
+            'issue_tracker': List[str],
+            'has_software_image': List[SoftwareImage],
+            'date_created': List[str],
+            'contributor': List[Person],
+            'has_purpose': List[str],
+            'has_executable_instructions': List[str],
+            'has_sample_visualization': List[Visualization],
+            'memory_requirements': List[str],
+            'website': List[str],
+            'citation': List[str],
+            'processor_requirements': List[str],
+            'adjustable_parameter': List[Parameter],
+            'has_usage_notes': List[str],
+            'has_support_script_location': List[str],
+            'readme': List[str],
+            'label': List[str],
+            'has_assumption': List[str],
+            'has_parameter': List[Parameter],
+            'operating_systems': List[str],
+            'has_executable_notebook': List[str],
             'useful_for_calculating_index': List[NumericalIndex],
-            'was_derived_from_setup': List[ConfigurationSetup],
-            'website': List[str]
+            'has_input': List[DatasetSpecification]
         }
 
         self.attribute_map = {
-            'adjustable_parameter': 'adjustableParameter',
-            'author': 'author',
-            'citation': 'citation',
-            'compatible_visualization_software': 'compatibleVisualizationSoftware',
-            'contributor': 'contributor',
-            'copyright_holder': 'copyrightHolder',
-            'date_created': 'dateCreated',
-            'date_published': 'datePublished',
-            'description': 'description',
-            'doi': 'doi',
-            'had_primary_source': 'hadPrimarySource',
-            'has_assumption': 'hasAssumption',
-            'has_build_file': 'hasBuildFile',
-            'has_component_location': 'hasComponentLocation',
-            'has_constraint': 'hasConstraint',
-            'has_contact_person': 'hasContactPerson',
-            'has_documentation': 'hasDocumentation',
             'has_download_instructions': 'hasDownloadInstructions',
-            'has_download_url': 'hasDownloadURL',
-            'has_example': 'hasExample',
-            'has_executable_instructions': 'hasExecutableInstructions',
-            'has_executable_notebook': 'hasExecutableNotebook',
-            'has_execution_command': 'hasExecutionCommand',
-            'has_faq': 'hasFAQ',
-            'has_funding': 'hasFunding',
+            'keywords': 'keywords',
+            'has_documentation': 'hasDocumentation',
             'has_implementation_script_location': 'hasImplementationScriptLocation',
-            'has_input': 'hasInput',
+            'software_requirements': 'softwareRequirements',
+            'has_download_url': 'hasDownloadURL',
+            'type': 'type',
             'has_installation_instructions': 'hasInstallationInstructions',
-            'has_output': 'hasOutput',
-            'has_parameter': 'hasParameter',
-            'has_purpose': 'hasPurpose',
-            'has_sample_execution': 'hasSampleExecution',
-            'has_sample_result': 'hasSampleResult',
-            'has_sample_visualization': 'hasSampleVisualization',
-            'has_setup': 'hasSetup',
-            'has_software_image': 'hasSoftwareImage',
-            'has_source_code': 'hasSourceCode',
-            'has_support_script_location': 'hasSupportScriptLocation',
-            'has_typical_data_source': 'hasTypicalDataSource',
-            'has_usage_notes': 'hasUsageNotes',
-            'has_version': 'hasVersion',
+            'compatible_visualization_software': 'compatibleVisualizationSoftware',
+            'copyright_holder': 'copyrightHolder',
+            'has_faq': 'hasFAQ',
+            'logo': 'logo',
+            'has_contact_person': 'hasContactPerson',
+            'tag': 'tag',
             'id': 'id',
             'identifier': 'identifier',
-            'issue_tracker': 'issueTracker',
-            'keywords': 'keywords',
-            'label': 'label',
+            'has_sample_execution': 'hasSampleExecution',
+            'has_sample_result': 'hasSampleResult',
+            'author': 'author',
+            'was_derived_from_setup': 'wasDerivedFromSetup',
+            'has_constraint': 'hasConstraint',
+            'has_build_file': 'hasBuildFile',
+            'short_description': 'shortDescription',
+            'has_execution_command': 'hasExecutionCommand',
+            'date_published': 'datePublished',
             'license': 'license',
-            'logo': 'logo',
-            'memory_requirements': 'memoryRequirements',
-            'operating_systems': 'operatingSystems',
-            'processor_requirements': 'processorRequirements',
+            'has_source_code': 'hasSourceCode',
+            'has_setup': 'hasSetup',
+            'has_example': 'hasExample',
             'publisher': 'publisher',
-            'readme': 'readme',
+            'has_output': 'hasOutput',
+            'status': 'status',
+            'doi': 'doi',
+            'has_funding': 'hasFunding',
+            'has_component_location': 'hasComponentLocation',
+            'support_details': 'supportDetails',
+            'has_version': 'hasVersion',
+            'has_typical_data_source': 'hasTypicalDataSource',
+            'description': 'description',
             'reference_publication': 'referencePublication',
             'screenshot': 'screenshot',
-            'short_description': 'shortDescription',
-            'software_requirements': 'softwareRequirements',
-            'status': 'status',
-            'support_details': 'supportDetails',
-            'tag': 'tag',
-            'type': 'type',
+            'had_primary_source': 'hadPrimarySource',
+            'issue_tracker': 'issueTracker',
+            'has_software_image': 'hasSoftwareImage',
+            'date_created': 'dateCreated',
+            'contributor': 'contributor',
+            'has_purpose': 'hasPurpose',
+            'has_executable_instructions': 'hasExecutableInstructions',
+            'has_sample_visualization': 'hasSampleVisualization',
+            'memory_requirements': 'memoryRequirements',
+            'website': 'website',
+            'citation': 'citation',
+            'processor_requirements': 'processorRequirements',
+            'adjustable_parameter': 'adjustableParameter',
+            'has_usage_notes': 'hasUsageNotes',
+            'has_support_script_location': 'hasSupportScriptLocation',
+            'readme': 'readme',
+            'label': 'label',
+            'has_assumption': 'hasAssumption',
+            'has_parameter': 'hasParameter',
+            'operating_systems': 'operatingSystems',
+            'has_executable_notebook': 'hasExecutableNotebook',
             'useful_for_calculating_index': 'usefulForCalculatingIndex',
-            'was_derived_from_setup': 'wasDerivedFromSetup',
-            'website': 'website'
+            'has_input': 'hasInput'
         }
 
-        self._adjustable_parameter = adjustable_parameter
-        self._author = author
-        self._citation = citation
-        self._compatible_visualization_software = compatible_visualization_software
-        self._contributor = contributor
-        self._copyright_holder = copyright_holder
-        self._date_created = date_created
-        self._date_published = date_published
-        self._description = description
-        self._doi = doi
-        self._had_primary_source = had_primary_source
-        self._has_assumption = has_assumption
-        self._has_build_file = has_build_file
-        self._has_component_location = has_component_location
-        self._has_constraint = has_constraint
-        self._has_contact_person = has_contact_person
-        self._has_documentation = has_documentation
         self._has_download_instructions = has_download_instructions
-        self._has_download_url = has_download_url
-        self._has_example = has_example
-        self._has_executable_instructions = has_executable_instructions
-        self._has_executable_notebook = has_executable_notebook
-        self._has_execution_command = has_execution_command
-        self._has_faq = has_faq
-        self._has_funding = has_funding
+        self._keywords = keywords
+        self._has_documentation = has_documentation
         self._has_implementation_script_location = has_implementation_script_location
-        self._has_input = has_input
+        self._software_requirements = software_requirements
+        self._has_download_url = has_download_url
+        self._type = type
         self._has_installation_instructions = has_installation_instructions
-        self._has_output = has_output
-        self._has_parameter = has_parameter
-        self._has_purpose = has_purpose
-        self._has_sample_execution = has_sample_execution
-        self._has_sample_result = has_sample_result
-        self._has_sample_visualization = has_sample_visualization
-        self._has_setup = has_setup
-        self._has_software_image = has_software_image
-        self._has_source_code = has_source_code
-        self._has_support_script_location = has_support_script_location
-        self._has_typical_data_source = has_typical_data_source
-        self._has_usage_notes = has_usage_notes
-        self._has_version = has_version
+        self._compatible_visualization_software = compatible_visualization_software
+        self._copyright_holder = copyright_holder
+        self._has_faq = has_faq
+        self._logo = logo
+        self._has_contact_person = has_contact_person
+        self._tag = tag
         self._id = id
         self._identifier = identifier
-        self._issue_tracker = issue_tracker
-        self._keywords = keywords
-        self._label = label
+        self._has_sample_execution = has_sample_execution
+        self._has_sample_result = has_sample_result
+        self._author = author
+        self._was_derived_from_setup = was_derived_from_setup
+        self._has_constraint = has_constraint
+        self._has_build_file = has_build_file
+        self._short_description = short_description
+        self._has_execution_command = has_execution_command
+        self._date_published = date_published
         self._license = license
-        self._logo = logo
-        self._memory_requirements = memory_requirements
-        self._operating_systems = operating_systems
-        self._processor_requirements = processor_requirements
+        self._has_source_code = has_source_code
+        self._has_setup = has_setup
+        self._has_example = has_example
         self._publisher = publisher
-        self._readme = readme
+        self._has_output = has_output
+        self._status = status
+        self._doi = doi
+        self._has_funding = has_funding
+        self._has_component_location = has_component_location
+        self._support_details = support_details
+        self._has_version = has_version
+        self._has_typical_data_source = has_typical_data_source
+        self._description = description
         self._reference_publication = reference_publication
         self._screenshot = screenshot
-        self._short_description = short_description
-        self._software_requirements = software_requirements
-        self._status = status
-        self._support_details = support_details
-        self._tag = tag
-        self._type = type
-        self._useful_for_calculating_index = useful_for_calculating_index
-        self._was_derived_from_setup = was_derived_from_setup
+        self._had_primary_source = had_primary_source
+        self._issue_tracker = issue_tracker
+        self._has_software_image = has_software_image
+        self._date_created = date_created
+        self._contributor = contributor
+        self._has_purpose = has_purpose
+        self._has_executable_instructions = has_executable_instructions
+        self._has_sample_visualization = has_sample_visualization
+        self._memory_requirements = memory_requirements
         self._website = website
+        self._citation = citation
+        self._processor_requirements = processor_requirements
+        self._adjustable_parameter = adjustable_parameter
+        self._has_usage_notes = has_usage_notes
+        self._has_support_script_location = has_support_script_location
+        self._readme = readme
+        self._label = label
+        self._has_assumption = has_assumption
+        self._has_parameter = has_parameter
+        self._operating_systems = operating_systems
+        self._has_executable_notebook = has_executable_notebook
+        self._useful_for_calculating_index = useful_for_calculating_index
+        self._has_input = has_input
 
     @classmethod
     def from_dict(cls, dikt) -> 'ConfigurationSetup':
@@ -385,397 +385,6 @@ class ConfigurationSetup(Model):
         :rtype: ConfigurationSetup
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def adjustable_parameter(self):
-        """Gets the adjustable_parameter of this ConfigurationSetup.
-
-        Parameter that can be adjusted in a configuration setup  # noqa: E501
-
-        :return: The adjustable_parameter of this ConfigurationSetup.
-        :rtype: List[Parameter]
-        """
-        return self._adjustable_parameter
-
-    @adjustable_parameter.setter
-    def adjustable_parameter(self, adjustable_parameter):
-        """Sets the adjustable_parameter of this ConfigurationSetup.
-
-        Parameter that can be adjusted in a configuration setup  # noqa: E501
-
-        :param adjustable_parameter: The adjustable_parameter of this ConfigurationSetup.
-        :type adjustable_parameter: List[Parameter]
-        """
-
-        self._adjustable_parameter = adjustable_parameter
-
-    @property
-    def author(self):
-        """Gets the author of this ConfigurationSetup.
-
-        The creator of a software component  # noqa: E501
-
-        :return: The author of this ConfigurationSetup.
-        :rtype: List[object]
-        """
-        return self._author
-
-    @author.setter
-    def author(self, author):
-        """Sets the author of this ConfigurationSetup.
-
-        The creator of a software component  # noqa: E501
-
-        :param author: The author of this ConfigurationSetup.
-        :type author: List[object]
-        """
-
-        self._author = author
-
-    @property
-    def citation(self):
-        """Gets the citation of this ConfigurationSetup.
-
-        How to cite this software  # noqa: E501
-
-        :return: The citation of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._citation
-
-    @citation.setter
-    def citation(self, citation):
-        """Sets the citation of this ConfigurationSetup.
-
-        How to cite this software  # noqa: E501
-
-        :param citation: The citation of this ConfigurationSetup.
-        :type citation: List[str]
-        """
-
-        self._citation = citation
-
-    @property
-    def compatible_visualization_software(self):
-        """Gets the compatible_visualization_software of this ConfigurationSetup.
-
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
-
-        :return: The compatible_visualization_software of this ConfigurationSetup.
-        :rtype: List[Software]
-        """
-        return self._compatible_visualization_software
-
-    @compatible_visualization_software.setter
-    def compatible_visualization_software(self, compatible_visualization_software):
-        """Sets the compatible_visualization_software of this ConfigurationSetup.
-
-        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
-
-        :param compatible_visualization_software: The compatible_visualization_software of this ConfigurationSetup.
-        :type compatible_visualization_software: List[Software]
-        """
-
-        self._compatible_visualization_software = compatible_visualization_software
-
-    @property
-    def contributor(self):
-        """Gets the contributor of this ConfigurationSetup.
-
-        Contributor to a software component  # noqa: E501
-
-        :return: The contributor of this ConfigurationSetup.
-        :rtype: List[Person]
-        """
-        return self._contributor
-
-    @contributor.setter
-    def contributor(self, contributor):
-        """Sets the contributor of this ConfigurationSetup.
-
-        Contributor to a software component  # noqa: E501
-
-        :param contributor: The contributor of this ConfigurationSetup.
-        :type contributor: List[Person]
-        """
-
-        self._contributor = contributor
-
-    @property
-    def copyright_holder(self):
-        """Gets the copyright_holder of this ConfigurationSetup.
-
-        Copyright holder for a software component  # noqa: E501
-
-        :return: The copyright_holder of this ConfigurationSetup.
-        :rtype: List[object]
-        """
-        return self._copyright_holder
-
-    @copyright_holder.setter
-    def copyright_holder(self, copyright_holder):
-        """Sets the copyright_holder of this ConfigurationSetup.
-
-        Copyright holder for a software component  # noqa: E501
-
-        :param copyright_holder: The copyright_holder of this ConfigurationSetup.
-        :type copyright_holder: List[object]
-        """
-
-        self._copyright_holder = copyright_holder
-
-    @property
-    def date_created(self):
-        """Gets the date_created of this ConfigurationSetup.
-
-        Date when a software component was created  # noqa: E501
-
-        :return: The date_created of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._date_created
-
-    @date_created.setter
-    def date_created(self, date_created):
-        """Sets the date_created of this ConfigurationSetup.
-
-        Date when a software component was created  # noqa: E501
-
-        :param date_created: The date_created of this ConfigurationSetup.
-        :type date_created: List[str]
-        """
-
-        self._date_created = date_created
-
-    @property
-    def date_published(self):
-        """Gets the date_published of this ConfigurationSetup.
-
-        Date when a software component was published  # noqa: E501
-
-        :return: The date_published of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._date_published
-
-    @date_published.setter
-    def date_published(self, date_published):
-        """Sets the date_published of this ConfigurationSetup.
-
-        Date when a software component was published  # noqa: E501
-
-        :param date_published: The date_published of this ConfigurationSetup.
-        :type date_published: List[str]
-        """
-
-        self._date_published = date_published
-
-    @property
-    def description(self):
-        """Gets the description of this ConfigurationSetup.
-
-        small description  # noqa: E501
-
-        :return: The description of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ConfigurationSetup.
-
-        small description  # noqa: E501
-
-        :param description: The description of this ConfigurationSetup.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
-    def doi(self):
-        """Gets the doi of this ConfigurationSetup.
-
-        Digital Object Identifier associated with a software component  # noqa: E501
-
-        :return: The doi of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._doi
-
-    @doi.setter
-    def doi(self, doi):
-        """Sets the doi of this ConfigurationSetup.
-
-        Digital Object Identifier associated with a software component  # noqa: E501
-
-        :param doi: The doi of this ConfigurationSetup.
-        :type doi: List[str]
-        """
-
-        self._doi = doi
-
-    @property
-    def had_primary_source(self):
-        """Gets the had_primary_source of this ConfigurationSetup.
-
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
-
-        :return: The had_primary_source of this ConfigurationSetup.
-        :rtype: List[object]
-        """
-        return self._had_primary_source
-
-    @had_primary_source.setter
-    def had_primary_source(self, had_primary_source):
-        """Sets the had_primary_source of this ConfigurationSetup.
-
-        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
-
-        :param had_primary_source: The had_primary_source of this ConfigurationSetup.
-        :type had_primary_source: List[object]
-        """
-
-        self._had_primary_source = had_primary_source
-
-    @property
-    def has_assumption(self):
-        """Gets the has_assumption of this ConfigurationSetup.
-
-        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
-
-        :return: The has_assumption of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_assumption
-
-    @has_assumption.setter
-    def has_assumption(self, has_assumption):
-        """Sets the has_assumption of this ConfigurationSetup.
-
-        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
-
-        :param has_assumption: The has_assumption of this ConfigurationSetup.
-        :type has_assumption: List[str]
-        """
-
-        self._has_assumption = has_assumption
-
-    @property
-    def has_build_file(self):
-        """Gets the has_build_file of this ConfigurationSetup.
-
-        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
-
-        :return: The has_build_file of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_build_file
-
-    @has_build_file.setter
-    def has_build_file(self, has_build_file):
-        """Sets the has_build_file of this ConfigurationSetup.
-
-        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
-
-        :param has_build_file: The has_build_file of this ConfigurationSetup.
-        :type has_build_file: List[str]
-        """
-
-        self._has_build_file = has_build_file
-
-    @property
-    def has_component_location(self):
-        """Gets the has_component_location of this ConfigurationSetup.
-
-        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
-
-        :return: The has_component_location of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_component_location
-
-    @has_component_location.setter
-    def has_component_location(self, has_component_location):
-        """Sets the has_component_location of this ConfigurationSetup.
-
-        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
-
-        :param has_component_location: The has_component_location of this ConfigurationSetup.
-        :type has_component_location: List[str]
-        """
-
-        self._has_component_location = has_component_location
-
-    @property
-    def has_constraint(self):
-        """Gets the has_constraint of this ConfigurationSetup.
-
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
-
-        :return: The has_constraint of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_constraint
-
-    @has_constraint.setter
-    def has_constraint(self, has_constraint):
-        """Sets the has_constraint of this ConfigurationSetup.
-
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
-
-        :param has_constraint: The has_constraint of this ConfigurationSetup.
-        :type has_constraint: List[str]
-        """
-
-        self._has_constraint = has_constraint
-
-    @property
-    def has_contact_person(self):
-        """Gets the has_contact_person of this ConfigurationSetup.
-
-        Contact person responsible for a software component  # noqa: E501
-
-        :return: The has_contact_person of this ConfigurationSetup.
-        :rtype: List[object]
-        """
-        return self._has_contact_person
-
-    @has_contact_person.setter
-    def has_contact_person(self, has_contact_person):
-        """Sets the has_contact_person of this ConfigurationSetup.
-
-        Contact person responsible for a software component  # noqa: E501
-
-        :param has_contact_person: The has_contact_person of this ConfigurationSetup.
-        :type has_contact_person: List[object]
-        """
-
-        self._has_contact_person = has_contact_person
-
-    @property
-    def has_documentation(self):
-        """Gets the has_documentation of this ConfigurationSetup.
-
-        Pointer to the documentation of the model  # noqa: E501
-
-        :return: The has_documentation of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_documentation
-
-    @has_documentation.setter
-    def has_documentation(self, has_documentation):
-        """Sets the has_documentation of this ConfigurationSetup.
-
-        Pointer to the documentation of the model  # noqa: E501
-
-        :param has_documentation: The has_documentation of this ConfigurationSetup.
-        :type has_documentation: List[str]
-        """
-
-        self._has_documentation = has_documentation
 
     @property
     def has_download_instructions(self):
@@ -801,165 +410,50 @@ class ConfigurationSetup(Model):
         self._has_download_instructions = has_download_instructions
 
     @property
-    def has_download_url(self):
-        """Gets the has_download_url of this ConfigurationSetup.
+    def keywords(self):
+        """Gets the keywords of this ConfigurationSetup.
 
-        Download URL where to obtain the source/executable of the software  # noqa: E501
+        Keywords associated with a software component  # noqa: E501
 
-        :return: The has_download_url of this ConfigurationSetup.
+        :return: The keywords of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._has_download_url
+        return self._keywords
 
-    @has_download_url.setter
-    def has_download_url(self, has_download_url):
-        """Sets the has_download_url of this ConfigurationSetup.
+    @keywords.setter
+    def keywords(self, keywords):
+        """Sets the keywords of this ConfigurationSetup.
 
-        Download URL where to obtain the source/executable of the software  # noqa: E501
+        Keywords associated with a software component  # noqa: E501
 
-        :param has_download_url: The has_download_url of this ConfigurationSetup.
-        :type has_download_url: List[str]
+        :param keywords: The keywords of this ConfigurationSetup.
+        :type keywords: List[str]
         """
 
-        self._has_download_url = has_download_url
+        self._keywords = keywords
 
     @property
-    def has_example(self):
-        """Gets the has_example of this ConfigurationSetup.
+    def has_documentation(self):
+        """Gets the has_documentation of this ConfigurationSetup.
 
-        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
+        Pointer to the documentation of the model  # noqa: E501
 
-        :return: The has_example of this ConfigurationSetup.
+        :return: The has_documentation of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._has_example
+        return self._has_documentation
 
-    @has_example.setter
-    def has_example(self, has_example):
-        """Sets the has_example of this ConfigurationSetup.
+    @has_documentation.setter
+    def has_documentation(self, has_documentation):
+        """Sets the has_documentation of this ConfigurationSetup.
 
-        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
+        Pointer to the documentation of the model  # noqa: E501
 
-        :param has_example: The has_example of this ConfigurationSetup.
-        :type has_example: List[str]
+        :param has_documentation: The has_documentation of this ConfigurationSetup.
+        :type has_documentation: List[str]
         """
 
-        self._has_example = has_example
-
-    @property
-    def has_executable_instructions(self):
-        """Gets the has_executable_instructions of this ConfigurationSetup.
-
-        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
-
-        :return: The has_executable_instructions of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_executable_instructions
-
-    @has_executable_instructions.setter
-    def has_executable_instructions(self, has_executable_instructions):
-        """Sets the has_executable_instructions of this ConfigurationSetup.
-
-        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
-
-        :param has_executable_instructions: The has_executable_instructions of this ConfigurationSetup.
-        :type has_executable_instructions: List[str]
-        """
-
-        self._has_executable_instructions = has_executable_instructions
-
-    @property
-    def has_executable_notebook(self):
-        """Gets the has_executable_notebook of this ConfigurationSetup.
-
-        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
-
-        :return: The has_executable_notebook of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_executable_notebook
-
-    @has_executable_notebook.setter
-    def has_executable_notebook(self, has_executable_notebook):
-        """Sets the has_executable_notebook of this ConfigurationSetup.
-
-        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
-
-        :param has_executable_notebook: The has_executable_notebook of this ConfigurationSetup.
-        :type has_executable_notebook: List[str]
-        """
-
-        self._has_executable_notebook = has_executable_notebook
-
-    @property
-    def has_execution_command(self):
-        """Gets the has_execution_command of this ConfigurationSetup.
-
-        Execution instructions on how to run the image  # noqa: E501
-
-        :return: The has_execution_command of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_execution_command
-
-    @has_execution_command.setter
-    def has_execution_command(self, has_execution_command):
-        """Sets the has_execution_command of this ConfigurationSetup.
-
-        Execution instructions on how to run the image  # noqa: E501
-
-        :param has_execution_command: The has_execution_command of this ConfigurationSetup.
-        :type has_execution_command: List[str]
-        """
-
-        self._has_execution_command = has_execution_command
-
-    @property
-    def has_faq(self):
-        """Gets the has_faq of this ConfigurationSetup.
-
-        Frequently asked questions about a software  # noqa: E501
-
-        :return: The has_faq of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_faq
-
-    @has_faq.setter
-    def has_faq(self, has_faq):
-        """Sets the has_faq of this ConfigurationSetup.
-
-        Frequently asked questions about a software  # noqa: E501
-
-        :param has_faq: The has_faq of this ConfigurationSetup.
-        :type has_faq: List[str]
-        """
-
-        self._has_faq = has_faq
-
-    @property
-    def has_funding(self):
-        """Gets the has_funding of this ConfigurationSetup.
-
-        Property that links a software project to its funding information  # noqa: E501
-
-        :return: The has_funding of this ConfigurationSetup.
-        :rtype: List[FundingInformation]
-        """
-        return self._has_funding
-
-    @has_funding.setter
-    def has_funding(self, has_funding):
-        """Sets the has_funding of this ConfigurationSetup.
-
-        Property that links a software project to its funding information  # noqa: E501
-
-        :param has_funding: The has_funding of this ConfigurationSetup.
-        :type has_funding: List[FundingInformation]
-        """
-
-        self._has_funding = has_funding
+        self._has_documentation = has_documentation
 
     @property
     def has_implementation_script_location(self):
@@ -985,27 +479,73 @@ class ConfigurationSetup(Model):
         self._has_implementation_script_location = has_implementation_script_location
 
     @property
-    def has_input(self):
-        """Gets the has_input of this ConfigurationSetup.
+    def software_requirements(self):
+        """Gets the software_requirements of this ConfigurationSetup.
 
-        Property that links a model configuration to the input types expected by it.  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
-        :return: The has_input of this ConfigurationSetup.
-        :rtype: List[DatasetSpecification]
+        :return: The software_requirements of this ConfigurationSetup.
+        :rtype: List[str]
         """
-        return self._has_input
+        return self._software_requirements
 
-    @has_input.setter
-    def has_input(self, has_input):
-        """Sets the has_input of this ConfigurationSetup.
+    @software_requirements.setter
+    def software_requirements(self, software_requirements):
+        """Sets the software_requirements of this ConfigurationSetup.
 
-        Property that links a model configuration to the input types expected by it.  # noqa: E501
+        Software requirements needed to install a software component  # noqa: E501
 
-        :param has_input: The has_input of this ConfigurationSetup.
-        :type has_input: List[DatasetSpecification]
+        :param software_requirements: The software_requirements of this ConfigurationSetup.
+        :type software_requirements: List[str]
         """
 
-        self._has_input = has_input
+        self._software_requirements = software_requirements
+
+    @property
+    def has_download_url(self):
+        """Gets the has_download_url of this ConfigurationSetup.
+
+        Download URL where to obtain the source/executable of the software  # noqa: E501
+
+        :return: The has_download_url of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_download_url
+
+    @has_download_url.setter
+    def has_download_url(self, has_download_url):
+        """Sets the has_download_url of this ConfigurationSetup.
+
+        Download URL where to obtain the source/executable of the software  # noqa: E501
+
+        :param has_download_url: The has_download_url of this ConfigurationSetup.
+        :type has_download_url: List[str]
+        """
+
+        self._has_download_url = has_download_url
+
+    @property
+    def type(self):
+        """Gets the type of this ConfigurationSetup.
+
+        type of the resource  # noqa: E501
+
+        :return: The type of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ConfigurationSetup.
+
+        type of the resource  # noqa: E501
+
+        :param type: The type of this ConfigurationSetup.
+        :type type: List[str]
+        """
+
+        self._type = type
 
     @property
     def has_installation_instructions(self):
@@ -1031,303 +571,142 @@ class ConfigurationSetup(Model):
         self._has_installation_instructions = has_installation_instructions
 
     @property
-    def has_output(self):
-        """Gets the has_output of this ConfigurationSetup.
+    def compatible_visualization_software(self):
+        """Gets the compatible_visualization_software of this ConfigurationSetup.
 
-        Property that expresses what are the outputs of a model  # noqa: E501
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
 
-        :return: The has_output of this ConfigurationSetup.
-        :rtype: List[DatasetSpecification]
+        :return: The compatible_visualization_software of this ConfigurationSetup.
+        :rtype: List[Software]
         """
-        return self._has_output
+        return self._compatible_visualization_software
 
-    @has_output.setter
-    def has_output(self, has_output):
-        """Sets the has_output of this ConfigurationSetup.
+    @compatible_visualization_software.setter
+    def compatible_visualization_software(self, compatible_visualization_software):
+        """Sets the compatible_visualization_software of this ConfigurationSetup.
 
-        Property that expresses what are the outputs of a model  # noqa: E501
+        Property that links a software component to other useful software that canbe used to visualize its outputs  # noqa: E501
 
-        :param has_output: The has_output of this ConfigurationSetup.
-        :type has_output: List[DatasetSpecification]
+        :param compatible_visualization_software: The compatible_visualization_software of this ConfigurationSetup.
+        :type compatible_visualization_software: List[Software]
         """
 
-        self._has_output = has_output
+        self._compatible_visualization_software = compatible_visualization_software
 
     @property
-    def has_parameter(self):
-        """Gets the has_parameter of this ConfigurationSetup.
+    def copyright_holder(self):
+        """Gets the copyright_holder of this ConfigurationSetup.
 
-        Property that indicates the parameters of a model configuration  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
-        :return: The has_parameter of this ConfigurationSetup.
-        :rtype: List[Parameter]
+        :return: The copyright_holder of this ConfigurationSetup.
+        :rtype: List[object]
         """
-        return self._has_parameter
+        return self._copyright_holder
 
-    @has_parameter.setter
-    def has_parameter(self, has_parameter):
-        """Sets the has_parameter of this ConfigurationSetup.
+    @copyright_holder.setter
+    def copyright_holder(self, copyright_holder):
+        """Sets the copyright_holder of this ConfigurationSetup.
 
-        Property that indicates the parameters of a model configuration  # noqa: E501
+        Copyright holder for a software component  # noqa: E501
 
-        :param has_parameter: The has_parameter of this ConfigurationSetup.
-        :type has_parameter: List[Parameter]
+        :param copyright_holder: The copyright_holder of this ConfigurationSetup.
+        :type copyright_holder: List[object]
         """
 
-        self._has_parameter = has_parameter
+        self._copyright_holder = copyright_holder
 
     @property
-    def has_purpose(self):
-        """Gets the has_purpose of this ConfigurationSetup.
+    def has_faq(self):
+        """Gets the has_faq of this ConfigurationSetup.
 
-        Objective or main functionality that can be achieved by running this software  # noqa: E501
+        Frequently asked questions about a software  # noqa: E501
 
-        :return: The has_purpose of this ConfigurationSetup.
+        :return: The has_faq of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._has_purpose
+        return self._has_faq
 
-    @has_purpose.setter
-    def has_purpose(self, has_purpose):
-        """Sets the has_purpose of this ConfigurationSetup.
+    @has_faq.setter
+    def has_faq(self, has_faq):
+        """Sets the has_faq of this ConfigurationSetup.
 
-        Objective or main functionality that can be achieved by running this software  # noqa: E501
+        Frequently asked questions about a software  # noqa: E501
 
-        :param has_purpose: The has_purpose of this ConfigurationSetup.
-        :type has_purpose: List[str]
+        :param has_faq: The has_faq of this ConfigurationSetup.
+        :type has_faq: List[str]
         """
 
-        self._has_purpose = has_purpose
+        self._has_faq = has_faq
 
     @property
-    def has_sample_execution(self):
-        """Gets the has_sample_execution of this ConfigurationSetup.
+    def logo(self):
+        """Gets the logo of this ConfigurationSetup.
 
-        Property pointing to a sample execution of a software configuration  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
-        :return: The has_sample_execution of this ConfigurationSetup.
-        :rtype: List[SampleExecution]
+        :return: The logo of this ConfigurationSetup.
+        :rtype: List[Image]
         """
-        return self._has_sample_execution
+        return self._logo
 
-    @has_sample_execution.setter
-    def has_sample_execution(self, has_sample_execution):
-        """Sets the has_sample_execution of this ConfigurationSetup.
+    @logo.setter
+    def logo(self, logo):
+        """Sets the logo of this ConfigurationSetup.
 
-        Property pointing to a sample execution of a software configuration  # noqa: E501
+        Property that links to the image used as logo for a software component  # noqa: E501
 
-        :param has_sample_execution: The has_sample_execution of this ConfigurationSetup.
-        :type has_sample_execution: List[SampleExecution]
+        :param logo: The logo of this ConfigurationSetup.
+        :type logo: List[Image]
         """
 
-        self._has_sample_execution = has_sample_execution
+        self._logo = logo
 
     @property
-    def has_sample_result(self):
-        """Gets the has_sample_result of this ConfigurationSetup.
+    def has_contact_person(self):
+        """Gets the has_contact_person of this ConfigurationSetup.
 
-        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
-        :return: The has_sample_result of this ConfigurationSetup.
-        :rtype: List[SampleResource]
+        :return: The has_contact_person of this ConfigurationSetup.
+        :rtype: List[object]
         """
-        return self._has_sample_result
+        return self._has_contact_person
 
-    @has_sample_result.setter
-    def has_sample_result(self, has_sample_result):
-        """Sets the has_sample_result of this ConfigurationSetup.
+    @has_contact_person.setter
+    def has_contact_person(self, has_contact_person):
+        """Sets the has_contact_person of this ConfigurationSetup.
 
-        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
+        Contact person responsible for a software component  # noqa: E501
 
-        :param has_sample_result: The has_sample_result of this ConfigurationSetup.
-        :type has_sample_result: List[SampleResource]
+        :param has_contact_person: The has_contact_person of this ConfigurationSetup.
+        :type has_contact_person: List[object]
         """
 
-        self._has_sample_result = has_sample_result
+        self._has_contact_person = has_contact_person
 
     @property
-    def has_sample_visualization(self):
-        """Gets the has_sample_visualization of this ConfigurationSetup.
+    def tag(self):
+        """Gets the tag of this ConfigurationSetup.
 
-        A typical sample visualization of the softwware outputs  # noqa: E501
+        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
 
-        :return: The has_sample_visualization of this ConfigurationSetup.
-        :rtype: List[Visualization]
-        """
-        return self._has_sample_visualization
-
-    @has_sample_visualization.setter
-    def has_sample_visualization(self, has_sample_visualization):
-        """Sets the has_sample_visualization of this ConfigurationSetup.
-
-        A typical sample visualization of the softwware outputs  # noqa: E501
-
-        :param has_sample_visualization: The has_sample_visualization of this ConfigurationSetup.
-        :type has_sample_visualization: List[Visualization]
-        """
-
-        self._has_sample_visualization = has_sample_visualization
-
-    @property
-    def has_setup(self):
-        """Gets the has_setup of this ConfigurationSetup.
-
-        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
-
-        :return: The has_setup of this ConfigurationSetup.
-        :rtype: List[ConfigurationSetup]
-        """
-        return self._has_setup
-
-    @has_setup.setter
-    def has_setup(self, has_setup):
-        """Sets the has_setup of this ConfigurationSetup.
-
-        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
-
-        :param has_setup: The has_setup of this ConfigurationSetup.
-        :type has_setup: List[ConfigurationSetup]
-        """
-
-        self._has_setup = has_setup
-
-    @property
-    def has_software_image(self):
-        """Gets the has_software_image of this ConfigurationSetup.
-
-        Function to link a function with its corresponding container  # noqa: E501
-
-        :return: The has_software_image of this ConfigurationSetup.
-        :rtype: List[SoftwareImage]
-        """
-        return self._has_software_image
-
-    @has_software_image.setter
-    def has_software_image(self, has_software_image):
-        """Sets the has_software_image of this ConfigurationSetup.
-
-        Function to link a function with its corresponding container  # noqa: E501
-
-        :param has_software_image: The has_software_image of this ConfigurationSetup.
-        :type has_software_image: List[SoftwareImage]
-        """
-
-        self._has_software_image = has_software_image
-
-    @property
-    def has_source_code(self):
-        """Gets the has_source_code of this ConfigurationSetup.
-
-        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
-
-        :return: The has_source_code of this ConfigurationSetup.
-        :rtype: List[SourceCode]
-        """
-        return self._has_source_code
-
-    @has_source_code.setter
-    def has_source_code(self, has_source_code):
-        """Sets the has_source_code of this ConfigurationSetup.
-
-        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
-
-        :param has_source_code: The has_source_code of this ConfigurationSetup.
-        :type has_source_code: List[SourceCode]
-        """
-
-        self._has_source_code = has_source_code
-
-    @property
-    def has_support_script_location(self):
-        """Gets the has_support_script_location of this ConfigurationSetup.
-
-        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
-
-        :return: The has_support_script_location of this ConfigurationSetup.
+        :return: The tag of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._has_support_script_location
+        return self._tag
 
-    @has_support_script_location.setter
-    def has_support_script_location(self, has_support_script_location):
-        """Sets the has_support_script_location of this ConfigurationSetup.
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ConfigurationSetup.
 
-        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
+        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
 
-        :param has_support_script_location: The has_support_script_location of this ConfigurationSetup.
-        :type has_support_script_location: List[str]
+        :param tag: The tag of this ConfigurationSetup.
+        :type tag: List[str]
         """
 
-        self._has_support_script_location = has_support_script_location
-
-    @property
-    def has_typical_data_source(self):
-        """Gets the has_typical_data_source of this ConfigurationSetup.
-
-        Typical data sources that are used by a software component  # noqa: E501
-
-        :return: The has_typical_data_source of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_typical_data_source
-
-    @has_typical_data_source.setter
-    def has_typical_data_source(self, has_typical_data_source):
-        """Sets the has_typical_data_source of this ConfigurationSetup.
-
-        Typical data sources that are used by a software component  # noqa: E501
-
-        :param has_typical_data_source: The has_typical_data_source of this ConfigurationSetup.
-        :type has_typical_data_source: List[str]
-        """
-
-        self._has_typical_data_source = has_typical_data_source
-
-    @property
-    def has_usage_notes(self):
-        """Gets the has_usage_notes of this ConfigurationSetup.
-
-        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
-
-        :return: The has_usage_notes of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._has_usage_notes
-
-    @has_usage_notes.setter
-    def has_usage_notes(self, has_usage_notes):
-        """Sets the has_usage_notes of this ConfigurationSetup.
-
-        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
-
-        :param has_usage_notes: The has_usage_notes of this ConfigurationSetup.
-        :type has_usage_notes: List[str]
-        """
-
-        self._has_usage_notes = has_usage_notes
-
-    @property
-    def has_version(self):
-        """Gets the has_version of this ConfigurationSetup.
-
-        Property designed to link a software component with its corresponding versions  # noqa: E501
-
-        :return: The has_version of this ConfigurationSetup.
-        :rtype: List[SoftwareVersion]
-        """
-        return self._has_version
-
-    @has_version.setter
-    def has_version(self, has_version):
-        """Sets the has_version of this ConfigurationSetup.
-
-        Property designed to link a software component with its corresponding versions  # noqa: E501
-
-        :param has_version: The has_version of this ConfigurationSetup.
-        :type has_version: List[SoftwareVersion]
-        """
-
-        self._has_version = has_version
+        self._tag = tag
 
     @property
     def id(self):
@@ -1376,73 +755,211 @@ class ConfigurationSetup(Model):
         self._identifier = identifier
 
     @property
-    def issue_tracker(self):
-        """Gets the issue_tracker of this ConfigurationSetup.
+    def has_sample_execution(self):
+        """Gets the has_sample_execution of this ConfigurationSetup.
 
-        Pointer to the issue tracker of a software component  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
-        :return: The issue_tracker of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The has_sample_execution of this ConfigurationSetup.
+        :rtype: List[SampleExecution]
         """
-        return self._issue_tracker
+        return self._has_sample_execution
 
-    @issue_tracker.setter
-    def issue_tracker(self, issue_tracker):
-        """Sets the issue_tracker of this ConfigurationSetup.
+    @has_sample_execution.setter
+    def has_sample_execution(self, has_sample_execution):
+        """Sets the has_sample_execution of this ConfigurationSetup.
 
-        Pointer to the issue tracker of a software component  # noqa: E501
+        Property pointing to a sample execution of a software configuration  # noqa: E501
 
-        :param issue_tracker: The issue_tracker of this ConfigurationSetup.
-        :type issue_tracker: List[str]
+        :param has_sample_execution: The has_sample_execution of this ConfigurationSetup.
+        :type has_sample_execution: List[SampleExecution]
         """
 
-        self._issue_tracker = issue_tracker
+        self._has_sample_execution = has_sample_execution
 
     @property
-    def keywords(self):
-        """Gets the keywords of this ConfigurationSetup.
+    def has_sample_result(self):
+        """Gets the has_sample_result of this ConfigurationSetup.
 
-        Keywords associated with a software component  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
-        :return: The keywords of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The has_sample_result of this ConfigurationSetup.
+        :rtype: List[SampleResource]
         """
-        return self._keywords
+        return self._has_sample_result
 
-    @keywords.setter
-    def keywords(self, keywords):
-        """Sets the keywords of this ConfigurationSetup.
+    @has_sample_result.setter
+    def has_sample_result(self, has_sample_result):
+        """Sets the has_sample_result of this ConfigurationSetup.
 
-        Keywords associated with a software component  # noqa: E501
+        Property designed to link a software configuration to a sample resource resulting from its execution  # noqa: E501
 
-        :param keywords: The keywords of this ConfigurationSetup.
-        :type keywords: List[str]
+        :param has_sample_result: The has_sample_result of this ConfigurationSetup.
+        :type has_sample_result: List[SampleResource]
         """
 
-        self._keywords = keywords
+        self._has_sample_result = has_sample_result
 
     @property
-    def label(self):
-        """Gets the label of this ConfigurationSetup.
+    def author(self):
+        """Gets the author of this ConfigurationSetup.
 
-        short description of the resource  # noqa: E501
+        The creator of a software component  # noqa: E501
 
-        :return: The label of this ConfigurationSetup.
+        :return: The author of this ConfigurationSetup.
+        :rtype: List[object]
+        """
+        return self._author
+
+    @author.setter
+    def author(self, author):
+        """Sets the author of this ConfigurationSetup.
+
+        The creator of a software component  # noqa: E501
+
+        :param author: The author of this ConfigurationSetup.
+        :type author: List[object]
+        """
+
+        self._author = author
+
+    @property
+    def was_derived_from_setup(self):
+        """Gets the was_derived_from_setup of this ConfigurationSetup.
+
+        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+
+        :return: The was_derived_from_setup of this ConfigurationSetup.
+        :rtype: List[ConfigurationSetup]
+        """
+        return self._was_derived_from_setup
+
+    @was_derived_from_setup.setter
+    def was_derived_from_setup(self, was_derived_from_setup):
+        """Sets the was_derived_from_setup of this ConfigurationSetup.
+
+        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+
+        :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.
+        :type was_derived_from_setup: List[ConfigurationSetup]
+        """
+
+        self._was_derived_from_setup = was_derived_from_setup
+
+    @property
+    def has_constraint(self):
+        """Gets the has_constraint of this ConfigurationSetup.
+
+        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+
+        :return: The has_constraint of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._label
+        return self._has_constraint
 
-    @label.setter
-    def label(self, label):
-        """Sets the label of this ConfigurationSetup.
+    @has_constraint.setter
+    def has_constraint(self, has_constraint):
+        """Sets the has_constraint of this ConfigurationSetup.
 
-        short description of the resource  # noqa: E501
+        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
 
-        :param label: The label of this ConfigurationSetup.
-        :type label: List[str]
+        :param has_constraint: The has_constraint of this ConfigurationSetup.
+        :type has_constraint: List[str]
         """
 
-        self._label = label
+        self._has_constraint = has_constraint
+
+    @property
+    def has_build_file(self):
+        """Gets the has_build_file of this ConfigurationSetup.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :return: The has_build_file of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_build_file
+
+    @has_build_file.setter
+    def has_build_file(self, has_build_file):
+        """Sets the has_build_file of this ConfigurationSetup.
+
+        A file (e.g., Dockerfile) with executable instructions indicating how a Software Image or a Software component is built  # noqa: E501
+
+        :param has_build_file: The has_build_file of this ConfigurationSetup.
+        :type has_build_file: List[str]
+        """
+
+        self._has_build_file = has_build_file
+
+    @property
+    def short_description(self):
+        """Gets the short_description of this ConfigurationSetup.
+
+        A summarized description of the resource  # noqa: E501
+
+        :return: The short_description of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._short_description
+
+    @short_description.setter
+    def short_description(self, short_description):
+        """Sets the short_description of this ConfigurationSetup.
+
+        A summarized description of the resource  # noqa: E501
+
+        :param short_description: The short_description of this ConfigurationSetup.
+        :type short_description: List[str]
+        """
+
+        self._short_description = short_description
+
+    @property
+    def has_execution_command(self):
+        """Gets the has_execution_command of this ConfigurationSetup.
+
+        Execution instructions on how to run the image  # noqa: E501
+
+        :return: The has_execution_command of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_execution_command
+
+    @has_execution_command.setter
+    def has_execution_command(self, has_execution_command):
+        """Sets the has_execution_command of this ConfigurationSetup.
+
+        Execution instructions on how to run the image  # noqa: E501
+
+        :param has_execution_command: The has_execution_command of this ConfigurationSetup.
+        :type has_execution_command: List[str]
+        """
+
+        self._has_execution_command = has_execution_command
+
+    @property
+    def date_published(self):
+        """Gets the date_published of this ConfigurationSetup.
+
+        Date when a software component was published  # noqa: E501
+
+        :return: The date_published of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._date_published
+
+    @date_published.setter
+    def date_published(self, date_published):
+        """Sets the date_published of this ConfigurationSetup.
+
+        Date when a software component was published  # noqa: E501
+
+        :param date_published: The date_published of this ConfigurationSetup.
+        :type date_published: List[str]
+        """
+
+        self._date_published = date_published
 
     @property
     def license(self):
@@ -1468,96 +985,73 @@ class ConfigurationSetup(Model):
         self._license = license
 
     @property
-    def logo(self):
-        """Gets the logo of this ConfigurationSetup.
+    def has_source_code(self):
+        """Gets the has_source_code of this ConfigurationSetup.
 
-        Property that links to the image used as logo for a software component  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
-        :return: The logo of this ConfigurationSetup.
-        :rtype: List[Image]
+        :return: The has_source_code of this ConfigurationSetup.
+        :rtype: List[SourceCode]
         """
-        return self._logo
+        return self._has_source_code
 
-    @logo.setter
-    def logo(self, logo):
-        """Sets the logo of this ConfigurationSetup.
+    @has_source_code.setter
+    def has_source_code(self, has_source_code):
+        """Sets the has_source_code of this ConfigurationSetup.
 
-        Property that links to the image used as logo for a software component  # noqa: E501
+        Property designed to link a software with its software source code (which may reside in a code repository such as GitHub)  # noqa: E501
 
-        :param logo: The logo of this ConfigurationSetup.
-        :type logo: List[Image]
+        :param has_source_code: The has_source_code of this ConfigurationSetup.
+        :type has_source_code: List[SourceCode]
         """
 
-        self._logo = logo
+        self._has_source_code = has_source_code
 
     @property
-    def memory_requirements(self):
-        """Gets the memory_requirements of this ConfigurationSetup.
+    def has_setup(self):
+        """Gets the has_setup of this ConfigurationSetup.
 
-        Memory requirements of a software  # noqa: E501
+        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
 
-        :return: The memory_requirements of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The has_setup of this ConfigurationSetup.
+        :rtype: List[ConfigurationSetup]
         """
-        return self._memory_requirements
+        return self._has_setup
 
-    @memory_requirements.setter
-    def memory_requirements(self, memory_requirements):
-        """Sets the memory_requirements of this ConfigurationSetup.
+    @has_setup.setter
+    def has_setup(self, has_setup):
+        """Sets the has_setup of this ConfigurationSetup.
 
-        Memory requirements of a software  # noqa: E501
+        Property used to define configurations with some fixed resources and values. The rationale of this property is to allow predefined configurations  # noqa: E501
 
-        :param memory_requirements: The memory_requirements of this ConfigurationSetup.
-        :type memory_requirements: List[str]
+        :param has_setup: The has_setup of this ConfigurationSetup.
+        :type has_setup: List[ConfigurationSetup]
         """
 
-        self._memory_requirements = memory_requirements
+        self._has_setup = has_setup
 
     @property
-    def operating_systems(self):
-        """Gets the operating_systems of this ConfigurationSetup.
+    def has_example(self):
+        """Gets the has_example of this ConfigurationSetup.
 
-        Operating systems under which a software component can operate  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
-        :return: The operating_systems of this ConfigurationSetup.
+        :return: The has_example of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._operating_systems
+        return self._has_example
 
-    @operating_systems.setter
-    def operating_systems(self, operating_systems):
-        """Sets the operating_systems of this ConfigurationSetup.
+    @has_example.setter
+    def has_example(self, has_example):
+        """Sets the has_example of this ConfigurationSetup.
 
-        Operating systems under which a software component can operate  # noqa: E501
+        An example explaining a scenario where the software component was used in plain language.  # noqa: E501
 
-        :param operating_systems: The operating_systems of this ConfigurationSetup.
-        :type operating_systems: List[str]
+        :param has_example: The has_example of this ConfigurationSetup.
+        :type has_example: List[str]
         """
 
-        self._operating_systems = operating_systems
-
-    @property
-    def processor_requirements(self):
-        """Gets the processor_requirements of this ConfigurationSetup.
-
-        Processor requirements of a software component  # noqa: E501
-
-        :return: The processor_requirements of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._processor_requirements
-
-    @processor_requirements.setter
-    def processor_requirements(self, processor_requirements):
-        """Sets the processor_requirements of this ConfigurationSetup.
-
-        Processor requirements of a software component  # noqa: E501
-
-        :param processor_requirements: The processor_requirements of this ConfigurationSetup.
-        :type processor_requirements: List[str]
-        """
-
-        self._processor_requirements = processor_requirements
+        self._has_example = has_example
 
     @property
     def publisher(self):
@@ -1583,27 +1077,211 @@ class ConfigurationSetup(Model):
         self._publisher = publisher
 
     @property
-    def readme(self):
-        """Gets the readme of this ConfigurationSetup.
+    def has_output(self):
+        """Gets the has_output of this ConfigurationSetup.
 
-        URl to the readme file of a software component  # noqa: E501
+        Property that expresses what are the outputs of a model  # noqa: E501
 
-        :return: The readme of this ConfigurationSetup.
+        :return: The has_output of this ConfigurationSetup.
+        :rtype: List[DatasetSpecification]
+        """
+        return self._has_output
+
+    @has_output.setter
+    def has_output(self, has_output):
+        """Sets the has_output of this ConfigurationSetup.
+
+        Property that expresses what are the outputs of a model  # noqa: E501
+
+        :param has_output: The has_output of this ConfigurationSetup.
+        :type has_output: List[DatasetSpecification]
+        """
+
+        self._has_output = has_output
+
+    @property
+    def status(self):
+        """Gets the status of this ConfigurationSetup.
+
+        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
+
+        :return: The status of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._readme
+        return self._status
 
-    @readme.setter
-    def readme(self, readme):
-        """Sets the readme of this ConfigurationSetup.
+    @status.setter
+    def status(self, status):
+        """Sets the status of this ConfigurationSetup.
 
-        URl to the readme file of a software component  # noqa: E501
+        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
 
-        :param readme: The readme of this ConfigurationSetup.
-        :type readme: List[str]
+        :param status: The status of this ConfigurationSetup.
+        :type status: List[str]
         """
 
-        self._readme = readme
+        self._status = status
+
+    @property
+    def doi(self):
+        """Gets the doi of this ConfigurationSetup.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :return: The doi of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._doi
+
+    @doi.setter
+    def doi(self, doi):
+        """Sets the doi of this ConfigurationSetup.
+
+        Digital Object Identifier associated with a software component  # noqa: E501
+
+        :param doi: The doi of this ConfigurationSetup.
+        :type doi: List[str]
+        """
+
+        self._doi = doi
+
+    @property
+    def has_funding(self):
+        """Gets the has_funding of this ConfigurationSetup.
+
+        Property that links a software project to its funding information  # noqa: E501
+
+        :return: The has_funding of this ConfigurationSetup.
+        :rtype: List[FundingInformation]
+        """
+        return self._has_funding
+
+    @has_funding.setter
+    def has_funding(self, has_funding):
+        """Sets the has_funding of this ConfigurationSetup.
+
+        Property that links a software project to its funding information  # noqa: E501
+
+        :param has_funding: The has_funding of this ConfigurationSetup.
+        :type has_funding: List[FundingInformation]
+        """
+
+        self._has_funding = has_funding
+
+    @property
+    def has_component_location(self):
+        """Gets the has_component_location of this ConfigurationSetup.
+
+        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
+
+        :return: The has_component_location of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_component_location
+
+    @has_component_location.setter
+    def has_component_location(self, has_component_location):
+        """Sets the has_component_location of this ConfigurationSetup.
+
+        Location of the aggregation of all the files needed to execute the component. Usually a zip file including the run script and support scripts, including specification files  # noqa: E501
+
+        :param has_component_location: The has_component_location of this ConfigurationSetup.
+        :type has_component_location: List[str]
+        """
+
+        self._has_component_location = has_component_location
+
+    @property
+    def support_details(self):
+        """Gets the support_details of this ConfigurationSetup.
+
+        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+
+        :return: The support_details of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._support_details
+
+    @support_details.setter
+    def support_details(self, support_details):
+        """Sets the support_details of this ConfigurationSetup.
+
+        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+
+        :param support_details: The support_details of this ConfigurationSetup.
+        :type support_details: List[str]
+        """
+
+        self._support_details = support_details
+
+    @property
+    def has_version(self):
+        """Gets the has_version of this ConfigurationSetup.
+
+        Property designed to link a software component with its corresponding versions  # noqa: E501
+
+        :return: The has_version of this ConfigurationSetup.
+        :rtype: List[SoftwareVersion]
+        """
+        return self._has_version
+
+    @has_version.setter
+    def has_version(self, has_version):
+        """Sets the has_version of this ConfigurationSetup.
+
+        Property designed to link a software component with its corresponding versions  # noqa: E501
+
+        :param has_version: The has_version of this ConfigurationSetup.
+        :type has_version: List[SoftwareVersion]
+        """
+
+        self._has_version = has_version
+
+    @property
+    def has_typical_data_source(self):
+        """Gets the has_typical_data_source of this ConfigurationSetup.
+
+        Typical data sources that are used by a software component  # noqa: E501
+
+        :return: The has_typical_data_source of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_typical_data_source
+
+    @has_typical_data_source.setter
+    def has_typical_data_source(self, has_typical_data_source):
+        """Sets the has_typical_data_source of this ConfigurationSetup.
+
+        Typical data sources that are used by a software component  # noqa: E501
+
+        :param has_typical_data_source: The has_typical_data_source of this ConfigurationSetup.
+        :type has_typical_data_source: List[str]
+        """
+
+        self._has_typical_data_source = has_typical_data_source
+
+    @property
+    def description(self):
+        """Gets the description of this ConfigurationSetup.
+
+        small description  # noqa: E501
+
+        :return: The description of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ConfigurationSetup.
+
+        small description  # noqa: E501
+
+        :param description: The description of this ConfigurationSetup.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def reference_publication(self):
@@ -1652,142 +1330,487 @@ class ConfigurationSetup(Model):
         self._screenshot = screenshot
 
     @property
-    def short_description(self):
-        """Gets the short_description of this ConfigurationSetup.
+    def had_primary_source(self):
+        """Gets the had_primary_source of this ConfigurationSetup.
 
-        A summarized description of the resource  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
-        :return: The short_description of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The had_primary_source of this ConfigurationSetup.
+        :rtype: List[object]
         """
-        return self._short_description
+        return self._had_primary_source
 
-    @short_description.setter
-    def short_description(self, short_description):
-        """Sets the short_description of this ConfigurationSetup.
+    @had_primary_source.setter
+    def had_primary_source(self, had_primary_source):
+        """Sets the had_primary_source of this ConfigurationSetup.
 
-        A summarized description of the resource  # noqa: E501
+        Property to identify the original source of the information of the annotated resource. It could be a web page, an organization, a person, some experiment notes, etc.  # noqa: E501
 
-        :param short_description: The short_description of this ConfigurationSetup.
-        :type short_description: List[str]
+        :param had_primary_source: The had_primary_source of this ConfigurationSetup.
+        :type had_primary_source: List[object]
         """
 
-        self._short_description = short_description
+        self._had_primary_source = had_primary_source
 
     @property
-    def software_requirements(self):
-        """Gets the software_requirements of this ConfigurationSetup.
+    def issue_tracker(self):
+        """Gets the issue_tracker of this ConfigurationSetup.
 
-        Software requirements needed to install a software component  # noqa: E501
+        Pointer to the issue tracker of a software component  # noqa: E501
 
-        :return: The software_requirements of this ConfigurationSetup.
+        :return: The issue_tracker of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._software_requirements
+        return self._issue_tracker
 
-    @software_requirements.setter
-    def software_requirements(self, software_requirements):
-        """Sets the software_requirements of this ConfigurationSetup.
+    @issue_tracker.setter
+    def issue_tracker(self, issue_tracker):
+        """Sets the issue_tracker of this ConfigurationSetup.
 
-        Software requirements needed to install a software component  # noqa: E501
+        Pointer to the issue tracker of a software component  # noqa: E501
 
-        :param software_requirements: The software_requirements of this ConfigurationSetup.
-        :type software_requirements: List[str]
+        :param issue_tracker: The issue_tracker of this ConfigurationSetup.
+        :type issue_tracker: List[str]
         """
 
-        self._software_requirements = software_requirements
+        self._issue_tracker = issue_tracker
 
     @property
-    def status(self):
-        """Gets the status of this ConfigurationSetup.
+    def has_software_image(self):
+        """Gets the has_software_image of this ConfigurationSetup.
 
-        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
+        Function to link a function with its corresponding container  # noqa: E501
 
-        :return: The status of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The has_software_image of this ConfigurationSetup.
+        :rtype: List[SoftwareImage]
         """
-        return self._status
+        return self._has_software_image
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this ConfigurationSetup.
+    @has_software_image.setter
+    def has_software_image(self, has_software_image):
+        """Sets the has_software_image of this ConfigurationSetup.
 
-        Data property to indicate the status of a configuration setups. For example, to indicate that a setup has been executed in a platform, that the setup should notbe shown to users (it's an auxiliary setup), etc.  # noqa: E501
+        Function to link a function with its corresponding container  # noqa: E501
 
-        :param status: The status of this ConfigurationSetup.
-        :type status: List[str]
+        :param has_software_image: The has_software_image of this ConfigurationSetup.
+        :type has_software_image: List[SoftwareImage]
         """
 
-        self._status = status
+        self._has_software_image = has_software_image
 
     @property
-    def support_details(self):
-        """Gets the support_details of this ConfigurationSetup.
+    def date_created(self):
+        """Gets the date_created of this ConfigurationSetup.
 
-        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
-        :return: The support_details of this ConfigurationSetup.
+        :return: The date_created of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._support_details
+        return self._date_created
 
-    @support_details.setter
-    def support_details(self, support_details):
-        """Sets the support_details of this ConfigurationSetup.
+    @date_created.setter
+    def date_created(self, date_created):
+        """Sets the date_created of this ConfigurationSetup.
 
-        Property to link details, such as mailing lists in case a contact person is not provided  # noqa: E501
+        Date when a software component was created  # noqa: E501
 
-        :param support_details: The support_details of this ConfigurationSetup.
-        :type support_details: List[str]
+        :param date_created: The date_created of this ConfigurationSetup.
+        :type date_created: List[str]
         """
 
-        self._support_details = support_details
+        self._date_created = date_created
 
     @property
-    def tag(self):
-        """Gets the tag of this ConfigurationSetup.
+    def contributor(self):
+        """Gets the contributor of this ConfigurationSetup.
 
-        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
-        :return: The tag of this ConfigurationSetup.
-        :rtype: List[str]
+        :return: The contributor of this ConfigurationSetup.
+        :rtype: List[Person]
         """
-        return self._tag
+        return self._contributor
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ConfigurationSetup.
+    @contributor.setter
+    def contributor(self, contributor):
+        """Sets the contributor of this ConfigurationSetup.
 
-        Tag used to annotate a version or a software configuration. This annotation is useful to show which version is the latest, or which version is deprecated. Supported tags are: \"latest\", \"deprecated\"  # noqa: E501
+        Contributor to a software component  # noqa: E501
 
-        :param tag: The tag of this ConfigurationSetup.
-        :type tag: List[str]
+        :param contributor: The contributor of this ConfigurationSetup.
+        :type contributor: List[Person]
         """
 
-        self._tag = tag
+        self._contributor = contributor
 
     @property
-    def type(self):
-        """Gets the type of this ConfigurationSetup.
+    def has_purpose(self):
+        """Gets the has_purpose of this ConfigurationSetup.
 
-        type of the resource  # noqa: E501
+        Objective or main functionality that can be achieved by running this software  # noqa: E501
 
-        :return: The type of this ConfigurationSetup.
+        :return: The has_purpose of this ConfigurationSetup.
         :rtype: List[str]
         """
-        return self._type
+        return self._has_purpose
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ConfigurationSetup.
+    @has_purpose.setter
+    def has_purpose(self, has_purpose):
+        """Sets the has_purpose of this ConfigurationSetup.
 
-        type of the resource  # noqa: E501
+        Objective or main functionality that can be achieved by running this software  # noqa: E501
 
-        :param type: The type of this ConfigurationSetup.
-        :type type: List[str]
+        :param has_purpose: The has_purpose of this ConfigurationSetup.
+        :type has_purpose: List[str]
         """
 
-        self._type = type
+        self._has_purpose = has_purpose
+
+    @property
+    def has_executable_instructions(self):
+        """Gets the has_executable_instructions of this ConfigurationSetup.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :return: The has_executable_instructions of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_executable_instructions
+
+    @has_executable_instructions.setter
+    def has_executable_instructions(self, has_executable_instructions):
+        """Sets the has_executable_instructions of this ConfigurationSetup.
+
+        Instructions that indicate how a software component should be executed. The difference with `hasExecutionCommand` is that the execution instructions aim to be human-readable, and have explanations between the different commands and instructions  # noqa: E501
+
+        :param has_executable_instructions: The has_executable_instructions of this ConfigurationSetup.
+        :type has_executable_instructions: List[str]
+        """
+
+        self._has_executable_instructions = has_executable_instructions
+
+    @property
+    def has_sample_visualization(self):
+        """Gets the has_sample_visualization of this ConfigurationSetup.
+
+        A typical sample visualization of the softwware outputs  # noqa: E501
+
+        :return: The has_sample_visualization of this ConfigurationSetup.
+        :rtype: List[Visualization]
+        """
+        return self._has_sample_visualization
+
+    @has_sample_visualization.setter
+    def has_sample_visualization(self, has_sample_visualization):
+        """Sets the has_sample_visualization of this ConfigurationSetup.
+
+        A typical sample visualization of the softwware outputs  # noqa: E501
+
+        :param has_sample_visualization: The has_sample_visualization of this ConfigurationSetup.
+        :type has_sample_visualization: List[Visualization]
+        """
+
+        self._has_sample_visualization = has_sample_visualization
+
+    @property
+    def memory_requirements(self):
+        """Gets the memory_requirements of this ConfigurationSetup.
+
+        Memory requirements of a software  # noqa: E501
+
+        :return: The memory_requirements of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._memory_requirements
+
+    @memory_requirements.setter
+    def memory_requirements(self, memory_requirements):
+        """Sets the memory_requirements of this ConfigurationSetup.
+
+        Memory requirements of a software  # noqa: E501
+
+        :param memory_requirements: The memory_requirements of this ConfigurationSetup.
+        :type memory_requirements: List[str]
+        """
+
+        self._memory_requirements = memory_requirements
+
+    @property
+    def website(self):
+        """Gets the website of this ConfigurationSetup.
+
+        Website of the software  # noqa: E501
+
+        :return: The website of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this ConfigurationSetup.
+
+        Website of the software  # noqa: E501
+
+        :param website: The website of this ConfigurationSetup.
+        :type website: List[str]
+        """
+
+        self._website = website
+
+    @property
+    def citation(self):
+        """Gets the citation of this ConfigurationSetup.
+
+        How to cite this software  # noqa: E501
+
+        :return: The citation of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._citation
+
+    @citation.setter
+    def citation(self, citation):
+        """Sets the citation of this ConfigurationSetup.
+
+        How to cite this software  # noqa: E501
+
+        :param citation: The citation of this ConfigurationSetup.
+        :type citation: List[str]
+        """
+
+        self._citation = citation
+
+    @property
+    def processor_requirements(self):
+        """Gets the processor_requirements of this ConfigurationSetup.
+
+        Processor requirements of a software component  # noqa: E501
+
+        :return: The processor_requirements of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._processor_requirements
+
+    @processor_requirements.setter
+    def processor_requirements(self, processor_requirements):
+        """Sets the processor_requirements of this ConfigurationSetup.
+
+        Processor requirements of a software component  # noqa: E501
+
+        :param processor_requirements: The processor_requirements of this ConfigurationSetup.
+        :type processor_requirements: List[str]
+        """
+
+        self._processor_requirements = processor_requirements
+
+    @property
+    def adjustable_parameter(self):
+        """Gets the adjustable_parameter of this ConfigurationSetup.
+
+        Parameter that can be adjusted in a configuration setup  # noqa: E501
+
+        :return: The adjustable_parameter of this ConfigurationSetup.
+        :rtype: List[Parameter]
+        """
+        return self._adjustable_parameter
+
+    @adjustable_parameter.setter
+    def adjustable_parameter(self, adjustable_parameter):
+        """Sets the adjustable_parameter of this ConfigurationSetup.
+
+        Parameter that can be adjusted in a configuration setup  # noqa: E501
+
+        :param adjustable_parameter: The adjustable_parameter of this ConfigurationSetup.
+        :type adjustable_parameter: List[Parameter]
+        """
+
+        self._adjustable_parameter = adjustable_parameter
+
+    @property
+    def has_usage_notes(self):
+        """Gets the has_usage_notes of this ConfigurationSetup.
+
+        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
+
+        :return: The has_usage_notes of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_usage_notes
+
+    @has_usage_notes.setter
+    def has_usage_notes(self, has_usage_notes):
+        """Sets the has_usage_notes of this ConfigurationSetup.
+
+        Property that describes the usage considerations of a particular software. These notes capture the rationale of for that software configuration, along with an explanation for sample inputs, things to consider when running the model with data, etc.  # noqa: E501
+
+        :param has_usage_notes: The has_usage_notes of this ConfigurationSetup.
+        :type has_usage_notes: List[str]
+        """
+
+        self._has_usage_notes = has_usage_notes
+
+    @property
+    def has_support_script_location(self):
+        """Gets the has_support_script_location of this ConfigurationSetup.
+
+        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
+
+        :return: The has_support_script_location of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_support_script_location
+
+    @has_support_script_location.setter
+    def has_support_script_location(self, has_support_script_location):
+        """Sets the has_support_script_location of this ConfigurationSetup.
+
+        Property that links to the location of scripts that may be used from the main runnable script.  # noqa: E501
+
+        :param has_support_script_location: The has_support_script_location of this ConfigurationSetup.
+        :type has_support_script_location: List[str]
+        """
+
+        self._has_support_script_location = has_support_script_location
+
+    @property
+    def readme(self):
+        """Gets the readme of this ConfigurationSetup.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :return: The readme of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._readme
+
+    @readme.setter
+    def readme(self, readme):
+        """Sets the readme of this ConfigurationSetup.
+
+        URl to the readme file of a software component  # noqa: E501
+
+        :param readme: The readme of this ConfigurationSetup.
+        :type readme: List[str]
+        """
+
+        self._readme = readme
+
+    @property
+    def label(self):
+        """Gets the label of this ConfigurationSetup.
+
+        short description of the resource  # noqa: E501
+
+        :return: The label of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this ConfigurationSetup.
+
+        short description of the resource  # noqa: E501
+
+        :param label: The label of this ConfigurationSetup.
+        :type label: List[str]
+        """
+
+        self._label = label
+
+    @property
+    def has_assumption(self):
+        """Gets the has_assumption of this ConfigurationSetup.
+
+        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
+
+        :return: The has_assumption of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_assumption
+
+    @has_assumption.setter
+    def has_assumption(self, has_assumption):
+        """Sets the has_assumption of this ConfigurationSetup.
+
+        Assumptions of a software, e.g. the solver being used for a particular model, the source of the data (e.g., all data must have a given resolution), etc.  # noqa: E501
+
+        :param has_assumption: The has_assumption of this ConfigurationSetup.
+        :type has_assumption: List[str]
+        """
+
+        self._has_assumption = has_assumption
+
+    @property
+    def has_parameter(self):
+        """Gets the has_parameter of this ConfigurationSetup.
+
+        Property that indicates the parameters of a model configuration  # noqa: E501
+
+        :return: The has_parameter of this ConfigurationSetup.
+        :rtype: List[Parameter]
+        """
+        return self._has_parameter
+
+    @has_parameter.setter
+    def has_parameter(self, has_parameter):
+        """Sets the has_parameter of this ConfigurationSetup.
+
+        Property that indicates the parameters of a model configuration  # noqa: E501
+
+        :param has_parameter: The has_parameter of this ConfigurationSetup.
+        :type has_parameter: List[Parameter]
+        """
+
+        self._has_parameter = has_parameter
+
+    @property
+    def operating_systems(self):
+        """Gets the operating_systems of this ConfigurationSetup.
+
+        Operating systems under which a software component can operate  # noqa: E501
+
+        :return: The operating_systems of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._operating_systems
+
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """Sets the operating_systems of this ConfigurationSetup.
+
+        Operating systems under which a software component can operate  # noqa: E501
+
+        :param operating_systems: The operating_systems of this ConfigurationSetup.
+        :type operating_systems: List[str]
+        """
+
+        self._operating_systems = operating_systems
+
+    @property
+    def has_executable_notebook(self):
+        """Gets the has_executable_notebook of this ConfigurationSetup.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :return: The has_executable_notebook of this ConfigurationSetup.
+        :rtype: List[str]
+        """
+        return self._has_executable_notebook
+
+    @has_executable_notebook.setter
+    def has_executable_notebook(self, has_executable_notebook):
+        """Sets the has_executable_notebook of this ConfigurationSetup.
+
+        Property that links a software component with an executable notebook (e.g., Jupyter notebook) that illustrates how to use it in an executable manner.  # noqa: E501
+
+        :param has_executable_notebook: The has_executable_notebook of this ConfigurationSetup.
+        :type has_executable_notebook: List[str]
+        """
+
+        self._has_executable_notebook = has_executable_notebook
 
     @property
     def useful_for_calculating_index(self):
@@ -1813,47 +1836,24 @@ class ConfigurationSetup(Model):
         self._useful_for_calculating_index = useful_for_calculating_index
 
     @property
-    def was_derived_from_setup(self):
-        """Gets the was_derived_from_setup of this ConfigurationSetup.
+    def has_input(self):
+        """Gets the has_input of this ConfigurationSetup.
 
-        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+        Property that links a model configuration to the input types expected by it.  # noqa: E501
 
-        :return: The was_derived_from_setup of this ConfigurationSetup.
-        :rtype: List[ConfigurationSetup]
+        :return: The has_input of this ConfigurationSetup.
+        :rtype: List[DatasetSpecification]
         """
-        return self._was_derived_from_setup
+        return self._has_input
 
-    @was_derived_from_setup.setter
-    def was_derived_from_setup(self, was_derived_from_setup):
-        """Sets the was_derived_from_setup of this ConfigurationSetup.
+    @has_input.setter
+    def has_input(self, has_input):
+        """Sets the has_input of this ConfigurationSetup.
 
-        Property that links a setup to a previous version of that setup. This property is needed (for example) when creating snapshots of setups.  # noqa: E501
+        Property that links a model configuration to the input types expected by it.  # noqa: E501
 
-        :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.
-        :type was_derived_from_setup: List[ConfigurationSetup]
-        """
-
-        self._was_derived_from_setup = was_derived_from_setup
-
-    @property
-    def website(self):
-        """Gets the website of this ConfigurationSetup.
-
-        Website of the software  # noqa: E501
-
-        :return: The website of this ConfigurationSetup.
-        :rtype: List[str]
-        """
-        return self._website
-
-    @website.setter
-    def website(self, website):
-        """Sets the website of this ConfigurationSetup.
-
-        Website of the software  # noqa: E501
-
-        :param website: The website of this ConfigurationSetup.
-        :type website: List[str]
+        :param has_input: The has_input of this ConfigurationSetup.
+        :type has_input: List[DatasetSpecification]
         """
 
-        self._website = website
+        self._has_input = has_input

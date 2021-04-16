@@ -15,15 +15,15 @@ class SampleCollection(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, data_catalog_identifier=None, description=None, has_part=None, id=None, label=None, type=None, value=None):  # noqa: E501
+    def __init__(self, data_catalog_identifier=None, has_part=None, description=None, id=None, label=None, type=None, value=None):  # noqa: E501
         """SampleCollection - a model defined in OpenAPI
 
         :param data_catalog_identifier: The data_catalog_identifier of this SampleCollection.  # noqa: E501
         :type data_catalog_identifier: List[str]
-        :param description: The description of this SampleCollection.  # noqa: E501
-        :type description: List[str]
         :param has_part: The has_part of this SampleCollection.  # noqa: E501
         :type has_part: List[SampleResource]
+        :param description: The description of this SampleCollection.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this SampleCollection.  # noqa: E501
         :type id: str
         :param label: The label of this SampleCollection.  # noqa: E501
@@ -40,8 +40,8 @@ class SampleCollection(Model):
 
         self.openapi_types = {
             'data_catalog_identifier': List[str],
-            'description': List[str],
             'has_part': List[SampleResource],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
@@ -50,8 +50,8 @@ class SampleCollection(Model):
 
         self.attribute_map = {
             'data_catalog_identifier': 'dataCatalogIdentifier',
-            'description': 'description',
             'has_part': 'hasPart',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type',
@@ -59,8 +59,8 @@ class SampleCollection(Model):
         }
 
         self._data_catalog_identifier = data_catalog_identifier
-        self._description = description
         self._has_part = has_part
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -101,29 +101,6 @@ class SampleCollection(Model):
         self._data_catalog_identifier = data_catalog_identifier
 
     @property
-    def description(self):
-        """Gets the description of this SampleCollection.
-
-        small description  # noqa: E501
-
-        :return: The description of this SampleCollection.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SampleCollection.
-
-        small description  # noqa: E501
-
-        :param description: The description of this SampleCollection.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
     def has_part(self):
         """Gets the has_part of this SampleCollection.
 
@@ -145,6 +122,29 @@ class SampleCollection(Model):
         """
 
         self._has_part = has_part
+
+    @property
+    def description(self):
+        """Gets the description of this SampleCollection.
+
+        small description  # noqa: E501
+
+        :return: The description of this SampleCollection.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SampleCollection.
+
+        small description  # noqa: E501
+
+        :param description: The description of this SampleCollection.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

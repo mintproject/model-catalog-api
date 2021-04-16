@@ -15,53 +15,53 @@ class Person(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, email=None, id=None, identifier=None, label=None, type=None, website=None):  # noqa: E501
+    def __init__(self, identifier=None, website=None, description=None, id=None, label=None, type=None, email=None):  # noqa: E501
         """Person - a model defined in OpenAPI
 
-        :param description: The description of this Person.  # noqa: E501
-        :type description: List[str]
-        :param email: The email of this Person.  # noqa: E501
-        :type email: List[str]
-        :param id: The id of this Person.  # noqa: E501
-        :type id: str
         :param identifier: The identifier of this Person.  # noqa: E501
         :type identifier: List[str]
+        :param website: The website of this Person.  # noqa: E501
+        :type website: List[str]
+        :param description: The description of this Person.  # noqa: E501
+        :type description: List[str]
+        :param id: The id of this Person.  # noqa: E501
+        :type id: str
         :param label: The label of this Person.  # noqa: E501
         :type label: List[str]
         :param type: The type of this Person.  # noqa: E501
         :type type: List[str]
-        :param website: The website of this Person.  # noqa: E501
-        :type website: List[str]
+        :param email: The email of this Person.  # noqa: E501
+        :type email: List[str]
         """
 
 
         self.openapi_types = {
-            'description': List[str],
-            'email': List[str],
-            'id': str,
             'identifier': List[str],
+            'website': List[str],
+            'description': List[str],
+            'id': str,
             'label': List[str],
             'type': List[str],
-            'website': List[str]
+            'email': List[str]
         }
 
         self.attribute_map = {
-            'description': 'description',
-            'email': 'email',
-            'id': 'id',
             'identifier': 'identifier',
+            'website': 'website',
+            'description': 'description',
+            'id': 'id',
             'label': 'label',
             'type': 'type',
-            'website': 'website'
+            'email': 'email'
         }
 
-        self._description = description
-        self._email = email
-        self._id = id
         self._identifier = identifier
+        self._website = website
+        self._description = description
+        self._id = id
         self._label = label
         self._type = type
-        self._website = website
+        self._email = email
 
     @classmethod
     def from_dict(cls, dikt) -> 'Person':
@@ -73,6 +73,52 @@ class Person(Model):
         :rtype: Person
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this Person.
+
+        Identifier of the resource being described  # noqa: E501
+
+        :return: The identifier of this Person.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this Person.
+
+        Identifier of the resource being described  # noqa: E501
+
+        :param identifier: The identifier of this Person.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
+
+    @property
+    def website(self):
+        """Gets the website of this Person.
+
+        Website of the software  # noqa: E501
+
+        :return: The website of this Person.
+        :rtype: List[str]
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this Person.
+
+        Website of the software  # noqa: E501
+
+        :param website: The website of this Person.
+        :type website: List[str]
+        """
+
+        self._website = website
 
     @property
     def description(self):
@@ -98,29 +144,6 @@ class Person(Model):
         self._description = description
 
     @property
-    def email(self):
-        """Gets the email of this Person.
-
-        Email of a person  # noqa: E501
-
-        :return: The email of this Person.
-        :rtype: List[str]
-        """
-        return self._email
-
-    @email.setter
-    def email(self, email):
-        """Sets the email of this Person.
-
-        Email of a person  # noqa: E501
-
-        :param email: The email of this Person.
-        :type email: List[str]
-        """
-
-        self._email = email
-
-    @property
     def id(self):
         """Gets the id of this Person.
 
@@ -142,29 +165,6 @@ class Person(Model):
         """
 
         self._id = id
-
-    @property
-    def identifier(self):
-        """Gets the identifier of this Person.
-
-        Identifier of the resource being described  # noqa: E501
-
-        :return: The identifier of this Person.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this Person.
-
-        Identifier of the resource being described  # noqa: E501
-
-        :param identifier: The identifier of this Person.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
 
     @property
     def label(self):
@@ -213,24 +213,24 @@ class Person(Model):
         self._type = type
 
     @property
-    def website(self):
-        """Gets the website of this Person.
+    def email(self):
+        """Gets the email of this Person.
 
-        Website of the software  # noqa: E501
+        Email of a person  # noqa: E501
 
-        :return: The website of this Person.
+        :return: The email of this Person.
         :rtype: List[str]
         """
-        return self._website
+        return self._email
 
-    @website.setter
-    def website(self, website):
-        """Sets the website of this Person.
+    @email.setter
+    def email(self, email):
+        """Sets the email of this Person.
 
-        Website of the software  # noqa: E501
+        Email of a person  # noqa: E501
 
-        :param website: The website of this Person.
-        :type website: List[str]
+        :param email: The email of this Person.
+        :type email: List[str]
         """
 
-        self._website = website
+        self._email = email

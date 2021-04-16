@@ -15,13 +15,13 @@ class CausalDiagram(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, has_diagram_part=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, has_diagram_part=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """CausalDiagram - a model defined in OpenAPI
 
-        :param description: The description of this CausalDiagram.  # noqa: E501
-        :type description: List[str]
         :param has_diagram_part: The has_diagram_part of this CausalDiagram.  # noqa: E501
         :type has_diagram_part: List[object]
+        :param description: The description of this CausalDiagram.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this CausalDiagram.  # noqa: E501
         :type id: str
         :param label: The label of this CausalDiagram.  # noqa: E501
@@ -33,23 +33,23 @@ class CausalDiagram(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'description': List[str],
             'has_diagram_part': List[object],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str]
         }
 
         self.attribute_map = {
-            'description': 'description',
             'has_diagram_part': 'hasDiagramPart',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type'
         }
 
-        self._description = description
         self._has_diagram_part = has_diagram_part
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -64,29 +64,6 @@ class CausalDiagram(Model):
         :rtype: CausalDiagram
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def description(self):
-        """Gets the description of this CausalDiagram.
-
-        small description  # noqa: E501
-
-        :return: The description of this CausalDiagram.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this CausalDiagram.
-
-        small description  # noqa: E501
-
-        :param description: The description of this CausalDiagram.
-        :type description: List[str]
-        """
-
-        self._description = description
 
     @property
     def has_diagram_part(self):
@@ -110,6 +87,29 @@ class CausalDiagram(Model):
         """
 
         self._has_diagram_part = has_diagram_part
+
+    @property
+    def description(self):
+        """Gets the description of this CausalDiagram.
+
+        small description  # noqa: E501
+
+        :return: The description of this CausalDiagram.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CausalDiagram.
+
+        small description  # noqa: E501
+
+        :param description: The description of this CausalDiagram.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

@@ -15,13 +15,13 @@ class NumericalIndex(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, has_standard_variable=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, has_standard_variable=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """NumericalIndex - a model defined in OpenAPI
 
-        :param description: The description of this NumericalIndex.  # noqa: E501
-        :type description: List[str]
         :param has_standard_variable: The has_standard_variable of this NumericalIndex.  # noqa: E501
         :type has_standard_variable: List[StandardVariable]
+        :param description: The description of this NumericalIndex.  # noqa: E501
+        :type description: List[str]
         :param id: The id of this NumericalIndex.  # noqa: E501
         :type id: str
         :param label: The label of this NumericalIndex.  # noqa: E501
@@ -34,23 +34,23 @@ class NumericalIndex(Model):
           # noqa: E501
 
         self.openapi_types = {
-            'description': List[str],
             'has_standard_variable': List[StandardVariable],
+            'description': List[str],
             'id': str,
             'label': List[str],
             'type': List[str]
         }
 
         self.attribute_map = {
-            'description': 'description',
             'has_standard_variable': 'hasStandardVariable',
+            'description': 'description',
             'id': 'id',
             'label': 'label',
             'type': 'type'
         }
 
-        self._description = description
         self._has_standard_variable = has_standard_variable
+        self._description = description
         self._id = id
         self._label = label
         self._type = type
@@ -65,29 +65,6 @@ class NumericalIndex(Model):
         :rtype: NumericalIndex
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def description(self):
-        """Gets the description of this NumericalIndex.
-
-        small description  # noqa: E501
-
-        :return: The description of this NumericalIndex.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this NumericalIndex.
-
-        small description  # noqa: E501
-
-        :param description: The description of this NumericalIndex.
-        :type description: List[str]
-        """
-
-        self._description = description
 
     @property
     def has_standard_variable(self):
@@ -111,6 +88,29 @@ class NumericalIndex(Model):
         """
 
         self._has_standard_variable = has_standard_variable
+
+    @property
+    def description(self):
+        """Gets the description of this NumericalIndex.
+
+        small description  # noqa: E501
+
+        :return: The description of this NumericalIndex.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this NumericalIndex.
+
+        small description  # noqa: E501
+
+        :param description: The description of this NumericalIndex.
+        :type description: List[str]
+        """
+
+        self._description = description
 
     @property
     def id(self):

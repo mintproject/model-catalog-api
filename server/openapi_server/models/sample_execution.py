@@ -15,43 +15,43 @@ class SampleExecution(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, has_execution_command=None, id=None, label=None, type=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, type=None, has_execution_command=None):  # noqa: E501
         """SampleExecution - a model defined in OpenAPI
 
         :param description: The description of this SampleExecution.  # noqa: E501
         :type description: List[str]
-        :param has_execution_command: The has_execution_command of this SampleExecution.  # noqa: E501
-        :type has_execution_command: List[str]
         :param id: The id of this SampleExecution.  # noqa: E501
         :type id: str
         :param label: The label of this SampleExecution.  # noqa: E501
         :type label: List[str]
         :param type: The type of this SampleExecution.  # noqa: E501
         :type type: List[str]
+        :param has_execution_command: The has_execution_command of this SampleExecution.  # noqa: E501
+        :type has_execution_command: List[str]
         """
 
 
         self.openapi_types = {
             'description': List[str],
-            'has_execution_command': List[str],
             'id': str,
             'label': List[str],
-            'type': List[str]
+            'type': List[str],
+            'has_execution_command': List[str]
         }
 
         self.attribute_map = {
             'description': 'description',
-            'has_execution_command': 'hasExecutionCommand',
             'id': 'id',
             'label': 'label',
-            'type': 'type'
+            'type': 'type',
+            'has_execution_command': 'hasExecutionCommand'
         }
 
         self._description = description
-        self._has_execution_command = has_execution_command
         self._id = id
         self._label = label
         self._type = type
+        self._has_execution_command = has_execution_command
 
     @classmethod
     def from_dict(cls, dikt) -> 'SampleExecution':
@@ -86,29 +86,6 @@ class SampleExecution(Model):
         """
 
         self._description = description
-
-    @property
-    def has_execution_command(self):
-        """Gets the has_execution_command of this SampleExecution.
-
-        Execution instructions on how to run the image  # noqa: E501
-
-        :return: The has_execution_command of this SampleExecution.
-        :rtype: List[str]
-        """
-        return self._has_execution_command
-
-    @has_execution_command.setter
-    def has_execution_command(self, has_execution_command):
-        """Sets the has_execution_command of this SampleExecution.
-
-        Execution instructions on how to run the image  # noqa: E501
-
-        :param has_execution_command: The has_execution_command of this SampleExecution.
-        :type has_execution_command: List[str]
-        """
-
-        self._has_execution_command = has_execution_command
 
     @property
     def id(self):
@@ -178,3 +155,26 @@ class SampleExecution(Model):
         """
 
         self._type = type
+
+    @property
+    def has_execution_command(self):
+        """Gets the has_execution_command of this SampleExecution.
+
+        Execution instructions on how to run the image  # noqa: E501
+
+        :return: The has_execution_command of this SampleExecution.
+        :rtype: List[str]
+        """
+        return self._has_execution_command
+
+    @has_execution_command.setter
+    def has_execution_command(self, has_execution_command):
+        """Sets the has_execution_command of this SampleExecution.
+
+        Execution instructions on how to run the image  # noqa: E501
+
+        :param has_execution_command: The has_execution_command of this SampleExecution.
+        :type has_execution_command: List[str]
+        """
+
+        self._has_execution_command = has_execution_command

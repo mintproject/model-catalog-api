@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from openapi_server.models.catalog_identifier import CatalogIdentifier
 from openapi_server.models.causal_diagram import CausalDiagram
 from openapi_server.models.configuration_setup import ConfigurationSetup
+from openapi_server.models.constraint import Constraint
 from openapi_server.models.coupled_model import CoupledModel
 from openapi_server.models.data_transformation import DataTransformation
 from openapi_server.models.data_transformation_setup import DataTransformationSetup

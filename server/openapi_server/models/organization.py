@@ -15,48 +15,48 @@ class Organization(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, id=None, identifier=None, label=None, type=None, website=None):  # noqa: E501
+    def __init__(self, identifier=None, website=None, description=None, id=None, label=None, type=None):  # noqa: E501
         """Organization - a model defined in OpenAPI
 
+        :param identifier: The identifier of this Organization.  # noqa: E501
+        :type identifier: List[str]
+        :param website: The website of this Organization.  # noqa: E501
+        :type website: List[str]
         :param description: The description of this Organization.  # noqa: E501
         :type description: List[str]
         :param id: The id of this Organization.  # noqa: E501
         :type id: str
-        :param identifier: The identifier of this Organization.  # noqa: E501
-        :type identifier: List[str]
         :param label: The label of this Organization.  # noqa: E501
         :type label: List[str]
         :param type: The type of this Organization.  # noqa: E501
         :type type: List[str]
-        :param website: The website of this Organization.  # noqa: E501
-        :type website: List[str]
         """
 
 
         self.openapi_types = {
+            'identifier': List[str],
+            'website': List[str],
             'description': List[str],
             'id': str,
-            'identifier': List[str],
             'label': List[str],
-            'type': List[str],
-            'website': List[str]
+            'type': List[str]
         }
 
         self.attribute_map = {
+            'identifier': 'identifier',
+            'website': 'website',
             'description': 'description',
             'id': 'id',
-            'identifier': 'identifier',
             'label': 'label',
-            'type': 'type',
-            'website': 'website'
+            'type': 'type'
         }
 
+        self._identifier = identifier
+        self._website = website
         self._description = description
         self._id = id
-        self._identifier = identifier
         self._label = label
         self._type = type
-        self._website = website
 
     @classmethod
     def from_dict(cls, dikt) -> 'Organization':
@@ -68,6 +68,52 @@ class Organization(Model):
         :rtype: Organization
         """
         return util.deserialize_model(dikt, cls)
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this Organization.
+
+        Identifier of the resource being described  # noqa: E501
+
+        :return: The identifier of this Organization.
+        :rtype: List[str]
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this Organization.
+
+        Identifier of the resource being described  # noqa: E501
+
+        :param identifier: The identifier of this Organization.
+        :type identifier: List[str]
+        """
+
+        self._identifier = identifier
+
+    @property
+    def website(self):
+        """Gets the website of this Organization.
+
+        Website of the software  # noqa: E501
+
+        :return: The website of this Organization.
+        :rtype: List[str]
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this Organization.
+
+        Website of the software  # noqa: E501
+
+        :param website: The website of this Organization.
+        :type website: List[str]
+        """
+
+        self._website = website
 
     @property
     def description(self):
@@ -116,29 +162,6 @@ class Organization(Model):
         self._id = id
 
     @property
-    def identifier(self):
-        """Gets the identifier of this Organization.
-
-        Identifier of the resource being described  # noqa: E501
-
-        :return: The identifier of this Organization.
-        :rtype: List[str]
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this Organization.
-
-        Identifier of the resource being described  # noqa: E501
-
-        :param identifier: The identifier of this Organization.
-        :type identifier: List[str]
-        """
-
-        self._identifier = identifier
-
-    @property
     def label(self):
         """Gets the label of this Organization.
 
@@ -183,26 +206,3 @@ class Organization(Model):
         """
 
         self._type = type
-
-    @property
-    def website(self):
-        """Gets the website of this Organization.
-
-        Website of the software  # noqa: E501
-
-        :return: The website of this Organization.
-        :rtype: List[str]
-        """
-        return self._website
-
-    @website.setter
-    def website(self, website):
-        """Sets the website of this Organization.
-
-        Website of the software  # noqa: E501
-
-        :param website: The website of this Organization.
-        :type website: List[str]
-        """
-
-        self._website = website

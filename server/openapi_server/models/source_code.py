@@ -15,52 +15,52 @@ class SourceCode(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, code_repository=None, description=None, id=None, label=None, license=None, programming_language=None, type=None):  # noqa: E501
+    def __init__(self, license=None, programming_language=None, description=None, code_repository=None, id=None, label=None, type=None):  # noqa: E501
         """SourceCode - a model defined in OpenAPI
 
-        :param code_repository: The code_repository of this SourceCode.  # noqa: E501
-        :type code_repository: List[str]
-        :param description: The description of this SourceCode.  # noqa: E501
-        :type description: List[str]
-        :param id: The id of this SourceCode.  # noqa: E501
-        :type id: str
-        :param label: The label of this SourceCode.  # noqa: E501
-        :type label: List[str]
         :param license: The license of this SourceCode.  # noqa: E501
         :type license: List[str]
         :param programming_language: The programming_language of this SourceCode.  # noqa: E501
         :type programming_language: List[str]
+        :param description: The description of this SourceCode.  # noqa: E501
+        :type description: List[str]
+        :param code_repository: The code_repository of this SourceCode.  # noqa: E501
+        :type code_repository: List[str]
+        :param id: The id of this SourceCode.  # noqa: E501
+        :type id: str
+        :param label: The label of this SourceCode.  # noqa: E501
+        :type label: List[str]
         :param type: The type of this SourceCode.  # noqa: E501
         :type type: List[str]
         """
 
 
         self.openapi_types = {
-            'code_repository': List[str],
-            'description': List[str],
-            'id': str,
-            'label': List[str],
             'license': List[str],
             'programming_language': List[str],
+            'description': List[str],
+            'code_repository': List[str],
+            'id': str,
+            'label': List[str],
             'type': List[str]
         }
 
         self.attribute_map = {
-            'code_repository': 'codeRepository',
-            'description': 'description',
-            'id': 'id',
-            'label': 'label',
             'license': 'license',
             'programming_language': 'programmingLanguage',
+            'description': 'description',
+            'code_repository': 'codeRepository',
+            'id': 'id',
+            'label': 'label',
             'type': 'type'
         }
 
-        self._code_repository = code_repository
-        self._description = description
-        self._id = id
-        self._label = label
         self._license = license
         self._programming_language = programming_language
+        self._description = description
+        self._code_repository = code_repository
+        self._id = id
+        self._label = label
         self._type = type
 
     @classmethod
@@ -73,98 +73,6 @@ class SourceCode(Model):
         :rtype: SourceCode
         """
         return util.deserialize_model(dikt, cls)
-
-    @property
-    def code_repository(self):
-        """Gets the code_repository of this SourceCode.
-
-        URL to the code repository of a software component  # noqa: E501
-
-        :return: The code_repository of this SourceCode.
-        :rtype: List[str]
-        """
-        return self._code_repository
-
-    @code_repository.setter
-    def code_repository(self, code_repository):
-        """Sets the code_repository of this SourceCode.
-
-        URL to the code repository of a software component  # noqa: E501
-
-        :param code_repository: The code_repository of this SourceCode.
-        :type code_repository: List[str]
-        """
-
-        self._code_repository = code_repository
-
-    @property
-    def description(self):
-        """Gets the description of this SourceCode.
-
-        small description  # noqa: E501
-
-        :return: The description of this SourceCode.
-        :rtype: List[str]
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SourceCode.
-
-        small description  # noqa: E501
-
-        :param description: The description of this SourceCode.
-        :type description: List[str]
-        """
-
-        self._description = description
-
-    @property
-    def id(self):
-        """Gets the id of this SourceCode.
-
-        identifier  # noqa: E501
-
-        :return: The id of this SourceCode.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this SourceCode.
-
-        identifier  # noqa: E501
-
-        :param id: The id of this SourceCode.
-        :type id: str
-        """
-
-        self._id = id
-
-    @property
-    def label(self):
-        """Gets the label of this SourceCode.
-
-        short description of the resource  # noqa: E501
-
-        :return: The label of this SourceCode.
-        :rtype: List[str]
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this SourceCode.
-
-        short description of the resource  # noqa: E501
-
-        :param label: The label of this SourceCode.
-        :type label: List[str]
-        """
-
-        self._label = label
 
     @property
     def license(self):
@@ -211,6 +119,98 @@ class SourceCode(Model):
         """
 
         self._programming_language = programming_language
+
+    @property
+    def description(self):
+        """Gets the description of this SourceCode.
+
+        small description  # noqa: E501
+
+        :return: The description of this SourceCode.
+        :rtype: List[str]
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SourceCode.
+
+        small description  # noqa: E501
+
+        :param description: The description of this SourceCode.
+        :type description: List[str]
+        """
+
+        self._description = description
+
+    @property
+    def code_repository(self):
+        """Gets the code_repository of this SourceCode.
+
+        URL to the code repository of a software component  # noqa: E501
+
+        :return: The code_repository of this SourceCode.
+        :rtype: List[str]
+        """
+        return self._code_repository
+
+    @code_repository.setter
+    def code_repository(self, code_repository):
+        """Sets the code_repository of this SourceCode.
+
+        URL to the code repository of a software component  # noqa: E501
+
+        :param code_repository: The code_repository of this SourceCode.
+        :type code_repository: List[str]
+        """
+
+        self._code_repository = code_repository
+
+    @property
+    def id(self):
+        """Gets the id of this SourceCode.
+
+        identifier  # noqa: E501
+
+        :return: The id of this SourceCode.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this SourceCode.
+
+        identifier  # noqa: E501
+
+        :param id: The id of this SourceCode.
+        :type id: str
+        """
+
+        self._id = id
+
+    @property
+    def label(self):
+        """Gets the label of this SourceCode.
+
+        short description of the resource  # noqa: E501
+
+        :return: The label of this SourceCode.
+        :rtype: List[str]
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this SourceCode.
+
+        short description of the resource  # noqa: E501
+
+        :param label: The label of this SourceCode.
+        :type label: List[str]
+        """
+
+        self._label = label
 
     @property
     def type(self):
