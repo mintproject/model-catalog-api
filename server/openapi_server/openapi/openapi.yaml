@@ -8,8 +8,8 @@ externalDocs:
   url: https://w3id.org/okn/o/sdm
 servers:
 - url: https://api.models.mint.isi.edu/v1.7.0
-- url: https://dev.api.models.mint.isi.edu/v1.7.0
 - url: http://localhost:8080/v1.7.0
+- url: https://api.models.wildfire.mint.isi.edu/v1.7.0
 paths:
   /catalogidentifiers:
     get:
@@ -595,6 +595,199 @@ paths:
       tags:
       - ConfigurationSetup
       x-openapi-router-controller: openapi_server.controllers.configuration_setup_controller
+  /constraints:
+    get:
+      description: Gets a list of all instances of Constraint (more information in
+        https://w3id.org/okn/o/sdm#Constraint)
+      operationId: constraints_get
+      parameters:
+      - description: Name of the user graph to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by label
+        explode: true
+        in: query
+        name: label
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Page number
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
+      - description: Items per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          default: 100
+          format: int32
+          maximum: 200
+          minimum: 1
+          type: integer
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Constraint'
+                type: array
+          description: Successful response - returns an array with the instances of
+            Constraint.
+      summary: List all instances of Constraint
+      tags:
+      - Constraint
+      x-openapi-router-controller: openapi_server.controllers.constraint_controller
+    post:
+      description: Create a new instance of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      operationId: constraints_post
+      parameters:
+      - description: Username
+        explode: true
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Constraint'
+        description: Information about the Constraintto be created
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Constraint'
+          description: Created
+      security:
+      - BearerAuth: []
+      summary: Create one Constraint
+      tags:
+      - Constraint
+      x-openapi-router-controller: openapi_server.controllers.constraint_controller
+  /constraints/{id}:
+    delete:
+      description: Delete an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      operationId: constraints_id_delete
+      parameters:
+      - description: The ID of the Constraint to be retrieved
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Username
+        explode: true
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        202:
+          description: Deleted
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Delete an existing Constraint
+      tags:
+      - Constraint
+      x-openapi-router-controller: openapi_server.controllers.constraint_controller
+    get:
+      description: Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      operationId: constraints_id_get
+      parameters:
+      - description: Name of the user graph to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the Constraint to be retrieved
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Constraint'
+          description: Gets the details of a given Constraint
+      summary: Get a single Constraint by its id
+      tags:
+      - Constraint
+      x-openapi-router-controller: openapi_server.controllers.constraint_controller
+    put:
+      description: Updates an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      operationId: constraints_id_put
+      parameters:
+      - description: The ID of the Constraint to be retrieved
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Username
+        explode: true
+        in: query
+        name: user
+        required: false
+        schema:
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Constraint'
+        description: An old Constraintto be updated
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Constraint'
+          description: Updated
+        404:
+          description: Not Found
+      security:
+      - BearerAuth: []
+      summary: Update an existing Constraint
+      tags:
+      - Constraint
+      x-openapi-router-controller: openapi_server.controllers.constraint_controller
   /coupledmodels:
     get:
       description: Gets a list of all instances of CoupledModel (more information
@@ -788,6 +981,50 @@ paths:
       tags:
       - CoupledModel
       x-openapi-router-controller: openapi_server.controllers.coupled_model_controller
+  /custom/configuration/{id}/inputs:
+    get:
+      description: Gets all inputs of a configuration
+      operationId: custom_configuration_id_inputs_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the resource
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the custom query
+        explode: true
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: search_datasetspecification_by_configurationid
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DatasetSpecification'
+                type: array
+          description: Gets all inputs of a configuration
+      summary: Gets all inputs of a configuration
+      tags:
+      - DatasetSpecification
+      x-openapi-router-controller: openapi_server.controllers.dataset_specification_controller
+    x-oba-custom: true
   /custom/configurationsetups/{id}:
     get:
       description: Gets the details of a single instance of a ModelConfigurationSetup
@@ -829,6 +1066,50 @@ paths:
       tags:
       - ConfigurationSetup
       x-openapi-router-controller: openapi_server.controllers.configuration_setup_controller
+    x-oba-custom: true
+  /custom/datasetspecifications:
+    get:
+      description: Gets all inputs of a configuration
+      operationId: custom_datasetspecifications_get
+      parameters:
+      - description: Username to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The ID of the configuration
+        explode: true
+        in: query
+        name: configurationid
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Name of the custom query
+        explode: true
+        in: query
+        name: custom_query_name
+        required: false
+        schema:
+          default: custom_allinputs
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DatasetSpecification'
+                type: array
+          description: Gets all inputs of a configuration
+      summary: Gets all inputs of a configuration
+      tags:
+      - DatasetSpecification
+      x-openapi-router-controller: openapi_server.controllers.dataset_specification_controller
     x-oba-custom: true
   /custom/datasetspecifications/{id}/datatransformations:
     get:
@@ -9434,6 +9715,54 @@ components:
         username:
           type: string
       type: object
+    Constraint:
+      description: Data constraints of a configuration
+      example:
+        value:
+          id: some_id
+      properties:
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasMinimumValue:
+          description: Minimum value that a variable can take in this constraint
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasMaximumValue:
+          description: Maximum value that a variable can take in this constraint
+          items:
+            type: string
+          nullable: true
+          type: array
+        id:
+          description: identifier
+          nullable: false
+          type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasVariable:
+          description: Property that links a constraint to the presentation of a variable
+            that will test it
+          items:
+            $ref: '#/components/schemas/VariablePresentation'
+          nullable: true
+          type: array
+      type: object
     GeoShape:
       description: Shape or polygon of a region in a map
       example:
@@ -10834,9 +11163,9 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: Description not available
+          description: Data constraints for this configuration
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -11181,6 +11510,7 @@ components:
             a trained model with data from 2005-2010 may only be valid for predictions
             until 2015.
           items:
+            format: date-time
             type: string
           nullable: true
           type: array
@@ -12646,9 +12976,9 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: Description not available
+          description: Data constraints for this configuration
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -16970,17 +17300,17 @@ components:
             type: string
           nullable: true
           type: array
-        contributor:
-          description: Contributor to a software component
-          items:
-            $ref: '#/components/schemas/Person'
-          nullable: true
-          type: array
         compatibleVisualizationSoftware:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
+          nullable: true
+          type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:

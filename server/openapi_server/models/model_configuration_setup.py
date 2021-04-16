@@ -69,7 +69,7 @@ class ModelConfigurationSetup(Model):
         :param was_derived_from_setup: The was_derived_from_setup of this ModelConfigurationSetup.  # noqa: E501
         :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.  # noqa: E501
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         :param has_build_file: The has_build_file of this ModelConfigurationSetup.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this ModelConfigurationSetup.  # noqa: E501
@@ -179,7 +179,7 @@ class ModelConfigurationSetup(Model):
         :param has_executable_notebook: The has_executable_notebook of this ModelConfigurationSetup.  # noqa: E501
         :type has_executable_notebook: List[str]
         :param valid_until: The valid_until of this ModelConfigurationSetup.  # noqa: E501
-        :type valid_until: List[str]
+        :type valid_until: List[datetime]
         :param has_equation: The has_equation of this ModelConfigurationSetup.  # noqa: E501
         :type has_equation: List[Equation]
         :param useful_for_calculating_index: The useful_for_calculating_index of this ModelConfigurationSetup.  # noqa: E501
@@ -191,6 +191,7 @@ class ModelConfigurationSetup(Model):
         """
         from openapi_server.models.causal_diagram import CausalDiagram
         from openapi_server.models.configuration_setup import ConfigurationSetup
+        from openapi_server.models.constraint import Constraint
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.equation import Equation
         from openapi_server.models.funding_information import FundingInformation
@@ -212,6 +213,7 @@ class ModelConfigurationSetup(Model):
         from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -262,7 +264,7 @@ class ModelConfigurationSetup(Model):
             'has_sample_result': List[SampleResource],
             'author': List[object],
             'was_derived_from_setup': List[ConfigurationSetup],
-            'has_constraint': List[str],
+            'has_constraint': List[Constraint],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
@@ -317,7 +319,7 @@ class ModelConfigurationSetup(Model):
             'has_parameter': List[Parameter],
             'operating_systems': List[str],
             'has_executable_notebook': List[str],
-            'valid_until': List[str],
+            'valid_until': List[datetime],
             'has_equation': List[Equation],
             'useful_for_calculating_index': List[NumericalIndex],
             'has_input': List[DatasetSpecification],
@@ -1088,10 +1090,10 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Data constraints for this configuration  # noqa: E501
 
         :return: The has_constraint of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[Constraint]
         """
         return self._has_constraint
 
@@ -1099,10 +1101,10 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this ModelConfigurationSetup.
 
-        Description not available  # noqa: E501
+        Data constraints for this configuration  # noqa: E501
 
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         """
 
         self._has_constraint = has_constraint
@@ -2356,7 +2358,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :return: The valid_until of this ModelConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[datetime]
         """
         return self._valid_until
 
@@ -2367,7 +2369,7 @@ class ModelConfigurationSetup(Model):
         Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.  # noqa: E501
 
         :param valid_until: The valid_until of this ModelConfigurationSetup.
-        :type valid_until: List[str]
+        :type valid_until: List[datetime]
         """
 
         self._valid_until = valid_until

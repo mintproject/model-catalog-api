@@ -121,6 +121,11 @@
         "@container": "@set"
     },
     "EmpiricalModel": {"@id": "https://w3id.org/okn/o/sdm#EmpiricalModel"},
+    "hasMinimumValue": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#hasMinimumValue",
+        "@container": "@set"
+    },
     "ModelCategory": {"@id": "https://w3id.org/okn/o/sdm#ModelCategory"},
     "hasExecutableInstructions": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -189,6 +194,7 @@
         "@id": "https://w3id.org/okn/o/sd#keywords",
         "@container": "@set"
     },
+    "Constraint": {"@id": "https://w3id.org/okn/o/sdm#Constraint"},
     "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
     "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
     "hasPresentation": {
@@ -448,6 +454,11 @@
     "hasDataType": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasDataType",
+        "@container": "@set"
+    },
+    "hasMaximumValue": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sdm#hasMaximumValue",
         "@container": "@set"
     },
     "hasModelCategory": {
@@ -757,6 +768,11 @@
     "hasAssumption": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasAssumption",
+        "@container": "@set"
+    },
+    "hasVariable": {
+        "@type": "@id",
+        "@id": "https://w3id.org/okn/o/sdm#hasVariable",
         "@container": "@set"
     },
     "hasShortName": {

@@ -1,4 +1,4 @@
-rsync --delete -av /Users/hvargas/ISI/OBA/outputs/modelcatalog/servers/python/server/ server
+rsync --delete -av /Users/hvargas/ISI/model-catalog-oas/model-catalog/servers/python/server/ server
 
 git checkout -- server/.env \
     server/docker-compose.yml \
@@ -7,11 +7,14 @@ git checkout -- server/.env \
     server/openapi_server/test/input_tests/model_configuration_without_id.json \
     server/openapi_server/test/input_tests/model_configuration_without_id_causal_diagram_not_equal.json \
     server/openapi_server/cached.py \
-    server/openapi_server/__main__.py
+    server/openapi_server/__main__.py \
+    server/contexts/context_overwrite.json \
+    server/requirements.txt \
+    server/git_push.sh
 
 rm -rf server/openapi_server/controllers/default_controller.py server/.travis.yml server/.gitignore server/queries/queries/
 
-rsync --delete -av /Users/hvargas/ISI/OBA/outputs/modelcatalog/servers/python/openapi.yaml openapi.yaml
+rsync --delete -av /Users/hvargas/ISI/model-catalog-oas/model-catalog/servers/python/openapi.yaml openapi.yaml
 
 swagger-cli bundle -o server/openapi.json openapi.yaml
 

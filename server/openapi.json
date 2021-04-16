@@ -14,10 +14,10 @@
       "url": "https://api.models.mint.isi.edu/v1.7.0"
     },
     {
-      "url": "https://dev.api.models.mint.isi.edu/v1.7.0"
+      "url": "http://localhost:8080/v1.7.0"
     },
     {
-      "url": "http://localhost:8080/v1.7.0"
+      "url": "https://api.models.wildfire.mint.isi.edu/v1.7.0"
     }
   ],
   "paths": {
@@ -6296,6 +6296,257 @@
         ]
       }
     },
+    "/constraints": {
+      "get": {
+        "description": "Gets a list of all instances of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)",
+        "parameters": [
+          {
+            "description": "Name of the user graph to query",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter by label",
+            "in": "query",
+            "name": "label",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Items per page",
+            "in": "query",
+            "name": "per_page",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "format": "int32",
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Constraint"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response - returns an array with the instances of Constraint."
+          }
+        },
+        "summary": "List all instances of Constraint",
+        "tags": [
+          "Constraint"
+        ]
+      },
+      "post": {
+        "description": "Create a new instance of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)",
+        "parameters": [
+          {
+            "description": "Username",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Constraint"
+              }
+            }
+          },
+          "description": "Information about the Constraintto be created"
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Constraint"
+                }
+              }
+            },
+            "description": "Created"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Create one Constraint",
+        "tags": [
+          "Constraint"
+        ]
+      }
+    },
+    "/constraints/{id}": {
+      "delete": {
+        "description": "Delete an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)",
+        "parameters": [
+          {
+            "description": "The ID of the Constraint to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Username",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Deleted"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Delete an existing Constraint",
+        "tags": [
+          "Constraint"
+        ]
+      },
+      "get": {
+        "description": "Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)",
+        "parameters": [
+          {
+            "description": "Name of the user graph to query",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The ID of the Constraint to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Constraint"
+                }
+              }
+            },
+            "description": "Gets the details of a given Constraint"
+          }
+        },
+        "summary": "Get a single Constraint by its id",
+        "tags": [
+          "Constraint"
+        ]
+      },
+      "put": {
+        "description": "Updates an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)",
+        "parameters": [
+          {
+            "description": "The ID of the Constraint to be retrieved",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Username",
+            "in": "query",
+            "name": "user",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Constraint"
+              }
+            }
+          },
+          "description": "An old Constraintto be updated"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Constraint"
+                }
+              }
+            },
+            "description": "Updated"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "summary": "Update an existing Constraint",
+        "tags": [
+          "Constraint"
+        ]
+      }
+    },
     "/coupledmodels": {
       "get": {
         "description": "Gets a list of all instances of CoupledModel (more information in https://w3id.org/okn/o/sdm#CoupledModel)",
@@ -11903,6 +12154,116 @@
         ]
       },
       "x-oba-custom": true
+    },
+    "/custom/datasetspecifications": {
+      "get": {
+        "description": "Gets all inputs of a configuration",
+        "parameters": [
+          {
+            "description": "Username to query",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The ID of the configuration",
+            "in": "query",
+            "name": "configurationid",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Name of the custom query",
+            "in": "query",
+            "name": "custom_query_name",
+            "required": false,
+            "schema": {
+              "default": "custom_allinputs",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DatasetSpecification"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Gets all inputs of a configuration"
+          }
+        },
+        "summary": "Gets all inputs of a configuration",
+        "tags": [
+          "DatasetSpecification"
+        ]
+      },
+      "x-oba-custom": true
+    },
+    "/custom/configuration/{id}/inputs": {
+      "get": {
+        "description": "Gets all inputs of a configuration",
+        "parameters": [
+          {
+            "description": "Username to query",
+            "in": "query",
+            "name": "username",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The ID of the resource",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Name of the custom query",
+            "in": "query",
+            "name": "custom_query_name",
+            "required": false,
+            "schema": {
+              "default": "search_datasetspecification_by_configurationid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DatasetSpecification"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Gets all inputs of a configuration"
+          }
+        },
+        "summary": "Gets all inputs of a configuration",
+        "tags": [
+          "DatasetSpecification"
+        ]
+      },
+      "x-oba-custom": true
     }
   },
   "components": {
@@ -12210,6 +12571,70 @@
           },
           "username": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Constraint": {
+        "description": "Data constraints of a configuration",
+        "example": {
+          "value": {
+            "id": "some_id"
+          }
+        },
+        "properties": {
+          "description": {
+            "description": "small description",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "hasMinimumValue": {
+            "description": "Minimum value that a variable can take in this constraint",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "hasMaximumValue": {
+            "description": "Maximum value that a variable can take in this constraint",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "id": {
+            "description": "identifier",
+            "nullable": false,
+            "type": "string"
+          },
+          "label": {
+            "description": "short description of the resource",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "type": {
+            "description": "type of the resource",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "hasVariable": {
+            "description": "Property that links a constraint to the presentation of a variable that will test it",
+            "items": {
+              "$ref": "#/components/schemas/VariablePresentation"
+            },
+            "nullable": true,
+            "type": "array"
           }
         },
         "type": "object"
@@ -14024,9 +14449,9 @@
             "type": "array"
           },
           "hasConstraint": {
-            "description": "Description not available",
+            "description": "Data constraints for this configuration",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/Constraint"
             },
             "nullable": true,
             "type": "array"
@@ -14476,6 +14901,7 @@
           "validUntil": {
             "description": "Date until which the calibration of a model is valid. For example, a trained model with data from 2005-2010 may only be valid for predictions until 2015.",
             "items": {
+              "format": "date-time",
               "type": "string"
             },
             "nullable": true,
@@ -16476,9 +16902,9 @@
             "type": "array"
           },
           "hasConstraint": {
-            "description": "Description not available",
+            "description": "Data constraints for this configuration",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/Constraint"
             },
             "nullable": true,
             "type": "array"
@@ -22089,18 +22515,18 @@
             "nullable": true,
             "type": "array"
           },
-          "contributor": {
-            "description": "Contributor to a software component",
-            "items": {
-              "$ref": "#/components/schemas/Person"
-            },
-            "nullable": true,
-            "type": "array"
-          },
           "compatibleVisualizationSoftware": {
             "description": "Property that links a software component to other useful software that canbe used to visualize its outputs",
             "items": {
               "$ref": "#/components/schemas/Software"
+            },
+            "nullable": true,
+            "type": "array"
+          },
+          "contributor": {
+            "description": "Contributor to a software component",
+            "items": {
+              "$ref": "#/components/schemas/Person"
             },
             "nullable": true,
             "type": "array"

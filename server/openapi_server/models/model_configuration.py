@@ -63,7 +63,7 @@ class ModelConfiguration(Model):
         :param author: The author of this ModelConfiguration.  # noqa: E501
         :type author: List[object]
         :param has_constraint: The has_constraint of this ModelConfiguration.  # noqa: E501
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         :param has_build_file: The has_build_file of this ModelConfiguration.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this ModelConfiguration.  # noqa: E501
@@ -173,6 +173,7 @@ class ModelConfiguration(Model):
         """
         from openapi_server.models.causal_diagram import CausalDiagram
         from openapi_server.models.configuration_setup import ConfigurationSetup
+        from openapi_server.models.constraint import Constraint
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.equation import Equation
         from openapi_server.models.funding_information import FundingInformation
@@ -194,6 +195,7 @@ class ModelConfiguration(Model):
         from openapi_server.models.variable_presentation import VariablePresentation
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -241,7 +243,7 @@ class ModelConfiguration(Model):
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
             'author': List[object],
-            'has_constraint': List[str],
+            'has_constraint': List[Constraint],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
@@ -974,10 +976,10 @@ class ModelConfiguration(Model):
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfiguration.
 
-        Description not available  # noqa: E501
+        Data constraints for this configuration  # noqa: E501
 
         :return: The has_constraint of this ModelConfiguration.
-        :rtype: List[str]
+        :rtype: List[Constraint]
         """
         return self._has_constraint
 
@@ -985,10 +987,10 @@ class ModelConfiguration(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this ModelConfiguration.
 
-        Description not available  # noqa: E501
+        Data constraints for this configuration  # noqa: E501
 
         :param has_constraint: The has_constraint of this ModelConfiguration.
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         """
 
         self._has_constraint = has_constraint
