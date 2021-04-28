@@ -15,21 +15,19 @@ class Constraint(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, description=None, has_minimum_value=None, has_maximum_value=None, id=None, label=None, type=None, has_variable=None):  # noqa: E501
+    def __init__(self, description=None, id=None, label=None, type=None, has_rule=None, has_variable=None):  # noqa: E501
         """Constraint - a model defined in OpenAPI
 
         :param description: The description of this Constraint.  # noqa: E501
         :type description: List[str]
-        :param has_minimum_value: The has_minimum_value of this Constraint.  # noqa: E501
-        :type has_minimum_value: List[str]
-        :param has_maximum_value: The has_maximum_value of this Constraint.  # noqa: E501
-        :type has_maximum_value: List[str]
         :param id: The id of this Constraint.  # noqa: E501
         :type id: str
         :param label: The label of this Constraint.  # noqa: E501
         :type label: List[str]
         :param type: The type of this Constraint.  # noqa: E501
         :type type: List[str]
+        :param has_rule: The has_rule of this Constraint.  # noqa: E501
+        :type has_rule: List[str]
         :param has_variable: The has_variable of this Constraint.  # noqa: E501
         :type has_variable: List[VariablePresentation]
         """
@@ -39,30 +37,27 @@ class Constraint(Model):
 
         self.openapi_types = {
             'description': List[str],
-            'has_minimum_value': List[str],
-            'has_maximum_value': List[str],
             'id': str,
             'label': List[str],
             'type': List[str],
+            'has_rule': List[str],
             'has_variable': List[VariablePresentation]
         }
 
         self.attribute_map = {
             'description': 'description',
-            'has_minimum_value': 'hasMinimumValue',
-            'has_maximum_value': 'hasMaximumValue',
             'id': 'id',
             'label': 'label',
             'type': 'type',
+            'has_rule': 'hasRule',
             'has_variable': 'hasVariable'
         }
 
         self._description = description
-        self._has_minimum_value = has_minimum_value
-        self._has_maximum_value = has_maximum_value
         self._id = id
         self._label = label
         self._type = type
+        self._has_rule = has_rule
         self._has_variable = has_variable
 
     @classmethod
@@ -98,52 +93,6 @@ class Constraint(Model):
         """
 
         self._description = description
-
-    @property
-    def has_minimum_value(self):
-        """Gets the has_minimum_value of this Constraint.
-
-        Minimum value that a variable can take in this constraint  # noqa: E501
-
-        :return: The has_minimum_value of this Constraint.
-        :rtype: List[str]
-        """
-        return self._has_minimum_value
-
-    @has_minimum_value.setter
-    def has_minimum_value(self, has_minimum_value):
-        """Sets the has_minimum_value of this Constraint.
-
-        Minimum value that a variable can take in this constraint  # noqa: E501
-
-        :param has_minimum_value: The has_minimum_value of this Constraint.
-        :type has_minimum_value: List[str]
-        """
-
-        self._has_minimum_value = has_minimum_value
-
-    @property
-    def has_maximum_value(self):
-        """Gets the has_maximum_value of this Constraint.
-
-        Maximum value that a variable can take in this constraint  # noqa: E501
-
-        :return: The has_maximum_value of this Constraint.
-        :rtype: List[str]
-        """
-        return self._has_maximum_value
-
-    @has_maximum_value.setter
-    def has_maximum_value(self, has_maximum_value):
-        """Sets the has_maximum_value of this Constraint.
-
-        Maximum value that a variable can take in this constraint  # noqa: E501
-
-        :param has_maximum_value: The has_maximum_value of this Constraint.
-        :type has_maximum_value: List[str]
-        """
-
-        self._has_maximum_value = has_maximum_value
 
     @property
     def id(self):
@@ -215,10 +164,33 @@ class Constraint(Model):
         self._type = type
 
     @property
+    def has_rule(self):
+        """Gets the has_rule of this Constraint.
+
+        Rule that defines this constraint  # noqa: E501
+
+        :return: The has_rule of this Constraint.
+        :rtype: List[str]
+        """
+        return self._has_rule
+
+    @has_rule.setter
+    def has_rule(self, has_rule):
+        """Sets the has_rule of this Constraint.
+
+        Rule that defines this constraint  # noqa: E501
+
+        :param has_rule: The has_rule of this Constraint.
+        :type has_rule: List[str]
+        """
+
+        self._has_rule = has_rule
+
+    @property
     def has_variable(self):
         """Gets the has_variable of this Constraint.
 
-        Property that links a constraint to the presentation of a variable that will test it  # noqa: E501
+        Property that links a rule and the variable that will test it  # noqa: E501
 
         :return: The has_variable of this Constraint.
         :rtype: List[VariablePresentation]
@@ -229,7 +201,7 @@ class Constraint(Model):
     def has_variable(self, has_variable):
         """Sets the has_variable of this Constraint.
 
-        Property that links a constraint to the presentation of a variable that will test it  # noqa: E501
+        Property that links a rule and the variable that will test it  # noqa: E501
 
         :param has_variable: The has_variable of this Constraint.
         :type has_variable: List[VariablePresentation]

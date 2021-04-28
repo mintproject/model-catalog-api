@@ -59,7 +59,7 @@ class ConfigurationSetup(Model):
         :param was_derived_from_setup: The was_derived_from_setup of this ConfigurationSetup.  # noqa: E501
         :type was_derived_from_setup: List[ConfigurationSetup]
         :param has_constraint: The has_constraint of this ConfigurationSetup.  # noqa: E501
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         :param has_build_file: The has_build_file of this ConfigurationSetup.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this ConfigurationSetup.  # noqa: E501
@@ -147,6 +147,7 @@ class ConfigurationSetup(Model):
         :param has_input: The has_input of this ConfigurationSetup.  # noqa: E501
         :type has_input: List[DatasetSpecification]
         """
+        from openapi_server.models.constraint import Constraint
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
@@ -161,6 +162,7 @@ class ConfigurationSetup(Model):
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -197,7 +199,7 @@ class ConfigurationSetup(Model):
             'has_sample_result': List[SampleResource],
             'author': List[object],
             'was_derived_from_setup': List[ConfigurationSetup],
-            'has_constraint': List[str],
+            'has_constraint': List[Constraint],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
@@ -850,10 +852,10 @@ class ConfigurationSetup(Model):
     def has_constraint(self):
         """Gets the has_constraint of this ConfigurationSetup.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Constraint or rule associated to a software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
 
         :return: The has_constraint of this ConfigurationSetup.
-        :rtype: List[str]
+        :rtype: List[Constraint]
         """
         return self._has_constraint
 
@@ -861,10 +863,10 @@ class ConfigurationSetup(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this ConfigurationSetup.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Constraint or rule associated to a software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
 
         :param has_constraint: The has_constraint of this ConfigurationSetup.
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         """
 
         self._has_constraint = has_constraint
