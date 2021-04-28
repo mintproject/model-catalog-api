@@ -598,7 +598,7 @@ paths:
   /constraints:
     get:
       description: Gets a list of all instances of Constraint (more information in
-        https://w3id.org/okn/o/sdm#Constraint)
+        https://w3id.org/okn/o/sd#Constraint)
       operationId: constraints_get
       parameters:
       - description: Name of the user graph to query
@@ -654,7 +654,7 @@ paths:
       - Constraint
       x-openapi-router-controller: openapi_server.controllers.constraint_controller
     post:
-      description: Create a new instance of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      description: Create a new instance of Constraint (more information in https://w3id.org/okn/o/sd#Constraint)
       operationId: constraints_post
       parameters:
       - description: Username
@@ -686,7 +686,7 @@ paths:
       x-openapi-router-controller: openapi_server.controllers.constraint_controller
   /constraints/{id}:
     delete:
-      description: Delete an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      description: Delete an existing Constraint (more information in https://w3id.org/okn/o/sd#Constraint)
       operationId: constraints_id_delete
       parameters:
       - description: The ID of the Constraint to be retrieved
@@ -717,7 +717,7 @@ paths:
       - Constraint
       x-openapi-router-controller: openapi_server.controllers.constraint_controller
     get:
-      description: Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      description: Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sd#Constraint)
       operationId: constraints_id_get
       parameters:
       - description: Name of the user graph to query
@@ -748,7 +748,7 @@ paths:
       - Constraint
       x-openapi-router-controller: openapi_server.controllers.constraint_controller
     put:
-      description: Updates an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint)
+      description: Updates an existing Constraint (more information in https://w3id.org/okn/o/sd#Constraint)
       operationId: constraints_id_put
       parameters:
       - description: The ID of the Constraint to be retrieved
@@ -9727,18 +9727,6 @@ components:
             type: string
           nullable: true
           type: array
-        hasMinimumValue:
-          description: Minimum value that a variable can take in this constraint
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasMaximumValue:
-          description: Maximum value that a variable can take in this constraint
-          items:
-            type: string
-          nullable: true
-          type: array
         id:
           description: identifier
           nullable: false
@@ -9755,9 +9743,15 @@ components:
             type: string
           nullable: true
           type: array
+        hasRule:
+          description: Rule that defines this constraint
+          items:
+            type: string
+          nullable: true
+          type: array
         hasVariable:
-          description: Property that links a constraint to the presentation of a variable
-            that will test it
+          description: Property that links a rule and the variable that will test
+            it
           items:
             $ref: '#/components/schemas/VariablePresentation'
           nullable: true
@@ -10691,13 +10685,13 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
+          description: 'Constraint or rule associated to a software configuration.
             For example: "This model accepts only monthly data", or "all inputs of
             this model configuration must share the same location". More structured
             restrictions, such as Jena rules or SWRL rules may also be captured with
             this property'
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -11163,7 +11157,7 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: Data constraints for this configuration
+          description: Description not available
           items:
             $ref: '#/components/schemas/Constraint'
           nullable: true
@@ -12976,7 +12970,7 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: Data constraints for this configuration
+          description: Description not available
           items:
             $ref: '#/components/schemas/Constraint'
           nullable: true
@@ -13687,13 +13681,13 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
+          description: 'Constraint or rule associated to a software configuration.
             For example: "This model accepts only monthly data", or "all inputs of
             this model configuration must share the same location". More structured
             restrictions, such as Jena rules or SWRL rules may also be captured with
             this property'
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -14721,13 +14715,13 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
+          description: 'Constraint or rule associated to a software configuration.
             For example: "This model accepts only monthly data", or "all inputs of
             this model configuration must share the same location". More structured
             restrictions, such as Jena rules or SWRL rules may also be captured with
             this property'
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -16107,13 +16101,13 @@ components:
           nullable: true
           type: array
         hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
+          description: 'Constraint or rule associated to a software configuration.
             For example: "This model accepts only monthly data", or "all inputs of
             this model configuration must share the same location". More structured
             restrictions, such as Jena rules or SWRL rules may also be captured with
             this property'
           items:
-            type: string
+            $ref: '#/components/schemas/Constraint'
           nullable: true
           type: array
         hasBuildFile:
@@ -17087,61 +17081,6 @@ components:
             - type: string
           nullable: true
           type: array
-        hasStandardVariable:
-          description: the standard name of a variable
-          items:
-            $ref: '#/components/schemas/StandardVariable'
-          maxItems: 1
-          nullable: true
-          type: array
-        hasMaximumAcceptedValue:
-          description: Maximum accepted value of a variable presentation (or a parameter)
-          items:
-            anyOf:
-            - format: date-time
-              type: string
-            - format: float
-              type: number
-            - format: int32
-              type: integer
-          nullable: true
-          type: array
-        hasConstraint:
-          description: 'Constraint or rule associated to a  variable or software configuration.
-            For example: "This model accepts only monthly data", or "all inputs of
-            this model configuration must share the same location". More structured
-            restrictions, such as Jena rules or SWRL rules may also be captured with
-            this property'
-          items:
-            type: string
-          nullable: true
-          type: array
-        description:
-          description: small description
-          items:
-            type: string
-          nullable: true
-          type: array
-        label:
-          description: short description of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        type:
-          description: type of the resource
-          items:
-            type: string
-          nullable: true
-          type: array
-        hasLongName:
-          description: Properties that relate the variable representation to its long
-            name. The long name is useful for context (e.g., precipitation is less
-            ambiguous than P) but not as precise as the standard name.
-          items:
-            type: string
-          nullable: true
-          type: array
         hasShortName:
           description: A short name (e.g., temperature) capturing the high-level concept
             of the variable
@@ -17161,6 +17100,31 @@ components:
               type: integer
           nullable: true
           type: array
+        hasStandardVariable:
+          description: the standard name of a variable
+          items:
+            $ref: '#/components/schemas/StandardVariable'
+          maxItems: 1
+          nullable: true
+          type: array
+        hasMaximumAcceptedValue:
+          description: Maximum accepted value of a variable presentation (or a parameter)
+          items:
+            anyOf:
+            - format: date-time
+              type: string
+            - format: float
+              type: number
+            - format: int32
+              type: integer
+          nullable: true
+          type: array
+        description:
+          description: small description
+          items:
+            type: string
+          nullable: true
+          type: array
         partOfDataset:
           description: Associates a presentation with a dataset where the presentation
             occurs
@@ -17172,12 +17136,32 @@ components:
           description: identifier
           nullable: false
           type: string
+        label:
+          description: short description of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
         usesUnit:
           description: Property used to link a variable presentation or time interval
             to the unit they are represented in
           items:
             $ref: '#/components/schemas/Unit'
           maxItems: 1
+          nullable: true
+          type: array
+        type:
+          description: type of the resource
+          items:
+            type: string
+          nullable: true
+          type: array
+        hasLongName:
+          description: Properties that relate the variable representation to its long
+            name. The long name is useful for context (e.g., precipitation is less
+            ambiguous than P) but not as precise as the standard name.
+          items:
+            type: string
           nullable: true
           type: array
       type: object
@@ -17300,17 +17284,17 @@ components:
             type: string
           nullable: true
           type: array
+        contributor:
+          description: Contributor to a software component
+          items:
+            $ref: '#/components/schemas/Person'
+          nullable: true
+          type: array
         compatibleVisualizationSoftware:
           description: Property that links a software component to other useful software
             that canbe used to visualize its outputs
           items:
             $ref: '#/components/schemas/Software'
-          nullable: true
-          type: array
-        contributor:
-          description: Contributor to a software component
-          items:
-            $ref: '#/components/schemas/Person'
           nullable: true
           type: array
         copyrightHolder:

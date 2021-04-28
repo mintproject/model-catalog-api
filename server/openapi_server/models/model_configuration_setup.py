@@ -1090,7 +1090,7 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self):
         """Gets the has_constraint of this ModelConfigurationSetup.
 
-        Data constraints for this configuration  # noqa: E501
+        Description not available  # noqa: E501
 
         :return: The has_constraint of this ModelConfigurationSetup.
         :rtype: List[Constraint]
@@ -1101,7 +1101,7 @@ class ModelConfigurationSetup(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this ModelConfigurationSetup.
 
-        Data constraints for this configuration  # noqa: E501
+        Description not available  # noqa: E501
 
         :param has_constraint: The has_constraint of this ModelConfigurationSetup.
         :type has_constraint: List[Constraint]
