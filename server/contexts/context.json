@@ -790,5 +790,10 @@
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasVersionId",
         "@container": "@set"
+    },
+    "hasRule": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasRule",
+        "@container": "@set"
     }
 }}
