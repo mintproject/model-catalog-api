@@ -121,11 +121,6 @@
         "@container": "@set"
     },
     "EmpiricalModel": {"@id": "https://w3id.org/okn/o/sdm#EmpiricalModel"},
-    "hasMinimumValue": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#hasMinimumValue",
-        "@container": "@set"
-    },
     "ModelCategory": {"@id": "https://w3id.org/okn/o/sdm#ModelCategory"},
     "hasExecutableInstructions": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
@@ -194,8 +189,8 @@
         "@id": "https://w3id.org/okn/o/sd#keywords",
         "@container": "@set"
     },
-    "Constraint": {"@id": "https://w3id.org/okn/o/sdm#Constraint"},
     "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
+    "Constraint": {"@id": "https://w3id.org/okn/o/sd#Constraint"},
     "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
     "hasPresentation": {
         "@type": "@id",
@@ -434,6 +429,11 @@
         "@container": "@set"
     },
     "Person": {"@id": "https://w3id.org/okn/o/sd#Person"},
+    "hasRule": {
+        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@id": "https://w3id.org/okn/o/sd#hasRule",
+        "@container": "@set"
+    },
     "doi": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#doi",
@@ -454,11 +454,6 @@
     "hasDataType": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasDataType",
-        "@container": "@set"
-    },
-    "hasMaximumValue": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sdm#hasMaximumValue",
         "@container": "@set"
     },
     "hasModelCategory": {
@@ -611,7 +606,7 @@
         "@container": "@set"
     },
     "hasConstraint": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
+        "@type": "@id",
         "@id": "https://w3id.org/okn/o/sd#hasConstraint",
         "@container": "@set"
     },
@@ -772,7 +767,7 @@
     },
     "hasVariable": {
         "@type": "@id",
-        "@id": "https://w3id.org/okn/o/sdm#hasVariable",
+        "@id": "https://w3id.org/okn/o/sd#hasVariable",
         "@container": "@set"
     },
     "hasShortName": {
@@ -789,11 +784,6 @@
     "hasVersionId": {
         "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasVersionId",
-        "@container": "@set"
-    },
-    "hasRule": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
-        "@id": "https://w3id.org/okn/o/sd#hasRule",
         "@container": "@set"
     }
 }}
