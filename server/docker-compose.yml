@@ -18,4 +18,4 @@ services:
       - "./:/tmp/"
     environment:
       SWAGGER_JSON: "/tmp/openapi.json"
-      BASE_URL: "/v1.7.0/ui"
+      BASE_URL: "/v1.8.0/ui"
