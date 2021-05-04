@@ -11,7 +11,7 @@ services:
       - ./openapi_server/openapi/:/usr/src/app/openapi_server/openapi/
 
   swagger-ui:
-    image: swaggerapi/swagger-ui
+    image: mosorio/swagger-ui
     ports:
       - "${SWAGGER_PORT}:8080"
     volumes:

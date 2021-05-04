@@ -1,5 +1,7 @@
 SAMPLEEXECUTION_TYPE_URI = "https://w3id.org/okn/o/sd#SampleExecution"
 SAMPLEEXECUTION_TYPE_NAME = "SampleExecution"
+CONSTRAINT_TYPE_URI = "https://w3id.org/okn/o/sdm#Constraint"
+CONSTRAINT_TYPE_NAME = "Constraint"
 GRID_TYPE_URI = "https://w3id.org/okn/o/sdm#Grid"
 GRID_TYPE_NAME = "Grid"
 DATASETSPECIFICATION_TYPE_URI = "https://w3id.org/okn/o/sd#DatasetSpecification"
