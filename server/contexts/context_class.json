@@ -1,6 +1,6 @@
 {"@context": {
-    "Constraint": {"@id": "https://w3id.org/okn/o/sdm#Constraint"},
     "GeoShape": {"@id": "https://w3id.org/okn/o/sdm#GeoShape"},
+    "Constraint": {"@id": "https://w3id.org/okn/o/sd#Constraint"},
     "Process": {"@id": "https://w3id.org/okn/o/sdm#Process"},
     "Unit": {"@id": "https://w3id.org/okn/o/sd#Unit"},
     "type": "@type",
