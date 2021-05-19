@@ -1,8 +1,6 @@
-import logging
 from configparser import ConfigParser
 import os
 from pathlib import Path
-from server.openapi_server.settings import AUTH_CLIENT_ID
 
 # Default endpoint, if none specified elsewhere
 ENDPOINT = os.environ.get('ENDPOINT')
@@ -10,10 +8,11 @@ ENDPOINT_USERNAME = os.environ.get('USER')
 ENDPOINT_PASSWORD = os.environ.get('PASSWORD')
 ENDPOINT_RESOURCE_PREFIX = os.environ.get('PREFIX')
 ENDPOINT_GRAPH_BASE = os.environ.get('GRAPH_BASE')
-AUTH_SERVER = os.environ.get('AUTH_SERVER')
-AUTH_CLIENT_ID = os.environ.get('AUTH_CLIENT_ID)
+FIREBASE_KEY = os.environ.get('FIREBASE_KEY')
 QUERY_DIRECTORY = os.environ.get('QUERIES_DIR')
 CONTEXT_DIRECTORY = os.environ.get('CONTEXT_DIR')
+AUTH_SERVER = os.environ.get('AUTH_SERVER')
+AUTH_CLIENT_ID = os.environ.get('AUTH_CLIENT_ID')
 
 mime_types = {
     'csv': 'text/csv; q=1.0, */*; q=0.1',
