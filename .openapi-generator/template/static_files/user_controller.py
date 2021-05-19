@@ -9,7 +9,7 @@ from openapi_server.settings import AUTH_SERVER, AUTH_CLIENT_ID, AUTH_SECRET, JW
 
 def decode_token(token):
     try:
-        return jwt.decode(token, AUTH_SECRET, algorithms=[JWT_ALGORITHM])
+        return jwt.decode(token, AUTH_SECRET)
     except JWTError as e:
         six.raise_from(Unauthorized, e)
 
@@ -20,19 +20,16 @@ def _current_timestamp() -> int:
 
 def auth_with_password(email, password):
     headers = {
-        'Sec-Fetch-Mode': 'cors',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
     }
-
-    data = json.dumps(
-        {
+ 
+    data =   {
             "username": email,
             "password": password,
             "grant_type": "password",
             "client_id": AUTH_CLIENT_ID
         }
-    )
-
+    print(AUTH_SERVER)
     response = requests.post(
         AUTH_SERVER,
         headers=headers,

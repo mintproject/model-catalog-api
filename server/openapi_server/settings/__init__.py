@@ -1,4 +1,3 @@
-import logging
 from configparser import ConfigParser
 import os
 from pathlib import Path
@@ -12,6 +11,8 @@ ENDPOINT_GRAPH_BASE = os.environ.get('GRAPH_BASE')
 FIREBASE_KEY = os.environ.get('FIREBASE_KEY')
 QUERY_DIRECTORY = os.environ.get('QUERIES_DIR')
 CONTEXT_DIRECTORY = os.environ.get('CONTEXT_DIR')
+AUTH_SERVER = os.environ.get('AUTH_SERVER')
+AUTH_CLIENT_ID = os.environ.get('AUTH_CLIENT_ID')
 
 mime_types = {
     'csv': 'text/csv; q=1.0, */*; q=0.1',
