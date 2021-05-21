@@ -1,2 +1,2 @@
-FROM mosoriob/swagger-ui
+FROM mosorio/swagger-ui
 COPY openapi.json /tmp/openapi.json
