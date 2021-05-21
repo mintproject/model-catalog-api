@@ -9,11 +9,11 @@ services:
       - .env
   swagger-ui:
     image: mosoriob/swagger-ui
+    build:
+      context: .
+      dockerfile: Dockerfile_swagger_ui
     volumes:
       - "./:/tmp/"
-    environment:
-      SWAGGER_JSON: "/tmp/openapi.json"
-      BASE_URL: "/v1.7.0/ui"
   endpoint:
     image: mintproject/fuseki-docker:3.8.0
     env_file:
