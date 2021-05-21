@@ -28,7 +28,7 @@ jobs:
       - name: Build image
         run: |
           pushd server
-          docker build . --file .Dockerfile_swagger_ui --tag $SWAGGER_IMAGE_NAME
+          docker build . --file Dockerfile_swagger_ui --tag $SWAGGER_IMAGE_NAME
           popd
 
 
