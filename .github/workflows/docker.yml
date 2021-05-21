@@ -10,7 +10,7 @@ on:
 
 env:
   IMAGE_NAME: model_catalog_api
-  SWAGGER_IMAGE_NAME: mintproject/swagger_ui 
+  SWAGGER_IMAGE_NAME: mintproject/swagger-ui 
 jobs:
   push:
     runs-on: ubuntu-latest
