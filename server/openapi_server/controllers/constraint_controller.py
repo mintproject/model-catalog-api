@@ -9,7 +9,7 @@ from openapi_server import util
 def constraints_get(username=None, label=None, page=None, per_page=None):  # noqa: E501
     """List all instances of Constraint
 
-    Gets a list of all instances of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint) # noqa: E501
+    Gets a list of all instances of Constraint (more information in https://w3id.org/okn/o/sd#Constraint) # noqa: E501
 
     :param username: Name of the user graph to query
     :type username: str
@@ -36,7 +36,7 @@ def constraints_get(username=None, label=None, page=None, per_page=None):  # noq
 def constraints_id_delete(id, user=None):  # noqa: E501
     """Delete an existing Constraint
 
-    Delete an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint) # noqa: E501
+    Delete an existing Constraint (more information in https://w3id.org/okn/o/sd#Constraint) # noqa: E501
 
     :param id: The ID of the Constraint to be retrieved
     :type id: str
@@ -56,7 +56,7 @@ def constraints_id_delete(id, user=None):  # noqa: E501
 def constraints_id_get(id, username=None):  # noqa: E501
     """Get a single Constraint by its id
 
-    Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sdm#Constraint) # noqa: E501
+    Gets the details of a given Constraint (more information in https://w3id.org/okn/o/sd#Constraint) # noqa: E501
 
     :param id: The ID of the Constraint to be retrieved
     :type id: str
@@ -76,7 +76,7 @@ def constraints_id_get(id, username=None):  # noqa: E501
 def constraints_id_put(id, user=None, constraint=None):  # noqa: E501
     """Update an existing Constraint
 
-    Updates an existing Constraint (more information in https://w3id.org/okn/o/sdm#Constraint) # noqa: E501
+    Updates an existing Constraint (more information in https://w3id.org/okn/o/sd#Constraint) # noqa: E501
 
     :param id: The ID of the Constraint to be retrieved
     :type id: str
@@ -101,7 +101,7 @@ def constraints_id_put(id, user=None, constraint=None):  # noqa: E501
 def constraints_post(user=None, constraint=None):  # noqa: E501
     """Create one Constraint
 
-    Create a new instance of Constraint (more information in https://w3id.org/okn/o/sdm#Constraint) # noqa: E501
+    Create a new instance of Constraint (more information in https://w3id.org/okn/o/sd#Constraint) # noqa: E501
 
     :param user: Username
     :type user: str

@@ -57,7 +57,7 @@ class DataTransformation(Model):
         :param author: The author of this DataTransformation.  # noqa: E501
         :type author: List[object]
         :param has_constraint: The has_constraint of this DataTransformation.  # noqa: E501
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         :param has_build_file: The has_build_file of this DataTransformation.  # noqa: E501
         :type has_build_file: List[str]
         :param short_description: The short_description of this DataTransformation.  # noqa: E501
@@ -142,6 +142,7 @@ class DataTransformation(Model):
         :type has_input: List[DatasetSpecification]
         """
         from openapi_server.models.configuration_setup import ConfigurationSetup
+        from openapi_server.models.constraint import Constraint
         from openapi_server.models.dataset_specification import DatasetSpecification
         from openapi_server.models.funding_information import FundingInformation
         from openapi_server.models.image import Image
@@ -156,6 +157,7 @@ class DataTransformation(Model):
         from openapi_server.models.source_code import SourceCode
         from openapi_server.models.visualization import Visualization
 
+          # noqa: E501
           # noqa: E501
           # noqa: E501
           # noqa: E501
@@ -192,7 +194,7 @@ class DataTransformation(Model):
             'has_sample_execution': List[SampleExecution],
             'has_sample_result': List[SampleResource],
             'author': List[object],
-            'has_constraint': List[str],
+            'has_constraint': List[Constraint],
             'has_build_file': List[str],
             'short_description': List[str],
             'has_execution_command': List[str],
@@ -814,10 +816,10 @@ class DataTransformation(Model):
     def has_constraint(self):
         """Gets the has_constraint of this DataTransformation.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Constraint or rule associated to a software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
 
         :return: The has_constraint of this DataTransformation.
-        :rtype: List[str]
+        :rtype: List[Constraint]
         """
         return self._has_constraint
 
@@ -825,10 +827,10 @@ class DataTransformation(Model):
     def has_constraint(self, has_constraint):
         """Sets the has_constraint of this DataTransformation.
 
-        Constraint or rule associated to a  variable or software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
+        Constraint or rule associated to a software configuration. For example: \"This model accepts only monthly data\", or \"all inputs of this model configuration must share the same location\". More structured restrictions, such as Jena rules or SWRL rules may also be captured with this property  # noqa: E501
 
         :param has_constraint: The has_constraint of this DataTransformation.
-        :type has_constraint: List[str]
+        :type has_constraint: List[Constraint]
         """
 
         self._has_constraint = has_constraint
