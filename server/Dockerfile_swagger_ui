@@ -1,0 +1,2 @@
+FROM mosorio/swagger-ui
+COPY openapi.json /tmp/openapi.json

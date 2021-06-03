@@ -1,21 +1,24 @@
 version: '3'
 services:
-  dev:
-    image: "mintproject/model-catalog-api:${VERSION}"
+  api:
+    image: "mintproject/model-catalog-api"
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - ${PORT}:8080
-    volumes:
-      - ./openapi_server/openapi/:/usr/src/app/openapi_server/openapi/
-
+    env_file:
+      - .env
   swagger-ui:
-    image: mosorio/swagger-ui
-    ports:
-      - "${SWAGGER_PORT}:8080"
+    image: mosoriob/swagger-ui
+    build:
+      context: .
+      dockerfile: Dockerfile_swagger_ui
     volumes:
       - "./:/tmp/"
-    environment:
-      SWAGGER_JSON: "/tmp/openapi.json"
-      BASE_URL: "/v1.8.0/ui"
+  endpoint:
+    image: mintproject/fuseki-docker:3.8.0
+    env_file:
+      - .env
+    volumes:
+      - databases:/fuseki-base/databases/
+volumes:
+  databases:

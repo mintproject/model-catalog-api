@@ -1,42 +1,18 @@
-import logging
 from configparser import ConfigParser
 import os
 from pathlib import Path
 
-path = Path(__file__).parent.parent.parent
-
-# Setting headers to use access_token for the GitHub API
-config_fallbacks = {
-    'github_access_token': '',
-    'endpoint': '',
-    'user': '',
-    'password': '',
-    'server_name': '',
-    'prefix': '',
-    'graph_base': '',
-    'firebase_key': '',
-    'local_sparql_dir': '',
-    'query_dir': '',
-    'context_dir': '',
-}
-config = ConfigParser(config_fallbacks)
-config.add_section('auth')
-config.add_section('defaults')
-config.add_section('local')
-config.read('config.ini')
-config_filename = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config.ini')
-config.read(config_filename)
-
 # Default endpoint, if none specified elsewhere
-ENDPOINT = config.get('defaults', 'endpoint')
-ENDPOINT_USERNAME = config.get('defaults', 'user')
-ENDPOINT_PASSWORD = config.get('defaults', 'password')
-ENDPOINT_RESOURCE_PREFIX = config.get('defaults', 'prefix')
-ENDPOINT_GRAPH_BASE = config.get('defaults', 'graph_base')
-FIREBASE_KEY = config.get('defaults', 'firebase_key')
-
-QUERY_DIRECTORY = path/config.get('defaults', 'queries_dir')
-CONTEXT_DIRECTORY = path/config.get('defaults', 'context_dir')
+ENDPOINT = os.environ.get('ENDPOINT')
+ENDPOINT_USERNAME = os.environ.get('USER')
+ENDPOINT_PASSWORD = os.environ.get('PASSWORD')
+ENDPOINT_RESOURCE_PREFIX = os.environ.get('PREFIX')
+ENDPOINT_GRAPH_BASE = os.environ.get('GRAPH_BASE')
+FIREBASE_KEY = os.environ.get('FIREBASE_KEY')
+QUERY_DIRECTORY = os.environ.get('QUERIES_DIR')
+CONTEXT_DIRECTORY = os.environ.get('CONTEXT_DIR')
+AUTH_SERVER = os.environ.get('AUTH_SERVER')
+AUTH_CLIENT_ID = os.environ.get('AUTH_CLIENT_ID')
 
 mime_types = {
     'csv': 'text/csv; q=1.0, */*; q=0.1',
