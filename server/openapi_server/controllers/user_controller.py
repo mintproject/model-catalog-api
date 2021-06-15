@@ -4,9 +4,39 @@ from werkzeug.exceptions import Unauthorized
 import connexion
 from openapi_server.models.user import User
 from openapi_server.settings import AUTH_SERVER, AUTH_CLIENT_ID
+from jose import JWTError, jwt
+
+
+JWT_ISSUER = 'com.zalando.connexion'
+JWT_SECRET = 'change_this'
+JWT_LIFETIME_SECONDS = 600
+JWT_ALGORITHM = 'HS256'
+
 
 def decode_token(token):
-    pass
+    #MINT doesn't validate in the app, we are validating the token
+    #in the gateway. Change the values starting with verify_ to true
+    return jwt.decode(token, "", 
+            options={
+                'verify_signature': False,
+                'verify_aud': False,
+                'verify_iat': False,
+                'verify_exp': False,
+                'verify_nbf': False,
+                'verify_iss': False,
+                'verify_sub': False,
+                'verify_jti': False,
+                'verify_at_hash': False,
+                'require_aud': False,
+                'require_iat': False,
+                'require_exp': False,
+                'require_nbf': False,
+                'require_iss': False,
+                'require_sub': False,
+                'require_jti': False,
+                'require_at_hash': False,
+                'leeway': 0,
+            })
 
 def auth_with_password(email, password):
     headers = {
