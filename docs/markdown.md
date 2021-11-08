@@ -36,7 +36,7 @@ Extension of the Software Description Ontology to capture metadata specific to m
 
 Model Catalog API for adding/modifying/deleting model metadata. We provide several clients (available [here](http://mint-project.info/products/model/#model-service-api-clients)) to improve the experience for developers when accessing the contents of our APIs.
 
-[[RESTAPI](https://api.models.mint.isi.edu/latest)] [[Documentation](https://model-catalog-python-api-client.readthedocs.io/en/latest/endpoints/)] [[Code](https://github.com/mintproject/model-catalog-api)] [[Releases](https://github.com/mintproject/model-catalog-api/releases)]
+[[RESTAPI](https://api.models.mint.isi.edu/v1.8.0)] [[Documentation](https://model-catalog-python-api-client.readthedocs.io/en/latest/endpoints/)] [[Code](https://github.com/mintproject/model-catalog-api)] [[Releases](https://github.com/mintproject/model-catalog-api/releases)]
 
 --- 
 
