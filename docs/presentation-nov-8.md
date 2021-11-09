@@ -101,4 +101,4 @@ Use Linked Data Plataform ([Trellis](https://github.com/trellis-ldp/trellis))
 
 1. Resources are managed by means of a RESTful HTTP API,
 2. An HTTP client is also able to retrieve the historical state [Resource versioning](https://github.com/trellis-ldp/trellis/wiki/Resource-Versioning) and [provenance(audit) feature ](https://github.com/trellis-ldp/trellis/wiki/Resource-Provenance--(Audit))
-3. Authentication and Authorization can be easier [Docs](https://github.com/trellis-ldp/trellis/wiki/Authentication)
+3. Authentication and Authorization can be easier. Docs: [Authentication](https://github.com/trellis-ldp/trellis/wiki/Authentication) and [Authorization](https://github.com/trellis-ldp/trellis/wiki/Authorization)
