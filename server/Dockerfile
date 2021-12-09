@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.8-alpine
 
 RUN apk add build-base libffi-dev openssl-dev git
 RUN mkdir -p /usr/src/app
