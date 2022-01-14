@@ -7,18 +7,26 @@ services:
       dockerfile: Dockerfile
     env_file:
       - .env
+    ports:
+      - "8080"
   swagger-ui:
-    image: mosoriob/swagger-ui
-    build:
-      context: .
-      dockerfile: Dockerfile_swagger_ui
+    image: mintproject/swagger-ui
+    environment:
+      SWAGGER_JSON: "/tmp/openapi.json"
+      BASE_URL: "/v1.8.0/ui"
+    ports:
+      - 80
     volumes:
       - "./:/tmp/"
   endpoint:
-    image: mintproject/fuseki-docker:3.8.0
+    image: mintproject/fuseki-docker:${FUSEKI_IMAGE_VERSION}
     env_file:
       - .env
     volumes:
-      - databases:/fuseki-base/databases/
+      - fuseki_database:/fuseki-base/databases
+    ports:
+      - 3030
+
 volumes:
   databases:
+  fuseki_database:
