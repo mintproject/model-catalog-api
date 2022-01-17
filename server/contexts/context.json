@@ -68,7 +68,6 @@
         "@container": "@set"
     },
     "hasComponentLocation": {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@id": "https://w3id.org/okn/o/sd#hasComponentLocation",
         "@container": "@set"
     },
