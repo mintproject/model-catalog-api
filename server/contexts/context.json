@@ -309,7 +309,6 @@
         "@container": "@set"
     },
     "hasUsageNotes": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#hasUsageNotes",
         "@container": "@set"
     },
@@ -438,7 +437,6 @@
         "@container": "@set"
     },
     "status": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sd#status",
         "@container": "@set"
     },
@@ -643,7 +641,6 @@
         "@container": "@set"
     },
     "parameterAssignmentMethod": {
-        "@type": "http://www.w3.org/2001/XMLSchema#string",
         "@id": "https://w3id.org/okn/o/sdm#parameterAssignmentMethod",
         "@container": "@set"
     },
