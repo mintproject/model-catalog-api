@@ -12,6 +12,4 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-ENTRYPOINT ["python3"]
-
-CMD ["-m", "openapi_server"]
+ENTRYPOINT ["uwsgi" "uwsgi.ini" ]
