@@ -12,4 +12,4 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-ENTRYPOINT ["uwsgi" "uwsgi.ini" ]
+CMD [ "uwsgi", "uwsgi.ini" ]

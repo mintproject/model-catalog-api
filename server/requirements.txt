@@ -323,6 +323,8 @@ swagger-ui-bundle==0.0.2 \
 urllib3==1.26.5; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4" and python_version >= "3.6" \
     --hash=sha256:753a0374df26658f99d826cfe40394a686d05985786d946fbe4165b5148f5a7c \
     --hash=sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098
+uwsgi==2.0.20 \
+    --hash=sha256:88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9
 validators==0.15.0 \
     --hash=sha256:31e8bb01b48b48940a021b8a9576b840f98fa06b91762ef921d02cb96d38727a
 webencodings==0.5.1 \
