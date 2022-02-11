@@ -702,6 +702,19 @@ url = "https://pypi.org/simple"
 reference = 'pypi-public'
 
 [[package]]
+name = "uwsgi"
+version = "2.0.20"
+description = "The uWSGI server"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = 'pypi-public'
+
+[[package]]
 name = "validators"
 version = "0.15.0"
 description = "Python Data Validation for Humans™."
@@ -755,7 +768,7 @@ reference = 'pypi-public'
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ead876cd62a9e59489d9195842a722a53e6fa4095ec2e28d7fc0bd7c75926430"
+content-hash = "3c719a02fa5c6e3dc2dbf39cf3905c746f869b99c1177094bf295c83a742e884"
 
 [metadata.files]
 attrs = [
@@ -1121,6 +1134,9 @@ swagger-ui-bundle = [
 urllib3 = [
     {file = "urllib3-1.26.5-py2.py3-none-any.whl", hash = "sha256:753a0374df26658f99d826cfe40394a686d05985786d946fbe4165b5148f5a7c"},
     {file = "urllib3-1.26.5.tar.gz", hash = "sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"},
+]
+uwsgi = [
+    {file = "uwsgi-2.0.20.tar.gz", hash = "sha256:88ab9867d8973d8ae84719cf233b7dafc54326fcaec89683c3f9f77c002cdff9"},
 ]
 validators = [
     {file = "validators-0.15.0.tar.gz", hash = "sha256:31e8bb01b48b48940a021b8a9576b840f98fa06b91762ef921d02cb96d38727a"},

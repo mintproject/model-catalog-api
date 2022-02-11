@@ -20,6 +20,7 @@ python_dateutil = "^2.6.0"
 validators = "0.15.0"
 python-jose = "3.3.0"
 python-dotenv = "*"
+uwsgi = "^2.0.20"
 [tool.poetry.dev-dependencies]
 
 [build-system]
