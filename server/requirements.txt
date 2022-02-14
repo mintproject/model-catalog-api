@@ -200,9 +200,9 @@ markupsafe==2.0.1; python_version >= "3.6" and python_full_version < "3.0.0" or 
     --hash=sha256:10f82115e21dc0dfec9ab5c0223652f7197feb168c940f3ef61563fc2d6beb74 \
     --hash=sha256:693ce3f9e70a6cf7d2fb9e6c9d8b204b6b39897a2c4a1aa65728d5ac97dcc1d8 \
     --hash=sha256:594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a
-obasparql==4.0.5 \
-    --hash=sha256:a11f024c25a255d77edb970ef166ba59b43024ba6358aa10bef3763f6a095d6d \
-    --hash=sha256:ec461d9fdb390e5c85d9086f7f33953cc5eb36083d3aa152105db879e82ee049
+obasparql==4.0.6 \
+    --hash=sha256:d17b4c187953940fe7e385f7e89ce81818a73adde5f437aa41409b74833faef0 \
+    --hash=sha256:bc66e97c606bbe758ca6a2eb6502e4d915af8002e4a5ef9a2c443c6c8accd65a
 openapi-schema-validator==0.2.2; python_full_version >= "3.7.0" and python_full_version < "4.0.0" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6") \
     --hash=sha256:a3778b986f6bdd831efbcd67b0da382dcdd69d24ed550a5afba68a7925f1346b \
     --hash=sha256:fb3d058cbfdbf8fba3d58f96dad3e55c1286ebbbc049be944c435cddd7ed11d2

@@ -333,7 +333,7 @@ reference = 'pypi-public'
 
 [[package]]
 name = "obasparql"
-version = "4.0.5"
+version = "4.0.6"
 description = "OBA Sparql Manager"
 category = "main"
 optional = false
@@ -755,7 +755,7 @@ reference = 'pypi-public'
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ead876cd62a9e59489d9195842a722a53e6fa4095ec2e28d7fc0bd7c75926430"
+content-hash = "6e78ef3a1bfc099206721dcdfe1b3d56c46e2b56ebce2154096fe1673190bfc2"
 
 [metadata.files]
 attrs = [
@@ -979,8 +979,8 @@ markupsafe = [
     {file = "MarkupSafe-2.0.1.tar.gz", hash = "sha256:594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a"},
 ]
 obasparql = [
-    {file = "obasparql-4.0.5-py3-none-any.whl", hash = "sha256:a11f024c25a255d77edb970ef166ba59b43024ba6358aa10bef3763f6a095d6d"},
-    {file = "obasparql-4.0.5.tar.gz", hash = "sha256:ec461d9fdb390e5c85d9086f7f33953cc5eb36083d3aa152105db879e82ee049"},
+    {file = "obasparql-4.0.6-py3-none-any.whl", hash = "sha256:d17b4c187953940fe7e385f7e89ce81818a73adde5f437aa41409b74833faef0"},
+    {file = "obasparql-4.0.6.tar.gz", hash = "sha256:bc66e97c606bbe758ca6a2eb6502e4d915af8002e4a5ef9a2c443c6c8accd65a"},
 ]
 openapi-schema-validator = [
     {file = "openapi-schema-validator-0.2.2.tar.gz", hash = "sha256:a3778b986f6bdd831efbcd67b0da382dcdd69d24ed550a5afba68a7925f1346b"},
