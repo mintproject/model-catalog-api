@@ -12,5 +12,6 @@ WHERE {
         OPTIONAL { ?prop rdfs:label ?label }
     }
     FILTER (!isBlank(?prop))
+    FILTER NOT EXISTS { ?item <https://w3id.org/okn/o/sdm#influences> ?prop }
 
 }
