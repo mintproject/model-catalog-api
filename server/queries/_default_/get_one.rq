@@ -13,4 +13,5 @@ WHERE {
             ?prop rdfs:label ?label
         }
     }
+    FILTER (!isBlank(?prop))
 }

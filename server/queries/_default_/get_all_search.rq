@@ -12,7 +12,9 @@ WHERE {
         OFFSET 0
     }
     ?item ?predicate ?prop
+    FILTER (!isBlank(?prop))
     OPTIONAL {
         ?prop a ?type
-    }
+    }    
+
 }

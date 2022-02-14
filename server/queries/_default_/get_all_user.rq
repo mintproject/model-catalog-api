@@ -16,5 +16,6 @@ WHERE {
         OPTIONAL {
             ?prop a ?type
         }
+        FILTER (!isBlank(?prop))
     }
 }
