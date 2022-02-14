@@ -13,6 +13,6 @@ WHERE {
             ?prop rdfs:label ?label
         }
     }
-     FILTER NOT EXISTS { ?item <https://w3id.org/okn/o/sdm#influences> ?prop }
+     FILTER NOT EXISTS { ?_resource_iri <https://w3id.org/okn/o/sdm#influences> ?prop }
    FILTER (!isBlank(?prop))
 }
