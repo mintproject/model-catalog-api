@@ -632,6 +632,7 @@
     },
     "Software": {"@id": "https://w3id.org/okn/o/sd#Software"},
     "position": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@id": "https://w3id.org/okn/o/sd#position",
         "@container": "@set"
     },
