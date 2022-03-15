@@ -19,15 +19,14 @@ from openapi_server.settings import *
 from openapi_server import QUERY_DIRECTORY, CONTEXT_DIRECTORY, QUERIES_TYPES
 from openapi_server.encoder import JSONEncoder
 
-query_manager = QueryManager(queries_dir=QUERY_DIRECTORY,
-                             context_dir=CONTEXT_DIRECTORY,
-                             queries_types=QUERIES_TYPES,
-                             endpoint=ENDPOINT,
-                             endpoint_username=ENDPOINT_USERNAME,
-                             endpoint_password=ENDPOINT_PASSWORD,
-                             graph_base=ENDPOINT_GRAPH_BASE,
-                             prefix=ENDPOINT_RESOURCE_PREFIX)
-
+query_manager = QueryManager(
+    endpoint=ENDPOINT,
+    endpoint_username=ENDPOINT_USERNAME,
+    endpoint_password=ENDPOINT_PASSWORD,
+    queries_dir=QUERY_DIRECTORY,
+    context_dir=CONTEXT_DIRECTORY,
+    named_graph_base=ENDPOINT_GRAPH_BASE,
+    uri_prefix=ENDPOINT_RESOURCE_PREFIX)
 
 
 import logging.config
@@ -61,6 +60,14 @@ class BaseTestCase(TestCase):
         self.logger.info("Response length {}".format(response.json))
         return response.json
 
+    def check_key(self, key):
+        self.logger.info(key)
+        self.assertFalse('http://' in key)
+        self.assertFalse('https://' in key)
+        self.assertFalse(key.startswith('sd:'))
+        self.assertFalse(key.startswith('sdm:'))
+        self.assertFalse(key.startswith('rdfs:'))
+        self.assertFalse(key.startswith('rdf:'))
 
     def create_app(self):
 

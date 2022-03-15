@@ -16,26 +16,30 @@ MINT_USERNAME = "mint@isi.edu"
 class TestModel(BaseTestCase):
     """Model integration test stubs"""
     logger = logging.getLogger("TestModel")
-    def test_model_get_id(self):
-        """Test case for model_get
 
-        List all Models entities
+    def test_models_get(self):
+        """Test case for models_get
+
+        List all Model entities
         """
-        query_string = [('username', MINT_USERNAME)]
-        headers = {
+        query_string = [('username', self.get_username)] 
+        headers = { 
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/models/{}'.format("CYCLES"),
+            '/v1.8.0/modelconfigurations',
             method='GET',
             headers=headers,
             query_string=query_string)
         self.logger.info("Response length {}".format(len(response.json)))
-        self.assertIsInstance(Model.from_dict(response.json), Model)
+        
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
         self.assertTrue(response.json)
-
+        for _item in response.json:
+            keys = _item.keys()
+            for key in keys:
+                self.check_key(key)
 
     def test_model_custom_index_get(self):
         """Test case for model_get
@@ -48,7 +52,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/custom/models/variable',
+            '/v1.8.0/custom/models/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -69,7 +73,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/custom/model/intervention',
+            '/v1.8.0/custom/model/intervention',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -90,7 +94,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/custom/model/region',
+            '/v1.8.0/custom/model/region',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -99,6 +103,10 @@ class TestModel(BaseTestCase):
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+        for _item in response.json:
+            keys = _item.keys()
+            for key in keys:
+                self.check_key(key)
 
     def test_model_custom_variable_get(self):
         """Test case for model_get
@@ -111,7 +119,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/custom/models/variable',
+            '/v1.8.0/custom/models/variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -132,7 +140,7 @@ class TestModel(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/custom/models/standard_variable',
+            '/v1.8.0/custom/models/standard_variable',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -142,6 +150,10 @@ class TestModel(BaseTestCase):
             self.assertIsInstance(Model.from_dict(item), Model)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+        for _item in response.json:
+            keys = _item.keys()
+            for key in keys:
+                self.check_key(key)
 
 if __name__ == '__main__':
     unittest.main()

@@ -24,7 +24,7 @@ class TestParameterController(BaseTestCase):
             'Accept': 'application/json',
         }
         response = self.client.open(
-            '/v1.7.0/parameters',
+            '/v1.8.0/parameters',
             method='GET',
             headers=headers,
             query_string=query_string)
@@ -32,6 +32,13 @@ class TestParameterController(BaseTestCase):
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
         self.assertTrue(response.json)
+        for parameter in response.json:
+            keys = parameter.keys()
+            for key in keys:
+                print(key)
+                self.assertFalse('http://' in key)
+                self.assertFalse('https://' in key)
+        
 
 
 if __name__ == '__main__':

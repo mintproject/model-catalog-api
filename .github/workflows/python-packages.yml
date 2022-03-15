@@ -35,4 +35,6 @@ jobs:
       run: |
         cd server
         pip install -r requirements.txt
-
+        export $(echo $(cat .env | sed 's/#.*//g' | sed 's/\r//g' | xargs) | envsubst)
+        export ENDPOINT="https://endpoint.dev.mint.isi.edu/modelCatalog"
+        pytest
