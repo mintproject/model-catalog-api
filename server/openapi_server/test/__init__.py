@@ -20,7 +20,7 @@ from openapi_server import QUERY_DIRECTORY, CONTEXT_DIRECTORY, QUERIES_TYPES
 from openapi_server.encoder import JSONEncoder
 
 query_manager = QueryManager(
-    endpoint="https://endpoint.dev.mint.isi.edu/modelCatalog",
+    endpoint=ENDPOINT,
     endpoint_username=ENDPOINT_USERNAME,
     endpoint_password=ENDPOINT_PASSWORD,
     queries_dir=QUERY_DIRECTORY,
