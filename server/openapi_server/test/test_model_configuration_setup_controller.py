@@ -39,10 +39,7 @@ class TestModelConfigurationSetupController(BaseTestCase):
         for _item in response.json:
             keys = _item.keys()
             for key in keys:
-                print(key)
-                self.assertFalse('http://' in key)
-                self.assertFalse('https://' in key)
-        
+                self.check_key(key)
 
 if __name__ == '__main__':
     unittest.main()

@@ -39,10 +39,7 @@ class TestModel(BaseTestCase):
         for _item in response.json:
             keys = _item.keys()
             for key in keys:
-                print(key)
-                self.assertFalse('http://' in key)
-                self.assertFalse('https://' in key)
-        
+                self.check_key(key)
 
     def test_model_custom_index_get(self):
         """Test case for model_get
@@ -109,9 +106,7 @@ class TestModel(BaseTestCase):
         for _item in response.json:
             keys = _item.keys()
             for key in keys:
-                print(key)
-                self.assertFalse('http://' in key)
-                self.assertFalse('https://' in key)
+                self.check_key(key)
 
     def test_model_custom_variable_get(self):
         """Test case for model_get
@@ -158,9 +153,7 @@ class TestModel(BaseTestCase):
         for _item in response.json:
             keys = _item.keys()
             for key in keys:
-                print(key)
-                self.assertFalse('http://' in key)
-                self.assertFalse('https://' in key)
+                self.check_key(key)
 
 if __name__ == '__main__':
     unittest.main()

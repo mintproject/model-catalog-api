@@ -60,6 +60,14 @@ class BaseTestCase(TestCase):
         self.logger.info("Response length {}".format(response.json))
         return response.json
 
+    def check_key(self, key):
+        self.logger.info(key)
+        self.assertFalse('http://' in key)
+        self.assertFalse('https://' in key)
+        self.assertFalse(key.startswith('sd:'))
+        self.assertFalse(key.startswith('sdm:'))
+        self.assertFalse(key.startswith('rdfs:'))
+        self.assertFalse(key.startswith('rdf:'))
 
     def create_app(self):
 
