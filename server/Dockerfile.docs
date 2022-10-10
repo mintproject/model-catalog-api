@@ -1,0 +1,2 @@
+FROM swagger/swagger-ui
+COPY openapi.json /tmp/openapi.json

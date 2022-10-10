@@ -8,13 +8,11 @@ services:
     env_file:
       - .env
     ports:
-      - 8080:8080
-  swagger-ui:
+      - 8080:80
+  docs:
     image: mintproject/swagger-ui
     environment:
       SWAGGER_JSON: "/tmp/openapi.json"
       BASE_URL: "/v1.8.0/ui"
     ports:
-      - 80
-    volumes:
-      - "./:/tmp/"
+      - 8081:8080
