@@ -17,3 +17,11 @@ cp -rv ${PWD}/.openapi-generator/template/static_files/settings/ ${PWD}/$SERVER_
 cp -rv ${PWD}/.openapi-generator/template/static_files/user_controller.py ${PWD}/$SERVER_DIR/openapi_server/controllers/
 cp -rv ${PWD}/.openapi-generator/template/static_files/contexts/ ${PWD}/$SERVER_DIR/
 cp -rv ${PWD}/.openapi-generator/template/static_files/queries/ ${PWD}/$SERVER_DIR/
+
+pushd server/openapi_server/models
+sed -i.bak 's/AnyOf[a-zA-Z]*/object/g' *.py
+sed -i.bak '/from openapi_server.models.any/d' *.py
+for file in $(ls *.bak); do
+    rm $file
+done
+popd

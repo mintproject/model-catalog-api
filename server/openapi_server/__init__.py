@@ -1,8 +1,12 @@
-import logging
+from obasparql import QueryManager
+from openapi_server.settings import CONTEXT_DIRECTORY, QUERY_DIRECTORY, QUERIES_TYPES
+
+query_manager = QueryManager(queries_dir=QUERY_DIRECTORY,
+                             context_dir=CONTEXT_DIRECTORY,
+                             queries_types=QUERIES_TYPES)
+
 import logging.config
 import os
-from obasparql import QueryManager
-from openapi_server.settings import ENDPOINT, ENDPOINT_GRAPH_BASE, ENDPOINT_PASSWORD, ENDPOINT_RESOURCE_PREFIX, ENDPOINT_USERNAME, QUERY_DIRECTORY, CONTEXT_DIRECTORY
 
 # Disable Django's logging setup
 LOGGING_CONFIG = None
@@ -46,14 +50,5 @@ logging.config.dictConfig({
         },
     },
 })
-
 logger = logging.getLogger(__name__)
 
-query_manager = QueryManager(
-    endpoint=ENDPOINT,
-    endpoint_username=ENDPOINT_USERNAME,
-    endpoint_password=ENDPOINT_PASSWORD,
-    queries_dir=QUERY_DIRECTORY,
-    context_dir=CONTEXT_DIRECTORY,
-    named_graph_base=ENDPOINT_GRAPH_BASE,
-    uri_prefix=ENDPOINT_RESOURCE_PREFIX)
