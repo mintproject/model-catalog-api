@@ -18,15 +18,3 @@ services:
       - 80
     volumes:
       - "./:/tmp/"
-  endpoint:
-    image: mintproject/fuseki-docker:${FUSEKI_IMAGE_VERSION}
-    env_file:
-      - .env
-    volumes:
-      - fuseki_database:/fuseki-base/databases
-    ports:
-      - 3030
-
-volumes:
-  databases:
-  fuseki_database:
