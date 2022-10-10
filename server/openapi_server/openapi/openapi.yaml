@@ -8867,9 +8867,9 @@ paths:
       - Unit
       x-openapi-router-controller: openapi_server.controllers.unit_controller
   /user/login:
-    post:
+    get:
       description: Login the user
-      operationId: user_login_post
+      operationId: user_login_get
       requestBody:
         content:
           application/json:

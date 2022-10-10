@@ -5,7 +5,7 @@ import json
 import requests
 from werkzeug.exceptions import Unauthorized
 
-from openapi_server.settings import AUTH_SERVER, AUTH_CLIENT_ID, AUTH_SECRET, JWT_ALGORITHM
+from openapi_server.settings import AUTH_SERVER, AUTH_CLIENT_ID, AUTH_SECRET
 
 def decode_token(token):
     try:

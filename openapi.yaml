@@ -7454,7 +7454,7 @@ paths:
       tags:
       - TimeInterval
   /user/login:
-    post:
+    get:
       description: Login the user
       requestBody:
         content:

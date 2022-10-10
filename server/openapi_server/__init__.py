@@ -1,9 +1,14 @@
 from obasparql import QueryManager
-from openapi_server.settings import CONTEXT_DIRECTORY, QUERY_DIRECTORY, QUERIES_TYPES
+from openapi_server.settings import *
 
-query_manager = QueryManager(queries_dir=QUERY_DIRECTORY,
-                             context_dir=CONTEXT_DIRECTORY,
-                             queries_types=QUERIES_TYPES)
+query_manager = QueryManager(
+    endpoint=ENDPOINT,
+    endpoint_username=ENDPOINT_USERNAME,
+    endpoint_password=ENDPOINT_PASSWORD,
+    queries_dir=QUERY_DIRECTORY,
+    context_dir=CONTEXT_DIRECTORY,
+    named_graph_base=ENDPOINT_GRAPH_BASE,
+    uri_prefix=ENDPOINT_RESOURCE_PREFIX)
 
 import logging.config
 import os
