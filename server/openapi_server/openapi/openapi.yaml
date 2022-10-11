@@ -3441,6 +3441,50 @@ paths:
       tags:
       - Grid
       x-openapi-router-controller: openapi_server.controllers.grid_controller
+  /health:
+    get:
+      description: Check if the service is up and running
+      operationId: health_get
+      parameters:
+      - description: Name of the user graph to query
+        explode: true
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              explode: false
+              schema:
+                format: int32
+                type: integer
+              style: simple
+            X-Expires-After:
+              description: date in UTC when token expires
+              explode: false
+              schema:
+                format: date-time
+                type: string
+              style: simple
+        400:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: unsuccessful operation
+      tags:
+      - Health
+      x-openapi-router-controller: openapi_server.controllers.health_controller
   /hybridmodels:
     get:
       description: Gets a list of all instances of HybridModel (more information in
