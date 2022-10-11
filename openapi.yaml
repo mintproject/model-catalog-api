@@ -7453,6 +7453,43 @@ paths:
       summary: Update an existing TimeInterval
       tags:
       - TimeInterval
+
+  /health:
+    get:
+      description: Check if the service is up and running
+      parameters:
+      - description: Name of the user graph to query
+        in: query
+        name: username
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                format: int32
+                type: integer
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                format: date-time
+                type: string
+        400:
+          content:
+            application/json:
+              schema:
+                type: string
+          description: unsuccessful operation
+      tags:
+      - Health 
   /user/login:
     get:
       description: Login the user
