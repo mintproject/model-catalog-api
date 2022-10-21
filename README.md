@@ -1,3 +1,5 @@
+# Deprecated, please visit [model-catalog-fastapi](https://github.com/mintproject/model-catalog-fastapi)
+
 # OpenAPI generated server
 
 ## Overview
