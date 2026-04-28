@@ -213,7 +213,7 @@ export function buildJunctionInserts(
           }
         }
 
-        return {
+        const junctionRow: Record<string, unknown> = {
           [relConfig.junctionRelName!]: {
             data: nestedData,
             on_conflict: {
@@ -222,6 +222,12 @@ export function buildJunctionInserts(
             },
           },
         };
+        if (relConfig.junctionColumns) {
+          for (const [colName, camelKey] of Object.entries(relConfig.junctionColumns)) {
+            if (item[camelKey] !== undefined) junctionRow[colName] = item[camelKey];
+          }
+        }
+        return junctionRow;
       }),
       on_conflict: {
         constraint: `${relConfig.junctionTable}_pkey`,
