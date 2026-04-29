@@ -109,10 +109,13 @@ export function transformRow(
               const out = transformRow(targetRow, targetConfig, depth + 1);
               // Hoist junction-row scalar columns (e.g. is_optional) onto the
               // transformed nested entity so they survive junction traversal.
+              // Emit as scalar (not array): these are junction column values like
+              // bool/text, not v1.8.0-style array-wrapped object properties. Array
+              // wrapping makes the UI coerce !![false] -> true on refresh.
               for (const colName of junctionColumnNames) {
                 const val = item[colName];
                 if (val !== null && val !== undefined) {
-                  out[snakeToCamel(colName)] = [val];
+                  out[snakeToCamel(colName)] = val;
                 }
               }
               return out;
