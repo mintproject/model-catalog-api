@@ -224,7 +224,7 @@ export function buildJunctionInserts(
             data: nestedData,
             on_conflict: {
               constraint: `${targetTable}_pkey`,
-              update_columns: ['label'],
+              update_columns: [],
             },
           },
         };

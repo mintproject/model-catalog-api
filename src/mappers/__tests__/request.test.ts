@@ -233,7 +233,11 @@ describe('buildJunctionInserts', () => {
     expect(targetData['id']).toBe('https://w3id.org/okn/i/mint/Economy');
     const targetConflict = category['on_conflict'] as Record<string, unknown>;
     expect(targetConflict['constraint']).toBe('modelcatalog_model_category_pkey');
-    expect(targetConflict['update_columns']).toEqual(['label']);
+    // Link-or-noop semantics: never overwrite columns on existing target rows.
+    // Previous value ['label'] caused null-label cascade (bug-087) when client
+    // sent only `{id}` -- nestedData lacked label and on_conflict overwrote
+    // the existing row's label with NULL.
+    expect(targetConflict['update_columns']).toEqual([]);
   });
 
   it('Test 2: generates UUID-based ID with https prefix when no ID provided', () => {
@@ -341,6 +345,37 @@ describe('buildJunctionInserts', () => {
     // Nested entity data should NOT have is_optional:
     const nestedData = (junctionRow['input'] as Record<string, unknown>)['data'] as Record<string, unknown>;
     expect(nestedData).not.toHaveProperty('is_optional');
+  });
+
+  it('Regression bug-087: linking by string id alone never sets update_columns to overwrite target.label with NULL', () => {
+    const configConfig = getResourceConfig('modelconfigurations')!;
+    const body = { hasInput: ['https://w3id.org/okn/i/mint/existing-ds-id'] };
+    const result = buildJunctionInserts(body, configConfig);
+    const inputs = result['inputs'] as Record<string, unknown>;
+    const data = inputs['data'] as Record<string, unknown>[];
+    const junctionRow = data[0] as Record<string, unknown>;
+    const nestedTarget = junctionRow['input'] as Record<string, unknown>;
+    const nestedData = nestedTarget['data'] as Record<string, unknown>;
+    // Client sent only an id -- nested data must contain only id, no label.
+    expect(Object.keys(nestedData)).toEqual(['id']);
+    expect(nestedData['id']).toBe('https://w3id.org/okn/i/mint/existing-ds-id');
+    // Critical: on_conflict must NOT update label. Updating label with the
+    // missing-from-payload value would null-clobber the existing target row
+    // and trip the not-null constraint on dataset_specification.label.
+    const targetConflict = nestedTarget['on_conflict'] as Record<string, unknown>;
+    expect(targetConflict['update_columns']).toEqual([]);
+  });
+
+  it('Regression bug-087: object-form link with only id likewise produces empty update_columns', () => {
+    const configConfig = getResourceConfig('modelconfigurations')!;
+    const body = { hasInput: [{ id: 'https://w3id.org/okn/i/mint/existing-ds-id' }] };
+    const result = buildJunctionInserts(body, configConfig);
+    const inputs = result['inputs'] as Record<string, unknown>;
+    const data = inputs['data'] as Record<string, unknown>[];
+    const junctionRow = data[0] as Record<string, unknown>;
+    const nestedTarget = junctionRow['input'] as Record<string, unknown>;
+    const targetConflict = nestedTarget['on_conflict'] as Record<string, unknown>;
+    expect(targetConflict['update_columns']).toEqual([]);
   });
 
   it('Test 11: omits is_optional from junction row when isOptional is absent in request body (D-22)', () => {
