@@ -242,7 +242,7 @@ describe('compilePut', () => {
     };
     const { mutation, variables } = compilePut(tree);
     expect(mutation).toMatch(/clear_model_configurations:\s*update_modelcatalog_model_configuration/);
-    expect(mutation).toMatch(/_in:\s*\$child_ids_model_configurations/);
+    expect(mutation).toMatch(/_nin:\s*\$child_ids_model_configurations/);
     expect(mutation).toMatch(/upsert_model_configurations:\s*insert_modelcatalog_model_configuration/);
     expect(variables.child_ids_model_configurations).toEqual(['cfg-a']);
     const upsertObjs = variables.child_model_configurations as any[];

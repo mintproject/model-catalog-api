@@ -117,7 +117,7 @@ export function compilePut(tree: WriteNode): CompiledMutation {
     const updateCols = c.children.flatMap((ch) => Object.keys(ch.columns));
     const updateColsStr = updateCols.length > 0 ? updateCols.join(', ') : '';
     parts.push(
-      `clear_${childSuffixPlural}: update_modelcatalog_${childSuffix}(where: { ${c.childFkColumn}: { _eq: $id }, id: { _in: $${idsVar} } }, _set: { ${c.childFkColumn}: null }) { affected_rows }`,
+      `clear_${childSuffixPlural}: update_modelcatalog_${childSuffix}(where: { ${c.childFkColumn}: { _eq: $id }, id: { _nin: $${idsVar} } }, _set: { ${c.childFkColumn}: null }) { affected_rows }`,
     );
     parts.push(
       `upsert_${childSuffixPlural}: insert_modelcatalog_${childSuffix}(objects: $${objsVar}, on_conflict: { constraint: modelcatalog_${childSuffix}_pkey, update_columns: [${updateColsStr}] }) { affected_rows }`,
