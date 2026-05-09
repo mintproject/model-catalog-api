@@ -126,4 +126,39 @@ describe('junction e2e — softwareversions.hasGrid (bug-087 class)', () => {
     expect(ids).toContain(gridB);
     expect(ids).not.toContain(gridA);
   });
+
+  it('PUT softwareversion with hasGrid: [] removes all junction links', async () => {
+    const gridId = uniqueId('grid');
+    await inject(app, 'POST', '/v2.0.0/grids', {
+      id: gridId, label: ['G'], type: ['Grid'],
+    });
+    trackId('grids', gridId);
+
+    const versionId = uniqueId('softwareversion');
+    await inject(app, 'POST', '/v2.0.0/softwareversions', {
+      id: versionId, label: ['v-empty'], type: ['SoftwareVersion'],
+      hasGrid: [{ id: gridId }],
+    });
+    trackId('softwareversions', versionId);
+
+    const putRes = await inject(
+      app, 'PUT',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+      {
+        id: versionId, label: ['v-empty'], type: ['SoftwareVersion'],
+        hasGrid: [],
+      },
+    );
+    expect(putRes.statusCode).toBeGreaterThanOrEqual(200);
+    expect(putRes.statusCode).toBeLessThan(300);
+
+    const got = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+    );
+    const v = (Array.isArray(got.body) ? got.body[0] : got.body) as {
+      hasGrid?: { id: string }[];
+    };
+    expect(v.hasGrid ?? []).toEqual([]);
+  });
 });
