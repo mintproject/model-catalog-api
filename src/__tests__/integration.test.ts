@@ -638,9 +638,9 @@ describe('POST software with hasVersion links existing version rows', () => {
     expect(m).not.toContain('link_versions')
     const obj = args.variables.object as Record<string, any>
     expect(obj.id).toBe('https://w3id.org/okn/i/mint/NEW-1')
-    // child FK rows are embedded in the object under the Hasura relation key
-    const childKey = Object.keys(obj).find((k) => k !== 'id' && k !== 'label' && k !== 'type')!
-    const childData = obj[childKey].data as any[]
+    // child FK rows are embedded in the object under the Hasura relation key 'versions'
+    expect(obj.versions).toBeDefined()
+    const childData = obj.versions.data as any[]
     expect(childData).toHaveLength(1)
     expect(childData[0].id).toBe('https://w3id.org/okn/i/mint/V-99')
     expect(childData[0].software_id).toBe('https://w3id.org/okn/i/mint/NEW-1')

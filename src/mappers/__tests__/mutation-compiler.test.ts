@@ -125,20 +125,20 @@ describe('compilePost', () => {
       childFks: [
         {
           apiFieldName: 'hasConfiguration',
-          childTable: 'modelcatalog_model_configuration',
+          hasuraRelName: 'configurations',
+          childTable: 'modelcatalog_configuration',
           childFkColumn: 'software_version_id',
           children: [
-            { table: 'modelcatalog_model_configuration', id: 'cfg-a', columns: { label: 'A' }, junctions: [], childFks: [] },
-            { table: 'modelcatalog_model_configuration', id: 'cfg-b', columns: {}, junctions: [], childFks: [] },
+            { table: 'modelcatalog_configuration', id: 'cfg-a', columns: { label: 'A' }, junctions: [], childFks: [] },
+            { table: 'modelcatalog_configuration', id: 'cfg-b', columns: {}, junctions: [], childFks: [] },
           ],
         },
       ],
     };
     const { variables } = compilePost(tree);
     const obj = variables.object as any;
-    expect(obj.model_configurations).toBeDefined();
-    const childKey = Object.keys(obj).find((k) => k !== 'id' && k !== 'label')!;
-    const arr = obj[childKey].data as any[];
+    expect(obj.configurations).toBeDefined();
+    const arr = obj.configurations.data as any[];
     expect(arr.length).toBe(2);
     expect(arr[0].software_version_id).toBe('sv-1');
     expect(arr[0].id).toBe('cfg-a');
@@ -232,6 +232,7 @@ describe('compilePut', () => {
       childFks: [
         {
           apiFieldName: 'hasConfiguration',
+          hasuraRelName: 'configurations',
           childTable: 'modelcatalog_model_configuration',
           childFkColumn: 'software_version_id',
           children: [

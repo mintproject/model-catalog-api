@@ -52,6 +52,7 @@ export interface JunctionEdge {
 
 export interface ChildFkEdge {
   apiFieldName: string;
+  hasuraRelName: string;
   childTable: string;
   childFkColumn: string;
   children: WriteNode[];
@@ -223,6 +224,7 @@ function buildChildFkEdge(
   });
   return {
     apiFieldName,
+    hasuraRelName: rel.hasuraRelName,
     childTable: targetCfg.hasuraTable,
     childFkColumn: rel.childFkColumn!,
     children,

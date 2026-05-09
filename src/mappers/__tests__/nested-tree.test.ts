@@ -47,6 +47,7 @@ describe('nested-tree types and constants', () => {
     };
     const child: ChildFkEdge = {
       apiFieldName: 'hasConfiguration',
+      hasuraRelName: 'configurations',
       childTable: 'modelcatalog_model_configuration',
       childFkColumn: 'model_version_id',
       children: [],
@@ -54,6 +55,7 @@ describe('nested-tree types and constants', () => {
     expect(node.id).toBe('https://w3id.org/okn/i/mint/x');
     expect(junc.targetFkColumn).toBe('input_id');
     expect(child.childFkColumn).toBe('model_version_id');
+    expect(child.hasuraRelName).toBe('configurations');
   });
 });
 
@@ -155,6 +157,7 @@ describe('buildTree — childFk relationships', () => {
     expect(tree.childFks).toHaveLength(1);
     const c = tree.childFks[0];
     expect(c.apiFieldName).toBe('hasConfiguration');
+    expect(c.hasuraRelName).toBe('configurations');
     expect(c.childTable).toBe('modelcatalog_configuration');
     expect(c.childFkColumn).toBe('software_version_id');
     expect(c.children).toHaveLength(2);
