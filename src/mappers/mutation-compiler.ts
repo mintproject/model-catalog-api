@@ -144,20 +144,9 @@ export function compilePut(tree: WriteNode): CompiledMutation {
 export function compilePost(tree: WriteNode): CompiledMutation {
   const object = buildInsertObject(tree);
 
-  // Inject FK column values into childFk rows after the object is built
-  for (const c of tree.childFks) {
-    const arr = (object[c.hasuraRelName] as { data: Record<string, unknown>[] }).data;
-    arr.forEach((row, idx) => {
-      row[c.childFkColumn] = tree.id;
-      const childNode = c.children[idx];
-      for (const subC of childNode.childFks) {
-        const subArr = (row[subC.hasuraRelName] as { data: Record<string, unknown>[] }).data;
-        subArr.forEach((subRow) => {
-          subRow[subC.childFkColumn] = childNode.id;
-        });
-      }
-    });
-  }
+  // Hasura's nested-object insert auto-derives childFk columns from parent context.
+  // Setting the FK explicitly raises 'cannot insert ... values are already being
+  // determined by parent insert' (validation-failed). Leave them off.
 
   const suffix = tableSuffix(tree.table);
   const mutation = `

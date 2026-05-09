@@ -630,6 +630,7 @@ describe('POST software with hasVersion links existing version rows', () => {
     const childData = obj.versions.data as any[]
     expect(childData).toHaveLength(1)
     expect(childData[0].id).toBe('https://w3id.org/okn/i/mint/V-99')
-    expect(childData[0].software_id).toBe('https://w3id.org/okn/i/mint/NEW-1')
+    // Hasura auto-derives software_id from parent context.
+    expect(childData[0].software_id).toBeUndefined()
   })
 })

@@ -171,10 +171,12 @@ describe('compilePost', () => {
     expect(obj.configurations).toBeDefined();
     const arr = obj.configurations.data as any[];
     expect(arr.length).toBe(2);
-    expect(arr[0].software_version_id).toBe('sv-1');
+    // Hasura auto-derives software_version_id from parent context — must NOT be set
+    // explicitly or Hasura raises 'cannot insert ... already determined by parent'.
+    expect(arr[0].software_version_id).toBeUndefined();
     expect(arr[0].id).toBe('cfg-a');
     expect(arr[0].label).toBe('A');
-    expect(arr[1].software_version_id).toBe('sv-1');
+    expect(arr[1].software_version_id).toBeUndefined();
   });
 });
 
