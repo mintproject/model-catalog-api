@@ -87,4 +87,45 @@ describe('nested-write e2e — softwares.hasVersion (bug-089 class)', () => {
     };
     expect(cfg.id).toBe(cfgId);
   });
+
+  it('PUT software with nested hasVersion updates child label, parent label unchanged', async () => {
+    const swId = uniqueId('software');
+    const verId = uniqueId('softwareversion');
+
+    await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-parent-stable'], type: ['Software'],
+      hasVersion: [{ id: verId, label: ['v-old'], type: ['SoftwareVersion'] }],
+    });
+    trackId('softwares', swId);
+    trackId('softwareversions', verId);
+
+    const putRes = await inject(
+      app, 'PUT',
+      `/v2.0.0/softwares/${encodeURIComponent(swId)}`,
+      {
+        id: swId, label: ['sw-parent-stable'], type: ['Software'],
+        hasVersion: [{ id: verId, label: ['v-new'], type: ['SoftwareVersion'] }],
+      },
+    );
+    expect(putRes.statusCode).toBeGreaterThanOrEqual(200);
+    expect(putRes.statusCode).toBeLessThan(300);
+
+    const swGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwares/${encodeURIComponent(swId)}`,
+    );
+    const sw = (Array.isArray(swGet.body) ? swGet.body[0] : swGet.body) as {
+      label: string[];
+    };
+    expect(sw.label).toEqual(['sw-parent-stable']);
+
+    const verGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(verId)}`,
+    );
+    const ver = (Array.isArray(verGet.body) ? verGet.body[0] : verGet.body) as {
+      label: string[];
+    };
+    expect(ver.label).toEqual(['v-new']);
+  });
 });
