@@ -11,7 +11,9 @@
 import { randomUUID } from 'crypto'
 import { getResourceConfig } from './mappers/resource-registry.js'
 import { transformRow, transformList } from './mappers/response.js'
-import { toHasuraInput, buildJunctionInserts } from './mappers/request.js'
+import { toHasuraInput } from './mappers/request.js'
+import { buildTree } from './mappers/nested-tree.js'
+import { compilePost, compilePut } from './mappers/mutation-compiler.js'
 import { readClient, getWriteClient, gql } from './hasura/client.js'
 import { getFieldSelection } from './hasura/field-maps.js'
 import { customHandlers } from './custom-handlers.js'
@@ -185,109 +187,57 @@ class CatalogServiceImpl {
       return
     }
 
-    const body = req.body || {}
-    const input = toHasuraInput(body as Record<string, unknown>, resourceConfig)
-
-    // Only set the type column for resources stored in modelcatalog_software, which is the
-    // only table with a `type` column (used to distinguish Model subtypes like
-    // sdm#Model, sdm#EmpiricalModel, sd#Software, etc.).
-    // Other tables (modelcatalog_model_configuration, modelcatalog_software_version, etc.)
-    // lack this column and must NOT receive a type field in their INSERT inputs.
-    if (resourceConfig.hasuraTable === 'modelcatalog_software') {
-      input['type'] = resourceConfig.typeUri
-    }
-
-    // Generate a URI-based ID if not provided
-    if (!input['id']) {
-      input['id'] = `${ID_PREFIX}${randomUUID()}`
-    }
-
-    // Build junction insert data for relationship fields (D-01, D-03, D-06)
-    const junctionInserts = buildJunctionInserts(body as Record<string, unknown>, resourceConfig)
-
-    // Merge scalar input with junction nested inserts for atomic mutation (D-03)
-    const object = { ...input, ...junctionInserts }
-
-    const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
-
-    // FK-on-child relationships: link existing child rows back to this newly created parent
-    // by setting the child's FK column. Multi-root mutation runs alongside the parent insert.
-    const parentId = input['id'] as string
-    const childFkParts: string[] = []
-    const childFkVarDecls: string[] = []
-    const childFkVariables: Record<string, unknown> = {}
-    for (const [apiFieldName, relConfig] of Object.entries(resourceConfig.relationships)) {
-      if (!relConfig.childFkColumn) continue
-      if (body[apiFieldName] === undefined) continue
-      const targetConfig = getResourceConfig(relConfig.targetResource)
-      if (!targetConfig?.hasuraTable) continue
-
-      const rawValue = body[apiFieldName]
-      const items = Array.isArray(rawValue) ? (rawValue as unknown[]) : []
-      const newIds = items
-        .map((item) => {
-          const rawId =
-            typeof item === 'string'
-              ? item
-              : ((item as Record<string, unknown>) || {})['id']
-          if (typeof rawId !== 'string' || !rawId) return null
-          return rawId.startsWith('https://') ? rawId : `${ID_PREFIX}${rawId}`
-        })
-        .filter((x): x is string => !!x)
-
-      if (newIds.length === 0) continue
-
-      const childSuffix = targetConfig.hasuraTable.replace('modelcatalog_', '')
-      const idsVar = `child_ids_${relConfig.hasuraRelName}`
-      childFkVariables[idsVar] = newIds
-      childFkVarDecls.push(`$${idsVar}: [String!]!`)
-      childFkParts.push(
-        `link_${relConfig.hasuraRelName}: update_modelcatalog_${childSuffix}(where: { id: { _in: $${idsVar} } }, _set: { ${relConfig.childFkColumn}: $parentId }) { affected_rows }`
-      )
-    }
-
-    let mutationStr: string
-    let mutationVariables: Record<string, unknown>
-    if (childFkParts.length === 0) {
-      mutationStr = `
-        mutation CreateMutation($object: modelcatalog_${tableSuffix}_insert_input!) {
-          insert_modelcatalog_${tableSuffix}_one(object: $object) {
-            id
-          }
-        }
-      `
-      mutationVariables = { object }
-    } else {
-      const extraVarDecls = childFkVarDecls.length > 0 ? `, ${childFkVarDecls.join(', ')}` : ''
-      mutationStr = `
-        mutation CreateWithChildFks($object: modelcatalog_${tableSuffix}_insert_input!, $parentId: String!${extraVarDecls}) {
-          insert_modelcatalog_${tableSuffix}_one(object: $object) { id }
-          ${childFkParts.join('\n          ')}
-        }
-      `
-      mutationVariables = { object, parentId, ...childFkVariables }
-    }
-
     const authHeader = req.headers?.authorization
     if (!authHeader) {
       reply.code(401).send({ error: 'Authorization header required' })
       return
     }
 
+    const body = req.body || {}
+
+    let tree
+    try {
+      tree = buildTree(body as Record<string, unknown>, resourceConfig)
+    } catch (err: any) {
+      if (err && err.name === 'ValidationError') {
+        req.log.warn(
+          { verb: 'POST', resource, error_code: err.code, path: err.path },
+          'nested write validation failed',
+        )
+        reply.code(err.httpStatus).send({ error: err.message, code: err.code, path: err.path })
+        return
+      }
+      throw err
+    }
+
+    // Inject type column for software resources only (existing behavior)
+    if (resourceConfig.hasuraTable === 'modelcatalog_software') {
+      tree.columns['type'] = resourceConfig.typeUri
+    }
+
+    const { mutation, variables } = compilePost(tree)
+
     try {
       const writeClient = getWriteClient(authHeader)
       const result = await writeClient.mutate({
-        mutation: gql`${mutationStr}`,
-        variables: mutationVariables,
+        mutation: gql`${mutation}`,
+        variables,
       })
       const data = result.data as Record<string, unknown> | null
+      const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
       const dataKey = `insert_modelcatalog_${tableSuffix}_one`
       const created = data?.[dataKey] as { id?: string } | undefined
-      const createdId = created?.id ?? (input['id'] as string)
-      reply.code(201).send({ id: createdId })
+      reply.code(201).send({ id: created?.id ?? tree.id })
     } catch (err: any) {
       req.log.error({ err }, 'GraphQL create mutation failed')
       const msg = err?.message || ''
+      if (msg.includes('Foreign key violation')) {
+        reply.code(400).send({
+          error: 'FK violation — id may target wrong resource type',
+          details: msg,
+        })
+        return
+      }
       if (msg.includes('uniqueness violation') || msg.includes('constraint')) {
         reply.code(400).send({ error: 'Constraint violation', details: msg })
         return

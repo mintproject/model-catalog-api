@@ -611,7 +611,7 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
 describe('POST software with hasVersion links existing version rows', () => {
   beforeEach(() => { mockMutate.mockReset() })
 
-  it('emits insert + link_versions update with software_id = parentId', async () => {
+  it('emits nested-insert for childFk relation with software_id injected into child row', async () => {
     mockMutate.mockResolvedValueOnce({
       data: {
         insert_modelcatalog_software_one: { id: 'https://w3id.org/okn/i/mint/NEW-1' },
@@ -633,10 +633,16 @@ describe('POST software with hasVersion links existing version rows', () => {
     expect(mockMutate).toHaveBeenCalledOnce()
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
+    // New pipeline: childFkColumn handled via nested insert inside $object (not a separate UPDATE root)
     expect(m).toContain('insert_modelcatalog_software_one')
-    expect(m).toContain('link_versions: update_modelcatalog_software_version')
-    expect(m).toContain('software_id: $parentId')
-    expect(args.variables.parentId).toBe('https://w3id.org/okn/i/mint/NEW-1')
-    expect(args.variables.child_ids_versions).toEqual(['https://w3id.org/okn/i/mint/V-99'])
+    expect(m).not.toContain('link_versions')
+    const obj = args.variables.object as Record<string, any>
+    expect(obj.id).toBe('https://w3id.org/okn/i/mint/NEW-1')
+    // child FK rows are embedded in the object under the Hasura relation key
+    const childKey = Object.keys(obj).find((k) => k !== 'id' && k !== 'label' && k !== 'type')!
+    const childData = obj[childKey].data as any[]
+    expect(childData).toHaveLength(1)
+    expect(childData[0].id).toBe('https://w3id.org/okn/i/mint/V-99')
+    expect(childData[0].software_id).toBe('https://w3id.org/okn/i/mint/NEW-1')
   })
 })
