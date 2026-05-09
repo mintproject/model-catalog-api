@@ -28,25 +28,44 @@ function buildInsertObject(node: WriteNode): Record<string, unknown> {
   return obj;
 }
 
+function isLinkOnly(child: WriteNode): boolean {
+  return (
+    Object.keys(child.columns).length === 0 &&
+    child.junctions.length === 0 &&
+    child.childFks.length === 0
+  );
+}
+
 function buildJunctionInsert(j: JunctionEdge): Record<string, unknown> {
-  const data = j.children.map((child, idx) => {
-    const row: Record<string, unknown> = {
-      ...j.junctionColumns[idx],
-      [j.junctionRelName]: {
-        data: buildInsertObject(child),
-        on_conflict: {
-          constraint: `${child.table}_pkey`,
-          update_columns: Object.keys(child.columns),
-        },
-      },
-    };
-    return row;
-  });
+  const data = j.children.map((child, idx) => buildJunctionRow(j, child, idx));
   return {
     data,
     on_conflict: {
       constraint: `${j.junctionTable}_pkey`,
       update_columns: [],
+    },
+  };
+}
+
+function buildJunctionRow(
+  j: JunctionEdge,
+  child: WriteNode,
+  idx: number,
+): Record<string, unknown> {
+  if (isLinkOnly(child)) {
+    return {
+      ...j.junctionColumns[idx],
+      [j.targetFkColumn]: child.id,
+    };
+  }
+  return {
+    ...j.junctionColumns[idx],
+    [j.junctionRelName]: {
+      data: buildInsertObject(child),
+      on_conflict: {
+        constraint: `${child.table}_pkey`,
+        update_columns: Object.keys(child.columns),
+      },
     },
   };
 }
@@ -63,16 +82,7 @@ function buildChildFkInsert(c: ChildFkEdge): Record<string, unknown> {
 }
 
 function buildPutJunctionRow(j: JunctionEdge, idx: number): Record<string, unknown> {
-  const child = j.children[idx];
-  const row: Record<string, unknown> = { ...j.junctionColumns[idx] };
-  row[j.junctionRelName] = {
-    data: buildInsertObject(child),
-    on_conflict: {
-      constraint: `${child.table}_pkey`,
-      update_columns: Object.keys(child.columns),
-    },
-  };
-  return row;
+  return buildJunctionRow(j, j.children[idx], idx);
 }
 
 export function compilePut(tree: WriteNode): CompiledMutation {

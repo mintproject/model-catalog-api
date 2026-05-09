@@ -60,7 +60,7 @@ describe('compilePost', () => {
     expect(nested.on_conflict.constraint).toBe('modelcatalog_dataset_specification_pkey');
   });
 
-  it('emits link-only nested entity (empty columns) with update_columns:[]', () => {
+  it('link-only child (no columns, no nested) emits targetFkColumn = id, no nested target insert (bug-101)', () => {
     const tree: WriteNode = {
       table: 'modelcatalog_configuration',
       id: 'cfg-2',
@@ -89,8 +89,36 @@ describe('compilePost', () => {
     };
     const { variables } = compilePost(tree);
     const obj = variables.object as Record<string, any>;
-    const nested = (obj.inputs.data[0].input) as { on_conflict: { update_columns: string[] } };
-    expect(nested.on_conflict.update_columns).toEqual([]);
+    const row = obj.inputs.data[0];
+    expect(row.input_id).toBe('ds-existing');
+    expect(row.input).toBeUndefined();
+  });
+
+  it('PUT link-only child emits targetFkColumn = id, no nested target insert (bug-101)', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_configuration',
+      id: 'cfg-put-link',
+      columns: {},
+      junctions: [
+        {
+          apiFieldName: 'hasInput',
+          junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
+          junctionRelName: 'input',
+          parentFkColumn: 'configuration_id',
+          targetFkColumn: 'input_id',
+          junctionColumns: [{}],
+          children: [
+            { table: 'modelcatalog_dataset_specification', id: 'ds-link', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+      childFks: [],
+    };
+    const { variables } = compilePut(tree);
+    const row = (variables.junc_inputs as any[])[0];
+    expect(row.input_id).toBe('ds-link');
+    expect(row.input).toBeUndefined();
   });
 
   it('applies junction extra columns to junction row', () => {
