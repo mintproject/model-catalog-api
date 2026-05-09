@@ -55,4 +55,34 @@ describe('junction e2e — softwareversions.hasGrid (bug-087 class)', () => {
     expect(grid.id).toBe(gridId);
     expect(grid.label).toEqual([ORIGINAL_LABEL]);
   });
+
+  it('POST softwareversion with hasGrid persists the junction; GET returns it', async () => {
+    const gridId = uniqueId('grid');
+    await inject(app, 'POST', '/v2.0.0/grids', {
+      id: gridId,
+      label: ['grid-roundtrip'],
+      type: ['Grid'],
+    });
+    trackId('grids', gridId);
+
+    const versionId = uniqueId('softwareversion');
+    await inject(app, 'POST', '/v2.0.0/softwareversions', {
+      id: versionId,
+      label: ['v-roundtrip'],
+      type: ['SoftwareVersion'],
+      hasGrid: [{ id: gridId }],
+    });
+    trackId('softwareversions', versionId);
+
+    const got = await inject(
+      app,
+      'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+    );
+    expect(got.statusCode).toBe(200);
+    const v = (Array.isArray(got.body) ? got.body[0] : got.body) as {
+      hasGrid?: { id: string }[];
+    };
+    expect(v.hasGrid?.map((g) => g.id)).toContain(gridId);
+  });
 });
