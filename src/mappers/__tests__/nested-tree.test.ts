@@ -140,3 +140,39 @@ describe('buildTree — recursion (multi-level)', () => {
     expect(pres!.children[0].columns).toEqual({ label: 'pres' });
   });
 });
+
+describe('buildTree — childFk relationships', () => {
+  it('builds childFk edge for SoftwareVersion.hasConfiguration', () => {
+    const cfg = getResourceConfig('softwareversions')!;
+    const body = {
+      id: 'sv-1',
+      label: 'v1',
+      hasConfiguration: [{ id: 'cfg-a', label: 'A' }, { id: 'cfg-b' }],
+    };
+    const tree = buildTree(body, cfg);
+    expect(tree.junctions).toHaveLength(0);
+    expect(tree.childFks).toHaveLength(1);
+    const c = tree.childFks[0];
+    expect(c.apiFieldName).toBe('hasConfiguration');
+    expect(c.childTable).toBe('modelcatalog_configuration');
+    expect(c.childFkColumn).toBe('software_version_id');
+    expect(c.children).toHaveLength(2);
+    expect(c.children[0].id).toBe('https://w3id.org/okn/i/mint/cfg-a');
+    expect(c.children[0].columns).toEqual({ label: 'A' });
+    expect(c.children[1].columns).toEqual({});
+  });
+
+  it('recurses childFk children to grand-children', () => {
+    const cfg = getResourceConfig('softwareversions')!;
+    const body = {
+      id: 'sv-2',
+      hasConfiguration: [
+        { id: 'cfg-x', hasInput: [{ id: 'ds-x' }] },
+      ],
+    };
+    const tree = buildTree(body, cfg);
+    const cfgNode = tree.childFks[0].children[0];
+    expect(cfgNode.junctions).toHaveLength(1);
+    expect(cfgNode.junctions[0].children[0].id).toBe('https://w3id.org/okn/i/mint/ds-x');
+  });
+});

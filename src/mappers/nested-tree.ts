@@ -175,6 +175,57 @@ function buildJunctionEdge(
   };
 }
 
+function buildChildFkEdge(
+  apiFieldName: string,
+  rel: RelationshipConfig,
+  rawValue: unknown,
+  ctx: BuildContext,
+): ChildFkEdge | null {
+  if (!Array.isArray(rawValue)) return null;
+  const targetCfg = getResourceConfig(rel.targetResource);
+  if (!targetCfg?.hasuraTable) {
+    throw new ValidationError(
+      'TARGET_NOT_IMPLEMENTED',
+      ctx.path + '/' + apiFieldName,
+      `target type ${rel.targetResource} not implemented`,
+      501,
+    );
+  }
+  const children: WriteNode[] = [];
+  rawValue.forEach((item, idx) => {
+    const itemPath = `${ctx.path}/${apiFieldName}/${idx}`;
+    if (typeof item === 'string') {
+      throw new ValidationError(
+        'STRING_ID_DEPRECATED',
+        itemPath,
+        `string-id form deprecated; send [{id:'${item}'}] (field ${apiFieldName})`,
+        400,
+      );
+    }
+    if (item === null || typeof item !== 'object') {
+      throw new ValidationError(
+        'UNKNOWN_FIELD',
+        itemPath,
+        `relationship items must be objects with id`,
+        400,
+      );
+    }
+    const childCtx: BuildContext = {
+      visited: new Set(ctx.visited),
+      nodeCount: ctx.nodeCount,
+      depth: ctx.depth + 1,
+      path: itemPath,
+    };
+    children.push(buildNode(item as Record<string, unknown>, targetCfg, childCtx));
+  });
+  return {
+    apiFieldName,
+    childTable: targetCfg.hasuraTable,
+    childFkColumn: rel.childFkColumn!,
+    children,
+  };
+}
+
 function buildNode(
   body: Record<string, unknown>,
   cfg: ResourceConfig,
@@ -223,6 +274,9 @@ function buildNode(
       if (rel.junctionTable && rel.junctionRelName && rel.parentFkColumn) {
         const edge = buildJunctionEdge(key, rel, value, ctx);
         if (edge) junctions.push(edge);
+      } else if (rel.childFkColumn) {
+        const edge = buildChildFkEdge(key, rel, value, ctx);
+        if (edge) childFks.push(edge);
       }
       continue;
     }
