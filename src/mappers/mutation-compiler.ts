@@ -100,7 +100,10 @@ export function compilePut(tree: WriteNode): CompiledMutation {
     );
     if (j.children.length > 0) {
       const varName = `junc_${j.junctionRelName}s`;
-      const objects = j.children.map((_, i) => buildPutJunctionRow(j, i));
+      const objects = j.children.map((_, i) => ({
+        ...buildPutJunctionRow(j, i),
+        [j.parentFkColumn]: tree.id,
+      }));
       variables[varName] = objects;
       varDecls.push(`$${varName}: [modelcatalog_${juncSuffix}_insert_input!]!`);
       parts.push(
