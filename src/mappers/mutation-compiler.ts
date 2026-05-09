@@ -57,7 +57,7 @@ function buildChildFkInsert(c: ChildFkEdge): Record<string, unknown> {
     data,
     on_conflict: {
       constraint: `${c.childTable}_pkey`,
-      update_columns: c.children.flatMap((ch) => Object.keys(ch.columns)),
+      update_columns: [...new Set(c.children.flatMap((ch) => Object.keys(ch.columns)))],
     },
   };
 }
@@ -114,7 +114,7 @@ export function compilePut(tree: WriteNode): CompiledMutation {
     variables[objsVar] = objects;
     varDecls.push(`$${idsVar}: [String!]!`);
     varDecls.push(`$${objsVar}: [modelcatalog_${childSuffix}_insert_input!]!`);
-    const updateCols = c.children.flatMap((ch) => Object.keys(ch.columns));
+    const updateCols = [...new Set(c.children.flatMap((ch) => Object.keys(ch.columns)))];
     const updateColsStr = updateCols.length > 0 ? updateCols.join(', ') : '';
     parts.push(
       `clear_${childSuffixPlural}: update_modelcatalog_${childSuffix}(where: { ${c.childFkColumn}: { _eq: $id }, id: { _nin: $${idsVar} } }, _set: { ${c.childFkColumn}: null }) { affected_rows }`,
