@@ -56,12 +56,14 @@ export async function inject(
 
 export async function cleanup(app: FastifyInstance): Promise<void> {
   const orphans: Tracked[] = [];
+  // DELETE has no body — strip Content-Type so Fastify doesn't reject empty payload.
+  const { 'Content-Type': _ct, ...deleteHeaders } = E2E_HEADERS;
   for (const t of [...created].reverse()) {
     try {
       const res = await app.inject({
         method: 'DELETE',
         url: `/v2.0.0/${t.resource}/${encodeURIComponent(t.id)}`,
-        headers: E2E_HEADERS,
+        headers: deleteHeaders,
       });
       if (res.statusCode >= 400 && res.statusCode !== 404) {
         orphans.push(t);
