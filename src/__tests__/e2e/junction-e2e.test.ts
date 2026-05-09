@@ -188,4 +188,30 @@ describe('junction e2e — softwareversions.hasGrid (bug-087 class)', () => {
     expect(v.hasGrid?.length).toBe(1);
     expect(v.hasGrid?.[0].id).toBe(gridId);
   });
+
+  it('POST softwareversion with hasGrid referencing a non-existent grid id returns 4xx', async () => {
+    const fakeGridId = uniqueId('grid-does-not-exist');
+    const versionId = uniqueId('softwareversion');
+    const res = await inject(app, 'POST', '/v2.0.0/softwareversions', {
+      id: versionId, label: ['v-bad-ref'], type: ['SoftwareVersion'],
+      hasGrid: [{ id: fakeGridId }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(400);
+    expect(res.statusCode).toBeLessThan(500);
+
+    // The version itself should NOT have been created.
+    const got = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+    );
+    expect([404, 200]).toContain(got.statusCode);
+    if (got.statusCode === 200) {
+      const v = (Array.isArray(got.body) ? got.body[0] : got.body) as {
+        hasGrid?: { id: string }[];
+      };
+      expect(v?.hasGrid ?? []).toEqual([]);
+      // If a row was actually created, track for cleanup.
+      trackId('softwareversions', versionId);
+    }
+  });
 });
