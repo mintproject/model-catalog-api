@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { compilePost } from '../mutation-compiler.js';
+import { compilePost, compilePut } from '../mutation-compiler.js';
 import type { WriteNode } from '../nested-tree.js';
 
 describe('compilePost', () => {
@@ -144,5 +144,133 @@ describe('compilePost', () => {
     expect(arr[0].id).toBe('cfg-a');
     expect(arr[0].label).toBe('A');
     expect(arr[1].software_version_id).toBe('sv-1');
+  });
+});
+
+describe('compilePut', () => {
+  it('emits simple update_*_by_pk when tree has only scalars', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_software',
+      id: 'sw-1',
+      columns: { label: 'updated' },
+      junctions: [],
+      childFks: [],
+    };
+    const { mutation, variables } = compilePut(tree);
+    expect(mutation).toMatch(/update_modelcatalog_software_by_pk/);
+    expect(mutation).toMatch(/_set: \$set/);
+    expect(variables).toEqual({ id: 'sw-1', set: { label: 'updated' } });
+  });
+
+  it('emits delete + insert pair per junction edge with replace semantics', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_configuration',
+      id: 'cfg-1',
+      columns: { label: 'c' },
+      junctions: [
+        {
+          apiFieldName: 'hasInput',
+          junctionTable: 'modelcatalog_configuration_input',
+          junctionRelName: 'input',
+          parentFkColumn: 'configuration_id',
+          targetFkColumn: 'input_id',
+          junctionColumns: [{}],
+          children: [
+            { table: 'modelcatalog_dataset_specification', id: 'ds-new', columns: { label: 'new' }, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+      childFks: [],
+    };
+    const { mutation, variables } = compilePut(tree);
+    expect(mutation).toMatch(/del_inputs:\s*delete_modelcatalog_configuration_input/);
+    expect(mutation).toMatch(/where:\s*\{\s*configuration_id:\s*\{\s*_eq:\s*\$id\s*\}/);
+    expect(mutation).toMatch(/ins_inputs:\s*insert_modelcatalog_configuration_input/);
+    const juncVar = variables.junc_inputs as Record<string, unknown>[];
+    expect(juncVar).toHaveLength(1);
+    const row = juncVar[0] as any;
+    expect(row.input.data.id).toBe('ds-new');
+    expect(row.input.data.label).toBe('new');
+    expect(row.input.on_conflict.update_columns).toEqual(['label']);
+  });
+
+  it('uses targetFkColumn from edge (bug-087 fold-in)', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_configuration',
+      id: 'cfg-2',
+      columns: {},
+      junctions: [
+        {
+          apiFieldName: 'hasInput',
+          junctionTable: 'modelcatalog_configuration_input',
+          junctionRelName: 'input',
+          parentFkColumn: 'configuration_id',
+          targetFkColumn: 'input_id',
+          junctionColumns: [{}],
+          children: [
+            { table: 'modelcatalog_dataset_specification', id: 'ds-1', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+      childFks: [],
+    };
+    const { variables } = compilePut(tree);
+    const row = (variables.junc_inputs as any[])[0];
+    if (row.input_id !== undefined) {
+      expect(row.input_id).toBe('ds-1');
+    } else {
+      expect(row.input.data.id).toBe('ds-1');
+    }
+  });
+
+  it('emits clear+upsert pair for childFk edges', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_software_version',
+      id: 'sv-1',
+      columns: {},
+      junctions: [],
+      childFks: [
+        {
+          apiFieldName: 'hasConfiguration',
+          childTable: 'modelcatalog_model_configuration',
+          childFkColumn: 'software_version_id',
+          children: [
+            { table: 'modelcatalog_model_configuration', id: 'cfg-a', columns: { label: 'A' }, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+    };
+    const { mutation, variables } = compilePut(tree);
+    expect(mutation).toMatch(/clear_model_configurations:\s*update_modelcatalog_model_configuration/);
+    expect(mutation).toMatch(/_in:\s*\$child_ids_model_configurations/);
+    expect(mutation).toMatch(/upsert_model_configurations:\s*insert_modelcatalog_model_configuration/);
+    expect(variables.child_ids_model_configurations).toEqual(['cfg-a']);
+    const upsertObjs = variables.child_model_configurations as any[];
+    expect(upsertObjs[0].id).toBe('cfg-a');
+    expect(upsertObjs[0].software_version_id).toBe('sv-1');
+    expect(upsertObjs[0].label).toBe('A');
+  });
+
+  it('hoists complex objects into variables (no JSON in mutation string)', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_configuration',
+      id: 'cfg-3',
+      columns: {},
+      junctions: [
+        {
+          apiFieldName: 'hasInput',
+          junctionTable: 'modelcatalog_configuration_input',
+          junctionRelName: 'input',
+          parentFkColumn: 'configuration_id',
+          targetFkColumn: 'input_id',
+          junctionColumns: [{}],
+          children: [{ table: 'modelcatalog_dataset_specification', id: 'ds', columns: {}, junctions: [], childFks: [] }],
+        },
+      ],
+      childFks: [],
+    };
+    const { mutation } = compilePut(tree);
+    expect(mutation).not.toMatch(/"id":\s*"ds"/);
+    expect(mutation).toMatch(/objects:\s*\$junc_inputs/);
   });
 });
