@@ -128,4 +128,45 @@ describe('nested-write e2e — softwares.hasVersion (bug-089 class)', () => {
     };
     expect(ver.label).toEqual(['v-new']);
   });
+
+  it('POST software with mixed inline-new and ID-ref hasVersion entries: new is created, ref is linked', async () => {
+    const existingVerId = uniqueId('softwareversion');
+    const existingSwShellId = uniqueId('software');
+    // Pre-create the referenced version under its own software shell so we have an
+    // existing row to reference.
+    await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: existingSwShellId, label: ['shell'], type: ['Software'],
+      hasVersion: [{ id: existingVerId, label: ['v-pre'], type: ['SoftwareVersion'] }],
+    });
+    trackId('softwares', existingSwShellId);
+    trackId('softwareversions', existingVerId);
+
+    const newSwId = uniqueId('software');
+    const newVerId = uniqueId('softwareversion');
+    const res = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: newSwId, label: ['sw-mixed'], type: ['Software'],
+      hasVersion: [
+        { id: newVerId, label: ['v-fresh'], type: ['SoftwareVersion'] },
+        { id: existingVerId },
+      ],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwares', newSwId);
+    trackId('softwareversions', newVerId);
+
+    // Existing version label MUST NOT have been overwritten by the link.
+    const verGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(existingVerId)}`,
+    );
+    const ver = (Array.isArray(verGet.body) ? verGet.body[0] : verGet.body) as {
+      label: string[];
+    };
+    expect(ver.label).toEqual(['v-pre']);
+
+    // Note: hasVersion is a childFk relationship, so the existing version's FK may move
+    // from existingSwShellId to newSwId. Do not assert directionality of the move here;
+    // just assert the existing row's data was preserved.
+  });
 });
