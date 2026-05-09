@@ -8,10 +8,8 @@
  * This replaces 230+ individual handler files with a single class.
  */
 
-import { randomUUID } from 'crypto'
 import { getResourceConfig } from './mappers/resource-registry.js'
 import { transformRow, transformList } from './mappers/response.js'
-import { toHasuraInput } from './mappers/request.js'
 import { buildTree } from './mappers/nested-tree.js'
 import { compilePost, compilePut } from './mappers/mutation-compiler.js'
 import { readClient, getWriteClient, gql } from './hasura/client.js'
@@ -260,180 +258,50 @@ class CatalogServiceImpl {
       return
     }
 
-    const id = decodeURIComponent(req.params.id)
-    const fullId = id.startsWith('https://') ? id : `${resourceConfig.idPrefix}${id}`
-    const body = req.body || {}
-    const input = toHasuraInput(body as Record<string, unknown>, resourceConfig)
-
-    const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
-
     const authHeader = req.headers?.authorization
     if (!authHeader) {
       reply.code(401).send({ error: 'Authorization header required' })
       return
     }
 
-    // Identify junction relationships explicitly present in the request body (D-07: Pitfall 2 guard)
-    const junctionParts: string[] = []
-    const variables: Record<string, unknown> = { id: fullId, set: input }
+    const id = decodeURIComponent(req.params.id)
+    const fullId = id.startsWith('https://') ? id : `${resourceConfig.idPrefix}${id}`
+    const body = { ...(req.body || {}), id: fullId }
 
-    for (const [apiFieldName, relConfig] of Object.entries(resourceConfig.relationships)) {
-      if (!relConfig.junctionTable || !relConfig.junctionRelName || !relConfig.parentFkColumn) continue
-      // Only process junctions for relationship fields explicitly in the request body
-      if (body[apiFieldName] === undefined) continue
-
-      const juncSuffix = relConfig.junctionTable.replace('modelcatalog_', '')
-
-      // Step 1: Delete existing junction rows for this relationship (D-07: replace semantics)
-      junctionParts.push(
-        `del_${relConfig.hasuraRelName}: delete_modelcatalog_${juncSuffix}(where: { ${relConfig.parentFkColumn}: { _eq: $id } }) { affected_rows }`
-      )
-
-      // Step 2: Insert new junction rows with flat FK columns
-      const rawValue = body[apiFieldName]
-      if (!Array.isArray(rawValue) || rawValue.length === 0) continue
-
-      const targetFkColumn = `${relConfig.junctionRelName}_id`
-      const varName = `junc_${relConfig.hasuraRelName}`
-
-      const items = (rawValue as unknown[]).map((item: unknown) =>
-        typeof item === 'string' ? { id: item } : (item as Record<string, unknown>)
-      )
-
-      variables[varName] = items.map((item: Record<string, unknown>) => {
-        const rawItemId = item['id'] as string | undefined
-        const targetId = rawItemId
-          ? rawItemId.startsWith('https://') ? rawItemId : `${ID_PREFIX}${rawItemId}`
-          : `${ID_PREFIX}${randomUUID()}`
-        const row: Record<string, unknown> = {
-          [relConfig.parentFkColumn!]: fullId,
-          [targetFkColumn]: targetId,
-        }
-        if (relConfig.junctionColumns) {
-          for (const [colName, camelKey] of Object.entries(relConfig.junctionColumns)) {
-            if (item[camelKey] !== undefined) row[colName] = item[camelKey]
-          }
-        }
-        return row
-      })
-
-      const juncSuffix2 = relConfig.junctionTable.replace('modelcatalog_', '')
-      junctionParts.push(
-        `ins_${relConfig.hasuraRelName}: insert_modelcatalog_${juncSuffix2}(objects: $${varName}, on_conflict: { constraint: modelcatalog_${juncSuffix2}_pkey, update_columns: [] }) { affected_rows }`
-      )
-    }
-
-    // FK-on-child relationships: parent.has<X> where child row carries an FK column
-    // pointing back to the parent (one-to-many). We replicate junction "replace"
-    // semantics by clearing the FK on rows previously linked to this parent that
-    // are not in the new list, then setting the FK on the rows in the new list.
-    const childFkParts: string[] = []
-    const childFkVarDecls: string[] = []
-    for (const [apiFieldName, relConfig] of Object.entries(resourceConfig.relationships)) {
-      if (!relConfig.childFkColumn) continue
-      if (body[apiFieldName] === undefined) continue
-      const targetConfig = getResourceConfig(relConfig.targetResource)
-      if (!targetConfig?.hasuraTable) continue
-
-      const childSuffix = targetConfig.hasuraTable.replace('modelcatalog_', '')
-      const rawValue = body[apiFieldName]
-      const items = Array.isArray(rawValue) ? (rawValue as unknown[]) : []
-      const newIds = items
-        .map((item) => {
-          const rawId =
-            typeof item === 'string'
-              ? item
-              : ((item as Record<string, unknown>) || {})['id']
-          if (typeof rawId !== 'string' || !rawId) return null
-          return rawId.startsWith('https://') ? rawId : `${ID_PREFIX}${rawId}`
-        })
-        .filter((x): x is string => !!x)
-
-      const idsVar = `child_ids_${relConfig.hasuraRelName}`
-      variables[idsVar] = newIds
-      childFkVarDecls.push(`$${idsVar}: [String!]!`)
-
-      // Step 1: clear FK on rows previously linked to this parent that aren't in the new list
-      childFkParts.push(
-        `clear_${relConfig.hasuraRelName}: update_modelcatalog_${childSuffix}(where: { ${relConfig.childFkColumn}: { _eq: $id }, id: { _nin: $${idsVar} } }, _set: { ${relConfig.childFkColumn}: null }) { affected_rows }`
-      )
-
-      // Step 2: set FK on rows in the new list (only when non-empty -- _in: [] would still work but skip the no-op call)
-      if (newIds.length > 0) {
-        childFkParts.push(
-          `link_${relConfig.hasuraRelName}: update_modelcatalog_${childSuffix}(where: { id: { _in: $${idsVar} } }, _set: { ${relConfig.childFkColumn}: $id }) { affected_rows }`
+    let tree
+    try {
+      tree = buildTree(body as Record<string, unknown>, resourceConfig)
+    } catch (err: any) {
+      if (err && err.name === 'ValidationError') {
+        req.log.warn(
+          { verb: 'PUT', resource, root_id: fullId, error_code: err.code, path: err.path },
+          'nested write validation failed',
         )
+        reply.code(err.httpStatus).send({ error: err.message, code: err.code, path: err.path })
+        return
       }
+      throw err
     }
 
-    // Build mutation string: simple _set if no junctions or child FK updates, multi-root otherwise (D-03)
-    let mutationStr: string
-    if (junctionParts.length === 0 && childFkParts.length === 0) {
-      mutationStr = `
-        mutation UpdateMutation($id: String!, $set: modelcatalog_${tableSuffix}_set_input!) {
-          update_modelcatalog_${tableSuffix}_by_pk(pk_columns: { id: $id }, _set: $set) {
-            id
-          }
-        }
-      `
-    } else {
-      // Build variable declarations for junction insert arrays
-      const juncVarDecls = Object.entries(resourceConfig.relationships)
-        .filter(([apiFieldName, relConfig]) =>
-          relConfig.junctionTable &&
-          relConfig.junctionRelName &&
-          relConfig.parentFkColumn &&
-          body[apiFieldName] !== undefined &&
-          Array.isArray(body[apiFieldName]) &&
-          (body[apiFieldName] as unknown[]).length > 0
-        )
-        .map(([, relConfig]) => {
-          const juncSuffix = relConfig.junctionTable!.replace('modelcatalog_', '')
-          return `$junc_${relConfig.hasuraRelName}: [modelcatalog_${juncSuffix}_insert_input!]!`
-        })
-        .join(', ')
-
-      const extraDecls = [juncVarDecls, childFkVarDecls.join(', ')].filter(Boolean).join(', ')
-      const extraVarDecls = extraDecls ? `, ${extraDecls}` : ''
-      const allParts = [...junctionParts, ...childFkParts]
-      mutationStr = `
-        mutation UpdateWithJunctions($id: String!, $set: modelcatalog_${tableSuffix}_set_input!${extraVarDecls}) {
-          update_modelcatalog_${tableSuffix}_by_pk(pk_columns: { id: $id }, _set: $set) { id }
-          ${allParts.join('\n          ')}
-        }
-      `
-    }
+    const { mutation, variables } = compilePut(tree)
 
     try {
       const writeClient = getWriteClient(authHeader)
       await writeClient.mutate({
-        mutation: gql`${mutationStr}`,
+        mutation: gql`${mutation}`,
         variables,
       })
-      // Return updated object
-      const fields = getFieldSelection(resourceConfig.hasuraTable!)
-      const queryStr = `
-        query GetUpdatedQuery($id: String!) {
-          modelcatalog_${tableSuffix}_by_pk(id: $id) {
-            ${fields}
-          }
-        }
-      `
-      const fetchResult = await readClient.query({
-        query: gql`${queryStr}`,
-        variables: { id: fullId },
-      })
-      const fetchData = fetchResult.data as Record<string, unknown>
-      const dataKey = `modelcatalog_${tableSuffix}_by_pk`
-      const row = fetchData[dataKey] as Record<string, unknown> | null
-      if (!row) {
-        reply.code(404).send({ error: 'Not found after update' })
-        return
-      }
-      reply.code(200).send(transformRow(row, resourceConfig))
+      reply.code(200).send({ id: fullId })
     } catch (err: any) {
       req.log.error({ err }, 'GraphQL update mutation failed')
       const msg = err?.message || ''
+      if (msg.includes('Foreign key violation')) {
+        reply.code(400).send({
+          error: 'FK violation — id may target wrong resource type',
+          details: msg,
+        })
+        return
+      }
       if (msg.includes('uniqueness violation') || msg.includes('constraint')) {
         reply.code(400).send({ error: 'Constraint violation', details: msg })
         return

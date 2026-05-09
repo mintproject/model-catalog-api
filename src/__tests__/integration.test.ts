@@ -511,17 +511,12 @@ describe('Custom handler plain-ID resolution', () => {
 describe('PUT model with hasVersion sets software_id on child rows', () => {
   beforeEach(() => { mockQuery.mockReset(); mockMutate.mockReset() })
 
-  it('emits clear+link update_modelcatalog_software_version mutations with software_id', async () => {
+  // compilePut emits clear_<childSuffixPlural> + upsert_<childSuffixPlural> instead of
+  // the old clear_<relName> + link_<relName> pair. childSuffix = tableSuffix(childTable),
+  // so for modelcatalog_software_version the suffix is 'software_version' and plural is
+  // 'software_versions'. Response is now { id } only (no post-PUT fetch + transform).
+  it('emits clear+upsert update_modelcatalog_software_version mutations with software_id', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
-    mockQuery.mockResolvedValueOnce({
-      data: {
-        modelcatalog_software_by_pk: {
-          id: 'https://w3id.org/okn/i/mint/MODEL-1',
-          label: 'M',
-          description: null,
-        },
-      },
-    })
 
     const req = makeReq({
       params: { id: 'MODEL-1' },
@@ -537,23 +532,22 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
     await (CatalogService as any).models_id_put(req, reply)
 
     expect(mockMutate).toHaveBeenCalledOnce()
+    // No post-PUT read query (new pipeline returns { id } directly)
+    expect(mockQuery).not.toHaveBeenCalled()
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
-    expect(m).toContain('clear_versions: update_modelcatalog_software_version')
-    expect(m).toContain('link_versions: update_modelcatalog_software_version')
+    expect(m).toContain('clear_software_versions: update_modelcatalog_software_version')
+    expect(m).toContain('upsert_software_versions: insert_modelcatalog_software_version')
     expect(m).toContain('software_id: { _eq: $id }')
-    expect(m).toContain('software_id: $id')
-    expect(args.variables.child_ids_versions).toEqual(['https://w3id.org/okn/i/mint/V-1'])
+    expect(args.variables.child_ids_software_versions).toEqual(['https://w3id.org/okn/i/mint/V-1'])
     expect(args.variables.id).toBe('https://w3id.org/okn/i/mint/MODEL-1')
+    // Response shape: { id } only
+    expect(reply._status).toBe(200)
+    expect((reply._body as any).id).toBe('https://w3id.org/okn/i/mint/MODEL-1')
   })
 
-  it('omits link branch when hasVersion is empty array (clear-only replace semantics)', async () => {
+  it('omits upsert branch when hasVersion is empty array (clear-only replace semantics)', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
-    mockQuery.mockResolvedValueOnce({
-      data: {
-        modelcatalog_software_by_pk: { id: 'https://w3id.org/okn/i/mint/MODEL-2', label: 'M2', description: null },
-      },
-    })
 
     const req = makeReq({
       params: { id: 'MODEL-2' },
@@ -570,22 +564,15 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
 
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
-    expect(m).toContain('clear_versions:')
-    expect(m).not.toContain('link_versions:')
-    expect(args.variables.child_ids_versions).toEqual([])
+    // clear root always emitted; upsert root is still emitted (with empty objects array)
+    expect(m).toContain('clear_software_versions:')
+    expect(m).toContain('upsert_software_versions:')
+    expect(m).not.toContain('link_software_versions:')
+    expect(args.variables.child_ids_software_versions).toEqual([])
   })
 
   it('handles softwareversions.hasConfiguration -> software_version_id', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
-    mockQuery.mockResolvedValueOnce({
-      data: {
-        modelcatalog_software_version_by_pk: {
-          id: 'https://w3id.org/okn/i/mint/V-1',
-          label: 'v1',
-          description: null,
-        },
-      },
-    })
 
     const req = makeReq({
       params: { id: 'V-1' },
@@ -601,10 +588,10 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
 
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
+    // childSuffix for modelcatalog_configuration is 'configuration', plural 'configurations'
     expect(m).toContain('clear_configurations: update_modelcatalog_configuration')
-    expect(m).toContain('link_configurations: update_modelcatalog_configuration')
+    expect(m).toContain('upsert_configurations: insert_modelcatalog_configuration')
     expect(m).toContain('software_version_id: { _eq: $id }')
-    expect(m).toContain('software_version_id: $id')
   })
 })
 
