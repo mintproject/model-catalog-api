@@ -85,4 +85,45 @@ describe('junction e2e — softwareversions.hasGrid (bug-087 class)', () => {
     };
     expect(v.hasGrid?.map((g) => g.id)).toContain(gridId);
   });
+
+  it('PUT softwareversion replaces hasGrid: old links removed, new links present', async () => {
+    const gridA = uniqueId('grid');
+    const gridB = uniqueId('grid');
+    for (const [id, lbl] of [[gridA, 'A'], [gridB, 'B']] as const) {
+      await inject(app, 'POST', '/v2.0.0/grids', {
+        id, label: [lbl], type: ['Grid'],
+      });
+      trackId('grids', id);
+    }
+
+    const versionId = uniqueId('softwareversion');
+    await inject(app, 'POST', '/v2.0.0/softwareversions', {
+      id: versionId, label: ['v-put'], type: ['SoftwareVersion'],
+      hasGrid: [{ id: gridA }],
+    });
+    trackId('softwareversions', versionId);
+
+    const putRes = await inject(
+      app,
+      'PUT',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+      {
+        id: versionId, label: ['v-put'], type: ['SoftwareVersion'],
+        hasGrid: [{ id: gridB }],
+      },
+    );
+    expect(putRes.statusCode).toBeGreaterThanOrEqual(200);
+    expect(putRes.statusCode).toBeLessThan(300);
+
+    const got = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+    );
+    const v = (Array.isArray(got.body) ? got.body[0] : got.body) as {
+      hasGrid?: { id: string }[];
+    };
+    const ids = v.hasGrid?.map((g) => g.id) ?? [];
+    expect(ids).toContain(gridB);
+    expect(ids).not.toContain(gridA);
+  });
 });
