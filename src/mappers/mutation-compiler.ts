@@ -20,7 +20,7 @@ function buildInsertObject(node: WriteNode): Record<string, unknown> {
   const obj: Record<string, unknown> = { id: node.id, ...node.columns };
 
   for (const j of node.junctions) {
-    obj[j.junctionRelName] = buildJunctionInsert(j);
+    obj[j.hasuraRelName] = buildJunctionInsert(j);
   }
   for (const c of node.childFks) {
     obj[c.hasuraRelName] = buildChildFkInsert(c);

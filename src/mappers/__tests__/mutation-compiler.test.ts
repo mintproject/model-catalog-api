@@ -28,6 +28,7 @@ describe('compilePost', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',
@@ -49,7 +50,7 @@ describe('compilePost', () => {
     const obj = (variables.object as Record<string, unknown>);
     expect(obj.id).toBe('cfg-1');
     expect(obj.label).toBe('cfg');
-    const inputs = (obj.input as { data: unknown[]; on_conflict: { update_columns: string[] } });
+    const inputs = (obj.inputs as { data: unknown[]; on_conflict: { update_columns: string[] } });
     expect(inputs.on_conflict.update_columns).toEqual([]);
     const inputRow = inputs.data[0] as Record<string, any>;
     const nested = inputRow.input as { data: any; on_conflict: { update_columns: string[] } };
@@ -68,6 +69,7 @@ describe('compilePost', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',
@@ -87,7 +89,7 @@ describe('compilePost', () => {
     };
     const { variables } = compilePost(tree);
     const obj = variables.object as Record<string, any>;
-    const nested = (obj.input.data[0].input) as { on_conflict: { update_columns: string[] } };
+    const nested = (obj.inputs.data[0].input) as { on_conflict: { update_columns: string[] } };
     expect(nested.on_conflict.update_columns).toEqual([]);
   });
 
@@ -100,6 +102,7 @@ describe('compilePost', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',
@@ -112,7 +115,7 @@ describe('compilePost', () => {
       childFks: [],
     };
     const { variables } = compilePost(tree);
-    const row = (variables.object as any).input.data[0];
+    const row = (variables.object as any).inputs.data[0];
     expect(row.is_optional).toBe(true);
   });
 
@@ -171,6 +174,7 @@ describe('compilePut', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',
@@ -203,6 +207,7 @@ describe('compilePut', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',
@@ -261,6 +266,7 @@ describe('compilePut', () => {
         {
           apiFieldName: 'hasInput',
           junctionTable: 'modelcatalog_configuration_input',
+          hasuraRelName: 'inputs',
           junctionRelName: 'input',
           parentFkColumn: 'configuration_id',
           targetFkColumn: 'input_id',

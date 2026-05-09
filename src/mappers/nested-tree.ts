@@ -43,6 +43,7 @@ export interface WriteNode {
 export interface JunctionEdge {
   apiFieldName: string;
   junctionTable: string;
+  hasuraRelName: string;
   junctionRelName: string;
   parentFkColumn: string;
   targetFkColumn: string;
@@ -170,6 +171,7 @@ function buildJunctionEdge(
   return {
     apiFieldName,
     junctionTable: rel.junctionTable!,
+    hasuraRelName: rel.hasuraRelName,
     junctionRelName: rel.junctionRelName!,
     parentFkColumn: rel.parentFkColumn!,
     targetFkColumn: resolveTargetFkColumn(rel),

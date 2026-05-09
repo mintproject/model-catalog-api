@@ -39,6 +39,7 @@ describe('nested-tree types and constants', () => {
     const junc: JunctionEdge = {
       apiFieldName: 'hasInput',
       junctionTable: 'modelcatalog_configuration_input',
+      hasuraRelName: 'inputs',
       junctionRelName: 'input',
       parentFkColumn: 'configuration_id',
       targetFkColumn: 'input_id',
