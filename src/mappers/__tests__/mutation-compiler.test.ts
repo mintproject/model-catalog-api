@@ -161,7 +161,7 @@ describe('compilePost', () => {
           childFkColumn: 'software_version_id',
           children: [
             { table: 'modelcatalog_configuration', id: 'cfg-a', columns: { label: 'A' }, junctions: [], childFks: [] },
-            { table: 'modelcatalog_configuration', id: 'cfg-b', columns: {}, junctions: [], childFks: [] },
+            { table: 'modelcatalog_configuration', id: 'cfg-b', columns: { label: 'B' }, junctions: [], childFks: [] },
           ],
         },
       ],
@@ -177,6 +177,68 @@ describe('compilePost', () => {
     expect(arr[0].id).toBe('cfg-a');
     expect(arr[0].label).toBe('A');
     expect(arr[1].software_version_id).toBeUndefined();
+  });
+
+  it('childFk link-only ref emits aliased FK update, not nested insert (bug-089 mixed)', () => {
+    // Mixed: cfg-a is inline-new (columns), cfg-existing is link-only (id only).
+    // link-only must NOT enter nested data array (would NULL-violate label),
+    // must surface as a top-level aliased update setting childFk on existing row.
+    const tree: WriteNode = {
+      table: 'modelcatalog_software',
+      id: 'sw-1',
+      columns: { label: 'sw' },
+      junctions: [],
+      childFks: [
+        {
+          apiFieldName: 'hasVersion',
+          hasuraRelName: 'versions',
+          childTable: 'modelcatalog_software_version',
+          childFkColumn: 'software_id',
+          children: [
+            { table: 'modelcatalog_software_version', id: 'ver-new', columns: { label: 'fresh' }, junctions: [], childFks: [] },
+            { table: 'modelcatalog_software_version', id: 'ver-existing', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+    };
+    const { mutation, variables } = compilePost(tree);
+    const obj = variables.object as any;
+    // Nested array contains ONLY inline-new children
+    expect(obj.versions.data).toHaveLength(1);
+    expect(obj.versions.data[0].id).toBe('ver-new');
+    // Top-level aliased link op for the link-only ref
+    expect(mutation).toMatch(/link_0:\s*update_modelcatalog_software_version/);
+    expect(mutation).toMatch(/_in:\s*\$link_ids_0/);
+    expect(mutation).toMatch(/_set:\s*\{\s*software_id:\s*\$link_parent_0\s*\}/);
+    expect(variables.link_ids_0).toEqual(['ver-existing']);
+    expect(variables.link_parent_0).toBe('sw-1');
+  });
+
+  it('childFk all-link-only omits nested rel and emits only link op', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_software',
+      id: 'sw-2',
+      columns: { label: 'sw' },
+      junctions: [],
+      childFks: [
+        {
+          apiFieldName: 'hasVersion',
+          hasuraRelName: 'versions',
+          childTable: 'modelcatalog_software_version',
+          childFkColumn: 'software_id',
+          children: [
+            { table: 'modelcatalog_software_version', id: 'ver-x', columns: {}, junctions: [], childFks: [] },
+            { table: 'modelcatalog_software_version', id: 'ver-y', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+    };
+    const { mutation, variables } = compilePost(tree);
+    const obj = variables.object as any;
+    expect(obj.versions).toBeUndefined();
+    expect(variables.link_ids_0).toEqual(['ver-x', 'ver-y']);
+    expect(variables.link_parent_0).toBe('sw-2');
+    expect(mutation).toMatch(/link_0:\s*update_modelcatalog_software_version/);
   });
 });
 
@@ -285,6 +347,63 @@ describe('compilePut', () => {
     expect(upsertObjs[0].id).toBe('cfg-a');
     expect(upsertObjs[0].software_version_id).toBe('sv-1');
     expect(upsertObjs[0].label).toBe('A');
+  });
+
+  it('childFk link-only PUT child becomes link op, not upsert (bug-089 mixed)', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_software',
+      id: 'sw-mixed',
+      columns: {},
+      junctions: [],
+      childFks: [
+        {
+          apiFieldName: 'hasVersion',
+          hasuraRelName: 'versions',
+          childTable: 'modelcatalog_software_version',
+          childFkColumn: 'software_id',
+          children: [
+            { table: 'modelcatalog_software_version', id: 'ver-new', columns: { label: 'fresh' }, junctions: [], childFks: [] },
+            { table: 'modelcatalog_software_version', id: 'ver-link', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+    };
+    const { mutation, variables } = compilePut(tree);
+    // clear still considers ALL incoming ids (so link-only stays attached if was already)
+    expect(variables.child_ids_software_versions).toEqual(['ver-new', 'ver-link']);
+    // upsert array contains ONLY inline-new
+    const upsertObjs = variables.child_software_versions as any[];
+    expect(upsertObjs).toHaveLength(1);
+    expect(upsertObjs[0].id).toBe('ver-new');
+    // link-only handled by aliased link update
+    expect(mutation).toMatch(/link_0:\s*update_modelcatalog_software_version/);
+    expect(variables.link_ids_0).toEqual(['ver-link']);
+    expect(variables.link_parent_0).toBe('sw-mixed');
+  });
+
+  it('childFk all-link-only PUT skips upsert + emits only link op', () => {
+    const tree: WriteNode = {
+      table: 'modelcatalog_software',
+      id: 'sw-all-link',
+      columns: {},
+      junctions: [],
+      childFks: [
+        {
+          apiFieldName: 'hasVersion',
+          hasuraRelName: 'versions',
+          childTable: 'modelcatalog_software_version',
+          childFkColumn: 'software_id',
+          children: [
+            { table: 'modelcatalog_software_version', id: 'ver-1', columns: {}, junctions: [], childFks: [] },
+          ],
+        },
+      ],
+    };
+    const { mutation, variables } = compilePut(tree);
+    expect(variables.child_software_versions).toBeUndefined();
+    expect(mutation).not.toMatch(/upsert_software_versions/);
+    expect(variables.link_ids_0).toEqual(['ver-1']);
+    expect(variables.link_parent_0).toBe('sw-all-link');
   });
 
   it('hoists complex objects into variables (no JSON in mutation string)', () => {

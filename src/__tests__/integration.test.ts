@@ -511,11 +511,10 @@ describe('Custom handler plain-ID resolution', () => {
 describe('PUT model with hasVersion sets software_id on child rows', () => {
   beforeEach(() => { mockQuery.mockReset(); mockMutate.mockReset() })
 
-  // compilePut emits clear_<childSuffixPlural> + upsert_<childSuffixPlural> instead of
-  // the old clear_<relName> + link_<relName> pair. childSuffix = tableSuffix(childTable),
-  // so for modelcatalog_software_version the suffix is 'software_version' and plural is
-  // 'software_versions'. Response is now { id } only (no post-PUT fetch + transform).
-  it('emits clear+upsert update_modelcatalog_software_version mutations with software_id', async () => {
+  // bug-089: link-only childFk refs (id-only) flow OUT of the upsert path
+  // (would NULL-violate child NOT-NULL columns) into a top-level aliased
+  // `link_N` FK update. Inline-new children remain in the upsert path.
+  it('emits clear + link_N FK update for link-only PUT child (no upsert)', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
 
     const req = makeReq({
@@ -532,21 +531,22 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
     await (CatalogService as any).models_id_put(req, reply)
 
     expect(mockMutate).toHaveBeenCalledOnce()
-    // No post-PUT read query (new pipeline returns { id } directly)
     expect(mockQuery).not.toHaveBeenCalled()
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
     expect(m).toContain('clear_software_versions: update_modelcatalog_software_version')
-    expect(m).toContain('upsert_software_versions: insert_modelcatalog_software_version')
+    expect(m).not.toContain('upsert_software_versions:')
+    expect(m).toContain('link_0: update_modelcatalog_software_version')
     expect(m).toContain('software_id: { _eq: $id }')
     expect(args.variables.child_ids_software_versions).toEqual(['https://w3id.org/okn/i/mint/V-1'])
+    expect(args.variables.link_ids_0).toEqual(['https://w3id.org/okn/i/mint/V-1'])
+    expect(args.variables.link_parent_0).toBe('https://w3id.org/okn/i/mint/MODEL-1')
     expect(args.variables.id).toBe('https://w3id.org/okn/i/mint/MODEL-1')
-    // Response shape: { id } only
     expect(reply._status).toBe(200)
     expect((reply._body as any).id).toBe('https://w3id.org/okn/i/mint/MODEL-1')
   })
 
-  it('omits upsert branch when hasVersion is empty array (clear-only replace semantics)', async () => {
+  it('omits upsert AND link branches when hasVersion is empty array (clear-only)', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
 
     const req = makeReq({
@@ -564,14 +564,13 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
 
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
-    // clear root always emitted; upsert root is still emitted (with empty objects array)
     expect(m).toContain('clear_software_versions:')
-    expect(m).toContain('upsert_software_versions:')
-    expect(m).not.toContain('link_software_versions:')
+    expect(m).not.toContain('upsert_software_versions:')
+    expect(m).not.toContain('link_0:')
     expect(args.variables.child_ids_software_versions).toEqual([])
   })
 
-  it('handles softwareversions.hasConfiguration -> software_version_id', async () => {
+  it('softwareversions.hasConfiguration link-only ref -> link_0 update_modelcatalog_configuration', async () => {
     mockMutate.mockResolvedValueOnce({ data: {} })
 
     const req = makeReq({
@@ -588,17 +587,22 @@ describe('PUT model with hasVersion sets software_id on child rows', () => {
 
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
-    // childSuffix for modelcatalog_configuration is 'configuration', plural 'configurations'
     expect(m).toContain('clear_configurations: update_modelcatalog_configuration')
-    expect(m).toContain('upsert_configurations: insert_modelcatalog_configuration')
+    expect(m).not.toContain('upsert_configurations:')
+    expect(m).toContain('link_0: update_modelcatalog_configuration')
     expect(m).toContain('software_version_id: { _eq: $id }')
+    expect(args.variables.link_ids_0).toEqual(['https://w3id.org/okn/i/mint/CFG-1'])
+    expect(args.variables.link_parent_0).toBe('https://w3id.org/okn/i/mint/V-1')
   })
 })
 
 describe('POST software with hasVersion links existing version rows', () => {
   beforeEach(() => { mockMutate.mockReset() })
 
-  it('emits nested-insert for childFk relation with software_id injected into child row', async () => {
+  it('link-only childFk POST -> aliased link_N FK update (NOT nested insert)', async () => {
+    // bug-089: id-only ref MUST NOT enter the nested-array data (NOT-NULL on
+    // child columns would fire before ON CONFLICT). Surfaces as top-level
+    // `link_N: update_modelcatalog_software_version(...)` after root insert.
     mockMutate.mockResolvedValueOnce({
       data: {
         insert_modelcatalog_software_one: { id: 'https://w3id.org/okn/i/mint/NEW-1' },
@@ -620,17 +624,13 @@ describe('POST software with hasVersion links existing version rows', () => {
     expect(mockMutate).toHaveBeenCalledOnce()
     const args = mockMutate.mock.calls[0][0]
     const m = typeof args.mutation === 'string' ? args.mutation : args.mutation?.loc?.source?.body ?? ''
-    // New pipeline: childFkColumn handled via nested insert inside $object (not a separate UPDATE root)
     expect(m).toContain('insert_modelcatalog_software_one')
-    expect(m).not.toContain('link_versions')
+    expect(m).toContain('link_0: update_modelcatalog_software_version')
     const obj = args.variables.object as Record<string, any>
     expect(obj.id).toBe('https://w3id.org/okn/i/mint/NEW-1')
-    // child FK rows are embedded in the object under the Hasura relation key 'versions'
-    expect(obj.versions).toBeDefined()
-    const childData = obj.versions.data as any[]
-    expect(childData).toHaveLength(1)
-    expect(childData[0].id).toBe('https://w3id.org/okn/i/mint/V-99')
-    // Hasura auto-derives software_id from parent context.
-    expect(childData[0].software_id).toBeUndefined()
+    // versions key omitted entirely — only link-only children, no nested insert
+    expect(obj.versions).toBeUndefined()
+    expect(args.variables.link_ids_0).toEqual(['https://w3id.org/okn/i/mint/V-99'])
+    expect(args.variables.link_parent_0).toBe('https://w3id.org/okn/i/mint/NEW-1')
   })
 })
