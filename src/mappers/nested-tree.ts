@@ -69,6 +69,7 @@ interface BuildContext {
   nodeCount: { n: number };
   depth: number;
   path: string;
+  maxDepth: number;
 }
 
 function getScalarColumns(tableName: string): Set<string> {
@@ -149,6 +150,7 @@ function buildJunctionEdge(
       nodeCount: ctx.nodeCount,
       depth: ctx.depth + 1,
       path: itemPath,
+      maxDepth: ctx.maxDepth,
     };
     const childNode = buildNode(item as Record<string, unknown>, targetCfg, childCtx, junctionExtraCamel);
     children.push(childNode);
@@ -215,6 +217,7 @@ function buildChildFkEdge(
       nodeCount: ctx.nodeCount,
       depth: ctx.depth + 1,
       path: itemPath,
+      maxDepth: ctx.maxDepth,
     };
     children.push(buildNode(item as Record<string, unknown>, targetCfg, childCtx));
   });
@@ -232,8 +235,8 @@ function buildNode(
   ctx: BuildContext,
   excludeKeys: Set<string> = new Set(),
 ): WriteNode {
-  if (ctx.depth > MAX_DEPTH) {
-    throw new ValidationError('DEPTH_EXCEEDED', ctx.path, `nested payload exceeds max depth ${MAX_DEPTH} at ${ctx.path}`, 400);
+  if (ctx.depth > ctx.maxDepth) {
+    throw new ValidationError('DEPTH_EXCEEDED', ctx.path, `nested payload exceeds max depth ${ctx.maxDepth} at ${ctx.path}`, 400);
   }
   ctx.nodeCount.n += 1;
   if (ctx.nodeCount.n > MAX_NODES) {
@@ -298,12 +301,17 @@ function buildNode(
   };
 }
 
-export function buildTree(body: Record<string, unknown>, rootCfg: ResourceConfig): WriteNode {
+export interface BuildTreeOptions {
+  maxDepth?: number;
+}
+
+export function buildTree(body: Record<string, unknown>, rootCfg: ResourceConfig, opts: BuildTreeOptions = {}): WriteNode {
   const ctx: BuildContext = {
     visited: new Set<string>(),
     nodeCount: { n: 0 },
     depth: 1,
     path: '',
+    maxDepth: opts.maxDepth ?? MAX_DEPTH,
   };
   return buildNode(body, rootCfg, ctx);
 }

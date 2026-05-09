@@ -7,6 +7,7 @@ import {
   type WriteNode,
   type JunctionEdge,
   type ChildFkEdge,
+  type BuildTreeOptions,
 } from '../nested-tree.js';
 import { buildTree } from '../nested-tree.js';
 import { getResourceConfig } from '../resource-registry.js';
@@ -174,5 +175,76 @@ describe('buildTree — childFk relationships', () => {
     const cfgNode = tree.childFks[0].children[0];
     expect(cfgNode.junctions).toHaveLength(1);
     expect(cfgNode.junctions[0].children[0].id).toBe('https://w3id.org/okn/i/mint/ds-x');
+  });
+});
+
+describe('buildTree — validation rules', () => {
+  it('rejects string-id array form with STRING_ID_DEPRECATED', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    expect(() => buildTree({ id: 'c1', hasInput: ['ds-1'] }, cfg)).toThrow(
+      expect.objectContaining({
+        code: 'STRING_ID_DEPRECATED',
+        httpStatus: 400,
+        path: '/hasInput/0',
+      }),
+    );
+  });
+
+  it('rejects array length over MAX_ARRAY_LENGTH with ARRAY_TOO_LONG', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const big = Array.from({ length: 201 }, (_, i) => ({ id: `ds-${i}` }));
+    expect(() => buildTree({ id: 'c1', hasInput: big }, cfg)).toThrow(
+      expect.objectContaining({ code: 'ARRAY_TOO_LONG', httpStatus: 413 }),
+    );
+  });
+
+  it('rejects depth over MAX_DEPTH with DEPTH_EXCEEDED', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const body = { id: 'root', hasInput: [{ id: 'child-1' }] };
+    // maxDepth:1 means root is at depth 1 (ok), child is at depth 2 > 1 → DEPTH_EXCEEDED
+    expect(() => buildTree(body, cfg, { maxDepth: 1 })).toThrow(
+      expect.objectContaining({ code: 'DEPTH_EXCEEDED', httpStatus: 400 }),
+    );
+  });
+
+  it('rejects too many total nodes with TOO_MANY_NODES', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const make = (n: number, prefix: string) =>
+      Array.from({ length: n }, (_, i) => ({ id: `${prefix}-${i}` }));
+    const body = {
+      id: 'c-big',
+      hasInput: make(200, 'in'),
+      hasOutput: make(200, 'out'),
+      hasParameter: make(150, 'p'),
+    };
+    expect(() => buildTree(body, cfg)).toThrow(
+      expect.objectContaining({ code: 'TOO_MANY_NODES', httpStatus: 413 }),
+    );
+  });
+
+  it('detects cycles in ancestor path with CYCLE', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const body = {
+      id: 'c-1',
+      hasInput: [
+        {
+          id: 'ds-1',
+          hasPresentation: [{ id: 'c-1' }],
+        },
+      ],
+    };
+    expect(() => buildTree(body, cfg)).toThrow(
+      expect.objectContaining({ code: 'CYCLE', httpStatus: 400 }),
+    );
+  });
+
+  it('allows sibling repeats (same id linked twice from same parent is legal)', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const body = {
+      id: 'c-2',
+      hasInput: [{ id: 'ds-shared' }],
+      hasOutput: [{ id: 'ds-shared' }],
+    };
+    expect(() => buildTree(body, cfg)).not.toThrow();
   });
 });
