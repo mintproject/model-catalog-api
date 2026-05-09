@@ -53,7 +53,7 @@ describe('compilePost', () => {
     const inputs = (obj.inputs as { data: unknown[]; on_conflict: { update_columns: string[] } });
     expect(inputs.on_conflict.update_columns).toEqual([]);
     const inputRow = inputs.data[0] as Record<string, any>;
-    const nested = inputRow.input as { data: any; on_conflict: { update_columns: string[] } };
+    const nested = inputRow.input as { data: any; on_conflict: { update_columns: string[]; constraint: string } };
     expect(nested.data.id).toBe('ds-1');
     expect(nested.data.label).toBe('ds-label');
     expect(nested.on_conflict.update_columns).toEqual(['label']);
