@@ -10,8 +10,11 @@ describe('getWriteClient — MINT_E2E_MODE', () => {
 
   afterEach(() => {
     process.env = originalEnv;
+    vi.unstubAllGlobals();
   });
 
+  // Note: caller MUST set process.env BEFORE invoking — module-level constants
+  // in client.ts are captured at import time.
   async function captureHeaders(
     bearerToken: string,
   ): Promise<Record<string, string>> {
@@ -42,7 +45,6 @@ describe('getWriteClient — MINT_E2E_MODE', () => {
       // Ignore Apollo errors — we only care about the fetch call headers
     }
 
-    vi.unstubAllGlobals();
     return captured;
   }
 
