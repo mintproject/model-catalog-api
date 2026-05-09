@@ -115,3 +115,28 @@ describe('buildTree — single-level junction', () => {
     expect(tree.junctions[0].children[0].id).toMatch(/^https:\/\/w3id\.org\/okn\/i\/mint\/[0-9a-f-]{36}$/);
   });
 });
+
+describe('buildTree — recursion (multi-level)', () => {
+  it('walks 2 levels: ModelConfiguration > hasInput > hasPresentation', () => {
+    const cfg = getResourceConfig('modelconfigurations')!;
+    const body = {
+      id: 'cfg-deep',
+      hasInput: [
+        {
+          id: 'ds-deep',
+          label: 'deep ds',
+          hasPresentation: [{ id: 'vp-1', label: 'pres' }],
+        },
+      ],
+    };
+    const tree = buildTree(body, cfg);
+    const ds = tree.junctions[0].children[0];
+    expect(ds.id).toBe('https://w3id.org/okn/i/mint/ds-deep');
+    expect(ds.columns).toEqual({ label: 'deep ds' });
+    expect(ds.junctions.length).toBeGreaterThanOrEqual(1);
+    const pres = ds.junctions.find((j) => j.apiFieldName === 'hasPresentation');
+    expect(pres).toBeDefined();
+    expect(pres!.children[0].id).toBe('https://w3id.org/okn/i/mint/vp-1');
+    expect(pres!.children[0].columns).toEqual({ label: 'pres' });
+  });
+});
