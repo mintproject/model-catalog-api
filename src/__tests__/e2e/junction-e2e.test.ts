@@ -161,4 +161,31 @@ describe('junction e2e — softwareversions.hasGrid (bug-087 class)', () => {
     };
     expect(v.hasGrid ?? []).toEqual([]);
   });
+
+  it('POST softwareversion with duplicate hasGrid entries deduplicates without violating unique constraints', async () => {
+    const gridId = uniqueId('grid');
+    await inject(app, 'POST', '/v2.0.0/grids', {
+      id: gridId, label: ['dup'], type: ['Grid'],
+    });
+    trackId('grids', gridId);
+
+    const versionId = uniqueId('softwareversion');
+    const res = await inject(app, 'POST', '/v2.0.0/softwareversions', {
+      id: versionId, label: ['v-dup'], type: ['SoftwareVersion'],
+      hasGrid: [{ id: gridId }, { id: gridId }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwareversions', versionId);
+
+    const got = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(versionId)}`,
+    );
+    const v = (Array.isArray(got.body) ? got.body[0] : got.body) as {
+      hasGrid?: { id: string }[];
+    };
+    expect(v.hasGrid?.length).toBe(1);
+    expect(v.hasGrid?.[0].id).toBe(gridId);
+  });
 });
