@@ -169,4 +169,40 @@ describe('nested-write e2e — softwares.hasVersion (bug-089 class)', () => {
     // from existingSwShellId to newSwId. Do not assert directionality of the move here;
     // just assert the existing row's data was preserved.
   });
+
+  it('PUT software replaces hasVersion children: old children no longer linked, new children present', async () => {
+    const swId = uniqueId('software');
+    const oldVerId = uniqueId('softwareversion');
+    const newVerId = uniqueId('softwareversion');
+
+    await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-replace'], type: ['Software'],
+      hasVersion: [{ id: oldVerId, label: ['v-old'], type: ['SoftwareVersion'] }],
+    });
+    trackId('softwares', swId);
+    trackId('softwareversions', oldVerId);
+
+    const putRes = await inject(
+      app, 'PUT',
+      `/v2.0.0/softwares/${encodeURIComponent(swId)}`,
+      {
+        id: swId, label: ['sw-replace'], type: ['Software'],
+        hasVersion: [{ id: newVerId, label: ['v-new'], type: ['SoftwareVersion'] }],
+      },
+    );
+    expect(putRes.statusCode).toBeGreaterThanOrEqual(200);
+    expect(putRes.statusCode).toBeLessThan(300);
+    trackId('softwareversions', newVerId);
+
+    const swGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwares/${encodeURIComponent(swId)}`,
+    );
+    const sw = (Array.isArray(swGet.body) ? swGet.body[0] : swGet.body) as {
+      hasVersion?: { id: string }[];
+    };
+    const ids = sw.hasVersion?.map((v) => v.id) ?? [];
+    expect(ids).toContain(newVerId);
+    expect(ids).not.toContain(oldVerId);
+  });
 });
