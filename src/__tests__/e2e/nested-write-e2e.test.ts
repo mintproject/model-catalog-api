@@ -56,4 +56,35 @@ describe('nested-write e2e — softwares.hasVersion (bug-089 class)', () => {
     expect(ver.id).toBe(versionId);
     expect(ver.label).toEqual(['v-nested']);
   });
+
+  it('POST software with nested version → nested configuration persists the full tree', async () => {
+    const swId = uniqueId('software');
+    const verId = uniqueId('softwareversion');
+    const cfgId = uniqueId('modelconfiguration');
+
+    const res = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-3deep'], type: ['Software'],
+      hasVersion: [{
+        id: verId, label: ['v-3deep'], type: ['SoftwareVersion'],
+        hasConfiguration: [{
+          id: cfgId, label: ['cfg-3deep'], type: ['ModelConfiguration'],
+        }],
+      }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwares', swId);
+    trackId('softwareversions', verId);
+    trackId('modelconfigurations', cfgId);
+
+    const cfgGet = await inject(
+      app, 'GET',
+      `/v2.0.0/modelconfigurations/${encodeURIComponent(cfgId)}`,
+    );
+    expect(cfgGet.statusCode).toBe(200);
+    const cfg = (Array.isArray(cfgGet.body) ? cfgGet.body[0] : cfgGet.body) as {
+      id: string;
+    };
+    expect(cfg.id).toBe(cfgId);
+  });
 });
