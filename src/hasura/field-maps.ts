@@ -549,9 +549,41 @@ label
 };
 
 /**
- * Return the GraphQL field selection string for a given Hasura table name.
- * Falls back to `id label` if no specific selection is defined.
+ * Per-table deep field selections used ONLY by the by-id read path.
+ * Mirrors the structure of FIELD_SELECTIONS but adds an extra hop into
+ * junction tables for resources that need a single-round-trip nested read.
+ *
+ * Lookup falls back to FIELD_SELECTIONS when no entry is present, so adding
+ * a deep variant for a new table is purely additive — existing list/byId
+ * behavior for every other table is preserved.
+ *
+ * Depth note: response.ts:71 caps recursion at depth<2. Anything at depth 2
+ * (e.g. VariablePresentation hoisted from inputs.input.presentations) gets
+ * its relationships stripped — only scalars survive to the wire. Selecting
+ * `standard_variable` / `unit` here would be wasted work; bump
+ * response.ts depth budget if that ever changes.
  */
-export function getFieldSelection(tableName: string): string {
+export const FIELD_SELECTIONS_BY_ID: Record<string, string> = {
+  // Populated in Task 2.
+};
+
+/**
+ * Return the GraphQL field selection string for a given Hasura table name.
+ *
+ * @param tableName Hasura table name (e.g. `modelcatalog_configuration`).
+ * @param mode `'list'` (default) returns the shallow selection used by list
+ * routes. `'byId'` prefers FIELD_SELECTIONS_BY_ID when an entry exists,
+ * else falls back to the shallow map.
+ *
+ * Falls back to `id label` if neither map has the table.
+ */
+export function getFieldSelection(
+  tableName: string,
+  mode: 'list' | 'byId' = 'list',
+): string {
+  if (mode === 'byId') {
+    const deep = FIELD_SELECTIONS_BY_ID[tableName];
+    if (deep) return deep;
+  }
   return FIELD_SELECTIONS[tableName] ?? 'id label';
 }
