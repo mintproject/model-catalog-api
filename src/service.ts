@@ -180,7 +180,7 @@ class CatalogServiceImpl {
       return
     }
     const fullId = id
-    const fields = getFieldSelection(resourceConfig.hasuraTable!)
+    const fields = getFieldSelection(resourceConfig.hasuraTable!, 'byId')
 
     const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
     const queryStr = `
