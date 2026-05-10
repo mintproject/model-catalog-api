@@ -113,4 +113,44 @@ describe('read-shape-deep e2e — GET /modelconfigurations/{id}', () => {
     expect(inVpIds).toEqual(new Set([vpInAId, vpInBId]));
     expect(outVpIds).toEqual(new Set([vpOutAId, vpOutBId, vpOutCId]));
   });
+
+  it('preserves isOptional junction-column hoist alongside hasPresentation', async () => {
+    const softwareId = uniqueId('software');
+    const versionId = uniqueId('softwareversion');
+    const configId = uniqueId('modelconfiguration');
+    const inputId = uniqueId('datasetspecification');
+    const vpId = uniqueId('variablepresentation');
+
+    const post = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: softwareId,
+      type: ['Software'],
+      label: ['sw-isopt'],
+      hasVersion: [{ id: versionId, type: ['SoftwareVersion'], label: ['v-isopt'],
+        hasConfiguration: [{ id: configId, type: ['ModelConfiguration'], label: ['cfg-isopt'],
+          hasInput: [{ id: inputId, type: ['DataSetSpecification'], label: ['optional-input'], isOptional: true,
+            hasPresentation: [{ id: vpId, type: ['VariablePresentation'], label: ['vp-isopt'], hasShortName: ['opt-vp'] }] }] }] }],
+    });
+    expect(post.statusCode).toBeGreaterThanOrEqual(200);
+    expect(post.statusCode).toBeLessThan(300);
+
+    trackId('variablepresentations', vpId);
+    trackId('datasetspecifications', inputId);
+    trackId('modelconfigurations', configId);
+    trackId('softwareversions', versionId);
+    trackId('softwares', softwareId);
+
+    const get = await inject(app, 'GET', `/v2.0.0/modelconfigurations/${encodeURIComponent(configId)}`);
+    expect(get.statusCode).toBe(200);
+
+    type VP = { id: string };
+    type DSS = { id: string; isOptional?: boolean; hasPresentation?: VP[] };
+    type Cfg = { id: string; hasInput?: DSS[] };
+    const cfg = (Array.isArray(get.body) ? get.body[0] : get.body) as Cfg;
+
+    const target = cfg.hasInput?.find((d) => d.id === inputId);
+    expect(target).toBeDefined();
+    expect(target!.isOptional).toBe(true);
+    expect(target!.hasPresentation).toBeDefined();
+    expect(target!.hasPresentation![0].id).toBe(vpId);
+  });
 });
