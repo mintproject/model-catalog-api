@@ -206,3 +206,103 @@ describe('nested-write e2e — softwares.hasVersion (bug-089 class)', () => {
     expect(ids).not.toContain(oldVerId);
   });
 });
+
+describe('read-shape e2e — softwareversions.hasConfiguration (bug-090 class)', () => {
+  it('GET /softwareversions/{id} surfaces hasConfiguration with nested id and label', async () => {
+    const swId = uniqueId('software');
+    const verId = uniqueId('softwareversion');
+    const cfgId = uniqueId('modelconfiguration');
+
+    const res = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-readshape'], type: ['Software'],
+      hasVersion: [{
+        id: verId, label: ['v-readshape'], type: ['SoftwareVersion'],
+        hasConfiguration: [{
+          id: cfgId, label: ['cfg-readshape'], type: ['ModelConfiguration'],
+        }],
+      }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwares', swId);
+    trackId('softwareversions', verId);
+    trackId('modelconfigurations', cfgId);
+
+    const verGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(verId)}`,
+    );
+    expect(verGet.statusCode).toBe(200);
+    const ver = (Array.isArray(verGet.body) ? verGet.body[0] : verGet.body) as {
+      id: string;
+      hasConfiguration?: { id: string; label?: string[] }[];
+    };
+    expect(ver.id).toBe(verId);
+    expect(ver.hasConfiguration).toBeDefined();
+    expect(ver.hasConfiguration?.map((c) => c.id)).toContain(cfgId);
+    const cfgEntry = ver.hasConfiguration?.find((c) => c.id === cfgId);
+    expect(cfgEntry?.label).toEqual(['cfg-readshape']);
+  });
+
+  it('GET /softwareversions/{id} omits hasConfiguration when version has no configurations', async () => {
+    const swId = uniqueId('software');
+    const verId = uniqueId('softwareversion');
+
+    const res = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-empty'], type: ['Software'],
+      hasVersion: [{ id: verId, label: ['v-empty'], type: ['SoftwareVersion'] }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwares', swId);
+    trackId('softwareversions', verId);
+
+    const verGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwareversions/${encodeURIComponent(verId)}`,
+    );
+    expect(verGet.statusCode).toBe(200);
+    const ver = (Array.isArray(verGet.body) ? verGet.body[0] : verGet.body) as {
+      id: string;
+      hasConfiguration?: unknown;
+    };
+    expect(ver.id).toBe(verId);
+    // v1.8.0 contract: empty array relationships are omitted entirely.
+    expect(ver.hasConfiguration).toBeUndefined();
+  });
+
+  it('GET /softwares/{id} only exposes shallow hasVersion (no hasConfiguration on embedded version)', async () => {
+    const swId = uniqueId('software');
+    const verId = uniqueId('softwareversion');
+    const cfgId = uniqueId('modelconfiguration');
+
+    const res = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: swId, label: ['sw-shallow'], type: ['Software'],
+      hasVersion: [{
+        id: verId, label: ['v-shallow'], type: ['SoftwareVersion'],
+        hasConfiguration: [{
+          id: cfgId, label: ['cfg-shallow'], type: ['ModelConfiguration'],
+        }],
+      }],
+    });
+    expect(res.statusCode).toBeGreaterThanOrEqual(200);
+    expect(res.statusCode).toBeLessThan(300);
+    trackId('softwares', swId);
+    trackId('softwareversions', verId);
+    trackId('modelconfigurations', cfgId);
+
+    const swGet = await inject(
+      app, 'GET',
+      `/v2.0.0/softwares/${encodeURIComponent(swId)}`,
+    );
+    expect(swGet.statusCode).toBe(200);
+    const sw = (Array.isArray(swGet.body) ? swGet.body[0] : swGet.body) as {
+      hasVersion?: ({ id: string; hasConfiguration?: unknown })[];
+    };
+    const embeddedVer = sw.hasVersion?.find((v) => v.id === verId);
+    expect(embeddedVer).toBeDefined();
+    // field-maps modelcatalog_software only selects id+label+description on versions;
+    // hasConfiguration MUST NOT appear on the embedded shallow object.
+    expect(embeddedVer?.hasConfiguration).toBeUndefined();
+  });
+});
