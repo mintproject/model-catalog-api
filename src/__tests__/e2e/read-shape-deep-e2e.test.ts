@@ -153,4 +153,45 @@ describe('read-shape-deep e2e — GET /modelconfigurations/{id}', () => {
     expect(target!.hasPresentation).toBeDefined();
     expect(target!.hasPresentation![0].id).toBe(vpId);
   });
+
+  it('list path GET /modelconfigurations does NOT include hasPresentation', async () => {
+    const softwareId = uniqueId('software');
+    const versionId = uniqueId('softwareversion');
+    const configId = uniqueId('modelconfiguration');
+    const inputId = uniqueId('datasetspecification');
+    const vpId = uniqueId('variablepresentation');
+
+    const post = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: softwareId, type: ['Software'], label: ['sw-list-lean'],
+      hasVersion: [{ id: versionId, type: ['SoftwareVersion'], label: ['v-list-lean'],
+        hasConfiguration: [{ id: configId, type: ['ModelConfiguration'], label: ['cfg-list-lean'],
+          hasInput: [{ id: inputId, type: ['DataSetSpecification'], label: ['input-list-lean'],
+            hasPresentation: [{ id: vpId, type: ['VariablePresentation'], label: ['vp-list-lean'], hasShortName: ['list-lean-vp'] }] }] }] }],
+    });
+    expect(post.statusCode).toBeGreaterThanOrEqual(200);
+    expect(post.statusCode).toBeLessThan(300);
+
+    trackId('variablepresentations', vpId);
+    trackId('datasetspecifications', inputId);
+    trackId('modelconfigurations', configId);
+    trackId('softwareversions', versionId);
+    trackId('softwares', softwareId);
+
+    const list = await inject(app, 'GET', '/v2.0.0/modelconfigurations?label=cfg-list-lean&per_page=10');
+    expect(list.statusCode).toBe(200);
+
+    type VP = { id: string };
+    type DSS = { id: string; label?: string[]; hasPresentation?: VP[] };
+    type Cfg = { id: string; hasInput?: DSS[] };
+    const rows = list.body as Cfg[];
+    expect(Array.isArray(rows)).toBe(true);
+
+    const row = rows.find((r) => r.id === configId);
+    expect(row).toBeDefined();
+    expect(row!.hasInput?.length).toBeGreaterThan(0);
+    const firstInput = row!.hasInput![0];
+    expect(firstInput.id).toBeDefined();
+    expect(firstInput.label).toBeDefined();
+    expect(firstInput.hasPresentation).toBeUndefined();
+  });
 });
