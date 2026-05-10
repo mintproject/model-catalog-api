@@ -194,4 +194,31 @@ describe('read-shape-deep e2e — GET /modelconfigurations/{id}', () => {
     expect(firstInput.label).toBeDefined();
     expect(firstInput.hasPresentation).toBeUndefined();
   });
+
+  it('config with zero inputs/outputs returns no hasInput/hasOutput keys', async () => {
+    const softwareId = uniqueId('software');
+    const versionId = uniqueId('softwareversion');
+    const configId = uniqueId('modelconfiguration');
+
+    const post = await inject(app, 'POST', '/v2.0.0/softwares', {
+      id: softwareId, type: ['Software'], label: ['sw-empty'],
+      hasVersion: [{ id: versionId, type: ['SoftwareVersion'], label: ['v-empty'],
+        hasConfiguration: [{ id: configId, type: ['ModelConfiguration'], label: ['cfg-empty'] }] }],
+    });
+    expect(post.statusCode).toBeGreaterThanOrEqual(200);
+    expect(post.statusCode).toBeLessThan(300);
+
+    trackId('modelconfigurations', configId);
+    trackId('softwareversions', versionId);
+    trackId('softwares', softwareId);
+
+    const get = await inject(app, 'GET', `/v2.0.0/modelconfigurations/${encodeURIComponent(configId)}`);
+    expect(get.statusCode).toBe(200);
+
+    type Cfg = { id: string; hasInput?: unknown; hasOutput?: unknown };
+    const cfg = (Array.isArray(get.body) ? get.body[0] : get.body) as Cfg;
+    expect(cfg.id).toBe(configId);
+    expect(cfg.hasInput).toBeUndefined();
+    expect(cfg.hasOutput).toBeUndefined();
+  });
 });
