@@ -18,6 +18,38 @@ import { customHandlers } from './custom-handlers.js'
 
 const ID_PREFIX = 'https://w3id.org/okn/i/mint/'
 
+/** A full resource URI must start with https:// or http://. */
+function isFullUri(id: string): boolean {
+  return id.startsWith('https://') || id.startsWith('http://')
+}
+
+/**
+ * Validate that every body-supplied relationship item ID is a full URI.
+ * Returns the first offending field/value if any are bare shortnames.
+ * Empty strings, missing IDs, and non-string IDs are skipped (handled
+ * elsewhere — e.g. junction inserts auto-generate URIs for new rows).
+ */
+function findBadBodyRelationshipId(
+  body: Record<string, unknown>,
+  resourceConfig: { relationships: Record<string, unknown> },
+): { field: string; got: string } | null {
+  for (const apiFieldName of Object.keys(resourceConfig.relationships)) {
+    const rawValue = body[apiFieldName]
+    if (rawValue === undefined) continue
+    const items = Array.isArray(rawValue) ? (rawValue as unknown[]) : []
+    for (const item of items) {
+      const rawId =
+        typeof item === 'string'
+          ? item
+          : ((item as Record<string, unknown>) || {})['id']
+      if (typeof rawId === 'string' && rawId !== '' && !isFullUri(rawId)) {
+        return { field: apiFieldName, got: rawId }
+      }
+    }
+  }
+  return null
+}
+
 
 /**
  * Build where clause for software subtype filtering.
@@ -140,7 +172,14 @@ class CatalogServiceImpl {
     }
 
     const id = decodeURIComponent(req.params.id)
-    const fullId = id.startsWith('https://') ? id : `${resourceConfig.idPrefix}${id}`
+    if (!id.startsWith('https://') && !id.startsWith('http://')) {
+      reply.code(400).send({
+        error: 'Resource ID must be a full URL-encoded URI',
+        hint: `Got "${id}". Pass URL-encoded full URI, e.g. /${resource}/${encodeURIComponent(resourceConfig.idPrefix + id)}`,
+      })
+      return
+    }
+    const fullId = id
     const fields = getFieldSelection(resourceConfig.hasuraTable!)
 
     const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
@@ -325,7 +364,14 @@ class CatalogServiceImpl {
     }
 
     const id = decodeURIComponent(req.params.id)
-    const fullId = id.startsWith('https://') ? id : `${resourceConfig.idPrefix}${id}`
+    if (!id.startsWith('https://') && !id.startsWith('http://')) {
+      reply.code(400).send({
+        error: 'Resource ID must be a full URL-encoded URI',
+        hint: `Got "${id}". Pass URL-encoded full URI, e.g. /${resource}/${encodeURIComponent(resourceConfig.idPrefix + id)}`,
+      })
+      return
+    }
+    const fullId = id
     const tableSuffix = resourceConfig.hasuraTable.replace('modelcatalog_', '')
     const mutationStr = `
       mutation DeleteMutation($id: String!) {
