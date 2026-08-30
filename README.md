@@ -1,5 +1,9 @@
 # model-catalog-api
 
+> **This repository is read-only history.** The code moved to
+> [`mintproject/monorepo`](https://github.com/mintproject/monorepo), in the
+> `model-catalog-api/` directory. Open issues and pull requests there.
+
 A Fastify-based REST API that translates the MINT Model Catalog OpenAPI spec into GraphQL queries against a Hasura backend.
 
 ## Configuration
